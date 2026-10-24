@@ -770,81 +770,12 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_15">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_16">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_23">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_24">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_4">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_13">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_14">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_3">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
           <Event BoundTo="BUTTON_8">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
                 </EventActions>
@@ -863,6 +794,9 @@
           <Event BoundTo="BUTTON_2">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
                 </EventActions>
@@ -918,6 +852,9 @@
           <Event BoundTo="BUTTON_29">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
                 </EventActions>
@@ -927,6 +864,9 @@
           <Event BoundTo="BUTTON_30">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
                 </EventActions>
@@ -951,6 +891,176 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_14">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_15">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_16">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_23">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_24">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_4">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
         </Events>
         <Extensions />
       </DevicePage>
@@ -958,7 +1068,7 @@
       <Extensions />
     </Device>
     <Device Serial="" DeviceIndex="0" ProductID="0x14CA" Version="3" VendorID="0x16D0" DevicePath="\\?\hid#vid_16d0&amp;pid_14ca#9&amp;336f4b50&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}">
-      <DevicePage Name="Default" ID="9b48eee9-ff89-4d1f-9076-470011fc16c9" IsDefaultPage="true">
+      <DevicePage Name="Default" ID="75032e64-81c4-4e0f-9249-f8c60a970040" IsDefaultPage="true">
         <Events>
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
@@ -1072,65 +1182,82 @@
       </DevicePage>
     </Device>
     <Device Serial="" DeviceIndex="0" ProductID="0x14CB" Version="3" VendorID="0x16D0" DevicePath="\\?\hid#vid_16d0&amp;pid_14cb#9&amp;29dca250&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}">
-      <DevicePage Name="Default" ID="d1ecf25d-e564-4144-b35f-917e8cfdd4af" IsDefaultPage="true">
+      <DevicePage Name="Default" ID="4f60d21a-c400-4487-8df9-99ef88912903" IsDefaultPage="true">
         <Events>
-          <Event BoundTo="BUTTON_13">
+          <Event BoundTo="BUTTON_5">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_25">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_6">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_12">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_MSG_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_26">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
                 </EventActions>
               </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_14">
-            <EventDefinitions>
               <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_15">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_16">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_17">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_18">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_ENT_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_1">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
                 </EventActions>
@@ -1142,9 +1269,233 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_27">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_28">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push_Long" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_29">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_RightSmallKnob_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_30">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_31">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_32">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_33">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_34">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_ENT_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_36">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_37">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_MSG_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_35">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_1">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_2">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_3">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
                 </EventActions>
@@ -1159,6 +1510,17 @@
           <Event BoundTo="BUTTON_7">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
                 </EventActions>
@@ -1170,11 +1532,162 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_ENT_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_14">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_15">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_16">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_17">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_18">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_ENT_Push" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_19">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1182,6 +1695,9 @@
           <Event BoundTo="BUTTON_20">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
                 </EventActions>
@@ -1191,8 +1707,24 @@
           <Event BoundTo="BUTTON_21">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1200,8 +1732,24 @@
           <Event BoundTo="BUTTON_22">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1209,6 +1757,9 @@
           <Event BoundTo="BUTTON_23">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
                 </EventActions>
@@ -1218,166 +1769,37 @@
           <Event BoundTo="BUTTON_24">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_ENT_Push" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_5">
+          <Event BoundTo="BUTTON_4">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_25">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_6">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_11">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_12">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_MSG_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_26">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_27">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_28">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push_Long" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_29">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_RightSmallKnob_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_30">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_31">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_32">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_33">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_34">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_ENT_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_36">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_37">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_MSG_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_35">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="PROFILE:KA_AVIONICS_FOCUS" />
                   <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_10">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1867,81 +2289,12 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_15">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_16">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_23">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_24">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_4">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_13">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_14">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_3">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
           <Event BoundTo="BUTTON_8">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
                 </EventActions>
@@ -1960,6 +2313,9 @@
           <Event BoundTo="BUTTON_2">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
                 </EventActions>
@@ -2015,6 +2371,9 @@
           <Event BoundTo="BUTTON_29">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
                 </EventActions>
@@ -2024,6 +2383,9 @@
           <Event BoundTo="BUTTON_30">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
                 </EventActions>
@@ -2048,11 +2410,192 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_14">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_15">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_16">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_23">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_24">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_4">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_34">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2060,8 +2603,19 @@
           <Event BoundTo="BUTTON_35">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2069,8 +2623,19 @@
           <Event BoundTo="BUTTON_36">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2078,8 +2643,19 @@
           <Event BoundTo="BUTTON_37">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2087,8 +2663,24 @@
           <Event BoundTo="BUTTON_38">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2115,7 +2707,10 @@
     <Option Key="Ultimarc.PacLed64.Brightness" Value="128" />
   </Options>
   <ProfileInformation ProfileID="c6161017-25ec-4090-8e92-626d02185025" Version="0.14">
-    <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;P&gt;Baron - GNS 530 + TDS GTNxi 650; RotAIR GC and ANA; RANGE=GNS530; ADF=GTN650 knobs; see README. Built from original Baron. Requires in-simulator validation.&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
-    <LastChanged>2026-10-24T23:28:55.1410979+01:00</LastChanged>
+    <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;P&gt;Baron - GNS 530 + TDS GTNxi 650; PFD=GNS530, MFD=TDS650; RANGE/FMS and display keys follow focus; GC and ANA; see README. Requires in-simulator validation.&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
+    <LastChanged>2026-10-25T00:02:11.2854435+01:00</LastChanged>
   </ProfileInformation>
+  <Variables>
+    <Variable Scope="PROFILE" ValueType="Int32" Name="KA_AVIONICS_FOCUS" Value="0" />
+  </Variables>
 </Profile>

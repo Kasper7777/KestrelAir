@@ -36,6 +36,25 @@ function Heading-Sync($device, $button) {
     $action.SetAttribute('SourceType','Exp')
     $action.SetAttribute('SourceDataDefinition','[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]')
 }
+function Focus-Condition($definition, [int]$focus) {
+    $conditions = $definition.OwnerDocument.CreateElement('EventConditions',$ns)
+    [void]$definition.InsertBefore($conditions,$definition.EventActions)
+    $comparator = if ($focus -eq 1) {'Equals'} else {'Unequal'}
+    $null = Element $conditions 'EventCondition' @{ConditionComparator=$comparator; ConditionTargetValue='1'; ConditionValueSource='PROFILE:KA_AVIONICS_FOCUS'}
+}
+function Guard-Input($device, $button, [int]$focus) {
+    $event = $device.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$button"
+    foreach ($definition in @($event.EventDefinitions.EventDefinition)) {
+        if ($definition.Trigger -eq 'PRESS' -and !$definition.EventConditions) { Focus-Condition $definition $focus }
+    }
+}
+function Route-Knob($device,$button,$gnsTarget,$tdsSuffix) {
+    Remove-Bind $device $button
+    Bind $device $button $gnsTarget 'PFD / GNS 530 control'
+    Guard-Input $device $button 0
+    Bezel $device $button $tds650second $tdsSuffix 'MFD / TDS 650 control'
+    Guard-Input $device $button 1
+}
 function New-Device($profile, $productId, [bool]$fromTemplate = $false) {
     if ($fromTemplate) {
         $template = $stock.Profile.Devices.Device | Where-Object ProductID -eq $productId
@@ -226,9 +245,53 @@ foreach ($setup in $setups) {
             Fms $gc $setup.Primary 34 35 36 37 38
         }
     }
+    # One profile-scoped focus value drives BOTH the rotaries and display keys.
+    $variables = Element $p.Profile 'Variables'
+    $null = Element $variables 'Variable' @{Name='KA_AVIONICS_FOCUS'; Value='0'; ValueType='Int32'; Scope='PROFILE'}
+    foreach ($rot in $p.Profile.Devices.Device | Where-Object ProductID -in @('0x13E4','0x13E3')) {
+        Route-Knob $rot 13 'B:AS530_RANGE_ZOOM_Inc' 'RKnobOuterInc'
+        Route-Knob $rot 14 'B:AS530_RANGE_ZOOM_Dec' 'RKnobOuterDec'
+        Route-Knob $rot 3 'H:AS530_1_FPL_Push' 'HomeKey'
+        $banks = ,@(15,16,23,24,4)
+        if ($rot.ProductID -eq '0x13E3') { $banks += ,@(34,35,36,37,38) }
+        foreach ($bank in $banks) {
+            $gnsNames = @('RightSmallKnob_Right','RightSmallKnob_Left','RightLargeKnob_Right','RightLargeKnob_Left','RightSmallKnob_Push')
+            $tdsNames = @('RKnobInnerInc','RKnobInnerDec','RKnobOuterInc','RKnobOuterDec','RKnobCRSR')
+            for ($i=0;$i -lt 5;$i++) { Route-Knob $rot $bank[$i] "MSFS:AS530_$($gnsNames[$i])" $tdsNames[$i] }
+        }
+        foreach ($button in @(2,8,29,30)) { Guard-Input $rot $button 0 }
+    }
+    # Firmware bank IDs differ, but every bank follows the same software focus.
+    foreach ($event in @($display.DevicePage.Events.Event)) {
+        foreach ($def in @($event.EventDefinitions.EventDefinition)) {
+            if ($def.Trigger -eq 'PRESS') {
+                $target = @($def.EventActions.ChildNodes)[0].TargetDataDefinition
+                Focus-Condition $def ([int]($target -match '^LVAR:TDSGTNXI'))
+            }
+        }
+    }
+    foreach ($bank in @(@(1,2,3,7,8,9),@(13,14,15,16,17,18),@(19,20,21,22,23,24))) {
+        foreach ($button in $bank) { Remove-Bind $display $button }
+        Display-Keys $display $setup.Primary $bank
+        foreach ($button in $bank) { Guard-Input $display $button 0 }
+        Display-Keys $display $setup.Secondary $bank
+        foreach ($button in $bank) { Guard-Input $display $button 1 }
+    }
+    foreach ($spec in @(@(26,'DTOKey'),@(28,'RKnobCRSR'),@(32,'HomeKey'),@(34,'RKnobCRSR'))) {
+        Bezel $display $spec[0] $setup.Secondary $spec[1] 'MFD / TDS hold shortcut'
+        Guard-Input $display $spec[0] 1
+    }
+    foreach ($spec in @(@(4,0),@(10,1))) {
+        Remove-Bind $display $spec[0]
+        Bind $display $spec[0] 'PROFILE:KA_AVIONICS_FOCUS' 'Select avionics focus: PFD=0 GNS / MFD=1 TDS' 'PRESS' ([string]$spec[1])
+        # Release held TDS keys when changing focus; release events are unguarded.
+        $event = $display.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$($spec[0])"
+        $actions = $event.EventDefinitions.EventDefinition.EventActions
+        foreach ($key in @('HomeKey','DTOKey','RKnobCRSR','LKnobCRSR')) { $null = Element $actions 'EventActionChangeValue' @{TargetDataDefinition="LVAR:TDSGTNXI650U2_$key"; Value='0'} }
+    }
     $p.Profile.ProfileInformation.ProfileID = [guid]::NewGuid().ToString()
     $p.Profile.ProfileInformation.LastChanged = [DateTimeOffset]::Now.ToString('o')
-    $p.Profile.ProfileInformation.Description = "<HTML><BODY><P>$script:profileName; RotAIR GC and ANA; RANGE=GNS530; ADF=GTN650 knobs; see README. Built from original Baron. Requires in-simulator validation.</P></BODY></HTML>"
+    $p.Profile.ProfileInformation.Description = "<HTML><BODY><P>$script:profileName; PFD=GNS530, MFD=TDS650; RANGE/FMS and display keys follow focus; GC and ANA; see README. Requires in-simulator validation.</P></BODY></HTML>"
     $destination = Join-Path $out ($script:profileName + '.xml')
     if (Test-Path -LiteralPath $destination) {
         [xml]$previous = Get-Content -LiteralPath $destination
@@ -243,7 +306,7 @@ $inventory = foreach ($file in Get-ChildItem $out -Filter '*.xml') {
         foreach ($event in $device.DevicePage.Events.Event) {
             foreach ($def in $event.EventDefinitions.EventDefinition) {
                 foreach ($action in $def.EventActions.ChildNodes) {
-                    [pscustomobject]@{Profile=$file.BaseName; ProductID=$device.ProductID; Input=$event.BoundTo; Trigger=$def.Trigger; Action=$action.LocalName; Target=$action.TargetDataDefinition; Value=$action.Value; Operation=$action.ValueOperation; SourceType=$action.SourceType; Source=$action.SourceDataDefinition; Parameter=($action.Parameter.Value -join ',')}
+                    [pscustomobject]@{Profile=$file.BaseName; ProductID=$device.ProductID; Input=$event.BoundTo; Trigger=$def.Trigger; Condition=$def.EventConditions.OuterXml; Action=$action.LocalName; Target=$action.TargetDataDefinition; Value=$action.Value; Operation=$action.ValueOperation; SourceType=$action.SourceType; Source=$action.SourceDataDefinition; Parameter=($action.Parameter.Value -join ',')}
                 }
             }
         }
@@ -251,6 +314,7 @@ $inventory = foreach ($file in Get-ChildItem $out -Filter '*.xml') {
 }
 $inventory | Export-Csv (Join-Path $PSScriptRoot 'all-SFS-bindings.csv') -NoTypeInformation -Encoding UTF8
 Write-Output "Created GNS 530 + TDS GTNxi 650 profile in $out"
+
 
 
 

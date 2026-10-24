@@ -90,3 +90,96 @@
 "Baron - GNS 530 + TDS GTNxi 650","0x13E3","36","PRESS","GNS 530 RightLargeKnob_Right","MSFS:AS530_RightLargeKnob_Right",
 "Baron - GNS 530 + TDS GTNxi 650","0x13E3","37","PRESS","GNS 530 RightLargeKnob_Left","MSFS:AS530_RightLargeKnob_Left",
 "Baron - GNS 530 + TDS GTNxi 650","0x13E3","38","PRESS","GNS 530 RightSmallKnob_Push","MSFS:AS530_RightSmallKnob_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","13","PRESS","PFD / GNS 530 control","B:AS530_RANGE_ZOOM_Inc",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","13","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","14","PRESS","PFD / GNS 530 control","B:AS530_RANGE_ZOOM_Dec",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","14","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","3","PRESS","PFD / GNS 530 control","H:AS530_1_FPL_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","3","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_HomeKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","3","RELEASE","MFD / TDS 650 control release","LVAR:TDSGTNXI650U2_HomeKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","15","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","15","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobInnerInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","16","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","16","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobInnerDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","23","PRESS","PFD / GNS 530 control","MSFS:AS530_RightLargeKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","23","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","24","PRESS","PFD / GNS 530 control","MSFS:AS530_RightLargeKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","24","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","4","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","4","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","4","RELEASE","MFD / TDS 650 control release","LVAR:TDSGTNXI650U2_RKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","13","PRESS","PFD / GNS 530 control","B:AS530_RANGE_ZOOM_Inc",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","13","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","14","PRESS","PFD / GNS 530 control","B:AS530_RANGE_ZOOM_Dec",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","14","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","3","PRESS","PFD / GNS 530 control","H:AS530_1_FPL_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","3","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_HomeKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","3","RELEASE","MFD / TDS 650 control release","LVAR:TDSGTNXI650U2_HomeKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","15","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","15","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobInnerInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","16","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","16","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobInnerDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","23","PRESS","PFD / GNS 530 control","MSFS:AS530_RightLargeKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","23","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","24","PRESS","PFD / GNS 530 control","MSFS:AS530_RightLargeKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","24","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","4","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","4","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","4","RELEASE","MFD / TDS 650 control release","LVAR:TDSGTNXI650U2_RKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","34","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","34","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobInnerInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","35","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","35","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobInnerDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","36","PRESS","PFD / GNS 530 control","MSFS:AS530_RightLargeKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","36","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","37","PRESS","PFD / GNS 530 control","MSFS:AS530_RightLargeKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","37","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobOuterDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","38","PRESS","PFD / GNS 530 control","MSFS:AS530_RightSmallKnob_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","38","PRESS","MFD / TDS 650 control","LVAR:TDSGTNXI650U2_RKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","38","RELEASE","MFD / TDS 650 control release","LVAR:TDSGTNXI650U2_RKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","1","PRESS","GNS 530 DRCT_Push","H:AS530_1_DRCT_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","2","PRESS","GNS 530 FPL_Push","H:AS530_1_FPL_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","3","PRESS","GNS 530 CLR_Push","H:AS530_1_CLR_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","7","PRESS","GNS 530 MENU_Push","H:AS530_1_MENU_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","8","PRESS","GNS 530 PROC_Push","H:AS530_1_PROC_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","9","PRESS","GNS 530 ENT_Push","H:AS530_1_ENT_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","1","PRESS","TDS GTNxi 650 unit 2 DTOKey","LVAR:TDSGTNXI650U2_DTOKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","1","RELEASE","TDS GTNxi 650 unit 2 DTOKey release","LVAR:TDSGTNXI650U2_DTOKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","3","PRESS","TDS GTNxi 650 unit 2 RKnobCRSR","LVAR:TDSGTNXI650U2_RKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","3","RELEASE","TDS GTNxi 650 unit 2 RKnobCRSR release","LVAR:TDSGTNXI650U2_RKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","7","PRESS","TDS GTNxi 650 unit 2 HomeKey","LVAR:TDSGTNXI650U2_HomeKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","7","RELEASE","TDS GTNxi 650 unit 2 HomeKey release","LVAR:TDSGTNXI650U2_HomeKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","13","PRESS","GNS 530 DRCT_Push","H:AS530_1_DRCT_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","14","PRESS","GNS 530 FPL_Push","H:AS530_1_FPL_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","15","PRESS","GNS 530 CLR_Push","H:AS530_1_CLR_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","16","PRESS","GNS 530 MENU_Push","H:AS530_1_MENU_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","17","PRESS","GNS 530 PROC_Push","H:AS530_1_PROC_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","18","PRESS","GNS 530 ENT_Push","H:AS530_1_ENT_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","13","PRESS","TDS GTNxi 650 unit 2 DTOKey","LVAR:TDSGTNXI650U2_DTOKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","13","RELEASE","TDS GTNxi 650 unit 2 DTOKey release","LVAR:TDSGTNXI650U2_DTOKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","15","PRESS","TDS GTNxi 650 unit 2 RKnobCRSR","LVAR:TDSGTNXI650U2_RKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","15","RELEASE","TDS GTNxi 650 unit 2 RKnobCRSR release","LVAR:TDSGTNXI650U2_RKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","16","PRESS","TDS GTNxi 650 unit 2 HomeKey","LVAR:TDSGTNXI650U2_HomeKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","16","RELEASE","TDS GTNxi 650 unit 2 HomeKey release","LVAR:TDSGTNXI650U2_HomeKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","19","PRESS","GNS 530 DRCT_Push","H:AS530_1_DRCT_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","20","PRESS","GNS 530 FPL_Push","H:AS530_1_FPL_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","21","PRESS","GNS 530 CLR_Push","H:AS530_1_CLR_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","22","PRESS","GNS 530 MENU_Push","H:AS530_1_MENU_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","23","PRESS","GNS 530 PROC_Push","H:AS530_1_PROC_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","24","PRESS","GNS 530 ENT_Push","H:AS530_1_ENT_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","19","PRESS","TDS GTNxi 650 unit 2 DTOKey","LVAR:TDSGTNXI650U2_DTOKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","19","RELEASE","TDS GTNxi 650 unit 2 DTOKey release","LVAR:TDSGTNXI650U2_DTOKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","21","PRESS","TDS GTNxi 650 unit 2 RKnobCRSR","LVAR:TDSGTNXI650U2_RKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","21","RELEASE","TDS GTNxi 650 unit 2 RKnobCRSR release","LVAR:TDSGTNXI650U2_RKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","22","PRESS","TDS GTNxi 650 unit 2 HomeKey","LVAR:TDSGTNXI650U2_HomeKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","22","RELEASE","TDS GTNxi 650 unit 2 HomeKey release","LVAR:TDSGTNXI650U2_HomeKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","26","PRESS","MFD / TDS hold shortcut","LVAR:TDSGTNXI650U2_DTOKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","26","RELEASE","MFD / TDS hold shortcut release","LVAR:TDSGTNXI650U2_DTOKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","28","PRESS","MFD / TDS hold shortcut","LVAR:TDSGTNXI650U2_RKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","28","RELEASE","MFD / TDS hold shortcut release","LVAR:TDSGTNXI650U2_RKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","32","PRESS","MFD / TDS hold shortcut","LVAR:TDSGTNXI650U2_HomeKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","32","RELEASE","MFD / TDS hold shortcut release","LVAR:TDSGTNXI650U2_HomeKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","34","PRESS","MFD / TDS hold shortcut","LVAR:TDSGTNXI650U2_RKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","34","RELEASE","MFD / TDS hold shortcut release","LVAR:TDSGTNXI650U2_RKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","4","PRESS","Select avionics focus: PFD=0 GNS / MFD=1 TDS","PROFILE:KA_AVIONICS_FOCUS","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","10","PRESS","Select avionics focus: PFD=0 GNS / MFD=1 TDS","PROFILE:KA_AVIONICS_FOCUS","1"

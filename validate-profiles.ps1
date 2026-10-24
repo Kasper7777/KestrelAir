@@ -26,12 +26,13 @@ foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.
             if ($number -lt 1 -or $number -gt $maxButton) { throw "Invalid hardware button: $file" }
             $triggers = @{}
             foreach ($def in $event.EventDefinitions.EventDefinition) {
-                if ($triggers.ContainsKey($def.Trigger)) { throw "Double action trigger: $file" }
-                $triggers[$def.Trigger] = $true
+                $triggerKey = $def.Trigger + ':' + $def.EventConditions.OuterXml
+                if ($triggers.ContainsKey($triggerKey)) { throw "Double action trigger with same focus condition: $file" }
+                $triggers[$triggerKey] = $true
                 if ($def.Trigger -notin @('PRESS','RELEASE')) { throw 'Unexpected trigger' }
                 foreach ($action in $def.EventActions.ChildNodes) {
                     if (!$action.TargetDataDefinition) { throw 'Missing action target' }
-                    if ($action.TargetDataDefinition -match 'TDSGTNXI.+(?:Key|CRSR)$' -and $def.Trigger -eq 'PRESS') {
+                    if ($action.TargetDataDefinition -match 'TDSGTNXI.+(?:Key|CRSR)$' -and $def.Trigger -eq 'PRESS' -and $action.Value -eq '1') {
                         $release = @($event.EventDefinitions.EventDefinition | Where-Object Trigger -eq 'RELEASE')
                         if ($release.Count -ne 1 -or $release[0].EventActions.EventActionChangeValue.Value -ne '0') { throw 'TDS key missing release' }
                     }
@@ -47,13 +48,15 @@ foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.
         }
         foreach ($pair in @(@(13,'B:AS530_RANGE_ZOOM_Inc'),@(14,'B:AS530_RANGE_ZOOM_Dec'))) {
             $event = $rot.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$($pair[0])"
-            if ($event.EventDefinitions.EventDefinition.EventActions.EventActionControl.TargetDataDefinition -cne $pair[1]) { throw 'GNS 530 range input missing or reassigned' }
+            $gnsDefinition = $event.EventDefinitions.EventDefinition | Where-Object {$_.EventConditions.EventCondition.ConditionComparator -eq 'Unequal'}
+            if ($gnsDefinition.EventActions.EventActionControl.TargetDataDefinition -cne $pair[1]) { throw 'GNS 530 range input missing or reassigned' }
         }
         $fmsCases = @(@(15,'RightSmallKnob_Right'),@(16,'RightSmallKnob_Left'),@(23,'RightLargeKnob_Right'),@(24,'RightLargeKnob_Left'),@(4,'RightSmallKnob_Push'))
         if ($rot.ProductID -eq '0x13E3') { $fmsCases += @(@(34,'RightSmallKnob_Right'),@(35,'RightSmallKnob_Left'),@(36,'RightLargeKnob_Right'),@(37,'RightLargeKnob_Left'),@(38,'RightSmallKnob_Push')) }
         foreach ($case in $fmsCases) {
             $event = $rot.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$($case[0])"
-            if ($event.EventDefinitions.EventDefinition.EventActions.EventActionControl.TargetDataDefinition -cne "MSFS:AS530_$($case[1])") { throw 'FMS does not match manufacturer SPAD control definition' }
+            $gnsDefinition = $event.EventDefinitions.EventDefinition | Where-Object {$_.EventConditions.EventCondition.ConditionComparator -eq 'Unequal'}
+            if ($gnsDefinition.EventActions.EventActionControl.TargetDataDefinition -cne "MSFS:AS530_$($case[1])") { throw 'FMS does not match manufacturer SPAD control definition' }
         }
         }
         $adf = $sfs | Where-Object ProductID -eq '0x1290'

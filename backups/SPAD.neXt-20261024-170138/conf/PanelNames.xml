@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PanelNames xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="2" xmlns="http://www.fsgs.com/SPAD">
+  <Panel>
+    <Key>\\?\hid#vid_06a3&amp;pid_0763#9&amp;2a71f0e4&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>Saitek Pro Flight Rudder Pedals</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>06A3:0763</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>ad381630-4bf9-11f1-8008-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_3344&amp;pid_0194&amp;mi_00#8&amp;1d037022&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>VPC MongoosT-50CM3 Throttle</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>3344:0194</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>1ff12730-4190-11f1-800a-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_3344&amp;pid_025c&amp;mi_00#a&amp;66e0474&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>VPC Control Panel #3</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>3344:025C</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>fb820c60-4bf9-11f1-800c-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_3344&amp;pid_43f5&amp;mi_00#a&amp;1094b8f3&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>R-VPC WarBRD-D Base</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>3344:43F5</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>27356040-4bfb-11f1-8012-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_3344&amp;pid_83f5&amp;mi_00#a&amp;16474e05&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>L-VPC WarBRD-D Base</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>3344:83F5</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>4119fce0-4bfc-11f1-8014-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_16d0&amp;pid_128f#9&amp;2804f892&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>SFS RotAIR Type-1 GC</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>16D0:128F</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>ac606c50-cd89-11f1-8002-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_16d0&amp;pid_13e3#9&amp;1f0f1e49&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>SFS RotAIR Type-2 GC</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>16D0:13E3</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>ac60ba70-cd89-11f1-8003-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_16d0&amp;pid_14ca#9&amp;336f4b50&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>SFS PulsAIR Type-1</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>16D0:14CA</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>ac60ba70-cd89-11f1-8004-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_16d0&amp;pid_14cb#9&amp;29dca250&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>SFS PulsAIR Type-2</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>16D0:14CB</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>ac606c50-cd89-11f1-8001-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_16d0&amp;pid_1290#9&amp;155cbabc&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>SFS RotAIR Type-1 ANA</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>16D0:1290</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>62699e70-cd9b-11f1-8005-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>\\?\hid#vid_16d0&amp;pid_13e4#9&amp;901a7f1&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</Key>
+    <Name>SFS RotAIR Type-2 ANA</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>16D0:13E4</ProductIndex>
+    <SortOrder>0</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>65ed6e00-cd9b-11f1-8006-444553540000</InstanceID>
+  </Panel>
+  <Panel>
+    <Key>0xFFFF_0xFFFF</Key>
+    <Name>Script Panel</Name>
+    <VariableIndex>0</VariableIndex>
+    <ProductIndex>FFFF:FFFF</ProductIndex>
+    <SortOrder>100</SortOrder>
+    <DeviceEventIndex>0</DeviceEventIndex>
+    <SubDeviceIndex>0</SubDeviceIndex>
+    <InstanceID>00000000-0000-0000-0000-000000000000</InstanceID>
+  </Panel>
+</PanelNames>

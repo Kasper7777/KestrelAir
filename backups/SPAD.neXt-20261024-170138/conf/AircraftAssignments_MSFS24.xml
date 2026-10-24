@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AircraftAssignments xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Simulation="MSFS24" xmlns="http://www.fsgs.com/SPAD">
+  <AircraftAssignment>
+    <Key>Beech Baron G58</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N7733K</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N972HJ</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional C-GVGI</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N515MR</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N585RS</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional C-GVGI</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N513LW</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N515MR</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N585RS</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N972HJ</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N7733K</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional C-GVGI</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N513LW</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N515MR</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N585RS</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N972HJ</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N7733K</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>A2A Piper PA-24-250 Comanche</Key>
+    <Profile>Piper PA-24-250.xml</Profile>
+  </AircraftAssignment>
+</AircraftAssignments>

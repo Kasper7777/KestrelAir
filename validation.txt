@@ -1,0 +1,3 @@
+﻿Baron - GNS 530 + TDS GTNxi 650: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Live original Baron SHA-256 still matches backup.
+Static validation only: SPAD.neXt import and simulator/hardware operation have not been tested.

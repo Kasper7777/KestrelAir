@@ -1,0 +1,15 @@
+﻿Baron - G1000 MFD: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - G1000 PFD: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - GNS 430: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - GNS 530 + GNS 430: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - GNS 530 + PMS50 GTN 650: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - GNS 530 + TDS GTNxi 650: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - GNS 530: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - PMS50 GTN 650: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - PMS50 GTN 750 + 650: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - PMS50 GTN 750: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - TDS GTNxi 650: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - TDS GTNxi 750 + 650: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Baron - TDS GTNxi 750: PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)
+Live original Baron SHA-256 still matches backup.
+Static validation only: SPAD.neXt import and simulator/hardware operation have not been tested.

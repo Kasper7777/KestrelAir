@@ -14,9 +14,9 @@ foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.
     }
     if ($profile.Profile.Options.OuterXml -cne $original.Profile.Options.OuterXml) { throw "Options changed: $file" }
     $sfs = @($devices | Where-Object VendorID -eq '0x16D0')
-    if ($sfs.Count -ne 4) { throw "Missing SFS hardware: $file" }
+    if ($sfs.Count -ne 6) { throw "Missing SFS hardware/mode: $file" }
     foreach ($d in $sfs) {
-        $maxButton = switch ($d.ProductID) { '0x1290' {40}; '0x13E4' {40}; '0x14CA' {24}; '0x14CB' {37}; default { throw 'Unexpected PID' } }
+        $maxButton = switch ($d.ProductID) { '0x1290' {40}; '0x13E4' {40}; '0x128F' {40}; '0x13E3' {40}; '0x14CA' {24}; '0x14CB' {37}; default { throw 'Unexpected PID' } }
         if (!$d.DevicePath.ToLowerInvariant().Contains('pid_' + $d.ProductID.Substring(2).ToLowerInvariant())) { throw 'Device path mismatch' }
         $bound = @{}
         foreach ($event in $d.DevicePage.Events.Event) {
@@ -41,7 +41,7 @@ foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.
     }
     $secondary = $file.Name -match '\+'
     if ($secondary) {
-        $rot = $sfs | Where-Object ProductID -eq '0x13E4'
+        foreach ($rot in $sfs | Where-Object ProductID -in @('0x13E4','0x13E3')) {
         foreach ($button in @(3,4,13,14,15,16,23,24)) {
             if (!($rot.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$button")) { throw 'Missing dual-GPS encoder input' }
         }
@@ -49,13 +49,20 @@ foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.
             $event = $rot.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$($pair[0])"
             if ($event.EventDefinitions.EventDefinition.EventActions.EventActionControl.TargetDataDefinition -cne $pair[1]) { throw 'GNS 530 range input missing or reassigned' }
         }
+        $fmsCases = @(@(15,'RightSmallKnob_Right'),@(16,'RightSmallKnob_Left'),@(23,'RightLargeKnob_Right'),@(24,'RightLargeKnob_Left'),@(4,'RightSmallKnob_Push'))
+        if ($rot.ProductID -eq '0x13E3') { $fmsCases += @(@(34,'RightSmallKnob_Right'),@(35,'RightSmallKnob_Left'),@(36,'RightLargeKnob_Right'),@(37,'RightLargeKnob_Left'),@(38,'RightSmallKnob_Push')) }
+        foreach ($case in $fmsCases) {
+            $event = $rot.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$($case[0])"
+            if ($event.EventDefinitions.EventDefinition.EventActions.EventActionControl.TargetDataDefinition -cne "MSFS:AS530_$($case[1])") { throw 'FMS does not match manufacturer SPAD control definition' }
+        }
+        }
         $adf = $sfs | Where-Object ProductID -eq '0x1290'
         foreach ($button in @(3,13,14,21,22)) {
             $event = $adf.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$button"
             if (!($event.EventDefinitions.EventDefinition.EventActions.EventActionChangeValue.TargetDataDefinition -match 'TDSGTNXI650U2_')) { throw 'GTN 650 encoder missing' }
         }
     }
-    $report += "$($file.BaseName): PASS (original devices/options preserved; four SFS devices; valid inputs; unique ID; key releases)"
+    $report += "$($file.BaseName): PASS (original devices/options preserved; six SFS sections covering GC/ANA and PulsAIR; range in both modes; valid inputs; unique ID; key releases)"
 }
 if ($ids.Count -ne 1) { throw 'Expected only the GNS 530 + TDS GTNxi 650 profile' }
 $liveOriginal = Join-Path $env:USERPROFILE 'Documents\SPAD.neXt\profiles\Baron.xml'

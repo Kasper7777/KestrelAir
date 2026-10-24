@@ -28,6 +28,14 @@ function Bind($device, [int]$button, [string]$target, [string]$label, [string]$t
 function Remove-Bind($device, $button) {
     foreach ($e in @($device.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$button")) { [void]$e.ParentNode.RemoveChild($e) }
 }
+function Heading-Sync($device, $button) {
+    Bind $device $button 'SIMCONNECT:AUTOPILOT HEADING LOCK DIR' 'Sync heading bug to magnetic heading' 'PRESS' '0'
+    $event = $device.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$button"
+    $action = $event.EventDefinitions.EventDefinition.EventActions.EventActionChangeValue
+    $action.RemoveAttribute('Value')
+    $action.SetAttribute('SourceType','Exp')
+    $action.SetAttribute('SourceDataDefinition','[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]')
+}
 function New-Device($profile, $productId, [bool]$fromTemplate = $false) {
     if ($fromTemplate) {
         $template = $stock.Profile.Devices.Device | Where-Object ProductID -eq $productId
@@ -61,7 +69,14 @@ function Fms($device, $unit, $innerUp, $innerDown, $outerUp, $outerDown, $push) 
     elseif ($unit.Kind -eq 'TDS') { $names = @('RKnobInnerInc','RKnobInnerDec','RKnobOuterInc','RKnobOuterDec','RKnobCRSR') }
     else { $names = @('KnobSmallInc','KnobSmallDec','KnobLargeInc','KnobLargeDec','KnobPush') }
     $buttons = @($innerUp,$innerDown,$outerUp,$outerDown,$push)
-    for ($i=0; $i -lt 5; $i++) { Bezel $device $buttons[$i] $unit $names[$i] "$($unit.Name) $($names[$i])" }
+    for ($i=0; $i -lt 5; $i++) {
+        if ($unit.Kind -eq 'GNS') {
+            # Use the manufacturer's SPAD control definitions verbatim for FMS.
+            # These resolve through MSFS rather than assuming an indexed H-event.
+            $fmsPrefix = $unit.Prefix -replace '_1$',''
+            Bind $device $buttons[$i] "MSFS:$($fmsPrefix)_$($names[$i])" "$($unit.Name) $($names[$i])"
+        } else { Bezel $device $buttons[$i] $unit $names[$i] "$($unit.Name) $($names[$i])" }
+    }
 }
 function Display-Keys($device, $unit, $buttons) {
     # Order: Direct-To, FPL, CLR, MENU, PROC, ENT.
@@ -148,9 +163,31 @@ foreach ($setup in $setups) {
     if ($setup.Primary.Kind -eq 'GNS') { Bind $r2 8 (Get-HEvent $setup.Primary 'CDI_Push') 'Primary CDI' }
     elseif ($setup.Primary.Kind -eq 'G1000') { Bind $r2 8 (Get-HEvent $setup.Primary 'SOFTKEYS_6') 'CDI softkey' }
 
+    # Fill physical knob pushes and directions absent from the old sample profile.
+    Bind $r1 1 'SIMCONNECT:RADIO_VOR1_IDENT_TOGGLE' 'NAV1 audio ident toggle'
+    Heading-Sync $r1 2
+    Remove-Bind $r1 7
+    Bezel $r1 7 $setup.Secondary 'DTOKey' 'GTN 650 Direct-To (ADF hold)'
+    Bind $r2 1 'SIMCONNECT:COM1_RECEIVE_SELECT' 'COM1 receiver toggle'
+    Bind $r2 2 (Get-HEvent $setup.Primary 'OBS_Push') 'GNS 530 OBS toggle (course push)'
+    Bezel $r2 6 $setup.Secondary 'LKnobCRSR' 'GTN 650 volume knob push (course hold)'
+    Bezel $r2 7 $setup.Secondary 'HomeKey' 'GTN 650 Home (RANGE hold)'
+    foreach ($b in @(21,22)) { Remove-Bind $r2 $b }
+    Bezel $r2 21 $setup.Secondary 'LKnobInc' 'GTN 650 volume increase (RANGE outer)'
+    Bezel $r2 22 $setup.Secondary 'LKnobDec' 'GTN 650 volume decrease (RANGE outer)'
+    foreach ($spec in @(@(29,'B:AS530_RANGE_ZOOM_Inc'),@(30,'B:AS530_RANGE_ZOOM_Dec'))) {
+        Remove-Bind $r2 $spec[0]
+        Bind $r2 $spec[0] $spec[1] 'GNS range (pressed RANGE rotation)'
+    }
+    foreach ($spec in @(@(31,'XPNDR_1_INC'),@(32,'XPNDR_1_DEC'))) {
+        Remove-Bind $r2 $spec[0]
+        Bind $r2 $spec[0] ('SIMCONNECT:'+$spec[1]) 'Transponder ones (ANA extra inputs)'
+    }
+
     $ap = New-Device $p '0x14CA'
     $apEvents = @('AP_MASTER','AP_PANEL_HEADING_HOLD','AP_NAV1_HOLD','AP_APR_HOLD','AP_PANEL_VS_HOLD','FLIGHT_LEVEL_CHANGE','TOGGLE_FLIGHT_DIRECTOR','AP_ALT_HOLD',$null,'AP_BC_HOLD','AP_VS_VAR_INC','AP_VS_VAR_DEC')
     for ($i=0; $i -lt 12; $i++) { if ($apEvents[$i]) { Bind $ap ($i+1) ('SIMCONNECT:'+$apEvents[$i]) $apEvents[$i] } }
+    Bind $ap 9 (Get-HEvent $setup.Primary 'VNAV_Push') 'GNS VNAV page (not AP VNAV arming)'
     if ($setup.Primary.Kind -eq 'G1000') {
         for ($i=1; $i -le 12; $i++) { Bind $ap ($i+12) "H:AS1000_PFD_SOFTKEYS_$i" "PFD softkey $i (hold)" }
     }
@@ -163,15 +200,35 @@ foreach ($setup in $setups) {
     Display-Keys $display $setup.Primary @(19,20,21,22,23,24)
     if ($setup.Primary.Kind -eq 'GNS') {
         foreach ($spec in @(@(5,'CDI_Push'),@(25,'CDI_Push'),@(6,'OBS_Push'),@(11,'VNAV_Push'),@(12,'MSG_Push'))) { Bind $display $spec[0] (Get-HEvent $setup.Primary $spec[1]) "Primary $($spec[1])" }
+        # Dedicated firmware long-press IDs: useful GNS shortcuts in either bank.
+        foreach ($spec in @(@(26,'DRCT_Push'),@(27,'FPL_Push'),@(28,'CLR_Push_Long'),@(29,'RightSmallKnob_Push'),@(30,'CDI_Push'),@(31,'OBS_Push'),@(32,'MENU_Push'),@(33,'PROC_Push'),@(34,'ENT_Push'),@(36,'VNAV_Push'),@(37,'MSG_Push'))) {
+            Bind $display $spec[0] (Get-HEvent $setup.Primary $spec[1]) "GNS hold shortcut $($spec[1])"
+        }
+        Bezel $display 35 $setup.Secondary 'HomeKey' 'GTN Home (MFD hold)'
     } elseif ($setup.Primary.Kind -eq 'G1000') {
         Bind $display 5 'H:AS1000_PFD_SOFTKEYS_6' 'PFD CDI softkey'
         for ($i=1; $i -le 12; $i++) { Bind $display ($i+25) "H:AS1000_MFD_SOFTKEYS_$i" "MFD softkey $i (hold)" }
     } elseif ($setup.Primary.Kind -eq 'PMS') {
         foreach ($spec in @(@(5,'CDI'),@(25,'CDI'),@(6,'OBS'),@(12,'MSG'))) { Bezel $display $spec[0] $setup.Primary $spec[1] "Primary contextual $($spec[1])" }
     }
+    # GC and ANA enumerate as different HID devices. Bind both identities so the
+    # connected mode receives events; latest session connects 128F/13E3 (GC).
+    foreach ($mode in @(@($r1,'0x128F'),@($r2,'0x13E3'))) {
+        $gc = $p.ImportNode($mode[0], $true)
+        $gc.SetAttribute('ProductID',$mode[1])
+        $identity = $panels.DocumentElement.ChildNodes | Where-Object ProductIndex -eq ('16D0:' + $mode[1].Substring(2)) | Select-Object -First 1
+        if (!$identity) { throw 'Missing GC hardware identity' }
+        $gc.SetAttribute('DevicePath',$identity.Key)
+        [void]$p.Profile.Devices.AppendChild($gc)
+        if ($mode[1] -eq '0x13E3') {
+            # GC firmware may select its alternate PFD FMS bank.
+            foreach ($b in @(34,35,36,37,38)) { Remove-Bind $gc $b }
+            Fms $gc $setup.Primary 34 35 36 37 38
+        }
+    }
     $p.Profile.ProfileInformation.ProfileID = [guid]::NewGuid().ToString()
     $p.Profile.ProfileInformation.LastChanged = [DateTimeOffset]::Now.ToString('o')
-    $p.Profile.ProfileInformation.Description = "<HTML><BODY><P>$script:profileName; RotAIR ANA; PulsAIR PFD=primary, MFD=secondary; see README. Built from original Baron. Requires in-simulator validation.</P></BODY></HTML>"
+    $p.Profile.ProfileInformation.Description = "<HTML><BODY><P>$script:profileName; RotAIR GC and ANA; RANGE=GNS530; ADF=GTN650 knobs; see README. Built from original Baron. Requires in-simulator validation.</P></BODY></HTML>"
     $destination = Join-Path $out ($script:profileName + '.xml')
     if (Test-Path -LiteralPath $destination) {
         [xml]$previous = Get-Content -LiteralPath $destination
@@ -186,7 +243,7 @@ $inventory = foreach ($file in Get-ChildItem $out -Filter '*.xml') {
         foreach ($event in $device.DevicePage.Events.Event) {
             foreach ($def in $event.EventDefinitions.EventDefinition) {
                 foreach ($action in $def.EventActions.ChildNodes) {
-                    [pscustomobject]@{Profile=$file.BaseName; ProductID=$device.ProductID; Input=$event.BoundTo; Trigger=$def.Trigger; Action=$action.LocalName; Target=$action.TargetDataDefinition; Value=$action.Value; Operation=$action.ValueOperation; Parameter=($action.Parameter.Value -join ',')}
+                    [pscustomobject]@{Profile=$file.BaseName; ProductID=$device.ProductID; Input=$event.BoundTo; Trigger=$def.Trigger; Action=$action.LocalName; Target=$action.TargetDataDefinition; Value=$action.Value; Operation=$action.ValueOperation; SourceType=$action.SourceType; Source=$action.SourceDataDefinition; Parameter=($action.Parameter.Value -join ',')}
                 }
             }
         }

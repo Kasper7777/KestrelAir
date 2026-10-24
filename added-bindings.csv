@@ -6,11 +6,11 @@
 "Baron - GNS 530 + TDS GTNxi 650","0x1290","16","PRESS","Selected altitude Decrement 100 ft","SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR","100"
 "Baron - GNS 530 + TDS GTNxi 650","0x1290","23","PRESS","Selected altitude Increment 1000 ft","SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR","1000"
 "Baron - GNS 530 + TDS GTNxi 650","0x1290","24","PRESS","Selected altitude Decrement 1000 ft","SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR","1000"
-"Baron - GNS 530 + TDS GTNxi 650","0x13E4","15","PRESS","GNS 530 RightSmallKnob_Right","H:AS530_1_RightSmallKnob_Right",
-"Baron - GNS 530 + TDS GTNxi 650","0x13E4","16","PRESS","GNS 530 RightSmallKnob_Left","H:AS530_1_RightSmallKnob_Left",
-"Baron - GNS 530 + TDS GTNxi 650","0x13E4","23","PRESS","GNS 530 RightLargeKnob_Right","H:AS530_1_RightLargeKnob_Right",
-"Baron - GNS 530 + TDS GTNxi 650","0x13E4","24","PRESS","GNS 530 RightLargeKnob_Left","H:AS530_1_RightLargeKnob_Left",
-"Baron - GNS 530 + TDS GTNxi 650","0x13E4","4","PRESS","GNS 530 RightSmallKnob_Push","H:AS530_1_RightSmallKnob_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","15","PRESS","GNS 530 RightSmallKnob_Right","MSFS:AS530_RightSmallKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","16","PRESS","GNS 530 RightSmallKnob_Left","MSFS:AS530_RightSmallKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","23","PRESS","GNS 530 RightLargeKnob_Right","MSFS:AS530_RightLargeKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","24","PRESS","GNS 530 RightLargeKnob_Left","MSFS:AS530_RightLargeKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","4","PRESS","GNS 530 RightSmallKnob_Push","MSFS:AS530_RightSmallKnob_Push",
 "Baron - GNS 530 + TDS GTNxi 650","0x1290","13","PRESS","TDS GTNxi 650 unit 2 RKnobInnerInc","LVAR:TDSGTNXI650U2_RKnobInnerInc","1"
 "Baron - GNS 530 + TDS GTNxi 650","0x1290","14","PRESS","TDS GTNxi 650 unit 2 RKnobInnerDec","LVAR:TDSGTNXI650U2_RKnobInnerDec","1"
 "Baron - GNS 530 + TDS GTNxi 650","0x1290","21","PRESS","TDS GTNxi 650 unit 2 RKnobOuterInc","LVAR:TDSGTNXI650U2_RKnobOuterInc","1"
@@ -21,6 +21,22 @@
 "Baron - GNS 530 + TDS GTNxi 650","0x13E4","14","PRESS","GNS 530 range decrease (zoom in)","B:AS530_RANGE_ZOOM_Dec",
 "Baron - GNS 530 + TDS GTNxi 650","0x13E4","3","PRESS","GNS 530 flight plan","H:AS530_1_FPL_Push",
 "Baron - GNS 530 + TDS GTNxi 650","0x13E4","8","PRESS","Primary CDI","H:AS530_1_CDI_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x1290","1","PRESS","NAV1 audio ident toggle","SIMCONNECT:RADIO_VOR1_IDENT_TOGGLE",
+"Baron - GNS 530 + TDS GTNxi 650","0x1290","2","PRESS","Sync heading bug to magnetic heading","SIMCONNECT:AUTOPILOT HEADING LOCK DIR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x1290","7","PRESS","GTN 650 Direct-To (ADF hold)","LVAR:TDSGTNXI650U2_DTOKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x1290","7","RELEASE","GTN 650 Direct-To (ADF hold) release","LVAR:TDSGTNXI650U2_DTOKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","1","PRESS","COM1 receiver toggle","SIMCONNECT:COM1_RECEIVE_SELECT",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","2","PRESS","GNS 530 OBS toggle (course push)","H:AS530_1_OBS_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","6","PRESS","GTN 650 volume knob push (course hold)","LVAR:TDSGTNXI650U2_LKnobCRSR","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","6","RELEASE","GTN 650 volume knob push (course hold) release","LVAR:TDSGTNXI650U2_LKnobCRSR","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","7","PRESS","GTN 650 Home (RANGE hold)","LVAR:TDSGTNXI650U2_HomeKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","7","RELEASE","GTN 650 Home (RANGE hold) release","LVAR:TDSGTNXI650U2_HomeKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","21","PRESS","GTN 650 volume increase (RANGE outer)","LVAR:TDSGTNXI650U2_LKnobInc","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","22","PRESS","GTN 650 volume decrease (RANGE outer)","LVAR:TDSGTNXI650U2_LKnobDec","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","29","PRESS","GNS range (pressed RANGE rotation)","B:AS530_RANGE_ZOOM_Inc",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","30","PRESS","GNS range (pressed RANGE rotation)","B:AS530_RANGE_ZOOM_Dec",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","31","PRESS","Transponder ones (ANA extra inputs)","SIMCONNECT:XPNDR_1_INC",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E4","32","PRESS","Transponder ones (ANA extra inputs)","SIMCONNECT:XPNDR_1_DEC",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CA","1","PRESS","AP_MASTER","SIMCONNECT:AP_MASTER",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CA","2","PRESS","AP_PANEL_HEADING_HOLD","SIMCONNECT:AP_PANEL_HEADING_HOLD",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CA","3","PRESS","AP_NAV1_HOLD","SIMCONNECT:AP_NAV1_HOLD",
@@ -32,6 +48,7 @@
 "Baron - GNS 530 + TDS GTNxi 650","0x14CA","10","PRESS","AP_BC_HOLD","SIMCONNECT:AP_BC_HOLD",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CA","11","PRESS","AP_VS_VAR_INC","SIMCONNECT:AP_VS_VAR_INC",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CA","12","PRESS","AP_VS_VAR_DEC","SIMCONNECT:AP_VS_VAR_DEC",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CA","9","PRESS","GNS VNAV page (not AP VNAV arming)","H:AS530_1_VNAV_Push",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CB","13","PRESS","GNS 530 DRCT_Push","H:AS530_1_DRCT_Push",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CB","14","PRESS","GNS 530 FPL_Push","H:AS530_1_FPL_Push",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CB","15","PRESS","GNS 530 CLR_Push","H:AS530_1_CLR_Push",
@@ -55,3 +72,21 @@
 "Baron - GNS 530 + TDS GTNxi 650","0x14CB","6","PRESS","Primary OBS_Push","H:AS530_1_OBS_Push",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CB","11","PRESS","Primary VNAV_Push","H:AS530_1_VNAV_Push",
 "Baron - GNS 530 + TDS GTNxi 650","0x14CB","12","PRESS","Primary MSG_Push","H:AS530_1_MSG_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","26","PRESS","GNS hold shortcut DRCT_Push","H:AS530_1_DRCT_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","27","PRESS","GNS hold shortcut FPL_Push","H:AS530_1_FPL_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","28","PRESS","GNS hold shortcut CLR_Push_Long","H:AS530_1_CLR_Push_Long",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","29","PRESS","GNS hold shortcut RightSmallKnob_Push","H:AS530_1_RightSmallKnob_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","30","PRESS","GNS hold shortcut CDI_Push","H:AS530_1_CDI_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","31","PRESS","GNS hold shortcut OBS_Push","H:AS530_1_OBS_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","32","PRESS","GNS hold shortcut MENU_Push","H:AS530_1_MENU_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","33","PRESS","GNS hold shortcut PROC_Push","H:AS530_1_PROC_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","34","PRESS","GNS hold shortcut ENT_Push","H:AS530_1_ENT_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","36","PRESS","GNS hold shortcut VNAV_Push","H:AS530_1_VNAV_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","37","PRESS","GNS hold shortcut MSG_Push","H:AS530_1_MSG_Push",
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","35","PRESS","GTN Home (MFD hold)","LVAR:TDSGTNXI650U2_HomeKey","1"
+"Baron - GNS 530 + TDS GTNxi 650","0x14CB","35","RELEASE","GTN Home (MFD hold) release","LVAR:TDSGTNXI650U2_HomeKey","0"
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","34","PRESS","GNS 530 RightSmallKnob_Right","MSFS:AS530_RightSmallKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","35","PRESS","GNS 530 RightSmallKnob_Left","MSFS:AS530_RightSmallKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","36","PRESS","GNS 530 RightLargeKnob_Right","MSFS:AS530_RightLargeKnob_Right",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","37","PRESS","GNS 530 RightLargeKnob_Left","MSFS:AS530_RightLargeKnob_Left",
+"Baron - GNS 530 + TDS GTNxi 650","0x13E3","38","PRESS","GNS 530 RightSmallKnob_Push","MSFS:AS530_RightSmallKnob_Push",

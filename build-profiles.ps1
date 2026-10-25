@@ -15,15 +15,20 @@ function Element($parent, $name, $attrs = @{}) {
     return ,$e
 }
 function Bind($device, [int]$button, [string]$target, [string]$label, [string]$trigger = 'PRESS', $value = $null) {
+    $nativeEnter = $target -eq 'B:AS530_ENT' -and $trigger -eq 'PRESS' -and $null -eq $value
+    if ($nativeEnter) { $value='1' }
     $events = $device.SelectSingleNode('./*[local-name()="DevicePage"]/*[local-name()="Events"]')
     $event = @($events.Event) | Where-Object BoundTo -eq "BUTTON_$button" | Select-Object -First 1
     if (!$event) { $event = Element $events 'Event' @{BoundTo="BUTTON_$button"}; $defs = Element $event 'EventDefinitions' }
     else { $defs = $event.EventDefinitions }
-    $def = Element $defs 'EventDefinition' @{Trigger=$trigger}
-    $actions = Element $def 'EventActions'
+    $def = $null
+    if ($trigger -eq 'RELEASE') { $def = @($defs.EventDefinition | Where-Object Trigger -eq 'RELEASE') | Select-Object -First 1 }
+    if ($def) { $actions = $def.EventActions }
+    else { $def = Element $defs 'EventDefinition' @{Trigger=$trigger}; $actions = Element $def 'EventActions' }
     if ($null -ne $value) { $null = Element $actions 'EventActionChangeValue' @{TargetDataDefinition=$target; Value=$value} }
     else { $null = Element $actions 'EventActionControl' @{TargetDataDefinition=$target} }
     $script:rows.Add([pscustomobject]@{Profile=$script:profileName; PID=$device.ProductID; Button=$button; Trigger=$trigger; Function=$label; Target=$target; Value=$value})
+    if ($nativeEnter) { Bind $device $button $target 'GNS native ENT release' 'RELEASE' '0' }
 }
 function Remove-Bind($device, $button) {
     foreach ($e in @($device.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$button")) { [void]$e.ParentNode.RemoveChild($e) }
@@ -72,7 +77,10 @@ function New-Device($profile, $productId, [bool]$fromTemplate = $false) {
     [void]$profile.Profile.Devices.AppendChild($d)
     return ,$d
 }
-function Get-HEvent($unit, $suffix) { return "H:$($unit.Prefix)_$suffix" }
+function Get-HEvent($unit, $suffix) {
+    if ($unit.Prefix -eq 'AS530_1' -and $suffix -eq 'ENT_Push') { return 'B:AS530_ENT' }
+    return "H:$($unit.Prefix)_$suffix"
+}
 function Bezel($device, $button, $unit, $suffix, $label) {
     if ($unit.Kind -eq 'TDS') {
         $target = "LVAR:TDSGTNXI$($unit.Prefix)_$suffix"
@@ -249,9 +257,13 @@ foreach ($setup in $setups) {
     $variables = Element $p.Profile 'Variables'
     $null = Element $variables 'Variable' @{Name='KA_AVIONICS_FOCUS'; Value='0'; ValueType='Int32'; Scope='PROFILE'}
     foreach ($rot in $p.Profile.Devices.Device | Where-Object ProductID -in @('0x13E4','0x13E3')) {
-        Route-Knob $rot 13 'B:AS530_RANGE_ZOOM_Inc' 'RKnobOuterInc'
-        Route-Knob $rot 14 'B:AS530_RANGE_ZOOM_Dec' 'RKnobOuterDec'
-        Route-Knob $rot 3 'H:AS530_1_FPL_Push' 'HomeKey'
+        Route-Knob $rot 13 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerInc'
+        Route-Knob $rot 14 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerDec'
+        Route-Knob $rot 21 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerInc'
+        Route-Knob $rot 22 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerDec'
+        Remove-Bind $rot 3
+        Bind $rot 3 'H:AS530_1_FPL_Push' 'PFD / GNS flight plan (RANGE push)'
+        Guard-Input $rot 3 0
         $banks = ,@(15,16,23,24,4)
         if ($rot.ProductID -eq '0x13E3') { $banks += ,@(34,35,36,37,38) }
         foreach ($bank in $banks) {
@@ -259,7 +271,9 @@ foreach ($setup in $setups) {
             $tdsNames = @('RKnobInnerInc','RKnobInnerDec','RKnobOuterInc','RKnobOuterDec','RKnobCRSR')
             for ($i=0;$i -lt 5;$i++) { Route-Knob $rot $bank[$i] "MSFS:AS530_$($gnsNames[$i])" $tdsNames[$i] }
         }
-        foreach ($button in @(2,8,29,30)) { Guard-Input $rot $button 0 }
+        Route-Knob $rot 29 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerInc'
+        Route-Knob $rot 30 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerDec'
+        foreach ($button in @(2,8)) { Guard-Input $rot $button 0 }
     }
     # Firmware bank IDs differ, but every bank follows the same software focus.
     foreach ($event in @($display.DevicePage.Events.Event)) {
@@ -279,6 +293,10 @@ foreach ($setup in $setups) {
     }
     foreach ($spec in @(@(26,'DTOKey'),@(28,'RKnobCRSR'),@(32,'HomeKey'),@(34,'RKnobCRSR'))) {
         Bezel $display $spec[0] $setup.Secondary $spec[1] 'MFD / TDS hold shortcut'
+        Guard-Input $display $spec[0] 1
+    }
+    foreach ($spec in @(@(30,'LKnobDec'),@(36,'LKnobInc'))) {
+        Bezel $display $spec[0] $setup.Secondary $spec[1] 'MFD volume shortcut: hold CDI=- / VNAV=+'
         Guard-Input $display $spec[0] 1
     }
     foreach ($spec in @(@(4,0),@(10,1))) {

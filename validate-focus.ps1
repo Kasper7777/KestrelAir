@@ -16,14 +16,21 @@ $variable=$p.Profile.Variables.Variable
 if($variable.Name -ne 'KA_AVIONICS_FOCUS' -or $variable.Value -ne '0' -or $variable.Scope -ne 'PROFILE'){throw 'Focus initialization missing'}
 $checks=0
 foreach($rot in $p.Profile.Devices.Device | Where-Object ProductID -in @('0x13E4','0x13E3')) {
-    $buttons=@(3,4,13,14,15,16,23,24)
+    $buttons=@(3,4,13,14,15,16,21,22,23,24,29,30)
     if($rot.ProductID -eq '0x13E3'){$buttons+=@(34,35,36,37,38)}
     foreach($button in $buttons){
         $gns=@(Active-Targets $rot $button 0)
         $tds=@(Active-Targets $rot $button 1)
         if($gns.Count -ne 1 -or $gns[0] -notmatch 'AS530'){throw "PFD route wrong: $($rot.ProductID)/$button"}
-        if($tds.Count -ne 1 -or $tds[0] -notmatch '^LVAR:TDSGTNXI650U2_'){throw "MFD route wrong: $($rot.ProductID)/$button"}
+        if($button -eq 3) {
+            if($tds.Count -ne 0){throw 'MFD RANGE push must not open Home or switch knob mode'}
+        } elseif($tds.Count -ne 1 -or $tds[0] -notmatch '^LVAR:TDSGTNXI650U2_'){throw "MFD route wrong: $($rot.ProductID)/$button"}
         $checks+=2
+    }
+    foreach($range in @(@(13,'LVAR:TDSGTNXI650U2_RKnobInnerInc'),@(14,'LVAR:TDSGTNXI650U2_RKnobInnerDec'),@(21,'LVAR:TDSGTNXI650U2_RKnobInnerInc'),@(22,'LVAR:TDSGTNXI650U2_RKnobInnerDec'),@(29,'LVAR:TDSGTNXI650U2_RKnobInnerInc'),@(30,'LVAR:TDSGTNXI650U2_RKnobInnerDec'))){
+        $tds=@(Active-Targets $rot $range[0] 1)
+        if($tds.Count -ne 1 -or $tds[0] -ne $range[1]){throw 'MFD RANGE must use GTN inner knob for map zoom, not outer page navigation'}
+        $checks++
     }
 }
 $display=$p.Profile.Devices.Device | Where-Object ProductID -eq '0x14CB'

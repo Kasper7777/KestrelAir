@@ -1,0 +1,25 @@
+PulsAIR investigation — 25 October 2026
+
+SPAD log spad.log.0 confirms the generated Baron profile is active, PulsAIR
+14CA/14CB are detected, and AP button presses transmit AP_MASTER.
+At 15:41:00.3419 one SPAD TransmitClientEvent AP_MASTER is followed by two
+received AP_MASTER events at 15:41:00.3738. This repeats for AP_MASTER,
+TOGGLE_FLIGHT_DIRECTOR and AP_ALT_HOLD. The AP device has one PRESS action
+per button; no duplicate AP actions were found in the installed XML.
+
+SFSmonitor_V5_0 is running alongside SPAD (PID 18588 at investigation time).
+This is a likely second command source. Exit it from its tray menu and test
+AP/HDG/ALT once each with SPAD running. Do not change working bindings until
+this overlap is eliminated. Windows denied both normal and escalated attempts
+to terminate SFSmonitor; it has no main window to close programmatically.
+
+No live functional fix has yet been verified. If commands still fail after
+closing SFSmonitor, inspect aircraft-specific autopilot handling and simulator
+controller assignments. Do not infer from duplicate received log entries alone
+that SFSmonitor is conclusively responsible.
+
+Follow-up: SFSmonitor confirmed closed; SPAD.neXt remains running.
+Latest AP tests at 16:04:15.0662 and 16:04:15.8019 each produce exactly one
+received AP_MASTER event (16:04:15.0927 and 16:04:15.8150 respectively).
+The duplicate AP event is absent after closing SFSmonitor. Cockpit response
+still requires user confirmation; other panel buttons have not been retested.

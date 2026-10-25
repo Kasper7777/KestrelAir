@@ -1,4 +1,4 @@
-﻿PASS: 123 focus-routing assertions across GC/ANA, selectors and display firmware banks.
+﻿PASS: 151 focus-routing assertions across GC/ANA, selectors and display firmware banks.
 PFD routes RANGE/FMS/display keys to GNS530; MFD routes supported controls to TDS650.
 No GNS display commands execute in MFD focus; no TDS display press commands execute in PFD focus.
 TDS releases are unconditioned and focus selectors reset held TDS keys.

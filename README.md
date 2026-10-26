@@ -8,7 +8,7 @@ Press the PulsAIR display module's **PFD** button to select the **GNS 530**, or 
 
 | Control | PFD selection | MFD selection |
 | --- | --- | --- |
-| RANGE inner/outer clockwise / anticlockwise | GNS range increase / decrease | TDS inner knob increase / decrease (map zoom) |
+| RANGE inner/outer clockwise / anticlockwise | GNS range increase / decrease | TDS inner knob decrease / increase (map zoom out / in, same direction as GNS) |
 | RANGE push | GNS flight plan | No action (keeps current page/mode) |
 | FMS inner | GNS small knob | TDS inner knob |
 | FMS outer | GNS large knob | TDS outer knob |
@@ -26,6 +26,10 @@ The same selection applies to every firmware button bank, both GC FMS banks, and
 ## Other controls
 
 NAV/COM tuning, swaps, heading, selected altitude, course, baro, transponder and autopilot remain aircraft controls. The ADF encoder is also a dedicated TDS inner/outer knob and cursor control, available in either focus. In MFD focus, hold the display CDI key to reduce GTN volume or hold VNAV to increase it; course hold pushes its volume knob. ADF hold activates GTN Direct-To; RANGE hold activates GTN Home. Heading push syncs the bug to magnetic heading.
+
+**Transponder (top RotAIR):** ALT knob push selects ALT (altitude reporting, the normal in-flight mode); ALT knob hold selects STBY; heading knob hold sends IDENT. Push-and-turn sets the squawk code one digit per knob: NAV = thousands, heading = hundreds, ADF/GTN = tens, ALT = ones. The RANGE knob's push-and-turn on the bottom RotAIR also adjusts the ones digit.
+
+**VIRPIL CP3 E1 (squawk knob):** turn to change the selected squawk digit; push (button 37) to move to the next digit, thousands → hundreds → tens → ones → thousands. The profile starts on thousands; the cockpit display does not show which digit is selected. Remove any MSFS control binding on CP3 buttons 37–39 (E1 previously changed heading through MSFS), or both will act.
 
 AP VNV opens the GNS VNAV page; it does not arm autopilot VNAV. AP nose-up/down changes the VS reference, rather than switching automatically between VS, pitch and FLC airspeed functions. Only modes supported by the aircraft's autopilot will operate. AP-module long presses remain unused G1000 softkeys.
 

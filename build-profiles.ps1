@@ -149,7 +149,8 @@ foreach ($setup in $setups) {
     # Remove known problems from the old manufacturer profile: heading push sets north;
     # altitude-up emits two unrelated actions; obsolete transponder shortcuts.
     foreach ($b in @(2,3,4,8,15,16,23,24)) { Remove-Bind $r1 $b }
-    foreach ($pair in @(@(3,4),@(4,3),@(8,1))) { Bind $r1 $pair[0] 'SIMCONNECT:TRANSPONDER STATE:1' 'Transponder state' 'PRESS' ([string]$pair[1]) }
+    # ALT knob push = ALT (Mode C, the normal flight mode); ALT knob hold = STBY.
+    foreach ($pair in @(@(3,4),@(4,4),@(8,1))) { Bind $r1 $pair[0] 'SIMCONNECT:TRANSPONDER STATE:1' 'Transponder state' 'PRESS' ([string]$pair[1]) }
     foreach ($spec in @(@(15,'100','Increment'),@(16,'100','Decrement'),@(23,'1000','Increment'),@(24,'1000','Decrement'))) {
         Bind $r1 $spec[0] 'SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR' "Selected altitude $($spec[2]) $($spec[1]) ft" 'PRESS' $spec[1]
         $event = $r1.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$($spec[0])"
@@ -163,7 +164,8 @@ foreach ($setup in $setups) {
     if ($setup.Secondary) {
         # Keep RANGE as range. Use the ADF encoder for the second GPS instead.
         foreach ($b in @(3,13,14,21,22)) { Remove-Bind $r1 $b }
-        Fms $r1 $setup.Secondary 13 14 21 22 3
+        # Inner ring reversed (13=Dec) so clockwise zooms out, matching RANGE.
+        Fms $r1 $setup.Secondary 14 13 21 22 3
         Bind $r2 13 'B:AS530_RANGE_ZOOM_Inc' 'GNS 530 range increase (zoom out)'
         Bind $r2 14 'B:AS530_RANGE_ZOOM_Dec' 'GNS 530 range decrease (zoom in)'
         Bind $r2 3 (Get-HEvent $setup.Primary 'FPL_Push') 'GNS 530 flight plan'
@@ -256,11 +258,33 @@ foreach ($setup in $setups) {
     # One profile-scoped focus value drives BOTH the rotaries and display keys.
     $variables = Element $p.Profile 'Variables'
     $null = Element $variables 'Variable' @{Name='KA_AVIONICS_FOCUS'; Value='0'; ValueType='Int32'; Scope='PROFILE'}
+    # VIRPIL CP3 E1 works like a real transponder knob: turning changes the selected
+    # digit (0=thousands .. 3=ones) and pushing moves to the next digit.
+    $null = Element $variables 'Variable' @{Name='KA_XPDR_DIGIT'; Value='0'; ValueType='Int32'; Scope='PROFILE'}
+    $cp3 = $p.Profile.Devices.Device | Where-Object ProductID -eq '0x025C'
+    if (!$cp3) { throw 'Missing VIRPIL CP3 device' }
+    foreach ($b in @(37,38,39)) { Remove-Bind $cp3 $b }
+    Bind $cp3 37 'PROFILE:KA_XPDR_DIGIT' 'Transponder next digit (CP3 E1 push)' 'PRESS' '0'
+    $action = ($cp3.DevicePage.Events.Event | Where-Object BoundTo -eq 'BUTTON_37').EventDefinitions.EventDefinition.EventActions.EventActionChangeValue
+    $action.RemoveAttribute('Value')
+    $action.SetAttribute('SourceType','Exp')
+    $action.SetAttribute('SourceDataDefinition','If([PROFILE:KA_XPDR_DIGIT] >= 3, 0, [PROFILE:KA_XPDR_DIGIT] + 1)')
+    $digits = @('1000','100','10','1')
+    for ($i=0; $i -lt 4; $i++) {
+        foreach ($spec in @(@(39,'INC'),@(38,'DEC'))) {
+            Bind $cp3 $spec[0] "SIMCONNECT:XPNDR_$($digits[$i])_$($spec[1])" "Transponder $($digits[$i]) $($spec[1]) (CP3 E1)"
+            $def = @(($cp3.DevicePage.Events.Event | Where-Object BoundTo -eq "BUTTON_$($spec[0])").EventDefinitions.EventDefinition)[-1]
+            $conditions = $def.OwnerDocument.CreateElement('EventConditions',$ns)
+            [void]$def.InsertBefore($conditions,$def.EventActions)
+            $null = Element $conditions 'EventCondition' @{ConditionComparator='Equals'; ConditionTargetValue=[string]$i; ConditionValueSource='PROFILE:KA_XPDR_DIGIT'}
+        }
+    }
     foreach ($rot in $p.Profile.Devices.Device | Where-Object ProductID -in @('0x13E4','0x13E3')) {
-        Route-Knob $rot 13 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerInc'
-        Route-Knob $rot 14 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerDec'
-        Route-Knob $rot 21 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerInc'
-        Route-Knob $rot 22 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerDec'
+        # GTN inner knob zooms in clockwise; reverse it so RANGE clockwise zooms out in both focuses.
+        Route-Knob $rot 13 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerDec'
+        Route-Knob $rot 14 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerInc'
+        Route-Knob $rot 21 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerDec'
+        Route-Knob $rot 22 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerInc'
         Remove-Bind $rot 3
         Bind $rot 3 'H:AS530_1_FPL_Push' 'PFD / GNS flight plan (RANGE push)'
         Guard-Input $rot 3 0
@@ -271,8 +295,8 @@ foreach ($setup in $setups) {
             $tdsNames = @('RKnobInnerInc','RKnobInnerDec','RKnobOuterInc','RKnobOuterDec','RKnobCRSR')
             for ($i=0;$i -lt 5;$i++) { Route-Knob $rot $bank[$i] "MSFS:AS530_$($gnsNames[$i])" $tdsNames[$i] }
         }
-        Route-Knob $rot 29 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerInc'
-        Route-Knob $rot 30 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerDec'
+        Route-Knob $rot 29 'B:AS530_RANGE_ZOOM_Inc' 'RKnobInnerDec'
+        Route-Knob $rot 30 'B:AS530_RANGE_ZOOM_Dec' 'RKnobInnerInc'
         foreach ($button in @(2,8)) { Guard-Input $rot $button 0 }
     }
     # Firmware bank IDs differ, but every bank follows the same software focus.

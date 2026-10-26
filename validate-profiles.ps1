@@ -10,7 +10,15 @@ foreach ($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.
     $oldDevices = @($original.Profile.Devices.Device)
     $devices = @($profile.Profile.Devices.Device)
     for ($i=0; $i -lt $oldDevices.Count; $i++) {
-        if ($oldDevices[$i].OuterXml -cne $devices[$i].OuterXml) { throw "Original hardware changed: $file" }
+        $device = $devices[$i]
+        if ($device.ProductID -eq '0x025C') {
+            # CP3 E1 (push 37, left 38, right 39) is the only intended change to original hardware.
+            $device = $device.CloneNode($true)
+            foreach ($e in @($device.DevicePage.Events.Event | Where-Object BoundTo -in 'BUTTON_37','BUTTON_38','BUTTON_39')) { [void]$e.ParentNode.RemoveChild($e) }
+            $e1 = @($devices[$i].DevicePage.Events.Event | Where-Object BoundTo -in 'BUTTON_38','BUTTON_39')
+            if ($e1.Count -ne 2 -or @($e1.EventDefinitions.EventDefinition).Count -ne 8) { throw "CP3 E1 transponder digits missing: $file" }
+        }
+        if ($oldDevices[$i].OuterXml -cne $device.OuterXml) { throw "Original hardware changed: $file" }
     }
     if ($profile.Profile.Options.OuterXml -cne $original.Profile.Options.OuterXml) { throw "Options changed: $file" }
     $sfs = @($devices | Where-Object VendorID -eq '0x16D0')

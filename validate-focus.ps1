@@ -12,8 +12,8 @@ function Active-Targets($device,$button,$focus) {
         if($active){$def.EventActions.ChildNodes | ForEach-Object TargetDataDefinition}
     }
 }
-$variable=$p.Profile.Variables.Variable
-if($variable.Name -ne 'KA_AVIONICS_FOCUS' -or $variable.Value -ne '0' -or $variable.Scope -ne 'PROFILE'){throw 'Focus initialization missing'}
+$variable=@($p.Profile.Variables.Variable | Where-Object Name -eq 'KA_AVIONICS_FOCUS')[0]
+if(!$variable -or $variable.Name -ne 'KA_AVIONICS_FOCUS' -or $variable.Value -ne '0' -or $variable.Scope -ne 'PROFILE'){throw 'Focus initialization missing'}
 $checks=0
 foreach($rot in $p.Profile.Devices.Device | Where-Object ProductID -in @('0x13E4','0x13E3')) {
     $buttons=@(3,4,13,14,15,16,21,22,23,24,29,30)
@@ -27,7 +27,7 @@ foreach($rot in $p.Profile.Devices.Device | Where-Object ProductID -in @('0x13E4
         } elseif($tds.Count -ne 1 -or $tds[0] -notmatch '^LVAR:TDSGTNXI650U2_'){throw "MFD route wrong: $($rot.ProductID)/$button"}
         $checks+=2
     }
-    foreach($range in @(@(13,'LVAR:TDSGTNXI650U2_RKnobInnerInc'),@(14,'LVAR:TDSGTNXI650U2_RKnobInnerDec'),@(21,'LVAR:TDSGTNXI650U2_RKnobInnerInc'),@(22,'LVAR:TDSGTNXI650U2_RKnobInnerDec'),@(29,'LVAR:TDSGTNXI650U2_RKnobInnerInc'),@(30,'LVAR:TDSGTNXI650U2_RKnobInnerDec'))){
+    foreach($range in @(@(13,'LVAR:TDSGTNXI650U2_RKnobInnerDec'),@(14,'LVAR:TDSGTNXI650U2_RKnobInnerInc'),@(21,'LVAR:TDSGTNXI650U2_RKnobInnerDec'),@(22,'LVAR:TDSGTNXI650U2_RKnobInnerInc'),@(29,'LVAR:TDSGTNXI650U2_RKnobInnerDec'),@(30,'LVAR:TDSGTNXI650U2_RKnobInnerInc'))){
         $tds=@(Active-Targets $rot $range[0] 1)
         if($tds.Count -ne 1 -or $tds[0] -ne $range[1]){throw 'MFD RANGE must use GTN inner knob for map zoom, not outer page navigation'}
         $checks++

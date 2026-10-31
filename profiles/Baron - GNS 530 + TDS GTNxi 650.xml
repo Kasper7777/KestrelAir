@@ -1,6 +1,10 @@
 <Profile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="2" xmlns="http://www.fsgs.com/SPAD">
+  <Variables>
+    <Variable Name="PROFILE:KA_AVIONICS_FOCUS" Value="0" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_XPDR_DIGIT" Value="1" ValueType="Decimal" />
+  </Variables>
   <Devices>
-    <Device VendorID="0x3344" ProductID="0x43F5" DevicePath="\\?\hid#vid_3344&amp;pid_43f5&amp;mi_00#a&amp;1094b8f3&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+    <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
       <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
         <Events>
           <Event BoundTo="BUTTON_7">
@@ -44,84 +48,20 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-        </Events>
+        <Event BoundTo="X_AXIS"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="VALUE"><EventActions><EventActionRangedAxis ConfigID="LEVER_AILERONS"><Options><Option Key="USERAWVALUE" Value="True" /><Option Key="MIN" Value="0" /><Option Key="MAX" Value="60000" /><Option Key="IDLE" Value="30000" /><Option Key="INVERTAXIS" Value="False" /></Options></EventActionRangedAxis></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="Y_AXIS"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="VALUE"><EventActions><EventActionRangedAxis ConfigID="LEVER_ELEVATOR"><Options><Option Key="USERAWVALUE" Value="True" /><Option Key="MIN" Value="0" /><Option Key="MAX" Value="60000" /><Option Key="IDLE" Value="30000" /><Option Key="INVERTAXIS" Value="False" /></Options></EventActionRangedAxis></EventActions></EventDefinition></EventDefinitions></Event></Events>
       </DevicePage>
     </Device>
     <Device VendorID="0x3344" ProductID="0x0194" DevicePath="\\?\hid#vid_3344&amp;pid_0194&amp;mi_00#8&amp;1d037022&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
       <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
         <Events>
-          <Event BoundTo="BUTTON_55">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:BKSQ_MAGNETOCONTROLLER_L_Dec" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_56">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:BKSQ_IGNITIONPOSITION_1" SourceDataDefinition="If([LVAR:BKSQ_IgnitionPosition_1] == 0, 1, If([LVAR:BKSQ_IgnitionPosition_1] == 1, 2, If([LVAR:BKSQ_IgnitionPosition_1] == 2, 3, 5)))" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_58">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:BKSQ_MAGNETOCONTROLLER_R_Dec" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_59">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:BKSQ_IGNITIONPOSITION_2" SourceDataDefinition="If([LVAR:BKSQ_IgnitionPosition_2] == 0, 1, If([LVAR:BKSQ_IgnitionPosition_2] == 1, 2, If([LVAR:BKSQ_IgnitionPosition_2] == 2, 3, 5)))" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_50">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_1_On" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_51">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_1_Off" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_52">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_2_On" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_53">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_2_Off" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          
+          <Event BoundTo="BUTTON_44"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>LMenu</Keys><Keys>D7</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition></EventDefinitions></Event>
+          
+          <Event BoundTo="BUTTON_47"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>LMenu</Keys><Keys>D8</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition></EventDefinitions></Event>
+          
+          
+          
+          
           <Event BoundTo="BUTTON_37">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -140,7 +80,7 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-        </Events>
+        <Event BoundTo="X_AXIS"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="VALUE"><EventActions><EventActionRangedAxis ConfigID="LEVER_NOREVERSE_THROTTLE"><Options><Option Key="USERAWVALUE" Value="True" /><Option Key="MIN" Value="0" /><Option Key="MAX" Value="60000" /><Option Key="OPTION1" Value="True" /><Option Key="INVERTAXIS" Value="False" /></Options></EventActionRangedAxis></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="Y_AXIS"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="VALUE"><EventActions><EventActionRangedAxis ConfigID="LEVER_NOREVERSE_THROTTLE"><Options><Option Key="USERAWVALUE" Value="True" /><Option Key="MIN" Value="0" /><Option Key="MAX" Value="60000" /><Option Key="OPTION2" Value="True" /><Option Key="INVERTAXIS" Value="False" /></Options></EventActionRangedAxis></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_41"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:AVIONICS_MASTER_1_OFF" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_40"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:AVIONICS_MASTER_1_ON" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_3"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ELEV_TRIM_DN" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_2"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ELEV_TRIM_UP" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_39"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:MASTER_BATTERY_OFF" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_38"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:MASTER_BATTERY_ON" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_35"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:PARKING_BRAKES_OFF" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_34"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:PARKING_BRAKES_ON" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_48"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:bksq_MasterGlareshieldLights" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_49"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:bksq_MasterGlareshieldLights" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_50"><EventDefinitions><EventDefinition Trigger="PRESS"><EventConditions><EventCondition ConditionComparator="Equals" ConditionTargetValue="0" ConditionValueSource="SIMCONNECT:PITOT HEAT SWITCH:1" /></EventConditions><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_TOGGLE"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_51"><EventDefinitions><EventDefinition Trigger="PRESS"><EventConditions><EventCondition ConditionComparator="Equals" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:PITOT HEAT SWITCH:1" /></EventConditions><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_TOGGLE"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_52"><EventDefinitions><EventDefinition Trigger="PRESS"><EventConditions><EventCondition ConditionComparator="Equals" ConditionTargetValue="0" ConditionValueSource="SIMCONNECT:PITOT HEAT SWITCH:2" /></EventConditions><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_TOGGLE"><Parameter Type="Static" Value="2" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_53"><EventDefinitions><EventDefinition Trigger="PRESS"><EventConditions><EventCondition ConditionComparator="Equals" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:PITOT HEAT SWITCH:2" /></EventConditions><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_TOGGLE"><Parameter Type="Static" Value="2" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_60"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_61"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_62"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_1" Value="2" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_63"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_1" Value="3" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_64"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_1" Value="5" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_55"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_pressurizationClimbRate" SourceType="Exp" ValueOperation="Set" Value="Min(2000, [LVAR:var_pressurizationClimbRate] + -50)" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_56"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_pressurizationClimbRate" SourceType="Exp" ValueOperation="Set" Value="Min(2000, [LVAR:var_pressurizationClimbRate] + 50)" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_58"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_pressurizationGoal" SourceType="Exp" ValueOperation="Set" Value="Min(15000, [LVAR:var_pressurizationGoal] + -100)" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_59"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_pressurizationGoal" SourceType="Exp" ValueOperation="Set" Value="Min(15000, [LVAR:var_pressurizationGoal] + 100)" /></EventActions></EventDefinition></EventDefinitions></Event></Events>
       </DevicePage>
     </Device>
     <Device VendorID="0x3344" ProductID="0x025C" DevicePath="\\?\hid#vid_3344&amp;pid_025c&amp;mi_00#a&amp;66e0474&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -244,7 +184,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_XPDR_DIGIT" SourceType="Exp" SourceDataDefinition="If([PROFILE:KA_XPDR_DIGIT] &gt;= 3, 0, [PROFILE:KA_XPDR_DIGIT] + 1)" />
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="PROFILE:KA_XPDR_DIGIT" SourceDataDefinition="If([PROFILE:KA_XPDR_DIGIT] &gt;= 3, 0, [PROFILE:KA_XPDR_DIGIT] + 1)" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -253,7 +193,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" ConditionTargetValue="0" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_INC" />
@@ -261,7 +201,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_INC" />
@@ -269,7 +209,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" ConditionTargetValue="2" />
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_INC" />
@@ -277,7 +217,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" ConditionTargetValue="3" />
+                  <EventCondition ConditionTargetValue="3" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_INC" />
@@ -289,7 +229,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" ConditionTargetValue="0" />
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_DEC" />
@@ -297,7 +237,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_DEC" />
@@ -305,7 +245,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" ConditionTargetValue="2" />
+                  <EventCondition ConditionTargetValue="2" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_DEC" />
@@ -313,7 +253,7 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" ConditionTargetValue="3" />
+                  <EventCondition ConditionTargetValue="3" ConditionValueSource="PROFILE:KA_XPDR_DIGIT" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_DEC" />
@@ -321,7 +261,7 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-        </Events>
+        <Event BoundTo="BUTTON_6"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="H:bksq_JpiButton_1_L_Short" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="X_AXIS"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="VALUE"><EventActions><EventActionRangedAxis ConfigID="LEVER_PROPPITCH"><Options><Option Key="USERAWVALUE" Value="True" /><Option Key="MIN" Value="0" /><Option Key="MAX" Value="60000" /><Option Key="OPTION1" Value="True" /><Option Key="INVERTAXIS" Value="False" /></Options></EventActionRangedAxis></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="Y_AXIS"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="VALUE"><EventActions><EventActionRangedAxis ConfigID="LEVER_PROPPITCH"><Options><Option Key="USERAWVALUE" Value="True" /><Option Key="MIN" Value="0" /><Option Key="MAX" Value="60000" /><Option Key="OPTION2" Value="True" /><Option Key="INVERTAXIS" Value="False" /></Options></EventActionRangedAxis></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_26"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_StallWarningHeatSwitch" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_25"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_StallWarningHeatSwitch" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="RX_AXIS"><EventDefinitions><EventDefinition Trigger="VALUE"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:MIXTURE1_SET"><Parameter Type="Exp" Value="Round(Min(100, Max(0, [LOCAL:JOY_0X33440X025C_RX_AXIS])) * 327.66 - 16383, 0)" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="RY_AXIS"><EventDefinitions><EventDefinition Trigger="VALUE"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:MIXTURE2_SET"><Parameter Type="Exp" Value="Round(Min(100, Max(0, [LOCAL:JOY_0X33440X025C_RY_AXIS])) * 327.66 - 16383, 0)" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_43"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_2" Value="5" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_44"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_2" Value="3" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_45"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_2" Value="2" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_46"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_2" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_47"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:BKSQ_IgnitionPosition_2" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_22"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_PropHeatSwitch" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_21"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_PropHeatSwitch" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_24"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_FuelVentHeatSwitch" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_23"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_FuelVentHeatSwitch" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_28"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_windshieldHeatSwitch" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_27"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_windshieldHeatSwitch" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_30"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_WING_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_29"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_WING_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event></Events>
       </DevicePage>
     </Device>
     <Device VendorID="0x16D0" ProductID="0x1290" DevicePath="\\?\hid#vid_16d0&amp;pid_1290#9&amp;155cbabc&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -548,7 +488,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="4" TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="4" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -557,7 +497,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -566,7 +506,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="100" TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" ValueOperation="Increment" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="100" ValueOperation="Increment" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -575,7 +515,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="100" TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" ValueOperation="Decrement" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="100" ValueOperation="Decrement" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -584,7 +524,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1000" TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" ValueOperation="Increment" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="1000" ValueOperation="Increment" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -593,16 +533,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1000" TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" ValueOperation="Decrement" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_14">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="1000" ValueOperation="Decrement" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -611,7 +542,16 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_14">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -620,7 +560,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -629,7 +569,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -638,12 +578,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -661,7 +601,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" SourceType="Exp" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" />
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -670,21 +610,18 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
           </Event>
         </Events>
-        <Extensions />
       </DevicePage>
-      <Events />
-      <Extensions />
     </Device>
     <Device VendorID="0x16D0" ProductID="0x13E4" DevicePath="\\?\hid#vid_16d0&amp;pid_13e4#9&amp;901a7f1&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
       <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
@@ -855,7 +792,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -876,7 +813,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
@@ -888,12 +825,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -902,12 +839,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -934,7 +871,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -942,10 +879,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -954,7 +891,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -962,10 +899,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -974,7 +911,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -982,10 +919,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -994,7 +931,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -1002,10 +939,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1014,7 +951,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -1026,7 +963,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
@@ -1034,10 +971,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1046,7 +983,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
@@ -1054,10 +991,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1066,7 +1003,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
@@ -1074,10 +1011,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1086,7 +1023,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
@@ -1094,10 +1031,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1106,7 +1043,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
@@ -1114,15 +1051,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1131,7 +1068,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -1139,10 +1076,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1151,7 +1088,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -1159,22 +1096,19 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
           </Event>
         </Events>
-        <Extensions />
       </DevicePage>
-      <Events />
-      <Extensions />
     </Device>
-    <Device Serial="" DeviceIndex="0" ProductID="0x14CA" Version="3" VendorID="0x16D0" DevicePath="\\?\hid#vid_16d0&amp;pid_14ca#9&amp;336f4b50&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}">
-      <DevicePage Name="Default" ID="8b3c4fc6-8573-49ba-93a0-3c9b9ea387e2" IsDefaultPage="true">
+    <Device VendorID="0x16D0" ProductID="0x14CA" DevicePath="\\?\hid#vid_16d0&amp;pid_14ca#9&amp;336f4b50&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
         <Events>
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
@@ -1287,14 +1221,14 @@
         </Events>
       </DevicePage>
     </Device>
-    <Device Serial="" DeviceIndex="0" ProductID="0x14CB" Version="3" VendorID="0x16D0" DevicePath="\\?\hid#vid_16d0&amp;pid_14cb#9&amp;29dca250&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}">
-      <DevicePage Name="Default" ID="f8fa7524-4733-4393-8b21-c703621baf74" IsDefaultPage="true">
+    <Device VendorID="0x16D0" ProductID="0x14CB" DevicePath="\\?\hid#vid_16d0&amp;pid_14cb#9&amp;29dca250&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
         <Events>
           <Event BoundTo="BUTTON_5">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -1306,7 +1240,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -1318,7 +1252,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
@@ -1330,7 +1264,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
@@ -1342,7 +1276,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MSG_Push" />
@@ -1354,7 +1288,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
@@ -1362,15 +1296,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1379,7 +1313,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -1391,7 +1325,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push_Long" />
@@ -1399,15 +1333,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1416,7 +1350,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_RightSmallKnob_Push" />
@@ -1428,7 +1362,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -1436,10 +1370,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1448,7 +1382,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
@@ -1460,7 +1394,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
@@ -1468,15 +1402,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1485,7 +1419,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
@@ -1497,24 +1431,23 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="B:AS530_ENT" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="B:AS530_ENT" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1523,7 +1456,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
@@ -1531,10 +1464,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1543,7 +1476,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MSG_Push" />
@@ -1555,15 +1488,15 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1572,7 +1505,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
@@ -1580,15 +1513,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1597,7 +1530,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -1609,7 +1542,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
@@ -1617,15 +1550,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1634,7 +1567,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
@@ -1642,15 +1575,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1659,7 +1592,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
@@ -1671,15 +1604,10 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="B:AS530_ENT" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="B:AS530_ENT" />
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1688,7 +1616,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
@@ -1696,15 +1624,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1713,7 +1641,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -1725,7 +1653,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
@@ -1733,15 +1661,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1750,7 +1678,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
@@ -1758,15 +1686,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1775,7 +1703,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
@@ -1787,15 +1715,10 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="B:AS530_ENT" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="B:AS530_ENT" />
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1804,7 +1727,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
@@ -1812,15 +1735,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1829,7 +1752,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -1841,7 +1764,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
@@ -1849,15 +1772,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1866,7 +1789,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
@@ -1874,15 +1797,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1891,7 +1814,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
@@ -1903,15 +1826,10 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="B:AS530_ENT" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="B:AS530_ENT" />
+                  <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1920,11 +1838,11 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="PROFILE:KA_AVIONICS_FOCUS" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_AVIONICS_FOCUS" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1933,11 +1851,11 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="PROFILE:KA_AVIONICS_FOCUS" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_AVIONICS_FOCUS" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2169,7 +2087,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="4" TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="4" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2178,7 +2096,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2187,7 +2105,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="100" TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" ValueOperation="Increment" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="100" ValueOperation="Increment" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2196,7 +2114,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="100" TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" ValueOperation="Decrement" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="100" ValueOperation="Decrement" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2205,7 +2123,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1000" TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" ValueOperation="Increment" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="1000" ValueOperation="Increment" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2214,16 +2132,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1000" TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" ValueOperation="Decrement" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_14">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="1000" ValueOperation="Decrement" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2232,7 +2141,16 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_14">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2241,7 +2159,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2250,7 +2168,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2259,12 +2177,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2282,7 +2200,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" SourceType="Exp" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" />
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2291,21 +2209,18 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
           </Event>
         </Events>
-        <Extensions />
       </DevicePage>
-      <Events />
-      <Extensions />
     </Device>
     <Device VendorID="0x16D0" ProductID="0x13E3" DevicePath="\\?\hid#vid_16d0&amp;pid_13e3#9&amp;1f0f1e49&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
       <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
@@ -2431,7 +2346,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -2452,7 +2367,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
@@ -2464,12 +2379,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2478,12 +2393,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2510,7 +2425,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -2518,10 +2433,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2530,7 +2445,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -2538,10 +2453,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2550,7 +2465,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -2558,10 +2473,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2570,7 +2485,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -2578,10 +2493,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2590,7 +2505,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -2602,7 +2517,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
@@ -2610,10 +2525,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2622,7 +2537,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
@@ -2630,10 +2545,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2642,7 +2557,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
@@ -2650,10 +2565,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2662,7 +2577,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
@@ -2670,10 +2585,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2682,7 +2597,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
@@ -2690,15 +2605,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2707,7 +2622,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
@@ -2715,10 +2630,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2727,7 +2642,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
@@ -2735,10 +2650,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2747,7 +2662,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
@@ -2755,10 +2670,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2767,7 +2682,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
@@ -2775,10 +2690,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2787,7 +2702,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
@@ -2795,15 +2710,15 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionChangeValue Value="0" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2812,7 +2727,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -2820,10 +2735,10 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2832,7 +2747,7 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -2840,21 +2755,18 @@
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" ConditionTargetValue="1" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue Value="1" TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
           </Event>
         </Events>
-        <Extensions />
       </DevicePage>
-      <Events />
-      <Extensions />
     </Device>
-  </Devices>
+  <Device VendorID="0x3344" ProductID="0x025A" DevicePath="\\?\hid#vid_3344&amp;pid_025a&amp;mi_00#a&amp;282a1635&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3"><DevicePage xmlns="http://www.fsgs.com/SPAD" ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default"><Events><Event BoundTo="BUTTON_1"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LANDING_GEAR_GEAR" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_3"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LANDING_GEAR_GEAR" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_17"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_NAV_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_18"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_NAV_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_19"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_BEACON_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_20"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_BEACON_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_21"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_STROBE_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_22"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_STROBE_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_23"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_TAXI_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_24"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_TAXI_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_25"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_LANDING_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_26"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_LANDING_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_27"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_LANDING_2" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_28"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_LANDING_2" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_29"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_30"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_31"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_2" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_32"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_2" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_4"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP1_SET"><Parameter Value="16383" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_5"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP2_SET"><Parameter Value="16383" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_6"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP1_SET"><Parameter Value="0" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_7"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP2_SET"><Parameter Value="0" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event></Events></DevicePage></Device><Device VendorID="0x3344" ProductID="0x03F5" Serial="" Version="3" DeviceIndex="1" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;22ba5017&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}"><DevicePage xmlns="http://www.fsgs.com/SPAD" ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default"><Events><Event BoundTo="X_AXIS"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="VALUE"><EventActions><EventActionRangedAxis ConfigID="LEVER_AILERONS"><Options><Option Key="USERAWVALUE" Value="True" /><Option Key="MIN" Value="0" /><Option Key="MAX" Value="60000" /><Option Key="IDLE" Value="30000" /><Option Key="INVERTAXIS" Value="False" /></Options></EventActionRangedAxis></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="Y_AXIS"><EventDefinitions xmlns="http://www.fsgs.com/SPAD"><EventDefinition Trigger="VALUE"><EventActions><EventActionRangedAxis ConfigID="LEVER_ELEVATOR"><Options><Option Key="USERAWVALUE" Value="True" /><Option Key="MIN" Value="0" /><Option Key="MAX" Value="60000" /><Option Key="IDLE" Value="30000" /><Option Key="INVERTAXIS" Value="False" /></Options></EventActionRangedAxis></EventActions></EventDefinition></EventDefinitions></Event></Events></DevicePage></Device></Devices>
   <Options>
     <Option Key="Ultimarc.PacDrive.EnableVirtualPower" Value="True" />
     <Option Key="Saitek.BIP.EnableVirtualPower" Value="True" />
@@ -2871,10 +2783,6 @@
   </Options>
   <ProfileInformation ProfileID="c6161017-25ec-4090-8e92-626d02185025" Version="0.14">
     <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;P&gt;Baron - GNS 530 + TDS GTNxi 650; PFD=GNS530, MFD=TDS650; RANGE/FMS and display keys follow focus; GC and ANA; see README. Requires in-simulator validation.&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
-    <LastChanged>2026-10-26T22:25:41.1539475+00:00</LastChanged>
+    <LastChanged>2026-10-28T23:03:57.2494383+00:00</LastChanged>
   </ProfileInformation>
-  <Variables>
-    <Variable Scope="PROFILE" ValueType="Int32" Name="KA_AVIONICS_FOCUS" Value="0" />
-    <Variable Scope="PROFILE" ValueType="Int32" Name="KA_XPDR_DIGIT" Value="0" />
-  </Variables>
 </Profile>

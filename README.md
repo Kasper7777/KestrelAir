@@ -25,7 +25,7 @@ The same selection applies to every firmware button bank, both GC FMS banks, and
 
 ## Other controls
 
-NAV/COM tuning, swaps, heading, selected altitude, course, baro, transponder and autopilot remain aircraft controls. The ADF encoder is also a dedicated TDS inner/outer knob and cursor control, available in either focus. In MFD focus, hold the display CDI key to reduce GTN volume or hold VNAV to increase it; course hold pushes its volume knob. ADF hold activates GTN Direct-To; RANGE hold activates GTN Home. Heading push syncs the bug to magnetic heading.
+NAV/COM tuning, swaps, heading, selected altitude, course, baro, transponder and autopilot remain aircraft controls. The ADF encoder is also a dedicated TDS inner/outer knob and cursor control, available in either focus; its inner ring is reversed so clockwise zooms out, matching RANGE. In MFD focus, hold the display CDI key to reduce GTN volume or hold VNAV to increase it; course hold pushes its volume knob. ADF hold activates GTN Direct-To; RANGE hold activates GTN Home. Heading push syncs the bug to magnetic heading.
 
 **Transponder (top RotAIR):** ALT knob push selects ALT (altitude reporting, the normal in-flight mode); ALT knob hold selects STBY; heading knob hold sends IDENT. Push-and-turn sets the squawk code one digit per knob: NAV = thousands, heading = hundreds, ADF/GTN = tens, ALT = ones. The RANGE knob's push-and-turn on the bottom RotAIR also adjusts the ones digit.
 
@@ -55,3 +55,7 @@ GNS ENT correction: inputs 9/18/24 and long-press input 34 use MSFS:AS530_ENT_Pu
 
 Native ENT update: GNS inputs 9/18/24 and long input 34 now set the aircraft-advertised B:AS530_ENT input to 1 on press and 0 on release. This supersedes the MSFS alias described above. Live validation is still required; working knob and focus bindings were not changed.
 
+
+CP3 red button 6: PRESS sends `H:bksq_JpiButton_1_L_Short`, the EDM-760 STEP button. Installed and workspace profiles were patched independently, preserving their other mappings. Backups: `backups/cp3-step-20261030-233515/`. Reload the generated Baron profile without saving the old cached copy, then check the engine monitor advances one item per press. Live cockpit response remains unverified. Event reference: Black Square Baron Professional User Guide (2025), EDM 760 hardware inputs, https://msfs.dev-pset.com/assets/docs/BKSQ_BaronProfessionalManual.pdf (PDF page 153).
+
+CP3 STEP repair (2026-10-31): SPAD's cached profile had overwritten the installed binding. Stopped SPAD, restored only CP3 button 6, verified all other installed XML was unchanged, and restarted SPAD. The patch script now refuses to run while SPAD is open and accepts an already-correct binding. Backup: backups/cp3-step-20261031-002207. Physical button response still requires a live press.

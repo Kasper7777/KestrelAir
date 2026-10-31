@@ -263,6 +263,8 @@ foreach ($setup in $setups) {
     $null = Element $variables 'Variable' @{Name='KA_XPDR_DIGIT'; Value='0'; ValueType='Int32'; Scope='PROFILE'}
     $cp3 = $p.Profile.Devices.Device | Where-Object ProductID -eq '0x025C'
     if (!$cp3) { throw 'Missing VIRPIL CP3 device' }
+    Remove-Bind $cp3 6
+    Bind $cp3 6 'H:bksq_JpiButton_1_L_Short' 'EDM-760 STEP (CP3 red button)'
     foreach ($b in @(37,38,39)) { Remove-Bind $cp3 $b }
     Bind $cp3 37 'PROFILE:KA_XPDR_DIGIT' 'Transponder next digit (CP3 E1 push)' 'PRESS' '0'
     $action = ($cp3.DevicePage.Events.Event | Where-Object BoundTo -eq 'BUTTON_37').EventDefinitions.EventDefinition.EventActions.EventActionChangeValue

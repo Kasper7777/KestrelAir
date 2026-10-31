@@ -1,0 +1,43 @@
+<DeviceConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Order="0" DeviceType="Joystick" DeviceMenu="controls" NoEventsAutoRemove="false" Version="1" UseSerialNumberForIdentification="false" PublishName="Saitek Pro Flight Rudder Pedals" Targets="" NoCalibration="false" ProductID="0x0763" Name="Saitek Pro Flight Rudder Pedals" PageSupport="false" ProcessDeviceData="true" EnableFeatureData="false" FeatureUpdateThrottle="50" xmlns="http://www.fsgs.com/SPAD">
+  <Options>
+    <Option Key="GAMEPAD" Value="False" />
+  </Options>
+  <DeviceSwitches>
+    <DeviceSwitch Name="Y_AXIS" Inherit="MASTERLEVER" ReadOnly="false" Selectable="true" HasSettings="false" HasMinMax="false" CanRename="true" Persistant="true" InputName="Y_AXIS" InputID="0001:0031" InputSubPanel="0" InputMode="0" NoCalibration="false" IsCustomized="false" IsEnabled="true" NoCustomize="false" SwitchType="UNKNOWN">
+      <ConfigValues>
+        <ConfigValue Value="VALUE" Order="0" DisplayName="AXIS_VALUECHANGE" Default="SPADEventValue" AllowEmulate="true" Deprecated="false" CanAdd="true" CanEdit="true" CanDelete="true" ReadOnly="false" Monitor="false" CanChangeComparator="false" CanBeBound="true" Selectable="true" MustHaveCondition="false" ConditionType="CONDITION" CanChangeBehavior="false" HasModes="false" CanChangeTunerAcceleration="false" CanChangeIgnorePower="false" CanRename="false" IsAxis="true" IsSystem="false" ComparatorOverride="None" IsInherited="false">
+          <Options>
+            <Option Key="USEAXIS" Value="True" />
+            <Option Key="ALWAYSACTIVE" Value="True" />
+            <Option Key="USERAWVALUE" Value="False" />
+            <Option Key="INVERTAXIS" Value="False" />
+          </Options>
+        </ConfigValue>
+      </ConfigValues>
+    </DeviceSwitch>
+    <DeviceSwitch Name="X_AXIS" Inherit="MASTERLEVER" ReadOnly="false" Selectable="true" HasSettings="false" HasMinMax="false" CanRename="true" Persistant="true" InputName="X_AXIS" InputID="0001:0030" InputSubPanel="0" InputMode="0" NoCalibration="false" IsCustomized="false" IsEnabled="true" NoCustomize="false" SwitchType="UNKNOWN">
+      <ConfigValues>
+        <ConfigValue Value="VALUE" Order="0" DisplayName="AXIS_VALUECHANGE" Default="SPADEventValue" AllowEmulate="true" Deprecated="false" CanAdd="true" CanEdit="true" CanDelete="true" ReadOnly="false" Monitor="false" CanChangeComparator="false" CanBeBound="true" Selectable="true" MustHaveCondition="false" ConditionType="CONDITION" CanChangeBehavior="false" HasModes="false" CanChangeTunerAcceleration="false" CanChangeIgnorePower="false" CanRename="false" IsAxis="true" IsSystem="false" ComparatorOverride="None" IsInherited="false">
+          <Options>
+            <Option Key="USEAXIS" Value="True" />
+            <Option Key="ALWAYSACTIVE" Value="True" />
+            <Option Key="USERAWVALUE" Value="False" />
+            <Option Key="INVERTAXIS" Value="False" />
+          </Options>
+        </ConfigValue>
+      </ConfigValues>
+    </DeviceSwitch>
+    <DeviceSwitch Name="RZ_AXIS" Inherit="MASTERLEVER" ReadOnly="false" Selectable="true" HasSettings="false" HasMinMax="false" CanRename="true" Persistant="true" InputName="RZ_AXIS" InputID="0001:0035" InputSubPanel="0" InputMode="0" NoCalibration="false" IsCustomized="false" IsEnabled="true" NoCustomize="false" SwitchType="UNKNOWN">
+      <ConfigValues>
+        <ConfigValue Value="VALUE" Order="0" DisplayName="AXIS_VALUECHANGE" Default="SPADEventValue" AllowEmulate="true" Deprecated="false" CanAdd="true" CanEdit="true" CanDelete="true" ReadOnly="false" Monitor="false" CanChangeComparator="false" CanBeBound="true" Selectable="true" MustHaveCondition="false" ConditionType="CONDITION" CanChangeBehavior="false" HasModes="false" CanChangeTunerAcceleration="false" CanChangeIgnorePower="false" CanRename="false" IsAxis="true" IsSystem="false" ComparatorOverride="None" IsInherited="false">
+          <Options>
+            <Option Key="USEAXIS" Value="True" />
+            <Option Key="ALWAYSACTIVE" Value="True" />
+            <Option Key="USERAWVALUE" Value="False" />
+            <Option Key="INVERTAXIS" Value="False" />
+          </Options>
+        </ConfigValue>
+      </ConfigValues>
+    </DeviceSwitch>
+  </DeviceSwitches>
+</DeviceConfiguration>

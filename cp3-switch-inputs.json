@@ -1,0 +1,75 @@
+[
+    {
+        "Control":  "Switch T1",
+        "IDs":  [
+                    "14",
+                    "15",
+                    "16"
+                ]
+    },
+    {
+        "Control":  "Switch T2",
+        "IDs":  [
+                    "17",
+                    "18"
+                ]
+    },
+    {
+        "Control":  "Switch T3",
+        "IDs":  [
+                    "19",
+                    "20"
+                ]
+    },
+    {
+        "Control":  "Switch T4",
+        "IDs":  [
+                    "21",
+                    "22"
+                ]
+    },
+    {
+        "Control":  "Switch T5",
+        "IDs":  [
+                    "23",
+                    "24"
+                ]
+    },
+    {
+        "Control":  "Switch T6",
+        "IDs":  [
+                    "25",
+                    "26"
+                ]
+    },
+    {
+        "Control":  "Switch T7",
+        "IDs":  [
+                    "27",
+                    "28"
+                ]
+    },
+    {
+        "Control":  "Switch T8",
+        "IDs":  [
+                    "29",
+                    "30"
+                ]
+    },
+    {
+        "Control":  "Switch L/R",
+        "IDs":  [
+                    "31",
+                    "32",
+                    "33"
+                ]
+    },
+    {
+        "Control":  "Switch Master ARM",
+        "IDs":  [
+                    "34",
+                    "35",
+                    "36"
+                ]
+    }
+]

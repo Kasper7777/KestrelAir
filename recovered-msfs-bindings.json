@@ -1,0 +1,282 @@
+[
+    {
+        "File":  "inputprofile_0227066304",
+        "Name":  "virpil",
+        "Device":  "VPC MongoosT-50CM3 Throttle",
+        "Product":  "404",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_AVIONICS_MASTER_1_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 41\"\u003e40\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AVIONICS_MASTER_1_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 40\"\u003e39\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_FLAPS_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Z \"\u003e1058\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ELEV_TRIM_DN\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 3\"\u003e2\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ELEV_TRIM_UP\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 2\"\u003e1\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_MASTER_BATTERY_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 39\"\u003e38\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_MASTER_BATTERY_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"8194\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 38\"\u003e37\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PARKING_BRAKES_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 35\"\u003e34\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PARKING_BRAKES_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 34\"\u003e33\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PITOT_HEAT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 49\"\u003e48\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PITOT_HEAT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 48\"\u003e47\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_THROTTLE1_AXIS_SET_EX1\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"132\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis X \"\u003e1026\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_THROTTLE2_AXIS_SET_EX1\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"132\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Y \"\u003e1042\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0275188384",
+        "Name":  "My new 172 Skyhawk profile",
+        "Device":  "Right VPC WarBRD-D Base",
+        "Product":  "17397",
+        "Actions":  [
+                        "\u003cAction ActionName=\"AS1000_RANGE_ZOOM_MFD_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"0\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 21\"\u003e20\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"AS1000_RANGE_ZOOM_MFD_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"0\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 22\"\u003e21\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0367119904",
+        "Name":  "All Planez",
+        "Device":  "VPC MongoosT-50CM3 Throttle",
+        "Product":  "404",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_EYE_TRACKING_RESET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 47\"\u003e46\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_HEAD_TRACKING_TOGGLE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"8194\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 44\"\u003e43\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_COCKPIT_UPPER\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 63\"\u003e62\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_DEZOOM_COCKPIT\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 64\"\u003e63\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ZOOM_COCKPIT\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 61\"\u003e60\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_COCKPIT_CAMERA_HEIGHT_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 65\"\u003e64\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_COCKPIT_CAMERA_HEIGHT_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 62\"\u003e61\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_GUI_DISPLAY_ALL_ASSISTANCES_TOGGLE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"8194\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 43\"\u003e42\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_VIEW_MODE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2050\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 60\"\u003e59\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0455588736",
+        "Name":  "Mobile Setup",
+        "Device":  "LEFT VPC MongoosT-50CM3",
+        "Product":  "33175",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_AP_ATT_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 53\"\u003e52\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_HDG_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 50\"\u003e49\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ATTITUDE_BARS_POSITION_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 54\"\u003e53\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ATTITUDE_BARS_POSITION_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 55\"\u003e54\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AUTOPILOT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 49\"\u003e48\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AUTOPILOT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 48\"\u003e47\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_FLAPS_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis Z \"\u003e802\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_MIXTURE_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"132\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis Y \"\u003e786\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ELEV_TRIM_DN\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 3\"\u003e2\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ELEV_TRIM_UP\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 2\"\u003e1\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_GEAR_DOWN\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 81\"\u003e80\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_GEAR_UP\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 35\"\u003e34\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_HEADING_BUG_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 51\"\u003e50\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_HEADING_BUG_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 52\"\u003e51\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PARKING_BRAKES\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"8194\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 38\"\u003e37\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PARKING_BRAKES_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 82\"\u003e81\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PARKING_BRAKES_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 36\"\u003e35\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_THROTTLE_AXIS_SET_EX1\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"132\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis X \"\u003e770\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0483494432",
+        "Name":  "My new general profile",
+        "Device":  "LEFT VPC MongoosT-50CM3",
+        "Product":  "33175",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_VIEW_MODE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 32\"\u003e31\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_GUI_DISPLAY_ALL_ASSISTANCES_TOGGLE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"8194\"\u003e\u003cSecondary\u003e\u003cKEY Information=\"Joystick Button 41\"\u003e40\u003c/KEY\u003e\u003c/Secondary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_COCKPIT_RESET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"8194\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 32\"\u003e31\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_SIM_RATE_DECR\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 61\"\u003e60\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_SIM_RATE_INCR\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 58\"\u003e57\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0550524416",
+        "Name":  "DA62 CP3",
+        "Device":  "VPC Control Panel #3",
+        "Product":  "604",
+        "Actions":  [
+                        "\u003cAction ActionName=\"ENGINE_IGNITION_LEFT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 18\"\u003e17\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ENGINE_IGNITION_LEFT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 17\"\u003e16\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ENGINE_IGNITION_RIGHT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 20\"\u003e19\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ENGINE_IGNITION_RIGHT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 19\"\u003e18\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ENGINE_STARTER_LEFT_SET\" ValueEvent=\"1.000000\" Delay=\"2.000000\" Flag=\"8706\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 5\"\u003e4\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ENGINE_STARTER_RIGHT_SET\" ValueEvent=\"1.000000\" Delay=\"2.000000\" Flag=\"8706\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 7\"\u003e6\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"FUEL_PUMP_LEFT_TOGGLE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 3\"\u003e2\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"FUEL_PUMP_RIGHT_TOGGLE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 1\"\u003e0\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"LIGHTING_NAVIGATION_LIGHT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 28\"\u003e27\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"LIGHTING_NAVIGATION_LIGHT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 27\"\u003e26\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"LIGHTING_STROBE_LIGHT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 30\"\u003e29\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"LIGHTING_STROBE_LIGHT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 29\"\u003e28\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0602614400",
+        "Name":  "All Planez",
+        "Device":  "VPC Control Panel #3",
+        "Product":  "604",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_AP_ALT_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 12\"\u003e11\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_ALT_VAR_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 41\"\u003e40\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_ALT_VAR_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 42\"\u003e41\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_APR_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 11\"\u003e10\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_HDG_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 9\"\u003e8\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_MASTER\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 8\"\u003e7\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_NAV1_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 10\"\u003e9\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_VS_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 13\"\u003e12\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_VS_VAR_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 4\"\u003e3\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_VS_VAR_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 2\"\u003e1\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_LANDING_LIGHTS_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 24\"\u003e23\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_LANDING_LIGHTS_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 23\"\u003e22\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_MIXTURE1_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"132\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis X \"\u003e770\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_MIXTURE2_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"132\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis Y \"\u003e786\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PROP_PITCH1_AXIS_SET_EX1\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"132\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis X \"\u003e1026\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PROP_PITCH2_AXIS_SET_EX1\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"132\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Y \"\u003e1042\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_TAXI_LIGHTS_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 26\"\u003e25\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_TAXI_LIGHTS_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 25\"\u003e24\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0691699648",
+        "Name":  "My new airplanes profile",
+        "Device":  "R-VPC Stick WarBRD-D",
+        "Product":  "17393",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_AXIS_AILERONS_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis X \"\u003e1026\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_ELEVATOR_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Y \"\u003e1042\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0718798656",
+        "Name":  "All Planez Right Stick",
+        "Device":  "Right VPC WarBRD-D Base",
+        "Product":  "17397",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_AXIS_AILERONS_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis X \"\u003e1026\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_ELEVATOR_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Y \"\u003e1042\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0800788992",
+        "Name":  "My new airplanes profile",
+        "Device":  "VPC WarBRD-D Base",
+        "Product":  "1010",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_RUDDER_LEFT\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 17\"\u003e16\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_RUDDER_RIGHT\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 15\"\u003e14\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_AILERONS_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis X \"\u003e1026\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_ELEVATOR_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Y \"\u003e1042\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0896791936",
+        "Name":  "DA62 CM3",
+        "Device":  "VPC MongoosT-50CM3 Throttle",
+        "Product":  "404",
+        "Actions":  [
+                        "\u003cAction ActionName=\"AS1000_BARO_MFD_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"0\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 58\"\u003e57\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"AS1000_BARO_MFD_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"0\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 59\"\u003e58\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"AS1000_ALTITUDE_INNER_PFD_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 58\"\u003e57\u003c/KEY\u003e\u003cKEY Information=\"Joystick Button 57\"\u003e56\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"AS1000_ALTITUDE_OUTER_PFD_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 58\"\u003e57\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ELECTRICAL_ALTERNATOR_LEFT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 51\"\u003e50\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ELECTRICAL_ALTERNATOR_LEFT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 50\"\u003e49\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ELECTRICAL_ALTERNATOR_RIGHT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 53\"\u003e52\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ELECTRICAL_ALTERNATOR_RIGHT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 52\"\u003e51\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ELECTRICAL_AVIONICS_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 41\"\u003e40\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"ELECTRICAL_AVIONICS_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 40\"\u003e39\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"HANDLING_RUDDER_TRIM_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 15\"\u003e14\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"HANDLING_RUDDER_TRIM_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 14\"\u003e13\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0981998016",
+        "Name":  "My new general profile_1",
+        "Device":  "Left VPC WarBRD-D Base",
+        "Product":  "33781",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_PC_INTERACT\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 6\"\u003e5\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_PC_MOVE_X\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis X \"\u003e770\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_PC_MOVE_Z\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis Y \"\u003e786\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_0986840256",
+        "Name":  "My new general profile",
+        "Device":  "R-VPC Stick WarBRD-D",
+        "Product":  "17393",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_VIEW_MODE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 19\"\u003e18\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_DEVMODE_VALIDATE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cSecondary\u003e\u003cKEY Information=\"Joystick Button 3\"\u003e2\u003c/KEY\u003e\u003c/Secondary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_SR_COM_QUICK_REPLY\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"8194\"\u003e\u003cSecondary\u003e\u003cKEY Information=\"Joystick Button 3\"\u003e2\u003c/KEY\u003e\u003c/Secondary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_1007228352",
+        "Name":  "My new 172 Skyhawk profile",
+        "Device":  "VPC Control Panel #3",
+        "Product":  "604",
+        "Actions":  [
+                        "\u003cAction ActionName=\"FUEL_SELECTOR_1_ALL\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 32\"\u003e31\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"FUEL_SELECTOR_1_LEFT\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 31\"\u003e30\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"FUEL_SELECTOR_1_RIGHT\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\" SimAttachmentIdx=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 33\"\u003e32\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_1270879104",
+        "Name":  "My new general profile",
+        "Device":  "Left VPC WarBRD-D Base",
+        "Product":  "33781",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_VIEW_MODE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2050\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 18\"\u003e17\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_1506272640",
+        "Name":  "Virpil CM3 (Airplanes)",
+        "Device":  "VPC MongoosT-50CM3 Throttle",
+        "Product":  "404",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_AP_FLIGHT_LEVEL_CHANGE\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 47\"\u003e46\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_NAV1_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 43\"\u003e42\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AP_VS_HOLD\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 44\"\u003e43\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AVIONICS_MASTER_1_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 41\"\u003e40\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AVIONICS_MASTER_1_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 40\"\u003e39\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_FLAPS_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Z \"\u003e1058\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_MIXTURE_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Z \"\u003e1058\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_COM_RADIO_SWAP\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 54\"\u003e53\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_COM_RADIO_WHOLE_DEC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 55\"\u003e54\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_COM_RADIO_WHOLE_INC\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 56\"\u003e55\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_COM1_RADIO_SWAP\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 46\"\u003e45\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ELEV_TRIM_DN\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 3\"\u003e2\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_ELEV_TRIM_UP\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"1\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 2\"\u003e1\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_GEAR_DOWN\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 37\"\u003e36\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_GEAR_UP\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 36\"\u003e35\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_MASTER_BATTERY_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 39\"\u003e38\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_MASTER_BATTERY_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"8194\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 38\"\u003e37\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PARKING_BRAKES_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 35\"\u003e34\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PARKING_BRAKES_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 34\"\u003e33\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PITOT_HEAT_OFF\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 49\"\u003e48\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_PITOT_HEAT_ON\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 48\"\u003e47\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_THROTTLE1_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis X \"\u003e1026\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_THROTTLE2_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Y \"\u003e1042\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_RUDDER_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis X \"\u003e770\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_BRAKES\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"2\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick Button 13\"\u003e12\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_1753164800",
+        "Name":  "My new general profile",
+        "Device":  "Right VPC WarBRD-D Base",
+        "Product":  "17397",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_AXIS_PC_FPV_ROTATION_X\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis X \"\u003e770\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_PC_FPV_ROTATION_Y\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick R-Axis Y \"\u003e786\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    },
+    {
+        "File":  "inputprofile_1964414080",
+        "Name":  "All Planez Left Stick",
+        "Device":  "Left VPC WarBRD-D Base",
+        "Product":  "33781",
+        "Actions":  [
+                        "\u003cAction ActionName=\"KEY_AXIS_AILERONS_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis X \"\u003e1026\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e",
+                        "\u003cAction ActionName=\"KEY_AXIS_ELEVATOR_SET\" ValueEvent=\"0.000000\" Delay=\"2.000000\" Flag=\"4\"\u003e\u003cPrimary\u003e\u003cKEY Information=\"Joystick L-Axis Y \"\u003e1042\u003c/KEY\u003e\u003c/Primary\u003e\u003c/Action\u003e"
+                    ]
+    }
+]

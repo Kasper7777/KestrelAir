@@ -1,0 +1,142 @@
+[
+    {
+        "File":  "inputprofile_0203802704",
+        "Device":  "Alpha Flight Controls",
+        "Profile":  "My new general profile",
+        "Removed":  12,
+        "BeforeHash":  "A44D6747F12ED706BF49B4EDAE65D4EDECB0798705F4CE0313ACD700C174FD2D"
+    },
+    {
+        "File":  "inputprofile_0227066304",
+        "Device":  "VPC MongoosT-50CM3 Throttle",
+        "Profile":  "virpil",
+        "Removed":  13,
+        "BeforeHash":  "22B0DA23E84AF5557950478EF70A47A51605EC2ED3436525053996A5BAE193C2"
+    },
+    {
+        "File":  "inputprofile_0275188384",
+        "Device":  "Right VPC WarBRD-D Base",
+        "Profile":  "My new 172 Skyhawk profile",
+        "Removed":  2,
+        "BeforeHash":  "7D829F7A7F22FAED90A699B7D95CCEB45F0CA79132E185ACB8ED72B275E9BF69"
+    },
+    {
+        "File":  "inputprofile_0367119904",
+        "Device":  "VPC MongoosT-50CM3 Throttle",
+        "Profile":  "All Planez",
+        "Removed":  9,
+        "BeforeHash":  "1A028304D2D597BE0653E8D2FD1BFA2F87C199F4C52D35CBA9240BAB4801BD58"
+    },
+    {
+        "File":  "inputprofile_0455588736",
+        "Device":  "LEFT VPC MongoosT-50CM3",
+        "Profile":  "Mobile Setup",
+        "Removed":  18,
+        "BeforeHash":  "A4D0A4DDFB6DAA468979375272B59AAEE12CF71C2C3AE5FF4E8B5F2377610387"
+    },
+    {
+        "File":  "inputprofile_0483494432",
+        "Device":  "LEFT VPC MongoosT-50CM3",
+        "Profile":  "My new general profile",
+        "Removed":  5,
+        "BeforeHash":  "DF6D60CB7AC168462D09A5DE145241AF1F01429D4FA01F3899CFD52579C35E3B"
+    },
+    {
+        "File":  "inputprofile_0550524416",
+        "Device":  "VPC Control Panel #3",
+        "Profile":  "DA62 CP3",
+        "Removed":  12,
+        "BeforeHash":  "EBB208987D6B7C5E51B53B3F8AFE69F7558438B500DE93B46CE309A74CA182AB"
+    },
+    {
+        "File":  "inputprofile_0602614400",
+        "Device":  "VPC Control Panel #3",
+        "Profile":  "All Planez",
+        "Removed":  18,
+        "BeforeHash":  "7EDA3058482A566E98D91DEA06D3782B1B3075EBD24E24396A73DB412E90EFAE"
+    },
+    {
+        "File":  "inputprofile_0691699648",
+        "Device":  "R-VPC Stick WarBRD-D",
+        "Profile":  "My new airplanes profile",
+        "Removed":  2,
+        "BeforeHash":  "8A2E19C3866FC25F28FC202565D840D3FD8DF1F9E4FE142625F1F3D2FFBEA76C"
+    },
+    {
+        "File":  "inputprofile_0718798656",
+        "Device":  "Right VPC WarBRD-D Base",
+        "Profile":  "All Planez Right Stick",
+        "Removed":  2,
+        "BeforeHash":  "F9CEC8AB81F4974A5E98C7DBC49AF209EB438F37C408C38093C08583EE06B952"
+    },
+    {
+        "File":  "inputprofile_0800788992",
+        "Device":  "VPC WarBRD-D Base",
+        "Profile":  "My new airplanes profile",
+        "Removed":  4,
+        "BeforeHash":  "7BCC3FE916CDB95F15F95F6A5C3E573FB8592073EEEC7907F1453F075674A2D6"
+    },
+    {
+        "File":  "inputprofile_0896791936",
+        "Device":  "VPC MongoosT-50CM3 Throttle",
+        "Profile":  "DA62 CM3",
+        "Removed":  12,
+        "BeforeHash":  "9807CAF88D2E6487C04D483E190BAB0B62D022F054CC8C39DAD4C7A531C30856"
+    },
+    {
+        "File":  "inputprofile_0981998016",
+        "Device":  "Left VPC WarBRD-D Base",
+        "Profile":  "My new general profile_1",
+        "Removed":  3,
+        "BeforeHash":  "6ACCCA82D3309AAA322EC962122046642F1A20FE1191F3928A1E7CDF2422D99C"
+    },
+    {
+        "File":  "inputprofile_0986840256",
+        "Device":  "R-VPC Stick WarBRD-D",
+        "Profile":  "My new general profile",
+        "Removed":  3,
+        "BeforeHash":  "E38E4D160E017465252CFC3098C1DD37D07669414EB3D080F2F1F6D2AE904A5A"
+    },
+    {
+        "File":  "inputprofile_1007228352",
+        "Device":  "VPC Control Panel #3",
+        "Profile":  "My new 172 Skyhawk profile",
+        "Removed":  3,
+        "BeforeHash":  "4918FE53F2DA4FFB7C1C00877673B760F749FB122E719DE8A1D2789D87FAC1D7"
+    },
+    {
+        "File":  "inputprofile_1270879104",
+        "Device":  "Left VPC WarBRD-D Base",
+        "Profile":  "My new general profile",
+        "Removed":  1,
+        "BeforeHash":  "CA969C352FE6EC7A0DEA8669EB5CD032EC04D4C61003818E0F85E852BFC668F4"
+    },
+    {
+        "File":  "inputprofile_1506272640",
+        "Device":  "VPC MongoosT-50CM3 Throttle",
+        "Profile":  "Virpil CM3 (Airplanes)",
+        "Removed":  25,
+        "BeforeHash":  "CFA24CA1A437DD4E0C09941AF6225F7D990452F4E5CD46D65404B8A05F536FBF"
+    },
+    {
+        "File":  "inputprofile_1720114688",
+        "Device":  "Alpha Flight Controls",
+        "Profile":  "My new general profile",
+        "Removed":  12,
+        "BeforeHash":  "A44D6747F12ED706BF49B4EDAE65D4EDECB0798705F4CE0313ACD700C174FD2D"
+    },
+    {
+        "File":  "inputprofile_1753164800",
+        "Device":  "Right VPC WarBRD-D Base",
+        "Profile":  "My new general profile",
+        "Removed":  2,
+        "BeforeHash":  "D4BED89BFE86F79EFFC93065C5E4BD0D63F1F2306CEB7BBFC3A53050179908EA"
+    },
+    {
+        "File":  "inputprofile_1964414080",
+        "Device":  "Left VPC WarBRD-D Base",
+        "Profile":  "All Planez Left Stick",
+        "Removed":  2,
+        "BeforeHash":  "1BFEA4EE59605B5E938DC6AA13804F3A11B9632E14603EA09681CF43A14F444C"
+    }
+]

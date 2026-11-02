@@ -39,22 +39,22 @@ foreach($product in '0x1290','0x128F'){
  # The aircraft advertises INSTRUMENT_HEADING_BUG. Write through that native input.
  Set-Button $product 11 (Change 'B:INSTRUMENT_HEADING_BUG' '([B:INSTRUMENT_HEADING_BUG] + 1) % 360')
  Set-Button $product 12 (Change 'B:INSTRUMENT_HEADING_BUG' '([B:INSTRUMENT_HEADING_BUG] + 359) % 360')
+ Set-Button $product 2 (Change 'B:INSTRUMENT_HEADING_BUG' '[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]')
  # ANA outer heading ring is gyro adjustment, never OBS/course.
  Set-Button $product 19 (Control 'SIMCONNECT:GYRO_DRIFT_INC' 1)
  Set-Button $product 20 (Control 'SIMCONNECT:GYRO_DRIFT_DEC' 1)
 }
 # One button per cowl flap. Existing B3/B4 down actions stay available.
-Set-Button '0x025A' 4 (Control 'SIMCONNECT:COWLFLAP1_SET' 0)
-Set-Button '0x025A' 5 (Control 'SIMCONNECT:COWLFLAP2_SET' 0)
-foreach($pair in @(@(4,1),@(5,2))){
- $e=(Events '0x025A').SelectSingleNode(('s:Event[@BoundTo="BUTTON_{0}"]//s:Parameter' -f $pair[0]),$m)
- $e.SetAttribute('Type','Exp');$e.SetAttribute('Value',('if([SIMCONNECT:RECIP ENG COWL FLAP POSITION:{0}] &gt; 50, 0, 16383)' -f $pair[1]).Replace('&gt;','>'))
-}
-foreach($spec in @(@(1,'AVIONICS_MASTER_1_SET','AVIONICS MASTER SWITCH:1'),@(2,'AVIONICS_MASTER_2_SET','AVIONICS MASTER SWITCH:2'),@(3,'BATTERY1_SET','ELECTRICAL MASTER BATTERY:1'),@(4,'BATTERY2_SET','ELECTRICAL MASTER BATTERY:2'))){
+Set-Button '0x025A' 4 (Change 'B:ENGINE_COWLFLAPS_LEFT' 'if([B:ENGINE_COWLFLAPS_LEFT] > 0, 0, 1)')
+Set-Button '0x025A' 5 (Change 'B:ENGINE_COWLFLAPS_RIGHT' 'if([B:ENGINE_COWLFLAPS_RIGHT] > 0, 0, 1)')
+foreach($spec in @(@(1,'BATTERY1_SET','ELECTRICAL MASTER BATTERY:1'),@(2,'BATTERY2_SET','ELECTRICAL MASTER BATTERY:2'),@(3,'AVIONICS_MASTER_1_SET','AVIONICS MASTER SWITCH:1'),@(4,'AVIONICS_MASTER_2_SET','AVIONICS MASTER SWITCH:2'))){
  Set-Button '0x025C' $spec[0] (Control ('SIMCONNECT:'+$spec[1]) 0)
  $e=(Events '0x025C').SelectSingleNode(('s:Event[@BoundTo="BUTTON_{0}"]//s:Parameter' -f $spec[0]),$m)
  $e.SetAttribute('Type','Exp');$e.SetAttribute('Value',('1 - [SIMCONNECT:{0}]' -f $spec[2]))
 }
+# The running Baron accepts its native inputs but ignores BATTERY1_SET in testing.
+Set-Button '0x025C' 1 (Change 'B:ELECTRICAL_BATTERY_1' '1 - [B:ELECTRICAL_BATTERY_1]')
+Set-Button '0x025C' 3 (Change 'B:ELECTRICAL_AVIONICS_BUS_1' '1 - [B:ELECTRICAL_AVIONICS_BUS_1]')
 # Remove precisely the edited events from each side and prove the rest matches.
 $check=$doc.CloneNode($true);$baseline=$before.CloneNode($true)
 foreach($path in $changed){foreach($x in $check,$baseline){$e=$x.SelectSingleNode($path,$m);if($e){[void]$e.ParentNode.RemoveChild($e)}}}

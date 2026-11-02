@@ -1,0 +1,24 @@
+********* LUA: "ipcInit" Log [from FSUIPC version 7.5.9] *********
+     5860 System time = 02/11/2026 19:43:21
+     5860 LUA: beginning "C:\FSUIPC7\ipcInit.lua"
+     5875 LUA: KestrelAir LEDs: starting state feedback
+     5938 LUA: KestrelAir LEDs: opened 025A, feature length 212
+     6157 LUA: KestrelAir LEDs: opened 025C, feature length 212
+     6172 LUA: KestrelAir LEDs: 025A slot 2 state 0.000 color B1
+     6188 LUA: KestrelAir LEDs: 025A slot 1 state 0.000 color B1
+     6203 LUA: KestrelAir LEDs: 025C slot 5 state 0.000 color 81
+     6219 LUA: KestrelAir LEDs: 025C slot 6 state 0.000 color 81
+     6235 LUA: KestrelAir LEDs: 025C slot 7 state 0.000 color 95
+     6250 LUA: KestrelAir LEDs: 025C slot 8 state 0.000 color 95
+   147688 LUA: KestrelAir LEDs: 025C slot 5 state 1.000 color 83
+   148672 LUA: KestrelAir LEDs: 025C slot 5 state 0.000 color 81
+   149422 LUA: KestrelAir LEDs: 025C slot 7 state 1.000 color BF
+   150438 LUA: KestrelAir LEDs: 025C slot 7 state 0.000 color 95
+   185922 LUA: KestrelAir LEDs: 025C slot 5 state 1.000 color 83
+   186922 LUA: KestrelAir LEDs: 025C slot 5 state 0.000 color 81
+   187438 LUA: KestrelAir LEDs: 025C slot 7 state 1.000 color BF
+   188672 LUA: KestrelAir LEDs: 025C slot 7 state 0.000 color 95
+   189188 LUA: KestrelAir LEDs: 025A slot 2 state 100.000 color 8C
+   190172 LUA: KestrelAir LEDs: 025A slot 2 state 0.000 color B1
+   190672 LUA: KestrelAir LEDs: 025A slot 1 state 100.000 color 8C
+   191672 LUA: KestrelAir LEDs: 025A slot 1 state 0.000 color B1

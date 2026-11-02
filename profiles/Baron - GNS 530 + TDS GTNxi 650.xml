@@ -1,7 +1,7 @@
 <Profile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="2" xmlns="http://www.fsgs.com/SPAD">
   <Variables>
     <Variable Name="PROFILE:KA_AVIONICS_FOCUS" Value="0" ValueType="Decimal" />
-    <Variable Name="PROFILE:KA_XPDR_DIGIT" Value="2" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_XPDR_DIGIT" Value="0" ValueType="Decimal" />
   </Variables>
   <Devices>
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -16,38 +16,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_21">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS1000_MFD_RANGE_INC">
-                    <Parameter Value="0.1" />
-                  </EventActionControl>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_22">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="H:AS1000_MFD_RANGE_DEC">
-                    <Parameter Value="-0.1" />
-                  </EventActionControl>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          
+          
           <Event BoundTo="X_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
@@ -172,24 +142,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_41">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:AVIONICS_MASTER_1_OFF" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_40">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:AVIONICS_MASTER_1_ON" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_41"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LANDING_GEAR_PARKINGBRAKE" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_40"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LANDING_GEAR_PARKINGBRAKE" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_3">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -208,24 +162,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_39">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:MASTER_BATTERY_OFF" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_38">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:MASTER_BATTERY_ON" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          
+          
           <Event BoundTo="BUTTON_35">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -363,10 +301,42 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_55"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationClimbRate" SourceDataDefinition="Max(150, [LVAR:var_pressurizationClimbRate] - 50)" /></EventActions></EventDefinition></EventDefinitions></Event>
-          <Event BoundTo="BUTTON_56"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationClimbRate" SourceDataDefinition="Min(2000, [LVAR:var_pressurizationClimbRate] + 50)" /></EventActions></EventDefinition></EventDefinitions></Event>
-          <Event BoundTo="BUTTON_58"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationGoal" SourceDataDefinition="Max(-1000, [LVAR:var_pressurizationGoal] - 100)" /></EventActions></EventDefinition></EventDefinitions></Event>
-          <Event BoundTo="BUTTON_59"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationGoal" SourceDataDefinition="Min(15000, [LVAR:var_pressurizationGoal] + 100)" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_55">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationClimbRate" SourceDataDefinition="Max(150, [LVAR:var_pressurizationClimbRate] - 50)" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_56">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationClimbRate" SourceDataDefinition="Min(2000, [LVAR:var_pressurizationClimbRate] + 50)" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_58">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationGoal" SourceDataDefinition="Max(-1000, [LVAR:var_pressurizationGoal] - 100)" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_59">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationGoal" SourceDataDefinition="Min(15000, [LVAR:var_pressurizationGoal] + 100)" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_14">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -801,7 +771,102 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-        <Event BoundTo="BUTTON_8"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>LShiftKey</Keys><Keys>D1</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_9"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>LShiftKey</Keys><Keys>D3</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_10"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>LShiftKey</Keys><Keys>D2</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_11"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>LShiftKey</Keys><Keys>D4</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_12"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>LShiftKey</Keys><Keys>D5</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_13"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>Back</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition></EventDefinitions></Event></Events>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D1</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D3</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_10">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D2</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D4</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_12">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D5</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>Back</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        <Event BoundTo="BUTTON_1"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ELECTRICAL_BATTERY_1" SourceDataDefinition="1 - [B:ELECTRICAL_BATTERY_1]" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_2"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:BATTERY2_SET"><Parameter Type="Exp" Value="1 - [SIMCONNECT:ELECTRICAL MASTER BATTERY:2]" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_3"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ELECTRICAL_AVIONICS_BUS_1" SourceDataDefinition="1 - [B:ELECTRICAL_AVIONICS_BUS_1]" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_4"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:AVIONICS_MASTER_2_SET"><Parameter Type="Exp" Value="1 - [SIMCONNECT:AVIONICS MASTER SWITCH:2]" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event></Events>
       </DevicePage>
     </Device>
     <Device VendorID="0x16D0" ProductID="0x1290" DevicePath="\\?\hid#vid_16d0&amp;pid_1290#9&amp;155cbabc&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -907,42 +972,10 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_11">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:HEADING_BUG_INC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_12">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:HEADING_BUG_DEC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_19">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_INC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_20">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_DEC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_11"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:INSTRUMENT_HEADING_BUG" SourceDataDefinition="([B:INSTRUMENT_HEADING_BUG] + 1) % 360" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_12"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:INSTRUMENT_HEADING_BUG" SourceDataDefinition="([B:INSTRUMENT_HEADING_BUG] + 359) % 360" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_19"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_INC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_20"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_DEC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_25">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -1024,24 +1057,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_4">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="4" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_8">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_4"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="3" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_8"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_15">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -1078,56 +1095,11 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_13">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_14">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_21">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_22">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_3">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_13"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_WHOLE_INC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_14"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_WHOLE_DEC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_21"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF_100_INC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_22"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF_100_DEC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_3"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="4" /></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -1137,29 +1109,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_2">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_7">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_2"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:INSTRUMENT_HEADING_BUG" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_7"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_RADIO_SWAP"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
         </Events>
       </DevicePage>
     </Device>
@@ -2506,42 +2457,10 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_11">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:HEADING_BUG_INC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_12">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:HEADING_BUG_DEC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_19">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_INC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_20">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_DEC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_11"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:INSTRUMENT_HEADING_BUG" SourceDataDefinition="([B:INSTRUMENT_HEADING_BUG] + 1) % 360" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_12"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:INSTRUMENT_HEADING_BUG" SourceDataDefinition="([B:INSTRUMENT_HEADING_BUG] + 359) % 360" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_19"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_INC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_20"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_DEC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_25">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -2623,24 +2542,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_4">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="4" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_8">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_4"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="3" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_8"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_15">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -2677,56 +2580,11 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_13">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_14">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_21">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_22">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_3">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_13"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_WHOLE_INC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_14"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_WHOLE_DEC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_21"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF_100_INC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_22"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF_100_DEC"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_3"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="4" /></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -2736,29 +2594,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_2">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:AUTOPILOT HEADING LOCK DIR" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_7">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="RELEASE">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_2"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:INSTRUMENT_HEADING_BUG" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_7"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_RADIO_SWAP"><Parameter Type="Static" Value="1" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event>
         </Events>
       </DevicePage>
     </Device>
@@ -3471,46 +3308,10 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_4">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP1_SET" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_5">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP2_SET" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_6">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP1_SET">
-                    <Parameter Value="16383" />
-                  </EventActionControl>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_7">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP2_SET">
-                    <Parameter Value="16383" />
-                  </EventActionControl>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_4"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ENGINE_COWLFLAPS_LEFT" SourceDataDefinition="if([B:ENGINE_COWLFLAPS_LEFT] &gt; 0, 0, 1)" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_5"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ENGINE_COWLFLAPS_RIGHT" SourceDataDefinition="if([B:ENGINE_COWLFLAPS_RIGHT] &gt; 0, 0, 1)" /></EventActions></EventDefinition></EventDefinitions></Event>
+          
+          
         </Events>
       </DevicePage>
     </Device>
@@ -3571,6 +3372,6 @@
   </Options>
   <ProfileInformation ProfileID="c6161017-25ec-4090-8e92-626d02185025" Version="0.14">
     <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;P&gt;Baron - GNS 530 + TDS GTNxi 650; PFD=GNS530, MFD=TDS650; RANGE/FMS and display keys follow focus; GC and ANA; see README. Requires in-simulator validation.&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
-    <LastChanged>2026-10-31T20:57:33.0975848+00:00</LastChanged>
+    <LastChanged>2026-11-01T00:39:10.483058+00:00</LastChanged>
   </ProfileInformation>
 </Profile>

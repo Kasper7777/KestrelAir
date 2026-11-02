@@ -65,3 +65,9 @@ CP3 STEP repair (2026-10-31): SPAD's cached profile had overwritten the installe
 Latest cabin, light and heat layout: [cabin-and-heat-controls.md](cabin-and-heat-controls.md). CP2 B3/B4 now pressure/door seal with amber/cyan state feedback; CP2 T1/T3 swapped; CP3 T2/T3 pitot heat and T8 propeller heat.
 
 Latest correction: [rotary-and-throttle-lighting.md](rotary-and-throttle-lighting.md). Heading/course use verified one-degree commands; throttle T5 flood unchanged, T6 panel lighting, T7 unassigned. Cabin pressure/door seal are on CP2 B5/B6 with amber/cyan feedback; B3/B4 are unassigned blue.
+
+Latest toggle/trim repair: [single-press-and-cp2-trim.md](single-press-and-cp2-trim.md). Cowl/battery/avionics use actual-state toggles; CP2 E1 elevator, E2 rudder, E3 aileron trim. Cabin B5/B6 logical IDs corrected to 37/38.
+
+Throttle T7 now controls prop sync: logical 52 ON, 53 OFF, PRESS only, via the aircraft-advertised LVAR:var_PropSyncSwitch. Backups: backups/throttle-prop-sync-* .
+
+CP2 B7/B8 (beneath B5/B6) now provide hold-to-test cabin pressure and hold-to-inflate standby door seal, with dim/bright red feedback. Both main and held-button flags are explicitly cleared on release. See cabin-and-heat-controls.md. Backups: backups/cabin-test-standby-* .

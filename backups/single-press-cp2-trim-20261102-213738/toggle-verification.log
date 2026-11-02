@@ -1,0 +1,19 @@
+********* LUA: "KAToggleProbe" Log [from FSUIPC version 7.5.9] *********
+  3142594 System time = 02/11/2026 21:37:39, Simulator time = 14:37:38 (21:37Z)
+  3142594 LUA: beginning "C:\FSUIPC7\KAToggleProbe.lua"
+  3143141 LUA: PASS left cowl press 1: 0.0000 -> 100.0000
+  3143688 LUA: PASS left cowl press 2: 100.0000 -> 0.0000
+  3144016 LUA: Restored left cowl to 0.0000
+  3144563 LUA: PASS right cowl press 1: 0.0000 -> 100.0000
+  3145094 LUA: PASS right cowl press 2: 100.0000 -> 0.0000
+  3145422 LUA: Restored right cowl to 0.0000
+  3145969 LUA: PASS battery 1 press 1: 1.0000 -> 0.0000
+  3146500 LUA: PASS battery 1 press 2: 0.0000 -> 1.0000
+  3146844 LUA: Restored battery 1 to 1.0000
+  3147391 LUA: PASS avionics 1 press 1: 1.0000 -> 0.0000
+  3147922 LUA: PASS avionics 1 press 2: 0.0000 -> 1.0000
+  3148250 LUA: Restored avionics 1 to 1.0000
+  3148282 >>> Thread forced exit (ipc.exit or os.exit) <<<
+  3148282 System time = 02/11/2026 21:37:44, Simulator time = 14:37:43 (21:37Z)
+********* LUA execution terminated: Log Closed *********
+

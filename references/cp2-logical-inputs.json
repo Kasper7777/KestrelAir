@@ -1,0 +1,122 @@
+[
+    {
+        "Control":  "Landing Gear Lever",
+        "FirstLogical":  1,
+        "LastLogical":  3
+    },
+    {
+        "Control":  "Button B1",
+        "FirstLogical":  4,
+        "LastLogical":  4
+    },
+    {
+        "Control":  "Button B2",
+        "FirstLogical":  5,
+        "LastLogical":  5
+    },
+    {
+        "Control":  "Button B3",
+        "FirstLogical":  6,
+        "LastLogical":  6
+    },
+    {
+        "Control":  "Button B4",
+        "FirstLogical":  7,
+        "LastLogical":  7
+    },
+    {
+        "Control":  "Encoder E1",
+        "FirstLogical":  8,
+        "LastLogical":  10
+    },
+    {
+        "Control":  "Encoder E2",
+        "FirstLogical":  11,
+        "LastLogical":  13
+    },
+    {
+        "Control":  "Encoder E3",
+        "FirstLogical":  14,
+        "LastLogical":  16
+    },
+    {
+        "Control":  "Switch T1",
+        "FirstLogical":  17,
+        "LastLogical":  18
+    },
+    {
+        "Control":  "Switch T2",
+        "FirstLogical":  19,
+        "LastLogical":  20
+    },
+    {
+        "Control":  "Switch T3",
+        "FirstLogical":  21,
+        "LastLogical":  22
+    },
+    {
+        "Control":  "Switch T4",
+        "FirstLogical":  23,
+        "LastLogical":  24
+    },
+    {
+        "Control":  "Switch T5",
+        "FirstLogical":  25,
+        "LastLogical":  26
+    },
+    {
+        "Control":  "Switch T6",
+        "FirstLogical":  27,
+        "LastLogical":  28
+    },
+    {
+        "Control":  "Switch T7",
+        "FirstLogical":  29,
+        "LastLogical":  30
+    },
+    {
+        "Control":  "Switch T8",
+        "FirstLogical":  31,
+        "LastLogical":  32
+    },
+    {
+        "Control":  "Switch T9",
+        "FirstLogical":  33,
+        "LastLogical":  34
+    },
+    {
+        "Control":  "Switch T10",
+        "FirstLogical":  35,
+        "LastLogical":  36
+    },
+    {
+        "Control":  "Button B5",
+        "FirstLogical":  37,
+        "LastLogical":  37
+    },
+    {
+        "Control":  "Button B6",
+        "FirstLogical":  38,
+        "LastLogical":  38
+    },
+    {
+        "Control":  "Button B7",
+        "FirstLogical":  39,
+        "LastLogical":  39
+    },
+    {
+        "Control":  "Button B8",
+        "FirstLogical":  40,
+        "LastLogical":  40
+    },
+    {
+        "Control":  "Button B9",
+        "FirstLogical":  41,
+        "LastLogical":  41
+    },
+    {
+        "Control":  "Button B10",
+        "FirstLogical":  42,
+        "LastLogical":  42
+    }
+]

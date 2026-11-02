@@ -19,7 +19,10 @@ end
 openPanel(0x025A, {{led=2,offset=0xA010,float=true}, {led=1,offset=0xA018,float=true},
                  -- CP2 B5/B6: pressure amber and door seal cyan; PhIDs 16/13.
                  {led=17,lvar='VAR_PRESSURIZATIONPRESS',off=0x85,on=0x8B},
-                 {led=14,lvar='VAR_DOORSEALPRIMARYINFLATE',off=0x94,on=0xBC}},
+                 {led=14,lvar='VAR_DOORSEALPRIMARYINFLATE',off=0x94,on=0xBC},
+                 -- B7 below B5, B8 below B6: PhIDs 15/12, momentary red.
+                 {led=16,lvar='VAR_PRESSURIZATIONTEST',off=dimRed,on=brightRed},
+                 {led=13,lvar='VAR_DOORSEALSTANDBYINFLATE',off=dimRed,on=brightRed}},
                  -- B3/B4 are unassigned again, shown in blue at PhIDs 3/2.
                  {[3]=0xB0,[4]=0xB0})
 -- VIRPIL PrimaryTypeParams.json supplies zero-based PhID addresses:
@@ -65,6 +68,6 @@ function KestrelAirStop()
         com.close(panel.handle)
     end
 end
-event.timer(250,'KestrelAirPoll')
+event.timer(100,'KestrelAirPoll')
 event.terminate('KestrelAirStop')
 KestrelAirPoll()

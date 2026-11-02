@@ -1,0 +1,15 @@
+********* LUA: "KAHoldProbe" Log [from FSUIPC version 7.5.9] *********
+   168265 System time = 02/11/2026 22:25:58, Simulator time = 15:25:57 (22:25Z)
+   168265 LUA: beginning "C:\FSUIPC7\KAHoldProbe.lua"
+   169078 LUA: var_pressurizationTest held main=1 IsDown=1
+   169109 LUA: PASS held var_pressurizationTest=1
+   169875 LUA: PASS released var_pressurizationTest=0
+   169922 LUA: Restored var_pressurizationTest=0
+   170734 LUA: var_doorSealStandbyInflate held main=1 IsDown=1
+   170765 LUA: PASS held var_doorSealStandbyInflate=1
+   171531 LUA: PASS released var_doorSealStandbyInflate=0
+   171578 LUA: Restored var_doorSealStandbyInflate=0
+   171609 >>> Thread forced exit (ipc.exit or os.exit) <<<
+   171609 System time = 02/11/2026 22:26:01, Simulator time = 15:26:00 (22:26Z)
+********* LUA execution terminated: Log Closed *********
+

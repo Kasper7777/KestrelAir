@@ -10,6 +10,6 @@ Recorded results: heading +0.99976° / −0.99976° per command, ten rapid incre
 |---|---|
 | T5 (48/49) | Floodlights, unchanged |
 | T6 (50/51) | Panel lighting, `LVAR:bksq_MasterPanelLights` 1/0 |
-| T7 (52/53) | Unassigned; duplicate pitot controls removed |
+| T7 (52/53) | Prop sync on/off, `LVAR:var_PropSyncSwitch` 1/0 |
 
 Pitot heat remains on CP3 T2/T3. Cabin pressure and door seal are now on CP2 B5/B6, with amber/cyan feedback at hardware LED addresses 16/13. CP2 B3/B4 are unassigned and blue. View lights/actions, CP3 battery/avionics controls, light-switch ordering, throttle parking brake, and other profile content are preserved by whole-profile comparison outside the explicit edits.

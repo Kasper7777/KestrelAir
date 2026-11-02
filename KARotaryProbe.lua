@@ -26,6 +26,22 @@ local ok,err=pcall(function()
     back=course()
     ipc.log(string.format('VOR1_OBI_DEC: %.5f -> %.5f, delta %.5f',after,back,delta(after,back)))
     assert(math.abs(delta(after,back)+1)<0.03,'Course decrement is not one degree')
+    before=heading()
+    for i=1,10 do ipc.control(65879,1);ipc.sleep(15) end
+    ipc.sleep(350)
+    after=heading()
+    ipc.log(string.format('10 rapid heading increments: delta %.5f',delta(before,after)))
+    assert(math.abs(delta(before,after)-10)<0.03,'Rapid heading commands jumped or were lost')
+    for i=1,10 do ipc.control(65880,1);ipc.sleep(15) end
+    ipc.sleep(350)
+    before=course()
+    for i=1,10 do ipc.control(65663,0);ipc.sleep(15) end
+    ipc.sleep(350)
+    after=course()
+    ipc.log(string.format('10 rapid course increments: delta %.5f',delta(before,after)))
+    assert(math.abs(delta(before,after)-10)<0.03,'Rapid course commands jumped or were lost')
+    for i=1,10 do ipc.control(65662,0);ipc.sleep(15) end
+    ipc.sleep(350)
 end)
 ipc.execInputEvent('INSTRUMENT_HEADING_BUG',savedHeading)
 ipc.control(65716,savedCourse)

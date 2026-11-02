@@ -1,0 +1,15 @@
+********* LUA: "KACabinProbe" Log [from FSUIPC version 7.5.9] *********
+    55657 System time = 02/11/2026 20:46:12, Simulator time = 14:46:11 (20:46Z)
+    55657 LUA: beginning "C:\FSUIPC7\KACabinProbe.lua"
+    55672 LUA: var_pressurizationPress=1
+    55704 LUA: VAR_PRESSURIZATIONPRESS=1
+    55735 LUA: var_doorSealPrimaryInflate=1
+    55766 LUA: VAR_DOORSEALPRIMARYINFLATE=1
+    56532 LUA: Verified state change VAR_PRESSURIZATIONPRESS=0
+    57282 LUA: Restored VAR_PRESSURIZATIONPRESS=1
+    58047 LUA: Verified state change VAR_DOORSEALPRIMARYINFLATE=0
+    58797 LUA: Restored VAR_DOORSEALPRIMARYINFLATE=1
+    58813 >>> Thread forced exit (ipc.exit or os.exit) <<<
+    58813 System time = 02/11/2026 20:46:15, Simulator time = 14:46:14 (20:46Z)
+********* LUA execution terminated: Log Closed *********
+

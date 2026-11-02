@@ -63,3 +63,5 @@ CP3 STEP repair (2026-10-31): SPAD's cached profile had overwritten the installe
 2026-11-02 update: right-stick range removed; RotAir ANA ADF/heading roles restored; CP3 B1/B2 battery (red), B3/B4 avionics (white), CP2 B1/B2 cowl toggles (purple/green). View bindings preserved. See [current power and color setup](ana-power-and-colours.md). This supersedes the earlier top-module GTN/ADF shortcuts and transponder push mapping described above.
 
 Latest cabin, light and heat layout: [cabin-and-heat-controls.md](cabin-and-heat-controls.md). CP2 B3/B4 now pressure/door seal with amber/cyan state feedback; CP2 T1/T3 swapped; CP3 T2/T3 pitot heat and T8 propeller heat.
+
+Latest correction: [rotary-and-throttle-lighting.md](rotary-and-throttle-lighting.md). Heading/course use verified one-degree commands; throttle T5 flood unchanged, T6 panel lighting, T7 unassigned. Cabin pressure/door seal are on CP2 B5/B6 with amber/cyan feedback; B3/B4 are unassigned blue.

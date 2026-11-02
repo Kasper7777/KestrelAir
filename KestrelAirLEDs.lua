@@ -17,9 +17,11 @@ local function openPanel(product, mapping, baseline)
 end
 -- CP2 protocol LED 2 = B1; LED 1 = B2.
 openPanel(0x025A, {{led=2,offset=0xA010,float=true}, {led=1,offset=0xA018,float=true},
-                 -- CP2 B3/B4: pressure amber and door seal cyan; PhIDs 3/2.
-                 {led=4,lvar='VAR_PRESSURIZATIONPRESS',off=0x85,on=0x8B},
-                 {led=3,lvar='VAR_DOORSEALPRIMARYINFLATE',off=0x94,on=0xBC}})
+                 -- CP2 B5/B6: pressure amber and door seal cyan; PhIDs 16/13.
+                 {led=17,lvar='VAR_PRESSURIZATIONPRESS',off=0x85,on=0x8B},
+                 {led=14,lvar='VAR_DOORSEALPRIMARYINFLATE',off=0x94,on=0xBC}},
+                 -- B3/B4 are unassigned again, shown in blue at PhIDs 3/2.
+                 {[3]=0xB0,[4]=0xB0})
 -- VIRPIL PrimaryTypeParams.json supplies zero-based PhID addresses:
 -- B1=7, B2=8, B3=6, B4=9. Lua report-array slots are PhID + 1.
 openPanel(0x025C, {{led=8,offset=0xA008,off=dimRed,on=brightRed},

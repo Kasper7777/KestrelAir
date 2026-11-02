@@ -1,0 +1,16 @@
+********* LUA: "KARotaryProbe" Log [from FSUIPC version 7.5.9] *********
+    50594 System time = 02/11/2026 20:46:07, Simulator time = 14:46:06 (20:46Z)
+    50594 LUA: beginning "C:\FSUIPC7\KARotaryProbe.lua"
+    50610 LUA: Before heading 6.35010 course 0.00000
+    50985 LUA: HEADING_BUG_INC: 6.35010 -> 7.34985, delta 0.99976
+    51360 LUA: HEADING_BUG_DEC: 7.34985 -> 6.35010, delta -0.99976
+    51750 LUA: VOR1_OBI_INC: 0.00000 -> 1.00000, delta 1.00000
+    52125 LUA: VOR1_OBI_DEC: 1.00000 -> 0.00000, delta -1.00000
+    52750 LUA: 10 rapid heading increments: delta 9.99756
+    54000 LUA: 10 rapid course increments: delta 10.00000
+    55000 LUA: Restored heading 6.35010 course 0.00000
+    55016 LUA: PASS: heading and course each move exactly one degree per command
+    55047 >>> Thread forced exit (ipc.exit or os.exit) <<<
+    55047 System time = 02/11/2026 20:46:11, Simulator time = 14:46:10 (20:46Z)
+********* LUA execution terminated: Log Closed *********
+

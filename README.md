@@ -71,3 +71,5 @@ Latest toggle/trim repair: [single-press-and-cp2-trim.md](single-press-and-cp2-t
 Throttle T7 now controls prop sync: logical 52 ON, 53 OFF, PRESS only, via the aircraft-advertised LVAR:var_PropSyncSwitch. Backups: backups/throttle-prop-sync-* .
 
 CP2 B7/B8 (beneath B5/B6) now provide hold-to-test cabin pressure and hold-to-inflate standby door seal, with dim/bright red feedback. Both main and held-button flags are explicitly cleared on release. See cabin-and-heat-controls.md. Backups: backups/cabin-test-standby-* .
+
+Thumbstick crash fix (2026-11-02): SPAD on-foot MiniStick events crashed MSFS 2024; they are replaced by native DualSense-style MSFS bindings (left = walk/head slide, right = look, right click = view reset). Run `bind-gamepad-thumbsticks.ps1 -DetectClicks` with MSFS and SPAD closed. See [gamepad-thumbsticks.md](gamepad-thumbsticks.md).

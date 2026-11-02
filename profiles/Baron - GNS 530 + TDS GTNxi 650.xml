@@ -458,42 +458,10 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_18">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:var_pressurizationPress" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_17">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:var_pressurizationPress" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_20">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:var_doorSealPrimaryInflate" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_19">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="LVAR:var_doorSealPrimaryInflate" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          
+          
+          
+          
           <Event BoundTo="BUTTON_37">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -753,24 +721,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_30">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="B:LIGHTING_WING_1" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_29">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="B:LIGHTING_WING_1" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_30"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_PropHeatSwitch" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_29"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="LVAR:var_PropHeatSwitch" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_8">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -866,7 +818,59 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-        <Event BoundTo="BUTTON_1"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ELECTRICAL_BATTERY_1" SourceDataDefinition="1 - [B:ELECTRICAL_BATTERY_1]" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_2"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:BATTERY2_SET"><Parameter Type="Exp" Value="1 - [SIMCONNECT:ELECTRICAL MASTER BATTERY:2]" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_3"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ELECTRICAL_AVIONICS_BUS_1" SourceDataDefinition="1 - [B:ELECTRICAL_AVIONICS_BUS_1]" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_4"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:AVIONICS_MASTER_2_SET"><Parameter Type="Exp" Value="1 - [SIMCONNECT:AVIONICS MASTER SWITCH:2]" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event></Events>
+        <Event BoundTo="BUTTON_1"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ELECTRICAL_BATTERY_1" SourceDataDefinition="1 - [B:ELECTRICAL_BATTERY_1]" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_2"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:BATTERY2_SET"><Parameter Type="Exp" Value="1 - [SIMCONNECT:ELECTRICAL MASTER BATTERY:2]" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_3"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ELECTRICAL_AVIONICS_BUS_1" SourceDataDefinition="1 - [B:ELECTRICAL_AVIONICS_BUS_1]" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_4"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionControl TargetDataDefinition="SIMCONNECT:AVIONICS_MASTER_2_SET"><Parameter Type="Exp" Value="1 - [SIMCONNECT:AVIONICS MASTER SWITCH:2]" /></EventActionControl></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_17">
+            <EventDefinitions xmlns="http://www.fsgs.com/SPAD">
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="SIMCONNECT:PITOT HEAT SWITCH:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_TOGGLE">
+                    <Parameter Value="1" Type="Static" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event><Event BoundTo="BUTTON_18">
+            <EventDefinitions xmlns="http://www.fsgs.com/SPAD">
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:PITOT HEAT SWITCH:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_TOGGLE">
+                    <Parameter Value="1" Type="Static" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event><Event BoundTo="BUTTON_19">
+            <EventDefinitions xmlns="http://www.fsgs.com/SPAD">
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="0" ConditionValueSource="SIMCONNECT:PITOT HEAT SWITCH:2" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_TOGGLE">
+                    <Parameter Value="2" Type="Static" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event><Event BoundTo="BUTTON_20">
+            <EventDefinitions xmlns="http://www.fsgs.com/SPAD">
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:PITOT HEAT SWITCH:2" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:PITOT_HEAT_TOGGLE">
+                    <Parameter Value="2" Type="Static" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event></Events>
       </DevicePage>
     </Device>
     <Device VendorID="0x16D0" ProductID="0x1290" DevicePath="\\?\hid#vid_16d0&amp;pid_1290#9&amp;155cbabc&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -3164,24 +3168,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_17">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="B:LIGHTING_NAV_1" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_18">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="B:LIGHTING_NAV_1" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_17"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_STROBE_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_18"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_STROBE_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_19">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -3200,24 +3188,8 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_21">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="B:LIGHTING_STROBE_1" Value="1" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_22">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="B:LIGHTING_STROBE_1" Value="0" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
+          <Event BoundTo="BUTTON_21"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_NAV_1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event>
+          <Event BoundTo="BUTTON_22"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="B:LIGHTING_NAV_1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event>
           <Event BoundTo="BUTTON_23">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -3312,7 +3284,7 @@
           <Event BoundTo="BUTTON_5"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:ENGINE_COWLFLAPS_RIGHT" SourceDataDefinition="if([B:ENGINE_COWLFLAPS_RIGHT] &gt; 0, 0, 1)" /></EventActions></EventDefinition></EventDefinitions></Event>
           
           
-        </Events>
+        <Event BoundTo="BUTTON_6"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_pressurizationPress" SourceDataDefinition="1 - [LVAR:var_pressurizationPress]" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_7"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:var_doorSealPrimaryInflate" SourceDataDefinition="1 - [LVAR:var_doorSealPrimaryInflate]" /></EventActions></EventDefinition></EventDefinitions></Event></Events>
       </DevicePage>
     </Device>
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;22ba5017&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="1" Version="3">

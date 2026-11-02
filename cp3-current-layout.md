@@ -3,13 +3,13 @@ CP3 layout installed 2026-10-31. Supersedes earlier CP3 selector direction.
 | Control | Baron function |
 |---|---|
 | T1 | Left fuel pump (unchanged) |
-| T2 | Left cowl flaps (unchanged) |
-| T3 | Right cowl flaps (unchanged) |
+| T2 | Left pitot heat |
+| T3 | Right pitot heat |
 | T4 | Propeller heat |
 | T5 | Fuel-vent heat |
 | T6 | Stall-warning heat |
 | T7 | Windshield heat |
-| T8 | Wing/ice-inspection light |
+| T8 | Propeller heat |
 | Master ARM | Right fuel pump (unchanged) |
 | Rotary selector | Right magneto; reversed to match physical OFF |
 

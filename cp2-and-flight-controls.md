@@ -3,9 +3,9 @@ Installed in **Baron - GNS 530 + TDS GTNxi 650** on 2026-10-31.
 | CP2 control | Assignment |
 |---|---|
 | Large gear lever up / down | Gear up / down; centre unused |
-| T1 | Navigation lights |
+| T1 | Strobes |
 | T2 | Beacon |
-| T3 | Strobes |
+| T3 | Navigation lights |
 | T4 | Taxi lights |
 | T5 | Landing lights |
 | T6 | Right landing light |

@@ -61,3 +61,5 @@ CP3 red button 6: PRESS sends `H:bksq_JpiButton_1_L_Short`, the EDM-760 STEP but
 CP3 STEP repair (2026-10-31): SPAD's cached profile had overwritten the installed binding. Stopped SPAD, restored only CP3 button 6, verified all other installed XML was unchanged, and restarted SPAD. The patch script now refuses to run while SPAD is open and accepts an already-correct binding. Backup: backups/cp3-step-20261031-002207. Physical button response still requires a live press.
 
 2026-11-02 update: right-stick range removed; RotAir ANA ADF/heading roles restored; CP3 B1/B2 battery (red), B3/B4 avionics (white), CP2 B1/B2 cowl toggles (purple/green). View bindings preserved. See [current power and color setup](ana-power-and-colours.md). This supersedes the earlier top-module GTN/ADF shortcuts and transponder push mapping described above.
+
+Latest cabin, light and heat layout: [cabin-and-heat-controls.md](cabin-and-heat-controls.md). CP2 B3/B4 now pressure/door seal with amber/cyan state feedback; CP2 T1/T3 swapped; CP3 T2/T3 pitot heat and T8 propeller heat.

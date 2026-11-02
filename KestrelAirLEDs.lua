@@ -16,9 +16,10 @@ local function openPanel(product, mapping, baseline)
     ipc.log(string.format('KestrelAir LEDs: opened %04X, feature length %d', product, featureLength))
 end
 -- CP2 protocol LED 2 = B1; LED 1 = B2.
-openPanel(0x025A, {{led=2,offset=0xA010,float=true}, {led=1,offset=0xA018,float=true}},
-                 -- CP2 B3/B4 are now unassigned; their PhIDs are 3/2.
-                 {[3]=0xB0,[4]=0xB0})
+openPanel(0x025A, {{led=2,offset=0xA010,float=true}, {led=1,offset=0xA018,float=true},
+                 -- CP2 B3/B4: pressure amber and door seal cyan; PhIDs 3/2.
+                 {led=4,lvar='VAR_PRESSURIZATIONPRESS',off=0x85,on=0x8B},
+                 {led=3,lvar='VAR_DOORSEALPRIMARYINFLATE',off=0x94,on=0xBC}})
 -- VIRPIL PrimaryTypeParams.json supplies zero-based PhID addresses:
 -- B1=7, B2=8, B3=6, B4=9. Lua report-array slots are PhID + 1.
 openPanel(0x025C, {{led=8,offset=0xA008,off=dimRed,on=brightRed},
@@ -35,7 +36,10 @@ function KestrelAirPoll()
         for i=1,17 do leds[i]=panel.baseline[i] or 0 end
         for _, binding in ipairs(panel.mapping) do
             local state
-            if binding.float then state=ipc.readDBL(binding.offset)
+            if binding.lvar then
+                local ok,value=pcall(ipc.readLvar,binding.lvar)
+                state=(ok and value) or 0
+            elseif binding.float then state=ipc.readDBL(binding.offset)
             else state=ipc.readSD(binding.offset) end
             leds[binding.led] = state > 0.5 and (binding.on or green) or (binding.off or purple)
             if binding.last ~= leds[binding.led] then

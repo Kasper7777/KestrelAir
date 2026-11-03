@@ -5,7 +5,7 @@
     <Variable Name="PROFILE:KA_STICK0_RY" Value="0" ValueType="Decimal" />
     <Variable Name="PROFILE:KA_STICK1_RY" Value="0" ValueType="Decimal" />
     <Variable Name="PROFILE:KA_XPDR_DIGIT" Value="0" ValueType="Decimal" />
-    <Variable Name="PROFILE:KA_STICK0_RX" Value="-1" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_STICK0_RX" Value="0" ValueType="Decimal" />
   </Variables>
   <Devices>
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -57,99 +57,9 @@
           <Event BoundTo="RX_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Less" ConditionTargetValue="12000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="-1" ConditionValueSource="PROFILE:KA_STICK0_RX" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK0_RX" Value="-1" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Right</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Left</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="48000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_STICK0_RX" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK0_RX" Value="1" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Left</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Right</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="GreaterOrEqual" ConditionTargetValue="12000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="LessOrEqual" ConditionTargetValue="48000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_STICK0_RX" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK0_RX" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Left</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Right</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_STICK0_RX" />
-                  <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK0_RX" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Left</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Right</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -157,99 +67,9 @@
           <Event BoundTo="RY_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Less" ConditionTargetValue="12000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="-1" ConditionValueSource="PROFILE:KA_STICK0_RY" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK0_RY" Value="-1" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Up</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Down</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="48000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_STICK0_RY" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK0_RY" Value="1" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Down</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Up</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="GreaterOrEqual" ConditionTargetValue="12000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="LessOrEqual" ConditionTargetValue="48000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_STICK0_RY" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK0_RY" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Down</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Up</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_STICK0_RY" />
-                  <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK0_RY" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Down</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Up</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="52" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -3754,6 +3574,11 @@
                   </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
             </EventDefinitions>
           </Event>
           <Event BoundTo="RY_AXIS">
@@ -3852,6 +3677,11 @@
                       </Keys>
                     </KeyboardMacro>
                   </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

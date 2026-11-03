@@ -1,6 +1,6 @@
-﻿# Baron - GNS 530 + TDS GTNxi 650
+ï»¿# Baron - GNS 530 + TDS GTNxi 650
 
-This profile is installed in `C:\Users\Aero\Documents\SPAD.neXt\profiles`. Only this generated variant remains alongside your original Aerostar, Baron and Piper profiles, which are untouched. Earlier versions are backed up under `backups/`.
+This profile is installed in `C:\Users\Aero\Documents\SPAD.neXt\profiles`. The Baron variant and matching Black Square Bonanza A36, A36TC and B36TP profiles are installed alongside the original profiles. Camera routing and portable installation are documented in thumbstick-keys.md and portable-setup/README.md. Earlier versions are backed up under `backups/`.
 
 ## PFD/MFD now switches controls together
 
@@ -29,7 +29,7 @@ NAV/COM tuning, swaps, heading, selected altitude, course, baro, transponder and
 
 **Transponder (top RotAIR):** ALT knob push selects ALT (altitude reporting, the normal in-flight mode); ALT knob hold selects STBY; heading knob hold sends IDENT. Push-and-turn sets the squawk code one digit per knob: NAV = thousands, heading = hundreds, ADF/GTN = tens, ALT = ones. The RANGE knob's push-and-turn on the bottom RotAIR also adjusts the ones digit.
 
-**VIRPIL CP3 E1 (squawk knob):** turn to change the selected squawk digit; push (button 37) to move to the next digit, thousands → hundreds → tens → ones → thousands. The profile starts on thousands; the cockpit display does not show which digit is selected. Remove any MSFS control binding on CP3 buttons 37–39 (E1 previously changed heading through MSFS), or both will act.
+**VIRPIL CP3 E1 (squawk knob):** turn to change the selected squawk digit; push (button 37) to move to the next digit, thousands â†’ hundreds â†’ tens â†’ ones â†’ thousands. The profile starts on thousands; the cockpit display does not show which digit is selected. Remove any MSFS control binding on CP3 buttons 37â€“39 (E1 previously changed heading through MSFS), or both will act.
 
 AP VNV opens the GNS VNAV page; it does not arm autopilot VNAV. AP nose-up/down changes the VS reference, rather than switching automatically between VS, pitch and FLC airspeed functions. Only modes supported by the aircraft's autopilot will operate. AP-module long presses remain unused G1000 softkeys.
 

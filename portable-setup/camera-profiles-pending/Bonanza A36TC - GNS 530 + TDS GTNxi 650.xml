@@ -5,7 +5,7 @@
     <Variable Name="PROFILE:KA_STICK0_RY" Value="0" ValueType="Decimal" />
     <Variable Name="PROFILE:KA_STICK1_RY" Value="0" ValueType="Decimal" />
     <Variable Name="PROFILE:KA_XPDR_DIGIT" Value="0" ValueType="Decimal" />
-    <Variable Name="PROFILE:KA_STICK0_RX" Value="-1" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_STICK0_RX" Value="0" ValueType="Decimal" />
   </Variables>
   <Devices>
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -58,12 +58,8 @@
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48">
-                    <Parameter Type="Exp" Value="Round(Min(60000, Max(0, [EVENT:VALUE])) * 32767 / 60000, 0)" />
-                  </EventActionVirtualJoyStick>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="52">
-                    <Parameter Type="Exp" Value="Round(Min(60000, Max(0, [EVENT:VALUE])) * 32767 / 60000, 0)" />
-                  </EventActionVirtualJoyStick>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -72,12 +68,8 @@
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49">
-                    <Parameter Type="Exp" Value="Round(Min(60000, Max(0, [EVENT:VALUE])) * 32767 / 60000, 0)" />
-                  </EventActionVirtualJoyStick>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53">
-                    <Parameter Type="Exp" Value="Round(Min(60000, Max(0, [EVENT:VALUE])) * 32767 / 60000, 0)" />
-                  </EventActionVirtualJoyStick>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="52" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -3584,9 +3576,7 @@
               </EventDefinition>
               <EventDefinition Trigger="VALUE">
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50">
-                    <Parameter Type="Exp" Value="Round(Min(60000, Max(0, [EVENT:VALUE])) * 32767 / 60000, 0)" />
-                  </EventActionVirtualJoyStick>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -3691,9 +3681,7 @@
               </EventDefinition>
               <EventDefinition Trigger="VALUE">
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51">
-                    <Parameter Type="Exp" Value="Round(Min(60000, Max(0, [EVENT:VALUE])) * 32767 / 60000, 0)" />
-                  </EventActionVirtualJoyStick>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

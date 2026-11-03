@@ -7,6 +7,7 @@ $target=Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'SPAD.neXt\profi
 $backup=Join-Path $PSScriptRoot ('install-backup-'+(Get-Date -Format yyyyMMdd-HHmmss))
 New-Item -ItemType Directory -Path $backup,$target -Force | Out-Null
 $clickRoot=Join-Path $PSScriptRoot 'helpers\ka-click'
+$frontRoot=Join-Path $PSScriptRoot 'helpers\ka-front'
 foreach($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.xml'){
  $destination=Join-Path $target $file.Name
  if(Test-Path -LiteralPath $destination){Copy-Item -LiteralPath $destination -Destination $backup}
@@ -17,6 +18,11 @@ foreach($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.x
    $leaf='ka-click-'+$Matches[1]+'.exe'
    # SPAD expression-string paths use doubled backslashes.
    $parameter.SetAttribute('Value',(Join-Path $clickRoot $leaf).Replace('\','\\'))
+  }
+  elseif($old -match 'ka-front-(vpilot|beyondatc)\.exe$'){
+   # Grip window buttons: bring vPilot / BeyondATC to the front (see helpers/stick-atc-buttons.md).
+   $leaf='ka-front-'+$Matches[1]+'.exe'
+   $parameter.SetAttribute('Value',(Join-Path $frontRoot $leaf).Replace('\','\\'))
   }
  }
  $doc.Save($destination)

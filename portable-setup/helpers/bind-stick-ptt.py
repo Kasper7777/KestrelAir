@@ -7,8 +7,14 @@ Both grips (VID 3344 / PID 03F5, DeviceIndex 0 = right, 1 = left) get identical 
     Bottom push button    18           2               BeyondATC PushToTalk1
     Main trigger (stage1) 4            3               BeyondATC DoAction1 (auto respond)
     Flip trigger squeeze  3            3               BeyondATC DoAction1 (auto respond)
+    Wheel up              22           -               runs ka-menu-prev.exe (pointer up one BeyondATC reply)
+    Wheel down            21           -               runs ka-menu-next.exe (pointer down one BeyondATC reply)
+    Wheel press           19           -               runs ka-menu-select.exe (click that reply, return to MSFS)
+    vPilot window button  8            -               runs .tools/ka-front/ka-front-vpilot.exe
+    BATC window button    13           -               runs .tools/ka-front/ka-front-beyondatc.exe
 
-Button numbers were read live from both grips on 2026-11-03 (watch-warbrd-buttons.ps1).
+Button numbers were read live from both grips on 2026-11-03 (watch-warbrd-buttons.ps1,
+warbrd-button-map-20261103*.txt). ka-front toggles: pressing again returns focus to MSFS.
 Trigger stage 2 (HID 5) is left unbound so a full pull does not fire twice.
 The old right-grip BUTTON_7 action (CJ4 flood light toggle) is replaced.
 
@@ -19,6 +25,11 @@ import re
 import sys
 
 ROUTES = {7: 1, 18: 2, 4: 3, 3: 3}
+FRONT_DIR = Path(__file__).resolve().parent / '.tools' / 'ka-front'
+# BeyondATC's reply list is mouse-only (its Tab/Enter hotkeys and arrow keys don't reach it), so the
+# wheel drives the pointer through helper exes instead of vJoy.
+WINDOWS = {8: 'ka-front-vpilot.exe', 13: 'ka-front-beyondatc.exe',
+           22: 'ka-menu-prev.exe', 21: 'ka-menu-next.exe', 19: 'ka-menu-select.exe'}
 DEVICE_RE = re.compile(
     r'(<Device VendorID="0x3344" ProductID="0x03F5"[^>]*>\s*<DevicePage[^>]*>\s*<Events>)(.*?)(\s*</Events>)',
     re.S,
@@ -48,6 +59,24 @@ def event_xml(hid: int, vjoy: int, indent: str) -> str:
     )
 
 
+def run_xml(hid: int, exe: str, indent: str) -> str:
+    lines = [
+        f'<Event BoundTo="BUTTON_{hid}">',
+        '  <EventDefinitions>',
+        '    <EventDefinition Trigger="PRESS">',
+        '      <EventActions>',
+        '        <EventActionCommand>',
+        '          <Parameter Value="SPAD_neXt.RunProgram" />',
+        f'          <Parameter1 Value="{FRONT_DIR / exe}" />',
+        '        </EventActionCommand>',
+        '      </EventActions>',
+        '    </EventDefinition>',
+        '  </EventDefinitions>',
+        '</Event>',
+    ]
+    return ''.join('\n' + indent + line for line in lines)
+
+
 def strip_event(body: str, hid: int) -> str:
     return re.sub(rf'\s*<Event BoundTo="BUTTON_{hid}">.*?</Event>', '', body, flags=re.S)
 
@@ -57,10 +86,12 @@ def patch(text: str) -> tuple[str, int]:
         head, body, tail = m.groups()
         indent = re.search(r'\n([ \t]*)<Event ', body)
         indent = indent.group(1) if indent else '          '
-        for hid in ROUTES:
+        for hid in (*ROUTES, *WINDOWS):
             body = strip_event(body, hid)
         for hid, vjoy in ROUTES.items():
             body += event_xml(hid, vjoy, indent)
+        for hid, exe in WINDOWS.items():
+            body += run_xml(hid, exe, indent)
         return head + body + tail
     return DEVICE_RE.subn(repl, text)
 

@@ -19,9 +19,9 @@ foreach($file in Get-ChildItem (Join-Path $PSScriptRoot 'profiles') -Filter '*.x
    # SPAD expression-string paths use doubled backslashes.
    $parameter.SetAttribute('Value',(Join-Path $clickRoot $leaf).Replace('\','\\'))
   }
-  elseif($old -match 'ka-front-(vpilot|beyondatc)\.exe$'){
-   # Grip window buttons: bring vPilot / BeyondATC to the front (see helpers/stick-atc-buttons.md).
-   $leaf='ka-front-'+$Matches[1]+'.exe'
+  elseif($old -match '(ka-front-(vpilot|beyondatc)|ka-menu-(next|prev|select))\.exe$'){
+   # Grip window buttons and wheel: vPilot/BeyondATC to front, BeyondATC reply list (helpers/stick-atc-buttons.md).
+   $leaf=$Matches[1]+'.exe'
    $parameter.SetAttribute('Value',(Join-Path $frontRoot $leaf).Replace('\','\\'))
   }
  }

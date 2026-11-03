@@ -26,7 +26,7 @@ MSFS camera contexts activate the appropriate assignments. Existing left-stick w
 5. On a new FSUIPC installation merge helpers/KestrelAir-myOffsets.txt into its myOffsets.txt without replacing other custom offsets.
 6. Assign each SPAD profile to its matching aircraft; aircraft-assignments.csv records this PC's installed liveries. SPAD may ask which identical WarBRD grip is right after moving PCs. On this PC it is VPC WarBRD-D Base_1, SPAD DeviceIndex 0.
 
-7. Stick ATC buttons: the profiles already route the grip buttons to vJoy buttons 1-3 (see helpers/stick-atc-buttons.md). Install vPilot and BeyondATC, close both, then run `python helpers/configure-atc-apps.py`, or bind them in each app by pressing the grip buttons while SPAD runs. Top = vPilot PTT, bottom = BeyondATC PTT, trigger/flip trigger = BeyondATC auto respond.
+7. Stick ATC buttons: the profiles already route the grip buttons to vJoy buttons 1-3 (see helpers/stick-atc-buttons.md). Install vPilot and BeyondATC, close both, then run `python helpers/configure-atc-apps.py`, or bind them in each app by pressing the grip buttons while SPAD runs. Top = vPilot PTT, bottom = BeyondATC PTT, trigger/flip trigger = BeyondATC auto respond. The window buttons and the wheel use helpers/ka-front (the installer sets their paths); keep BeyondATC's reply list at the size described in helpers/stick-atc-buttons.md or calibrate ka-menu.ini.
 
 Before flight check every direction, simultaneous axes, no movement at centre, B4 toggle/colours, and engine controls. The B36TP condition lever selects fuel cutoff below 10% and high idle above it. Select GNS 530 / TDS GTNxi 650 in the aircraft tablet.
 

@@ -3,6 +3,7 @@
     vJoy button 1 -> vPilot push-to-talk          (grip top push button)
     vJoy button 2 -> BeyondATC PushToTalk1        (grip bottom push button)
     vJoy button 3 -> BeyondATC DoAction1          (grip trigger / flip trigger = auto respond)
+    (grip wheel = BeyondATC reply list via .tools/ka-front/ka-menu-*.exe, not vJoy)
 
 Both grips report the same USB name since the 2026-10-31 firmware repair, so neither app can
 tell them apart; routing through vJoy gives each app one stable device to listen to.
@@ -24,6 +25,8 @@ BATC_KEY = r'Software\Skirmish Mode Games, Inc\BeyondATC'
 BATC_VALUE = 'KeyBindings_h731465248'
 VJOY_UNITY_DEVICE = '/Shaul Eizikovich vJoy - Virtual Joystick'
 BATC_ROUTES = {'General/PushToTalk1': 2, 'General/DoAction1': 3}
+# Tab/Enter were tried on vJoy 4/5 and don't move BeyondATC's reply list; drop those entries if present.
+BATC_REMOVE = ('General/TabKey', 'General/EnterKey')
 VPILOT_BUTTON_INDEX = 0  # vPilot stores zero-based button index; 0 = vJoy button 1
 
 
@@ -60,6 +63,7 @@ def configure_beyondatc() -> None:
         except FileNotFoundError:
             kind, data = winreg.REG_BINARY, {'bindings': []}
         bindings = data.setdefault('bindings', [])
+        bindings[:] = [b for b in bindings if b.get('action') not in BATC_REMOVE]
         for action, button in BATC_ROUTES.items():
             path = f'{VJOY_UNITY_DEVICE}/button{button}'
             entry = next((b for b in bindings if b.get('action') == action), None)
@@ -76,11 +80,13 @@ def configure_beyondatc() -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('--vjoy-guid', help='override the vJoy DirectInput instance GUID')
+    ap.add_argument('--skip-vpilot', action='store_true', help='leave vPilot untouched (it may stay open)')
     args = ap.parse_args()
-    busy = running(['vPilot.exe', 'BeyondATC.exe'])
+    busy = running(['BeyondATC.exe'] + ([] if args.skip_vpilot else ['vPilot.exe']))
     if busy:
         sys.exit('Close these first (they overwrite settings on exit): ' + ', '.join(busy))
-    configure_vpilot(args.vjoy_guid or vjoy_directinput_guid())
+    if not args.skip_vpilot:
+        configure_vpilot(args.vjoy_guid or vjoy_directinput_guid())
     configure_beyondatc()
 
 

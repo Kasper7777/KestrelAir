@@ -1,24 +1,60 @@
 # VIRPIL MiniStick camera controls
 
-The right WarBRD grip is VPC WarBRD-D Base_1 in MSFS and DeviceIndex 0 in SPAD. Its RX/RY axes feed vJoy through SPAD's built-in RESPONSECURVE action. The live test confirmed the right grip's channels were crossed; RY now supplies horizontal camera control and RX supplies vertical control. Do not restore the earlier CUSTOM expression mapping: it produced endpoint output and continuous camera movement.
+Updated 2026-11-03 (evening). Earlier versions of this file had the wrong axis table; this one is checked against live recordings and the preset MSFS actually holds.
 
-The native MSFS General Controls preset is portable-setup/KestrelAir-vJoy-GeneralControls.xml, named KestrelAir SPAD Cameras v2. Import it on vJoy Device and apply it to all aircraft. It supplies the camera contexts and a 6% centre dead zone; SPAD supplies all physical-stick routing.
+## Current behaviour
 
-| Input | On foot / cockpit / external | Drone mode |
+| Input | On foot | Cockpit / external | Drone (current, "Mode 2") |
+|---|---|---|---|
+| Left MiniStick up/down | W/S walking keys | – | Climb / descend |
+| Left MiniStick left/right | A/D walking keys | – | Turn (yaw) |
+| Right MiniStick up/down | Look up/down | Look up/down | Fly forward / back |
+| Right MiniStick left/right | Look left/right | Look left/right | Slide sideways |
+
+You confirmed look and walking work the right way. The drone has no camera tilt in this layout, which is what the FPV preset below adds.
+
+## How it's wired
+
+Measured live on both grips: the MiniStick's HID **Rx is horizontal** (right = high) and **Ry is vertical** (up = high). The recordings are `right-thumbstick-watch-20261103-before.txt` and `-after.txt`.
+
+SPAD (`route-thumbsticks.py`, all four GTN profiles; response-curve mode, no inversion in SPAD):
+
+| Grip | Axis | vJoy axes |
 |---|---|---|
-| Right MiniStick horizontal | Look horizontally | Strafe |
-| Right MiniStick vertical | Look vertically | Forward/back |
-| Left MiniStick horizontal | Existing A/D walking keys | Yaw |
-| Left MiniStick vertical | Existing W/S walking keys | Height |
+| Right | Rx (horizontal) | Ry + X |
+| Right | Ry (vertical) | Rz + Y |
+| Left | Rx (horizontal) | Z (plus A/D keys, except in drone mode) |
+| Left | Ry (vertical) | Rx (plus W/S keys, except in drone mode) |
 
-The left walking keys are excluded while CAMERA STATE is 4, and the LED Lua helper releases walking/look keyboard holds on camera-mode transitions. Right-stick look uses analogue virtual axes instead of arrow-key emulation.
+MSFS preset "KestrelAir SPAD Cameras v2" on vJoy Device, as it stands in the live file:
 
-SPAD's bundled vJoy library was version 2.1.8, while the installed signed vJoy driver is 2.2.2. Its matching library is now installed in SPAD; the old DLL is backed up. The portable installer repeats that compatibility repair.
+| vJoy axis | Action |
+|---|---|
+| Ry | Look left/right (cockpit, external, on foot), inverted flag |
+| Rz | Look up/down, inverted flag |
+| X | Drone sideways |
+| Y | Drone forward/back |
+| Z | Drone yaw |
+| Rx | Drone height |
 
-Validation: mappings were first exercised on unused virtual axes; the measured returned centres were 16383, matching the virtual controller's midpoint. After activation a five-second read-only check showed all six camera axes centred and zero camera pitch/yaw drift. Final physical direction and movement checks remain pending.
+**What went wrong before.** The right stick's two channels were crossed in SPAD, so up/down looked left/right. On top of that, the SPAD calibration curve that used to invert the right stick's Ry was lost from the profiles sometime between 18:37 and 19:57 on 2026-11-03, before the button work started. Look directions are now right without it, because the live MSFS preset carries the inversion flags, so don't add the curve back.
 
-The old bind-thumbstick-keys.ps1 and bind-dji-thumbsticks.ps1 scripts describe earlier approaches and should not be reapplied over the current profiles. prepare-camera-bridge.py generates the current native SPAD mapping. Direct SimConnect on-foot axis events previously caused simulator crashes and remain removed.
+## FPV drone preset (built, not yet imported)
 
-Existing stick-click helpers and aircraft controls are preserved. See portable-setup/README.md for another PC's installation steps.
+`portable-setup/KestrelAir-vJoy-GeneralControls-v3-FPV.xml` comes from `build-vjoy-fpv-preset.py`, which builds it from the live v2 preset. Only the drone bindings change:
 
-The final horizontal correction is in SPAD: right grip, Ry Axis, profile-specific response curve with endpoints (0,1) and (1,0). Its centre stays at 0.5; the vertical Rx Axis is unchanged. The portable MSFS preset uses normal horizontal direction so this inversion is applied once.
+| Stick | Direction | FPV drone action |
+|---|---|---|
+| Left | Up/down | Throttle (fly along where the camera points) |
+| Left | Left/right | Yaw |
+| Right | Up/down | Pitch (camera tilt) |
+| Right | Left/right | Roll |
+
+SPAD needs no change for it. To use it: MSFS Controls > vJoy Device > General controls > gear > Import, then select "KestrelAir SPAD Cameras v3 FPV". If pitch or roll tests backwards, add that action to `INVERT` in the builder, rebuild, and re-import. To go back, select "KestrelAir SPAD Cameras v2" again.
+
+## Notes
+
+- SPAD's bundled vJoy library was replaced with the one matching the installed 2.2.2 driver; the old DLL is backed up, and the portable installer repeats the repair.
+- Direct SimConnect on-foot axis events crashed MSFS and remain removed. Don't reapply `bind-thumbstick-keys.ps1` or `bind-dji-thumbsticks.ps1`; they describe older approaches.
+- `watch-right-thumbstick.ps1` logs the right grip next to the vJoy axes for future checks.
+- Backup before this fix: `backups/thumbstick-mode2-20261103-221914/`.

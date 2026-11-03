@@ -49,8 +49,8 @@
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="52" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -59,8 +59,8 @@
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="52" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -487,6 +487,16 @@
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:var_StarterGenSwitch" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="54" JoystickMode="RESPONSECURVE" />
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:COCKPIT CAMERA ZOOM" SourceDataDefinition="[LOCAL:JOY_0X33440X0194_RZ_AXIS]" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

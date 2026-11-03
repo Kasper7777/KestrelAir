@@ -299,6 +299,22 @@
         </Events>
       </DevicePage>
     </Device>
+    <Device VendorID="0x3344" ProductID="0x0194" DevicePath="\\?\hid#vid_3344&amp;pid_0194&amp;mi_00#8&amp;1d037022&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="54" JoystickMode="RESPONSECURVE" />
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:COCKPIT CAMERA ZOOM" SourceDataDefinition="[LOCAL:JOY_0X33440X0194_RZ_AXIS]" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+      </DevicePage>
+    </Device>
   </Devices>
   <Options>
     <Option Key="Ultimarc.PacDrive.EnableVirtualPower" Value="True" />

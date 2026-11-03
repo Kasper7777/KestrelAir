@@ -49,8 +49,8 @@
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="52" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -59,8 +59,8 @@
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="52" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -89,12 +89,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="PRESS" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="PRESS" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="RELEASE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -103,12 +103,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="PRESS" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="PRESS" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="RELEASE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -117,12 +117,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -131,12 +131,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -553,6 +553,16 @@
                       </Keys>
                     </KeyboardMacro>
                   </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="54" JoystickMode="RESPONSECURVE" />
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:COCKPIT CAMERA ZOOM" SourceDataDefinition="[LOCAL:JOY_0X33440X0194_RZ_AXIS]" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4723,12 +4733,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="PRESS" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="PRESS" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="RELEASE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4737,12 +4747,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="PRESS" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="PRESS" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="RELEASE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4751,12 +4761,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4765,12 +4775,12 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
-                  <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4910,6 +4920,6 @@
   </Options>
   <ProfileInformation ProfileID="c6161017-25ec-4090-8e92-626d02185025" Version="0.16">
     <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;P&gt;Baron - GNS 530 + TDS GTNxi 650; PFD=GNS530, MFD=TDS650; RANGE/FMS and display keys follow focus; GC and ANA; see README. Requires in-simulator validation.&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
-    <LastChanged>2026-11-03T21:27:05.9290536+00:00</LastChanged>
+    <LastChanged>2026-11-03T22:22:45.866892+00:00</LastChanged>
   </ProfileInformation>
 </Profile>

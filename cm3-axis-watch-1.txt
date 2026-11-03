@@ -1,0 +1,7 @@
+﻿CM3 axis watch started 2026-11-03T22:42:43
+start X=55019
+start Y=55019
+start Z=60000
+start Rx=30000
+start Ry=30000
+start Rz=60000

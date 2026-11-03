@@ -1,0 +1,640 @@
+{
+  "Device": "MongoosT-50CM3 Throttle",
+  "Logo": "Textures/DeviceIcons/Throttles/MongoosT-50CM3.png",
+  "ModelPath": "Assets/DeviceModels/Primaries/Throttles/MT-50_CM3_Throttle.glb",
+  "PCBs": [
+    "VPC.CNT.V08"
+  ],
+  "HasAltModes?": true,
+  "HasAUXInput?": true,
+  "AUXConnector": "XS9_5Pin",
+  "LEDSupported": true,
+  "DualAxisThrottle": {
+    "btn": 8,
+    "modeOn": true,
+    "DZ": 4,
+    "PrimaryAxis": "Left Grip",
+    "SecondaryAxis": "Right Grip"
+  },
+  "ShiftRegisters": [
+    "VPC_THRLFTv2",
+    4,
+    1,
+    "VPC_THRRGTv2",
+    6,
+    9,
+    "VPC_THRPNLv2",
+    5,
+    4
+  ],
+  "Axis2DArray": [
+    {
+      "AxisH": {
+        "AxisName": "MS Horizontal",
+        "Positions": [
+          "rX",
+          "X"
+        ],
+        "Logo": "Textures/ControlsIcons/UI_Delta_Button_MS.png",
+        "Sens": "VPC_Stick",
+        "Port": 2,
+        "SubPort": 1,
+        "InversedMechanics": false,
+        "Inversion": false,
+        "Shift": 0,
+        "DualSide": true,
+        "Smooth": 3,
+        "CenterMode": 0,
+        "AntiJittering": 50,
+        "Limits": [
+          0,
+          50,
+          0,
+          100
+        ],
+        "MinVal": 0,
+        "MaxVal": 60000
+      },
+      "AxisV": {
+        "AxisName": "MS Vertical",
+        "Positions": [
+          "rY",
+          "Y"
+        ],
+        "Logo": "Textures/ControlsIcons/UI_Delta_Button_MS.png",
+        "Sens": "VPC_Stick",
+        "Port": 2,
+        "SubPort": 2,
+        "InversedMechanics": true,
+        "Inversion": false,
+        "Shift": 0,
+        "DualSide": true,
+        "Smooth": 3,
+        "CenterMode": 0,
+        "AntiJittering": 50,
+        "Limits": [
+          0,
+          50,
+          0,
+          100
+        ],
+        "MinVal": 0,
+        "MaxVal": 60000
+      },
+      "Logo": "Textures/ControlsIcons/UI_Delta_Button_MS.png",
+      "POVCompatible": true
+    }
+  ],
+  "AxisArray": [
+    {
+      "AxisName": "Left Grip",
+      "Positions": [
+        "X",
+        "rX",
+        "Slider",
+        "Dial"
+      ],
+      "Logo": "Textures/ControlsIcons/UI_Axis_THRCM3_GripL.png",
+      "Sens": "VPC_Sens",
+      "Port": 1,
+      "SubPort": 0,
+      "InversedMechanics": false,
+      "Inversion": false,
+      "Shift": 0,
+      "DualSide": false,
+      "Smooth": 1,
+      "CenterMode": 0,
+      "AntiJittering": 50,
+      "Limits": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "MinVal": 0,
+      "MaxVal": 60000
+    },
+    {
+      "AxisName": "Right Grip",
+      "Positions": [
+        "Y",
+        "rY",
+        "Slider",
+        "Dial"
+      ],
+      "Logo": "Textures/ControlsIcons/UI_Axis_THRCM3_GripR.png",
+      "Sens": "VPC_Sens",
+      "Port": 2,
+      "SubPort": 0,
+      "InversedMechanics": true,
+      "Inversion": false,
+      "Shift": 0,
+      "DualSide": false,
+      "Smooth": 1,
+      "CenterMode": 0,
+      "AntiJittering": 50,
+      "Limits": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "MinVal": 0,
+      "MaxVal": 60000
+    },
+    {
+      "AxisName": "Flaps",
+      "Positions": [
+        "Z",
+        "rZ"
+      ],
+      "Logo": "Textures/ControlsIcons/UI_Axis_VMax_Flaps.png",
+      "Sens": "VPC_Sens",
+      "Port": 3,
+      "SubPort": 0,
+      "InversedMechanics": false,
+      "Inversion": false,
+      "Shift": 0,
+      "DualSide": false,
+      "Smooth": 1,
+      "CenterMode": 0,
+      "AntiJittering": 0,
+      "Limits": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "MinVal": 0,
+      "MaxVal": 60000
+    },
+    {
+      "AxisName": "Slider",
+      "Positions": [
+        "rZ",
+        "Z"
+      ],
+      "Logo": "Textures/ControlsIcons/UI_Axis_THR_Slider.png",
+      "Sens": "VPC_Stick",
+      "Port": 2,
+      "SubPort": 3,
+      "InversedMechanics": true,
+      "Inversion": false,
+      "Shift": 0,
+      "DualSide": true,
+      "Smooth": 3,
+      "CenterMode": 0,
+      "AntiJittering": 50,
+      "Limits": [
+        0,
+        50,
+        0,
+        100
+      ],
+      "MinVal": 0,
+      "MaxVal": 60000
+    }
+  ],
+  "Controls": [
+    {
+      "Variants": [
+        {
+          "Name": "LGrip Thumb Encoder",
+          "ControlType": "EncoderPush",
+          "Logo": "Textures/ControlsIcons/UI_Axis_VMax_Slider.png",
+          "PhisicalInputs": [
+            6,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "LGrip Button",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonA_FaceButtonBlack.png",
+          "PhisicalInputs": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "LGrip Hat",
+          "ControlType": "Hat2B2WVerPush",
+          "Logo": "Textures/ControlsIcons/UI_ButtonA_SideHat2.png",
+          "PhisicalInputs": [
+            4,
+            7,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip Front Hat",
+          "ControlType": "Hat4B4WPush",
+          "Logo": "Textures/ControlsIcons/UI_MT2_HatBottom.png",
+          "PhisicalInputs": [
+            9,
+            12,
+            13,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip MiniStick Button",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_Delta_Button_MS.png",
+          "PhisicalInputs": [
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip SuperALPS Encoder",
+          "ControlType": "Encoder",
+          "Logo": "Textures/ControlsIcons/UI_SuperALPS_Enc.png",
+          "PhisicalInputs": [
+            15,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip SuperALPS Hat",
+          "ControlType": "Hat4B4WPush",
+          "Logo": "Textures/ControlsIcons/UI_SuperALPS_Hat.png",
+          "PhisicalInputs": [
+            17,
+            21,
+            18,
+            19,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip Far Button",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonA_FaceButtonBlack.png",
+          "PhisicalInputs": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip Side Upper Hat",
+          "ControlType": "Hat4B4WPush",
+          "Logo": "Textures/ControlsIcons/UI_MT2_HatBottom.png",
+          "PhisicalInputs": [
+            25,
+            26,
+            27,
+            28,
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip Side Lower Hat",
+          "ControlType": "Hat4B4WPush",
+          "Logo": "Textures/ControlsIcons/UI_Hat_2Up.png",
+          "PhisicalInputs": [
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip Near Button",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonA_FaceButtonBlack.png",
+          "PhisicalInputs": [
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "RGrip Bottom Button",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonA_FaceButtonRed.png",
+          "PhisicalInputs": [
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Grips Locker Switch",
+          "ControlType": "SwitchOnOff",
+          "Logo": "Textures/ControlsIcons/UI_Ctrl_THRCM3_GripsLocker.png",
+          "PhisicalInputs": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Switch T1",
+          "ControlType": "SwitchOnOn",
+          "Vertical": true,
+          "Logo": "Textures/ControlsIcons/UI_Button_SwitchRed.png",
+          "PhisicalInputs": [
+            42,
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Switch T2",
+          "ControlType": "SwitchOnOn",
+          "Vertical": true,
+          "Logo": "Textures/ControlsIcons/UI_Button_SwitchRed.png",
+          "PhisicalInputs": [
+            44,
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Switch T3",
+          "ControlType": "SwitchOnOn",
+          "Vertical": true,
+          "Logo": "Textures/ControlsIcons/UI_Button_SwitchRed.png",
+          "PhisicalInputs": [
+            46,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Switch T4",
+          "ControlType": "SwitchOnOn",
+          "Vertical": true,
+          "Logo": "Textures/ControlsIcons/UI_Button_SwitchRed.png",
+          "PhisicalInputs": [
+            48,
+            47
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Button B1",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonPB.png",
+          "PhisicalInputs": [
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Button B2",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonPB.png",
+          "PhisicalInputs": [
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Button B3",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonPB.png",
+          "PhisicalInputs": [
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Button B4",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonPB.png",
+          "PhisicalInputs": [
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Button B5",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonPB.png",
+          "PhisicalInputs": [
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Button B6",
+          "ControlType": "Button",
+          "Logo": "Textures/ControlsIcons/UI_ButtonPB.png",
+          "PhisicalInputs": [
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Switch T5",
+          "ControlType": "SwitchOnOffOn",
+          "Vertical": true,
+          "Logo": "Textures/ControlsIcons/UI_Button_Switch.png",
+          "PhisicalInputs": [
+            56,
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Switch T6",
+          "ControlType": "SwitchOnOffOn",
+          "Vertical": true,
+          "Logo": "Textures/ControlsIcons/UI_Button_Switch.png",
+          "PhisicalInputs": [
+            58,
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Switch T7",
+          "ControlType": "SwitchOnOffOn",
+          "Vertical": true,
+          "Logo": "Textures/ControlsIcons/UI_Button_Switch.png",
+          "PhisicalInputs": [
+            60,
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Encoder E1",
+          "ControlType": "EncoderPush",
+          "Logo": "Textures/ControlsIcons/UI_Button_Enc.png",
+          "PhisicalInputs": [
+            61,
+            62,
+            63
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Encoder E2",
+          "ControlType": "EncoderPush",
+          "Logo": "Textures/ControlsIcons/UI_Button_Enc.png",
+          "PhisicalInputs": [
+            64,
+            66,
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "Variants": [
+        {
+          "Name": "Mode Rotator",
+          "ControlType": "Rotator5Way",
+          "Logo": "Textures/ControlsIcons/UI_Button_Rot5.png",
+          "PhisicalInputs": [
+            67,
+            68,
+            69,
+            70,
+            71
+          ]
+        }
+      ]
+    }
+  ],
+  "LEDs": [
+    {
+      "PhID": 0,
+      "Pos": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "PhID": 1,
+      "Pos": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "PhID": 2,
+      "Pos": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "PhID": 3,
+      "Pos": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "PhID": 4,
+      "Pos": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "PhID": 5,
+      "Pos": {
+        "X": 0,
+        "Y": 0
+      }
+    }
+  ],
+  "LEDFeatures": [
+    {
+      "Type": "PB_Button_Block_3x2"
+    }
+  ]
+}

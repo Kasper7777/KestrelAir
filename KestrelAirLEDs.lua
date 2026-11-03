@@ -34,6 +34,9 @@ openPanel(0x025C, {{led=8,offset=0xA008,off=dimRed,on=brightRed},
                  -- B8-B13 are addresses 0,1,2,3,5,4. Restore all six to the
                  -- original cyan (0/255/255), confirmed in the pre-edit export.
                  {[1]=0xBC,[2]=0xBC,[3]=0xBC,[4]=0xBC,[5]=0xBC,[6]=0xBC})
+-- Throttle B4: PhID 3, report slot 4. Other throttle LEDs remain under firmware control.
+-- FSUIPC 026D is CAMERA STATE (byte); only state 4 is the drone camera.
+openPanel(0x0194, {{led=4,offset=0x026D,byte=true,equals=4,off=0x91,on=0xBC}})
 
 function KestrelAirPoll()
     for _, panel in ipairs(panels) do
@@ -44,9 +47,13 @@ function KestrelAirPoll()
             if binding.lvar then
                 local ok,value=pcall(ipc.readLvar,binding.lvar)
                 state=(ok and value) or 0
+            elseif binding.byte then state=ipc.readUB(binding.offset)
             elseif binding.float then state=ipc.readDBL(binding.offset)
             else state=ipc.readSD(binding.offset) end
-            leds[binding.led] = state > 0.5 and (binding.on or green) or (binding.off or purple)
+            local active
+            if binding.equals ~= nil then active = state == binding.equals
+            else active = state > 0.5 end
+            leds[binding.led] = active and (binding.on or green) or (binding.off or purple)
             if binding.last ~= leds[binding.led] then
                 ipc.log(string.format('KestrelAir LEDs: %04X slot %d state %.3f color %02X',
                     panel.product,binding.led,state,leds[binding.led]))

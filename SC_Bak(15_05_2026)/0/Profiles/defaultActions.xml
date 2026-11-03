@@ -1,0 +1,1252 @@
+<DefaultActions VersionID="7" BuildID="4.8.180.28520">
+ <Entry Description="Fire Extinguisher">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="attack1" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Non customizable weapons">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Action" Name="zoom" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="attack1" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="zoom" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Customisable weapons">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Action" Name="zoom" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="attack1" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="zoom" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Knife">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="AND">
+      <State Type="InTakedownRange"/>
+      <State Type="OR">
+       <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+       <State Type="CarryableState" State="Carryable_Carried"/>
+      </State>
+     </State>
+    </States>
+    <DefaultAction Type="Action" Name="weapon_melee" ActionMap="player" Trigger="1"/>
+    <DefaultAction Type="Action" Name="takedown_nonLethal" ActionMap="player" Trigger="1"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="melee_AttackLightLeft" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="melee_AttackLightRight" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="melee_AttackLightLeft" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="melee_AttackLightRight" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Combat Throwable - Non primed">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="throw_overhand" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="throw_underhand" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Combat Throwable - PRIMED">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Action" Name="throw_overhand" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="throw_underhand" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="throw_overhand" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="throw_underhand" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Action" Name="throw_overhand" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="throw_underhand" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="FPS Deployable Device - Primed On Place - UNPRIMED">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="FPS Deployable Device - Primed On Place - PRIMED">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Consumables - Not for self (e.g. Sedative)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="melee_AttackSyringeStab" ActionMap="player" Trigger="1"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Consumables (e.g. MedPens)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Action" Name="consume" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="melee_AttackSyringeStab" ActionMap="player" Trigger="0"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-HoldReady"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Multitool Ammo Magazine - (Has ammo)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Ammo Magazine - (Has ammo)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="FPS Attachment">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="AND">
+      <State Type="CarryableState" State="Carryable_Settled"/>
+      <State Type="CanAttachToHeldWeapon"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-AttachToHeldItem"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="AND">
+      <State Type="CarryableState" State="Carryable_Carried"/>
+      <State Type="CanAttachToHeldWeapon"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-AttachToHeldItem"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="AND">
+      <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+      <State Type="CanAttachToHeldWeapon"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-AttachToHeldItem"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Food">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Consume"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Consume"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Consume"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Drink">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Consume"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Consume"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Consume"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Incapacitated Actor (Lootable)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="NOT">
+      <State Type="CarryableState" State="Special_Gripped"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Sync_MobiGlas"/>
+    <DefaultAction Type="Interaction" Name="BodyDrag"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="HasAvailableCommsTap"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="CommsTap"/>
+    <DefaultAction Type="Interaction" Name="BodyDrag"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="NOT">
+      <State Type="CarryableState" State="Special_Gripped"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Sync"/>
+    <DefaultAction Type="Interaction" Name="BodyDrag"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="NOT">
+      <State Type="CarryableState" State="Special_Gripped"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Looting-OpenLootingUI"/>
+    <DefaultAction Type="Interaction" Name="BodyDrag"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Special_Gripped"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="BodyDrop"/>
+    <DefaultAction Type="Interaction" Name="Looting-OpenLootingUI"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Mounted Gun">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Grip"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Special_Mounted"/>
+    </States>
+    <DefaultAction Type="Action" Name="attack1" ActionMap="player" Trigger="0"/>
+    <DefaultAction Type="Action" Name="zoom" ActionMap="player" Trigger="0"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Actor Movable (Trolley Push/Pull &amp;amp; Pushblocks)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Grip"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Special_Gripped"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Release"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Armour (not Helmet) - Has Inventory">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_EquippedWorn"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Armour (not Helmet) - No Inventory">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_EquippedWorn"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Helmet (Armour)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_EquippedWorn"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Stowed"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Clothing - (not eyewear) Has Inventory">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_EquippedWorn"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Clothing - (not eyewear) No Inventory">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_EquippedWorn"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Clothing - Eyewear">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_EquippedWorn"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Loot"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipWearable"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Mineable (FPS scale)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Harvestables, Keycards &amp; Fuses">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Flare (Primeable Throwable sparkler)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Ignite"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Restraints - Cuffs">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Action" Name="restrain" ActionMap="player" Trigger="1"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Glow stick">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Activate"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-EquipToItemport"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Tray - Food (Chowline)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Inspect on pickup (books / datapads / plushies etc.)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Junk - One Handed (1H)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="OR">
+      <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Place"/>
+    <DefaultAction Type="Action" Name="throw_underhand" ActionMap="player" Trigger="0"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Carryables - One Handed (1H)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Carryables - Two Handed (2H)">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Drop"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Storage OR Lootable Container - Large External Inventories">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="InteractionStateMachineStateTag">
+      <Tag TagId="a77dbb65-c5fa-4664-996a-a90bdc1985c3"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Looting-OpenInventoryUI"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Storage OR Lootable Container - External Inventories">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="InteractionStateMachineStateTag">
+      <Tag TagId="a77dbb65-c5fa-4664-996a-a90bdc1985c3"/>
+     </State>
+    </States>
+    <DefaultAction Type="Interaction" Name="Looting-OpenLootingUI"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Mining gadget">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndEquipped"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="NoAction"/>
+   </Action>
+  </Actions>
+ </Entry>
+ <Entry Description="Base (catch all) - Any Carryable">
+  <Actions>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Settled"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Inspect"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_Carried"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Place"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+   <Action>
+    <States>
+     <State Type="CarryableState" State="Carryable_CarriedAndInspected"/>
+    </States>
+    <DefaultAction Type="Interaction" Name="Carryable-Carry"/>
+    <DefaultAction Type="Interaction" Name="Carryable-Store"/>
+   </Action>
+  </Actions>
+ </Entry>
+</DefaultActions>

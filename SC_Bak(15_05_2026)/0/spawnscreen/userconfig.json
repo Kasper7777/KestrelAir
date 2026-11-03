@@ -1,0 +1,59 @@
+{
+	"Version": 1,
+	"VehicleSlotMap": [
+		{
+			"key": { "gameModeId": 1, "lpc32": 0, "npc32": 2154241969 },
+			"value": [
+				{ "Entitlement": 2396881049 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 }
+			]
+		},
+		{
+			"key": { "gameModeId": 1, "lpc32": 0, "npc32": 2434011150 },
+			"value": [
+				{ "Entitlement": 3230337920 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 }
+			]
+		},
+		{
+			"key": { "gameModeId": 1, "lpc32": 0, "npc32": 3344822345 },
+			"value": [
+				{ "Entitlement": 2616114795 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 }
+			]
+		},
+		{
+			"key": { "gameModeId": 2, "lpc32": 0, "npc32": 0 },
+			"value": [
+				{ "Entitlement": 3230337920 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 }
+			]
+		},
+		{
+			"key": { "gameModeId": 4, "lpc32": 0, "npc32": 0 },
+			"value": [
+				{ "Entitlement": 2616114795 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 }
+			]
+		},
+		{
+			"key": { "gameModeId": 27, "lpc32": 0, "npc32": 0 },
+			"value": [
+				{ "Entitlement": 33737061 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 },
+				{ "Entitlement": 0 }
+			]
+		}
+	]
+}

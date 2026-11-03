@@ -1,0 +1,219 @@
+﻿2026-11-03 15:31:44.964   Log opened. (Time zone: UTC+00:00)
+2026-11-03 15:31:44.964   Setup version: Inno Setup version 6.2.2
+2026-11-03 15:31:44.964   Original Setup EXE: C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\vjoy\vJoySetup_v2.2.2.0_Win10_Win11.exe
+2026-11-03 15:31:44.964   Setup command line: /SL5="$809B6,4410908,1043456,C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\vjoy\vJoySetup_v2.2.2.0_Win10_Win11.exe" /SPAWNWND=$50AC8 /NOTIFYWND=$350A86 /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /LOG=C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\vjoy\install.log 
+2026-11-03 15:31:44.964   Compatibility mode: Yes (Installer)
+2026-11-03 15:31:44.964   Windows version: 10.0.26300  (NT platform: Yes)
+2026-11-03 15:31:44.964   64-bit Windows: Yes
+2026-11-03 15:31:44.965   Processor architecture: x64
+2026-11-03 15:31:44.965   User privileges: Administrative
+2026-11-03 15:31:44.969   Administrative install mode: Yes
+2026-11-03 15:31:44.969   Install mode root key: HKEY_LOCAL_MACHINE
+2026-11-03 15:31:44.969   64-bit install mode: Yes
+2026-11-03 15:31:44.975   Created temporary directory: C:\Users\Aero\AppData\Local\Temp\is-03GM8.tmp
+2026-11-03 15:31:44.988   -- DLL function import --
+2026-11-03 15:31:44.988   Function name: ExitProcess
+2026-11-03 15:31:44.988   DLL name: kernel32.dll
+2026-11-03 15:31:44.988   Dest DLL name: kernel32.dll
+2026-11-03 15:31:44.988   Importing the DLL function.
+2026-11-03 15:31:44.988   Successfully imported the DLL function. Delay loaded? No
+2026-11-03 15:31:44.988   InitializeSetup()
+2026-11-03 15:31:44.988   GetCommandlineParam(): Flag: ph2 not found
+2026-11-03 15:31:44.988   InitializeSetup() - Value of Ph2 Flag = 
+2026-11-03 15:31:45.213   Extracting temporary file: C:\Users\Aero\AppData\Local\Temp\is-03GM8.tmp\driver_signing_notice.bmp
+2026-11-03 15:31:45.243    PrepareToInstall()
+2026-11-03 15:31:45.244   Found 19 files to register with RestartManager.
+2026-11-03 15:31:45.244   Calling RestartManager's RmGetList.
+2026-11-03 15:31:45.253   RmGetList finished successfully.
+2026-11-03 15:31:45.253   RestartManager found no applications using one of our files.
+2026-11-03 15:31:45.257   CurStepChanged(ssInstall)
+2026-11-03 15:31:45.257   Starting the installation process.
+2026-11-03 15:31:45.260   Creating directory: C:\Program Files\vJoy
+2026-11-03 15:31:45.262   Directory for uninstall files: C:\Program Files\vJoy
+2026-11-03 15:31:45.262   Creating new uninstall log: C:\Program Files\vJoy\unins000.dat
+2026-11-03 15:31:45.265   -- File entry --
+2026-11-03 15:31:45.265   Dest filename: C:\Program Files\vJoy\unins000.exe
+2026-11-03 15:31:45.265   Non-default bitness: 32-bit
+2026-11-03 15:31:45.267   Time stamp of our file: 2026-11-03 15:31:44.381
+2026-11-03 15:31:45.267   Installing the file.
+2026-11-03 15:31:45.275   Successfully installed the file.
+2026-11-03 15:31:45.276   -- File entry --
+2026-11-03 15:31:45.276   Dest filename: C:\Program Files\vJoy\hidkmdf.sys
+2026-11-03 15:31:45.276   Time stamp of our file: 2023-12-18 13:54:10.000
+2026-11-03 15:31:45.276   Installing the file.
+2026-11-03 15:31:45.278   Successfully installed the file.
+2026-11-03 15:31:45.279   -- File entry --
+2026-11-03 15:31:45.279   Dest filename: C:\Program Files\vJoy\vjoy.cat
+2026-11-03 15:31:45.279   Time stamp of our file: 2023-12-18 13:54:10.000
+2026-11-03 15:31:45.279   Installing the file.
+2026-11-03 15:31:45.279   Successfully installed the file.
+2026-11-03 15:31:45.280   -- File entry --
+2026-11-03 15:31:45.280   Dest filename: C:\Program Files\vJoy\vjoy.inf
+2026-11-03 15:31:45.280   Time stamp of our file: 2023-12-18 13:54:10.000
+2026-11-03 15:31:45.280   Installing the file.
+2026-11-03 15:31:45.281   Successfully installed the file.
+2026-11-03 15:31:45.281   -- File entry --
+2026-11-03 15:31:45.281   Dest filename: C:\Program Files\vJoy\vJoy.sys
+2026-11-03 15:31:45.281   Time stamp of our file: 2023-12-18 13:54:10.000
+2026-11-03 15:31:45.281   Installing the file.
+2026-11-03 15:31:45.284   Successfully installed the file.
+2026-11-03 15:31:45.284   -- File entry --
+2026-11-03 15:31:45.284   Dest filename: C:\Program Files\vJoy\x64\LBIndustrialCtrls.dll
+2026-11-03 15:31:45.284   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.284   Installing the file.
+2026-11-03 15:31:45.284   Creating directory: C:\Program Files\vJoy\x64
+2026-11-03 15:31:45.287   Successfully installed the file.
+2026-11-03 15:31:45.287   -- File entry --
+2026-11-03 15:31:45.287   Dest filename: C:\Program Files\vJoy\x64\vJoyInstall.dll
+2026-11-03 15:31:45.288   Time stamp of our file: 2023-12-14 15:19:22.000
+2026-11-03 15:31:45.288   Installing the file.
+2026-11-03 15:31:45.303   Successfully installed the file.
+2026-11-03 15:31:45.303   -- File entry --
+2026-11-03 15:31:45.303   Dest filename: C:\Program Files\vJoy\x64\vJoyInterface.dll
+2026-11-03 15:31:45.303   Time stamp of our file: 2023-12-19 08:08:10.000
+2026-11-03 15:31:45.303   Installing the file.
+2026-11-03 15:31:45.317   Successfully installed the file.
+2026-11-03 15:31:45.317   -- File entry --
+2026-11-03 15:31:45.317   Dest filename: C:\Program Files\vJoy\x64\vJoyInterfaceWrap.dll
+2026-11-03 15:31:45.318   Time stamp of our file: 2023-12-19 08:08:14.000
+2026-11-03 15:31:45.318   Installing the file.
+2026-11-03 15:31:45.318   Successfully installed the file.
+2026-11-03 15:31:45.318   -- File entry --
+2026-11-03 15:31:45.318   Dest filename: C:\Program Files\vJoy\x64\mfc140u.dll
+2026-11-03 15:31:45.319   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.319   Installing the file.
+2026-11-03 15:31:45.475   Successfully installed the file.
+2026-11-03 15:31:45.475   -- File entry --
+2026-11-03 15:31:45.475   Dest filename: C:\Program Files\vJoy\x64\msvcp140.dll
+2026-11-03 15:31:45.475   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.475   Installing the file.
+2026-11-03 15:31:45.487   Successfully installed the file.
+2026-11-03 15:31:45.487   -- File entry --
+2026-11-03 15:31:45.487   Dest filename: C:\Program Files\vJoy\x64\msvcp140_1.dll
+2026-11-03 15:31:45.487   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.487   Installing the file.
+2026-11-03 15:31:45.488   Successfully installed the file.
+2026-11-03 15:31:45.488   -- File entry --
+2026-11-03 15:31:45.489   Dest filename: C:\Program Files\vJoy\x64\vcruntime140.dll
+2026-11-03 15:31:45.489   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.489   Installing the file.
+2026-11-03 15:31:45.491   Successfully installed the file.
+2026-11-03 15:31:45.491   -- File entry --
+2026-11-03 15:31:45.491   Dest filename: C:\Program Files\vJoy\x64\vGenInterface.dll
+2026-11-03 15:31:45.493   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.493   Installing the file.
+2026-11-03 15:31:45.504   Successfully installed the file.
+2026-11-03 15:31:45.504   -- File entry --
+2026-11-03 15:31:45.504   Dest filename: C:\Program Files\vJoy\x64\vJoyMonitor.dll
+2026-11-03 15:31:45.505   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.505   Installing the file.
+2026-11-03 15:31:45.507   Successfully installed the file.
+2026-11-03 15:31:45.507   -- File entry --
+2026-11-03 15:31:45.507   Dest filename: C:\Program Files\vJoy\vJoyInstall.exe
+2026-11-03 15:31:45.508   Time stamp of our file: 2023-12-14 15:19:26.000
+2026-11-03 15:31:45.508   Installing the file.
+2026-11-03 15:31:45.520   Successfully installed the file.
+2026-11-03 15:31:45.520   -- File entry --
+2026-11-03 15:31:45.520   Dest filename: C:\Program Files\vJoy\x64\vJoyConf.exe
+2026-11-03 15:31:45.520   Time stamp of our file: 2023-12-14 15:26:56.000
+2026-11-03 15:31:45.520   Installing the file.
+2026-11-03 15:31:45.542   Successfully installed the file.
+2026-11-03 15:31:45.542   -- File entry --
+2026-11-03 15:31:45.543   Dest filename: C:\Program Files\vJoy\x64\vJoyConfig.exe
+2026-11-03 15:31:45.543   Time stamp of our file: 2023-12-14 15:19:26.000
+2026-11-03 15:31:45.543   Installing the file.
+2026-11-03 15:31:45.547   Successfully installed the file.
+2026-11-03 15:31:45.547   -- File entry --
+2026-11-03 15:31:45.548   Dest filename: C:\Program Files\vJoy\x64\vJoyFeeder.exe
+2026-11-03 15:31:45.548   Time stamp of our file: 2023-12-14 15:27:00.000
+2026-11-03 15:31:45.548   Installing the file.
+2026-11-03 15:31:45.554   Successfully installed the file.
+2026-11-03 15:31:45.554   -- File entry --
+2026-11-03 15:31:45.554   Dest filename: C:\Program Files\vJoy\x64\LBIndustrialCtrls.dll
+2026-11-03 15:31:45.554   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.556   Dest file exists.
+2026-11-03 15:31:45.556   Time stamp of existing file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.556   Version of our file: 1.0.0.0
+2026-11-03 15:31:45.618   Version of existing file: 1.0.0.0
+2026-11-03 15:31:45.618   Same version. Skipping.
+2026-11-03 15:31:45.619   -- File entry --
+2026-11-03 15:31:45.619   Dest filename: C:\Program Files\vJoy\x64\JoyMonitor.exe
+2026-11-03 15:31:45.619   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.619   Installing the file.
+2026-11-03 15:31:45.624   Successfully installed the file.
+2026-11-03 15:31:45.624   -- File entry --
+2026-11-03 15:31:45.624   Dest filename: C:\Program Files\vJoy\x64\msvcp120.dll
+2026-11-03 15:31:45.624   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.624   Installing the file.
+2026-11-03 15:31:45.636   Successfully installed the file.
+2026-11-03 15:31:45.636   -- File entry --
+2026-11-03 15:31:45.637   Dest filename: C:\Program Files\vJoy\x64\msvcr120.dll
+2026-11-03 15:31:45.637   Time stamp of our file: 2023-12-14 11:15:26.000
+2026-11-03 15:31:45.637   Installing the file.
+2026-11-03 15:31:45.662   Successfully installed the file.
+2026-11-03 15:31:45.662   -- File entry --
+2026-11-03 15:31:45.662   Dest filename: C:\Program Files\vJoy\x64\vJoyList.exe
+2026-11-03 15:31:45.662   Time stamp of our file: 2023-12-14 15:26:50.000
+2026-11-03 15:31:45.662   Installing the file.
+2026-11-03 15:31:45.668   Successfully installed the file.
+2026-11-03 15:31:45.668   -- Icon entry --
+2026-11-03 15:31:45.668   Dest filename: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\vJoy\Uninstall vJoy.lnk
+2026-11-03 15:31:45.668   Creating directory: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\vJoy
+2026-11-03 15:31:45.680   Creating the icon.
+2026-11-03 15:31:45.849   Successfully created the icon.
+2026-11-03 15:31:45.856   -- Icon entry --
+2026-11-03 15:31:45.856   Dest filename: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\vJoy\Monitor vJoy.lnk
+2026-11-03 15:31:45.856   Creating the icon.
+2026-11-03 15:31:45.891   Successfully created the icon.
+2026-11-03 15:31:45.906   -- Icon entry --
+2026-11-03 15:31:45.906   Dest filename: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\vJoy\Configure vJoy.lnk
+2026-11-03 15:31:45.906   Creating the icon.
+2026-11-03 15:31:45.953   Successfully created the icon.
+2026-11-03 15:31:45.962   -- Icon entry --
+2026-11-03 15:31:45.962   Dest filename: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\vJoy\vJoy Feeder (Demo).lnk
+2026-11-03 15:31:45.963   Creating the icon.
+2026-11-03 15:31:46.205   Successfully created the icon.
+2026-11-03 15:31:46.211   -- Icon entry --
+2026-11-03 15:31:46.211   Dest filename: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\vJoy\vJoy Device List.lnk
+2026-11-03 15:31:46.212   Creating the icon.
+2026-11-03 15:31:46.235   Successfully created the icon.
+2026-11-03 15:31:46.244   -- Icon entry --
+2026-11-03 15:31:46.244   Dest filename: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\vJoy\vJoy Home.url
+2026-11-03 15:31:46.246   Creating the icon.
+2026-11-03 15:31:46.246   Successfully created the icon.
+2026-11-03 15:31:46.254   -- Icon entry --
+2026-11-03 15:31:46.254   Dest filename: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\vJoy\vJoy SDK.url
+2026-11-03 15:31:46.254   Creating the icon.
+2026-11-03 15:31:46.254   Successfully created the icon.
+2026-11-03 15:31:46.260   -- Registry entry --
+2026-11-03 15:31:46.260   Key: HKEY_CURRENT_USER\System\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM\VID_1234&PID_BEAD
+2026-11-03 15:31:46.260   Value name: OEMName
+2026-11-03 15:31:46.260   Key of value to delete does not exist.
+2026-11-03 15:31:46.260   -- Registry entry --
+2026-11-03 15:31:46.260   Key: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM\VID_1234&PID_BEAD
+2026-11-03 15:31:46.260   Value name: OEMName
+2026-11-03 15:31:46.260   Key of value to delete does not exist.
+2026-11-03 15:31:46.260   NeedRestart() - Start
+2026-11-03 15:31:46.260   InitFromRegistry() - Start
+2026-11-03 15:31:46.260   GetCommandlineParam(): Flag: initreg not found
+2026-11-03 15:31:46.260   InitFromRegistry() - using the default registry file: vJoyInit.reg
+2026-11-03 15:31:46.260   InitFromRegistry(): Default optional registry FileC:\Users\Aero\Documents\GitHub\KestrelAir\.tools\vjoy\vJoyInit.reg not found, continue without it
+2026-11-03 15:31:46.260   Exec_vJoyInstall() - Start
+2026-11-03 15:31:53.549   vJoyInstall.exe Was executed. Result code: -8
+2026-11-03 15:31:53.549   vJoyInstall.exe reported that it needs reboot
+2026-11-03 15:31:53.549   PreparePh2() - Start
+2026-11-03 15:31:53.549   Will restart because NeedRestart returned True.
+2026-11-03 15:31:53.549   Saving uninstall information.
+2026-11-03 15:31:53.549   Creating new uninstall key: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\{8E31F76F-74C3-47F1-9550-E041EEDC5FBB}_is1
+2026-11-03 15:31:53.550   Writing uninstall key values.
+2026-11-03 15:31:53.550   Detected previous non administrative install? No
+2026-11-03 15:31:53.550   Detected previous administrative 32-bit install? No
+2026-11-03 15:31:53.555   Installation process succeeded.
+2026-11-03 15:31:53.555   Need to restart Windows? Yes
+2026-11-03 15:31:53.556   Will not restart Windows automatically.
+2026-11-03 15:31:53.556   Deinitializing Setup.
+2026-11-03 15:31:53.556   RegWriteOrigTestMode(): UninstKeyVjoy=Software\Microsoft\Windows\CurrentVersion\Uninstall\{8E31F76F-74C3-47F1-9550-E041EEDC5FBB}_is1\OrigTestMode
+2026-11-03 15:31:53.556   Set the Value because it does not exist
+2026-11-03 15:31:53.556   RegWriteDllFolderLocation(): UninstKeyVjoy=Software\Microsoft\Windows\CurrentVersion\Uninstall\{8E31F76F-74C3-47F1-9550-E041EEDC5FBB}_is1\DllX86Location
+2026-11-03 15:31:53.556   RegWriteDllFolderLocation(): UninstKeyVjoy=Software\Microsoft\Windows\CurrentVersion\Uninstall\{8E31F76F-74C3-47F1-9550-E041EEDC5FBB}_is1\DllX64Location
+2026-11-03 15:31:53.590   Log closed.

@@ -36,9 +36,24 @@ openPanel(0x025C, {{led=8,offset=0xA008,off=dimRed,on=brightRed},
                  {[1]=0xBC,[2]=0xBC,[3]=0xBC,[4]=0xBC,[5]=0xBC,[6]=0xBC})
 -- Throttle B4: PhID 3, report slot 4. Other throttle LEDs remain under firmware control.
 -- FSUIPC 026D is CAMERA STATE (byte); only state 4 is the drone camera.
-openPanel(0x0194, {{led=4,offset=0x026D,byte=true,equals=4,off=0x91,on=0xBC}})
+-- Neon green off; hot pink (red 3, green 0, blue 2) on.
+openPanel(0x0194, {{led=4,offset=0x026D,byte=true,equals=4,off=0x8C,on=0xA3}})
+
+local lastDroneState
+local function releaseStickKeysOnCameraChange()
+    local drone = ipc.readUB(0x026D) == 4
+    if lastDroneState ~= nil and drone ~= lastDroneState then
+        -- Keyboard holds belong to the on-foot/cockpit mapping. Native drone axes
+        -- take over in drone mode; never carry a held key across that boundary.
+        for _, key in ipairs({37,38,39,40,65,68,83,87}) do
+            ipc.keypressplus(key,0,2)
+        end
+    end
+    lastDroneState = drone
+end
 
 function KestrelAirPoll()
+    releaseStickKeysOnCameraChange()
     for _, panel in ipairs(panels) do
         local leds = {}
         for i=1,17 do leds[i]=panel.baseline[i] or 0 end

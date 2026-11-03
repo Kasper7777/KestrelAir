@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Version Num="-1" />
+
+<FriendlyName PlatformAvailability="15" Locked="false">KestrelAir Pedals via SPAD</FriendlyName>
+
+<Device DeviceName="Saitek Pro Flight Rudder Pedals" GUID="{AD381630-4BF9-11F1-8008-444553540000}" ProductID="1891" CompositeID="0" HWVer="1.0.0.0">
+	<AircraftInfo CategoryName="AIRPLANE" />
+</Device>

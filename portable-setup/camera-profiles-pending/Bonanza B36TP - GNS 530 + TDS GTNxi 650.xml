@@ -832,6 +832,9 @@
           <Event BoundTo="BUTTON_9">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_FRACT_INC">
                     <Parameter Value="1" />
@@ -843,6 +846,9 @@
           <Event BoundTo="BUTTON_10">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_FRACT_DEC">
                     <Parameter Value="1" />
@@ -854,6 +860,9 @@
           <Event BoundTo="BUTTON_17">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_WHOLE_INC">
                     <Parameter Value="1" />
@@ -865,6 +874,9 @@
           <Event BoundTo="BUTTON_18">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_WHOLE_DEC">
                     <Parameter Value="1" />
@@ -876,6 +888,9 @@
           <Event BoundTo="BUTTON_34">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_FRACT_INC">
                     <Parameter Value="1" />
@@ -887,6 +902,9 @@
           <Event BoundTo="BUTTON_35">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_FRACT_DEC" />
                 </EventActions>
@@ -896,6 +914,9 @@
           <Event BoundTo="BUTTON_36">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_WHOLE_INC" />
                 </EventActions>
@@ -905,6 +926,9 @@
           <Event BoundTo="BUTTON_37">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_WHOLE_DEC" />
                 </EventActions>
@@ -914,6 +938,9 @@
           <Event BoundTo="BUTTON_5">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_SWAP" />
                 </EventActions>
@@ -923,6 +950,9 @@
           <Event BoundTo="BUTTON_38">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_SWAP" />
                 </EventActions>
@@ -932,6 +962,9 @@
           <Event BoundTo="BUTTON_11">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:HEADING_BUG_INC">
                     <Parameter Value="1" />
@@ -943,6 +976,9 @@
           <Event BoundTo="BUTTON_12">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:HEADING_BUG_DEC">
                     <Parameter Value="1" />
@@ -954,6 +990,9 @@
           <Event BoundTo="BUTTON_19">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_INC">
                     <Parameter Value="1" />
@@ -965,6 +1004,9 @@
           <Event BoundTo="BUTTON_20">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_DEC">
                     <Parameter Value="1" />
@@ -976,6 +1018,9 @@
           <Event BoundTo="BUTTON_25">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_INC" />
                 </EventActions>
@@ -985,6 +1030,9 @@
           <Event BoundTo="BUTTON_26">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_DEC" />
                 </EventActions>
@@ -994,6 +1042,9 @@
           <Event BoundTo="BUTTON_27">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_INC" />
                 </EventActions>
@@ -1003,6 +1054,9 @@
           <Event BoundTo="BUTTON_28">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_DEC" />
                 </EventActions>
@@ -1012,6 +1066,9 @@
           <Event BoundTo="BUTTON_6">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_IDENT_ON" />
                 </EventActions>
@@ -1021,6 +1078,9 @@
           <Event BoundTo="BUTTON_29">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_INC" />
                 </EventActions>
@@ -1030,6 +1090,9 @@
           <Event BoundTo="BUTTON_30">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_DEC" />
                 </EventActions>
@@ -1039,6 +1102,9 @@
           <Event BoundTo="BUTTON_31">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_INC" />
                 </EventActions>
@@ -1048,6 +1114,9 @@
           <Event BoundTo="BUTTON_32">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_DEC" />
                 </EventActions>
@@ -1057,6 +1126,9 @@
           <Event BoundTo="BUTTON_4">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="3" />
                 </EventActions>
@@ -1066,6 +1138,9 @@
           <Event BoundTo="BUTTON_8">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="1" />
                 </EventActions>
@@ -1075,6 +1150,9 @@
           <Event BoundTo="BUTTON_15">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="100" ValueOperation="Increment" />
                 </EventActions>
@@ -1084,6 +1162,9 @@
           <Event BoundTo="BUTTON_16">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="100" ValueOperation="Decrement" />
                 </EventActions>
@@ -1093,6 +1174,9 @@
           <Event BoundTo="BUTTON_23">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="1000" ValueOperation="Increment" />
                 </EventActions>
@@ -1102,6 +1186,9 @@
           <Event BoundTo="BUTTON_24">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="1000" ValueOperation="Decrement" />
                 </EventActions>
@@ -1111,6 +1198,9 @@
           <Event BoundTo="BUTTON_13">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_WHOLE_INC">
                     <Parameter Value="1" />
@@ -1122,6 +1212,9 @@
           <Event BoundTo="BUTTON_14">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_WHOLE_DEC">
                     <Parameter Value="1" />
@@ -1133,6 +1226,9 @@
           <Event BoundTo="BUTTON_21">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF_100_INC">
                     <Parameter Value="1" />
@@ -1144,6 +1240,9 @@
           <Event BoundTo="BUTTON_22">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF_100_DEC">
                     <Parameter Value="1" />
@@ -1155,6 +1254,9 @@
           <Event BoundTo="BUTTON_3">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="4" />
                 </EventActions>
@@ -1164,6 +1266,9 @@
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:RADIO_VOR1_IDENT_TOGGLE" />
                 </EventActions>
@@ -1173,6 +1278,9 @@
           <Event BoundTo="BUTTON_2">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:INSTRUMENT_HEADING_BUG" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" />
                 </EventActions>
@@ -1182,6 +1290,9 @@
           <Event BoundTo="BUTTON_7">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_RADIO_SWAP">
                     <Parameter Value="1" />
@@ -1199,6 +1310,9 @@
           <Event BoundTo="BUTTON_9">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_RADIO_FRACT_INC" />
                 </EventActions>
@@ -1208,6 +1322,9 @@
           <Event BoundTo="BUTTON_10">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_RADIO_FRACT_DEC" />
                 </EventActions>
@@ -1217,6 +1334,9 @@
           <Event BoundTo="BUTTON_17">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_RADIO_WHOLE_INC" />
                 </EventActions>
@@ -1226,6 +1346,9 @@
           <Event BoundTo="BUTTON_18">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_RADIO_WHOLE_DEC" />
                 </EventActions>
@@ -1235,6 +1358,9 @@
           <Event BoundTo="BUTTON_36">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM2_RADIO_WHOLE_INC" />
                 </EventActions>
@@ -1244,6 +1370,9 @@
           <Event BoundTo="BUTTON_37">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM2_RADIO_WHOLE_DEC" />
                 </EventActions>
@@ -1253,6 +1382,9 @@
           <Event BoundTo="BUTTON_34">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM2_RADIO_FRACT_INC" />
                 </EventActions>
@@ -1262,6 +1394,9 @@
           <Event BoundTo="BUTTON_35">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM2_RADIO_FRACT_DEC" />
                 </EventActions>
@@ -1271,6 +1406,9 @@
           <Event BoundTo="BUTTON_5">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_STBY_RADIO_SWAP" />
                 </EventActions>
@@ -1280,6 +1418,9 @@
           <Event BoundTo="BUTTON_40">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM2_RADIO_SWAP" />
                 </EventActions>
@@ -1289,6 +1430,9 @@
           <Event BoundTo="BUTTON_11">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:VOR1_OBI_INC" />
                 </EventActions>
@@ -1298,6 +1442,9 @@
           <Event BoundTo="BUTTON_12">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:VOR1_OBI_DEC" />
                 </EventActions>
@@ -1307,6 +1454,9 @@
           <Event BoundTo="BUTTON_38">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:VOR2_OBI_INC" />
                 </EventActions>
@@ -1316,6 +1466,9 @@
           <Event BoundTo="BUTTON_39">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:VOR2_OBI_DEC" />
                 </EventActions>
@@ -1325,6 +1478,9 @@
           <Event BoundTo="BUTTON_19">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:KOHLSMAN_INC" />
                 </EventActions>
@@ -1334,6 +1490,9 @@
           <Event BoundTo="BUTTON_20">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:KOHLSMAN_DEC" />
                 </EventActions>
@@ -1343,6 +1502,9 @@
           <Event BoundTo="BUTTON_27">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:BAROMETRIC_STD_PRESSURE" />
                 </EventActions>
@@ -1352,6 +1514,9 @@
           <Event BoundTo="BUTTON_28">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:BAROMETRIC_STD_PRESSURE" />
                 </EventActions>
@@ -1363,6 +1528,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -1373,6 +1539,9 @@
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM1_RECEIVE_SELECT" />
                 </EventActions>
@@ -1384,6 +1553,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
@@ -1394,11 +1564,17 @@
           <Event BoundTo="BUTTON_6">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="0" />
                 </EventActions>
@@ -1408,11 +1584,17 @@
           <Event BoundTo="BUTTON_7">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
@@ -1422,6 +1604,9 @@
           <Event BoundTo="BUTTON_31">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_INC" />
                 </EventActions>
@@ -1431,6 +1616,9 @@
           <Event BoundTo="BUTTON_32">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_DEC" />
                 </EventActions>
@@ -1442,6 +1630,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -1450,6 +1639,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -1462,6 +1652,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -1470,6 +1661,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
@@ -1482,6 +1674,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -1490,6 +1683,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -1502,6 +1696,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -1510,6 +1705,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
@@ -1522,6 +1718,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -1534,6 +1731,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
@@ -1542,6 +1740,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
@@ -1554,6 +1753,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
@@ -1562,6 +1762,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -1574,6 +1775,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
@@ -1582,6 +1784,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
@@ -1594,6 +1797,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
@@ -1602,6 +1806,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
@@ -1614,6 +1819,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
@@ -1622,12 +1828,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
@@ -1639,6 +1849,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -1647,6 +1858,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -1659,6 +1871,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -1667,6 +1880,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
@@ -1683,6 +1897,9 @@
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_MASTER" />
                 </EventActions>
@@ -1692,6 +1909,9 @@
           <Event BoundTo="BUTTON_2">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_PANEL_HEADING_HOLD" />
                 </EventActions>
@@ -1701,6 +1921,9 @@
           <Event BoundTo="BUTTON_3">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_NAV1_HOLD" />
                 </EventActions>
@@ -1710,6 +1933,9 @@
           <Event BoundTo="BUTTON_4">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_APR_HOLD" />
                 </EventActions>
@@ -1719,6 +1945,9 @@
           <Event BoundTo="BUTTON_5">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_PANEL_VS_HOLD" />
                 </EventActions>
@@ -1728,6 +1957,9 @@
           <Event BoundTo="BUTTON_6">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:FLIGHT_LEVEL_CHANGE" />
                 </EventActions>
@@ -1737,6 +1969,9 @@
           <Event BoundTo="BUTTON_7">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:TOGGLE_FLIGHT_DIRECTOR" />
                 </EventActions>
@@ -1746,6 +1981,9 @@
           <Event BoundTo="BUTTON_8">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_ALT_HOLD" />
                 </EventActions>
@@ -1755,6 +1993,9 @@
           <Event BoundTo="BUTTON_10">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_BC_HOLD" />
                 </EventActions>
@@ -1764,6 +2005,9 @@
           <Event BoundTo="BUTTON_11">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_VS_VAR_INC" />
                 </EventActions>
@@ -1773,6 +2017,9 @@
           <Event BoundTo="BUTTON_12">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AP_VS_VAR_DEC" />
                 </EventActions>
@@ -1782,6 +2029,9 @@
           <Event BoundTo="BUTTON_9">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
                 </EventActions>
@@ -1799,6 +2049,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -1811,6 +2062,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -1823,6 +2075,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
@@ -1835,6 +2088,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
@@ -1847,6 +2101,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MSG_Push" />
@@ -1859,6 +2114,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
@@ -1867,12 +2123,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
@@ -1884,6 +2144,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -1896,6 +2157,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push_Long" />
@@ -1904,12 +2166,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
@@ -1921,6 +2187,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_RightSmallKnob_Push" />
@@ -1933,6 +2200,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -1941,6 +2209,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobDec" Value="1" />
@@ -1953,6 +2222,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
@@ -1965,6 +2235,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
@@ -1973,12 +2244,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
@@ -1990,6 +2265,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
@@ -2002,6 +2278,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
@@ -2010,12 +2287,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
@@ -2027,6 +2308,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_VNAV_Push" />
@@ -2035,6 +2317,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobInc" Value="1" />
@@ -2047,6 +2330,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MSG_Push" />
@@ -2059,12 +2343,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
@@ -2076,6 +2364,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
@@ -2084,12 +2373,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
@@ -2101,6 +2394,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -2113,6 +2407,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
@@ -2121,12 +2416,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
@@ -2138,6 +2437,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
@@ -2146,12 +2446,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
@@ -2163,6 +2467,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
@@ -2175,6 +2480,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
@@ -2187,6 +2493,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
@@ -2195,12 +2502,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
@@ -2212,6 +2523,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -2224,6 +2536,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
@@ -2232,12 +2545,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
@@ -2249,6 +2566,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
@@ -2257,12 +2575,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
@@ -2274,6 +2596,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
@@ -2286,6 +2609,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
@@ -2298,6 +2622,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_DRCT_Push" />
@@ -2306,12 +2631,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_DTOKey" Value="0" />
                 </EventActions>
@@ -2323,6 +2652,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -2335,6 +2665,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CLR_Push" />
@@ -2343,12 +2674,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
@@ -2360,6 +2695,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_MENU_Push" />
@@ -2368,12 +2704,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
@@ -2385,6 +2725,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_PROC_Push" />
@@ -2397,6 +2738,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_ENT_Push" />
@@ -2407,6 +2749,9 @@
           <Event BoundTo="BUTTON_4">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_AVIONICS_FOCUS" Value="0" />
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
@@ -2420,6 +2765,9 @@
           <Event BoundTo="BUTTON_10">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_AVIONICS_FOCUS" Value="1" />
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
@@ -2439,6 +2787,9 @@
           <Event BoundTo="BUTTON_9">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_FRACT_INC">
                     <Parameter Value="1" />
@@ -2450,6 +2801,9 @@
           <Event BoundTo="BUTTON_10">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_FRACT_DEC">
                     <Parameter Value="1" />
@@ -2461,6 +2815,9 @@
           <Event BoundTo="BUTTON_17">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_WHOLE_INC">
                     <Parameter Value="1" />
@@ -2472,6 +2829,9 @@
           <Event BoundTo="BUTTON_18">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_WHOLE_DEC">
                     <Parameter Value="1" />
@@ -2483,6 +2843,9 @@
           <Event BoundTo="BUTTON_34">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_FRACT_INC">
                     <Parameter Value="1" />
@@ -2494,6 +2857,9 @@
           <Event BoundTo="BUTTON_35">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_FRACT_DEC" />
                 </EventActions>
@@ -2503,6 +2869,9 @@
           <Event BoundTo="BUTTON_36">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_WHOLE_INC" />
                 </EventActions>
@@ -2512,6 +2881,9 @@
           <Event BoundTo="BUTTON_37">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_WHOLE_DEC" />
                 </EventActions>
@@ -2521,6 +2893,9 @@
           <Event BoundTo="BUTTON_5">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV1_RADIO_SWAP" />
                 </EventActions>
@@ -2530,6 +2905,9 @@
           <Event BoundTo="BUTTON_38">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:NAV2_RADIO_SWAP" />
                 </EventActions>
@@ -2539,6 +2917,9 @@
           <Event BoundTo="BUTTON_11">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:HEADING_BUG_INC">
                     <Parameter Value="1" />
@@ -2550,6 +2931,9 @@
           <Event BoundTo="BUTTON_12">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:HEADING_BUG_DEC">
                     <Parameter Value="1" />
@@ -2561,6 +2945,9 @@
           <Event BoundTo="BUTTON_19">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_INC">
                     <Parameter Value="1" />
@@ -2572,6 +2959,9 @@
           <Event BoundTo="BUTTON_20">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:GYRO_DRIFT_DEC">
                     <Parameter Value="1" />
@@ -2583,6 +2973,9 @@
           <Event BoundTo="BUTTON_25">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_INC" />
                 </EventActions>
@@ -2592,6 +2985,9 @@
           <Event BoundTo="BUTTON_26">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1000_DEC" />
                 </EventActions>
@@ -2601,6 +2997,9 @@
           <Event BoundTo="BUTTON_27">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_INC" />
                 </EventActions>
@@ -2610,6 +3009,9 @@
           <Event BoundTo="BUTTON_28">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_100_DEC" />
                 </EventActions>
@@ -2619,6 +3021,9 @@
           <Event BoundTo="BUTTON_6">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_IDENT_ON" />
                 </EventActions>
@@ -2628,6 +3033,9 @@
           <Event BoundTo="BUTTON_29">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_INC" />
                 </EventActions>
@@ -2637,6 +3045,9 @@
           <Event BoundTo="BUTTON_30">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_10_DEC" />
                 </EventActions>
@@ -2646,6 +3057,9 @@
           <Event BoundTo="BUTTON_31">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_INC" />
                 </EventActions>
@@ -2655,6 +3069,9 @@
           <Event BoundTo="BUTTON_32">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_DEC" />
                 </EventActions>
@@ -2664,6 +3081,9 @@
           <Event BoundTo="BUTTON_4">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="3" />
                 </EventActions>
@@ -2673,6 +3093,9 @@
           <Event BoundTo="BUTTON_8">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="1" />
                 </EventActions>
@@ -2682,6 +3105,9 @@
           <Event BoundTo="BUTTON_15">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="100" ValueOperation="Increment" />
                 </EventActions>
@@ -2691,6 +3117,9 @@
           <Event BoundTo="BUTTON_16">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="100" ValueOperation="Decrement" />
                 </EventActions>
@@ -2700,6 +3129,9 @@
           <Event BoundTo="BUTTON_23">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="1000" ValueOperation="Increment" />
                 </EventActions>
@@ -2709,6 +3141,9 @@
           <Event BoundTo="BUTTON_24">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:AUTOPILOT ALTITUDE LOCK VAR" Value="1000" ValueOperation="Decrement" />
                 </EventActions>
@@ -2718,6 +3153,9 @@
           <Event BoundTo="BUTTON_13">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_WHOLE_INC">
                     <Parameter Value="1" />
@@ -2729,6 +3167,9 @@
           <Event BoundTo="BUTTON_14">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_WHOLE_DEC">
                     <Parameter Value="1" />
@@ -2740,6 +3181,9 @@
           <Event BoundTo="BUTTON_21">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF_100_INC">
                     <Parameter Value="1" />
@@ -2751,6 +3195,9 @@
           <Event BoundTo="BUTTON_22">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF_100_DEC">
                     <Parameter Value="1" />
@@ -2762,6 +3209,9 @@
           <Event BoundTo="BUTTON_3">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="SIMCONNECT:TRANSPONDER STATE:1" Value="4" />
                 </EventActions>
@@ -2771,6 +3221,9 @@
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:RADIO_VOR1_IDENT_TOGGLE" />
                 </EventActions>
@@ -2780,6 +3233,9 @@
           <Event BoundTo="BUTTON_2">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue SourceType="Exp" TargetDataDefinition="B:INSTRUMENT_HEADING_BUG" SourceDataDefinition="[SIMCONNECT:PLANE HEADING DEGREES MAGNETIC]" />
                 </EventActions>
@@ -2789,6 +3245,9 @@
           <Event BoundTo="BUTTON_7">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:ADF1_RADIO_SWAP">
                     <Parameter Value="1" />
@@ -2806,6 +3265,9 @@
           <Event BoundTo="BUTTON_9">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_RADIO_FRACT_INC" />
                 </EventActions>
@@ -2815,6 +3277,9 @@
           <Event BoundTo="BUTTON_10">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_RADIO_FRACT_DEC" />
                 </EventActions>
@@ -2824,6 +3289,9 @@
           <Event BoundTo="BUTTON_17">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_RADIO_WHOLE_INC" />
                 </EventActions>
@@ -2833,6 +3301,9 @@
           <Event BoundTo="BUTTON_18">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_RADIO_WHOLE_DEC" />
                 </EventActions>
@@ -2842,6 +3313,9 @@
           <Event BoundTo="BUTTON_5">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM_STBY_RADIO_SWAP" />
                 </EventActions>
@@ -2851,6 +3325,9 @@
           <Event BoundTo="BUTTON_40">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM2_RADIO_SWAP" />
                 </EventActions>
@@ -2860,6 +3337,9 @@
           <Event BoundTo="BUTTON_11">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:VOR1_OBI_INC" />
                 </EventActions>
@@ -2869,6 +3349,9 @@
           <Event BoundTo="BUTTON_12">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:VOR1_OBI_DEC" />
                 </EventActions>
@@ -2878,6 +3361,9 @@
           <Event BoundTo="BUTTON_39">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:VOR2_OBI_DEC" />
                 </EventActions>
@@ -2887,6 +3373,9 @@
           <Event BoundTo="BUTTON_19">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:KOHLSMAN_INC" />
                 </EventActions>
@@ -2896,6 +3385,9 @@
           <Event BoundTo="BUTTON_20">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:KOHLSMAN_DEC" />
                 </EventActions>
@@ -2905,6 +3397,9 @@
           <Event BoundTo="BUTTON_27">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:BAROMETRIC_STD_PRESSURE" />
                 </EventActions>
@@ -2914,6 +3409,9 @@
           <Event BoundTo="BUTTON_28">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:BAROMETRIC_STD_PRESSURE" />
                 </EventActions>
@@ -2925,6 +3423,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_CDI_Push" />
@@ -2935,6 +3434,9 @@
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:COM1_RECEIVE_SELECT" />
                 </EventActions>
@@ -2946,6 +3448,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_OBS_Push" />
@@ -2956,11 +3459,17 @@
           <Event BoundTo="BUTTON_6">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_LKnobCRSR" Value="0" />
                 </EventActions>
@@ -2970,11 +3479,17 @@
           <Event BoundTo="BUTTON_7">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_HomeKey" Value="0" />
                 </EventActions>
@@ -2984,6 +3499,9 @@
           <Event BoundTo="BUTTON_31">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_INC" />
                 </EventActions>
@@ -2993,6 +3511,9 @@
           <Event BoundTo="BUTTON_32">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:XPNDR_1_DEC" />
                 </EventActions>
@@ -3004,6 +3525,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -3012,6 +3534,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -3024,6 +3547,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -3032,6 +3556,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
@@ -3044,6 +3569,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -3052,6 +3578,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -3064,6 +3591,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -3072,6 +3600,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
@@ -3084,6 +3613,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="H:AS530_1_FPL_Push" />
@@ -3096,6 +3626,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
@@ -3104,6 +3635,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
@@ -3116,6 +3648,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
@@ -3124,6 +3657,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -3136,6 +3670,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
@@ -3144,6 +3679,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
@@ -3156,6 +3692,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
@@ -3164,6 +3701,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
@@ -3176,6 +3714,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
@@ -3184,12 +3723,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
@@ -3201,6 +3744,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Right" />
@@ -3209,6 +3753,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />
@@ -3221,6 +3766,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Left" />
@@ -3229,6 +3775,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -3241,6 +3788,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Right" />
@@ -3249,6 +3797,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterInc" Value="1" />
@@ -3261,6 +3810,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightLargeKnob_Left" />
@@ -3269,6 +3819,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobOuterDec" Value="1" />
@@ -3281,6 +3832,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="MSFS:AS530_RightSmallKnob_Push" />
@@ -3289,12 +3841,16 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="RELEASE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobCRSR" Value="0" />
                 </EventActions>
@@ -3306,6 +3862,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
@@ -3314,6 +3871,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerDec" Value="1" />
@@ -3326,6 +3884,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
@@ -3334,6 +3893,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_AVIONICS_FOCUS" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:TDSGTNXI650U2_RKnobInnerInc" Value="1" />

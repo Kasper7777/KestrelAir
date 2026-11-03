@@ -1,4 +1,7 @@
 // ka-menu: drive BeyondATC's reply-option list from a WarBRD grip wheel (launched by SPAD "Run Program").
+// When vPilot is the foreground window the same three exes drive vPilot instead:
+//   next/prev selects the next/previous controller in "Controllers In Range" (category headings skipped),
+//   select types ".com1 <frequency>" into vPilot's command box and presses Enter (vPilot's own tune command).
 //   ka-menu-next.exe    wheel down  -> pointer to the next reply row (scrolls the list at the bottom edge)
 //   ka-menu-prev.exe    wheel up    -> pointer to the previous reply row (scrolls at the top edge)
 //   ka-menu-select.exe  wheel press -> click the highlighted reply, then put the pointer and focus back
@@ -62,6 +65,11 @@ static class KaMenu
 
     static int Run(string mode)
     {
+        // vPilot in front: the wheel drives vPilot's "Controllers In Range" list instead of BeyondATC.
+        uint fgPid; GetWindowThreadProcessId(GetForegroundWindow(), out fgPid);
+        foreach (Process p in Process.GetProcessesByName("vPilot"))
+            if ((uint)p.Id == fgPid) return VPilot.Run(mode, p);
+
         IntPtr win = FindWindow("BeyondATC");
         if (win == IntPtr.Zero) return 1;
         RECT c; GetClientRect(win, out c);

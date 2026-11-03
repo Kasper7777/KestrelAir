@@ -1,4 +1,4 @@
-param([switch]$Apply)
+﻿param([switch]$Apply)
 $ErrorActionPreference='Stop'
 $name='Baron - GNS 530 + TDS GTNxi 650.xml'
 $installed=Join-Path $env:USERPROFILE ('Documents\SPAD.neXt\profiles\'+$name)
@@ -18,7 +18,7 @@ function Change($target,$expression){'<EventActionChangeValue SourceType="Exp" T
 SetPress '0x025A' 4 (Change 'B:ENGINE_COWLFLAPS_LEFT' 'if([SIMCONNECT:RECIP ENG COWL FLAP POSITION:1] > 0.5, 0, 1)')
 SetPress '0x025A' 5 (Change 'B:ENGINE_COWLFLAPS_RIGHT' 'if([SIMCONNECT:RECIP ENG COWL FLAP POSITION:2] > 0.5, 0, 1)')
 SetPress '0x025C' 1 (Change 'B:ELECTRICAL_BATTERY_1' '1 - [SIMCONNECT:ELECTRICAL MASTER BATTERY:1]')
-SetPress '0x025C' 3 (Change 'B:ELECTRICAL_AVIONICS_BUS_1' '1 - [SIMCONNECT:AVIONICS MASTER SWITCH:1]')
+SetPress '0x025C' 3 (Change 'B:ELECTRICAL_AVIONICS_BUS_1' '1 - [SIMCONNECT:AVIONICS MASTER SWITCH]')
 # VIRPIL profile order: gear 1-3, B1-B4 4-7, encoders 8-16,
 # T1-T10 17-36, then B5-B10 37-42. Relocate previous mistaken IDs first.
 foreach($entry in @(@(8,37,'var_pressurizationPress'),@(9,38,'var_doorSealPrimaryInflate'))){

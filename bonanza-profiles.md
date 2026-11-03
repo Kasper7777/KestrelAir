@@ -1,0 +1,9 @@
+# Black Square Bonanza profiles
+
+Three separate SPAD profiles are derived from the current Baron GNS 530 / TDS GTNxi 650 layout: **Bonanza A36**, **Bonanza A36TC**, and **Bonanza B36TP**. The Baron profile is preserved. Navigation, radios, autopilot, view shortcuts and B4 drone toggle are inherited. Select the matching avionics installation in the aircraft tablet.
+
+The left throttle and CP3 left propeller lever control engine 1; the duplicate right levers and second-engine switches are unassigned. CP3's left mixture axis retains the custom 0–1 mixture variable for both piston versions. The main and standby alternators remain assigned separately. Baron pressurization, prop sync, second-engine cowls and unsupported heater controls are removed.
+
+For B36TP, the mixture lever becomes a two-state condition lever: below 10% is fuel cutoff, above is high idle. CP3's left pump selector controls pump 1 / off / pump 2. STEP becomes the ETM Enter/Test event. CP2's former cowl button controls the oil cooler door and its door-seal button controls the turbine door seal. CP3's former stall-warning heat switch becomes the ice deflector switch. On the throttle ignition selector: OFF/BOTH select GEN; R selects AUTO ignition; L selects ON ignition; START selects starter, with release returning to GEN. These turbine controls require particular care during initial testing.
+
+References: Black Square's [Bonanza Professional manual](https://downloads.justflight.com/products/JFF004080/BKSQ_BonanzaProfessionalManual.pdf), hardware tables pp. 137–140 and 197–198. Validation covers profile structure, comparator enums, unique IDs, axis routing, and absence of twin-engine and pressurization assignments. These are newly converted profiles; physical operation in each aircraft has not been verified. The separate camera bridge remains staged until its MSFS bindings are installed and tested.

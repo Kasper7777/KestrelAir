@@ -48,6 +48,7 @@ for variant in ['A36', 'A36TC', 'B36TP']:
     remove(root, '0x0194', 'Y_AXIS', 'BUTTON_52', 'BUTTON_53', 'BUTTON_55', 'BUTTON_56', 'BUTTON_58', 'BUTTON_59')
     single_axis(root, '0x0194', 'X_AXIS')
     remove(root, '0x025C', 'Y_AXIS', 'RY_AXIS', *('BUTTON_'+str(i) for i in [2,4,19,20,34,35,36,43,44,45,46,47]))
+    remove(root, '0x025C', *('BUTTON_'+str(i) for i in [23,24,25,26,27,28,29,30]))
     single_axis(root, '0x025C', 'X_AXIS')
     # No second engine cowl, second landing light, pressurization or door seal tests.
     remove(root, '0x025A', *('BUTTON_'+str(i) for i in [5,27,28,37,38,39,40]))
@@ -74,6 +75,8 @@ for variant in ['A36', 'A36TC', 'B36TP']:
         replace(root, '0x0194', 'BUTTON_64', 'LVAR:var_StarterGenSwitch', 2, release=0)
         for b, val in [(14,2),(15,1),(16,0)]: replace(root, '0x025C', 'BUTTON_'+str(b), 'LVAR:var_FuelPumpSwitch', val)
         replace(root, '0x025C', 'BUTTON_6', 'H:Etm_EnterTest', 1)
+        replace(root, '0x025C', 'BUTTON_25', 'LVAR:var_IceDeflectorSwitch', 1)
+        replace(root, '0x025C', 'BUTTON_26', 'LVAR:var_IceDeflectorSwitch', 0)
         replace(root, '0x025A', 'BUTTON_4', 'LVAR:var_OilDoorHandle', expression='100 - [LVAR:var_OilDoorHandle]')
         replace(root, '0x025A', 'BUTTON_38', 'LVAR:var_DoorSealSwitch', expression='1 - [LVAR:var_DoorSealSwitch]')
     info = root.find('s:ProfileInformation', N)

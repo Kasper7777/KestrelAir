@@ -11,15 +11,6 @@
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
       <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
         <Events>
-          <Event BoundTo="BUTTON_7">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="MSFS:WT_CJ4_FLOOD_LIGHT_TOGGLE" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
           <Event BoundTo="X_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
@@ -90,6 +81,62 @@
                     <Parameter Value="SPAD_neXt.RunProgram" />
                     <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-click\ka-click-up.exe" />
                   </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_7">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_18">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_4">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -3698,6 +3745,62 @@
                       </Keys>
                     </KeyboardMacro>
                   </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_7">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_18">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_4">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

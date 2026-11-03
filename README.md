@@ -2,6 +2,8 @@
 
 This profile is installed in `C:\Users\Aero\Documents\SPAD.neXt\profiles`. The Baron variant and matching Black Square Bonanza A36, A36TC and B36TP profiles are installed alongside the original profiles. Camera routing and portable installation are documented in thumbstick-keys.md and portable-setup/README.md. Earlier versions are backed up under `backups/`.
 
+**Stick ATC buttons (2026-11-03):** on both WarBRD sticks, the top push button is vPilot push-to-talk, the bottom push button is BeyondATC push-to-talk, and the trigger or flip trigger is BeyondATC auto respond. SPAD routes them through vJoy buttons 1-3. See [stick-atc-buttons.md](stick-atc-buttons.md).
+
 ## PFD/MFD now switches controls together
 
 Press the PulsAIR display module's **PFD** button to select the **GNS 530**, or **MFD** to select the **TDS GTN 650 unit 2**. The profile starts in PFD focus. A profile variable `PROFILE:KA_AVIONICS_FOCUS` stores the shared selection (0=PFD/GNS; 1=MFD/TDS).

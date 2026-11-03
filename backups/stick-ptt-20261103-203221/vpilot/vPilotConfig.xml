@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vPilotConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>4</Version>
+  <NetworkStatusURL>pZ9u441bE4a2NCGgqMxKNvwAIy0qEA+AwXB8c3sV90c=</NetworkStatusURL>
+  <CachedServers>
+    <string>vN0yvTPHb8iCqOBSDgJOad3JH+XEldSS/AAjLSoQD4BBXdzgOioHVg==</string>
+  </CachedServers>
+  <MainWindowProperties Maximized="false" FullScreen="false" TopMost="false" NormalBorderStyle="Sizable">
+    <Location>
+      <X>-1353</X>
+      <Y>-328</Y>
+    </Location>
+    <Size>
+      <Width>786</Width>
+      <Height>470</Height>
+    </Size>
+  </MainWindowProperties>
+  <HostWindowProperties Maximized="false" FullScreen="false" TopMost="false" NormalBorderStyle="Sizable">
+    <Location>
+      <X>10</X>
+      <Y>10</Y>
+    </Location>
+    <Size>
+      <Width>416</Width>
+      <Height>300</Height>
+    </Size>
+  </HostWindowProperties>
+  <ServerName>AUTOMATIC</ServerName>
+  <NetworkLogin>1581005</NetworkLogin>
+  <NetworkPassword>L3yuLJgP3prs9bFxw0Awc0Fd3OA6KgdW</NetworkPassword>
+  <FullName>ST</FullName>
+  <HomeAirport>EGBO</HomeAirport>
+  <PTTConfiguration DeviceType="Joystick" Name="Left VPC WarBRD-D Base" JoystickGuidString="4119fce0-4bfc-11f1-8015-444553540000" ButtonOrKey="0" />
+  <InputDeviceName>Echo Cancelling Speakerphone (Jabra SPEAK 410 USB)</InputDeviceName>
+  <OutputDeviceName>Echo Cancelling Speakerphone (Jabra SPEAK 410 USB)</OutputDeviceName>
+  <OutputVolume>75</OutputVolume>
+  <MicSquelch>200</MicSquelch>
+  <InputVolumeDb>0</InputVolumeDb>
+  <OutputVolumeDb>0</OutputVolumeDb>
+  <EnableVHFSimulation>true</EnableVHFSimulation>
+  <DisableAudioEffects>true</DisableAudioEffects>
+  <DisableHfBackgroundNoise>true</DisableHfBackgroundNoise>
+  <AircraftVisualRange>40</AircraftVisualRange>
+  <MaxRenderedAircraft>999</MaxRenderedAircraft>
+  <SquawkingModeC>false</SquawkingModeC>
+  <AutoSquawkModeC>false</AutoSquawkModeC>
+  <LastConnectInfo Callsign="GK777" TypeCode="BE58" SelCalCode="" ObserverMode="true" />
+  <FlashTaskbarPrivateMessage>true</FlashTaskbarPrivateMessage>
+  <FlashTaskbarRadioMessage>true</FlashTaskbarRadioMessage>
+  <FlashTaskbarSELCAL>true</FlashTaskbarSELCAL>
+  <FlashTaskbarDisconnected>true</FlashTaskbarDisconnected>
+  <ShowIncomingTextInFSX>true</ShowIncomingTextInFSX>
+  <CheckForUpdates>true</CheckForUpdates>
+  <UpdateChannel>Stable</UpdateChannel>
+  <PlayMessageNotificationOnHost>false</PlayMessageNotificationOnHost>
+  <ShowIncomingMessagesOnHost>false</ShowIncomingMessagesOnHost>
+  <ControllerListFont Family="Microsoft Sans Serif" Size="9" Style="Regular" />
+  <TextMessagesFont Family="Courier New" Size="9.75" Style="Regular" />
+  <MainSplitterDistance>171</MainSplitterDistance>
+  <HostAddress />
+  <HostPort>8809</HostPort>
+  <ModelMatchingConfigs>
+    <ModelMatchingConfig>
+      <SimulatorType>Msfs2024</SimulatorType>
+      <DefaultModel>Asobo PassiveAircraft E190</DefaultModel>
+      <CustomModelMatchRuleSets />
+      <ErroneousModels />
+    </ModelMatchingConfig>
+  </ModelMatchingConfigs>
+  <SuppressDefaultModelWarning>false</SuppressDefaultModelWarning>
+  <ModelMatchRuleSets />
+  <DefaultModel>Airbus A321</DefaultModel>
+  <CustomModelMatchRuleSets />
+  <SimulatorType>None</SimulatorType>
+  <ErroneousModels />
+  <RecentConnectInfo />
+</vPilotConfig>

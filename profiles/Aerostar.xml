@@ -460,7 +460,7 @@
                       <Option Key="MIN" Value="5" />
                       <Option Key="MAX" Value="501" />
                       <Option Key="IDLE" Value="253" />
-                      <Option Key="INVERTAXIS" Value="False" />
+                      <Option Key="INVERTAXIS" Value="True" />
                     </Options>
                   </EventActionRangedAxis>
                 </EventActions>

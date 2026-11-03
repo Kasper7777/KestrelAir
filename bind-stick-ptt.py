@@ -7,9 +7,9 @@ Both grips (VID 3344 / PID 03F5, DeviceIndex 0 = right, 1 = left) get identical 
     Bottom push button    18           2               BeyondATC PushToTalk1
     Main trigger (stage1) 4            3               BeyondATC DoAction1 (auto respond)
     Flip trigger squeeze  3            3               BeyondATC DoAction1 (auto respond)
-    Wheel up              22           4               BeyondATC TabKey (next dialogue option)
-    Wheel down            21           4               BeyondATC TabKey (BeyondATC has no 'previous')
-    Wheel press           19           5               BeyondATC EnterKey (send selected option)
+    Wheel up              22           -               runs ka-menu-prev.exe (pointer up one BeyondATC reply)
+    Wheel down            21           -               runs ka-menu-next.exe (pointer down one BeyondATC reply)
+    Wheel press           19           -               runs ka-menu-select.exe (click that reply, return to MSFS)
     vPilot window button  8            -               runs .tools/ka-front/ka-front-vpilot.exe
     BATC window button    13           -               runs .tools/ka-front/ka-front-beyondatc.exe
 
@@ -24,9 +24,12 @@ from pathlib import Path
 import re
 import sys
 
-ROUTES = {7: 1, 18: 2, 4: 3, 3: 3, 22: 4, 21: 4, 19: 5}
+ROUTES = {7: 1, 18: 2, 4: 3, 3: 3}
 FRONT_DIR = Path(__file__).resolve().parent / '.tools' / 'ka-front'
-WINDOWS = {8: 'ka-front-vpilot.exe', 13: 'ka-front-beyondatc.exe'}
+# BeyondATC's reply list is mouse-only (its Tab/Enter hotkeys and arrow keys don't reach it), so the
+# wheel drives the pointer through helper exes instead of vJoy.
+WINDOWS = {8: 'ka-front-vpilot.exe', 13: 'ka-front-beyondatc.exe',
+           22: 'ka-menu-prev.exe', 21: 'ka-menu-next.exe', 19: 'ka-menu-select.exe'}
 DEVICE_RE = re.compile(
     r'(<Device VendorID="0x3344" ProductID="0x03F5"[^>]*>\s*<DevicePage[^>]*>\s*<Events>)(.*?)(\s*</Events>)',
     re.S,

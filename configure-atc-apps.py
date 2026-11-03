@@ -3,8 +3,7 @@
     vJoy button 1 -> vPilot push-to-talk          (grip top push button)
     vJoy button 2 -> BeyondATC PushToTalk1        (grip bottom push button)
     vJoy button 3 -> BeyondATC DoAction1          (grip trigger / flip trigger = auto respond)
-    vJoy button 4 -> BeyondATC TabKey             (grip wheel up/down = next dialogue option)
-    vJoy button 5 -> BeyondATC EnterKey           (grip wheel press = send selected option)
+    (grip wheel = BeyondATC reply list via .tools/ka-front/ka-menu-*.exe, not vJoy)
 
 Both grips report the same USB name since the 2026-10-31 firmware repair, so neither app can
 tell them apart; routing through vJoy gives each app one stable device to listen to.
@@ -25,8 +24,9 @@ VPILOT_CONFIG = Path.home() / 'AppData/Local/vPilot/vPilotConfig.xml'
 BATC_KEY = r'Software\Skirmish Mode Games, Inc\BeyondATC'
 BATC_VALUE = 'KeyBindings_h731465248'
 VJOY_UNITY_DEVICE = '/Shaul Eizikovich vJoy - Virtual Joystick'
-BATC_ROUTES = {'General/PushToTalk1': 2, 'General/DoAction1': 3,
-               'General/TabKey': 4, 'General/EnterKey': 5}
+BATC_ROUTES = {'General/PushToTalk1': 2, 'General/DoAction1': 3}
+# Tab/Enter were tried on vJoy 4/5 and don't move BeyondATC's reply list; drop those entries if present.
+BATC_REMOVE = ('General/TabKey', 'General/EnterKey')
 VPILOT_BUTTON_INDEX = 0  # vPilot stores zero-based button index; 0 = vJoy button 1
 
 
@@ -63,6 +63,7 @@ def configure_beyondatc() -> None:
         except FileNotFoundError:
             kind, data = winreg.REG_BINARY, {'bindings': []}
         bindings = data.setdefault('bindings', [])
+        bindings[:] = [b for b in bindings if b.get('action') not in BATC_REMOVE]
         for action, button in BATC_ROUTES.items():
             path = f'{VJOY_UNITY_DEVICE}/button{button}'
             entry = next((b for b in bindings if b.get('action') == action), None)

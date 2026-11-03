@@ -1,6 +1,6 @@
 # WarBRD stick buttons: vPilot and BeyondATC
 
-Both WarBRD-D sticks (Constellation ALPHA Prime grips) are set up the same way in all four SPAD profiles (Baron, Bonanza A36, A36TC, B36TP).
+Both WarBRD-D sticks (Constellation ALPHA Prime grips) are set up the same way in every SPAD profile: Aerostar, Baron, Baron GTN, Bonanza A36, A36TC, B36TP, Piper PA-24-250 and the blank default `Profile.xml`. That makes this the default stick behaviour in any aircraft. The rudder pedals are in every profile too; see [rudder-pedals.md](rudder-pedals.md).
 
 | Grip control | HID button | SPAD sends | App action |
 |---|---|---|---|
@@ -30,7 +30,7 @@ vJoy device 1 has 8 buttons. Buttons 1-3 are used here and 4-8 are free. The MSF
 
 ## Files
 
-- `bind-stick-ptt.py <profile.xml>...` adds the SPAD events to both grips. It's idempotent, and it replaced the old right-grip BUTTON_7 action (a stray CJ4 flood-light toggle).
+- `bind-sticks-and-pedals.py <profile.xml>...` adds these grip events and the rudder pedals to any SPAD profile, creating the device entries if a profile lacks them. It's idempotent and touches nothing else. For a new SPAD profile, close SPAD and run it on the new file. (It replaced `bind-stick-ptt.py`, which handled only the four GTN profiles. That script's first run also removed a stray CJ4 flood-light toggle from the right grip.)
 - `configure-atc-apps.py` points vPilot PTT at vJoy button 1 and BeyondATC PushToTalk1/DoAction1 at vJoy buttons 2/3. Close vPilot and BeyondATC before running it, because both save their settings on exit.
 - `watch-warbrd-buttons.ps1` is a read-only live button logger for both grips.
 - Backups made before each change: `backups/stick-ptt-20261103-203221/` (SPAD profiles from all four locations, `vPilotConfig.xml`, the BeyondATC `config.json` and registry, the old portable zip) and `backups/stick-wheel-window-20261103-205204/` (profiles and BeyondATC registry before the window and wheel buttons).

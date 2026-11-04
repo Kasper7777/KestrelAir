@@ -79,3 +79,7 @@ Throttle T7 now controls prop sync: logical 52 ON, 53 OFF, PRESS only, via the a
 CP2 B7/B8 (beneath B5/B6) now provide hold-to-test cabin pressure and hold-to-inflate standby door seal, with dim/bright red feedback. Both main and held-button flags are explicitly cleared on release. See cabin-and-heat-controls.md. Backups: backups/cabin-test-standby-* .
 
 Thumbstick crash fix (2026-11-03): the SPAD on-foot MiniStick SimConnect events crashed MSFS 2024 and are removed. The MiniSticks now hold MSFS keyboard keys from SPAD (right stick = arrow keys: look around in cockpit, outside and on foot; left stick = W/A/S/D: walk on foot), released at centre. Run `bind-thumbstick-keys.ps1` with SPAD closed. See [thumbstick-keys.md](thumbstick-keys.md).
+
+## CP3 B13 pilot view and CP3 views (all profiles, 2026-11-04)
+
+CP3 B13 is the same in every SPAD profile: from the pilot view it goes outside; from an instrument view, outside or the drone it returns to the default pilot view (MSFS "Reset cockpit view", Shift+Space, sent by `.tools/ka-key/ka-key-shift-space.exe`). The default `Profile.xml` gained a CP3 page for it. CP3 B8–B12 view buttons now set `CAMERA STATE`/`CAMERA VIEW TYPE AND INDEX` directly (verified live; this doesn't depend on keyboard macros at all). Both verified live in the Citation X. `pilot_view_toggle.py` applies this to the installed, repo and portable profiles (run it with SPAD closed, after regenerating any profile; the Citation build calls it itself). Backup: `backups/pilot-view-toggle-20261104/`.

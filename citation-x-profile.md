@@ -17,7 +17,8 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | T7 | Engine (fan) sync on / off |
 | E1 encoder | Pressurization rate knob − / + |
 | Five-position selector | **Left engine:** OFF = ignition off, R = NORM, L = ignition ON (continuous), BOTH = NORM, **START = starts engine 1** |
-| Trim, rudder trim, mouse, Tobii, drone, zoom | Unchanged |
+| B3 / B6 | Tobii head-tracking toggle (Alt+7) / eye-tracking reset (Alt+8): the Baron's macros, unchanged (one macro holding Alt + digit) |
+| Trim, rudder trim, mouse, drone, zoom | Unchanged |
 
 ## CP3
 
@@ -38,7 +39,9 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | Inner lever, left (was prop) | **Speedbrake**: forward stowed, pull back to extend |
 | Inner lever, right (was prop) | **Thrust reversers, both engines**: pull below 10 % to deploy, push above 15 % to stow |
 | Outer levers (were mixtures) | **Fuel RUN / CUTOFF** left / right: below 10 % is CUTOFF |
-| B8–B13, E1 | Views and squawk digit, unchanged |
+| B8–B12 (views) | Citation instrument views: B8 pilot PFD/instruments (view 8), B9 pilot lower panel (5), B10 co-pilot instruments (4), B11 FMCs/pedestal (3), B12 throttle quadrant (6). The Citation numbers its views differently from the Baron, so these were matched on screen. SPAD writes `CAMERA STATE`=2, `CAMERA VIEW TYPE AND INDEX:0`=2, `:1`=view−1, which gives the same result as Shift+N, also from the outside view (verified live). |
+| B13 | Pilot view / outside view toggle, the same in every profile (`pilot_view_toggle.py`): pilot view → outside, instrument view → pilot view, outside/drone → pilot view |
+| E1 | Squawk digit, unchanged |
 
 ## CP2
 

@@ -10,6 +10,7 @@ a new profile file. Use --install to copy it into Documents/SPAD.neXt/profiles.
 from pathlib import Path
 import copy, shutil, sys, uuid
 import xml.etree.ElementTree as E
+import pilot_view_toggle
 
 ROOT = Path(__file__).resolve().parent
 NS = 'http://www.fsgs.com/SPAD'
@@ -35,6 +36,8 @@ def pv(name, value): return ('cv', 'PROFILE:' + name, str(value), None)
 def k(event, param=None, expr=None): return ('ctl', 'SIMCONNECT:' + event, param, expr)
 def h(event): return ('ctl', 'H:' + event, None, None)
 def b(event): return ('ctl', 'B:' + event, None, None)
+def sv(name, value): return ('cv', 'SIMCONNECT:' + name, str(value), None)
+def run(exe): return ('run', str(ROOT / '.tools' / exe), None, None)
 def eq(src, val): return (src, None, val)
 def ne(src, val): return (src, 'Unequal', val)
 def lt(src, val): return (src, 'Less', val)
@@ -79,6 +82,11 @@ def put(root, product, bound, *defs, sfs=False):
                 E.SubElement(ec, tag('EventCondition'), attrs)
         ea = E.SubElement(ed, tag('EventActions'))
         for kind, target, value, expr in acts:
+            if kind == 'run':
+                a = E.SubElement(ea, tag('EventActionCommand'))
+                E.SubElement(a, tag('Parameter'), Value='SPAD_neXt.RunProgram')
+                E.SubElement(a, tag('Parameter1'), Value=target)
+                continue
             if kind == 'cv':
                 attrs = {'TargetDataDefinition': target}
                 if expr is not None:
@@ -134,6 +142,9 @@ def build():
         axis_condition(root, THR, ax, ne('PROFILE:KA_REVERSE', 1))
     for btn, val in [(40, 0), (35, 0), (41, 1), (34, 1)]:   # parking brake (T4 and its twin)
         put(root, THR, f'BUTTON_{btn}', press(k('PARKING_BRAKE_SET', val)))
+    # Tobii B3 (BUTTON_44, Alt+7) / B6 (BUTTON_47, Alt+8) are inherited unchanged from the Baron: one SPAD
+    # macro holding LMenu + digit, confirmed working in the Baron 2026-11-04.  Don't split it into separate
+    # Alt-down / digit / Alt-up macros: that version did not reset tracking in the Citation.
     put(root, THR, 'BUTTON_37', press(k('GEAR_DOWN')))
     put(root, THR, 'BUTTON_36', press(k('GEAR_UP')))
     put(root, THR, 'BUTTON_48', press(lv('lights_knob_flood', 80)))          # T5 cockpit flood
@@ -163,6 +174,13 @@ def build():
     two_pos(root, CP3, 'BUTTON_25', 'BUTTON_26', ['switch_stabilizer_ai_lh', 'switch_stabilizer_ai_rh'])
     two_pos(root, CP3, 'BUTTON_27', 'BUTTON_28', ['switch_windshield_lh', 'switch_windshield_rh'], on=0, off=2)
     two_pos(root, CP3, 'BUTTON_29', 'BUTTON_30', ['switch_seatBelt'])
+    # B8-B12 = Citation instrument views 8/5/4/3/6 (MSFS Shift+N), matched on screen 2026-11-04.
+    # A Shift+N keyboard macro never reached MSFS as Shift (see Tobii above), so the camera is set directly:
+    # cockpit camera, view type 2 = instrument, index N-1.  Measured live: identical to Shift+N, also from
+    # the outside view.  B13 (bare Backspace) does work as a macro and is unchanged.
+    for btn, view in [(8, 8), (9, 5), (10, 4), (11, 3), (12, 6)]:
+        put(root, CP3, f'BUTTON_{btn}', press(sv('CAMERA STATE', 2), sv('CAMERA VIEW TYPE AND INDEX:0', 2),
+                                              sv('CAMERA VIEW TYPE AND INDEX:1', view - 1)))
     put(root, CP3, 'BUTTON_6', D('PRESS', [lv('AUTOPILOT_push_Ats', 1)]), D('RELEASE', [lv('AUTOPILOT_push_Ats', 0)]))
     # Rotary selector = RIGHT engine ignition, physical OFF is button 47 (as for the Baron magneto).
     ign_start(root, CP3, ['BUTTON_47', 'BUTTON_46', 'BUTTON_45', 'BUTTON_44', 'BUTTON_43'], 'r', 2)
@@ -273,6 +291,7 @@ def build():
                       'B:INSTRUMENT_HEADING_BUG', 'B:LANDING_GEAR_PARKINGBRAKE', 'GYRO_DRIFT', 'RECIP ENG', 'PITOT_HEAT_TOGGLE',
                       'BATTERY2_SET', 'AVIONICS_MASTER_2_SET', 'BKSQ_IGNITION', 'MIXTURE']:
         assert forbidden not in xml, forbidden
+    pilot_view_toggle.apply(root)   # CP3 B13 = pilot view / outside view (same in every profile)
     E.indent(root, space='  ')
     return root
 

@@ -46,14 +46,14 @@ if ((Get-FileHash $driverDll).Hash -ne (Get-FileHash $spadDll).Hash) {
 Step 'SPAD profiles (all 9, with helper paths pointed at this folder)'
 $target = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'SPAD.neXt\profiles'
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-$exeDirs = @{ 'ka-click' = 'ka-click'; 'ka-front' = 'ka-front'; 'ka-menu' = 'ka-front'; 'ka-mouse' = 'ka-mouse'; 'ka-drone' = 'ka-drone-leds' }
+$exeDirs = @{ 'ka-click' = 'ka-click'; 'ka-front' = 'ka-front'; 'ka-menu' = 'ka-front'; 'ka-mouse' = 'ka-mouse'; 'ka-drone' = 'ka-drone-leds'; 'ka-key' = 'ka-key' }
 foreach ($file in Get-ChildItem (Join-Path $root 'profiles') -Filter '*.xml') {
     $destination = Join-Path $target $file.Name
     if (Test-Path -LiteralPath $destination) { Copy-Item -LiteralPath $destination -Destination $backup }
     $doc = [xml](Get-Content -LiteralPath $file.FullName -Raw)
     foreach ($node in $doc.SelectNodes('//*[@Value]')) {
         $old = $node.GetAttribute('Value')
-        if ($old -match '((ka-click|ka-front|ka-menu|ka-mouse|ka-drone)(-[a-z]+)?)\.exe$') {
+        if ($old -match '((ka-click|ka-front|ka-menu|ka-mouse|ka-drone|ka-key)(-[a-z0-9-]+)?)\.exe$') {
             $path = Join-Path (Join-Path $helpers $exeDirs[$Matches[2]]) ($Matches[1] + '.exe')
             if (!(Test-Path $path)) { throw "Missing helper $path" }
             # ka-click lives in an expression string (doubled backslashes); RunProgram paths are plain.

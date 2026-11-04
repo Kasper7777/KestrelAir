@@ -9,4 +9,4 @@
 | Button 8 / 13 (push down) | Left button |
 | Button 9 (pull up) | Right button |
 
-None of these inputs are bound in SPAD or in the MSFS throttle presets. SPAD can't move the pointer smoothly (it would launch a program per axis change), so this is a helper like `ka-sfs-watch`. It must be running: start it by hand, or add a shortcut to it in `shell:startup`. Tuning without rebuilding: `ka-mouse.ini` beside the exe with `Speed=1400`, `Deadzone=2500`, `InvertX=1`, `InvertY=1`. Log: `%TEMP%\ka-mouse.log`. Build: `csc -target:winexe -out:ka-mouse.exe ka-mouse.cs`.
+None of these inputs are bound in MSFS. SPAD can't move the pointer smoothly (it would launch a program per axis change), so this is a background helper. SPAD starts it: the four mouse buttons (8, 9, 11, 13) run ka-mouse.exe on press, so the first press after a reboot wakes it (that press doesn't click); later launches exit at once because it is single-instance. No Windows Startup entry. Tuning without rebuilding: `ka-mouse.ini` beside the exe with `Speed=1400`, `Deadzone=2500`, `InvertX=1`, `InvertY=1`. Log: `%TEMP%\ka-mouse.log`. Build: `csc -target:winexe -out:ka-mouse.exe ka-mouse.cs`.

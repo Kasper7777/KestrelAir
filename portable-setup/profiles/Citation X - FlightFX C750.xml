@@ -792,6 +792,21 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>Back</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_1">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -1018,9 +1033,14 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="7" />
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D8</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1029,9 +1049,14 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="4" />
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D5</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1040,9 +1065,14 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="3" />
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D4</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1051,9 +1081,14 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="2" />
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D3</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1062,9 +1097,14 @@
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" />
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="5" />
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D6</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1195,49 +1235,6 @@
               <EventDefinition Trigger="VALUE">
                 <EventActions>
                   <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:ENG_CUTOFF_2" SourceDataDefinition="If([LOCAL:JOY_0X33440X025C_RY_AXIS] &lt; 10, 0, 1)" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_13">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventConditions>
-                  <EventCondition ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>Back</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="PRESS">
-                <EventConditions>
-                  <EventCondition ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                  <EventCondition ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionCommand>
-                    <Parameter Value="SPAD_neXt.RunProgram" />
-                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-key\ka-key-shift-space.exe" />
-                  </EventActionCommand>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="PRESS">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" />
-                  <EventActionCommand>
-                    <Parameter Value="SPAD_neXt.RunProgram" />
-                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-key\ka-key-shift-space.exe" />
-                  </EventActionCommand>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -5322,7 +5319,7 @@
     <Option Key="Ultimarc.PacLed64.EnableVirtualPower" Value="True" />
     <Option Key="Ultimarc.PacLed64.Brightness" Value="128" />
   </Options>
-  <ProfileInformation ProfileID="d6b4939a-df44-484d-b9af-7d3cfa2dd4ad" Version="1.0">
+  <ProfileInformation ProfileID="6bd2aa6f-b775-4bf4-93d2-f703c1da4ea1" Version="1.0">
     <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;P&gt;FlightFX Cessna Citation X (C750); derived from the Baron GNS530/TDS650 hardware layout. Controls verified live 2026-11-04; see citation-x-profile.md.&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
     <LastChanged>2026-11-04T02:58:32.2356643+00:00</LastChanged>
   </ProfileInformation>

@@ -623,6 +623,101 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D1</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D3</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_10">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D2</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D4</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_12">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D5</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>Back</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_17">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -738,7 +833,7 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-        <Event BoundTo="BUTTON_8"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="0" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_9"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="2" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_10"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="1" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_11"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="3" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_12"><EventDefinitions><EventDefinition Trigger="PRESS"><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" Value="2" /><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:1" Value="4" /></EventActions></EventDefinition></EventDefinitions></Event><Event BoundTo="BUTTON_13"><EventDefinitions><EventDefinition Trigger="PRESS"><EventConditions><EventCondition ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA STATE" /><EventCondition ConditionComparator="Unequal" ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" /></EventConditions><EventActions><EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__"><KeyboardMacro Duration="80" Repeat="1" Pause="25"><Keys><Keys>Back</Keys></Keys></KeyboardMacro></EventActionKeyboard></EventActions></EventDefinition><EventDefinition Trigger="PRESS"><EventConditions><EventCondition ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA STATE" /><EventCondition ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA VIEW TYPE AND INDEX:0" /></EventConditions><EventActions><EventActionCommand><Parameter Value="SPAD_neXt.RunProgram" /><Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-key\ka-key-shift-space.exe" /></EventActionCommand></EventActions></EventDefinition><EventDefinition Trigger="PRESS"><EventConditions><EventCondition ConditionComparator="Unequal" ConditionTargetValue="2" ConditionValueSource="SIMCONNECT:CAMERA STATE" /></EventConditions><EventActions><EventActionChangeValue TargetDataDefinition="SIMCONNECT:CAMERA STATE" Value="2" /><EventActionCommand><Parameter Value="SPAD_neXt.RunProgram" /><Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-key\ka-key-shift-space.exe" /></EventActionCommand></EventActions></EventDefinition></EventDefinitions></Event></Events>
+        </Events>
       </DevicePage>
     </Device>
     <Device VendorID="0x16D0" ProductID="0x1290" DevicePath="\\?\hid#vid_16d0&amp;pid_1290#9&amp;155cbabc&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">

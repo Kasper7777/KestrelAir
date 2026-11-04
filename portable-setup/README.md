@@ -1,37 +1,34 @@
-# KestrelAir SPAD camera and Bonanza setup
+# KestrelAir setup: moving to another PC
 
-The Baron and separate Black Square Bonanza A36, A36TC and B36TP profiles are installed. All 23 installed Bonanza and Baron 58P liveries have matching SPAD assignments. The Bonanza conversions follow the manufacturer's manual; physical operation in each aircraft remains unverified.
+Everything is in this folder (or `KestrelAir-portable-setup.zip`). Updated 2026-11-04.
 
-Camera routes are installed in all four SPAD profiles. The failed CUSTOM expression mapping was removed. The final routes use SPAD's built-in RESPONSECURVE axis mapping, checked on unused virtual axes before activation. SPAD's bundled vJoy 2.1.8 library also did not match the installed 2.2.2 driver. The matching 2.2.2 library was installed with a backup. The API confirms the DLL and driver now match.
+## What to do
 
-MSFS confirmed successful import of KestrelAir-vJoy-GeneralControls.xml as "KestrelAir SPAD Cameras v2" on vJoy Device. This native General Controls preset has ten camera bindings and a 6% centre dead zone. The right grip's crossed horizontal/vertical channels were swapped after the live test. Final direction and centre-stop confirmation remains pending. A five-second read-only check confirmed all six virtual camera axes at centre and zero camera pitch/yaw drift. Final physical movement testing is still required.
+1. Install SPAD.neXt, FSUIPC7 and MSFS. Plug in the sticks, throttle, panels and pedals.
+2. Put this folder where it will stay (the SPAD profiles point at the helpers inside it).
+3. **Double-click `Install-KestrelAir.cmd`.** Say yes to the administrator prompt.
+4. Do the short list it prints at the end. These are the steps Windows won't let a script do: picking two presets in the MSFS Controls menu, one keyboard key, and a reboot if vJoy was just installed.
 
-| vJoy axis | MSFS assignment | Thumbstick |
-|---|---|---|
-| X | Drone X translation | Right horizontal |
-| Y | Drone Z translation | Right vertical |
-| Z | Drone Y rotation / yaw | Left horizontal |
-| Rx | Drone Y translation / height | Left vertical |
-| Ry | Cockpit, external and on-foot horizontal look | Right horizontal |
-| Rz | Cockpit, external and on-foot vertical look | Right vertical |
+## What the installer does
 
-MSFS camera contexts activate the appropriate assignments. Existing left-stick walking keys are excluded from drone mode. B4 retains Shift+X. The LED helper reads actual camera state: hot pink (0xA3) in drone mode and neon green (0x8C) otherwise.
+- Asks before closing SPAD, MSFS, vPilot, BeyondATC and the helpers, then backs up everything it replaces to `install-backup-<date>\`.
+- Installs vJoy 2.2.2 if missing, and gives SPAD the matching vJoy library.
+- Copies all 8 SPAD profiles (sticks, pedals, throttle, panels, MSG fix, button 31 = back to MSFS) and points their helper paths at this folder.
+- Throttle mini-stick mouse (`helpers\ka-mouse`): finds the throttle on this PC, adds it to Windows Startup, and starts it.
+- SFS Monitor watcher (`helpers\ka-sfs`): adds it to Startup and starts it.
+- Puts the MSFS vJoy look/drone preset ("KestrelAir SPAD Cameras v2.2") and the pedal preset in MSFS's controls folder (Steam version), so you only have to select them.
+- Sets vPilot and BeyondATC push-to-talk to the stick buttons, if Python is installed.
+- Installs the FSUIPC LED helper.
 
-## Move to another PC
+Run it again any time; it's safe to repeat.
 
-1. Install SPAD, FSUIPC and the included signed vJoy 2.2.2 package; reboot if requested.
-2. Keep this folder in its permanent location. Close MSFS and SPAD, then run Install-KestrelAir.ps1 from an administrator PowerShell window. It backs up profiles and the library, copies profiles, fixes right-click helper paths, and installs the LED Lua helper when FSUIPC is found. Supply -SpadDirectory or -FsuipcDirectory for other locations.
-3. In MSFS Controls select vJoy Device, scroll below the device list to General controls, then gear > Import and choose KestrelAir-vJoy-GeneralControls.xml. Select the imported preset and choose Apply to all aircraft. General Controls is required for all camera contexts.
-4. In the MSFS keyboard General Controls preset assign Shift+X to Toggle Drone Camera. This is B4's SPAD output.
-5. On a new FSUIPC installation merge helpers/KestrelAir-myOffsets.txt into its myOffsets.txt without replacing other custom offsets.
-6. Assign each SPAD profile to its matching aircraft; aircraft-assignments.csv records this PC's installed liveries. SPAD may ask which identical WarBRD grip is right after moving PCs. On this PC it is VPC WarBRD-D Base_1, SPAD DeviceIndex 0.
+## Details
 
-7. Stick ATC buttons: the profiles already route the grip buttons to vJoy buttons 1-3 (see helpers/stick-atc-buttons.md). Install vPilot and BeyondATC, close both, then run `python helpers/configure-atc-apps.py`, or bind them in each app by pressing the grip buttons while SPAD runs. Top = vPilot PTT, bottom = BeyondATC PTT, trigger/flip trigger = BeyondATC auto respond. The window buttons and the wheel use helpers/ka-front (the installer sets their paths); keep BeyondATC's reply list at the size described in helpers/stick-atc-buttons.md or calibrate ka-menu.ini.
-8. Rudder pedals: SPAD drives them in every profile. In MSFS Controls select Saitek Pro Flight Rudder Pedals, Airplanes tab, gear > Import, choose KestrelAir-RudderPedals-SPAD.xml and select it, so MSFS's default preset stops driving them as well. On a new PC the pedal HID path may differ; see helpers/rudder-pedals.md.
+- Stick buttons, wheel and window buttons: `helpers\stick-atc-buttons.md`
+- Throttle mouse: `helpers\throttle-mouse.md`
+- Look and drone axes: `helpers\thumbstick-keys.md` (the v2.2 preset also fixes on-foot look and cockpit left/right)
+- Rudder pedals: `helpers\rudder-pedals.md`
+- SFS Monitor handover: `helpers\sfs-monitor-handover.md`
+- Throttle B4 drone toggle: `helpers\throttle-drone.md`
 
-9. SFS Monitor handover: the GTN profiles ignore the RotAIR/PulsAIR panels while SimFlight's SFS Monitor runs. Put a shortcut to helpers/ka-sfs/ka-sfs-watch.exe in the Startup folder (Win+R, shell:startup) so the watcher runs at logon; see helpers/sfs-monitor-handover.md.
-Before flight check every direction, simultaneous axes, no movement at centre, B4 toggle/colours, and engine controls. The B36TP condition lever selects fuel cutoff below 10% and high idle above it. Select GNS 530 / TDS GTNxi 650 in the aircraft tablet.
-
-Use profiles/ for installation. camera-profiles-pending/ contains diagnostic generated copies. vjoy-camera-empty.xml is the original empty export template, not the finished camera preset.
-
-The final horizontal correction is in SPAD: right grip, Ry Axis, profile-specific response curve with endpoints (0,1) and (1,0). Its centre stays at 0.5; the vertical Rx Axis is unchanged. The portable MSFS preset uses normal horizontal direction so this inversion is applied once.
+Both WarBRD grips report the same name. If the sticks act swapped on a new PC, SPAD has picked the grips the other way round: the right grip is SPAD DeviceIndex 0.

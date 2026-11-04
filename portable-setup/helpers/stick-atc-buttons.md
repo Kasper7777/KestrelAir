@@ -10,6 +10,7 @@ Both WarBRD-D sticks (Constellation ALPHA Prime grips) are set up the same way i
 | Flip trigger (folded down and squeezed) | 3 | vJoy 1 button 3 | BeyondATC auto respond (DoAction1) |
 | vPilot window button | 8 | runs `ka-front-vpilot.exe` | Brings vPilot to the front; press again to return to MSFS |
 | BeyondATC window button | 13 | runs `ka-front-beyondatc.exe` | Brings BeyondATC to the front; press again to return to MSFS |
+| MSFS button (read live 2026-11-04) | 31 | runs `ka-front-msfs.exe` | Puts focus back on the MSFS window (e.g. after using the wheel in vPilot/BeyondATC) |
 | Wheel up / down | 22 / 21 | runs `ka-menu-prev.exe` / `ka-menu-next.exe` | **vPilot in front:** selects the previous/next controller in "Controllers In Range" (headings skipped). **Otherwise:** moves the mouse pointer up/down one reply in BeyondATC's reply list (bottom left), scrolling the list at its ends |
 | Wheel press | 19 | runs `ka-menu-select.exe` | **vPilot in front:** tunes COM1 to the selected controller's frequency. **Otherwise:** clicks the BeyondATC reply under the pointer, then puts the pointer and focus back on MSFS |
 

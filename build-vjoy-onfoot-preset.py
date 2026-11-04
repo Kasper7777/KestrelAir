@@ -31,7 +31,11 @@ FLAGS = {'KEY_COCKPIT_FREELOOK_HRZ_SET': 4}
 # right stick X -> vJoy Dial (MSFS "Slider Y", 0x212) -> roll. Both were unbound in "Look".
 BIND = {'DRONE_AXIS_ROTATION_X': ('Joystick R-Axis Z ', '802', 4),
         # Roll inverted: user reported right stick left/right rolled the wrong way (2026-11-04).
-        'DRONE_AXIS_ROTATION_Z': ('Slider Y', '530', 132)}
+        'DRONE_AXIS_ROTATION_Z': ('Slider Y', '530', 132),
+        # Drone speed steps: SPAD presses vJoy buttons 4/5 from the grip wheel up/down in drone mode
+        # (bind-sticks-and-pedals.py). MSFS button code = button number - 1; button actions use flag 2.
+        'DRONE_INCREASE_DRONE_SPEED': ('Joystick Button 4', '3', 2),
+        'DRONE_DECREASE_DRONE_SPEED': ('Joystick Button 5', '4', 2)}
 
 
 def main():

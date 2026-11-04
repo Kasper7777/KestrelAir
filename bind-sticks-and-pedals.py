@@ -92,6 +92,45 @@ def vjoy_event(hid, button, indent):
     ], indent)
 
 
+# 2026-11-04: in drone mode (CAMERA STATE 4) the grip wheel steps the drone speed instead of the ATC menus:
+# wheel up -> vJoy button 4 -> DRONE_INCREASE_DRONE_SPEED, down -> 5 -> DRONE_DECREASE_DRONE_SPEED (MSFS preset,
+# build-vjoy-onfoot-preset.py). Outside drone mode the wheel runs its ka-menu helper as before.
+DRONE_WHEEL = {22: 4, 21: 5}
+
+
+def wheel_event(hid, exe, button, indent):
+    cam = 'ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />'
+    vj = (f'<EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" '
+          f'JoystickTarget="{button}" JoystickMode="{{}}" />')
+    return block([
+        f'<Event BoundTo="BUTTON_{hid}">',
+        '  <EventDefinitions>',
+        '    <EventDefinition Trigger="PRESS">',
+        '      <EventConditions>',
+        f'        <EventCondition ConditionComparator="Unequal" {cam}',
+        '      </EventConditions>',
+        '      <EventActions>',
+        *['        ' + line for line in run_action(TOOLS / exe)],
+        '      </EventActions>',
+        '    </EventDefinition>',
+        '    <EventDefinition Trigger="PRESS">',
+        '      <EventConditions>',
+        f'        <EventCondition ConditionComparator="Equals" {cam}',
+        '      </EventConditions>',
+        '      <EventActions>',
+        '        ' + vj.format('PRESS'),
+        '      </EventActions>',
+        '    </EventDefinition>',
+        '    <EventDefinition Trigger="RELEASE">',  # always release, so a mode change can't leave it held
+        '      <EventActions>',
+        '        ' + vj.format('RELEASE'),
+        '      </EventActions>',
+        '    </EventDefinition>',
+        '  </EventDefinitions>',
+        '</Event>',
+    ], indent)
+
+
 def run_action(path):
     return ['<EventActionCommand>', '  <Parameter Value="SPAD_neXt.RunProgram" />',
             f'  <Parameter1 Value="{path}" />', '</EventActionCommand>']

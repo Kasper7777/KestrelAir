@@ -47,11 +47,8 @@ TOOLS = Path(__file__).resolve().parent / '.tools' / 'ka-front'
 # BeyondATC's reply list is mouse-only (Tab/Enter/arrows/vJoy didn't reach it), so the wheel runs helpers.
 PROGRAMS = {8: 'ka-front-vpilot.exe', 13: 'ka-front-beyondatc.exe',
             22: 'ka-menu-prev.exe', 21: 'ka-menu-next.exe', 19: 'ka-menu-select.exe'}
-# 2026-11-04: every otherwise-unused grip button puts focus back on MSFS (ka-front-msfs.exe only activates
-# the MSFS window, so it is harmless when MSFS is already in front). Excluded: 1/2 = flip-trigger position
-# states (held, not presses), 5 = trigger second stage (left unbound so a full pull doesn't double-fire).
-PROGRAMS.update({hid: 'ka-front-msfs.exe' for hid in range(6, 33)
-                 if hid not in (*VJOY_ROUTES, *PROGRAMS)})
+# 2026-11-04: HID 31 on both grips (read live) puts focus back on the MSFS window after vPilot/BeyondATC.
+PROGRAMS[31] = 'ka-front-msfs.exe'
 PEDAL_AXES = {  # BoundTo -> (lever, min, max, centre or None, invert)
     # Rudder inverted: SPAD's LEVER_RUDDER treats low raw values as right rudder; the user confirmed
     # the uninverted mapping was reversed in the sim on 2026-11-03.

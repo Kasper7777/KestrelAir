@@ -37,12 +37,18 @@ GRIPS = {  # DeviceIndex -> HID instance (from firmware-repair-notes.md; right g
     1: r'\\?\hid#vid_3344&pid_03f5&mi_00#a&22ba5017&0&0000#' + HID_GUID,
 }
 PEDALS = r'\\?\hid#vid_06a3&pid_0763#9&2a71f0e4&0&0000#' + HID_GUID
+THROTTLE = r'\\?\hid#vid_3344&pid_0194&mi_00#8&1d037022&0&0000#' + HID_GUID  # VIRPIL MongoosT-50CM3
+# Camera zoom: the CM3's Rz lever (0..60000, identified live 2026-11-03) feeds vJoy Slider X (HID 0x36),
+# which the KestrelAir vJoy preset binds to cockpit and external-view zoom (build-vjoy-preset.py).
+ZOOM_AXIS, ZOOM_VJOY = 'RZ_AXIS', 0x36
 
 VJOY_ROUTES = {7: 1, 18: 2, 4: 3, 3: 3}
 TOOLS = Path(__file__).resolve().parent / '.tools' / 'ka-front'
 # BeyondATC's reply list is mouse-only (Tab/Enter/arrows/vJoy didn't reach it), so the wheel runs helpers.
 PROGRAMS = {8: 'ka-front-vpilot.exe', 13: 'ka-front-beyondatc.exe',
             22: 'ka-menu-prev.exe', 21: 'ka-menu-next.exe', 19: 'ka-menu-select.exe'}
+# 2026-11-04: HID 31 on both grips (read live) puts focus back on the MSFS window after vPilot/BeyondATC.
+PROGRAMS[31] = 'ka-front-msfs.exe'
 PEDAL_AXES = {  # BoundTo -> (lever, min, max, centre or None, invert)
     # Rudder inverted: SPAD's LEVER_RUDDER treats low raw values as right rudder; the user confirmed
     # the uninverted mapping was reversed in the sim on 2026-11-03.
@@ -178,12 +184,33 @@ def pedal_events(body, indent):
     return body
 
 
+def throttle_events(body, indent):
+    return strip_event(body, ZOOM_AXIS) + block([
+        f'<Event BoundTo="{ZOOM_AXIS}">',
+        '  <EventDefinitions>',
+        '    <EventDefinition Trigger="VALUE">',
+        '      <EventActions>',
+        f'        <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" '
+        f'JoystickTarget="{ZOOM_VJOY}" JoystickMode="RESPONSECURVE" />',
+        # Direct cockpit zoom: SPAD's axis percentage (0..100) written to the settable simvar
+        # COCKPIT CAMERA ZOOM (percentage), so no MSFS binding is needed. Verified settable 2026-11-03.
+        '        <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:COCKPIT CAMERA ZOOM" '
+        'SourceDataDefinition="[LOCAL:JOY_0X33440X0194_RZ_AXIS]" />',
+        '      </EventActions>',
+        '    </EventDefinition>',
+        '  </EventDefinitions>',
+        '</Event>',
+    ], indent)
+
+
 def patch(text):
     for index, path in GRIPS.items():
         text = ensure_device(text, '0x3344', '0x03F5', index, path)
         text = edit_events(text, '0x3344', '0x03F5', index, grip_events)
     text = ensure_device(text, '0x06A3', '0x0763', 0, PEDALS)
-    return edit_events(text, '0x06A3', '0x0763', 0, pedal_events)
+    text = edit_events(text, '0x06A3', '0x0763', 0, pedal_events)
+    text = ensure_device(text, '0x3344', '0x0194', 0, THROTTLE)
+    return edit_events(text, '0x3344', '0x0194', 0, throttle_events)
 
 
 def main():
@@ -197,7 +224,7 @@ def main():
         if crlf:
             new = new.replace('\n', '\r\n')
         path.write_bytes((b'\xef\xbb\xbf' if bom else b'') + new.encode('utf-8'))
-        print(f'{path}: both grips + rudder pedals set')
+        print(f"{path}: grips, rudder pedals and throttle zoom set")
 
 
 if __name__ == '__main__':

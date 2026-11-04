@@ -43,7 +43,7 @@ if ((Get-FileHash $driverDll).Hash -ne (Get-FileHash $spadDll).Hash) {
     Note "SPAD's vJoy library replaced with the one matching the driver."
 } else { Note 'SPAD vJoy library already matches.' }
 
-Step 'SPAD profiles (all 8, with helper paths pointed at this folder)'
+Step 'SPAD profiles (all 9, with helper paths pointed at this folder)'
 $target = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'SPAD.neXt\profiles'
 New-Item -ItemType Directory -Path $target -Force | Out-Null
 $exeDirs = @{ 'ka-click' = 'ka-click'; 'ka-front' = 'ka-front'; 'ka-menu' = 'ka-front'; 'ka-mouse' = 'ka-mouse'; 'ka-drone' = 'ka-drone-leds' }

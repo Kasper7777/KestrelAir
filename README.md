@@ -2,6 +2,8 @@
 
 This profile is installed in `C:\Users\Aero\Documents\SPAD.neXt\profiles`. The Baron variant and matching Black Square Bonanza A36, A36TC and B36TP profiles are installed alongside the original profiles. Camera routing and portable installation are documented in thumbstick-keys.md and portable-setup/README.md. Earlier versions are backed up under `backups/`.
 
+**Citation X (2026-11-04):** the FlightFX Cessna Citation X has its own profile, `Citation X - FlightFX C750.xml`, on the same hardware layout, assigned automatically. See [citation-x-profile.md](citation-x-profile.md).
+
 **Stick ATC buttons (2026-11-03):** on both WarBRD sticks, the top push button is vPilot push-to-talk, the bottom push button is BeyondATC push-to-talk, and the trigger or flip trigger is BeyondATC auto respond. SPAD routes them through vJoy buttons 1-3. Two more buttons bring vPilot or BeyondATC to the front (press again to return to MSFS). The wheel steps through BeyondATC's reply list, and pressing the wheel sends the chosen reply. See [stick-atc-buttons.md](stick-atc-buttons.md). This stick setup and the Saitek rudder pedals are in every SPAD profile; MSFS no longer drives the pedals (see [rudder-pedals.md](rudder-pedals.md)).
 
 **SFS Monitor handover (2026-11-03):** while SimFlight's SFS Monitor is open, SPAD ignores the RotAIR and PulsAIR panels; close SFS Monitor and SPAD takes them back. This needs the `ka-sfs-watch` helper running. See [sfs-monitor-handover.md](sfs-monitor-handover.md).

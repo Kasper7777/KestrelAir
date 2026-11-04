@@ -1,0 +1,80 @@
+Citation X profile live check 2026-11-04 21:22
+PASS  CP3 B1 battery 1 on                          0x025C BUTTON_1   -> LVAR:ELECTRICAL_Switch_Battery_1=0
+PASS  CP3 B2 battery 2 on                          0x025C BUTTON_2   -> LVAR:ELECTRICAL_Switch_Battery_2=0
+PASS  CP3 B3 avionics 1 on                         0x025C BUTTON_3   -> LVAR:ELECTRICAL_Switch_Avionics_Master_1=0
+PASS  CP3 B4 avionics 2 on                         0x025C BUTTON_4   -> LVAR:ELECTRICAL_Switch_Avionics_Master_2=0
+PASS  CP2 T2 beacon on                             0x025A BUTTON_19  -> LVAR:switch_lights_recognition_antiCollision=1
+PASS  CP2 T1 strobe on                             0x025A BUTTON_17  -> LVAR:switch_lights_recognition_antiCollision=0
+PASS  CP2 T1 strobe off, beacon stays              0x025A BUTTON_18  -> LVAR:switch_lights_recognition_antiCollision=1
+PASS  CP2 T2 beacon off                            0x025A BUTTON_20  -> LVAR:switch_lights_recognition_antiCollision=2
+PASS  CP2 T3 nav on                                0x025A BUTTON_21  -> LVAR:switch_lights_nav=0
+PASS  CP2 T3 nav off                               0x025A BUTTON_22  -> LVAR:switch_lights_nav=1
+PASS  CP2 T4 taxi on                               0x025A BUTTON_23  -> LVAR:switch_landing_taxi=0
+PASS  CP2 T4 taxi off                              0x025A BUTTON_24  -> LVAR:switch_landing_taxi=1
+PASS  CP2 T5 left landing on                       0x025A BUTTON_25  -> LVAR:switch_landing_light_lh=0
+PASS  CP2 T5 left landing off                      0x025A BUTTON_26  -> LVAR:switch_landing_light_lh=1
+PASS  CP2 T6 right landing on                      0x025A BUTTON_27  -> LVAR:switch_landing_light_rh=0
+PASS  CP2 T6 right landing off                     0x025A BUTTON_28  -> LVAR:switch_landing_light_rh=1
+PASS  CP2 T9 recognition on                        0x025A BUTTON_33  -> LVAR:switch_lights_recog=0
+PASS  CP2 T9 recognition off                       0x025A BUTTON_34  -> LVAR:switch_lights_recog=1
+PASS  CP2 T10 logo light on                        0x025A BUTTON_35  -> LVAR:switch_lights_flood=0
+PASS  CP2 T10 logo light off                       0x025A BUTTON_36  -> LVAR:switch_lights_flood=1
+PASS  CP3 T1 left boost OFF                        0x025C BUTTON_16  -> LVAR:switch_fuel_boost_lh=1
+PASS  CP3 T1 left boost NORM                       0x025C BUTTON_15  -> LVAR:switch_fuel_boost_lh=2
+PASS  CP3 ARM right boost OFF                      0x025C BUTTON_36  -> LVAR:switch_fuel_boost_rh=1
+PASS  CP3 ARM right boost NORM                     0x025C BUTTON_35  -> LVAR:switch_fuel_boost_rh=2
+PASS  CP3 T2 left pitot on                         0x025C BUTTON_17  -> LVAR:switch_pitot_static_lh=0
+PASS  CP3 T2 left pitot off                        0x025C BUTTON_18  -> LVAR:switch_pitot_static_lh=1
+PASS  CP3 T3 right pitot on                        0x025C BUTTON_19  -> LVAR:switch_pitot_static_rh=0
+PASS  CP3 T3 right pitot off                       0x025C BUTTON_20  -> LVAR:switch_pitot_static_rh=1
+PASS  CP3 T4 engine anti-ice on                    0x025C BUTTON_21  -> LVAR:switch_engine_ai_lh=0, LVAR:switch_engine_ai_rh=0
+PASS  CP3 T4 engine anti-ice off                   0x025C BUTTON_22  -> LVAR:switch_engine_ai_lh=1, LVAR:switch_engine_ai_rh=1
+PASS  CP3 T5 slat anti-ice on                      0x025C BUTTON_23  -> LVAR:switch_slats_ai=0
+PASS  CP3 T5 slat anti-ice off                     0x025C BUTTON_24  -> LVAR:switch_slats_ai=1
+PASS  CP3 T6 stab anti-ice on                      0x025C BUTTON_25  -> LVAR:switch_stabilizer_ai_lh=0, LVAR:switch_stabilizer_ai_rh=0
+PASS  CP3 T6 stab anti-ice off                     0x025C BUTTON_26  -> LVAR:switch_stabilizer_ai_lh=1, LVAR:switch_stabilizer_ai_rh=1
+PASS  CP3 T7 windshield heat on                    0x025C BUTTON_27  -> LVAR:switch_windshield_lh=0, LVAR:switch_windshield_rh=0
+PASS  CP3 T7 windshield heat off                   0x025C BUTTON_28  -> LVAR:switch_windshield_lh=2, LVAR:switch_windshield_rh=2
+PASS  CP3 T8 seat belt sign on                     0x025C BUTTON_29  -> LVAR:switch_seatBelt=0
+PASS  CP3 T8 seat belt sign off                    0x025C BUTTON_30  -> LVAR:switch_seatBelt=1
+PASS  Throttle selector L ignition ON              0x0194 BUTTON_62  -> LVAR:Switch_ignition_l=0
+PASS  Throttle selector L ignition NORM            0x0194 BUTTON_63  -> LVAR:Switch_ignition_l=2
+PASS  CP3 rotary R ignition ON                     0x025C BUTTON_45  -> LVAR:Switch_ignition_r=0
+PASS  CP3 rotary R ignition NORM                   0x025C BUTTON_44  -> LVAR:Switch_ignition_r=2
+PASS  Throttle T4 parking brake off                0x0194 BUTTON_40  -> SIMCONNECT:PARKING_BRAKE_SET(0)
+PASS  Throttle T4 parking brake on                 0x0194 BUTTON_41  -> SIMCONNECT:PARKING_BRAKE_SET(1)
+PASS  Throttle T7 engine sync on                   0x0194 BUTTON_52  -> LVAR:knob_eng_sync=0
+PASS  Throttle T7 engine sync off                  0x0194 BUTTON_53  -> LVAR:knob_eng_sync=1
+PASS  Throttle T5 cockpit flood on                 0x0194 BUTTON_48  -> LVAR:lights_knob_flood=80
+PASS  Throttle T6 panel lights off                 0x0194 BUTTON_51  -> LVAR:lights_knob_lh=0, LVAR:lights_knob_ctr=0, LVAR:lights_knob_rh=0, LVAR:lights_knob_el=0
+PASS  Throttle E1 pressurization rate +5           0x0194 BUTTON_56  -> LVAR:knob_pressurization_rate=55
+PASS  CP2 B5 standby power on                      0x025A BUTTON_37  -> LVAR:switch_stby_pwr=0
+PASS  CP2 B6 emergency lights ARM                  0x025A BUTTON_38  -> LVAR:lights_emerg_lt=0
+PASS  CP2 B7 left IRS NAV                          0x025A BUTTON_39  -> LVAR:knob_irs_l=2
+PASS  CP2 B7 left IRS OFF                          0x025A BUTTON_39  -> LVAR:knob_irs_l=0
+PASS  CP2 B1 APU master on                         0x025A BUTTON_4   -> LVAR:electrical_switch_apu_master=1
+PASS  CP2 B2 APU start (press+release)             0x025A BUTTON_5   -> LVAR:electrical_switch_apu_starter=1
+PASS  CP2 B4 APU bleed on                          0x025A BUTTON_7   -> LVAR:switch_apu_bleed=1
+PASS  CP2 B4 APU bleed off                         0x025A BUTTON_7   -> LVAR:switch_apu_bleed=2
+PASS  CP2 B1 APU master off                        0x025A BUTTON_4   -> LVAR:electrical_switch_apu_master=0
+PASS  CP3 X speedbrake extended                    0x025C X_AXIS     -> SIMCONNECT:AXIS_SPOILER_SET(16383.0)
+PASS  CP3 X speedbrake half                        0x025C X_AXIS     -> SIMCONNECT:AXIS_SPOILER_SET(8192.0)
+PASS  CP3 X speedbrake stowed (lever forward)      0x025C X_AXIS     -> SIMCONNECT:AXIS_SPOILER_SET(0.0)
+PASS  Throttle Z flaps full                        0x0194 Z_AXIS     -> SIMCONNECT:AXIS_FLAPS_SET(16383.0)
+PASS  Throttle Z flaps up                          0x0194 Z_AXIS     -> SIMCONNECT:AXIS_FLAPS_SET(-16383.0)
+PASS  CP3 Y reversers deploy (lever back)          0x025C Y_AXIS     -> PROFILE:KA_REVERSE=1, SIMCONNECT:THROTTLE1_CUT(), SIMCONNECT:THROTTLE2_CUT(), SIMCONNECT:THROTTLE1_DECR(), SIMCONNECT:THROTTLE2_DECR()
+PASS  CP3 Y reversers stow, throttles restored     0x025C Y_AXIS     -> PROFILE:KA_REVERSE=0, SIMCONNECT:THROTTLE1_CUT(), SIMCONNECT:THROTTLE2_CUT(), SIMCONNECT:THROTTLE1_SET(0.0), SIMCONNECT:THROTTLE2_SET(0.0)
+PASS  CP3 RX left fuel CUTOFF                      0x025C RX_AXIS    -> LVAR:ENG_CUTOFF_1=0
+PASS  CP3 RX left fuel RUN                         0x025C RX_AXIS    -> LVAR:ENG_CUTOFF_1=1
+PASS  CP3 RY right fuel CUTOFF                     0x025C RY_AXIS    -> LVAR:ENG_CUTOFF_2=0
+PASS  CP3 RY right fuel RUN                        0x025C RY_AXIS    -> LVAR:ENG_CUTOFF_2=1
+PASS  RotAIR heading push = sync                   0x1290 BUTTON_2   -> SIMCONNECT:HEADING_BUG_SET(27.0)
+PASS  RotAIR heading ring 2 = speed bug +          0x1290 BUTTON_19  -> SIMCONNECT:AP_SPD_VAR_INC()
+PASS  RotAIR ALT push = transponder ALT            0x1290 BUTTON_4   -> SIMCONNECT:TRANSPONDER STATE:1=4
+PASS  RotAIR ALT hold = transponder STBY           0x1290 BUTTON_8   -> SIMCONNECT:TRANSPONDER STATE:1=1
+PASS  PulsAIR AP HDG mode                          0x14CA BUTTON_2   -> SIMCONNECT:AP_PANEL_HEADING_HOLD()
+PASS  PulsAIR AP FLC mode                          0x14CA BUTTON_6   -> SIMCONNECT:FLIGHT_LEVEL_CHANGE()
+PASS  PulsAIR AP VS mode                           0x14CA BUTTON_5   -> SIMCONNECT:AP_PANEL_VS_HOLD()
+PASS  PulsAIR AP ALT mode                          0x14CA BUTTON_8   -> SIMCONNECT:AP_ALT_HOLD()
+Restored switch state; differences remaining: none
+77 passed, 0 failed

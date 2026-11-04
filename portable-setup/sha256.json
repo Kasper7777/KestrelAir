@@ -1,5 +1,5 @@
 {
-  "aircraft-assignments.csv": "ea7d931dbcc68d52da24589c6f7f5d88cf7fc28564e9102ff62db038b1f09bac",
+  "aircraft-assignments.csv": "50265532d114c3ad0b547b318c219ac4cdd62914a9caf19534b63f82f0456d71",
   "camera-profiles-pending/Baron - GNS 530 + TDS GTNxi 650.xml": "685d8b354c239fc222774415382ec08483f962c275689a21f29c35c0c00e872a",
   "camera-profiles-pending/Bonanza A36 - GNS 530 + TDS GTNxi 650.xml": "d2ff7c9ce07fcb76a5e09b866eca9312022676495780e06f8972a26aa2640b0e",
   "camera-profiles-pending/Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml": "e9ba7c8d56649c50e34242b5ec31288ff6dc31b3edf80510c276e470d41b2792",
@@ -49,7 +49,7 @@
   "helpers/watch-right-thumbstick.ps1": "d64af2cbdc676b26989f5ec5f0a7a8cbb03eacb3f94e23bf1cc7a00fe4e76b2c",
   "helpers/watch-warbrd-buttons.ps1": "6d77004a82b8f59fc540ad966e583d9d832129243ab41b9d46645ba909e10b68",
   "Install-KestrelAir.cmd": "39c75ed6e7d6429c41cd7348153daa8e75bf0d00a66a4a85eb838383c72546ba",
-  "Install-KestrelAir.ps1": "91839e75c5a4cfb08be34657e3eab1b5811f03f635d49e8b9badcc8a98d5c32c",
+  "Install-KestrelAir.ps1": "4a9653a51e5a5c7418b1efcd0318f5e026d4fec5a10fcb330607e7ac441bbc41",
   "KestrelAir-RudderPedals-SPAD.xml": "5a1018ab3db9cdc74b0e4226dba10c7eda0e0e1c617571fed5182c7959104694",
   "KestrelAir-vJoy-GeneralControls-v2.1-Zoom.xml": "def2549b1c85ba18314f3714275d1abac4f894f5903894dc2534521a52aefe75",
   "KestrelAir-vJoy-GeneralControls-v2.2-OnFoot.xml": "0aa750e290a2b505065777e07919655ef9e800f9316206334363bd7e3ea4337d",
@@ -64,8 +64,9 @@
   "profiles/Bonanza B36TP - GNS 530 + TDS GTNxi 650.xml": "8a74e34a2b63245778d4b0ddee78a8be2065867222bfdd4960e63baf87c947f0",
   "profiles/Piper PA-24-250.xml": "4de01b0d524c8612bca59946f6eec8381cc68f77cba73b3dbbf61133bcbf84d2",
   "profiles/Profile.xml": "119a9c4323401094261326e30848b17402ae33e5e0c28113f02bf80be89e62c2",
-  "README.md": "065b99c44f41f86007261cacdd1e012116ed0389db9f7b3fddefb9334fd5c5b0",
+  "README.md": "b90e07755aa8ab07750230db66acdb46a6e73437d180bbb43223845494c5b1a5",
   "vjoy-camera-empty.xml": "7529cbf3f4b861a9d637ef02447ba9cb9f346e0cc81750316841c138e686bc2e",
   "vJoyInterface.dll": "199316aaefac95118e869c07e7f332ce492dd9a8b6dac5a3ca20b1d5bb5058a1",
-  "vJoySetup_v2.2.2.0_Win10_Win11.exe": "ef569a3105cd301b89580f18f60c66b339e95296acf2c0dfcaf4b4bbf8ab68fe"
+  "vJoySetup_v2.2.2.0_Win10_Win11.exe": "ef569a3105cd301b89580f18f60c66b339e95296acf2c0dfcaf4b4bbf8ab68fe",
+  "profiles/Citation X - FlightFX C750.xml": "d0c921427f1bb4bc43cdf993f862cffad8da1097d1bc378931c3997ce0d17eb9"
 }

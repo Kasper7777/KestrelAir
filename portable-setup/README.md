@@ -13,7 +13,7 @@ Everything is in this folder (or `KestrelAir-portable-setup.zip`). Updated 2026-
 
 - Asks before closing SPAD, MSFS, vPilot, BeyondATC and the helpers, then backs up everything it replaces to `install-backup-<date>\`.
 - Installs vJoy 2.2.2 if missing, and gives SPAD the matching vJoy library.
-- Copies all 8 SPAD profiles (sticks, pedals, throttle, panels, MSG fix, button 31 = back to MSFS) and points their helper paths at this folder.
+- Copies all 9 SPAD profiles, including the Citation X (sticks, pedals, throttle, panels, MSG fix, button 31 = back to MSFS), and points their helper paths at this folder.
 - Throttle mini-stick mouse (`helpers\ka-mouse`): finds the throttle on this PC. SPAD starts the helper when you press a throttle mouse button.
 - SFS Monitor watcher (`helpers\ka-sfs`): adds it to Startup and starts it.
 - Drone stick lights (`helpers\ka-drone-leds`): SPAD starts the helper when you press B4. Drone mode on the main sticks is already in the profiles (`helpers\drone-sticks.md`).

@@ -49,6 +49,14 @@ PROGRAMS = {8: 'ka-front-vpilot.exe', 13: 'ka-front-beyondatc.exe',
             22: 'ka-menu-prev.exe', 21: 'ka-menu-next.exe', 19: 'ka-menu-select.exe'}
 # 2026-11-04: HID 31 on both grips (read live) puts focus back on the MSFS window after vPilot/BeyondATC.
 PROGRAMS[31] = 'ka-front-msfs.exe'
+# 2026-11-04, throttle: SPAD starts the background helpers itself (the user wants no Windows Startup entries).
+# Both helpers are single-instance, so a launch while one is already running just exits.
+#   B4 (HID 45): Shift+X = MSFS Toggle Drone Camera, and starts ka-drone-leds (sticks sky blue in drone mode).
+#   Mini-stick mouse buttons (HID 11 press, 9 up, 8/13 down): start ka-mouse; the first press only wakes it.
+DRONE_TOGGLE = 45
+DRONE_LEDS = Path(__file__).resolve().parent / '.tools' / 'ka-drone-leds' / 'ka-drone-leds.exe'
+MOUSE = Path(__file__).resolve().parent / '.tools' / 'ka-mouse' / 'ka-mouse.exe'
+MOUSE_WAKE = (8, 9, 11, 13)
 PEDAL_AXES = {  # BoundTo -> (lever, min, max, centre or None, invert)
     # Rudder inverted: SPAD's LEVER_RUDDER treats low raw values as right rudder; the user confirmed
     # the uninverted mapping was reversed in the sim on 2026-11-03.
@@ -84,21 +92,58 @@ def vjoy_event(hid, button, indent):
     ], indent)
 
 
+def run_action(path):
+    return ['<EventActionCommand>', '  <Parameter Value="SPAD_neXt.RunProgram" />',
+            f'  <Parameter1 Value="{path}" />', '</EventActionCommand>']
+
+
 def program_event(hid, exe, indent):
+    path = exe if isinstance(exe, Path) else TOOLS / exe
     return block([
         f'<Event BoundTo="BUTTON_{hid}">',
         '  <EventDefinitions>',
         '    <EventDefinition Trigger="PRESS">',
         '      <EventActions>',
-        '        <EventActionCommand>',
-        '          <Parameter Value="SPAD_neXt.RunProgram" />',
-        f'          <Parameter1 Value="{TOOLS / exe}" />',
-        '        </EventActionCommand>',
+        *['        ' + line for line in run_action(path)],
         '      </EventActions>',
         '    </EventDefinition>',
         '  </EventDefinitions>',
         '</Event>',
     ], indent)
+
+
+def drone_toggle_event(body, indent):
+    """B4: keep its existing PRESS actions (Shift+X), add the LED-helper launch once; create it if missing."""
+    run = re.compile(r'\n[ \t]*<EventActionCommand>\s*<Parameter Value="SPAD_neXt.RunProgram" />\s*'
+                     r'<Parameter1 Value="[^"]*ka-drone-leds\.exe" />\s*</EventActionCommand>')
+    ev = re.search(rf'<Event BoundTo="BUTTON_{DRONE_TOGGLE}">.*?</Event>', body, re.S)
+    if not ev:
+        return body + block([
+            f'<Event BoundTo="BUTTON_{DRONE_TOGGLE}">',
+            '  <EventDefinitions>',
+            '    <EventDefinition Trigger="PRESS">',
+            '      <EventActions>',
+            '        <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">',
+            '          <KeyboardMacro Duration="80" Repeat="1" Pause="25">',
+            '            <Keys>',
+            '              <Keys>LShiftKey</Keys>',
+            '              <Keys>X</Keys>',
+            '            </Keys>',
+            '          </KeyboardMacro>',
+            '        </EventActionKeyboard>',
+            *['        ' + line for line in run_action(DRONE_LEDS)],
+            '      </EventActions>',
+            '    </EventDefinition>',
+            '  </EventDefinitions>',
+            '</Event>',
+        ], indent)
+    event = run.sub('', ev.group(0))
+    press = re.search(r'<EventDefinition Trigger="PRESS">.*?(\n([ \t]*)</EventActions>)', event, re.S)
+    if not press:
+        raise ValueError('B4 has no PRESS definition')
+    pad = press.group(2) + '  '
+    event = event[:press.start(1)] + block(run_action(DRONE_LEDS), pad) + event[press.start(1):]
+    return body[:ev.start()] + event + body[ev.end():]
 
 
 def axis_event(bound, lever, lo, hi, centre, invert, indent):
@@ -185,6 +230,9 @@ def pedal_events(body, indent):
 
 
 def throttle_events(body, indent):
+    body = drone_toggle_event(body, indent)
+    for hid in MOUSE_WAKE:
+        body = strip_event(body, f'BUTTON_{hid}') + program_event(hid, MOUSE, indent)
     return strip_event(body, ZOOM_AXIS) + block([
         f'<Event BoundTo="{ZOOM_AXIS}">',
         '  <EventDefinitions>',

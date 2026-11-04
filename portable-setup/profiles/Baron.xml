@@ -140,6 +140,74 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_45">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>X</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-drone-leds.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="RZ_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
@@ -256,6 +324,42 @@
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
       <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
         <Events>
+          <Event BoundTo="X_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="55" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="Y_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_7">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -390,6 +494,42 @@
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;22ba5017&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="1" Version="3">
       <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
         <Events>
+          <Event BoundTo="X_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="Y_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_7">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">

@@ -1104,7 +1104,11 @@
 		<Action ActionName="DRONE_AUTO_FOCUS" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_AXIS_DEPTH_FIELD" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_AXIS_EXPOSURE" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
-		<Action ActionName="DRONE_AXIS_ROTATION_Z" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
+		<Action ActionName="DRONE_AXIS_ROTATION_Z" ValueEvent="0.000000" Delay="0.000000" Flag="4">
+			<Primary>
+				<KEY Information="Slider Y">530</KEY>
+			</Primary>
+		</Action>
 		<Action ActionName="DRONE_AXIS_ROTATION_Z_LOCKABLE" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_DECREASE_CAMERA_SPEED" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_DECREASE_DRONE_SPEED" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
@@ -1125,7 +1129,11 @@
 		<Action ActionName="DRONE_TOGGLE_LOCK_MODE" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 	</Context>
 	<Context ContextName="DRONE_GLOBAL">
-		<Action ActionName="DRONE_AXIS_ROTATION_X" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
+		<Action ActionName="DRONE_AXIS_ROTATION_X" ValueEvent="0.000000" Delay="0.000000" Flag="4">
+			<Primary>
+				<KEY Information="Joystick R-Axis Z ">802</KEY>
+			</Primary>
+		</Action>
 		<Action ActionName="DRONE_AXIS_ROTATION_X_LOCKABLE" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_AXIS_ROTATION_Y" ValueEvent="0.000000" Delay="0.000000" Flag="4">
 			<Primary>

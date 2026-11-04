@@ -14,6 +14,9 @@
           <Event BoundTo="X_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
                 <EventActions>
                   <EventActionRangedAxis ConfigID="LEVER_AILERONS">
                     <Options>
@@ -26,11 +29,22 @@
                   </EventActionRangedAxis>
                 </EventActions>
               </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="55" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
             </EventDefinitions>
           </Event>
           <Event BoundTo="Y_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
                 <EventActions>
                   <EventActionRangedAxis ConfigID="LEVER_ELEVATOR">
                     <Options>
@@ -41,6 +55,14 @@
                       <Option Key="INVERTAXIS" Value="False" />
                     </Options>
                   </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -81,6 +103,18 @@
                     <Parameter Value="SPAD_neXt.RunProgram" />
                     <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-click\ka-click-up.exe" />
                   </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -494,6 +528,58 @@
                       </Keys>
                     </KeyboardMacro>
                   </EventActionKeyboard>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-drone-leds.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4134,6 +4220,9 @@
           <Event BoundTo="X_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
                 <EventActions>
                   <EventActionRangedAxis ConfigID="LEVER_AILERONS">
                     <Options>
@@ -4146,11 +4235,22 @@
                   </EventActionRangedAxis>
                 </EventActions>
               </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
             </EventDefinitions>
           </Event>
           <Event BoundTo="Y_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
                 <EventActions>
                   <EventActionRangedAxis ConfigID="LEVER_ELEVATOR">
                     <Options>
@@ -4161,6 +4261,14 @@
                       <Option Key="INVERTAXIS" Value="False" />
                     </Options>
                   </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4387,6 +4495,18 @@
                       </Keys>
                     </KeyboardMacro>
                   </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

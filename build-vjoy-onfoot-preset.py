@@ -13,8 +13,11 @@ If one on-foot direction then tests backwards, add its action to INVERT and rebu
 """
 from pathlib import Path
 import re
+import sys
 
-SOURCE = Path(r'C:\Program Files (x86)\Steam\userdata\86580337\2537590\remote\inputprofile_ka-look.xml')
+# The untouched "Look" preset as MSFS had it before 2026-11-04 (the live file now holds this script's output).
+SOURCE = Path(__file__).resolve().parent / 'backups' / 'msfs-look-preset-20261104' / 'inputprofile_ka-look.xml'
+LIVE = Path(r'C:\Program Files (x86)\Steam\userdata\86580337\2537590\remote\inputprofile_ka-look.xml')
 TARGET = Path(__file__).resolve().parent / 'portable-setup' / 'KestrelAir-vJoy-GeneralControls-v2.2-OnFoot.xml'
 NAME = 'KestrelAir SPAD Cameras v2.2'
 SWAP = {  # action -> (KEY Information, code) it should listen to
@@ -24,6 +27,10 @@ SWAP = {  # action -> (KEY Information, code) it should listen to
 INVERT = set()  # e.g. {'KEY_AXIS_PC_FPV_ROTATION_Y'}
 # Cockpit look: user (2026-11-04) wants left/right NOT inverted, but keeps up/down inverted (VRTC stays 132).
 FLAGS = {'KEY_COCKPIT_FREELOOK_HRZ_SET': 4}
+# Drone tilt for the Star Citizen-style main sticks (drone-sticks.py): right stick Y -> vJoy Rz -> pitch,
+# right stick X -> vJoy Dial (MSFS "Slider Y", 0x212) -> roll. Both were unbound in "Look".
+BIND = {'DRONE_AXIS_ROTATION_X': ('Joystick R-Axis Z ', '802'),
+        'DRONE_AXIS_ROTATION_Z': ('Slider Y', '530')}
 
 
 def main():
@@ -42,8 +49,19 @@ def main():
         text, n = re.subn(r'(<Action ActionName="%s"[^>]*?Flag=")\d+(">\s*<Primary>)' % action,
                           rf'\g<1>{flag}\g<2>', text)
         assert n == 1, f'{action}: expected one bound action, found {n}'
-    TARGET.write_bytes((b'\xef\xbb\xbf' if bom else b'') + text.encode('utf-8'))
+    nl = '\r\n' if '\r\n' in text else '\n'
+    for action, (info, code) in BIND.items():
+        bound = (f'<Action ActionName="{action}" ValueEvent="0.000000" Delay="0.000000" Flag="4">{nl}'
+                 f'\t\t\t<Primary>{nl}\t\t\t\t<KEY Information="{info}">{code}</KEY>{nl}\t\t\t</Primary>{nl}\t\t</Action>')
+        text, n = re.subn(r'<Action ActionName="%s" ValueEvent="[^"]*" Delay="[^"]*" Flag="\d+"/>' % action,
+                          lambda m: bound, text)
+        assert n == 1, f'{action}: expected one unbound action, found {n}'
+    body = (b'\xef\xbb\xbf' if bom else b'') + text.encode('utf-8')
+    TARGET.write_bytes(body)
     print(f'wrote {TARGET}')
+    if '--live' in sys.argv:  # also overwrite the preset MSFS has selected, keeping its name "Look"
+        LIVE.write_bytes(body.replace(f'>{NAME}<'.encode(), b'>Look<', 1))
+        print(f'wrote {LIVE} (takes effect next MSFS start)')
 
 
 if __name__ == '__main__':

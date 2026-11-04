@@ -17,7 +17,7 @@ if (!$principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
 Step 'Closing SPAD, MSFS, vPilot, BeyondATC and the KestrelAir helpers (they save settings on exit)'
-$apps = 'SPAD.neXt', 'FlightSimulator2024', 'FlightSimulator', 'vPilot', 'BeyondATC', 'ka-mouse', 'ka-sfs-watch'
+$apps = 'SPAD.neXt', 'FlightSimulator2024', 'FlightSimulator', 'vPilot', 'BeyondATC', 'ka-mouse', 'ka-sfs-watch', 'ka-drone-leds'
 $running = Get-Process $apps -ErrorAction SilentlyContinue
 if ($running) {
     Note ("Running: " + (($running | Select-Object -ExpandProperty Name -Unique) -join ', '))
@@ -46,14 +46,14 @@ if ((Get-FileHash $driverDll).Hash -ne (Get-FileHash $spadDll).Hash) {
 Step 'SPAD profiles (all 8, with helper paths pointed at this folder)'
 $target = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'SPAD.neXt\profiles'
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-$exeDirs = @{ 'ka-click' = 'ka-click'; 'ka-front' = 'ka-front'; 'ka-menu' = 'ka-front' }
+$exeDirs = @{ 'ka-click' = 'ka-click'; 'ka-front' = 'ka-front'; 'ka-menu' = 'ka-front'; 'ka-mouse' = 'ka-mouse'; 'ka-drone' = 'ka-drone-leds' }
 foreach ($file in Get-ChildItem (Join-Path $root 'profiles') -Filter '*.xml') {
     $destination = Join-Path $target $file.Name
     if (Test-Path -LiteralPath $destination) { Copy-Item -LiteralPath $destination -Destination $backup }
     $doc = [xml](Get-Content -LiteralPath $file.FullName -Raw)
     foreach ($node in $doc.SelectNodes('//*[@Value]')) {
         $old = $node.GetAttribute('Value')
-        if ($old -match '((ka-click|ka-front|ka-menu)(-[a-z]+)?)\.exe$') {
+        if ($old -match '((ka-click|ka-front|ka-menu|ka-mouse|ka-drone)(-[a-z]+)?)\.exe$') {
             $path = Join-Path (Join-Path $helpers $exeDirs[$Matches[2]]) ($Matches[1] + '.exe')
             if (!(Test-Path $path)) { throw "Missing helper $path" }
             # ka-click lives in an expression string (doubled backslashes); RunProgram paths are plain.
@@ -64,7 +64,8 @@ foreach ($file in Get-ChildItem (Join-Path $root 'profiles') -Filter '*.xml') {
     Note $file.Name
 }
 
-Step 'Throttle mouse helper (ka-mouse) and SFS Monitor watcher: start at logon'
+# ka-mouse and ka-drone-leds are started by SPAD itself (throttle mouse buttons / B4), not Windows Startup.
+Step 'Throttle mouse: find the throttle on this PC; SFS Monitor watcher: start at logon'
 $cm3 = Get-PnpDevice -PresentOnly -ErrorAction SilentlyContinue |
     Where-Object { $_.InstanceId -like 'HID\VID_3344&PID_0194&MI_00*' } | Select-Object -First 1
 if ($cm3) {
@@ -76,7 +77,7 @@ if ($cm3) {
 } else { Todo 'VIRPIL CM3 throttle not connected: plug it in and run this setup again so the mini-stick mouse can find it.' }
 $startup = [Environment]::GetFolderPath('Startup')
 $shell = New-Object -ComObject WScript.Shell
-foreach ($exe in 'ka-mouse\ka-mouse.exe', 'ka-sfs\ka-sfs-watch.exe') {
+foreach ($exe in @('ka-sfs\ka-sfs-watch.exe')) {
     $full = Join-Path $helpers $exe
     $lnk = $shell.CreateShortcut((Join-Path $startup ([IO.Path]::GetFileNameWithoutExtension($full) + '.lnk')))
     $lnk.TargetPath = $full; $lnk.WorkingDirectory = Split-Path $full; $lnk.Save()

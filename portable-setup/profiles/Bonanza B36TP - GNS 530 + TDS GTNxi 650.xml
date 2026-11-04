@@ -34,7 +34,7 @@
                   <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="55" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -110,11 +110,8 @@
           <Event BoundTo="RZ_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
-                </EventConditions>
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="55" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

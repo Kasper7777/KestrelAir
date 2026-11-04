@@ -1104,7 +1104,7 @@
 		<Action ActionName="DRONE_AUTO_FOCUS" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_AXIS_DEPTH_FIELD" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_AXIS_EXPOSURE" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
-		<Action ActionName="DRONE_AXIS_ROTATION_Z" ValueEvent="0.000000" Delay="0.000000" Flag="4">
+		<Action ActionName="DRONE_AXIS_ROTATION_Z" ValueEvent="0.000000" Delay="0.000000" Flag="132">
 			<Primary>
 				<KEY Information="Slider Y">530</KEY>
 			</Primary>

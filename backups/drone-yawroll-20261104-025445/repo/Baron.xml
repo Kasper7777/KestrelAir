@@ -1,0 +1,735 @@
+<Profile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="2" xmlns="http://www.fsgs.com/SPAD">
+  <Devices>
+    <Device VendorID="0x3344" ProductID="0x43F5" DevicePath="\\?\hid#vid_3344&amp;pid_43f5&amp;mi_00#a&amp;1094b8f3&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="BUTTON_7">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="MSFS:WT_CJ4_FLOOD_LIGHT_TOGGLE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_21">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS1000_MFD_RANGE_INC">
+                    <Parameter Value="0.1" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Inc" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_22">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="H:AS1000_MFD_RANGE_DEC">
+                    <Parameter Value="-0.1" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:AS530_RANGE_ZOOM_Dec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+      </DevicePage>
+    </Device>
+    <Device VendorID="0x3344" ProductID="0x0194" DevicePath="\\?\hid#vid_3344&amp;pid_0194&amp;mi_00#8&amp;1d037022&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="BUTTON_55">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:BKSQ_MAGNETOCONTROLLER_L_Dec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_56">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:BKSQ_IGNITIONPOSITION_1" SourceDataDefinition="If([LVAR:BKSQ_IgnitionPosition_1] == 0, 1, If([LVAR:BKSQ_IgnitionPosition_1] == 1, 2, If([LVAR:BKSQ_IgnitionPosition_1] == 2, 3, 5)))" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_58">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:BKSQ_MAGNETOCONTROLLER_R_Dec" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_59">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:BKSQ_IGNITIONPOSITION_2" SourceDataDefinition="If([LVAR:BKSQ_IgnitionPosition_2] == 0, 1, If([LVAR:BKSQ_IgnitionPosition_2] == 1, 2, If([LVAR:BKSQ_IgnitionPosition_2] == 2, 3, 5)))" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_50">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_1_On" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_51">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_1_Off" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_52">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_2_On" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_53">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="B:ELECTRICAL_ALTERNATOR_2_Off" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_37">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="B:LANDING_GEAR_GEAR" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_36">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="B:LANDING_GEAR_GEAR" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_45">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="80" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>X</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-drone-leds.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="54" JoystickMode="RESPONSECURVE" />
+                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="SIMCONNECT:COCKPIT CAMERA ZOOM" SourceDataDefinition="[LOCAL:JOY_0X33440X0194_RZ_AXIS]" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+      </DevicePage>
+    </Device>
+    <Device VendorID="0x3344" ProductID="0x025C" DevicePath="\\?\hid#vid_3344&amp;pid_025c&amp;mi_00#a&amp;66e0474&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="BUTTON_14">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:var_FUEL_Switch_Pump_1" Value="2" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_15">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:var_FUEL_Switch_Pump_1" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_16">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:var_FUEL_Switch_Pump_1" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_36">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:var_FUEL_Switch_Pump_2" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_35">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:var_FUEL_Switch_Pump_2" Value="1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_34">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:var_FUEL_Switch_Pump_2" Value="2" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_18">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP1_SET">
+                    <Parameter Value="16383" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_17">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP1_SET" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_20">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP2_SET">
+                    <Parameter Value="16383" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_19">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:COWLFLAP2_SET" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+      </DevicePage>
+    </Device>
+    <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="X_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="55" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="Y_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_7">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_18">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_4">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-front-vpilot.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-front-beyondatc.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_22">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-menu-prev.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_21">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-menu-next.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_19">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-menu-select.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_31">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-front-msfs.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+      </DevicePage>
+    </Device>
+    <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;22ba5017&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="1" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="X_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="Y_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_7">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="1" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_18">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="2" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_4">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="3" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-front-vpilot.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_13">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-front-beyondatc.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_22">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-menu-prev.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_21">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-menu-next.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_19">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-menu-select.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_31">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-front-msfs.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+      </DevicePage>
+    </Device>
+    <Device VendorID="0x06A3" ProductID="0x0763" DevicePath="\\?\hid#vid_06a3&amp;pid_0763#9&amp;2a71f0e4&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
+      <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="Default">
+        <Events>
+          <Event BoundTo="RZ_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionRangedAxis ConfigID="LEVER_RUDDER">
+                    <Options>
+                      <Option Key="USERAWVALUE" Value="True" />
+                      <Option Key="MIN" Value="5" />
+                      <Option Key="MAX" Value="501" />
+                      <Option Key="IDLE" Value="253" />
+                      <Option Key="INVERTAXIS" Value="True" />
+                    </Options>
+                  </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="X_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionRangedAxis ConfigID="LEVER_BRAKELEFT">
+                    <Options>
+                      <Option Key="USERAWVALUE" Value="True" />
+                      <Option Key="MIN" Value="0" />
+                      <Option Key="MAX" Value="125" />
+                      <Option Key="INVERTAXIS" Value="False" />
+                    </Options>
+                  </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="Y_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventActions>
+                  <EventActionRangedAxis ConfigID="LEVER_BRAKERIGHT">
+                    <Options>
+                      <Option Key="USERAWVALUE" Value="True" />
+                      <Option Key="MIN" Value="0" />
+                      <Option Key="MAX" Value="125" />
+                      <Option Key="INVERTAXIS" Value="False" />
+                    </Options>
+                  </EventActionRangedAxis>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+        </Events>
+      </DevicePage>
+    </Device>
+  </Devices>
+  <Options>
+    <Option Key="Ultimarc.PacDrive.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.BIP.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.BIP.Brightness" Value="50" />
+    <Option Key="Saitek.FIP.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.FIP.DefaultPagingButtons" Value="True" />
+    <Option Key="Saitek.RadioPanel.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.SwitchPanel.RaiseOnFirst" Value="False" />
+    <Option Key="Saitek.SwitchPanel.SwapRL" Value="True" />
+    <Option Key="Saitek.SwitchPanel.EnableVirtualPower" Value="True" />
+    <Option Key="Saitek.TrimWheel.ReverseTrim" Value="True" />
+    <Option Key="Ultimarc.PacLed64.EnableVirtualPower" Value="True" />
+    <Option Key="Ultimarc.PacLed64.Brightness" Value="128" />
+  </Options>
+  <ProfileInformation ProfileID="dee29e9d-43ed-405b-aee7-8d10b74b2001" Version="0.14">
+    <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;DIV /&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
+    <LastChanged>2026-09-08T17:47:46.4514253+01:00</LastChanged>
+  </ProfileInformation>
+</Profile>

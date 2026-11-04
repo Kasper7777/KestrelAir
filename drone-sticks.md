@@ -4,7 +4,7 @@ Throttle B4 toggles the MSFS drone camera (Shift+X). While the drone camera is o
 
 - The main sticks fly the drone like the Star Citizen twin-stick layout, and stop moving the plane's ailerons/elevator.
   - **Left stick:** left/right = slide sideways, forward/back = fly forward/back, twist = up/down.
-  - **Right stick:** forward/back = pitch, left/right = roll, twist = yaw (turn).
+  - **Right stick:** forward/back = pitch, left/right = yaw (turn), twist = roll.
 - Both sticks glow **sky blue**. Out of drone mode they return to their own firmware colours.
 
 Press B4 again: plane mode, normal flight controls, normal colours. The plane's controls stay where they were when you entered drone mode and follow the stick again from its next movement.

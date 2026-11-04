@@ -13,8 +13,8 @@ vertical; right stick = SC default pitch (Y), roll (X), yaw (twist).
     Left   Rz (twist)    Rx  0x33        DRONE_AXIS_TRANSLATION_Y  up/down
     Right  Y             Rz  0x35        DRONE_AXIS_ROTATION_X     pitch  (Rz is also cockpit look up/down,
                                                                            which is inactive in drone mode)
-    Right  X             Dial 0x37       DRONE_AXIS_ROTATION_Z     roll
-    Right  Rz (twist)    Z   0x32        DRONE_AXIS_ROTATION_Y     yaw
+    Right  X             Z   0x32        DRONE_AXIS_ROTATION_Y     yaw   (user wants X = yaw, twist = roll)
+    Right  Rz (twist)    Dial 0x37       DRONE_AXIS_ROTATION_Z     roll  (preset flag 132 = inverted)
 
 The mini-sticks keep their own drone axes (they share these vJoy axes; whichever moves last wins).
 Close SPAD first. Idempotent: re-running replaces the drone definitions it added.
@@ -29,7 +29,7 @@ _spec = importlib.util.spec_from_file_location('bsp', Path(__file__).resolve().p
 bsp = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(bsp)
 
-ROUTES = {0: {'X_AXIS': 0x37, 'Y_AXIS': 0x35, 'RZ_AXIS': 0x32},
+ROUTES = {0: {'X_AXIS': 0x32, 'Y_AXIS': 0x35, 'RZ_AXIS': 0x37},  # right: X = yaw, twist = roll (user, 2026-11-04)
           1: {'X_AXIS': 0x30, 'Y_AXIS': 0x31, 'RZ_AXIS': 0x33}}
 CAM = 'SIMCONNECT:CAMERA STATE'
 DEF_RE = re.compile(r'\n[ \t]*<EventDefinition\b.*?</EventDefinition>', re.S)
@@ -40,12 +40,20 @@ def condition(comparator, indent):
             f'ConditionValueSource="{CAM}" />')
 
 
+# vJoy axes used by nothing but the drone in MSFS: SPAD feeds them all the time, so they sit at the stick's real
+# position (centre) when drone mode starts. 2026-11-04: Dial was only written in drone mode, so it entered drone
+# mode at a stale value and the drone rolled/rotated on entry.
+ALWAYS = {0x37}
+
+
 def drone_def(target, indent):
-    return bsp.block([
-        '<EventDefinition Trigger="VALUE">',
+    cond = [] if target in ALWAYS else [
         '  <EventConditions>',
         condition('Equals', '    '),  # SPAD's comparator name (not "Equal")
-        '  </EventConditions>',
+        '  </EventConditions>']
+    return bsp.block([
+        '<EventDefinition Trigger="VALUE">',
+        *cond,
         '  <EventActions>',
         f'    <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" '
         f'JoystickTarget="{target}" JoystickMode="RESPONSECURVE" />',
@@ -55,8 +63,9 @@ def drone_def(target, indent):
 
 
 def is_ours(d):
-    return (f'ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="{CAM}"' in d
-            and 'EventActionRangedAxis' not in d and 'EventActionKeyboard' not in d)
+    # In the X/Y/twist events, a definition whose only actions are vJoy axes is one this script added.
+    return ('JoystickAction="VJOY_AXIS"' in d and 'EventActionRangedAxis' not in d
+            and 'EventActionKeyboard' not in d and 'EventActionChangeValue' not in d)
 
 
 def gate_plane(d):

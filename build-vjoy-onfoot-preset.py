@@ -29,8 +29,9 @@ INVERT = set()  # e.g. {'KEY_AXIS_PC_FPV_ROTATION_Y'}
 FLAGS = {'KEY_COCKPIT_FREELOOK_HRZ_SET': 4}
 # Drone tilt for the Star Citizen-style main sticks (drone-sticks.py): right stick Y -> vJoy Rz -> pitch,
 # right stick X -> vJoy Dial (MSFS "Slider Y", 0x212) -> roll. Both were unbound in "Look".
-BIND = {'DRONE_AXIS_ROTATION_X': ('Joystick R-Axis Z ', '802'),
-        'DRONE_AXIS_ROTATION_Z': ('Slider Y', '530')}
+BIND = {'DRONE_AXIS_ROTATION_X': ('Joystick R-Axis Z ', '802', 4),
+        # Roll inverted: user reported right stick left/right rolled the wrong way (2026-11-04).
+        'DRONE_AXIS_ROTATION_Z': ('Slider Y', '530', 132)}
 
 
 def main():
@@ -50,8 +51,8 @@ def main():
                           rf'\g<1>{flag}\g<2>', text)
         assert n == 1, f'{action}: expected one bound action, found {n}'
     nl = '\r\n' if '\r\n' in text else '\n'
-    for action, (info, code) in BIND.items():
-        bound = (f'<Action ActionName="{action}" ValueEvent="0.000000" Delay="0.000000" Flag="4">{nl}'
+    for action, (info, code, bflag) in BIND.items():
+        bound = (f'<Action ActionName="{action}" ValueEvent="0.000000" Delay="0.000000" Flag="{bflag}">{nl}'
                  f'\t\t\t<Primary>{nl}\t\t\t\t<KEY Information="{info}">{code}</KEY>{nl}\t\t\t</Primary>{nl}\t\t</Action>')
         text, n = re.subn(r'<Action ActionName="%s" ValueEvent="[^"]*" Delay="[^"]*" Flag="\d+"/>' % action,
                           lambda m: bound, text)

@@ -1111,13 +1111,21 @@
 		</Action>
 		<Action ActionName="DRONE_AXIS_ROTATION_Z_LOCKABLE" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_DECREASE_CAMERA_SPEED" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
-		<Action ActionName="DRONE_DECREASE_DRONE_SPEED" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
+		<Action ActionName="DRONE_DECREASE_DRONE_SPEED" ValueEvent="0.000000" Delay="0.000000" Flag="2">
+			<Primary>
+				<KEY Information="Joystick Button 5">4</KEY>
+			</Primary>
+		</Action>
 		<Action ActionName="DRONE_DEPTH_FIELD_LESS" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_DEPTH_FIELD_PLUS" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_EXPOSURE_LESS" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_EXPOSURE_PLUS" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_INCREASE_CAMERA_SPEED" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
-		<Action ActionName="DRONE_INCREASE_DRONE_SPEED" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
+		<Action ActionName="DRONE_INCREASE_DRONE_SPEED" ValueEvent="0.000000" Delay="0.000000" Flag="2">
+			<Primary>
+				<KEY Information="Joystick Button 4">3</KEY>
+			</Primary>
+		</Action>
 		<Action ActionName="DRONE_LOOK_TO_NEXT_TARGET" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_LOOK_TO_PREVIOUS_TARGET" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>
 		<Action ActionName="DRONE_PLAY_BACKWARD" ValueEvent="0.000000" Delay="0.000000" Flag="2"/>

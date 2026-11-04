@@ -199,6 +199,9 @@
           <Event BoundTo="BUTTON_22">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
                 <EventActions>
                   <EventActionCommand>
                     <Parameter Value="SPAD_neXt.RunProgram" />
@@ -206,16 +209,45 @@
                   </EventActionCommand>
                 </EventActions>
               </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="4" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="4" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
             </EventDefinitions>
           </Event>
           <Event BoundTo="BUTTON_21">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
                 <EventActions>
                   <EventActionCommand>
                     <Parameter Value="SPAD_neXt.RunProgram" />
                     <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-menu-next.exe" />
                   </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="5" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="5" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4591,6 +4623,9 @@
           <Event BoundTo="BUTTON_22">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
                 <EventActions>
                   <EventActionCommand>
                     <Parameter Value="SPAD_neXt.RunProgram" />
@@ -4598,16 +4633,45 @@
                   </EventActionCommand>
                 </EventActions>
               </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="4" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="4" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
             </EventDefinitions>
           </Event>
           <Event BoundTo="BUTTON_21">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
                 <EventActions>
                   <EventActionCommand>
                     <Parameter Value="SPAD_neXt.RunProgram" />
                     <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-menu-next.exe" />
                   </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Equals" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="5" JoystickMode="PRESS" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="5" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

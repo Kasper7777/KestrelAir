@@ -258,7 +258,10 @@ def grip_events(body, indent):
     for hid, button in VJOY_ROUTES.items():
         body += vjoy_event(hid, button, indent)
     for hid, exe in PROGRAMS.items():
-        body += program_event(hid, exe, indent)
+        if hid in DRONE_WHEEL:
+            body += wheel_event(hid, exe, DRONE_WHEEL[hid], indent)
+        else:
+            body += program_event(hid, exe, indent)
     return body
 
 

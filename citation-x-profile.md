@@ -17,7 +17,7 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | T7 | Engine (fan) sync on / off |
 | E1 encoder | Pressurization rate knob − / + |
 | Five-position selector | **Left engine:** OFF = ignition off, R = NORM, L = ignition ON (continuous), BOTH = NORM, **START = starts engine 1** |
-| B3 / B6 | Tobii head-tracking toggle (Alt+7) / eye-tracking reset (Alt+8): the Baron's macros, unchanged (one macro holding Alt + digit) |
+| B3 / B6 | Tobii head-tracking toggle (Alt+7) / tracking reset. B6 sends Alt+8 and then Shift+Space, so it works on both the custom and the sim-default keyboard profile (Citation only; the Baron and Bonanzas keep Alt+8 alone) |
 | Trim, rudder trim, mouse, drone, zoom | Unchanged |
 
 ## CP3
@@ -26,7 +26,7 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 |---|---|
 | B1 / B2 (red) | Battery 1 / 2 (LED follows battery state) |
 | B3 / B4 (white) | Avionics 1 / 2 (LED follows) |
-| T1 (3-position) | Left fuel boost: up ON, centre NORM, down OFF |
+| T1 (3-position) | Left fuel boost, same positions as the cockpit switch: up ON, centre OFF, down NORM |
 | Master ARM (3-position) | Right fuel boost: same positions |
 | T2 / T3 | Left / right pitot-static heat |
 | T4 | Engine anti-ice, both engines |
@@ -36,6 +36,7 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | T8 | Seat belt sign |
 | B6 (red, was STEP) | Autothrottle (ATS) engage/disengage button |
 | Rotary selector | **Right engine**, same positions as the throttle selector; START starts engine 2 |
+| L / R switch | **Engine start**: L starts the left engine, R the right (same command as the selectors' START; ignored while that engine is running) |
 | Inner lever, left (was prop) | **Speedbrake**: forward stowed, pull back to extend |
 | Inner lever, right (was prop) | **Thrust reversers, both engines**: pull below 10 % to deploy, push above 15 % to stow |
 | Outer levers (were mixtures) | **Fuel RUN / CUTOFF** left / right: below 10 % is CUTOFF |
@@ -76,15 +77,22 @@ B1–B8 have no state lights in the Citation; they keep their existing colours.
 
 The SFS Monitor handover still applies: while SFS Monitor is open, SPAD ignores the RotAIR and PulsAIR panels.
 
+## MSFS control profiles and Tobii
+
+MSFS 2024 remembers a control profile per device **per aircraft**, and a newly used aircraft starts on the sim defaults. Read from the sim's saved settings on 2026-11-04: the Baron uses the custom Keyboard and Tobii profiles ("My new general profile"); the Citation was on the defaults (`keyboard_2024_transversal.xml`, `tobii.xml`).
+
+- **Tracking reset (B6):** the default keyboard profile resets tracking on Shift+Space, the custom one on Alt+8; every other key the buttons send is identical in both. In this profile B6 therefore sends both, so it works on either keyboard profile and on any computer with no sim setup. The Baron and Bonanza profiles were left on Alt+8 alone. On the default profile Shift+Space also recentres the cockpit view (MSFS binds both to that key); on the custom profile the Shift+Space half does only that.
+- **Head-tracking feel** (sensitivity, forward/back movement) comes from the sim's Tobii profile, which SPAD can't set. To match the Baron: with the Citation loaded, Settings > Controls > Tobii, choose "My new general profile". The choice is stored in the sim's cloud-saved `profile_00` (binary with a checksum; don't hand-edit).
+
 ## Starting the engines with this layout
 
 1. B1/B2 batteries, B5 standby power, B7/B8 IRS to NAV, B3/B4 avionics.
 2. CP2 B1 APU master, B2 APU start; when it's running, B3 APU generator and B4 APU bleed.
-3. Outer CP3 levers forward (fuel RUN), boost pumps NORM, beacon on.
+3. Outer CP3 levers forward (fuel RUN), boost pumps NORM (switches down), beacon on.
 4. Turn the CP3 rotary to START (right engine), then the throttle selector to START (left engine). FADEC adds fuel at about 30 % N2 and the starter cuts out on its own. Leave the selectors on BOTH (NORM ignition) afterwards.
 5. Shutdown: outer levers back to CUTOFF.
 
-The starter command only fires if that engine's starter isn't already turning, so moving through START twice won't abort a start.
+The starter command only fires if that engine's starter isn't already turning, so moving through START twice won't abort a start. The engines start on APU bleed air: with the APU off, START engages the starter but N2 stays at 0 (seen live 2026-11-04).
 
 ## How this was verified (2026-11-04, aircraft parked)
 

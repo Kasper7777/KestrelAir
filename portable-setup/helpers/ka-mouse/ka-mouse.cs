@@ -5,6 +5,11 @@
 // Button numbers and axes were recorded live on 2026-11-04 (watch-cm3-all.ps1). None are bound in SPAD or MSFS.
 // Runs hidden in the background (single instance). Optional ka-mouse.ini next to the exe:
 //   Speed=1400   (pixels per second at full deflection)   Deadzone=2500   InvertX=0   InvertY=0   Path=<HID path>
+// Vertical direction: pushing the stick up (high Ry) moves the pointer DOWN. Reversed on 2026-11-04 at the user's
+//   request; InvertY=1 gives the earlier direction back.
+// A copy built before that date may still be running with admin rights (started by an admin-mode SPAD), where a
+//   normal process can't stop it. This build then exits and leaves the old copy in charge (two copies moving the
+//   pointer at once made it stutter); it takes over at the first mouse-button press after the old copy has gone.
 // Log: %TEMP%\ka-mouse.log. Build: csc -target:winexe -out:ka-mouse.exe ka-mouse.cs
 using System;
 using System.Collections.Generic;
@@ -34,15 +39,17 @@ static class KaMouse
     static double Speed = 1400, Deadzone = 2500;
     static bool InvertX, InvertY;
     static volatile int rx = 30000, ry = 30000;
+    static Mutex legacyMutex;
     static readonly string LogPath = Path.Combine(Path.GetTempPath(), "ka-mouse.log");
 
     static int Main()
     {
         bool created;
-        using (var mutex = new Mutex(true, "KestrelAir.ka-mouse", out created))
+        using (var mutex = new Mutex(true, "KestrelAir.ka-mouse.2", out created))
         {
             if (!created) return 0;
             LoadIni();
+            if (!TakeLegacyName()) { Log("an older ka-mouse is still running and can't be replaced; leaving it in charge"); return 0; }
             Log("started");
             new Thread(MoveLoop) { IsBackground = true }.Start();
             while (true)
@@ -53,6 +60,20 @@ static class KaMouse
                 Thread.Sleep(3000);  // throttle unplugged or not yet present: retry
             }
         }
+    }
+
+    // Copies built before 2026-11-04 hold the mutex "KestrelAir.ka-mouse". Owning that name also stops one from starting.
+    static bool TakeLegacyName()
+    {
+        try
+        {
+            bool created;
+            var m = new Mutex(true, "KestrelAir.ka-mouse", out created);
+            if (created) { legacyMutex = m; return true; }
+            m.Dispose();
+            return false;
+        }
+        catch (Exception) { return false; }   // exists but not accessible: held by an admin-rights copy
     }
 
     static void LoadIni()
@@ -115,10 +136,10 @@ static class KaMouse
         while (true)
         {
             Thread.Sleep(10);
-            double vx = Axis(rx), vy = -Axis(ry);  // stick up (high Ry) moves the pointer up
+            double vx = Axis(rx, Deadzone) * Speed, vy = Axis(ry, Deadzone) * Speed;  // stick up (high Ry) moves the pointer down
             if (InvertX) vx = -vx;
             if (InvertY) vy = -vy;
-            fx += vx * Speed / 100; fy += vy * Speed / 100;
+            fx += vx / 100; fy += vy / 100;
             int dx = (int)fx, dy = (int)fy;
             if (dx == 0 && dy == 0) continue;
             fx -= dx; fy -= dy;
@@ -126,11 +147,11 @@ static class KaMouse
         }
     }
 
-    static double Axis(int raw)
+    static double Axis(int raw, double deadzone)
     {
         double d = raw - 30000.0, a = Math.Abs(d);
-        if (a <= Deadzone) return 0;
-        double t = Math.Min(1.0, (a - Deadzone) / (30000.0 - Deadzone));
+        if (a <= deadzone) return 0;
+        double t = Math.Min(1.0, (a - deadzone) / (30000.0 - deadzone));
         return Math.Sign(d) * t * t;
     }
 

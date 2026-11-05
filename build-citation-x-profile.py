@@ -142,9 +142,13 @@ def build():
         axis_condition(root, THR, ax, ne('PROFILE:KA_REVERSE', 1))
     for btn, val in [(40, 0), (35, 0), (41, 1), (34, 1)]:   # parking brake (T4 and its twin)
         put(root, THR, f'BUTTON_{btn}', press(k('PARKING_BRAKE_SET', val)))
-    # Tobii B3 (BUTTON_44, Alt+7) / B6 (BUTTON_47, Alt+8) are inherited unchanged from the Baron: one SPAD
-    # macro holding LMenu + digit, confirmed working in the Baron 2026-11-04.  Don't split it into separate
-    # Alt-down / digit / Alt-up macros: that version did not reset tracking in the Citation.
+    # Tobii B3 (BUTTON_44, Alt+7 toggle) is inherited unchanged from the Baron.  B6 (BUTTON_47, tracking
+    # reset) sends the Baron's Alt+8 and then Shift+Space.  MSFS picks the keyboard profile per aircraft, and
+    # the Citation is on the sim default, which resets tracking on Shift+Space (and recentres the cockpit view
+    # with the same key); the custom profile the Baron uses resets it on Alt+8.  Sending both works on either,
+    # on any computer.  Each is ONE macro holding both keys; separate Alt-down / digit / Alt-up macros failed.
+    # The Baron and Bonanza profiles keep Alt+8 only (user: the Baron works, leave it alone).
+    put(root, THR, 'BUTTON_47', press(chord('LMenu', 'D8'), chord('LShiftKey', 'Space')))
     put(root, THR, 'BUTTON_37', press(k('GEAR_DOWN')))
     put(root, THR, 'BUTTON_36', press(k('GEAR_UP')))
     put(root, THR, 'BUTTON_48', press(lv('lights_knob_flood', 80)))          # T5 cockpit flood
@@ -163,9 +167,10 @@ def build():
         toggle(root, CP3, f'BUTTON_{btn}', f'ELECTRICAL_Switch_Battery_{n}', 0, 1)
     for btn, n in [(3, 1), (4, 2)]:
         toggle(root, CP3, f'BUTTON_{btn}', f'ELECTRICAL_Switch_Avionics_Master_{n}', 0, 1)
-    # Fuel boost pumps: up = ON (0), centre = NORM (2), down = OFF (1).
+    # Fuel boost pumps mirror the cockpit switch position for position: up = ON (0), centre = OFF (1),
+    # down = NORM (2).  (Until 2026-11-04 centre and down were swapped, so the switch moved in the wrong order.)
     for btns, side in [((14, 15, 16), 'lh'), ((34, 35, 36), 'rh')]:
-        for btn, val in zip(btns, (0, 2, 1)):
+        for btn, val in zip(btns, (0, 1, 2)):
             put(root, CP3, f'BUTTON_{btn}', press(lv(f'switch_fuel_boost_{side}', val)))
     two_pos(root, CP3, 'BUTTON_17', 'BUTTON_18', ['switch_pitot_static_lh'])
     two_pos(root, CP3, 'BUTTON_19', 'BUTTON_20', ['switch_pitot_static_rh'])
@@ -184,6 +189,13 @@ def build():
     put(root, CP3, 'BUTTON_6', D('PRESS', [lv('AUTOPILOT_push_Ats', 1)]), D('RELEASE', [lv('AUTOPILOT_push_Ats', 0)]))
     # Rotary selector = RIGHT engine ignition, physical OFF is button 47 (as for the Baron magneto).
     ign_start(root, CP3, ['BUTTON_47', 'BUTTON_46', 'BUTTON_45', 'BUTTON_44', 'BUTTON_43'], 'r', 2)
+    # L / R switch (BUTTON_31 left, 32 centre, 33 right; unbound in the Baron): engine START left / right.
+    # Same command as the START position of each selector, and only while that engine isn't already running.
+    for btn, side, engine in [(31, 'l', 1), (33, 'r', 2)]:
+        idle = eq(f'SIMCONNECT:GENERAL ENG COMBUSTION:{engine}', 0)
+        put(root, CP3, f'BUTTON_{btn}',
+            press(lv(f'Switch_ignition_{side}', 2), conds=[idle]),
+            press(k(f'TOGGLE_STARTER{engine}'), conds=[idle, eq(f'SIMCONNECT:GENERAL ENG STARTER:{engine}', 0)]))
     # Inner lever pair: X = speedbrake (forward = retracted), Y = both thrust reversers.
     ext = 'Min(100, Max(0, (95 - [LOCAL:JOY_0X33440X025C_X_AXIS]) * 100 / 90))'
     # This aircraft's spoiler axis runs 0 (stowed) .. 16383 (full), measured live.

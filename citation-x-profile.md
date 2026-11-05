@@ -8,9 +8,10 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 
 | Control | Citation X function |
 |---|---|
-| Left / right throttle | Thrust levers 1 / 2 (ignored while the reversers are deployed) |
+| Left / right thrust lever | The main thrust handles over the levers' full travel: forward of the idle detent = idle to full thrust; from the detent back = idle; hard against the rear stop (past the finger lifts) = fuel CUTOFF, off the stop = RUN |
+| Grip buttons 5 (left) / 8 (right) | Thrust reverser for the left / right engine while held: the reverser deploys, and lever travel forward of the detent sets reverse power (detent = lowest, full forward = full reverse). Release stows it |
 | Flap lever (Z) | Flaps: the aircraft's five flap-handle positions, lever forward = UP, snapping to the nearest |
-| Gear buttons | Gear up / down |
+| T1, T2 | Unassigned (T1 duplicated the parking brake, T2 the gear; the gear lever is on the CP2) |
 | T4 | Parking brake (toward you = set) |
 | T5 | Cockpit flood lights on / off |
 | T6 | Panel lighting (L, centre, R, EL) on / off |
@@ -18,7 +19,8 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | E1 encoder | Pressurization rate knob − / + |
 | Five-position selector | **Left engine:** OFF = ignition off, R = NORM, L = ignition ON (continuous), BOTH = NORM, **START = starts engine 1** |
 | B3 / B6 | Tobii head-tracking toggle (Alt+7) / tracking reset. B6 sends Alt+8 and then Shift+Space, so it works on both the custom and the sim-default keyboard profile (Citation only; the Baron and Bonanzas keep Alt+8 alone) |
-| Trim, rudder trim, mouse, drone, zoom | Unchanged |
+| Mini-stick | Mouse pointer; pressing it in (button 13) is the left click. No right click. This is the ka-mouse helper, so it applies in every aircraft |
+| Trim, rudder trim, drone, zoom | Unchanged |
 
 ## CP3
 
@@ -38,8 +40,8 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | Rotary selector | **Right engine**, same positions as the throttle selector; START starts engine 2 |
 | L / R switch | **Engine start**: L starts the left engine, R the right (same command as the selectors' START; ignored while that engine is running) |
 | Inner lever, left (was prop) | **Speedbrake**: forward stowed, pull back to extend |
-| Inner lever, right (was prop) | **Thrust reversers, both engines**: pull below 10 % to deploy, push above 15 % to stow |
-| Outer levers (were mixtures) | **Fuel RUN / CUTOFF** left / right: below 10 % is CUTOFF |
+| Inner lever, right (was prop) | Unassigned (reverse is on the CM3 thrust levers) |
+| Outer levers (were mixtures) | Unassigned. The CP3 levers do the speedbrake only |
 | B8–B12 (views) | Citation instrument views: B8 pilot PFD/instruments (Shift+8), B9 pilot lower panel (Shift+5), B10 co-pilot instruments (Shift+4), B11 FMCs/pedestal (Shift+3), B12 throttle quadrant (Shift+6). The Citation numbers its views differently from the Baron, so these were matched on screen. Press the same button again to return to the pilot view. |
 | B13 | Outside view / cockpit toggle (Backspace), as in the Baron |
 | E1 | Squawk digit, unchanged |
@@ -84,13 +86,27 @@ MSFS 2024 remembers a control profile per device **per aircraft**, and a newly u
 - **Tracking reset (B6):** the default keyboard profile resets tracking on Shift+Space, the custom one on Alt+8; every other key the buttons send is identical in both. In this profile B6 therefore sends both, so it works on either keyboard profile and on any computer with no sim setup. The Baron and Bonanza profiles were left on Alt+8 alone. On the default profile Shift+Space also recentres the cockpit view (MSFS binds both to that key); on the custom profile the Shift+Space half does only that.
 - **Head-tracking feel** (sensitivity, forward/back movement) comes from the sim's Tobii profile, which SPAD can't set. To match the Baron: with the Citation loaded, Settings > Controls > Tobii, choose "My new general profile". The choice is stored in the sim's cloud-saved `profile_00` (binary with a checksum; don't hand-edit).
 
+## Thrust levers and reverse (measured 2026-11-05)
+
+- **Hardware** (recorded sweep): full forward 60,000, idle detent about 19,300 (19,274 at rest, 19,301 arriving from forward), full back past the mechanical finger lifts 0. The axis reports the whole travel, so nothing is needed in the VIRPIL software. Left and right levers read identically throughout the sweep.
+- **Aircraft** (engine running, parking brake set): the Citation has its own thrust lever driven by `THROTTLE1_SET` / `THROTTLE2_SET`. 0 to 16383 is idle to full forward. Negative values are the reverse lever: nothing happens down to -163; at -164 the reverser deploys (nozzle 100 %, N1 target 77.5 %); it scales to N1 target 87 % at -328; beyond that nothing changes. No EFB setting is involved (`L:VTX_C750_REV_DETENT_ON_AXIS` stays 0).
+- **Mapping in SPAD (final, 2026-11-05):** on the raw lever reading `[EVENT:VALUE]` (0-60,000): 20,040-60,000 = idle to full forward, linear; 15,000-20,040 = idle (from forward the levers stop on the detent at about 19,300; coming forward again they have been left anywhere from 16,800 to 18,600); 600-15,000 = idle with fuel RUN; 600 or less, against the rear stop = fuel CUTOFF (`L:ENG_CUTOFF_n` = 0, which moves the cockpit handle back). No throttle command is sent below 15,000, so nothing races the cutoff write.
+- **Reversers on the grip buttons:** while button 5 / 8 is held, `PROFILE:KA_REV1` / `KA_REV2` is 1 and the same lever travel sends the reverse command (-8 at the detent to -328 at full forward) instead of forward thrust; the press itself sends the command for the lever's current position, and the release sends the forward value. An earlier version put reverse behind the detent with cutoff at the stop; the user preferred the levers to be the main handles only.
+- **Engine-off behaviour handled in the profile:** the reverser buttons only act while that engine is running (`GENERAL ENG COMBUSTION:n` = 1), because with it off the aircraft answers any reverse command by throwing the main handle backwards. At the forward stop SPAD also sets the aircraft's own handle, `B:ENGINE_THROTTLE_n` = 1 (the control the mouse drags), because with the engines off the K event only takes the handle to 0.95.
+- **What can't be changed:** the aircraft draws its thrust handle in whole 1 % steps (`L:XMLVAR_ThrottlePosition_n` is rounded to two decimals; `L:C750_THROTTLE_INCREMENT` has no effect, and writing the variable directly is ignored). The engine itself follows every command. With an engine off, its handle also tops out at 0.95 and snaps near the top, and its reverse lever does not lift, so the two handles only match with both engines running.
+- **Resolution:** `[LOCAL:...AXIS]` is a whole-number percentage; using it made thrust move in 67 steps and jump at the top. `[EVENT:VALUE]` gives the full reading. Whole-number literals in `Min(1, x)` also make SPAD's NCalc do integer maths, so the formula uses `1.0`.
+- **Reverse deadband:** the aircraft ignores reverse commands inside `L:VTX_C750_DETENT_DEADBAND` (1 as loaded: nothing until -164, then the reverse lever jumps to 50 %). SPAD writes 0 with every lever movement, so the reverser deploys at once and the reverse lever and N1 target (68-87 %) follow the levers through their whole travel. Tested on the left engine: deadband 0.2 deploys at -40 (lever 12 %), deadband 0 at -5 (lever 2 %).
+- The earlier on/off reverser on the second CP3 lever, which froze the throttles while pulled, is gone.
+- **Confirmed from the hardware with both engines running (2026-11-05):** forward travel moved the aircraft's lever smoothly from 0 to 1.00 (N1 target 22 % to 83 %, thrust 270 lb to about 3,900 lb); on the detent it sat at 0 with idle N1; behind the detent the reverse levers rose with travel (57 % at a reading of 13,159, 75 % at 7,399, 100 % at 0), the nozzles went to 100 %, N1 target ran 79 % to 87 % and thrust reached -1,320 lb; pushing forward past the detent stowed the reversers. Speedbrake handle and panels both read 100 % with the CP3 lever back.
+- MSFS side: the MSFS profiles assigned to the throttle and CP3 for this aircraft contain no bindings, so nothing competes with SPAD.
+
 ## Starting the engines with this layout
 
 1. B1/B2 batteries, B5 standby power, B7/B8 IRS to NAV, B3/B4 avionics.
 2. CP2 B1 APU master, B2 APU start; when it's running, B3 APU generator and B4 APU bleed.
-3. Outer CP3 levers forward (fuel RUN), boost pumps NORM (switches down), beacon on.
+3. Boost pumps NORM (switches down), beacon on. Fuel goes to RUN by itself when a CM3 thrust lever is moved; keep the levers on the idle detent for the start.
 4. Turn the CP3 rotary to START (right engine), then the throttle selector to START (left engine). FADEC adds fuel at about 30 % N2 and the starter cuts out on its own. Leave the selectors on BOTH (NORM ignition) afterwards.
-5. Shutdown: outer levers back to CUTOFF.
+5. Shutdown: with the aircraft stopped, pull the CM3 levers hard against the rear stop (fuel CUTOFF); back on the detent is RUN.
 
 The starter command only fires if that engine's starter isn't already turning, so moving through START twice won't abort a start. The engines start on APU bleed air: with the APU off, START engages the starter but N2 stays at 0 (seen live 2026-11-04).
 

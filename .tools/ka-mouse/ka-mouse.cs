@@ -1,7 +1,7 @@
 // ka-mouse: turns the VIRPIL MongoosT-50CM3 throttle's right-grip mini-stick into a mouse (2026-11-04).
 //   Mini-stick (HID Rx/Ry, 0..60000, centre 30000) -> moves the Windows pointer, so MSFS shows its cursor.
-//   Button 11 (front hat press), 8 and 13 (push down) -> left mouse button, held while pressed (drag works).
-//   Button 9 (pull up) -> right mouse button.
+//   Button 13 (mini-stick press) -> left mouse button, held while pressed (drag works). No right button.
+//   (Until 2026-11-05 buttons 8 and 11 also clicked and 9 was the right button.)
 // Button numbers and axes were recorded live on 2026-11-04 (watch-cm3-all.ps1). None are bound in SPAD or MSFS.
 // Runs hidden in the background (single instance). Optional ka-mouse.ini next to the exe:
 //   Speed=1400   (pixels per second at full deflection)   Deadzone=2500   InvertX=0   InvertY=0   Path=<HID path>
@@ -33,8 +33,8 @@ static class KaMouse
     const uint MOVE = 0x0001, LEFTDOWN = 0x0002, LEFTUP = 0x0004, RIGHTDOWN = 0x0008, RIGHTUP = 0x0010;
     const int HIDP_STATUS_SUCCESS = 0x110000;
 
-    static readonly int[] LeftButtons = { 11, 8, 13 };
-    static readonly int[] RightButtons = { 9 };
+    static readonly int[] LeftButtons = { 13 };   // the mini-stick press only (2026-11-05); 8 is now a reverser button
+    static readonly int[] RightButtons = { };     // no right click, at the user's request
     static string DevicePath = @"\\?\hid#vid_3344&pid_0194&mi_00#8&1d037022&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}";
     static double Speed = 1400, Deadzone = 2500;
     static bool InvertX, InvertY;

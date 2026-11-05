@@ -134,13 +134,53 @@ def build():
     for var in list(variables):
         if var.get('Name') in ('PROFILE:KA_AVIONICS_FOCUS', 'PROFILE:KA_XPDR_DIGIT'):
             var.set('Value', '0' if var.get('Name').endswith('FOCUS') else '1')
-    E.SubElement(variables, tag('Variable'), Name='PROFILE:KA_REVERSE', Value='0', ValueType='Decimal')
+    for n in (1, 2):   # 1 while that engine's reverser button is held
+        E.SubElement(variables, tag('Variable'), Name=f'PROFILE:KA_REV{n}', Value='0', ValueType='Decimal')
 
     # ---- MongoosT-50CM3 throttle ---------------------------------------------------------
-    # Throttle axes keep their Baron calibration; they pause while the reversers are deployed.
-    for ax in ('X_AXIS', 'Y_AXIS'):
-        axis_condition(root, THR, ax, ne('PROFILE:KA_REVERSE', 1))
-    for btn, val in [(40, 0), (35, 0), (41, 1), (34, 1)]:   # parking brake (T4 and its twin)
+    # Thrust levers, reversers and fuel cutoff (measured 2026-11-05 on this throttle and aircraft).
+    #   Hardware: [EVENT:VALUE] is the raw lever reading at full resolution: 60000 = full forward, 0 = the rear stop
+    #   behind the mechanical finger lifts; from forward the levers stop on the idle detent at about 19300, coming
+    #   forward again they have been left anywhere from 16800 to 18600.  ([LOCAL:...AXIS] is the same reading as a
+    #   whole-number percentage: fine for a button press, too coarse for the lever itself.)
+    #   Aircraft: K:THROTTLEn_SET drives the Citation's own thrust lever, linear, 0..16383 = idle..full forward
+    #   (the cockpit handle is drawn in whole 1 % steps whatever is sent; with an engine off it tops out at 0.95).
+    #   Negative values are the reverse lever, 0..-328 = stowed..fully up, once L:VTX_C750_DETENT_DEADBAND is 0
+    #   (1 as loaded, which hides everything short of -164; it resets with every flight, so it is written each time).
+    #   L:ENG_CUTOFFn = 0 moves the cockpit handle back into fuel CUTOFF; an idle-or-forward THROTTLEn_SET puts it
+    #   back to RUN by itself.
+    #   Lever: 20040..60000 = idle..full forward; 15000..20040 = idle; 600..15000 = idle, fuel RUN; the last bit
+    #   against the rear stop (600 or less) = fuel CUTOFF.  No throttle command is sent below 15000, so nothing
+    #   races the cutoff write.
+    #   Reversers: grip buttons 5 (left engine) and 8 (right engine).  While one is held that engine's lever travel
+    #   forward of the detent commands reverse instead of forward thrust: detent = reverser deployed at its lowest
+    #   power, full forward = full reverse.  Releasing the button stows it and hands the lever back to forward thrust.
+    def fraction(source, low, span):
+        return f'Min(1.0, Max(0.0, ({source} - {low}) / {span}))'
+    def command(engine, f):
+        return f'If([PROFILE:KA_REV{engine}] > 0.5, 0 - Round(8.0 + 320.0 * {f}, 0), Round({f} * 16383.0, 0))'
+    for axis, engine, button in [('X', 1, 5), ('Y', 2, 8)]:
+        local = fraction(f'[LOCAL:JOY_0X33440X0194_{axis}_AXIS]', '33.4', '66.6')
+        put(root, THR, f'{axis}_AXIS',
+            D('VALUE', [lv('VTX_C750_DETENT_DEADBAND', 0), k(f'THROTTLE{engine}_SET', expr=command(engine, fraction('[EVENT:VALUE]', '20040.0', '39960.0')))],
+              ('EVENT:VALUE', 'Greater', 15000)),
+            # At the forward stop also set the aircraft's own handle (what the mouse drags) to 1: with the engines
+            # off the K event above only takes the handle to 0.95, the input event takes it to the end (measured).
+            D('VALUE', [('cv', f'B:ENGINE_THROTTLE_{engine}', '1', None)],
+              ('EVENT:VALUE', 'GreaterOrEqual', 59900), ne(f'PROFILE:KA_REV{engine}', 1)),
+            D('VALUE', [lv(f'ENG_CUTOFF_{engine}', 1)], ('EVENT:VALUE', 'Greater', 600), ('EVENT:VALUE', 'LessOrEqual', 15000)),
+            D('VALUE', [lv(f'ENG_CUTOFF_{engine}', 0)], ('EVENT:VALUE', 'LessOrEqual', 600)))
+        put(root, THR, f'BUTTON_{button}',
+            # Only with that engine running: with it off the aircraft answers a reverse command by throwing the
+            # main handle backwards (seen by the user 2026-11-05), and there is nothing to reverse anyway.
+            D('PRESS', [pv(f'KA_REV{engine}', 1), lv('VTX_C750_DETENT_DEADBAND', 0),
+                        k(f'THROTTLE{engine}_SET', expr=f'0 - Round(8.0 + 320.0 * {local}, 0)')],
+              eq(f'SIMCONNECT:GENERAL ENG COMBUSTION:{engine}', 1)),
+            D('RELEASE', [pv(f'KA_REV{engine}', 0), k(f'THROTTLE{engine}_SET', expr=f'Round({local} * 16383.0, 0)')]))
+    # T1 (buttons 34/35) and T2 (36/37) are unassigned: T1 duplicated the parking brake (T4) and T2 the gear lever
+    # on the CP2.  The mouse click is the mini-stick press (13) alone, handled by ka-mouse; 9 and 11 only woke it.
+    remove(root, THR, 'BUTTON_34', 'BUTTON_35', 'BUTTON_36', 'BUTTON_37', 'BUTTON_9', 'BUTTON_11')
+    for btn, val in [(40, 0), (41, 1)]:   # parking brake (T4)
         put(root, THR, f'BUTTON_{btn}', press(k('PARKING_BRAKE_SET', val)))
     # Tobii B3 (BUTTON_44, Alt+7 toggle) is inherited unchanged from the Baron.  B6 (BUTTON_47, tracking
     # reset) sends the Baron's Alt+8 and then Shift+Space.  MSFS picks the keyboard profile per aircraft, and
@@ -149,8 +189,6 @@ def build():
     # on any computer.  Each is ONE macro holding both keys; separate Alt-down / digit / Alt-up macros failed.
     # The Baron and Bonanza profiles keep Alt+8 only (user: the Baron works, leave it alone).
     put(root, THR, 'BUTTON_47', press(chord('LMenu', 'D8'), chord('LShiftKey', 'Space')))
-    put(root, THR, 'BUTTON_37', press(k('GEAR_DOWN')))
-    put(root, THR, 'BUTTON_36', press(k('GEAR_UP')))
     put(root, THR, 'BUTTON_48', press(lv('lights_knob_flood', 80)))          # T5 cockpit flood
     put(root, THR, 'BUTTON_49', press(lv('lights_knob_flood', 0)))
     put(root, THR, 'BUTTON_50', press(*[lv(n, 60) for n in ('lights_knob_lh', 'lights_knob_ctr', 'lights_knob_rh', 'lights_knob_el')]))
@@ -196,20 +234,18 @@ def build():
         put(root, CP3, f'BUTTON_{btn}',
             press(lv(f'Switch_ignition_{side}', 2), conds=[idle]),
             press(k(f'TOGGLE_STARTER{engine}'), conds=[idle, eq(f'SIMCONNECT:GENERAL ENG STARTER:{engine}', 0)]))
-    # Inner lever pair: X = speedbrake (forward = retracted), Y = both thrust reversers.
-    ext = 'Min(100, Max(0, (95 - [LOCAL:JOY_0X33440X025C_X_AXIS]) * 100 / 90))'
+    # First inner lever (X, the Baron's left prop lever) = speedbrake, forward = retracted.
+    ext = 'Min(100.0, Max(0.0, (95.0 - [LOCAL:JOY_0X33440X025C_X_AXIS]) * 100.0 / 90.0))'
     # This aircraft's spoiler axis runs 0 (stowed) .. 16383 (full), measured live.
     put(root, CP3, 'X_AXIS', D('VALUE', [k('AXIS_SPOILER_SET', expr=f'Round({ext} * 163.83, 0)')]))
-    thr = lambda axis: f'Round(Min(100, Max(0, [LOCAL:JOY_0X33440X0194_{axis}_AXIS])) * 163.83, 0)'
-    put(root, CP3, 'Y_AXIS',
-        D('VALUE', [pv('KA_REVERSE', 1), k('THROTTLE1_CUT'), k('THROTTLE2_CUT'), k('THROTTLE1_DECR'), k('THROTTLE2_DECR')],
-          lt('EVENT:VALUE', 6000), ne('PROFILE:KA_REVERSE', 1)),
-        D('VALUE', [pv('KA_REVERSE', 0), k('THROTTLE1_CUT'), k('THROTTLE2_CUT'),
-                    k('THROTTLE1_SET', expr=thr('X')), k('THROTTLE2_SET', expr=thr('Y'))],
-          ge('EVENT:VALUE', 9000), ne('PROFILE:KA_REVERSE', 0)))
-    # Outer lever pair (Baron mixtures) = fuel RUN / CUTOFF, below 10 % is CUTOFF.
-    for axis, n in [('RX', 1), ('RY', 2)]:
-        put(root, CP3, f'{axis}_AXIS', D('VALUE', [lvx(f'ENG_CUTOFF_{n}', f'If([LOCAL:JOY_0X33440X025C_{axis}_AXIS] < 10, 0, 1)')]))
+    # The second inner lever (Y, the Baron's right prop lever) is unassigned: reverse thrust lives on the CM3 thrust
+    # levers behind the idle detent.  (Until 2026-11-05 this lever was an on/off reverser that froze the throttles.)
+    remove(root, CP3, 'Y_AXIS')
+    # Outer lever pair (the Baron's mixtures) is unassigned too.  It used to be fuel RUN / CUTOFF, but in the Citation
+    # cutoff is a position of the thrust levers, so those CP3 levers visibly moved the throttles; the user wants
+    # the CP3 levers to do the speedbrake and nothing else (2026-11-05).  Moving a CM3 thrust lever puts that
+    # engine's fuel to RUN by itself (seen live); CUTOFF is done in the cockpit.
+    remove(root, CP3, 'RX_AXIS', 'RY_AXIS')
 
     # ---- VPC Control Panel #2 ------------------------------------------------------------
     put(root, CP2, 'BUTTON_1', press(k('GEAR_UP')))

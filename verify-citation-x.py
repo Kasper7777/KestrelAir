@@ -251,15 +251,11 @@ try:
           **{'LOCAL:JOY_0X33440X025C_X_AXIS': 100})
     check('Throttle Z flaps full', THR, 'Z_AXIS', {S + 'FLAPS HANDLE INDEX': 4}, trigger='VALUE', **{'LOCAL:JOY_0X33440X0194_Z_AXIS': 0})
     check('Throttle Z flaps up', THR, 'Z_AXIS', {S + 'FLAPS HANDLE INDEX': 0}, trigger='VALUE', **{'LOCAL:JOY_0X33440X0194_Z_AXIS': 100})
-    check('CP3 Y reversers deploy (lever back)', CP3, 'Y_AXIS', {'LVAR:XMLVAR_ThrottlePosition_1': lambda v: v < 0,
-          'LVAR:XMLVAR_ThrottlePosition_2': lambda v: v < 0}, trigger='VALUE', value=1000)
-    check('CP3 Y reversers stow, throttles restored', CP3, 'Y_AXIS', {'LVAR:XMLVAR_ThrottlePosition_1': 0,
-          'LVAR:XMLVAR_ThrottlePosition_2': 0}, trigger='VALUE', value=60000,
-          **{'LOCAL:JOY_0X33440X0194_X_AXIS': 0, 'LOCAL:JOY_0X33440X0194_Y_AXIS': 0})
-    check('CP3 RX left fuel CUTOFF', CP3, 'RX_AXIS', {'LVAR:ENG_CUTOFF_1': 0}, trigger='VALUE', **{'LOCAL:JOY_0X33440X025C_RX_AXIS': 3})
-    check('CP3 RX left fuel RUN', CP3, 'RX_AXIS', {'LVAR:ENG_CUTOFF_1': 1}, trigger='VALUE', **{'LOCAL:JOY_0X33440X025C_RX_AXIS': 80})
-    check('CP3 RY right fuel CUTOFF', CP3, 'RY_AXIS', {'LVAR:ENG_CUTOFF_2': 0}, trigger='VALUE', **{'LOCAL:JOY_0X33440X025C_RY_AXIS': 3})
-    check('CP3 RY right fuel RUN', CP3, 'RY_AXIS', {'LVAR:ENG_CUTOFF_2': 1}, trigger='VALUE', **{'LOCAL:JOY_0X33440X025C_RY_AXIS': 80})
+    # Thrust levers: XMLVAR_ThrottlePosition is the aircraft's own lever, -1..1 with engines off (2026-11-05).
+    check('Throttle X full forward', THR, 'X_AXIS', {'LVAR:XMLVAR_ThrottlePosition_1': lambda v: v > 0.98}, trigger='VALUE', **{'LOCAL:JOY_0X33440X0194_X_AXIS': 100})
+    check('Throttle X idle detent', THR, 'X_AXIS', {'LVAR:XMLVAR_ThrottlePosition_1': 0}, trigger='VALUE', **{'LOCAL:JOY_0X33440X0194_X_AXIS': 32.2})
+    check('Throttle X full back = reverse', THR, 'X_AXIS', {'LVAR:XMLVAR_ThrottlePosition_1': lambda v: v < 0}, trigger='VALUE', **{'LOCAL:JOY_0X33440X0194_X_AXIS': 0})
+    check('Throttle X back to idle', THR, 'X_AXIS', {'LVAR:XMLVAR_ThrottlePosition_1': 0}, trigger='VALUE', **{'LOCAL:JOY_0X33440X0194_X_AXIS': 32.2})
     hdg = read(['SIMCONNECT:PLANE HEADING DEGREES MAGNETIC'])['SIMCONNECT:PLANE HEADING DEGREES MAGNETIC']
     check('RotAIR heading push = sync', TOP, 'BUTTON_2', {'SIMCONNECT:AUTOPILOT HEADING LOCK DIR': lambda v: abs(v - round(hdg)) < 1.1})
     check('RotAIR heading ring 2 = speed bug +', TOP, 'BUTTON_19', {'SIMCONNECT:AUTOPILOT AIRSPEED HOLD VAR': lambda v: v > 0})

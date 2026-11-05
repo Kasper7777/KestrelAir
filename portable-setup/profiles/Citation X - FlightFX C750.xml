@@ -6,7 +6,8 @@
     <Variable Name="PROFILE:KA_STICK1_RY" Value="0" ValueType="Decimal" />
     <Variable Name="PROFILE:KA_XPDR_DIGIT" Value="1" ValueType="Decimal" />
     <Variable Name="PROFILE:KA_STICK0_RX" Value="0" ValueType="Decimal" />
-    <Variable Name="PROFILE:KA_REVERSE" Value="0" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_REV1" Value="0" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_REV2" Value="0" ValueType="Decimal" />
   </Variables>
   <Devices>
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -299,46 +300,6 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="X_AXIS">
-            <EventDefinitions>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_REVERSE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionRangedAxis ConfigID="LEVER_NOREVERSE_THROTTLE">
-                    <Options>
-                      <Option Key="USERAWVALUE" Value="True" />
-                      <Option Key="MIN" Value="0" />
-                      <Option Key="MAX" Value="60000" />
-                      <Option Key="OPTION1" Value="True" />
-                      <Option Key="INVERTAXIS" Value="False" />
-                    </Options>
-                  </EventActionRangedAxis>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="Y_AXIS">
-            <EventDefinitions>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_REVERSE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionRangedAxis ConfigID="LEVER_NOREVERSE_THROTTLE">
-                    <Options>
-                      <Option Key="USERAWVALUE" Value="True" />
-                      <Option Key="MIN" Value="0" />
-                      <Option Key="MAX" Value="60000" />
-                      <Option Key="OPTION2" Value="True" />
-                      <Option Key="INVERTAXIS" Value="False" />
-                    </Options>
-                  </EventActionRangedAxis>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
           <Event BoundTo="BUTTON_3">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -438,42 +399,6 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_8">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionCommand>
-                    <Parameter Value="SPAD_neXt.RunProgram" />
-                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
-                  </EventActionCommand>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_9">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionCommand>
-                    <Parameter Value="SPAD_neXt.RunProgram" />
-                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
-                  </EventActionCommand>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_11">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionCommand>
-                    <Parameter Value="SPAD_neXt.RunProgram" />
-                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-mouse\ka-mouse.exe" />
-                  </EventActionCommand>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
           <Event BoundTo="BUTTON_13">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -496,6 +421,136 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="X_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="15000" ConditionValueSource="EVENT:VALUE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
+                    <Parameter Type="Exp" Value="If([PROFILE:KA_REV1] &gt; 0.5, 0 - Round(8.0 + 320.0 * Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)), 0), Round(Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)) * 16383.0, 0))" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="GreaterOrEqual" ConditionTargetValue="59900" ConditionValueSource="EVENT:VALUE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_REV1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="B:ENGINE_THROTTLE_1" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="600" ConditionValueSource="EVENT:VALUE" />
+                  <EventCondition ConditionComparator="LessOrEqual" ConditionTargetValue="15000" ConditionValueSource="EVENT:VALUE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:ENG_CUTOFF_1" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="LessOrEqual" ConditionTargetValue="600" ConditionValueSource="EVENT:VALUE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:ENG_CUTOFF_1" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_5">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:GENERAL ENG COMBUSTION:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV1" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
+                    <Parameter Type="Exp" Value="0 - Round(8.0 + 320.0 * Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_X_AXIS] - 33.4) / 66.6)), 0)" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV1" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
+                    <Parameter Type="Exp" Value="Round(Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_X_AXIS] - 33.4) / 66.6)) * 16383.0, 0)" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="Y_AXIS">
+            <EventDefinitions>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="15000" ConditionValueSource="EVENT:VALUE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
+                    <Parameter Type="Exp" Value="If([PROFILE:KA_REV2] &gt; 0.5, 0 - Round(8.0 + 320.0 * Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)), 0), Round(Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)) * 16383.0, 0))" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="GreaterOrEqual" ConditionTargetValue="59900" ConditionValueSource="EVENT:VALUE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_REV2" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="B:ENGINE_THROTTLE_2" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Greater" ConditionTargetValue="600" ConditionValueSource="EVENT:VALUE" />
+                  <EventCondition ConditionComparator="LessOrEqual" ConditionTargetValue="15000" ConditionValueSource="EVENT:VALUE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:ENG_CUTOFF_2" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionComparator="LessOrEqual" ConditionTargetValue="600" ConditionValueSource="EVENT:VALUE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:ENG_CUTOFF_2" Value="0" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_8">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:GENERAL ENG COMBUSTION:2" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV2" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
+                    <Parameter Type="Exp" Value="0 - Round(8.0 + 320.0 * Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_Y_AXIS] - 33.4) / 66.6)), 0)" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV2" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
+                    <Parameter Type="Exp" Value="Round(Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_Y_AXIS] - 33.4) / 66.6)) * 16383.0, 0)" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
           <Event BoundTo="BUTTON_40">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -507,29 +562,7 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_35">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:PARKING_BRAKE_SET">
-                    <Parameter Type="Static" Value="0" />
-                  </EventActionControl>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
           <Event BoundTo="BUTTON_41">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:PARKING_BRAKE_SET">
-                    <Parameter Type="Static" Value="1" />
-                  </EventActionControl>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_34">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
                 <EventActions>
@@ -560,24 +593,6 @@
                       </Keys>
                     </KeyboardMacro>
                   </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_37">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:GEAR_DOWN" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_36">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:GEAR_UP" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -1231,60 +1246,8 @@
               <EventDefinition Trigger="VALUE">
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:AXIS_SPOILER_SET">
-                    <Parameter Type="Exp" Value="Round(Min(100, Max(0, (95 - [LOCAL:JOY_0X33440X025C_X_AXIS]) * 100 / 90)) * 163.83, 0)" />
+                    <Parameter Type="Exp" Value="Round(Min(100.0, Max(0.0, (95.0 - [LOCAL:JOY_0X33440X025C_X_AXIS]) * 100.0 / 90.0)) * 163.83, 0)" />
                   </EventActionControl>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="Y_AXIS">
-            <EventDefinitions>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Less" ConditionTargetValue="6000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_REVERSE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REVERSE" Value="1" />
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_CUT" />
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_CUT" />
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_DECR" />
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_DECR" />
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionComparator="GreaterOrEqual" ConditionTargetValue="9000" ConditionValueSource="EVENT:VALUE" />
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_REVERSE" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REVERSE" Value="0" />
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_CUT" />
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_CUT" />
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
-                    <Parameter Type="Exp" Value="Round(Min(100, Max(0, [LOCAL:JOY_0X33440X0194_X_AXIS])) * 163.83, 0)" />
-                  </EventActionControl>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
-                    <Parameter Type="Exp" Value="Round(Min(100, Max(0, [LOCAL:JOY_0X33440X0194_Y_AXIS])) * 163.83, 0)" />
-                  </EventActionControl>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="RX_AXIS">
-            <EventDefinitions>
-              <EventDefinition Trigger="VALUE">
-                <EventActions>
-                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:ENG_CUTOFF_1" SourceDataDefinition="If([LOCAL:JOY_0X33440X025C_RX_AXIS] &lt; 10, 0, 1)" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="RY_AXIS">
-            <EventDefinitions>
-              <EventDefinition Trigger="VALUE">
-                <EventActions>
-                  <EventActionChangeValue SourceType="Exp" TargetDataDefinition="LVAR:ENG_CUTOFF_2" SourceDataDefinition="If([LOCAL:JOY_0X33440X025C_RY_AXIS] &lt; 10, 0, 1)" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -5369,7 +5332,7 @@
     <Option Key="Ultimarc.PacLed64.EnableVirtualPower" Value="True" />
     <Option Key="Ultimarc.PacLed64.Brightness" Value="128" />
   </Options>
-  <ProfileInformation ProfileID="60746215-5531-4268-a084-5547b175508a" Version="1.0">
+  <ProfileInformation ProfileID="9590627b-fcfb-4ffa-9ae1-d2fbccedc82b" Version="1.0">
     <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;P&gt;FlightFX Cessna Citation X (C750); derived from the Baron GNS530/TDS650 hardware layout. Controls verified live 2026-11-04; see citation-x-profile.md.&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
     <LastChanged>2026-11-04T02:58:32.2356643+00:00</LastChanged>
   </ProfileInformation>

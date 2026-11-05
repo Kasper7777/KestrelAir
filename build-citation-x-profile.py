@@ -152,34 +152,35 @@ def build():
     #   Lever: 20040..60000 = idle..full forward; 15000..20040 = idle; 600..15000 = idle, fuel RUN; the last bit
     #   against the rear stop (600 or less) = fuel CUTOFF.  No throttle command is sent below 15000, so nothing
     #   races the cutoff write.
-    #   Reversers: grip buttons 5 (left engine) and 8 (right engine).  While one is held that engine's lever travel
-    #   forward of the detent commands reverse instead of forward thrust: detent = reverser deployed at its lowest
-    #   power, full forward = full reverse.  Releasing the button stows it and hands the lever back to forward thrust.
+    #   Reversers: the three-way switch on each throttle grip, held (2026-11-05, recorded from the hardware):
+    #   press down = medium reverse, pull back = full, push forward = low.  Left grip = buttons 5 / 7 / 6 -> engine 1,
+    #   right grip (the one with the mini-stick) = 8 / 11 / 9 -> engine 2.  Commands -168 / -328 / -8, which with
+    #   the deadband at 0 are the reverse lever at 51 % / 100 % / 2 % and an N1 target of about 78 % / 87 % / 68 %.
+    #   While one is held PROFILE:KA_REVn is 1 and that lever's forward-thrust command is paused; releasing it stows
+    #   the reverser and sends the forward value for where the lever is.  They only act with that engine running:
+    #   with it off the aircraft answers a reverse command by throwing the main handle backwards.
     def fraction(source, low, span):
         return f'Min(1.0, Max(0.0, ({source} - {low}) / {span}))'
-    def command(engine, f):
-        return f'If([PROFILE:KA_REV{engine}] > 0.5, 0 - Round(8.0 + 320.0 * {f}, 0), Round({f} * 16383.0, 0))'
-    for axis, engine, button in [('X', 1, 5), ('Y', 2, 8)]:
+    for axis, engine, switch in [('X', 1, {5: 168, 7: 328, 6: 8}), ('Y', 2, {8: 168, 11: 328, 9: 8})]:
         local = fraction(f'[LOCAL:JOY_0X33440X0194_{axis}_AXIS]', '33.4', '66.6')
+        raw = fraction('[EVENT:VALUE]', '20040.0', '39960.0')
+        rev = f'PROFILE:KA_REV{engine}'
         put(root, THR, f'{axis}_AXIS',
-            D('VALUE', [lv('VTX_C750_DETENT_DEADBAND', 0), k(f'THROTTLE{engine}_SET', expr=command(engine, fraction('[EVENT:VALUE]', '20040.0', '39960.0')))],
-              ('EVENT:VALUE', 'Greater', 15000)),
+            D('VALUE', [lv('VTX_C750_DETENT_DEADBAND', 0), k(f'THROTTLE{engine}_SET', expr=f'Round({raw} * 16383.0, 0)')],
+              ('EVENT:VALUE', 'Greater', 15000), ne(rev, 1)),
             # At the forward stop also set the aircraft's own handle (what the mouse drags) to 1: with the engines
             # off the K event above only takes the handle to 0.95, the input event takes it to the end (measured).
-            D('VALUE', [('cv', f'B:ENGINE_THROTTLE_{engine}', '1', None)],
-              ('EVENT:VALUE', 'GreaterOrEqual', 59900), ne(f'PROFILE:KA_REV{engine}', 1)),
+            D('VALUE', [('cv', f'B:ENGINE_THROTTLE_{engine}', '1', None)], ('EVENT:VALUE', 'GreaterOrEqual', 59900), ne(rev, 1)),
             D('VALUE', [lv(f'ENG_CUTOFF_{engine}', 1)], ('EVENT:VALUE', 'Greater', 600), ('EVENT:VALUE', 'LessOrEqual', 15000)),
             D('VALUE', [lv(f'ENG_CUTOFF_{engine}', 0)], ('EVENT:VALUE', 'LessOrEqual', 600)))
-        put(root, THR, f'BUTTON_{button}',
-            # Only with that engine running: with it off the aircraft answers a reverse command by throwing the
-            # main handle backwards (seen by the user 2026-11-05), and there is nothing to reverse anyway.
-            D('PRESS', [pv(f'KA_REV{engine}', 1), lv('VTX_C750_DETENT_DEADBAND', 0),
-                        k(f'THROTTLE{engine}_SET', expr=f'0 - Round(8.0 + 320.0 * {local}, 0)')],
-              eq(f'SIMCONNECT:GENERAL ENG COMBUSTION:{engine}', 1)),
-            D('RELEASE', [pv(f'KA_REV{engine}', 0), k(f'THROTTLE{engine}_SET', expr=f'Round({local} * 16383.0, 0)')]))
+        for button, level in switch.items():
+            put(root, THR, f'BUTTON_{button}',
+                D('PRESS', [pv(f'KA_REV{engine}', 1), lv('VTX_C750_DETENT_DEADBAND', 0), k(f'THROTTLE{engine}_SET', expr=f'0 - {level}')],
+                  eq(f'SIMCONNECT:GENERAL ENG COMBUSTION:{engine}', 1)),
+                D('RELEASE', [pv(f'KA_REV{engine}', 0), k(f'THROTTLE{engine}_SET', expr=f'Round({local} * 16383.0, 0)')]))
     # T1 (buttons 34/35) and T2 (36/37) are unassigned: T1 duplicated the parking brake (T4) and T2 the gear lever
-    # on the CP2.  The mouse click is the mini-stick press (13) alone, handled by ka-mouse; 9 and 11 only woke it.
-    remove(root, THR, 'BUTTON_34', 'BUTTON_35', 'BUTTON_36', 'BUTTON_37', 'BUTTON_9', 'BUTTON_11')
+    # on the CP2.  The mouse click is the mini-stick press (13) alone, handled by ka-mouse.
+    remove(root, THR, 'BUTTON_34', 'BUTTON_35', 'BUTTON_36', 'BUTTON_37')
     for btn, val in [(40, 0), (41, 1)]:   # parking brake (T4)
         put(root, THR, f'BUTTON_{btn}', press(k('PARKING_BRAKE_SET', val)))
     # Tobii B3 (BUTTON_44, Alt+7 toggle) is inherited unchanged from the Baron.  B6 (BUTTON_47, tracking

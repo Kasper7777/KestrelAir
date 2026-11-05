@@ -426,11 +426,12 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionComparator="Greater" ConditionTargetValue="15000" ConditionValueSource="EVENT:VALUE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_REV1" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
                   <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
-                    <Parameter Type="Exp" Value="If([PROFILE:KA_REV1] &gt; 0.5, 0 - Round(8.0 + 320.0 * Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)), 0), Round(Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)) * 16383.0, 0))" />
+                    <Parameter Type="Exp" Value="Round(Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)) * 16383.0, 0)" />
                   </EventActionControl>
                 </EventActions>
               </EventDefinition>
@@ -472,7 +473,55 @@
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV1" Value="1" />
                   <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
                   <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
-                    <Parameter Type="Exp" Value="0 - Round(8.0 + 320.0 * Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_X_AXIS] - 33.4) / 66.6)), 0)" />
+                    <Parameter Type="Exp" Value="0 - 168" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV1" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
+                    <Parameter Type="Exp" Value="Round(Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_X_AXIS] - 33.4) / 66.6)) * 16383.0, 0)" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_7">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:GENERAL ENG COMBUSTION:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV1" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
+                    <Parameter Type="Exp" Value="0 - 328" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV1" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
+                    <Parameter Type="Exp" Value="Round(Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_X_AXIS] - 33.4) / 66.6)) * 16383.0, 0)" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_6">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:GENERAL ENG COMBUSTION:1" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV1" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE1_SET">
+                    <Parameter Type="Exp" Value="0 - 8" />
                   </EventActionControl>
                 </EventActions>
               </EventDefinition>
@@ -491,11 +540,12 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionComparator="Greater" ConditionTargetValue="15000" ConditionValueSource="EVENT:VALUE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_REV2" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
                   <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
-                    <Parameter Type="Exp" Value="If([PROFILE:KA_REV2] &gt; 0.5, 0 - Round(8.0 + 320.0 * Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)), 0), Round(Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)) * 16383.0, 0))" />
+                    <Parameter Type="Exp" Value="Round(Min(1.0, Max(0.0, ([EVENT:VALUE] - 20040.0) / 39960.0)) * 16383.0, 0)" />
                   </EventActionControl>
                 </EventActions>
               </EventDefinition>
@@ -537,7 +587,55 @@
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV2" Value="1" />
                   <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
                   <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
-                    <Parameter Type="Exp" Value="0 - Round(8.0 + 320.0 * Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_Y_AXIS] - 33.4) / 66.6)), 0)" />
+                    <Parameter Type="Exp" Value="0 - 168" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV2" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
+                    <Parameter Type="Exp" Value="Round(Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_Y_AXIS] - 33.4) / 66.6)) * 16383.0, 0)" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:GENERAL ENG COMBUSTION:2" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV2" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
+                    <Parameter Type="Exp" Value="0 - 328" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV2" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
+                    <Parameter Type="Exp" Value="Round(Min(1.0, Max(0.0, ([LOCAL:JOY_0X33440X0194_Y_AXIS] - 33.4) / 66.6)) * 16383.0, 0)" />
+                  </EventActionControl>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_9">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:GENERAL ENG COMBUSTION:2" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_REV2" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:VTX_C750_DETENT_DEADBAND" Value="0" />
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:THROTTLE2_SET">
+                    <Parameter Type="Exp" Value="0 - 8" />
                   </EventActionControl>
                 </EventActions>
               </EventDefinition>
@@ -5332,7 +5430,7 @@
     <Option Key="Ultimarc.PacLed64.EnableVirtualPower" Value="True" />
     <Option Key="Ultimarc.PacLed64.Brightness" Value="128" />
   </Options>
-  <ProfileInformation ProfileID="9590627b-fcfb-4ffa-9ae1-d2fbccedc82b" Version="1.0">
+  <ProfileInformation ProfileID="050e2844-57b3-4b0f-8f2f-047aad292881" Version="1.0">
     <Description>&lt;HTML&gt;&lt;BODY&gt;&lt;P&gt;FlightFX Cessna Citation X (C750); derived from the Baron GNS530/TDS650 hardware layout. Controls verified live 2026-11-04; see citation-x-profile.md.&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</Description>
     <LastChanged>2026-11-04T02:58:32.2356643+00:00</LastChanged>
   </ProfileInformation>

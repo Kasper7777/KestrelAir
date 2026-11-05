@@ -1,4 +1,4 @@
-"""Rebuild the illustrated guide from genuine local MSFS cockpit captures.
+﻿"""Rebuild the illustrated guide from genuine local MSFS cockpit captures.
 
 Run: uv run --with reportlab --with pillow --with pymupdf python build-citation-illustrated-guide.py
 """
@@ -21,7 +21,7 @@ W, H = 842, 595
 NAVY = HexColor('#142B40')
 TEAL = HexColor('#116C70')
 MUTED = HexColor('#546576')
-AMBER = HexColor('#FFC857')
+ACCENT = HexColor('#32BFFF')
 PAPER = HexColor('#F4F7FA')
 STYLE = ParagraphStyle('body', fontName='Helvetica', fontSize=12, leading=16, textColor=NAVY)
 SMALL = ParagraphStyle('small', parent=STYLE, fontSize=10, leading=13)
@@ -171,6 +171,114 @@ PAGES = [
  note='Never use a fixed VR. The correct rotation speed depends on weight and conditions.'),
 ]
 
+# Keep the photographed control coordinates, but present one short, continuous flow.
+original = PAGES
+PAGES = [
+ dict(section='1', title='Batteries and engine display', view=original[0]['view'],
+ shots=original[0]['shots'], steps=[
+ ('1','Parking brake SET','Pull the handle up. Thrust levers at fuel CUTOFF.'),
+ ('2','Standby power ON','STBY PWR is below the ignition switches.'),
+ ('3','Emergency lights ARM','Set EMERG LT to ARM.'),
+ ('4','Both batteries ON','BATT 1 and BATT 2 must both be on.'),
+ ('5','EICAS POWER ON','Right switch under AVIONICS POWER. This powers the engine display, not the flight displays.'),
+ ('6','Left fuel boost NORM','Needed for the APU. Continue straight to page 2.')],
+ note='Before starting: enough fuel loaded; engine/instrument covers removed in tablet Ground Services. Photos show control locations.'),
+ dict(section='2', title='Start the APU and get power', view=original[1]['view'],
+ shots=original[1]['shots'], steps=[
+ ('1','APU MASTER ON','APU STARTER DISENGAGE stays NORMAL.'),
+ ('2','Press TEST','Then continue with the generator switch.'),
+ ('3','APU GENERATOR ON','The master switch alone does not select generator power.'),
+ ('4','Check at least 22 V','Read DC VOLTS on the APU display.'),
+ ('5','Hold START up; release','Release when RELAY ENGAGED lights.'),
+ ('6','Wait for READY TO LOAD','Check LOAD SHED is NORM. Do not proceed just because the APU is making noise.'),
+ ('7','APU BLEED AIR ON','Use ON for starting, not MAX COOL.')],
+ note='CHECK: APU READY TO LOAD illuminated, generator selected ON, bleed ON. Then turn on the flight displays (page 3).'),
+ dict(section='3', title='Flight displays: power, then align',
+ view='Shift + 8: power switches  |  Shift + 7: IRS  |  Shift + 3: FMS',
+ shots=[
+ shot('power-avionics.png',(1990,810,2260,1025),(24,300,235,155),'TWO SEPARATE POWER SWITCHES',[
+ ('1',(2110,930),(.15,.12)),('1',(2190,930),(.88,.12))]),
+ shot('citation-aft-wide.png',(940,465,1515,950),(280,300,254,155),'BOTH IRS SELECTORS',[
+ ('2',(1060,850),(.12,.63)),('2',(1320,640),(.84,.20))]),
+ shot('fms-pos-init.png',(790,265,1265,525),(70,85,420,195),'FMS: POS INIT / GPS 1 POS',[
+ ('3',(1233,430),(.92,.88))])],
+ steps=[
+ ('1','AVIONICS ON + EICAS ON','Two switches under AVIONICS POWER: left = flight avionics; right = engine display. Both must be ON.'),
+ ('2','Both IRS selectors NAV','Stay parked while alignment runs.'),
+ ('3','FMS: load present position','NAV IDENT: right key 4 opens POS INIT. Wait for GPS 1 POS, then press right key 3 beside it.'),
+ ('','Black flight displays?','Recheck the LEFT power switch, both batteries and APU generator. Check PFD/MFD DIM knobs are turned up.'),
+ ('','ATT / HDG FAIL on a lit screen?','It has power. Check both IRS at NAV and present position loaded; wait for alignment. Do not taxi with invalid attitude/heading.')],
+ note='CHECK: flight displays and FMS lit, valid attitude/heading after alignment. EICAS alone does not prove avionics are on.'),
+ dict(section='4', title='Start right engine, then left',
+ view='Shift + 5: bleed air  |  Shift + 8: START buttons  |  Shift + 6: throttles',
+ shots=[
+ shot('citation-lower.png',(1770,595,2240,1040),(24,280,240,175),'PAC ISOL VALVE',[
+ ('1',(2015,860),(.50,.20))]),
+ shot('citation-pilot.png',(1500,825,2050,1170),(280,280,254,175),'LH / DISENGAGE / RH START',[
+ ('2',(1990,1090),(.94,.52)),('3',(1840,1090),(.48,.82)),
+ ('4',(1670,932),(.12,.14)),('4',(1955,938),(.83,.14))]),
+ shot('citation-throttles.png',(990,300,1680,850),(90,80,380,175),'RIGHT AND LEFT THRUST LEVERS',[
+ ('2',(1510,665),(.85,.77)),('3',(1165,665),(.14,.77))])],
+ steps=[
+ ('1','Start air ready','APU bleed ON; PAC ISOL VALVE CLOSED. Check duct pressure at least 30 PSI on the engine/system display.'),
+ ('2','RIGHT START; right lever IDLE','Rightmost start button. Move right thrust lever to IDLE by 10% N2; watch EICAS for rotation, oil pressure and ITT.'),
+ ('3','Then LEFT START; left IDLE','Wait for a normal right start. Repeat for the left; check both engines settle and hydraulic pressure builds.'),
+ ('4','Both engine generators ON','Select LH GEN and RH GEN; verify generator warnings clear.'),
+ ('','Change to engine bleed air','Both ENG BLD AIR knobs HP/LP; PAC ISOL CLOSED. APU bleed OFF. Verify engine duct pressure.')],
+ note='CM3: hard rear stop = fuel CUTOFF; idle detent = RUN/IDLE. Keep levers at idle once starting. Stop for abnormal engine indications.'),
+ dict(section='5', title='Ready to taxi: the essentials',
+ view='Shift + 6: flaps / trim / speedbrake  |  Shift + 3: FMS PERF',
+ shots=original[6]['shots'], steps=[
+ ('1','Speedbrake fully STOWED','EICAS must show 0%. Put the CP3 speedbrake lever fully forward too.'),
+ ('2','Flaps/slats takeoff 15','Check the actual EICAS indication. Set before calculating takeoff speeds.'),
+ ('3','Elevator trim: takeoff band','Confirm trim is in the takeoff band on EICAS.'),
+ ('4','Reversers STOWED','Both levers at idle. Controls free and moving correctly; displays aligned.'),
+ ('','FMS: takeoff speeds','PERF / TAKEOFF DATA: enter weight and runway data; obtain V1, VR, V2. Check departure route, altitude and local QNH.'),
+ ('5','Clear the aircraft; taxi','Tablet: covers/chocks removed, doors shut. Pressurization ALT SEL NORM. Taxi light on; release parking brake and check brakes at low speed.')],
+ note='CHECK: normal engines, generator power, valid flight displays, takeoff speeds and configuration. Resolve abnormal EICAS messages.'),
+ dict(section='6', title='Runway checks, then fly',
+ view='Shift + 5: pitot heat / gear  |  Shift + 2: YD / M TRIM  |  Shift + 3: radio',
+ shots=[
+ shot('citation-lower.png',(425,600,850,890),(24,295,240,160),'LH + RH PITOT / STATIC',[
+ ('1',(490,710),(.12,.80)),('1',(565,710),(.66,.80))]),
+ shot('citation-left.png',(1200,325,1780,580),(280,295,254,160),'YD AND M TRIM',[
+ ('2',(1678,420),(.89,.16)),('2',(1678,477),(.89,.87))]),
+ shot('citation-lower.png',(230,605,435,1020),(80,80,130,175),'GEAR HANDLE',[
+ ('5',(280,935),(.15,.86))]),
+ shot('radio-mode.png',(745,865,1120,1290),(285,80,190,175),'TRANSPONDER MODE',[
+ ('3',(800,1032),(.05,.64)),('3',(1025,1195),(.88,.88))])],
+ steps=[
+ ('1','Both PITOT/STATIC ON','Set other anti-ice for conditions. Landing/strobe lights as required.'),
+ ('2','Yaw damper + Mach trim ON','Check YD and M TRIM indications. Recheck flaps 15, trim, speedbrake 0% and reversers stowed.'),
+ ('3','Transponder TA/RA','Left radio: select mode with left key 4; turn tuning knob to TA/RA. Use assigned squawk.'),
+ ('4','Line up; TO/MC thrust','When cleared, release brakes and apply TO/MC. Check normal engine indications. Rotate at your calculated VR.'),
+ ('5','Positive climb: gear UP','Follow the flight director/departure. Above 170 KIAS, retract flaps/slats when appropriate; select CLB thrust.')],
+ note='Final check: runway/departure, initial altitude, QNH, V-speeds and no unresolved warnings. This is a short simulator flow.')
+]
+
+PAGES.insert(4, dict(
+ section='5', title='Air pressure: a simple setup',
+ view='After engine start  |  Shift + 5: cabin pressure / air  |  Shift + 8: pilot BARO SET',
+ shots=[
+  shot('pressure-live.png',(1010,510,1555,980),(24,265,265,195),'CABIN PRESSURE  /  Shift + 5',[
+   ('1',(1240,900),(.12,.76)),('1',(1325,900),(.60,.76)),
+   ('2',(1225,750),(.25,.28))]),
+  shot('pressure-live.png',(1570,510,2010,980),(309,265,225,195),'AIR SUPPLY  /  Shift + 5',[
+   ('3',(1665,780),(.12,.18)),('3',(1940,780),(.88,.18)),
+   ('3',(1665,900),(.12,.85)),('3',(1940,900),(.88,.85))]),
+  shot('baro-live.png',(1230,650,1870,805),(55,85,450,145),'ALTIMETER  /  beneath pilot flight display',[
+   ('4',(1825,755),(.87,.88)),('5',(1735,738),(.58,.15))])],
+ steps=[
+  ('1','Cabin pressure: both NORM','ALT SEL / NORM switch: NORM. MANUAL / NORM switch: NORM. Leave the red CABIN DUMP guard closed.'),
+  ('2','RATE knob: white reference mark','Use the marked normal setting. Automatic mode schedules cabin pressure; do not set cabin altitude to your cruise altitude.'),
+  ('3','After starting: air supply ON','Both ENG BLD AIR knobs: HP/LP. CKPT PAC and CAB PAC: ON. APU bleed OFF once engine air is supplying the aircraft. Door shut.'),
+  ('4','BARO SET: local QNH','After powering the displays, turn BARO SET to the pressure from ATIS/ATC. Set both pilots and standby altimeter; check altitude roughly matches airport elevation.'),
+  ('5','STD: only at transition altitude','On climb, press STD when passing the published transition altitude (1013 hPa / 29.92 inHg). Reset destination QNH on descent through the transition level.')],
+ note='Cabin pressure = air inside the aircraft. QNH = altimeter setting. Photos show locations in cold-and-dark, not the required final switch positions.'
+))
+PAGES[5]['section']='6'
+PAGES[6]['section']='7'
+
 def paragraph(c, text, x, top, width, style=STYLE):
     p=Paragraph(text,style)
     _,height=p.wrap(width,1000)
@@ -180,14 +288,14 @@ def paragraph(c, text, x, top, width, style=STYLE):
 def arrow(c, start, end):
     sx,sy=start; ex,ey=end
     angle=atan2(ey-sy,ex-sx)
-    for col,width in [(NAVY,4.5),(AMBER,2)]:
+    for col,width in [(NAVY,4.5),(ACCENT,2)]:
         c.setStrokeColor(col); c.setLineWidth(width); c.line(sx,sy,ex,ey)
-    c.setFillColor(AMBER)
+    c.setFillColor(ACCENT)
     p=c.beginPath();p.moveTo(ex,ey)
     p.lineTo(ex-8*cos(angle-pi/7),ey-8*sin(angle-pi/7))
     p.lineTo(ex-8*cos(angle+pi/7),ey-8*sin(angle+pi/7));p.close()
     c.drawPath(p,fill=1,stroke=0)
-    c.setStrokeColor(AMBER);c.setLineWidth(1.3);c.circle(ex,ey,3,stroke=1,fill=0)
+    c.setStrokeColor(ACCENT);c.setLineWidth(1.3);c.circle(ex,ey,3,stroke=1,fill=0)
 
 def photo(c, spec):
     image=Image.open(ASSETS/spec['name']).convert('RGB').crop(spec['crop'])
@@ -208,7 +316,7 @@ def photo(c, spec):
         end=(x+(tx-left)*scale,y+dh-(ty-top)*scale)
         start=(x+fx*dw,y+(1-fy)*dh)
         arrow(c,start,end)
-        c.setFillColor(AMBER);c.setStrokeColor(NAVY);c.setLineWidth(1.2)
+        c.setFillColor(ACCENT);c.setStrokeColor(NAVY);c.setLineWidth(1.2)
         c.circle(*start,10,stroke=1,fill=1)
         c.setFont('Helvetica-Bold',11);c.setFillColor(NAVY)
         c.drawCentredString(start[0],start[1]-3.7,number)
@@ -223,7 +331,7 @@ def build():
         c.addOutlineEntry(page['section']+' - '+page['title'],'page'+str(page_no),0)
         c.setFillColor(PAPER);c.rect(0,0,W,H,fill=1,stroke=0)
         c.setFillColor(NAVY);c.rect(0,505,W,90,fill=1,stroke=0)
-        c.setFillColor(AMBER);c.setFont('Helvetica-Bold',13)
+        c.setFillColor(ACCENT);c.setFont('Helvetica-Bold',13)
         c.drawString(24,568,'CITATION X  /  '+page['section'])
         c.setFillColor(white);c.setFont('Helvetica-Bold',25)
         c.drawString(24,534,page['title'])
@@ -248,7 +356,7 @@ def build():
         c.drawString(24,25,'FlightFX Citation X | MSFS 2024 | SIMULATION USE ONLY | Control locations captured in your simulator')
         c.drawRightString(818,25,f'{page_no} / {len(PAGES)}')
         c.setFont('Helvetica',7.5)
-        c.drawString(24,12,'Source: your original quick-start guide; FlightFX manual pp. 47, 82, 99-100, 131-134, 137. Click for manual.')
+        c.drawString(24,12,'Sources: MSFS captures + local hardware notes; FlightFX manual pp. 48-54, 59-60, 82, 131-134, 137. Click for manual.')
         c.linkURL(MANUAL,(24,10,590,21),relative=0,thickness=0)
         c.showPage()
     c.save()
@@ -262,11 +370,14 @@ def build():
         page.get_pixmap(matrix=pymupdf.Matrix(1.2,1.2)).save(previews/f'page-{i+1:02}.png')
     # Contact sheet for a visual layout check.
     thumbs=[]
-    for path in sorted(previews.glob('page-*.png')):
+    for path in [previews/f'page-{i+1:02}.png' for i in range(len(doc))]:
         im=Image.open(path).convert('RGB');im.thumbnail((505,357));thumbs.append(im)
     sheet=Image.new('RGB',(1010,357*((len(thumbs)+1)//2)),'#CBD5DF')
     for i,im in enumerate(thumbs):sheet.paste(im,((i%2)*505,(i//2)*357))
     sheet.save(previews/'contact-sheet.jpg',quality=90)
+    # Both familiar filenames now open the same revised guide.
+    (ROOT/'Citation_X_Cold_Dark_Quick_Start.pdf').write_bytes(OUTPUT.read_bytes())
     print(f'Created {OUTPUT.name}: {len(doc)} pages, {OUTPUT.stat().st_size:,} bytes. All pages contain screenshots; text bounds checked.')
 
 if __name__=='__main__':build()
+

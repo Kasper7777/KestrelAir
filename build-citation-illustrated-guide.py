@@ -75,10 +75,14 @@ PAGES = [
  note='IRS = the navigation/attitude reference system. NAV is marked beside each selector.'),
 
  dict(section='3B', title='FMS and takeoff data', view='Shift + 3: the two flight-management computers',
- shots=[shot('citation-pedestal.png',(755,200,1280,840),(84,78,392,398),'LEFT FMS  /  buttons alongside the screen select its rows',[
- ('1',(1233,476),(.94,.32)),('2',(1233,430),(.94,.17)),
- ('3',(1060,556),(.71,.67)),('4',(826,556),(.06,.67)),
- ('5',(1010,690),(.48,.92))])],
+ shots=[
+ shot('fms-powered.png',(790,265,1265,525),(24,275,244,180),'FIRST: NAV IDENT',[
+ ('1',(1233,476),(.92,.88))]),
+ shot('fms-pos-init.png',(790,265,1265,525),(290,275,244,180),'THEN: POSITION INIT',[
+ ('2',(1233,430),(.92,.88))]),
+ shot('fms-pos-init.png',(785,525,1265,830),(90,78,380,176),'FMS KEYPAD AND PAGE BUTTONS',[
+ ('3',(1060,556),(.60,.30)),('4',(826,556),(.09,.30)),
+ ('5',(1010,690),(.35,.86))])],
  steps=[('1','Open POS INIT','On initial NAV IDENT, press the fourth screen-side key down on the RIGHT.'),
  ('2','Load GPS position','On POS INIT, wait for GPS 1 POS. Press the third key down on the RIGHT.'),
  ('3','FPL: enter your route','Use the FPL button for the flight plan. Check departure, destination and runway.'),
@@ -104,14 +108,14 @@ PAGES = [
  shots=[
  shot('citation-throttles.png',(990,300,1680,850),(25,259,255,212),'THROTTLES  /  Shift + 6',[
  ('1',(1510,665),(.85,.77)),('3',(1165,665),(.14,.77))]),
- shot('citation-power.png',(915,340,1560,1190),(299,79,235,392),'CENTRE EICAS  /  Shift + 4',[
- ('2',(1240,690),(.75,.15))])],
+ shot('eicas-powered.png',(1005,35,1465,1020),(299,79,235,380),'ENGINE INDICATIONS  /  Shift + 4',[
+ ('2',(1385,205),(.94,.10)),('2',(1370,480),(.94,.55))])],
  steps=[('1','Right start + right IDLE','Press RIGHT START (previous page). Move the RIGHT throttle to IDLE by 10% N2.'),
  ('2','Watch EICAS','Check N1 rotation, oil pressure, ITT and hydraulic pressure as the engine starts.'),
  ('3','Repeat for the left engine','When the right start is normal, press LEFT START and move the LEFT throttle to IDLE by 10% N2.'),
  ('','Finish the start','Both generators ON. APU bleed OFF; verify the engine bleed setup.'),
  ('','Stop for abnormal indications','Do not continue with abnormal starter, ITT, oil-pressure or hydraulic indications.')],
- note='Display photo is unpowered: arrow 2 identifies the engine-monitoring screen, not example normal values.'),
+ note='Display photo is powered with ENGINES STOPPED. It shows locations, not normal running values.'),
 
  dict(section='5', title='Set up for taxi', view='Shift + 6: throttle quadrant  |  tablet: Ground Services',
  shots=[shot('citation-throttles.png',(645,280,1860,1050),(24,100,510,354),'THROTTLE QUADRANT  /  viewed from above',[
@@ -140,29 +144,30 @@ PAGES = [
 
  dict(section='6B', title='Transponder and final check', view='Shift + 3: radio units  |  Shift + 6: departure altitude knob',
  shots=[
- shot('citation-pedestal.png',(730,860,1130,1290),(55,239,340,224),'LEFT RADIO UNIT  /  Shift + 3',[
- ('1',(1025,1195),(.89,.79)),('2',(1093,965),(.91,.12))]),
+ shot('radio-mode.png',(745,865,1120,1290),(55,239,340,224),'LEFT RADIO UNIT  /  Shift + 3',[
+ ('1',(800,1032),(.05,.64)),('1',(1025,1195),(.88,.88)),
+ ('2',(890,1032),(.67,.34)),('2',(800,1000),(.05,.18))]),
  shot('citation-throttles.png',(1380,1060,1810,1315),(145,78,350,141),'ALTITUDE SELECTOR  /  Shift + 6',[
  ('3',(1585,1185),(.20,.80))])],
- steps=[('1','Transponder: TA/RA','Use the radio unit mode controls and screen-side keys to select TA/RA. Confirm the displayed mode.'),
- ('2','Check the radio display','Verify the assigned squawk and the transponder mode before departure.'),
+ steps=[('1','Select mode, then turn knob','Press the LEFT key beside the mode (fourth down). Turn the tuning knob until TA/RA is shown.'),
+ ('2','Check TA/RA and squawk','TA/RA is below the four-digit code. The LEFT key above selects the code for adjustment with the tuning knobs.'),
  ('3','Set departure altitude','Turn the ALT knob to the cleared initial altitude and check the flight display.'),
  ('','Final cross-check','Confirm fuel/weight, runway, departure, flight director and calculated V1 / VR / V2.'),
  ('','EICAS: ready for takeoff','Resolve abnormal messages before applying takeoff thrust.')],
- note='The radio screen is off in this location photo. Use its displayed menu labels once powered.'),
+ note='7000 is only the code in this screenshot. Use your assigned squawk; select STBY during preparation.'),
 
  dict(section='7', title='Takeoff and initial climb', view='Shift + 6: thrust / flaps  |  Shift + 5: landing gear',
  shots=[
  shot('citation-throttles.png',(985,295,1830,850),(24,260,510,208),'THRUST DETENTS AND FLAPS  /  Shift + 6',[
- ('1',(1315,340),(.30,.10)), ('2',(1315,366),(.61,.16)),
- ('4',(1715,627),(.94,.77))]),
+ ('1',(1315,340),(.30,.10)), ('4',(1315,366),(.61,.25)),
+ ('3',(1715,627),(.94,.77))]),
  shot('citation-lower.png',(230,605,435,1020),(142,79,220,166),'LANDING GEAR  /  Shift + 5',[
- ('3',(280,935),(.15,.86))])],
+ ('2',(280,935),(.15,.86))])],
  steps=[('1','Takeoff thrust: TO/MC','Line up when cleared. Apply TO/MC thrust, release brakes and check engine indications.'),
  ('','Rotate at YOUR calculated VR','Keep the centreline. At VR, ease the nose toward about 13 degrees pitch.'),
- ('3','Positive climb: gear UP','Confirm a positive climb, then raise the landing gear.'),
- ('4','Flaps UP when appropriate','Retract flaps/slats above 170 KIAS when appropriate for the departure.'),
- ('2','Climb thrust: CLB','Set CLB thrust. Follow the flight director and published departure.')],
+ ('2','Positive climb: gear UP','Confirm a positive climb, then raise the landing gear.'),
+ ('3','Flaps UP when appropriate','Retract flaps/slats above 170 KIAS when appropriate for the departure.'),
+ ('4','Climb thrust: CLB','Set CLB thrust. Follow the flight director and published departure.')],
  note='Never use a fixed VR. The correct rotation speed depends on weight and conditions.'),
 ]
 
@@ -189,6 +194,7 @@ def photo(c, spec):
     # Mild exposure lift preserves the genuine cockpit pixels and makes dark labels legible.
     image=ImageEnhance.Brightness(image).enhance(1.22)
     bx,by,bw,bh=spec['box']; iw,ih=image.size
+    bh=min(bh,459-by)  # Keep image captions below the camera-view instruction.
     scale=min(bw/iw,bh/ih); dw,dh=iw*scale,ih*scale
     x,y=bx+(bw-dw)/2,by+(bh-dh)/2
     buf=BytesIO();image.save(buf,format='JPEG',quality=94)

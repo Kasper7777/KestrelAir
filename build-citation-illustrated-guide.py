@@ -197,13 +197,13 @@ PAGES = [
  view='Shift + 8: power switches  |  Shift + 7: IRS  |  Shift + 3: FMS',
  shots=[
  shot('power-avionics.png',(1990,810,2260,1025),(24,300,235,155),'TWO SEPARATE POWER SWITCHES',[
- ('1',(2110,930),(.15,.12)),('1',(2190,930),(.88,.12))]),
+ ('1',(2110,930),(.15,.12))]),
  shot('citation-aft-wide.png',(940,465,1515,950),(280,300,254,155),'BOTH IRS SELECTORS',[
  ('2',(1060,850),(.12,.63)),('2',(1320,640),(.84,.20))]),
  shot('fms-pos-init.png',(790,265,1265,525),(70,85,420,195),'FMS: POS INIT / GPS 1 POS',[
  ('3',(1233,430),(.92,.88))])],
  steps=[
- ('1','AVIONICS ON + EICAS ON','Two switches under AVIONICS POWER: left = flight avionics; right = engine display. Both must be ON.'),
+ ('1','Left AVIONICS switch: ON','Under AVIONICS POWER, move the LEFT switch up to ON. EICAS was already switched on on page 1.'),
  ('2','Both IRS selectors NAV','Stay parked while alignment runs.'),
  ('3','FMS: load present position','NAV IDENT: right key 4 opens POS INIT. Wait for GPS 1 POS, then press right key 3 beside it.'),
  ('','Black flight displays?','Recheck the LEFT power switch, both batteries and APU generator. Check PFD/MFD DIM knobs are turned up.'),
@@ -223,8 +223,7 @@ PAGES = [
  ('1','Start air ready','APU bleed ON; PAC ISOL VALVE CLOSED. Check duct pressure at least 30 PSI on the engine/system display.'),
  ('2','RIGHT START; right lever IDLE','Rightmost start button. Move right thrust lever to IDLE by 10% N2; watch EICAS for rotation, oil pressure and ITT.'),
  ('3','Then LEFT START; left IDLE','Wait for a normal right start. Repeat for the left; check both engines settle and hydraulic pressure builds.'),
- ('4','Both engine generators ON','Select LH GEN and RH GEN; verify generator warnings clear.'),
- ('','Change to engine bleed air','Both ENG BLD AIR knobs HP/LP; PAC ISOL CLOSED. APU bleed OFF. Verify engine duct pressure.')],
+ ('4','Both engine generators ON','Select LH GEN and RH GEN; verify generator warnings clear. Next: set cabin air on page 5.')],
  note='CM3: hard rear stop = fuel CUTOFF; idle detent = RUN/IDLE. Keep levers at idle once starting. Stop for abnormal engine indications.'),
  dict(section='5', title='Ready to taxi: the essentials',
  view='Shift + 6: flaps / trim / speedbrake  |  Shift + 3: FMS PERF',
@@ -233,8 +232,8 @@ PAGES = [
  ('2','Flaps/slats takeoff 15','Check the actual EICAS indication. Set before calculating takeoff speeds.'),
  ('3','Elevator trim: takeoff band','Confirm trim is in the takeoff band on EICAS.'),
  ('4','Reversers STOWED','Both levers at idle. Controls free and moving correctly; displays aligned.'),
- ('','FMS: takeoff speeds','PERF / TAKEOFF DATA: enter weight and runway data; obtain V1, VR, V2. Check departure route, altitude and local QNH.'),
- ('5','Clear the aircraft; taxi','Tablet: covers/chocks removed, doors shut. Pressurization ALT SEL NORM. Taxi light on; release parking brake and check brakes at low speed.')],
+ ('','FMS: takeoff speeds','PERF / TAKEOFF DATA: enter weight and runway data; obtain V1, VR, V2. Check departure route and set the cleared initial altitude.'),
+ ('5','Remove chocks; taxi','Tablet Ground Services: remove chocks. Taxi light on; release parking brake and check brakes at low speed.')],
  note='CHECK: normal engines, generator power, valid flight displays, takeoff speeds and configuration. Resolve abnormal EICAS messages.'),
  dict(section='6', title='Runway checks, then fly',
  view='Shift + 5: pitot heat / gear  |  Shift + 2: YD / M TRIM  |  Shift + 3: radio',
@@ -249,7 +248,7 @@ PAGES = [
  ('3',(800,1032),(.05,.64)),('3',(1025,1195),(.88,.88))])],
  steps=[
  ('1','Both PITOT/STATIC ON','Set other anti-ice for conditions. Landing/strobe lights as required.'),
- ('2','Yaw damper + Mach trim ON','Check YD and M TRIM indications. Recheck flaps 15, trim, speedbrake 0% and reversers stowed.'),
+ ('2','Yaw damper + Mach trim ON','Press YD and M TRIM; confirm their indications.'),
  ('3','Transponder TA/RA','Left radio: select mode with left key 4; turn tuning knob to TA/RA. Use assigned squawk.'),
  ('4','Line up; TO/MC thrust','When cleared, release brakes and apply TO/MC. Check normal engine indications. Rotate at your calculated VR.'),
  ('5','Positive climb: gear UP','Follow the flight director/departure. Above 170 KIAS, retract flaps/slats when appropriate; select CLB thrust.')],
@@ -260,24 +259,78 @@ PAGES.insert(4, dict(
  section='5', title='Air pressure: a simple setup',
  view='After engine start  |  Shift + 5: cabin pressure / air  |  Shift + 8: pilot BARO SET',
  shots=[
-  shot('pressure-live.png',(1010,510,1555,980),(24,265,265,195),'CABIN PRESSURE  /  Shift + 5',[
+  shot('pressure-live.png',(1010,510,1555,980),(24,265,265,195),'SWITCHES: DOWN  /  RATE: NORM',[
    ('1',(1240,900),(.12,.76)),('1',(1325,900),(.60,.76)),
    ('2',(1225,750),(.25,.28))]),
-  shot('pressure-live.png',(1570,510,2010,980),(309,265,225,195),'AIR SUPPLY  /  Shift + 5',[
-   ('3',(1665,780),(.12,.18)),('3',(1940,780),(.88,.18)),
-   ('3',(1665,900),(.12,.85)),('3',(1940,900),(.88,.85))]),
-  shot('baro-live.png',(1230,650,1870,805),(55,85,450,145),'ALTIMETER  /  beneath pilot flight display',[
+  shot('pressure-close-live.png',(1790,760,2280,1040),(309,265,225,195),'PAC: ON  /  ENGINE AIR: HP/LP',[
+   ('3',(1900,865),(.10,.12)),('3',(2200,865),(.90,.12)),
+   ('3',(1900,980),(.10,.88)),('3',(2200,980),(.90,.88))]),
+  shot('baro-clear-live.png',(1230,650,1870,805),(55,85,450,145),'TURN BARO SET FOR QNH  /  PRESS STD LATER',[
    ('4',(1825,755),(.87,.88)),('5',(1735,738),(.58,.15))])],
  steps=[
-  ('1','Cabin pressure: both NORM','ALT SEL / NORM switch: NORM. MANUAL / NORM switch: NORM. Leave the red CABIN DUMP guard closed.'),
-  ('2','RATE knob: white reference mark','Use the marked normal setting. Automatic mode schedules cabin pressure; do not set cabin altitude to your cruise altitude.'),
-  ('3','After starting: air supply ON','Both ENG BLD AIR knobs: HP/LP. CKPT PAC and CAB PAC: ON. APU bleed OFF once engine air is supplying the aircraft. Door shut.'),
+  ('1','Both small switches DOWN: NORM','Below the RATE knob: left switch DOWN to NORM, next switch DOWN to NORM. Leave the red CABIN DUMP guard closed.'),
+  ('2','RATE knob: point to NORM','Turn the black RATE knob to the NORM mark. Cabin pressure then adjusts automatically.'),
+  ('3','Four air knobs: point UP','Top pair (CKPT PAC / CAB PAC): ON. Bottom pair (L / R ENG BLD AIR): HP/LP. PAC ISOL valve CLOSED. APU BLEED (pictured on page 2): OFF. Verify duct pressure; close the door.'),
   ('4','BARO SET: local QNH','After powering the displays, turn BARO SET to the pressure from ATIS/ATC. Set both pilots and standby altimeter; check altitude roughly matches airport elevation.'),
   ('5','STD: only at transition altitude','On climb, press STD when passing the published transition altitude (1013 hPa / 29.92 inHg). Reset destination QNH on descent through the transition level.')],
- note='Cabin pressure = air inside the aircraft. QNH = altimeter setting. Photos show locations in cold-and-dark, not the required final switch positions.'
+ note='Do this page once after engine start. Blue arrows locate controls; bold instructions give the required positions. QNH comes from ATIS/ATC.'
 ))
 PAGES[5]['section']='6'
 PAGES[6]['section']='7'
+
+# Fresh captures: coordinates recorded against the 2048 px inspection view.
+# Convert once to the original 2560 px capture so arrows stay on the controls.
+def fresh(view, crop, box, caption, marks):
+    return shot(f'refresh-view-{view}.png',tuple(round(v*1.25) for v in crop),box,caption,
+                [(n,(round(x*1.25),round(y*1.25)),badge) for n,(x,y),badge in marks])
+
+PAGES[0]['shots']=[
+ fresh(3,(35,150,590,475),(24,267,510,188),'POWER PANEL  /  switches UP to ON',[
+  ('4',(250,210),(.29,.08)),('4',(300,210),(.49,.08)),
+  ('5',(520,210),(.93,.08)),('2',(490,405),(.92,.86)),('6',(145,335),(.10,.75))]),
+ fresh(7,(1160,450,1400,660),(305,85,225,150),'PARKING BRAKE  /  pull UP',[
+  ('1',(1310,537),(.15,.80))]),
+ shot('citation-pilot.png',(700,810,940,1030),(35,85,225,150),'EMERGENCY LIGHTS  /  ARM',[
+  ('3',(787,955),(.82,.18))])]
+PAGES[1]['shots']=[fresh(9,(890,245,1235,875),(85,83,385,380),
+ 'APU PANEL  /  right side of cockpit',[
+  ('1',(1130,760),(.90,.87)),('2',(1105,735),(.48,.94)),
+  ('3',(1155,395),(.92,.20)),('4',(1088,590),(.15,.55)),
+  ('5',(1000,720),(.10,.77)),('7',(955,330),(.08,.10))])]
+PAGES[2]['shots'][0]=fresh(3,(425,148,575,285),(24,300,235,155),
+ 'FLIGHT AVIONICS  /  LEFT switch UP', [('1',(470,210),(.12,.12))])
+PAGES[2]['shots'][2]=fresh(3,(635,215,1005,415),(70,85,420,195),
+ 'FIRST: POS INIT is RIGHT key 4', [('3',(985,380),(.93,.15))])
+PAGES[2]['steps'][2]=('3','FMS: load present position',
+ 'Press RIGHT key 4 beside POS INIT (pictured). On the next page, wait for GPS 1 POS; press RIGHT key 3 to load it.')
+PAGES[3]['shots'][1]=fresh(3,(140,150,460,450),(280,280,254,175),
+ 'START BUTTONS  /  LH - DISENGAGE - RH',[
+  ('2',(400,335),(.90,.80)),('3',(300,335),(.28,.80)),
+  ('4',(190,205),(.12,.12)),('4',(385,220),(.90,.12))])
+PAGES[3]['shots'][2]=fresh(6,(790,215,1320,655),(90,80,380,175),
+ 'THRUST LEVERS  /  move from CUTOFF to IDLE',[
+  ('2',(1150,400),(.88,.82)),('3',(930,400),(.12,.82))])
+PAGES[4]['shots'][1]=fresh(5,(1435,620,1765,830),(309,265,225,195),
+ 'TOP PAIR: ON  /  BOTTOM PAIR: HP/LP',[
+  ('3',(1490,685),(.10,.10)),('3',(1715,690),(.90,.10)),
+  ('3',(1490,775),(.10,.90)),('3',(1715,775),(.90,.90))])
+PAGES[5]['shots']=[
+ fresh(6,(520,220,1475,835),(24,165,510,290),'THROTTLES, TRIM AND FLAPS  /  Shift + 6',[
+  ('2',(1385,520),(.91,.30)),('3',(645,490),(.10,.65)),
+  ('5',(1100,755),(.52,.94))]),
+ shot('citation-throttles.png',(820,475,1100,740),(42,80,220,65),
+ 'SPEEDBRAKE  /  fully STOWED', [('1',(1025,635),(.15,.20))]),
+ fresh(6,(1130,855,1460,1050),(300,80,220,65),'DEPARTURE ALTITUDE  /  ALT knob',[])]
+PAGES[6]['shots']=[
+ fresh(5,(320,480,505,610),(24,295,240,160),'PITOT / STATIC  /  LH + RH ON',[
+  ('1',(380,555),(.12,.82)),('1',(435,555),(.88,.82))]),
+ fresh(2,(980,270,1410,460),(280,295,254,160),'YD + M TRIM  /  press to engage',[
+  ('2',(1340,336),(.82,.12)),('2',(1340,380),(.82,.88))]),
+ fresh(5,(135,485,340,820),(80,80,130,175),'GEAR  /  UP after positive climb',[
+  ('5',(230,735),(.15,.85))]),
+ fresh(3,(605,715,900,1020),(285,80,190,175),'RADIO  /  select TA/RA mode',[
+  ('3',(645,825),(.08,.20)),('3',(825,965),(.88,.88))])]
+PAGES[5]['steps'][3]=('4','Reversers STOWED','Check reverser indications on EICAS. Both thrust levers at idle. Controls free and moving correctly; displays aligned.')
 
 def paragraph(c, text, x, top, width, style=STYLE):
     p=Paragraph(text,style)
@@ -287,15 +340,24 @@ def paragraph(c, text, x, top, width, style=STYLE):
 
 def arrow(c, start, end):
     sx,sy=start; ex,ey=end
-    angle=atan2(ey-sy,ex-sx)
-    for col,width in [(NAVY,4.5),(ACCENT,2)]:
-        c.setStrokeColor(col); c.setLineWidth(width); c.line(sx,sy,ex,ey)
+    dx,dy=ex-sx,ey-sy
+    bend=min(14,(dx*dx+dy*dy)**.5*.15)
+    length=max(1,(dx*dx+dy*dy)**.5)
+    cx1,cy1=sx+dx*.35-dy/length*bend,sy+dy*.35+dx/length*bend
+    cx2,cy2=sx+dx*.75-dy/length*bend,sy+dy*.75+dx/length*bend
+    angle=atan2(ey-cy2,ex-cx2)
+    c.setLineCap(1);c.setLineJoin(1)
+    for col,width in [(NAVY,5),(white,3.4),(ACCENT,2)]:
+        c.setStrokeColor(col); c.setLineWidth(width)
+        p=c.beginPath();p.moveTo(sx,sy);p.curveTo(cx1,cy1,cx2,cy2,ex,ey)
+        c.drawPath(p,stroke=1)
     c.setFillColor(ACCENT)
     p=c.beginPath();p.moveTo(ex,ey)
     p.lineTo(ex-8*cos(angle-pi/7),ey-8*sin(angle-pi/7))
     p.lineTo(ex-8*cos(angle+pi/7),ey-8*sin(angle+pi/7));p.close()
     c.drawPath(p,fill=1,stroke=0)
-    c.setStrokeColor(ACCENT);c.setLineWidth(1.3);c.circle(ex,ey,3,stroke=1,fill=0)
+    c.setStrokeColor(white);c.setLineWidth(2.4);c.circle(ex,ey,4,stroke=1,fill=0)
+    c.setStrokeColor(ACCENT);c.setLineWidth(1.2);c.circle(ex,ey,4,stroke=1,fill=0)
 
 def photo(c, spec):
     image=Image.open(ASSETS/spec['name']).convert('RGB').crop(spec['crop'])
@@ -306,8 +368,11 @@ def photo(c, spec):
     scale=min(bw/iw,bh/ih); dw,dh=iw*scale,ih*scale
     x,y=bx+(bw-dw)/2,by+(bh-dh)/2
     buf=BytesIO();image.save(buf,format='JPEG',quality=94)
+    c.setFillColor(HexColor('#DCE5EE'));c.roundRect(x-4,y-5,dw+8,dh+10,7,fill=1,stroke=0)
+    c.saveState()
+    clip=c.beginPath();clip.roundRect(x,y,dw,dh,5);c.clipPath(clip,stroke=0)
     c.drawImage(ImageReader(BytesIO(buf.getvalue())),x,y,dw,dh)
-    c.setStrokeColor(HexColor('#D4DEE6'));c.setLineWidth(.6);c.rect(x,y,dw,dh)
+    c.restoreState()
     c.setFillColor(MUTED);c.setFont('Helvetica-Bold',9)
     c.drawString(bx,by+bh+9,spec['caption'])
     left,top,_,_=spec['crop']
@@ -316,8 +381,9 @@ def photo(c, spec):
         end=(x+(tx-left)*scale,y+dh-(ty-top)*scale)
         start=(x+fx*dw,y+(1-fy)*dh)
         arrow(c,start,end)
-        c.setFillColor(ACCENT);c.setStrokeColor(NAVY);c.setLineWidth(1.2)
-        c.circle(*start,10,stroke=1,fill=1)
+        c.setFillColor(NAVY);c.roundRect(start[0]-11,start[1]-12,24,24,7,stroke=0,fill=1)
+        c.setFillColor(white);c.setStrokeColor(ACCENT);c.setLineWidth(1.8)
+        c.roundRect(start[0]-11,start[1]-10,22,22,6,stroke=1,fill=1)
         c.setFont('Helvetica-Bold',11);c.setFillColor(NAVY)
         c.drawCentredString(start[0],start[1]-3.7,number)
 
@@ -331,16 +397,22 @@ def build():
         c.addOutlineEntry(page['section']+' - '+page['title'],'page'+str(page_no),0)
         c.setFillColor(PAPER);c.rect(0,0,W,H,fill=1,stroke=0)
         c.setFillColor(NAVY);c.rect(0,505,W,90,fill=1,stroke=0)
+        c.setFillColor(TEAL);c.rect(0,505,5,90,fill=1,stroke=0)
         c.setFillColor(ACCENT);c.setFont('Helvetica-Bold',13)
         c.drawString(24,568,'CITATION X  /  '+page['section'])
         c.setFillColor(white);c.setFont('Helvetica-Bold',25)
         c.drawString(24,534,page['title'])
+        for index in range(len(PAGES)):
+            c.setFillColor(ACCENT if index+1==page_no else HexColor('#365269'))
+            c.roundRect(649+index*24,565,18,4,2,fill=1,stroke=0)
         c.setFillColor(MUTED);c.setFont('Helvetica',10)
         c.drawString(24,487,page['view'])
-        c.setStrokeColor(HexColor('#D4DEE6'));c.line(546,80,546,470)
+        c.setFillColor(white);c.roundRect(550,78,277,399,10,fill=1,stroke=0)
         for spec in page['shots']:photo(c,spec)
         top=468
         for num,title,body in page['steps']:
+            c.setStrokeColor(HexColor('#E7EDF3'));c.setLineWidth(.5)
+            if top<460:c.line(582,top+6,812,top+6)
             if num:
                 c.setFillColor(TEAL);c.circle(565,top-8,9,fill=1,stroke=0)
                 c.setFillColor(white);c.setFont('Helvetica-Bold',10)

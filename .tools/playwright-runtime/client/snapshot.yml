@@ -1,0 +1,1341 @@
+- generic [ref=e1]:
+  - banner [ref=e25]:
+    - generic [ref=e26] [cursor=pointer]
+    - link "SimBrief" [ref=e28] [cursor=pointer]:
+      - /url: ./home
+    - generic [ref=e29] [cursor=pointer]
+    - generic [ref=e31] [cursor=pointer]:
+      - checkbox
+    - generic [ref=e33]: S T
+    - generic [ref=e36]: AIRAC 2503
+  - navigation [ref=e40]:
+    - generic [ref=e41]:
+      - link "Dashboard" [ref=e42] [cursor=pointer]:
+        - /url: ./home
+      - link "New Flight" [ref=e43] [cursor=pointer]:
+        - /url: ./options/new
+      - link "Edit Flight" [ref=e44] [cursor=pointer]:
+        - /url: ./options/latest
+      - link "View Flight Plan" [ref=e45] [cursor=pointer]:
+        - /url: ./briefing/latest
+      - link "Saved Flights" [ref=e46] [cursor=pointer]:
+        - /url: ./flights
+      - link "Saved Airframes" [ref=e47] [cursor=pointer]:
+        - /url: ./airframes
+      - link "Weather & NOTAM" [ref=e48] [cursor=pointer]:
+        - /url: ./weather
+      - link "Performance & Tools" [ref=e49] [cursor=pointer]:
+        - /url: ./tools
+      - link "User Guide" [ref=e50] [cursor=pointer]:
+        - /url: ./guide
+      - link "Account Settings" [ref=e51] [cursor=pointer]:
+        - /url: ./account
+    - generic [ref=e52]:
+      - generic [ref=e53]: 05 Nov
+      - generic [ref=e54]: 19:00
+      - separator [ref=e55]
+      - generic [ref=e56]: Not for real world navigation
+  - main [ref=e58]:
+    - generic [ref=e59]:
+      - generic [ref=e60]: Generate Flight
+      - generic [ref=e62] [cursor=pointer]: Calculate & Compare
+      - generic [ref=e64] [cursor=pointer]: Briefing Preview
+      - generic [ref=e66] [cursor=pointer]: Save Flight
+      - generic [ref=e68] [cursor=pointer]: Share Flight
+      - generic [ref=e70] [cursor=pointer]: New Flight
+      - generic [ref=e72] [cursor=pointer]: Close Flight
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - heading "Flight Info" [level=1] [ref=e78]
+            - generic [ref=e80]:
+              - figure [ref=e81]:
+                - heading "Airline ICAO" [level=2] [ref=e82]:
+                  - text: Airline
+                  - generic [ref=e83]: ICAO
+                - textbox "ZZZ" [ref=e84]
+              - figure [ref=e85]:
+                - heading "Flight Number" [level=2] [ref=e86]
+                - textbox "0000" [ref=e87]
+              - figure [ref=e88]:
+                - heading [level=2] [ref=e89]:
+                  - text: Depart
+                  - img "Search for an airport" [ref=e90] [cursor=pointer]
+                - textbox "ZZZZ" [ref=e91]
+              - figure [ref=e92]:
+                - heading [level=2] [ref=e93]:
+                  - text: Arrive
+                  - img "Search for an airport" [ref=e94] [cursor=pointer]
+                  - img "Swap departure and arrival airports" [ref=e95] [cursor=pointer]
+                - textbox "ZZZZ" [ref=e96]
+              - figure [ref=e97]:
+                - heading "Alternate" [level=2] [ref=e98]
+                - generic [ref=e99]:
+                  - combobox [ref=e101] [cursor=pointer]:
+                    - option [selected]
+                    - option "AUTO"
+                    - option "NONE"
+                    - option "- - - -" [disabled]
+                  - textbox "AUTO" [ref=e102]
+              - figure [ref=e103]:
+                - heading "Departure Time EOBT Reset to today's date" [level=2] [ref=e104]:
+                  - generic [ref=e105]: Departure Time
+                  - generic "The planned pushback or start-up time, sometimes referred to as the EOBT (Estimated Off-Block Time). This time should be entered in Zulu/UTC." [ref=e106]: EOBT
+                  - img "Reset to today's date" [ref=e107] [cursor=pointer]
+                - textbox [ref=e109] [cursor=pointer]:
+                  - /placeholder: 01Jan70 00:00
+                  - text: 05 Nov 2026 - 19:30
+          - generic [ref=e110]:
+            - heading "Aircraft Info Open Airframe Editor" [level=1] [ref=e111]:
+              - generic [ref=e112]: Aircraft Info
+              - link "Open Airframe Editor" [ref=e113] [cursor=pointer]:
+                - /url: ./airframes
+            - generic [ref=e114]:
+              - generic:
+                - figure [ref=e115]:
+                  - heading "Aircraft Search Airframe" [level=2] [ref=e116]:
+                    - generic [ref=e117]: Aircraft
+                    - generic "Search for an aircraft" [ref=e119] [cursor=pointer]: Search
+                    - generic "Save current airframe as default" [ref=e121] [cursor=pointer]: Airframe
+                  - combobox [ref=e123] [cursor=pointer]:
+                    - option "None" [selected]
+                    - option "--------------------" [disabled]
+                    - option "A148 - Antonov An-148"
+                    - option "A225 - Antonov An-225"
+                    - option "BCS1 - A220-100"
+                    - option "BCS3 - A220-300"
+                    - option "A306 - A300B4-600"
+                    - option "A3ST - A300F4-608ST"
+                    - option "A30B - A300B4-200"
+                    - option "A30F - A300F4-600R"
+                    - option "A310 - A310-304"
+                    - option "A318 - A318-100"
+                    - option "A319 - A319-100"
+                    - option "A320 - A320-200"
+                    - option "A20N - A320-200N"
+                    - option "A321 - A321-200"
+                    - option "A21N - A321-200N"
+                    - option "A332 - A330-200"
+                    - option "A333 - A330-300"
+                    - option "A338 - A330-800"
+                    - option "A339 - A330-900"
+                    - option "A342 - A340-200"
+                    - option "A343 - A340-300"
+                    - option "A345 - A340-500"
+                    - option "A346 - A340-600"
+                    - option "A359 - A350-900"
+                    - option "A35K - A350-1000"
+                    - option "A388 - A380-800"
+                    - option "AC11 - Commander 114"
+                    - option "AC1T - Commander 114 TN"
+                    - option "AEST - Aerostar 600"
+                    - option "AT43 - ATR-42-300"
+                    - option "AT45 - ATR-42-500"
+                    - option "AT46 - ATR-42-600"
+                    - option "AT72 - ATR-72-201"
+                    - option "AT73 - ATR-72-211"
+                    - option "AT75 - ATR-72-500"
+                    - option "AT76 - ATR-72-600"
+                    - option "B190 - B1900D"
+                    - option "B350 - King Air 350"
+                    - option "B461 - BAe 146-100"
+                    - option "B462 - BAe 146-200"
+                    - option "B463 - BAe 146-300"
+                    - option "B703 - B707-320C"
+                    - option "B712 - B717-200"
+                    - option "B721 - B727-100"
+                    - option "B722 - B727-200"
+                    - option "R722 - B727-200 Super 27"
+                    - option "B732 - B737-200"
+                    - option "B733 - B737-300"
+                    - option "B734 - B737-400"
+                    - option "B735 - B737-500"
+                    - option "B736 - B737-600"
+                    - option "B737 - B737-700"
+                    - option "BBJ1 - B737 BBJ"
+                    - option "B37M - B737 MAX 7"
+                    - option "B738 - B737-800"
+                    - option "BBJ2 - B737 BBJ2"
+                    - option "B38M - B737 MAX 8"
+                    - option "B739 - B737-900"
+                    - option "BBJ3 - B737 BBJ3"
+                    - option "B39M - B737 MAX 9"
+                    - option "B741 - B747-100B"
+                    - option "B742 - B747-200B"
+                    - option "B744 - B747-400"
+                    - option "B74F - B747-400F"
+                    - option "B748 - B747-8"
+                    - option "B48F - B747-8F"
+                    - option "B752 - B757-200"
+                    - option "B75F - B757-200PF"
+                    - option "B753 - B757-300"
+                    - option "B762 - B767-200ER"
+                    - option "B763 - B767-300ER"
+                    - option "B76F - B767-300F"
+                    - option "B764 - B767-400ER"
+                    - option "B772 - B777-200ER"
+                    - option "B77F - B777-F"
+                    - option "B77L - B777-200LR"
+                    - option "B77W - B777-300ER"
+                    - option "B788 - B787-8"
+                    - option "B789 - B787-9"
+                    - option "B78X - B787-10"
+                    - option "BE9L - King Air C90B"
+                    - option "BE20 - King Air 200"
+                    - option "BE24 - Beechcraft C24R"
+                    - option "BE36 - Bonanza A36"
+                    - option "BT36 - Bonanza B36TC"
+                    - option "B36T - Bonanza B36TP"
+                    - option "BE58 - Baron 58"
+                    - option "B58T - Baron 58P"
+                    - option "BE60 - Duke B60"
+                    - option "BE6G - Grand Duke"
+                    - option "B60T - Turbine Duke"
+                    - option "BN2P - BN-2 Islander"
+                    - option "C130 - C-130K Hercules"
+                    - option "C30J - C-130J Super Hercules"
+                    - option "C160 - Transall C-160"
+                    - option "C17 - C-17A Globemaster"
+                    - option "C172 - Cessna 172R"
+                    - option "C182 - Cessna 182T"
+                    - option "R182 - Cessna 182RG"
+                    - option "C208 - Cessna 208B"
+                    - option "C212 - C-212-200 Aviocar"
+                    - option "C310 - Cessna 310R"
+                    - option "C337 - Cessna 337H"
+                    - option "C404 - C404 Titan"
+                    - option "C408 - Cessna 408"
+                    - option "C414 - Cessna 414AW"
+                    - option "C46 - Curtiss C-46D"
+                    - option "C510 - C510 Mustang"
+                    - option "C525 - Citation CJ1/M2"
+                    - option "C25A - Citation CJ2"
+                    - option "C25B - Citation CJ3"
+                    - option "C25C - Citation CJ4"
+                    - option "C550 - Citation II"
+                    - option "C56X - Citation 560 XLS+"
+                    - option "C680 - Sovereign+"
+                    - option "C700 - Longitude"
+                    - option "C750 - Citation X"
+                    - option "C919 - C919-100"
+                    - option "CL30 - Challenger 300"
+                    - option "CL35 - Challenger 350"
+                    - option "CL60 - Challenger 650"
+                    - option "CONI - L-049"
+                    - option "CONS - L-1049G"
+                    - option "CRJ2 - CRJ-200"
+                    - option "CRJ5 - CRJ-550"
+                    - option "CRJ7 - CRJ-700"
+                    - option "CRJ9 - CRJ-900"
+                    - option "CRJX - CRJ-1000"
+                    - option "D328 - Dornier 328-100"
+                    - option "DA40 - Diamond DA40"
+                    - option "DA4N - Diamond DA40 NG"
+                    - option "DA42 - Diamond DA42"
+                    - option "DA62 - Diamond DA62"
+                    - option "DC10 - DC-10-30"
+                    - option "DC3 - Douglas DC-3"
+                    - option "DC6 - Douglas DC-6"
+                    - option "DC85 - DC-8-55"
+                    - option "DC86 - DC-8-63"
+                    - option "DC91 - DC-9-15"
+                    - option "DC93 - DC-9-32"
+                    - option "DH8A - DHC8-102"
+                    - option "DH8B - DHC8-200"
+                    - option "DH8C - DHC8-311"
+                    - option "DH8D - DHC8-402"
+                    - option "DHC2 - Beaver"
+                    - option "DHC6 - Twin Otter"
+                    - option "DHC7 - Dash 7"
+                    - option "E110 - EMB-110"
+                    - option "E135 - ERJ-135LR"
+                    - option "E13L - Legacy 600"
+                    - option "E140 - ERJ-140LR"
+                    - option "E145 - ERJ-145LR"
+                    - option "E170 - ERJ-170"
+                    - option "E175 - ERJ-175"
+                    - option "E190 - ERJ-190"
+                    - option "E19L - Lineage 1000"
+                    - option "E195 - ERJ-195"
+                    - option "E50P - Phenom 100"
+                    - option "E55P - Phenom 300"
+                    - option "EA50 - Eclipse 550"
+                    - option "EVAL - Eviation Alice"
+                    - option "F28 - Fokker F28"
+                    - option "F50 - Fokker F50"
+                    - option "F70 - Fokker 70"
+                    - option "F100 - Fokker 100"
+                    - option "F406 - Cessna F406"
+                    - option "FA50 - Falcon 50"
+                    - option "FA7X - Falcon 7X"
+                    - option "FA8X - Falcon 8X"
+                    - option "GLEX - Global 6000"
+                    - option "GLF4 - GLF.IV-SP"
+                    - option "GLF6 - GLF.VI G650"
+                    - option "GA8C - GLF.VIII G800"
+                    - option "H25B - Hawker 800XP"
+                    - option "HDJT - Hondajet"
+                    - option "IL18 - Ilyushin IL-18D"
+                    - option "IL76 - Ilyushin IL-76"
+                    - option "JS41 - BAe JS-41"
+                    - option "KODI - Kodiak 100"
+                    - option "L101 - L1011-500"
+                    - option "L410 - Let L-410"
+                    - option "LJ25 - Learjet 25"
+                    - option "LJ35 - Learjet 35A"
+                    - option "LJ45 - Learjet 45"
+                    - option "MD11 - MD-11"
+                    - option "MD1F - MD-11F"
+                    - option "MD82 - DC-9-82"
+                    - option "MD83 - DC-9-83"
+                    - option "MD88 - MD-88"
+                    - option "MD90 - MD-90-30"
+                    - option "MU2 - MU-2B-60"
+                    - option "P06T - Tecnam P2006T"
+                    - option "P180 - P.180 Avanti II"
+                    - option "P18E - P.180 Avanti EVO"
+                    - option "P212 - Tecnam P2012"
+                    - option "P46T - Piper M500"
+                    - option "M600 - Piper M600"
+                    - option "PA24 - Piper Comanche"
+                    - option "PA31 - Piper Chieftain"
+                    - option "PA34 - Piper Seneca"
+                    - option "PA44 - Piper Seminole"
+                    - option "PAY3 - Piper Cheyenne III"
+                    - option "PC12 - Pilatus PC12"
+                    - option "PC24 - Pilatus PC24"
+                    - option "PRM1 - Beech Premier IA"
+                    - option "RJ70 - Avro RJ70"
+                    - option "RJ85 - Avro RJ85"
+                    - option "RJ1H - Avro RJ100"
+                    - option "SB20 - Saab 2000"
+                    - option "SF34 - Saab 340B"
+                    - option "SF50 - Vision Jet"
+                    - option "SH33 - Short 330"
+                    - option "SH36 - Short 360"
+                    - option "SR22 - Cirrus SR22"
+                    - option "SR2T - Cirrus SR22T"
+                    - option "STAR - Starship 2000A"
+                    - option "SU95 - Superjet 100"
+                    - option "SW4 - Metroliner"
+                    - option "T134 - Tu-134A-3"
+                    - option "T154 - Tu-154B2"
+                    - option "T204 - Tu-204-100B"
+                    - option "TBM8 - TBM 850"
+                    - option "TBM9 - TBM 900"
+                    - option "VC10 - Vickers VC-10"
+                    - option "YK40 - Yak-40"
+                    - option "YK42 - Yak-42"
+                    - option "YS11 - NAMC YS-11"
+                - figure [ref=e124]:
+                  - 'heading "Airframe Sort: Registration Save as default Search" [level=2] [ref=e125]':
+                    - generic [ref=e126]: Airframe
+                    - combobox [ref=e129] [cursor=pointer]:
+                      - 'option "Sort: Registration" [selected]'
+                      - 'option "Sort: ICAO Code"'
+                      - 'option "Sort: Name"'
+                      - 'option "Sort: Comments"'
+                    - generic "Save as default" [ref=e130] [cursor=pointer]
+                    - generic "Search for an airframe" [ref=e132] [cursor=pointer]: Search
+                  - combobox [ref=e134] [cursor=pointer]:
+                    - option "0 Airframes Available" [selected]
+                    - option "---------------------" [disabled]
+              - figure [ref=e135]:
+                - heading "Climb Profile" [level=2] [ref=e136]
+                - combobox [ref=e138] [cursor=pointer]:
+                  - option "AUTO" [selected]
+              - figure [ref=e139]:
+                - generic [ref=e140]:
+                  - heading "Cruise Profile" [level=2] [ref=e141]
+                  - combobox [ref=e143] [cursor=pointer]:
+                    - option "AUTO" [selected]
+              - figure [ref=e144]:
+                - heading "Descent Profile" [level=2] [ref=e145]
+                - combobox [ref=e147] [cursor=pointer]:
+                  - option "AUTO" [selected]
+              - figure [ref=e148]:
+                - heading "ATC Callsign" [level=2] [ref=e149]
+                - textbox "ZZZ0000" [ref=e150]
+              - figure [ref=e151]:
+                - heading "Fuel Factor ?" [level=2] [ref=e152]:
+                  - text: Fuel Factor
+                  - generic "Use this option to increase or decrease the amount of fuel SimBrief calculates. For example, if you routinely burn 5% more fuel than what SimBrief plans with this aircraft, try using a fuel factor of \"P05\"." [ref=e153] [cursor=pointer]: "?"
+                - combobox [ref=e155] [cursor=pointer]:
+                  - option "P80"
+                  - option "P79"
+                  - option "P78"
+                  - option "P77"
+                  - option "P76"
+                  - option "P75"
+                  - option "P74"
+                  - option "P73"
+                  - option "P72"
+                  - option "P71"
+                  - option "P70"
+                  - option "P69"
+                  - option "P68"
+                  - option "P67"
+                  - option "P66"
+                  - option "P65"
+                  - option "P64"
+                  - option "P63"
+                  - option "P62"
+                  - option "P61"
+                  - option "P60"
+                  - option "P59"
+                  - option "P58"
+                  - option "P57"
+                  - option "P56"
+                  - option "P55"
+                  - option "P54"
+                  - option "P53"
+                  - option "P52"
+                  - option "P51"
+                  - option "P50"
+                  - option "P49"
+                  - option "P48"
+                  - option "P47"
+                  - option "P46"
+                  - option "P45"
+                  - option "P44"
+                  - option "P43"
+                  - option "P42"
+                  - option "P41"
+                  - option "P40"
+                  - option "P39"
+                  - option "P38"
+                  - option "P37"
+                  - option "P36"
+                  - option "P35"
+                  - option "P34"
+                  - option "P33"
+                  - option "P32"
+                  - option "P31"
+                  - option "P30"
+                  - option "P29"
+                  - option "P28"
+                  - option "P27"
+                  - option "P26"
+                  - option "P25"
+                  - option "P24"
+                  - option "P23"
+                  - option "P22"
+                  - option "P21"
+                  - option "P20"
+                  - option "P19"
+                  - option "P18"
+                  - option "P17"
+                  - option "P16"
+                  - option "P15"
+                  - option "P14"
+                  - option "P13"
+                  - option "P12"
+                  - option "P11"
+                  - option "P10"
+                  - option "P09"
+                  - option "P08"
+                  - option "P07"
+                  - option "P06"
+                  - option "P05"
+                  - option "P04"
+                  - option "P03"
+                  - option "P02"
+                  - option "P01"
+                  - option "P00" [selected]
+                  - option "M01"
+                  - option "M02"
+                  - option "M03"
+                  - option "M04"
+                  - option "M05"
+                  - option "M06"
+                  - option "M07"
+                  - option "M08"
+                  - option "M09"
+                  - option "M10"
+                  - option "M11"
+                  - option "M12"
+                  - option "M13"
+                  - option "M14"
+                  - option "M15"
+                  - option "M16"
+                  - option "M17"
+                  - option "M18"
+                  - option "M19"
+                  - option "M20"
+                  - option "M21"
+                  - option "M22"
+                  - option "M23"
+                  - option "M24"
+                  - option "M25"
+                  - option "M26"
+                  - option "M27"
+                  - option "M28"
+                  - option "M29"
+                  - option "M30"
+                  - option "M31"
+                  - option "M32"
+                  - option "M33"
+                  - option "M34"
+                  - option "M35"
+                  - option "M36"
+                  - option "M37"
+                  - option "M38"
+                  - option "M39"
+                  - option "M40"
+                  - option "M41"
+                  - option "M42"
+                  - option "M43"
+                  - option "M44"
+                  - option "M45"
+                  - option "M46"
+                  - option "M47"
+                  - option "M48"
+                  - option "M49"
+                  - option "M50"
+                  - option "M51"
+                  - option "M52"
+                  - option "M53"
+                  - option "M54"
+                  - option "M55"
+                  - option "M56"
+                  - option "M57"
+                  - option "M58"
+                  - option "M59"
+                  - option "M60"
+                  - option "M61"
+                  - option "M62"
+                  - option "M63"
+                  - option "M64"
+                  - option "M65"
+                  - option "M66"
+                  - option "M67"
+                  - option "M68"
+                  - option "M69"
+                  - option "M70"
+                  - option "M71"
+                  - option "M72"
+                  - option "M73"
+                  - option "M74"
+                  - option "M75"
+                  - option "M76"
+                  - option "M77"
+                  - option "M78"
+                  - option "M79"
+                  - option "M80"
+              - figure [ref=e156]:
+                - heading "Registration" [level=2] [ref=e157]
+                - textbox "N999SB" [ref=e158]
+              - figure [ref=e159]:
+                - heading "Fin Number" [level=2] [ref=e160]
+                - textbox "999" [ref=e161]
+              - figure [ref=e162]:
+                - heading [level=2] [ref=e163]
+                - generic [ref=e165] [cursor=pointer]:
+                  - text: More
+                  - generic [ref=e166]: Options
+              - separator [ref=e167]
+              - figure [ref=e168]:
+                - heading "SELCAL" [level=2] [ref=e169]
+                - textbox "ABCD" [ref=e170]
+              - figure [ref=e171]:
+                - heading "Mode-S Code" [level=2] [ref=e172]
+                - textbox "ZZZZZZ" [ref=e173]
+              - figure [ref=e174]:
+                - heading "ICAO Equipment Builder" [level=2] [ref=e175]:
+                  - text: ICAO Equipment
+                  - generic "Open the ICAO equipment editor" [ref=e177] [cursor=pointer]: Builder
+                - textbox "SDFGHRWY" [ref=e178]
+              - figure [ref=e179]:
+                - heading "Transponder Builder" [level=2] [ref=e180]:
+                  - text: Transponder
+                  - generic "Open the transponder equipment editor" [ref=e182] [cursor=pointer]: Builder
+                - textbox "LB1" [ref=e183]
+              - figure [ref=e184]:
+                - heading "PBN Capability Builder" [level=2] [ref=e185]:
+                  - text: PBN Capability
+                  - generic "Open the PBN capability builder" [ref=e187] [cursor=pointer]: Builder
+                - textbox "A1B1C1D1L1O1S1" [ref=e188]
+              - figure [ref=e189]:
+                - heading "Extra FPL Info (Item 18) Builder" [level=2] [ref=e190]:
+                  - text: Extra FPL Info (Item 18)
+                  - generic "Open the flight plan remarks builder" [ref=e192] [cursor=pointer]: Builder
+                - textbox "DAT/V RMK/SIMBRIEF" [ref=e193]
+          - generic [ref=e194]:
+            - heading "Selections Save Defaults Outdated AIRAC" [level=1] [ref=e195]:
+              - generic [ref=e196]: Selections
+              - generic "Save the current selections as default. They will be automatically loaded whenever you create a new flight." [ref=e197] [cursor=pointer]: Save Defaults
+              - generic [ref=e198]: Outdated AIRAC
+            - generic [ref=e199]:
+              - figure [ref=e200]:
+                - heading "OFP Layout" [level=2] [ref=e201]
+                - combobox [ref=e203] [cursor=pointer]:
+                  - option "LIDO" [selected]
+                  - option "AAL"
+                  - option "ACA"
+                  - option "AFR 2012"
+                  - option "AFR 2017"
+                  - option "AWE"
+                  - option "BAW"
+                  - option "BER"
+                  - option "DAL"
+                  - option "DLH"
+                  - option "EIN"
+                  - option "ETD"
+                  - option "EZY"
+                  - option "GWI"
+                  - option "JBU"
+                  - option "JZA"
+                  - option "KLM"
+                  - option "QFA"
+                  - option "RYR"
+                  - option "SWA"
+                  - option "THY"
+                  - option "UAE"
+                  - option "UAL 2012"
+                  - option "UAL 2018"
+                  - option "WZZ"
+              - figure [ref=e204]:
+                - heading "AIRAC Cycle" [level=2] [ref=e205]
+                - combobox [ref=e207] [cursor=pointer]:
+                  - option "AIRAC 2611 - 29Oct26 to 25Nov26"
+                  - option "AIRAC 2503 - 20Mar25 to 16Apr25" [selected]
+              - figure [ref=e208]:
+                - heading "Units" [level=2] [ref=e209]
+                - combobox [ref=e211] [cursor=pointer]:
+                  - option "Kilograms" [selected]
+                  - option "Pounds"
+              - figure [ref=e212]:
+                - heading "Flight Maps" [level=2] [ref=e213]
+                - combobox [ref=e215] [cursor=pointer]:
+                  - option "Detailed" [selected]
+                  - option "Route Only"
+                  - option "Simple"
+                  - option "None"
+              - figure [ref=e216]:
+                - heading "Taxi Time Min" [level=2] [ref=e217]:
+                  - text: Taxi Time
+                  - generic [ref=e218]: Min
+                - textbox "20" [ref=e219]
+                - generic [ref=e220]: /
+                - textbox "8" [ref=e221]
+              - figure [ref=e222]:
+                - heading "Flight Rules" [level=2] [ref=e223]
+                - combobox [ref=e225] [cursor=pointer]:
+                  - option "IFR" [selected]
+                  - option "VFR"
+                  - option "IFR to VFR"
+                  - option "VFR to IFR"
+              - figure [ref=e226]:
+                - heading "Type of Flight" [level=2] [ref=e227]
+                - combobox [ref=e229] [cursor=pointer]:
+                  - option "Scheduled" [selected]
+                  - option "Non-scheduled"
+                  - option "General Aviation"
+                  - option "Military"
+                  - option "Training"
+              - figure [ref=e230]:
+                - heading "Alternates" [level=2] [ref=e231]
+                - combobox [ref=e233] [cursor=pointer]:
+                  - option "None"
+                  - option "1" [selected]
+                  - option "2"
+                  - option "3"
+                  - option "4"
+            - generic [ref=e234]:
+              - figure [ref=e235]:
+                - heading "Detailed Navlog" [level=4] [ref=e236]
+                - checkbox [checked] [ref=e238] [cursor=pointer]
+              - figure [ref=e240]:
+                - heading "ETOPS Planning" [level=4] [ref=e241]
+                - checkbox [checked] [ref=e243] [cursor=pointer]
+              - figure [ref=e245]:
+                - heading "Plan Stepclimbs" [level=4] [ref=e246]
+                - checkbox [checked] [ref=e248] [cursor=pointer]
+              - figure [ref=e250]:
+                - heading "Runway Analysis" [level=4] [ref=e251]
+                - checkbox [checked] [ref=e253] [cursor=pointer]
+              - figure [ref=e255]:
+                - heading "Include NOTAMs" [level=4] [ref=e256]
+                - checkbox [checked] [ref=e258] [cursor=pointer]
+              - figure [ref=e260]:
+                - heading "FIR NOTAMs" [level=4] [ref=e261]
+                - checkbox [checked] [ref=e263] [cursor=pointer]
+          - generic [ref=e265]:
+            - heading "Optional Entries - Automatic , can be customized Hide Options" [level=1] [ref=e266]:
+              - generic [ref=e267]: Optional Entries
+              - generic [ref=e268]: "- Automatic , can be customized"
+              - generic [ref=e269] [cursor=pointer]: Hide Options
+            - generic [ref=e271]:
+              - figure [ref=e272]:
+                - heading "Sched Block Time" [level=2] [ref=e273]
+                - textbox "0" [ref=e274]
+                - generic [ref=e275]: ":"
+                - textbox "00" [ref=e276]
+              - figure [ref=e277]:
+                - heading "Depart R w y Calculate takeoff performance" [level=2] [ref=e278]:
+                  - generic [ref=e279]: Depart R w y
+                  - img "Calculate takeoff performance" [ref=e280] [cursor=pointer]
+                - combobox [ref=e282] [cursor=pointer]:
+                  - option "AUTO" [selected]
+              - figure [ref=e283]:
+                - heading "Arrival R w y Calculate landing performance" [level=2] [ref=e284]:
+                  - generic [ref=e285]: Arrival R w y
+                  - img "Calculate landing performance" [ref=e286] [cursor=pointer]
+                - combobox [ref=e288] [cursor=pointer]:
+                  - option "AUTO" [selected]
+              - figure [ref=e289]:
+                - heading "Altitude Feet" [level=2] [ref=e290]:
+                  - text: Altitude
+                  - generic [ref=e291]: Feet
+                - textbox "AUTO" [ref=e292]
+              - figure [ref=e293]:
+                - heading "Passengers" [level=2] [ref=e294]
+                - generic [ref=e295]:
+                  - combobox [ref=e297] [cursor=pointer]:
+                    - option [selected]
+                    - option "Auto"
+                    - option "None"
+                    - option "Full"
+                  - textbox "AUTO" [ref=e298]
+              - figure [ref=e299]:
+                - heading "Freight KG ?" [level=2] [ref=e300]:
+                  - text: Freight
+                  - generic [ref=e301]: KG
+                  - generic "By default, passenger baggage is automatically added based on the \"Passengers\" option. Only use this option to load any additional cargo/freight you would like to add in addition to the passenger baggage." [ref=e302] [cursor=pointer]: "?"
+                - generic [ref=e303]:
+                  - combobox [ref=e305] [cursor=pointer]:
+                    - option [selected]
+                    - option "Auto"
+                    - option "None"
+                    - option "Full"
+                  - textbox "NONE" [ref=e306]
+              - figure [ref=e307]:
+                - heading "Payload KG" [level=2] [ref=e308]:
+                  - text: Payload
+                  - generic [ref=e309]: KG
+                - generic [ref=e310]:
+                  - combobox [ref=e312] [cursor=pointer]:
+                    - option [selected]
+                    - option "Auto"
+                    - option "None"
+                    - option "Full"
+                  - textbox "AUTO" [ref=e313]
+              - figure [ref=e314]:
+                - heading "ZFW KG" [level=2] [ref=e315]:
+                  - text: ZFW
+                  - generic [ref=e316]: KG
+                - generic [ref=e317]:
+                  - combobox [ref=e319] [cursor=pointer]:
+                    - option [selected]
+                    - option "Auto"
+                    - option "Minimum"
+                    - option "Maximum"
+                  - textbox "AUTO" [ref=e320]
+          - generic [ref=e321]:
+            - heading "Fuel Planning - Custom fuel policies Show Options" [level=1] [ref=e322]:
+              - generic [ref=e323]: Fuel Planning
+              - generic [ref=e324]: "- Custom fuel policies"
+              - generic [ref=e325] [cursor=pointer]: Show Options
+            - generic [ref=e327]:
+              - figure [ref=e328]:
+                - heading "Contingency Save as default" [level=2] [ref=e329]:
+                  - generic [ref=e330]: Contingency
+                  - generic "Save as default" [ref=e331] [cursor=pointer]
+                - combobox [ref=e333] [cursor=pointer]:
+                  - option "Auto" [selected]
+                  - option "None"
+                  - option "- - - - - - - - - - - - -" [disabled]
+                  - option "EASA"
+                  - option "- - - - - - - - - - - - -" [disabled]
+                  - option "3% or 5 Minutes"
+                  - option "3% or 10 Minutes"
+                  - option "3% or 15 Minutes"
+                  - option "3% or 20 Minutes"
+                  - option "- - - - - - - - - - - - -" [disabled]
+                  - option "5% or 5 Minutes"
+                  - option "5% or 10 Minutes"
+                  - option "5% or 15 Minutes"
+                  - option "5% or 20 Minutes"
+                  - option "- - - - - - - - - - - - -" [disabled]
+                  - option "2%"
+                  - option "3%"
+                  - option "5%"
+                  - option "10%"
+                  - option "15%"
+                  - option "20%"
+                  - option "- - - - - - - - - - - - -" [disabled]
+                  - option "1 Minute"
+                  - option "2 Minutes"
+                  - option "3 Minutes"
+                  - option "4 Minutes"
+                  - option "5 Minutes"
+                  - option "6 Minutes"
+                  - option "7 Minutes"
+                  - option "8 Minutes"
+                  - option "9 Minutes"
+                  - option "10 Minutes"
+                  - option "11 Minutes"
+                  - option "12 Minutes"
+                  - option "13 Minutes"
+                  - option "14 Minutes"
+                  - option "15 Minutes"
+                  - option "16 Minutes"
+                  - option "17 Minutes"
+                  - option "18 Minutes"
+                  - option "19 Minutes"
+                  - option "20 Minutes"
+                  - option "21 Minutes"
+                  - option "22 Minutes"
+                  - option "23 Minutes"
+                  - option "24 Minutes"
+                  - option "25 Minutes"
+                  - option "26 Minutes"
+                  - option "27 Minutes"
+                  - option "28 Minutes"
+                  - option "29 Minutes"
+                  - option "30 Minutes"
+                  - option "31 Minutes"
+                  - option "32 Minutes"
+                  - option "33 Minutes"
+                  - option "34 Minutes"
+                  - option "35 Minutes"
+                  - option "36 Minutes"
+                  - option "37 Minutes"
+                  - option "38 Minutes"
+                  - option "39 Minutes"
+                  - option "40 Minutes"
+                  - option "41 Minutes"
+                  - option "42 Minutes"
+                  - option "43 Minutes"
+                  - option "44 Minutes"
+                  - option "45 Minutes"
+                  - option "46 Minutes"
+                  - option "47 Minutes"
+                  - option "48 Minutes"
+                  - option "49 Minutes"
+                  - option "50 Minutes"
+                  - option "51 Minutes"
+                  - option "52 Minutes"
+                  - option "53 Minutes"
+                  - option "54 Minutes"
+                  - option "55 Minutes"
+                  - option "56 Minutes"
+                  - option "57 Minutes"
+                  - option "58 Minutes"
+                  - option "59 Minutes"
+                  - option "60 Minutes"
+              - figure [ref=e334]:
+                - heading "Reserve Save as default" [level=2] [ref=e335]:
+                  - generic [ref=e336]: Reserve
+                  - generic "Save as default" [ref=e337] [cursor=pointer]
+                - combobox [ref=e339] [cursor=pointer]:
+                  - option "Auto" [selected]
+                  - option "None"
+                  - option "- - - - - - - - - - - - -" [disabled]
+                  - option "FAA (Auto)"
+                  - option "FAA (Domestic)"
+                  - option "FAA (Flag)"
+                  - option "FAA (B043)"
+                  - option "FAA (B343)"
+                  - option "- - - - - - - - - - - - -" [disabled]
+                  - option "15 Minutes"
+                  - option "30 Minutes"
+                  - option "35 Minutes"
+                  - option "40 Minutes"
+                  - option "45 Minutes"
+                  - option "60 Minutes"
+                  - option "75 Minutes"
+                  - option "90 Minutes"
+              - figure [ref=e340]:
+                - heading "Taxi Fuel KG ?" [level=2] [ref=e341]:
+                  - text: Taxi Fuel
+                  - generic [ref=e342]: KG
+                  - generic "Manually specify the amount of taxi fuel to plan. By default, SimBrief will plan taxi fuel based on the \"Taxi Out\" time above, but you can override that amount here." [ref=e343] [cursor=pointer]: "?"
+                - textbox "AUTO" [ref=e344]
+              - figure [ref=e345]:
+                - heading "FOB KG ?" [level=2] [ref=e346]:
+                  - generic [ref=e347]: FOB
+                  - generic [ref=e348]: KG
+                  - generic "Manually specify the minimum amount of block fuel to depart with (Fuel On Board). If SimBrief determines that less fuel is required for the flight, extra fuel will be added to make up the difference." [ref=e349] [cursor=pointer]: "?"
+                - textbox "AUTO" [ref=e350]
+                - combobox [ref=e352] [cursor=pointer]:
+                  - option "KG" [selected]
+                  - option "Min"
+              - figure [ref=e353]:
+                - heading "FOD KG ?" [level=2] [ref=e354]:
+                  - generic [ref=e355]: FOD
+                  - generic [ref=e356]: KG
+                  - generic "Manually specify the minimum amount of fuel to arrive with (Fuel over Destination). If SimBrief determines that you will land with less than this fuel, extra fuel will be added to make up the difference." [ref=e357] [cursor=pointer]: "?"
+                - textbox "AUTO" [ref=e358]
+                - combobox [ref=e360] [cursor=pointer]:
+                  - option "KG" [selected]
+                  - option "Min"
+              - figure [ref=e361]:
+                - heading "MEL Fuel KG" [level=2] [ref=e362]:
+                  - generic [ref=e363]: MEL Fuel
+                  - generic [ref=e364]: KG
+                - textbox "0" [ref=e365]
+                - combobox [ref=e367] [cursor=pointer]:
+                  - option "KG" [selected]
+                  - option "Min"
+              - figure [ref=e368]:
+                - heading "ATC Fuel KG" [level=2] [ref=e369]:
+                  - generic [ref=e370]: ATC Fuel
+                  - generic [ref=e371]: KG
+                - textbox "0" [ref=e372]
+                - combobox [ref=e374] [cursor=pointer]:
+                  - option "KG" [selected]
+                  - option "Min"
+              - figure [ref=e375]:
+                - heading "WXX Fuel KG" [level=2] [ref=e376]:
+                  - generic [ref=e377]: WXX Fuel
+                  - generic [ref=e378]: KG
+                - textbox "0" [ref=e379]
+                - combobox [ref=e381] [cursor=pointer]:
+                  - option "KG" [selected]
+                  - option "Min"
+              - figure [ref=e382]:
+                - heading "EXTRA KG Save as default" [level=2] [ref=e383]:
+                  - combobox [ref=e386]:
+                    - option "EXTRA" [selected]
+                    - option "ACF90"
+                    - option "ACF99"
+                    - option "ADDNL"
+                    - option "APU"
+                    - option "CONT"
+                    - option "HOLD"
+                    - option "NAIFR"
+                    - option "OPN"
+                  - generic [ref=e387]: KG
+                  - generic "Save as default" [ref=e388] [cursor=pointer]
+                - textbox "0" [ref=e389]
+                - combobox [ref=e391] [cursor=pointer]:
+                  - option "KG" [selected]
+                  - option "Min"
+              - figure [ref=e392]:
+                - heading "Tankering KG" [level=2] [ref=e393]:
+                  - generic [ref=e394]: Tankering
+                  - generic [ref=e395]: KG
+                - textbox "0" [ref=e396]
+                - combobox [ref=e398] [cursor=pointer]:
+                  - option "KG" [selected]
+                  - option "Min"
+                  - option "FOD"
+          - generic [ref=e399]:
+            - heading "Text Entries - Names and remarks Show Options" [level=1] [ref=e400]:
+              - generic [ref=e401]: Text Entries
+              - generic [ref=e402]: "- Names and remarks"
+              - generic [ref=e403] [cursor=pointer]: Show Options
+            - generic [ref=e405]:
+              - figure [ref=e406]:
+                - heading "Pilot ID" [level=2] [ref=e407]
+                - textbox "000000" [ref=e408]: "836473"
+              - figure [ref=e409]:
+                - heading "Captain Name" [level=2] [ref=e410]
+                - textbox "Default" [ref=e411]: S T
+              - figure [ref=e412]:
+                - heading "First Officer Name Save as default" [level=2] [ref=e413]:
+                  - generic [ref=e414]: First Officer Name
+                  - generic "Save as default" [ref=e415] [cursor=pointer]
+                - textbox "Random" [ref=e416]
+              - figure [ref=e417]:
+                - heading "Dispatcher Name Save as default" [level=2] [ref=e418]:
+                  - generic [ref=e419]: Dispatcher Name
+                  - generic "Save as default" [ref=e420] [cursor=pointer]
+                - textbox "Random" [ref=e421]
+              - figure [ref=e422]:
+                - heading "Dispatcher Remarks Save as default" [level=3] [ref=e423]:
+                  - text: Dispatcher Remarks
+                  - generic "Save as default" [ref=e424] [cursor=pointer]
+                - textbox "CUSTOM DISPATCH REMARKS, SEPARATE EACH REMARK WITH A NEW LINE" [ref=e425]:
+                  - /placeholder: "CUSTOM DISPATCH REMARKS, \nSEPARATE EACH REMARK WITH A NEW LINE"
+        - generic [ref=e426]:
+          - generic [ref=e427]:
+            - heading "Route IFPS Validation autorouter EDI-GLA Global Route Database RouteFinder SkyVector Flightaware" [level=1] [ref=e428]:
+              - generic [ref=e429]: Route
+              - img "IFPS Validation" [ref=e431] [cursor=pointer]
+              - link [ref=e432] [cursor=pointer]:
+                - /url: https://www.autorouter.aero
+                - img "autorouter" [ref=e433]
+              - link [ref=e434] [cursor=pointer]:
+                - /url: https://edi-gla.co.uk
+                - img "EDI-GLA" [ref=e435]
+              - link [ref=e436] [cursor=pointer]:
+                - /url: https://grd.aero-nav.com
+                - img "Global Route Database" [ref=e437]
+              - link [ref=e438] [cursor=pointer]:
+                - /url: http://rfinder.asalink.net/free/
+                - img "RouteFinder" [ref=e439]
+              - link [ref=e440] [cursor=pointer]:
+                - /url: https://www.skyvector.com
+                - img "SkyVector" [ref=e441]
+              - link [ref=e442] [cursor=pointer]:
+                - /url: https://flightaware.com
+                - img "Flightaware" [ref=e443]
+            - figure [ref=e445]:
+              - heading "Selected Route" [level=3] [ref=e446]
+              - textbox "ENTER YOUR ROUTE HERE" [ref=e447]
+            - generic [ref=e448]:
+              - figure [ref=e449]:
+                - generic [ref=e450] [cursor=pointer]: Analyze Route
+                - generic [ref=e451] [cursor=pointer]: Find SID/STAR
+                - generic [ref=e452] [cursor=pointer]: View SID/STAR
+              - figure [ref=e453]:
+                - generic [ref=e454]: This route has not been analyzed.
+          - generic [ref=e455]:
+            - heading "Suggested Routes - Click a route to use it View All Routes" [level=1] [ref=e456]:
+              - generic [ref=e457]: Suggested Routes
+              - generic [ref=e458]: "- Click a route to use it"
+              - generic "View a complete list of route suggestions" [ref=e459] [cursor=pointer]:
+                - generic [ref=e460]: View All
+                - generic [ref=e461]: Routes
+            - generic [ref=e463]:
+              - generic [ref=e464]: NO ROUTE TO SHOW
+              - generic [ref=e465]: NO ROUTE TO SHOW
+              - generic [ref=e466]: NO ROUTE TO SHOW
+              - generic [ref=e467]: NO ROUTE TO SHOW
+              - generic [ref=e468]: NO ROUTE TO SHOW
+          - generic [ref=e470]:
+            - heading "Route Finder - Generate a custom route Show Options" [level=1] [ref=e471]:
+              - generic [ref=e472]: Route Finder
+              - generic [ref=e473]: "- Generate a custom route"
+              - generic [ref=e474] [cursor=pointer]: Show Options
+            - generic [ref=e476]:
+              - generic [ref=e477]:
+                - figure [ref=e478]:
+                  - heading "Route Type" [level=2] [ref=e479]
+                  - combobox [ref=e481] [cursor=pointer]:
+                    - option "Standard" [selected]
+                    - option "VOR Only"
+                - figure [ref=e482]:
+                  - heading "Estimated Altitude" [level=2] [ref=e483]
+                  - textbox "36000" [ref=e484]
+                - figure [ref=e485]:
+                  - heading "Oceanic Tracks" [level=2] [ref=e486]
+                  - combobox [ref=e488] [cursor=pointer]:
+                    - option "Enabled" [selected]
+                    - option "Disabled"
+                - figure [ref=e489]:
+                  - heading "Force Track" [level=2] [ref=e490]
+                  - combobox [ref=e492] [cursor=pointer]:
+                    - option "AUTO" [selected]
+                    - option "- - - - -" [disabled]
+                    - option "NATA"
+                    - option "NATB"
+                    - option "NATC"
+                    - option "NATD"
+                    - option "NATE"
+                    - option "NATF"
+                    - option "NATG"
+                    - option "NATR"
+                    - option "NATS"
+                    - option "NATT"
+                    - option "NATU"
+                    - option "NATV"
+                    - option "NATW"
+                    - option "NATX"
+                    - option "NATY"
+                    - option "NATZ"
+                - figure [ref=e493]:
+                  - heading "Avoid Airways/Fixes/SIDs/STARs/FIRs" [level=2] [ref=e494]
+                  - textbox "Separate entries with a space" [ref=e495]
+                - figure [ref=e496]:
+                  - heading "Include These Fixes/Segments" [level=2] [ref=e497]
+                  - textbox "Separate entries with a space" [ref=e498]
+              - generic [ref=e499]:
+                - figure [ref=e500]:
+                  - generic [ref=e501] [cursor=pointer]: Find Route
+                - figure [ref=e502]:
+                  - generic [ref=e503] [cursor=pointer]: Find SID/STAR
+                - figure [ref=e504]:
+                  - generic [ref=e505] [cursor=pointer]: Analyze Route
+                - figure [ref=e506]:
+                  - generic [ref=e507] [cursor=pointer]: IFPS Validation
+          - generic [ref=e508]:
+            - heading "Alternate Airports - Custom alternates and routings Show Options" [level=1] [ref=e509]:
+              - generic [ref=e510]: Alternate Airports
+              - generic [ref=e511]: "- Custom alternates and routings"
+              - generic [ref=e512] [cursor=pointer]: Show Options
+            - generic [ref=e514]:
+              - figure [ref=e515]:
+                - heading "Alternates" [level=2] [ref=e516]
+                - combobox [ref=e518] [cursor=pointer]:
+                  - option "None"
+                  - option "1" [selected]
+                  - option "2"
+                  - option "3"
+                  - option "4"
+              - figure [ref=e519]:
+                - heading "Distance NM" [level=2] [ref=e520]:
+                  - text: Distance
+                  - generic [ref=e521]: NM
+                - textbox "400" [ref=e522]
+              - figure [ref=e523]:
+                - heading "Ceiling FT Save as default" [level=2] [ref=e524]:
+                  - text: Ceiling FT
+                  - generic "Save as default" [ref=e525] [cursor=pointer]
+                - textbox "600" [ref=e526]
+              - figure [ref=e527]:
+                - heading "Vis Meters Save as default" [level=2] [ref=e528]:
+                  - generic [ref=e529]: Vis
+                  - combobox [ref=e533] [cursor=pointer]:
+                    - option "SM"
+                    - option "Meters" [selected]
+                  - generic "Save as default" [ref=e534] [cursor=pointer]
+                - textbox "3000" [ref=e535]
+              - figure [ref=e536]:
+                - heading "Rwy Feet Save as default" [level=2] [ref=e537]:
+                  - generic [ref=e538]: Rwy
+                  - combobox [ref=e542] [cursor=pointer]:
+                    - option "Feet" [selected]
+                    - option "Meters"
+                  - generic "Save as default" [ref=e543] [cursor=pointer]
+                - textbox "7000" [ref=e544]
+              - figure [ref=e545]:
+                - heading "Avoid Airports:" [level=2] [ref=e546]
+              - figure [ref=e547]:
+                - textbox "Avoid ICAOs" [ref=e548]
+                - generic [ref=e549] [cursor=pointer]
+                - generic "Save as default" [ref=e550] [cursor=pointer]
+              - figure [ref=e551]:
+                - combobox [ref=e553] [cursor=pointer]:
+                  - option "Avoid TS/FG" [selected]
+                  - option "Allow TS/FG"
+              - figure [ref=e554]:
+                - generic [ref=e555] [cursor=pointer]: Find
+              - separator [ref=e556]
+              - generic [ref=e557]:
+                - generic [ref=e558]:
+                  - figure [ref=e559]:
+                    - heading [level=2] [ref=e560]
+                  - figure [ref=e561]:
+                    - heading "Airport" [level=2] [ref=e562]
+                  - figure [ref=e563]:
+                    - heading "Runway" [level=2] [ref=e564]
+                  - figure [ref=e565]:
+                    - heading "Altitude Feet" [level=2] [ref=e566]:
+                      - text: Altitude
+                      - generic [ref=e567]: Feet
+                - generic [ref=e568]:
+                  - figure [ref=e569]:
+                    - generic [ref=e570]: "1"
+                    - img "(x)" [ref=e571] [cursor=pointer]
+                  - figure [ref=e572]:
+                    - generic [ref=e573]:
+                      - combobox [ref=e575] [cursor=pointer]:
+                        - option [selected]
+                        - option "AUTO"
+                        - option "NONE"
+                        - option "- - - -" [disabled]
+                      - textbox "ICAO" [ref=e576]
+                  - figure [ref=e577]:
+                    - combobox [ref=e579] [cursor=pointer]:
+                      - option "N/A" [selected]
+                  - figure [ref=e580]:
+                    - textbox "AUTO" [ref=e581]
+                  - figure [ref=e582]:
+                    - heading "Route:" [level=2] [ref=e583]
+                  - figure [ref=e584]:
+                    - generic [ref=e585]:
+                      - combobox [ref=e587] [cursor=pointer]:
+                        - option [selected]
+                      - textbox "DCT" [ref=e588]
+                  - figure [ref=e589]:
+                    - generic [ref=e590] [cursor=pointer]: Find
+              - separator [ref=e591]
+              - generic [ref=e592]:
+                - generic [ref=e593]:
+                  - figure [ref=e594]:
+                    - generic [ref=e595]: Takeoff
+                    - img "(x)" [ref=e596] [cursor=pointer]
+                  - figure [ref=e597]:
+                    - generic [ref=e598]:
+                      - combobox [ref=e600] [cursor=pointer]:
+                        - option [selected]
+                        - option "AUTO"
+                        - option "NONE"
+                        - option "- - - -" [disabled]
+                      - textbox "NONE" [ref=e601]
+                  - figure [ref=e602]:
+                    - generic [ref=e603] [cursor=pointer]: Find
+                - generic [ref=e604]:
+                  - figure [ref=e605]:
+                    - generic [ref=e606]: Enroute
+                    - img "(x)" [ref=e607] [cursor=pointer]
+                  - figure [ref=e608]:
+                    - generic [ref=e609]:
+                      - combobox [ref=e611] [cursor=pointer]:
+                        - option [selected]
+                        - option "AUTO"
+                        - option "NONE"
+                        - option "- - - -" [disabled]
+                      - textbox "NONE" [ref=e612]
+                  - figure [ref=e613]:
+                    - generic [ref=e614] [cursor=pointer]: Find
+              - separator [ref=e615]
+              - figure [ref=e617]:
+                - heading "Analysis Result" [level=2] [ref=e618]
+                - generic [ref=e619]: Please analyze an alternate's route.
+              - separator [ref=e620]
+              - generic [ref=e621]:
+                - generic [ref=e622]:
+                  - figure [ref=e623]:
+                    - heading "Enroute Stations Save the enabled or disabled state as default" [level=2] [ref=e624]:
+                      - generic [ref=e625]: Enroute Stations
+                      - generic "Save the enabled or disabled state as default" [ref=e626] [cursor=pointer]
+                  - figure [ref=e627]:
+                    - heading "Selected Airports Help" [level=2] [ref=e628]:
+                      - text: Selected Airports
+                      - generic [ref=e629] [cursor=pointer]: Help
+                - generic [ref=e630]:
+                  - figure [ref=e631]:
+                    - combobox [ref=e633] [cursor=pointer]:
+                      - option "Disabled" [selected]
+                      - option "Adequate Alternates"
+                      - option "Suitable Alternates"
+                      - option "Adequate ETOPS"
+                      - option "Suitable ETOPS"
+                  - figure [ref=e634]:
+                    - textbox "Airport ICAOs" [ref=e635]
+                  - figure [ref=e636]:
+                    - generic [ref=e637] [cursor=pointer]: Find
+          - generic [ref=e638]:
+            - heading "ETOPS Scenario - Custom ETOPS airports and options Show Options" [level=1] [ref=e639]:
+              - generic [ref=e640]: ETOPS Scenario
+              - generic [ref=e641]: "- Custom ETOPS airports and options"
+              - generic [ref=e642] [cursor=pointer]: Show Options
+            - generic [ref=e644]:
+              - figure [ref=e645]:
+                - heading "Threshold Time" [level=2] [ref=e646]
+                - combobox [ref=e648] [cursor=pointer]:
+                  - option "60 minutes" [selected]
+                  - option "75 minutes"
+                  - option "90 minutes"
+                  - option "120 minutes"
+                  - option "180 minutes"
+              - figure [ref=e649]:
+                - heading "Target Scenario" [level=2] [ref=e650]
+                - combobox [ref=e652] [cursor=pointer]:
+                  - option "Auto" [selected]
+                  - option "75 minutes"
+                  - option "90 minutes"
+                  - option "120 minutes"
+                  - option "138 minutes"
+                  - option "180 minutes"
+                  - option "207 minutes"
+                  - option "240 minutes"
+                  - option "270 minutes"
+                  - option "300 minutes"
+                  - option "330 minutes"
+                  - option "370 minutes"
+              - figure [ref=e653]:
+                - heading "Exclude Airports Save as default" [level=2] [ref=e654]:
+                  - text: Exclude Airports
+                  - generic "Save as default" [ref=e655] [cursor=pointer]
+                - textbox "Avoid ICAOs" [ref=e656]
+              - figure [ref=e657]:
+                - heading [level=2] [ref=e658]
+                - generic [ref=e659] [cursor=pointer]: Calculate
+              - separator [ref=e660]
+              - generic [ref=e662]:
+                - figure [ref=e663]:
+                  - heading "Entry Airport" [level=2] [ref=e664]
+                  - textbox "AUTO" [ref=e665]
+                - figure [ref=e666]:
+                  - heading "Exit Airport" [level=2] [ref=e667]
+                  - textbox "AUTO" [ref=e668]
+                - figure [ref=e669]:
+                  - heading "Alternate 1" [level=2] [ref=e670]
+                  - textbox "NONE" [ref=e671]
+                - figure [ref=e672]:
+                  - heading "Alternate 2" [level=2] [ref=e673]
+                  - textbox "NONE" [ref=e674]
+                - figure [ref=e675]:
+                  - heading "Alternate 3" [level=2] [ref=e676]
+                  - textbox "NONE" [ref=e677]
+                - figure [ref=e678]:
+                  - heading "Alternate 4" [level=2] [ref=e679]
+                  - textbox "NONE" [ref=e680]
+                - figure [ref=e681]:
+                  - heading "Alternate 5" [level=2] [ref=e682]
+                  - textbox "NONE" [ref=e683]
+                - figure [ref=e684]:
+                  - heading "Alternate 6" [level=2] [ref=e685]
+                  - textbox "NONE" [ref=e686]
+              - separator [ref=e687]
+              - figure [ref=e689]:
+                - heading "Calculation Result" [level=2] [ref=e690]
+                - generic [ref=e691]: Click "Auto Calculate" to automatically find suitable airports.
+          - generic [ref=e692]:
+            - heading "Historical Weather Show Options Disabled" [level=1] [ref=e693]:
+              - generic [ref=e694]: Historical Weather
+              - generic [ref=e695] [cursor=pointer]: Show Options
+              - generic [ref=e697]: Disabled
+            - generic [ref=e698]:
+              - figure [ref=e699]:
+                - heading "Latest Snapshot" [level=2] [ref=e700]
+                - textbox [ref=e701]: No Snapshot on File
+              - figure [ref=e702]:
+                - heading "Use or Upload Snapshot" [level=2] [ref=e703]
+                - combobox [ref=e705] [cursor=pointer]:
+                  - option "Disabled - Use default SimBrief weather" [selected]
+                  - option "Enabled - Use your uploaded snapshot"
+                  - option "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" [disabled]
+                  - option "Update - Upload a new weather snapshot"
+          - generic [ref=e706]:
+            - heading "Debug Parameters Show Options" [level=1] [ref=e707]:
+              - generic [ref=e708]: Debug Parameters
+              - generic [ref=e709] [cursor=pointer]: Show Options
+            - generic [ref=e711]:
+              - figure [ref=e712]:
+                - heading "Winds Aloft" [level=2] [ref=e713]
+                - combobox [ref=e715] [cursor=pointer]:
+                  - option "Enabled" [selected]
+                  - option "Disabled"
+              - figure [ref=e716]:
+                - heading "Static ID" [level=2] [ref=e717]
+                - textbox [ref=e718]
+              - figure [ref=e719]:
+                - heading [level=2] [ref=e720]:
+                  - text: Custom Aircraft Data
+                  - link "JSON" [ref=e721] [cursor=pointer]:
+                    - /url: https://en.wikipedia.org/wiki/JSON
+                - 'textbox "{}" [ref=e722]'
+      - generic [ref=e724]:
+        - generic [ref=e725]:
+          - generic [ref=e726] [cursor=pointer]: ROUTE
+          - generic [ref=e727] [cursor=pointer]: ETOPS
+          - img "Airports" [ref=e729] [cursor=pointer]
+          - img "VORs" [ref=e731] [cursor=pointer]
+          - img "NDBs" [ref=e733] [cursor=pointer]
+          - img "Waypoints" [ref=e735] [cursor=pointer]
+          - img "Airways" [ref=e737] [cursor=pointer]
+          - generic [ref=e738] [cursor=pointer]: SID/STAR
+          - generic [ref=e739] [cursor=pointer]: NATS
+          - generic [ref=e740] [cursor=pointer]: PACOTS
+          - generic [ref=e741] [cursor=pointer]: FIR
+          - generic [ref=e742] [cursor=pointer]: UIR
+          - generic "Day and Night" [ref=e743] [cursor=pointer]
+          - img "Zoom" [ref=e748] [cursor=pointer]
+        - generic [ref=e749]:
+          - generic [ref=e750]:
+            - generic:
+              - generic [ref=e751]:
+                - button "Zoom in" [ref=e752] [cursor=pointer]: +
+                - button "Zoom out" [disabled] [ref=e753] [cursor=pointer]: −
+                - button "Zoom into route" [ref=e754] [cursor=pointer]
+              - button "Layers" [ref=e756] [cursor=pointer]
+              - generic [ref=e757]:
+                - link "Leaflet":
+                  - /url: https://leafletjs.com/
+                  - img "Leaflet" [ref=e758] [cursor=pointer]
+                - text: "| ©"
+                - link "OpenStreetMap contributors" [ref=e759] [cursor=pointer]:
+                  - /url: http://www.openstreetmap.org/copyright
+                - text: ", ©"
+                - link "Navigraph" [ref=e760] [cursor=pointer]:
+                  - /url: https://navigraph.com
+                - text: ", © Jeppesen"
+          - img "Navigraph Charts" [ref=e763]
+          - img "Navigraph Weather" [ref=e766]

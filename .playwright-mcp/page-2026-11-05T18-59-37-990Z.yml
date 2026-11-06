@@ -1,0 +1,59 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - figure [ref=e3]:
+      - heading "SimBrief" [level=1] [ref=e4]
+      - heading "by Navigraph" [level=2] [ref=e5]
+    - contentinfo [ref=e10]:
+      - generic [ref=e11]:
+        - link "Terms of Service" [ref=e12] [cursor=pointer]:
+          - /url: https://navigraph.com/legal/terms-of-service
+        - generic [ref=e13]: –
+        - link "Privacy Policy" [ref=e14] [cursor=pointer]:
+          - /url: https://navigraph.com/legal/privacy-policy
+        - generic [ref=e15]: –
+        - link "User Guide" [ref=e16] [cursor=pointer]:
+          - /url: ./guide
+      - generic [ref=e17]:
+        - text: ©
+        - link "Navigraph" [ref=e18] [cursor=pointer]:
+          - /url: https://navigraph.com
+        - text: 2026. Version 2.39.0 (780)
+      - generic [ref=e19]: Not for real world navigation
+  - banner [ref=e25]:
+    - generic [ref=e26] [cursor=pointer]
+    - link "SimBrief" [ref=e28] [cursor=pointer]:
+      - /url: ./home
+    - generic [ref=e29] [cursor=pointer]
+    - generic [ref=e31] [cursor=pointer]:
+      - checkbox
+    - generic [ref=e33]: — —
+    - generic [ref=e36]: AIRAC —
+    - generic [ref=e38]: Signed Out
+  - navigation [ref=e40]:
+    - generic [ref=e41]:
+      - link "Dashboard" [ref=e42] [cursor=pointer]:
+        - /url: ./home
+      - link "New Flight" [ref=e43] [cursor=pointer]:
+        - /url: ./options/new
+      - link "Edit Flight" [ref=e44] [cursor=pointer]:
+        - /url: ./options/latest
+      - link "View Flight Plan" [ref=e45] [cursor=pointer]:
+        - /url: ./briefing/latest
+      - link "Saved Flights" [ref=e46] [cursor=pointer]:
+        - /url: ./flights
+      - link "Saved Airframes" [ref=e47] [cursor=pointer]:
+        - /url: ./airframes
+      - link "Weather & NOTAM" [ref=e48] [cursor=pointer]:
+        - /url: ./weather
+      - link "Performance & Tools" [ref=e49] [cursor=pointer]:
+        - /url: ./tools
+      - link "User Guide" [ref=e50] [cursor=pointer]:
+        - /url: ./guide
+      - link "Account Settings" [ref=e51] [cursor=pointer]:
+        - /url: ./account
+    - generic [ref=e52]:
+      - generic [ref=e53]: 01 Jan
+      - generic [ref=e54]: 00:00
+      - separator [ref=e55]
+      - generic [ref=e56]: Not for real world navigation
+  - main [ref=e58]

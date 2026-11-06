@@ -1,0 +1,25 @@
+﻿{
+    "arguments":  {
+                      "fields":  [
+                                     {
+                                         "value":  "KJFK",
+                                         "name":  "Departure",
+                                         "target":  "e91",
+                                         "type":  "textbox"
+                                     },
+                                     {
+                                         "value":  "EGLL",
+                                         "name":  "Arrival",
+                                         "target":  "e96",
+                                         "type":  "textbox"
+                                     },
+                                     {
+                                         "value":  "C750",
+                                         "name":  "Aircraft",
+                                         "target":  "e123",
+                                         "type":  "combobox"
+                                     }
+                                 ]
+                  },
+    "name":  "browser_fill_form"
+}

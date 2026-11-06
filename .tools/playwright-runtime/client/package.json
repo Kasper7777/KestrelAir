@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@playwright/mcp": "^0.0.84"
+  }
+}

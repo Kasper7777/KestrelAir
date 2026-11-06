@@ -1,0 +1,8 @@
+[     737ms] [LOG] SimBrief Dispatch @ https://dispatch.simbrief.com/script.min.fc5baa002c796.js:53
+[     737ms] [LOG] Version: 2.39.0+1793246658.780 @ https://dispatch.simbrief.com/script.min.fc5baa002c796.js:53
+[     737ms] [LOG] Built: 29 Oct 2026 - 04:04:18 @ https://dispatch.simbrief.com/script.min.fc5baa002c796.js:53
+[     737ms] [LOG] ****************************** @ https://dispatch.simbrief.com/script.min.fc5baa002c796.js:53
+[    2325ms] [ERROR] Failed to load resource: net::ERR_BLOCKED_BY_CLIENT @ https://ad.doubleclick.net/ccm/s/collect?auid=19692101.1793401236&gtm=45je6b40v9100941168za208zd9100941168xecxf1&fmt=8:0
+[    2386ms] [ERROR] Failed to load resource: net::ERR_BLOCKED_BY_CLIENT @ https://ad.doubleclick.net/ccm/s/collect?auid=19692101.1793401236&gtm=45je6b40v9100941168za208zd9100941168xecxf1&fmt=3:0
+[  193889ms] [ERROR] Failed to load resource: net::ERR_BLOCKED_BY_CLIENT @ https://ad.doubleclick.net/ccm/s/collect?auid=19692101.1793401236&gtm=45je6b40v9100941168za200zd9100941168xecxf1&fmt=8:0
+[  193891ms] [ERROR] Failed to load resource: net::ERR_BLOCKED_BY_CLIENT @ https://ad.doubleclick.net/ccm/s/collect?auid=19692101.1793401236&gtm=45je6b40v9100941168za200zd9100941168xecxf1&fmt=3:0

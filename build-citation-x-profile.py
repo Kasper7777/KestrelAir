@@ -47,6 +47,14 @@ PFD, MFD = ne('PROFILE:KA_AVIONICS_FOCUS', 1), eq('PROFILE:KA_AVIONICS_FOCUS', 1
 def D(trigger, acts, *conds): return (trigger, list(conds), acts)
 def press(*acts, conds=()): return D('PRESS', list(acts), *conds)
 
+def pitch_wheel(up):
+    """Autopilot nose wheel: FLC speed, VS rate, otherwise pitch reference."""
+    flc = 'SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE'
+    vs = 'SIMCONNECT:AUTOPILOT VERTICAL HOLD'
+    return [press(k('AP_SPD_VAR_DEC' if up else 'AP_SPD_VAR_INC'), conds=[eq(flc, 1)]),
+            press(k('AP_VS_VAR_INC' if up else 'AP_VS_VAR_DEC'), conds=[ne(flc, 1), eq(vs, 1)]),
+            press(k('AP_PITCH_REF_INC_UP' if up else 'AP_PITCH_REF_INC_DN'), conds=[ne(flc, 1), ne(vs, 1)])]
+
 
 def device(root, product):
     return next(d for d in root.findall('./s:Devices/s:Device', N) if d.get('ProductID') == product)
@@ -157,7 +165,7 @@ def build():
     #   press down = medium reverse, pull back = full, push forward = low.  Left grip = buttons 5 / 7 / 6 -> engine 1,
     #   right grip (the one with the mini-stick) = 8 / 11 / 9 -> engine 2.  Commands -168 / -328 / -8, which with
     #   the deadband at 0 are the reverse lever at 51 % / 100 % / 2 % and an N1 target of about 78 % / 87 % / 68 %.
-    #   While one is held PROFILE:KA_REVn is 1 and that lever's forward-thrust command is paused; releasing it stows
+    #   While a physical reverse button is held that lever's forward-thrust command is paused; releasing it stows
     #   the reverser and sends the forward value for where the lever is.  They only act with that engine running:
     #   with it off the aircraft answers a reverse command by throwing the main handle backwards.
     def fraction(source, low, span):
@@ -291,7 +299,9 @@ def build():
         return [press(h(f'WT21_FMC_1_BTN_{key}'), conds=[PFD, *conds]),
                 press(h(f'WT21_FMC_2_BTN_{key}'), conds=[MFD, *conds])]
     def both(event_fmt, conds=()):
-        return [press(b(event_fmt.format(1)), conds=[PFD, *conds]), press(b(event_fmt.format(2)), conds=[MFD, *conds])]
+        # Range Inc/Dec consumes a step count; SPAD otherwise supplies zero.
+        return [press(('ctl', 'B:' + event_fmt.format(1), 1, None), conds=[PFD, *conds]),
+                press(('ctl', 'B:' + event_fmt.format(2), 1, None), conds=[MFD, *conds])]
     # NAV source is deliberately not on hardware: its knob only toggles VOR1/VOR2 once off FMS,
     # and no input reaches FMS again (tested), so a button would strand LNAV.  CDI opens TUN.
     for dev in (BOT, BOT_ANA):
@@ -315,6 +325,10 @@ def build():
         put(root, dev, 'BUTTON_7', *fmc('DSPL_MENU'), sfs=True)
 
     # ---- PulsAIR autopilot module ---------------------------------------------------------
+    put(root, THR, 'BUTTON_2', *pitch_wheel(True))
+    put(root, THR, 'BUTTON_3', *pitch_wheel(False))
+    put(root, AP, 'BUTTON_11', *pitch_wheel(True), sfs=True)
+    put(root, AP, 'BUTTON_12', *pitch_wheel(False), sfs=True)
     put(root, AP, 'BUTTON_9', press(b('AUTOPILOT_VNAV_MODE_Push')), sfs=True)
     put(root, AP, 'BUTTON_10', press(k('YAW_DAMPER_TOGGLE')), sfs=True)
 
@@ -358,6 +372,11 @@ def ign_start(root, product, bounds, side, engine):
 
 if __name__ == '__main__':
     root = build()
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('cabin_camera', ROOT / 'cabin-camera-mode.py')
+    cabin_camera = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cabin_camera)
+    cabin_camera.patch(root)
     out = ROOT / 'profiles' / NAME
     E.ElementTree(root).write(out, encoding='utf-8', xml_declaration=False)
     print('Created', out)

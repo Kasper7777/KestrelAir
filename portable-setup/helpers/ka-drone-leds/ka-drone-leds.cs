@@ -1,5 +1,5 @@
-// ka-drone-leds: both WarBRD sticks glow sky blue while MSFS is in drone camera (CAMERA STATE 4), and go back
-// to their own firmware colours (green/red) otherwise. 2026-11-04.
+// ka-walk-leds: either grip flip lever raised disables flight inputs through L:KA_WALK_MODE and paints both
+// grips hot pink. With both lowered, drone camera is sky blue; otherwise stored firmware colours return.
 //
 // Reads CAMERA STATE through the running sim's SimConnect_internal.dll (same approach as ka-sfs-watch) and
 // writes VIRPIL's LED feature report (report 2, command 102, then one byte per LED: 00 = firmware colour,
@@ -7,7 +7,7 @@
 // (VID 3344 PID 03F5 MI_01). Both grips are found by enumeration, so no per-PC paths.
 // Runs hidden, single instance. Log: %TEMP%\ka-drone-leds.log.
 //   ka-drone-leds.exe --test   -> blue for 15 s, then back to normal, and exit.
-// Build: csc -target:winexe -out:ka-drone-leds.exe ka-drone-leds.cs
+// Build: csc -target:winexe -platform:x64 -out:ka-walk-leds.exe ka-drone-leds.cs
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,12 +23,16 @@ static class KaDroneLeds
     // driven by command 103 (102 = base-PCB LEDs, which the WarBRD-D doesn't have). Grip LEDs are RGB type:
     // byte = 0x40 | BBGGRR (GRB-type panel LEDs use 0x80). 0x00 = leave to firmware.
     const byte SkyBlue = 0x78;  // 0x40 + BB=11 GG=10 RR=00
+    const byte HotPink = 0x77; // full red and blue, a little green: brighter pink (2-bit RGB)
+    static volatile int RaisedGrips = 1; // fail closed until both HID readers have reported
+    static readonly Dictionary<string, bool> Levers = new Dictionary<string, bool>();
     const int GripLeds = 9;
 
     // ---- HID ----
     [StructLayout(LayoutKind.Sequential)] struct SP_DEVICE_INTERFACE_DATA { public int cbSize; public Guid g; public int flags; public IntPtr reserved; }
     [DllImport("hid.dll")] static extern void HidD_GetHidGuid(out Guid g);
     [DllImport("hid.dll")] static extern bool HidD_SetFeature(SafeFileHandle h, byte[] buf, int len);
+    [DllImport("hid.dll")] static extern int HidP_GetUsages(int type, ushort page, ushort link, ushort[] usages, ref uint count, IntPtr pp, byte[] report, uint length);
     [DllImport("hid.dll")] static extern bool HidD_GetPreparsedData(SafeFileHandle h, out IntPtr p);
     [DllImport("hid.dll")] static extern bool HidD_FreePreparsedData(IntPtr p);
     [DllImport("hid.dll")] static extern int HidP_GetCaps(IntPtr p, byte[] caps);
@@ -47,11 +51,62 @@ static class KaDroneLeds
     [UnmanagedFunctionPointer(CallingConvention.StdCall)] delegate int RequestFn(IntPtr h, uint req, uint def, uint obj, uint period, uint flags, uint origin, uint interval, uint limit);
     [UnmanagedFunctionPointer(CallingConvention.StdCall)] delegate int DispatchFn(IntPtr h, out IntPtr data, out uint size);
     static OpenFn Open; static CloseFn Close; static AddDefFn AddDef; static RequestFn Request; static DispatchFn Next;
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)] delegate int SetDataFn(IntPtr h, uint def, uint obj, uint flags, uint count, uint size, ref double value);
+    static SetDataFn SetData;
+
+    static void StartLeverReaders()
+    {
+        foreach (string path in GripLedPaths("mi_00"))
+        {
+            var thread = new Thread(() => ReadLever(path)); thread.IsBackground = true; thread.Start();
+        }
+    }
+    static void ReadLever(string path)
+    {
+        // Enumerate MI_00 separately: interface instance identifiers can differ from MI_01.
+        while (true)
+        {
+            try
+            {
+                using (var handle = CreateFile(path, 0x80000000, 3, IntPtr.Zero, 3, 0x40000000, IntPtr.Zero))
+                {
+                    if (handle.IsInvalid) throw new IOException("Cannot read grip");
+                    IntPtr pp; if (!HidD_GetPreparsedData(handle, out pp)) throw new IOException("No descriptor");
+                    try
+                    {
+                        byte[] caps = new byte[64]; HidP_GetCaps(pp, caps); int length = BitConverter.ToUInt16(caps, 4);
+                        using (var stream = new FileStream(handle, FileAccess.Read, 4096, true))
+                        while (true)
+                        {
+                            byte[] report = new byte[length]; int got = stream.ReadAsync(report, 0, length).Result;
+                            if (got == 0) throw new IOException("Grip disconnected");
+                            ushort[] buttons = new ushort[128]; uint count = 128;
+                            if (HidP_GetUsages(0, 9, 0, buttons, ref count, pp, report, (uint)got) != 0x110000) continue;
+                            // Verified with both levers physically UP: button 1. DOWN reports button 2.
+                            // Retain the last state between contacts rather than flicker while the lever moves.
+                            bool raised = false, lowered = false;
+                            for (int i = 0; i < count; i++) { if (buttons[i] == 1) raised = true; if (buttons[i] == 2) lowered = true; }
+                            if (!raised && !lowered) continue;
+                            lock (Levers) { Levers[path] = raised; RaisedGrips = Levers.Count < 2 || Levers.ContainsValue(true) ? 1 : 0; }
+                        }
+                    }
+                    finally { HidD_FreePreparsedData(pp); }
+                }
+            }
+            catch { lock (Levers) { Levers.Remove(path); RaisedGrips = 1; } Thread.Sleep(2000); }
+        }
+    }
 
     static readonly string LogPath = Path.Combine(Path.GetTempPath(), "ka-drone-leds.log");
 
     static int Main(string[] args)
     {
+        if (args.Length > 0 && args[0] == "--probe")
+        {
+            StartLeverReaders(); Thread.Sleep(3000);
+            lock (Levers) { Log("probe: connected grips=" + Levers.Count + " walk=" + RaisedGrips); }
+            return 0;
+        }
         if (args.Length > 0 && args[0] == "--test")
         {
             Console.WriteLine("grips: " + SetGrips(true));
@@ -60,25 +115,29 @@ static class KaDroneLeds
             return 0;
         }
         bool first;
-        using (new Mutex(true, "Local\\KestrelAir.ka-drone-leds", out first))
+        using (new Mutex(true, "Local\\KestrelAir.ka-walk-leds", out first))
         {
             if (!first) return 0;
             Log("started");
+            StartLeverReaders();
             IntPtr h = IntPtr.Zero;
             int state = -1;
-            bool? shown = null;
+            int shown = -1;
             DateTime lastWrite = DateTime.MinValue;
             while (true)
             {
                 if (h == IntPtr.Zero) { h = Connect(); state = -1; }
                 if (h != IntPtr.Zero && !Poll(h, ref state)) { Log("sim closed"); try { Close(h); } catch { } h = IntPtr.Zero; state = -1; }
                 bool drone = state == 4;
+                double walk = RaisedGrips;
+                if (h != IntPtr.Zero) SetData(h, 2, 0, 0, 0, 8, ref walk);
+                int colour = walk == 1 ? HotPink : drone ? SkyBlue : 0;
                 // Re-send every 2 s as well: the VIRPIL configurator or a replug can reset the LEDs.
-                if (shown != drone || (drone && (DateTime.UtcNow - lastWrite).TotalSeconds >= 2))
+                if (shown != colour || (colour != 0 && (DateTime.UtcNow - lastWrite).TotalSeconds >= 2))
                 {
-                    int n = SetGrips(drone);
-                    if (shown != drone) Log((drone ? "drone -> sky blue" : "plane -> firmware colours") + " on " + n + " grip(s)");
-                    shown = drone; lastWrite = DateTime.UtcNow;
+                    int n = SetGrips(colour != 0, (byte)colour);
+                    if (shown != colour) Log((walk == 1 ? "walk -> hot pink" : drone ? "drone -> sky blue" : "flight -> firmware colours") + " on " + n + " grip(s)");
+                    shown = colour; lastWrite = DateTime.UtcNow;
                 }
                 Thread.Sleep(100);
             }
@@ -86,14 +145,20 @@ static class KaDroneLeds
     }
 
     // ---- LEDs ----
-    static int SetGrips(bool drone)
+    static readonly Dictionary<string, SafeFileHandle> LedHandles = new Dictionary<string, SafeFileHandle>();
+    static int SetGrips(bool drone, byte colour = SkyBlue)
     {
         int count = 0;
         foreach (string path in GripLedPaths())
         {
             try
             {
-                using (var h = CreateFile(path, 0xC0000000, 3, IntPtr.Zero, 3, 0, IntPtr.Zero))
+                SafeFileHandle h;
+                if (!LedHandles.TryGetValue(path, out h) || h.IsInvalid)
+                {
+                    h = CreateFile(path, 0xC0000000, 3, IntPtr.Zero, 3, 0, IntPtr.Zero);
+                    if (!h.IsInvalid) LedHandles[path] = h;
+                }
                 {
                     if (h.IsInvalid) continue;
                     IntPtr pp; HidD_GetPreparsedData(h, out pp);
@@ -109,7 +174,7 @@ static class KaDroneLeds
                         for (byte cmd = 102; cmd <= 106; cmd++)
                         {
                             var pkt = new byte[len]; pkt[0] = 2; pkt[1] = cmd;
-                            if (cmd == 103) for (int i = 0; i < GripLeds; i++) pkt[5 + i] = SkyBlue;
+                            if (cmd == 103) for (int i = 0; i < GripLeds; i++) pkt[5 + i] = colour;
                             ok &= HidD_SetFeature(h, pkt, len);
                         }
                     }
@@ -126,7 +191,7 @@ static class KaDroneLeds
         return count;
     }
 
-    static List<string> GripLedPaths()
+    static List<string> GripLedPaths(string which = "mi_01")
     {
         var list = new List<string>();
         Guid g; HidD_GetHidGuid(out g);
@@ -140,7 +205,7 @@ static class KaDroneLeds
             if (SetupDiGetDeviceInterfaceDetail(set, ref d, buf, req, out req, IntPtr.Zero))
             {
                 string p = Marshal.PtrToStringUni(buf + 4);
-                if (p.ToLowerInvariant().Contains("vid_3344&pid_03f5&mi_01")) list.Add(p);
+                if (p.ToLowerInvariant().Contains("vid_3344&pid_03f5&" + which)) list.Add(p);
             }
             Marshal.FreeHGlobal(buf);
         }
@@ -166,12 +231,14 @@ static class KaDroneLeds
             AddDef = Get<AddDefFn>(mod, "SimConnect_AddToDataDefinition");
             Request = Get<RequestFn>(mod, "SimConnect_RequestDataOnSimObject");
             Next = Get<DispatchFn>(mod, "SimConnect_GetNextDispatch");
+            SetData = Get<SetDataFn>(mod, "SimConnect_SetDataOnSimObject");
         }
         IntPtr h;
         if (Open(out h, "KestrelAir drone LEDs", IntPtr.Zero, 0, IntPtr.Zero, 0) != 0) return IntPtr.Zero;
         // INT32 data type = 1; period SIM_FRAME = 3; flag CHANGED = 1.
         if (AddDef(h, 1, "CAMERA STATE", "number", 1, 0, 0xffffffff) != 0 || Request(h, 1, 1, 0, 3, 1, 0, 0, 0) != 0)
         { Close(h); return IntPtr.Zero; }
+        if (AddDef(h, 2, "L:KA_WALK_MODE", "number", 4, 0, 0xffffffff) != 0) { Close(h); return IntPtr.Zero; }
         Log("connected to MSFS");
         return h;
     }

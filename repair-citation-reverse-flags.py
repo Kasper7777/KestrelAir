@@ -44,6 +44,10 @@ if __name__ == '__main__':
     base = ROOT / 'backups' / ('citation-reverse-flags-' + time.strftime('%Y%m%d-%H%M%S'))
     paths = [ROOT / 'profiles' / NAME, ROOT / 'portable-setup/profiles' / NAME]
     if '--installed' in sys.argv:
+        import subprocess
+        running = subprocess.run(['tasklist', '/FI', 'IMAGENAME eq SPAD.neXt.exe', '/NH'], capture_output=True, text=True)
+        if 'spad.next.exe' in running.stdout.lower():
+            raise SystemExit('Exit SPAD completely before repairing its installed profile.')
         paths = [Path.home() / 'Documents/SPAD.neXt/profiles' / NAME]
     for i, path in enumerate(paths):
         repair(path, base / str(i))

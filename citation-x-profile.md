@@ -121,3 +121,15 @@ The starter command only fires if that engine's starter isn't already turning, s
 **Not mapped on purpose:** PFD navigation source. In this aircraft the source knob toggles only between VOR1 and VOR2 once it leaves FMS, and no command returns it to FMS. A hardware button would strand LNAV. Use the cockpit control for that.
 
 Reference: WT21 H-event list (FMC keys), https://microsoft.github.io/msfs-avionics-mirror/2024/docs/avionics/wt21/h-event-list
+
+## Range step repair (2026-11-07)
+
+The Citation range input events require a step count of 1. SPAD previously sent 0, so knob turns reached the aircraft without changing its range. A direct pilot range increment with value 1 was confirmed working by the user. All 24 range actions across both RotAIR identities and display selections now specify a static parameter of 1. `repair-citation-range.py --installed` patches only those actions with SPAD closed and backs up the installed profile.
+
+## PulsAIR pitch wheel (2026-11-07)
+
+Nose up/down (buttons 11/12) now send AP_PITCH_REF_INC_UP / AP_PITCH_REF_INC_DN instead of AP_VS_VAR_INC / DEC. A live nose-up test changed the Citation pitch reference while leaving its selected vertical speed unchanged. The installed profile is patched with `repair-citation-pitch-wheel.py --installed` while SPAD is closed. Existing range and throttle repairs are preserved.
+
+## Throttle wheel and PulsAIR nose controls: revised mapping
+
+Citation only: CM3 BUTTON_2 (formerly elevator trim up) and BUTTON_3 (formerly elevator trim down), plus PulsAIR BUTTON_11/12, now follow the autopilot mode. In FLC, nose up decreases selected airspeed and nose down increases it; in VS, they increase/decrease selected vertical speed; otherwise they increase/decrease pitch reference. This supersedes the pitch-only mapping above. The CM3 wheel no longer commands manual elevator trim in this aircraft. All eight direction/mode combinations were checked for exactly one matching action. Aircraft-specific FLC/VS behavior still requires physical confirmation.

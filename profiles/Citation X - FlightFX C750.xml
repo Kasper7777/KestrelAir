@@ -6,6 +6,9 @@
     <Variable Name="PROFILE:KA_STICK1_RY" Value="0" ValueType="Decimal" />
     <Variable Name="PROFILE:KA_XPDR_DIGIT" Value="1" ValueType="Decimal" />
     <Variable Name="PROFILE:KA_STICK0_RX" Value="0" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_CABIN_RX" Value="0" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_CABIN_RY" Value="0" ValueType="Decimal" />
+    <Variable Name="PROFILE:KA_CABIN_SHIFT" Value="0" ValueType="Decimal" />
   </Variables>
   <Devices>
     <Device VendorID="0x3344" ProductID="0x03F5" DevicePath="\\?\hid#vid_3344&amp;pid_03f5&amp;mi_00#a&amp;1aa429cf&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" Serial="" DeviceIndex="0" Version="3">
@@ -16,6 +19,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionRangedAxis ConfigID="LEVER_AILERONS">
@@ -32,6 +36,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
@@ -44,6 +49,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionRangedAxis ConfigID="LEVER_ELEVATOR">
@@ -60,6 +66,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
@@ -110,6 +117,9 @@
           <Event BoundTo="RZ_AXIS">
             <EventDefinitions>
               <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                </EventConditions>
                 <EventActions>
                   <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="55" JoystickMode="RESPONSECURVE" />
                 </EventActions>
@@ -276,6 +286,54 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
+          <Event BoundTo="BUTTON_2">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>W</Keys>
+                        <Keys>A</Keys>
+                        <Keys>S</Keys>
+                        <Keys>D</Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-walk-leds.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>W</Keys>
+                        <Keys>A</Keys>
+                        <Keys>S</Keys>
+                        <Keys>D</Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-walk-leds.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
         </Events>
       </DevicePage>
     </Device>
@@ -294,24 +352,6 @@
                       </Keys>
                     </KeyboardMacro>
                   </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_3">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:ELEV_TRIM_DN" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_2">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:ELEV_TRIM_UP" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -391,7 +431,7 @@
                   </EventActionKeyboard>
                   <EventActionCommand>
                     <Parameter Value="SPAD_neXt.RunProgram" />
-                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-drone-leds.exe" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-walk-leds.exe" />
                   </EventActionCommand>
                 </EventActions>
               </EventDefinition>
@@ -816,6 +856,66 @@
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:TOGGLE_STARTER1" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_2">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_SPD_VAR_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT VERTICAL HOLD" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_VS_VAR_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT VERTICAL HOLD" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_PITCH_REF_INC_UP" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_3">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_SPD_VAR_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT VERTICAL HOLD" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_VS_VAR_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT VERTICAL HOLD" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_PITCH_REF_INC_DN" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2106,7 +2206,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -2115,7 +2217,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2128,7 +2232,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -2137,7 +2243,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2150,7 +2258,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -2159,7 +2269,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2172,7 +2284,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -2181,7 +2295,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2194,7 +2310,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -2203,7 +2321,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2216,7 +2336,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -2225,7 +2347,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -2552,30 +2676,6 @@
               </EventDefinition>
             </EventDefinitions>
           </Event>
-          <Event BoundTo="BUTTON_11">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_VS_VAR_INC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
-          <Event BoundTo="BUTTON_12">
-            <EventDefinitions>
-              <EventDefinition Trigger="PRESS">
-                <EventConditions>
-                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_VS_VAR_DEC" />
-                </EventActions>
-              </EventDefinition>
-            </EventDefinitions>
-          </Event>
           <Event BoundTo="BUTTON_9">
             <EventDefinitions>
               <EventDefinition Trigger="PRESS">
@@ -2596,6 +2696,72 @@
                 </EventConditions>
                 <EventActions>
                   <EventActionControl TargetDataDefinition="SIMCONNECT:YAW_DAMPER_TOGGLE" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_11">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_SPD_VAR_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT VERTICAL HOLD" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_VS_VAR_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT VERTICAL HOLD" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_PITCH_REF_INC_UP" />
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_12">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_SPD_VAR_INC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT VERTICAL HOLD" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_VS_VAR_DEC" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT FLIGHT LEVEL CHANGE" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="SIMCONNECT:AUTOPILOT VERTICAL HOLD" />
+                  <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionControl TargetDataDefinition="SIMCONNECT:AP_PITCH_REF_INC_DN" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4102,7 +4268,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -4111,7 +4279,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4124,7 +4294,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -4133,7 +4305,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4146,7 +4320,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -4155,7 +4331,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_INC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4168,7 +4346,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -4177,7 +4357,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4190,7 +4372,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -4199,7 +4383,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4212,7 +4398,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_1_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="PRESS">
@@ -4221,7 +4409,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="LVAR:KA_SFS_MONITOR" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC" />
+                  <EventActionControl TargetDataDefinition="B:AS3000_UPPER_2_RANGE_DEC">
+                    <Parameter Type="Static" Value="1" />
+                  </EventActionControl>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4902,6 +5092,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionRangedAxis ConfigID="LEVER_AILERONS">
@@ -4918,6 +5109,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
@@ -4930,6 +5122,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionRangedAxis ConfigID="LEVER_ELEVATOR">
@@ -4946,6 +5139,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
@@ -4960,6 +5154,7 @@
                   <EventCondition ConditionComparator="Less" ConditionTargetValue="12000" ConditionValueSource="EVENT:VALUE" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="-1" ConditionValueSource="PROFILE:KA_STICK1_RX" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="-1" />
@@ -4984,6 +5179,7 @@
                   <EventCondition ConditionComparator="Greater" ConditionTargetValue="48000" ConditionValueSource="EVENT:VALUE" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_STICK1_RX" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="1" />
@@ -5009,6 +5205,7 @@
                   <EventCondition ConditionComparator="LessOrEqual" ConditionTargetValue="48000" ConditionValueSource="EVENT:VALUE" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_STICK1_RX" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="0" />
@@ -5032,6 +5229,7 @@
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_STICK1_RX" />
                   <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="0" />
@@ -5056,6 +5254,134 @@
                   <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
                 </EventActions>
               </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="Less" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="-1" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="-1" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>D</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>A</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="Greater" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="1" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>A</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>D</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="GreaterOrEqual" />
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="LessOrEqual" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>A</Keys>
+                        <Keys>D</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="GreaterOrEqual" />
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="LessOrEqual" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="0" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_SHIFT" ConditionTargetValue="1" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>A</Keys>
+                        <Keys>D</Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>A</Keys>
+                        <Keys>D</Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
             </EventDefinitions>
           </Event>
           <Event BoundTo="RY_AXIS">
@@ -5065,6 +5391,7 @@
                   <EventCondition ConditionComparator="Less" ConditionTargetValue="12000" ConditionValueSource="EVENT:VALUE" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="-1" ConditionValueSource="PROFILE:KA_STICK1_RY" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="-1" />
@@ -5089,6 +5416,7 @@
                   <EventCondition ConditionComparator="Greater" ConditionTargetValue="48000" ConditionValueSource="EVENT:VALUE" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_STICK1_RY" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="1" />
@@ -5114,6 +5442,7 @@
                   <EventCondition ConditionComparator="LessOrEqual" ConditionTargetValue="48000" ConditionValueSource="EVENT:VALUE" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_STICK1_RY" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="0" />
@@ -5137,6 +5466,7 @@
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="0" ConditionValueSource="PROFILE:KA_STICK1_RY" />
                   <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="0" />
@@ -5159,6 +5489,134 @@
               <EventDefinition Trigger="VALUE">
                 <EventActions>
                   <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="RESPONSECURVE" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="Less" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="-1" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="-1" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>W</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>S</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="Greater" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="1" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>S</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>W</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="1" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="GreaterOrEqual" />
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="LessOrEqual" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>S</Keys>
+                        <Keys>W</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="GreaterOrEqual" />
+                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="LessOrEqual" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="0" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_SHIFT" ConditionTargetValue="1" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>S</Keys>
+                        <Keys>W</Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>S</Keys>
+                        <Keys>W</Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -5184,6 +5642,7 @@
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionVirtualJoyStick Value="0" JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="RESPONSECURVE" />
@@ -5346,6 +5805,54 @@
                   <EventActionCommand>
                     <Parameter Value="SPAD_neXt.RunProgram" />
                     <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-front\ka-front-msfs.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+            </EventDefinitions>
+          </Event>
+          <Event BoundTo="BUTTON_2">
+            <EventDefinitions>
+              <EventDefinition Trigger="PRESS">
+                <EventActions>
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>W</Keys>
+                        <Keys>A</Keys>
+                        <Keys>S</Keys>
+                        <Keys>D</Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-walk-leds.exe" />
+                  </EventActionCommand>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="RELEASE">
+                <EventActions>
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>W</Keys>
+                        <Keys>A</Keys>
+                        <Keys>S</Keys>
+                        <Keys>D</Keys>
+                        <Keys>LShiftKey</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
+                  <EventActionCommand>
+                    <Parameter Value="SPAD_neXt.RunProgram" />
+                    <Parameter1 Value="C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-drone-leds\ka-walk-leds.exe" />
                   </EventActionCommand>
                 </EventActions>
               </EventDefinition>

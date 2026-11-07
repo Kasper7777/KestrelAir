@@ -54,7 +54,7 @@ PROGRAMS[31] = 'ka-front-msfs.exe'
 #   B4 (HID 45): Shift+X = MSFS Toggle Drone Camera, and starts ka-drone-leds (sticks sky blue in drone mode).
 #   Mini-stick mouse buttons (HID 11 press, 9 up, 8/13 down): start ka-mouse; the first press only wakes it.
 DRONE_TOGGLE = 45
-DRONE_LEDS = Path(__file__).resolve().parent / '.tools' / 'ka-drone-leds' / 'ka-drone-leds.exe'
+DRONE_LEDS = Path(__file__).resolve().parent / '.tools' / 'ka-drone-leds' / 'ka-walk-leds.exe'
 MOUSE = Path(__file__).resolve().parent / '.tools' / 'ka-mouse' / 'ka-mouse.exe'
 MOUSE_WAKE = (8, 9, 11, 13)
 PEDAL_AXES = {  # BoundTo -> (lever, min, max, centre or None, invert)

@@ -9,7 +9,7 @@ Before this, running both at once made every encoder click count twice.
 
 ## How it works
 
-1. `.tools/ka-sfs/ka-sfs-watch.exe` runs hidden in the background. Every second it checks whether a process named `SFSmonitor…` is running, and writes the answer into the sim as `L:KA_SFS_MONITOR` (1 = running, 0 = not). It re-sends the value every 2 seconds, because L-variables reset when an aircraft loads, and reconnects by itself after MSFS restarts. It logs each change to `%TEMP%\ka-sfs-watch.log`.
+1. `.tools/ka-sfs/ka-sfs-watch.exe` runs hidden in the background. Every second it checks whether a process named `SFSmonitorâ€¦` is running, and writes the answer into the sim as `L:KA_SFS_MONITOR` (1 = running, 0 = not). It re-sends the value every 2 seconds, because L-variables reset when an aircraft loads, and reconnects by itself after MSFS restarts. It logs each change to `%TEMP%\ka-sfs-watch.log`.
 2. Every SPAD binding on those panels has one extra condition: `LVAR:KA_SFS_MONITOR` Unequal 1. That's 260 bindings in each of the four GTN profiles: Baron GTN and Bonanza A36, A36TC and B36TP. The condition covers both the ANA and GC device IDs. SPAD ANDs conditions together, so the existing ones (PFD/MFD focus, hold states and so on) still work. The other four profiles have no SimFlight panels.
 3. If the watcher isn't running, the variable reads 0 and SPAD keeps the panels. That means it can never leave the panels dead, though both programs could double up again if SFS Monitor is opened while the watcher is off.
 
@@ -17,13 +17,15 @@ Tested live on 2026-11-03 with the real SFS Monitor. With it closed, SPAD drove 
 
 ## Starting the watcher automatically
 
-The watcher has to run for the handover to work. Right now it's started by hand; I wasn't permitted to add it to Windows startup without your say-so. To make it start at every logon:
+The watcher starts automatically at Windows logon through:
 
-1. Press Win+R, type `shell:startup`, and press Enter.
-2. Right-click in that folder and choose New > Shortcut.
-3. Set the target to `C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-sfs\ka-sfs-watch.exe` and name it "KestrelAir SFS watch".
+`%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\KestrelAir SFS watch.lnk`
 
-It's safe to start it more than once, because only one copy ever runs. `ka-sfs-watch.exe --once` reports whether SFS Monitor is currently detected.
+The shortcut targets `C:\Users\Aero\Documents\GitHub\KestrelAir\.tools\ka-sfs\ka-sfs-watch.exe` and runs hidden. Only one copy runs at a time.
+
+On 2026-11-05, double inputs were investigated while MSFS, SPAD and SFS Monitor remained running. The watcher was absent and no startup shortcut existed. All installed panel events already had the correct gate: 260 each in the Baron and three Bonanza profiles, plus 273 in the Citation X profile (1,313 total; zero ungated). The watcher was started with normal desktop access and logged a successful MSFS connection at 20:32:49. A sandboxed launch could detect SFS Monitor but could not connect to the simulator; repeated ownership log lines without a `connected to MSFS` entry do not prove that the gate is active.
+
+No simulator commands were exercised, no profiles were edited and neither SPAD nor MSFS was restarted during this repair. Physical single-press behavior still needs observation during normal use.
 
 ## Files
 

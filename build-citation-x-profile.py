@@ -134,8 +134,9 @@ def build():
     for var in list(variables):
         if var.get('Name') in ('PROFILE:KA_AVIONICS_FOCUS', 'PROFILE:KA_XPDR_DIGIT'):
             var.set('Value', '0' if var.get('Name').endswith('FOCUS') else '1')
-    for n in (1, 2):   # 1 while that engine's reverser button is held
-        E.SubElement(variables, tag('Variable'), Name=f'PROFILE:KA_REV{n}', Value='0', ValueType='Decimal')
+    for var in list(variables):
+        if var.get('Name') in ('PROFILE:KA_REV1', 'PROFILE:KA_REV2'):
+            variables.remove(var)
 
     # ---- MongoosT-50CM3 throttle ---------------------------------------------------------
     # Thrust levers, reversers and fuel cutoff (measured 2026-11-05 on this throttle and aircraft).
@@ -164,20 +165,21 @@ def build():
     for axis, engine, switch in [('X', 1, {5: 168, 7: 328, 6: 8}), ('Y', 2, {8: 168, 11: 328, 9: 8})]:
         local = fraction(f'[LOCAL:JOY_0X33440X0194_{axis}_AXIS]', '33.4', '66.6')
         raw = fraction('[EVENT:VALUE]', '20040.0', '39960.0')
-        rev = f'PROFILE:KA_REV{engine}'
+        # Read the physical switches: saved PROFILE flags can remain set after a missed release.
+        reverse_released = [eq(f'LOCAL:JOY_0X33440X0194_BUTTON_{button}', 0) for button in switch]
         put(root, THR, f'{axis}_AXIS',
             D('VALUE', [lv('VTX_C750_DETENT_DEADBAND', 0), k(f'THROTTLE{engine}_SET', expr=f'Round({raw} * 16383.0, 0)')],
-              ('EVENT:VALUE', 'Greater', 15000), ne(rev, 1)),
+              ('EVENT:VALUE', 'Greater', 15000), *reverse_released),
             # At the forward stop also set the aircraft's own handle (what the mouse drags) to 1: with the engines
             # off the K event above only takes the handle to 0.95, the input event takes it to the end (measured).
-            D('VALUE', [('cv', f'B:ENGINE_THROTTLE_{engine}', '1', None)], ('EVENT:VALUE', 'GreaterOrEqual', 59900), ne(rev, 1)),
+            D('VALUE', [('cv', f'B:ENGINE_THROTTLE_{engine}', '1', None)], ('EVENT:VALUE', 'GreaterOrEqual', 59900), *reverse_released),
             D('VALUE', [lv(f'ENG_CUTOFF_{engine}', 1)], ('EVENT:VALUE', 'Greater', 600), ('EVENT:VALUE', 'LessOrEqual', 15000)),
             D('VALUE', [lv(f'ENG_CUTOFF_{engine}', 0)], ('EVENT:VALUE', 'LessOrEqual', 600)))
         for button, level in switch.items():
             put(root, THR, f'BUTTON_{button}',
-                D('PRESS', [pv(f'KA_REV{engine}', 1), lv('VTX_C750_DETENT_DEADBAND', 0), k(f'THROTTLE{engine}_SET', expr=f'0 - {level}')],
+                D('PRESS', [lv('VTX_C750_DETENT_DEADBAND', 0), k(f'THROTTLE{engine}_SET', expr=f'0 - {level}')],
                   eq(f'SIMCONNECT:GENERAL ENG COMBUSTION:{engine}', 1)),
-                D('RELEASE', [pv(f'KA_REV{engine}', 0), k(f'THROTTLE{engine}_SET', expr=f'Round({local} * 16383.0, 0)')]))
+                D('RELEASE', [k(f'THROTTLE{engine}_SET', expr=f'Round({local} * 16383.0, 0)')]))
     # T1 (buttons 34/35) and T2 (36/37) are unassigned: T1 duplicated the parking brake (T4) and T2 the gear lever
     # on the CP2.  The mouse click is the mini-stick press (13) alone, handled by ka-mouse.
     remove(root, THR, 'BUTTON_34', 'BUTTON_35', 'BUTTON_36', 'BUTTON_37')

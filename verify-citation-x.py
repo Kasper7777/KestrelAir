@@ -222,10 +222,9 @@ try:
     check('CP3 T7 windshield heat off', CP3, 'BUTTON_28', {S + 'WINDSHIELD DEICE SWITCH': 0})
     check('CP3 T8 seat belt sign on', CP3, 'BUTTON_29', {S + 'CABIN SEATBELTS ALERT SWITCH': 1})
     check('CP3 T8 seat belt sign off', CP3, 'BUTTON_30', {S + 'CABIN SEATBELTS ALERT SWITCH': 0})
-    check('Throttle selector L ignition ON', THR, 'BUTTON_62', {S + 'TURB ENG IGNITION SWITCH EX1:1': 1})
-    check('Throttle selector L ignition NORM', THR, 'BUTTON_63', {S + 'TURB ENG IGNITION SWITCH EX1:1': 0, 'LVAR:Switch_ignition_l': 2})
-    check('CP3 rotary R ignition ON', CP3, 'BUTTON_45', {S + 'TURB ENG IGNITION SWITCH EX1:2': 1})
-    check('CP3 rotary R ignition NORM', CP3, 'BUTTON_44', {S + 'TURB ENG IGNITION SWITCH EX1:2': 0, 'LVAR:Switch_ignition_r': 2})
+    for product, buttons, side in [(THR, range(60, 65), 'l'), (CP3, range(47, 42, -1), 'r')]:
+        for button, mode in zip(buttons, (0, 1, 2, 3, 3)):
+            check(f'IRS {side} selector button {button}', product, f'BUTTON_{button}', {f'LVAR:knob_irs_{side}': mode})
     check('Throttle T4 parking brake off', THR, 'BUTTON_40', {S + 'BRAKE PARKING POSITION': 0})
     check('Throttle T4 parking brake on', THR, 'BUTTON_41', {S + 'BRAKE PARKING POSITION': 1})
     check('Throttle T7 engine sync on', THR, 'BUTTON_52', {'LVAR:knob_eng_sync': 0})
@@ -235,8 +234,6 @@ try:
     check('Throttle E1 pressurization rate +5', THR, 'BUTTON_56', {'LVAR:knob_pressurization_rate': lambda v: v >= 5})
     check('CP2 B5 standby power on', CP2, 'BUTTON_37', {'LVAR:switch_stby_pwr': 0})
     check('CP2 B6 emergency lights ARM', CP2, 'BUTTON_38', {'LVAR:EMERGENCY_LIGHTS_IS_ARM': 1})
-    check('CP2 B7 left IRS NAV', CP2, 'BUTTON_39', {'LVAR:knob_irs_l': 2})
-    check('CP2 B7 left IRS OFF', CP2, 'BUTTON_39', {'LVAR:knob_irs_l': 0})
     check('CP2 B1 APU master on', CP2, 'BUTTON_4', {'LVAR:electrical_switch_apu_master': 1})
     fire(CP2, 'BUTTON_5'); time.sleep(0.8)
     check('CP2 B2 APU start (press+release)', CP2, 'BUTTON_5', {S + 'APU PCT RPM': lambda v: v > 0.05}, trigger='RELEASE', settle=6)

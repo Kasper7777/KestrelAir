@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AircraftAssignments xmlns="http://www.fsgs.com/SPAD" Simulation="MSFS24">
+  <AircraftAssignment>
+    <Key>Beech Baron G58</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N7733K</Key>
+    <Profile>Baron - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N972HJ</Key>
+    <Profile>Baron - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional C-GVGI</Key>
+    <Profile>Baron - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N515MR</Key>
+    <Profile>Baron - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N585RS</Key>
+    <Profile>Baron - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional C-GVGI</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N513LW</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N515MR</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N585RS</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N972HJ</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58 Professional N7733K</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional C-GVGI</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N513LW</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N515MR</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N585RS</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N972HJ</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58TC Professional N7733K</Key>
+    <Profile>Baron.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>A2A Piper PA-24-250 Comanche</Key>
+    <Profile>Piper PA-24-250.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional N513LW</Key>
+    <Profile>Baron - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36 Bonanza Professional N924SV</Key>
+    <Profile>Bonanza A36 - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square B36TP Bonanza Professional N6060E</Key>
+    <Profile>Bonanza B36TP - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square B36TP Bonanza Professional N2585D</Key>
+    <Profile>Bonanza B36TP - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36TC Bonanza Professional N924SV</Key>
+    <Profile>Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36 Bonanza Professional N3518X</Key>
+    <Profile>Bonanza A36 - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36TC Bonanza Professional N3518X</Key>
+    <Profile>Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36 Bonanza Professional N6TQ</Key>
+    <Profile>Bonanza A36 - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36 Bonanza Professional N3475M</Key>
+    <Profile>Bonanza A36 - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36TC Bonanza Professional N408DD</Key>
+    <Profile>Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square B36TP Bonanza Professional N309N</Key>
+    <Profile>Bonanza B36TP - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36TC Bonanza Professional N3475M</Key>
+    <Profile>Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36TC Bonanza Professional N6TQ</Key>
+    <Profile>Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36 Bonanza Professional N408DD</Key>
+    <Profile>Bonanza A36 - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36 Bonanza Professional N5172C</Key>
+    <Profile>Bonanza A36 - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square A36TC Bonanza Professional N5172C</Key>
+    <Profile>Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional Pirate</Key>
+    <Profile>Baron - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Black Square Baron 58P Professional Pirate GK777</Key>
+    <Profile>Baron - GNS 530 + TDS GTNxi 650.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Citation X Winglets</Key>
+    <Profile>Citation X - FlightFX C750.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Citation X</Key>
+    <Profile>Citation X - FlightFX C750.xml</Profile>
+  </AircraftAssignment>
+  <AircraftAssignment>
+    <Key>Asobo Cessna Citation Longitude Passengers</Key>
+    <Profile>Citation Longitude - Asobo G5000.xml</Profile>
+  </AircraftAssignment>
+</AircraftAssignments>

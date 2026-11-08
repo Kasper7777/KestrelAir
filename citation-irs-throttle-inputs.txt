@@ -1,0 +1,8 @@
+﻿CM3 watch started 2026-11-08T02:10:25
+02:10:26.323 buttons=[35,37,38,41,60]
+start X=7872
+start Y=7872
+start Z=60000
+start Rx=30000
+start Ry=30000
+start Rz=30000

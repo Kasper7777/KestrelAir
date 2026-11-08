@@ -1,0 +1,5 @@
+PASS profiles: unique bindings; B-event bases exist in live Longitude; no Citation X commands; sticks/cabin/pedals preserved; unique profile ID
+PASS portable-setup/profiles: unique bindings; B-event bases exist in live Longitude; no Citation X commands; sticks/cabin/pedals preserved; unique profile ID
+Live aircraft measurements: forward throttle Set 0/0.5/1 -> input display 20/60/100; speedbrake 0..1; flap axis -16383/0/16383 -> native indices 0/1/3. Batteries, buses, fuel pumps, lighting, deice-compatible event names and standby/emergency inputs inspected. Native APU generator toggle requires index 1. Engines were not started; reverse, starter, ATS and G5000 screen response require physical validation.
+
+PASS live parking brake: Longitude handle Set 0 -> handle 0 / parking position 0; Set 1 -> handle 1 / parking position 1; original set position restored. Generic native PARKING_BRAKE_SET was observed being ignored by the aircraft.

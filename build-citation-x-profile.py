@@ -208,8 +208,8 @@ def build():
     put(root, THR, 'BUTTON_55', press(lvx('knob_pressurization_rate', 'Max(0, [LVAR:knob_pressurization_rate] - 5)')))
     put(root, THR, 'BUTTON_56', press(lvx('knob_pressurization_rate', 'Min(100, [LVAR:knob_pressurization_rate] + 5)')))
     remove(root, THR, 'BUTTON_58', 'BUTTON_59')
-    # Five-position selector = LEFT engine ignition: OFF, NORM, ON (continuous), NORM, START.
-    ign_start(root, THR, ['BUTTON_60', 'BUTTON_61', 'BUTTON_62', 'BUTTON_63', 'BUTTON_64'], 'l', 1)
+    # Left IRS: OFF / ALIGN / NAV / ATT; the fifth detent also selects ATT.
+    irs_selector(root, THR, ['BUTTON_60', 'BUTTON_61', 'BUTTON_62', 'BUTTON_63', 'BUTTON_64'], 'l')
 
     # ---- VPC Control Panel #3 ------------------------------------------------------------
     for btn, n in [(1, 1), (2, 2)]:
@@ -236,10 +236,10 @@ def build():
     for btn, digit in [(8, 'D8'), (9, 'D5'), (10, 'D4'), (11, 'D3'), (12, 'D6')]:
         put(root, CP3, f'BUTTON_{btn}', press(chord('LShiftKey', digit)))
     put(root, CP3, 'BUTTON_6', D('PRESS', [lv('AUTOPILOT_push_Ats', 1)]), D('RELEASE', [lv('AUTOPILOT_push_Ats', 0)]))
-    # Rotary selector = RIGHT engine ignition, physical OFF is button 47 (as for the Baron magneto).
-    ign_start(root, CP3, ['BUTTON_47', 'BUTTON_46', 'BUTTON_45', 'BUTTON_44', 'BUTTON_43'], 'r', 2)
+    # Right IRS; physical OFF is button 47, with the last two detents selecting ATT.
+    irs_selector(root, CP3, ['BUTTON_47', 'BUTTON_46', 'BUTTON_45', 'BUTTON_44', 'BUTTON_43'], 'r')
     # L / R switch (BUTTON_31 left, 32 centre, 33 right; unbound in the Baron): engine START left / right.
-    # Same command as the START position of each selector, and only while that engine isn't already running.
+    # Engine start remains on this switch, only while that engine isn't already running.
     for btn, side, engine in [(31, 'l', 1), (33, 'r', 2)]:
         idle = eq(f'SIMCONNECT:GENERAL ENG COMBUSTION:{engine}', 0)
         put(root, CP3, f'BUTTON_{btn}',
@@ -281,8 +281,12 @@ def build():
     toggle(root, CP2, 'BUTTON_7', 'switch_apu_bleed', 1, 2)
     toggle(root, CP2, 'BUTTON_37', 'switch_stby_pwr', 0, 1)
     toggle(root, CP2, 'BUTTON_38', 'lights_emerg_lt', 0, 2)                   # emergency lights ARM / OFF
-    toggle(root, CP2, 'BUTTON_39', 'knob_irs_l', 2, 0)                        # IRS NAV / OFF
-    toggle(root, CP2, 'BUTTON_40', 'knob_irs_r', 2, 0)
+    remove(root, CP2, 'BUTTON_39', 'BUTTON_40')  # IRS moved to the throttle/CP3 mode selectors.
+    # Cabin entry / overhead: verified against the cockpit controls, 2026-11-08.
+    for button, index in [(41, 22), (42, 23)]:
+        on = '100' if index == 22 else 'If([LVAR:cabin_overhead_brightness] > 0, [LVAR:cabin_overhead_brightness], 10)'
+        put(root, CP2, f'BUTTON_{button}', press(k(f'LIGHT_POTENTIOMETER_{index}_SET',
+            expr=f'If([SIMCONNECT:LIGHT POTENTIOMETER:{index}] == 0, {on}, 0)')))
 
     # ---- RotAIR top (GC and ANA identities) ---------------------------------------------
     for dev in (TOP, TOP_ANA):
@@ -360,14 +364,10 @@ def build():
     return root
 
 
-def ign_start(root, product, bounds, side, engine):
-    """OFF / NORM / ON / NORM / START.  START also presses the engine START button once."""
-    sw = f'Switch_ignition_{side}'
-    for bound, val in zip(bounds[:4], (1, 2, 0, 2)):
-        put(root, product, bound, press(lv(sw, val)))
-    put(root, product, bounds[4],
-        press(lv(sw, 2)),
-        press(k(f'TOGGLE_STARTER{engine}'), conds=[eq(f'SIMCONNECT:GENERAL ENG STARTER:{engine}', 0)]))
+def irs_selector(root, product, bounds, side):
+    """Four IRS modes across five detents: OFF, ALIGN, NAV, ATT, ATT."""
+    for bound, value in zip(bounds, (0, 1, 2, 3, 3)):
+        put(root, product, bound, press(lv(f'knob_irs_{side}', value)))
 
 
 if __name__ == '__main__':

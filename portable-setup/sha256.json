@@ -1,5 +1,5 @@
 {
-  "aircraft-assignments.csv": "50265532d114c3ad0b547b318c219ac4cdd62914a9caf19534b63f82f0456d71",
+  "aircraft-assignments.csv": "c7b28a73495a842e18219d19efaa0f5cb008b08c291c567012bb8f828541575f",
   "camera-profiles-pending/Baron - GNS 530 + TDS GTNxi 650.xml": "685d8b354c239fc222774415382ec08483f962c275689a21f29c35c0c00e872a",
   "camera-profiles-pending/Bonanza A36 - GNS 530 + TDS GTNxi 650.xml": "d2ff7c9ce07fcb76a5e09b866eca9312022676495780e06f8972a26aa2640b0e",
   "camera-profiles-pending/Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml": "e9ba7c8d56649c50e34242b5ec31288ff6dc31b3edf80510c276e470d41b2792",
@@ -35,8 +35,8 @@
   "helpers/ka-mouse/ka-mouse.exe": "fa845381ebef1e3a9d9401838994315564693534f830df9e4b2b90e79bf63c4c",
   "helpers/ka-sfs/ka-sfs-watch.cs": "0d05de164116c0e16c95d2a398982d70bebda97db148787a9b4d0c53901f87aa",
   "helpers/ka-sfs/ka-sfs-watch.exe": "769c553b8dbc8cdfb4b34169ca0a1586323c26831f854a72297125b41581419e",
-  "helpers/KestrelAir-myOffsets.txt": "e38f833e6a2888ef5f41ebf2d39ca0f06d5d2c7aa7989a662e08747274a87725",
-  "helpers/KestrelAirLEDs.lua": "4674ff865ee7c7e7e47cfe1cff73be970d98491bcdf79531cf2f6d060aae315d",
+  "helpers/KestrelAir-myOffsets.txt": "acc7b71b3a6dc0e6b2330317401e91f0110ec620abe11dcf13deddbe049741d3",
+  "helpers/KestrelAirLEDs.lua": "21185017dd97a19162114d56075aee7bb627ec60c768639c05e7c5d9a2aa0d1c",
   "helpers/route-thumbsticks.py": "20ecc454bf0ec3b7c8135c7deba77a52bef37f3e1d3990bb48cbee6664b4ea47",
   "helpers/rudder-pedals.md": "332cab2f02c1e3b4e6d1d433f601308567f5dc431f9531530c61c6ea32ea6397",
   "helpers/sfs-monitor-handover.md": "3e3d02fb3e1ea480d5f07885aa2f2cd90bd70b08bd2c102c3c32abe49772d0d4",
@@ -62,7 +62,7 @@
   "profiles/Bonanza A36 - GNS 530 + TDS GTNxi 650.xml": "9a631dfd570611567a32e2526be4e4e090b5758f0765a4106e55089155ddcc29",
   "profiles/Bonanza A36TC - GNS 530 + TDS GTNxi 650.xml": "40ff9db5418d6724c7aa9ee55db4f9df3b3f910d5e523fa438c79d47e1847f98",
   "profiles/Bonanza B36TP - GNS 530 + TDS GTNxi 650.xml": "4b9c6b09ecc8149222d6878ceff54b1495b637d1f759019341d95634fb92db26",
-  "profiles/Citation X - FlightFX C750.xml": "a43ac575660270b4a321b68c30409adafaa5581c005a392b65eed5cf5cf02607",
+  "profiles/Citation X - FlightFX C750.xml": "e733dd468a0a367467f72f182155374443b1160ae0375712deebabba83638dec",
   "profiles/Piper PA-24-250.xml": "586426e10ca97dab96bbc1b5352b50420fee5c27c9177e5705aa8168894614bb",
   "profiles/Profile.xml": "d26d454198b50161a3bce9209da9c52793587b58b92c945462cb597fc7bd0e9d",
   "README.md": "b90e07755aa8ab07750230db66acdb46a6e73437d180bbb43223845494c5b1a5",
@@ -71,5 +71,8 @@
   "vJoySetup_v2.2.2.0_Win10_Win11.exe": "ef569a3105cd301b89580f18f60c66b339e95296acf2c0dfcaf4b4bbf8ab68fe",
   "helpers/ka-drone-leds/ka-walk-leds.exe": "a8496a5c318dcd8a35882cffe9ec7d613cfa7742edcfb506d8144c0eb130aff1",
   "helpers/cabin-camera-mode.py": "0b1582bb2a97b9e96aa6ba57690347cf5b22dcfa9ad945c64590294f1e7af827",
-  "helpers/cabin-camera-mode.md": "40ce09e8983807d980156d213ea9b9164dfe08995c505f7aca9a2af4dd7687b4"
+  "helpers/cabin-camera-mode.md": "40ce09e8983807d980156d213ea9b9164dfe08995c505f7aca9a2af4dd7687b4",
+  "profiles/Citation Longitude - Asobo G5000.xml": "29da4a819c020689a1a50e1b30813d014b125005d3c861afcd264468193960ee",
+  "helpers/longitude-profile.md": "4bd5e63cf1df0ebe29f383f7309adb80cacebeec210b2c4cecf6173131cde78f",
+  "helpers/citation-x-profile.md": "0462527c362075a11079f2eee2f6d4e13fbd3b4e503994b7fa3fc46943e0d24b"
 }

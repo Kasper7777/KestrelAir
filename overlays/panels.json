@@ -1,0 +1,43 @@
+{
+  "_readme": "All values in mm. Origin = bottom-left corner of the overlay, X right, Y up, with the panel the way you see it on the desk. x/y are the CENTRE of each hole. Set verified=true once a paper print fits the real panel. See README.md.",
+  "hole_clearance_mm": 0.4,
+  "panels": {
+    "EXAMPLE": {
+      "_note": "Shows every feature type. Delete it or ignore it. These numbers are made up and do not match any VIRPIL panel.",
+      "verified": false,
+      "outline": { "w": 120, "h": 80, "corner_r": 4 },
+      "features": [
+        { "id": "M1", "type": "circle", "x": 6, "y": 6, "d": 3.2, "no_clearance": true },
+        { "id": "M2", "type": "circle", "x": 114, "y": 6, "d": 3.2, "no_clearance": true },
+        { "id": "M3", "type": "circle", "x": 114, "y": 74, "d": 3.2, "no_clearance": true },
+        { "id": "M4", "type": "circle", "x": 6, "y": 74, "d": 3.2, "no_clearance": true },
+        { "id": "ENC1", "type": "circle", "x": 25, "y": 50, "d": 7 },
+        { "id": "SW1", "type": "circle", "x": 50, "y": 50, "d": 6.2 },
+        { "id": "SW1-key", "type": "slot", "x": 50, "y": 54.2, "w": 1.5, "h": 2.5 },
+        { "id": "B1", "type": "rect", "x": 80, "y": 50, "w": 12, "h": 12, "r": 1.5 },
+        { "id": "LEVER", "type": "slot", "x": 100, "y": 40, "w": 8, "h": 40 },
+        { "id": "TILT", "type": "rect", "x": 25, "y": 25, "w": 14, "h": 8, "r": 1, "angle": 30 },
+        { "id": "lbl-enc", "type": "text", "x": 25, "y": 58, "h": 3, "text": "HDG" },
+        { "id": "lbl-b1", "type": "text", "x": 80, "y": 59, "h": 3, "text": "AP" }
+      ]
+    },
+    "CP1": {
+      "_measure": "VPC Control Panel #1 (arriving later). Measure the plate edge, its mounting screws, and every button, switch and encoder hole.",
+      "verified": false,
+      "outline": null,
+      "features": []
+    },
+    "CP2": {
+      "_measure": "VPC Control Panel #2. Measure the plate edge, its mounting screws, the gear-lever slot and surround, every toggle and button opening, and each switch's anti-rotation key tab if it has one.",
+      "verified": false,
+      "outline": null,
+      "features": []
+    },
+    "CP3": {
+      "_measure": "VPC Control Panel #3. Measure the plate edge, its mounting screws, the B1-B13 openings, the encoder, the rotary selector and the two axis knobs (RX/RY).",
+      "verified": false,
+      "outline": null,
+      "features": []
+    }
+  }
+}

@@ -22,7 +22,10 @@ openPanel(0x025A, {{led=2,offset=0xA010,float=true}, {led=1,offset=0xA018,float=
                  {led=14,lvar='VAR_DOORSEALPRIMARYINFLATE',off=0x94,on=0xBC},
                  -- B7 below B5, B8 below B6: PhIDs 15/12, momentary red.
                  {led=16,lvar='VAR_PRESSURIZATIONTEST',off=dimRed,on=brightRed},
-                 {led=13,lvar='VAR_DOORSEALSTANDBYINFLATE',off=dimRed,on=brightRed}},
+                 {led=13,lvar='VAR_DOORSEALSTANDBYINFLATE',off=dimRed,on=brightRed},
+                 -- Citation X only: B9/B10 = physical addresses 14/11.
+                 {led=15,offset=0xA020,float=true,threshold=0,citationOnly=true,off=dimWhite,on=brightWhite},
+                 {led=12,offset=0xA028,float=true,threshold=0,citationOnly=true,off=dimWhite,on=brightWhite}},
                  -- B3/B4 are unassigned again, shown in blue at PhIDs 3/2.
                  {[3]=0xB0,[4]=0xB0})
 -- VIRPIL PrimaryTypeParams.json supplies zero-based PhID addresses:
@@ -52,12 +55,20 @@ local function releaseStickKeysOnCameraChange()
     lastDroneState = drone
 end
 
+local lastAircraftTitle
 function KestrelAirPoll()
     releaseStickKeysOnCameraChange()
+    local title = (ipc.readSTR(0x3D00,256) or ''):match('^[^%z]*'):gsub('%s+$','')
+    local citation = title == 'Citation X' or title == 'Citation X Winglets'
+    if title ~= lastAircraftTitle then
+        ipc.log('KestrelAir LEDs: aircraft '..title..' Citation cabin feedback='..tostring(citation))
+        lastAircraftTitle=title
+    end
     for _, panel in ipairs(panels) do
         local leds = {}
         for i=1,17 do leds[i]=panel.baseline[i] or 0 end
         for _, binding in ipairs(panel.mapping) do
+            if not binding.citationOnly or citation then
             local state
             if binding.lvar then
                 local ok,value=pcall(ipc.readLvar,binding.lvar)
@@ -67,12 +78,16 @@ function KestrelAirPoll()
             else state=ipc.readSD(binding.offset) end
             local active
             if binding.equals ~= nil then active = state == binding.equals
-            else active = state > 0.5 end
+            else active = state > (binding.threshold or 0.5) end
             leds[binding.led] = active and (binding.on or green) or (binding.off or purple)
             if binding.last ~= leds[binding.led] then
                 ipc.log(string.format('KestrelAir LEDs: %04X slot %d state %.3f color %02X',
                     panel.product,binding.led,state,leds[binding.led]))
                 binding.last=leds[binding.led]
+            end
+            else
+                -- Zero releases these LEDs back to the stored firmware colours.
+                binding.last=nil
             end
         end
         local packet=string.char(2,102,0,0,0)..string.char(unpack(leds))

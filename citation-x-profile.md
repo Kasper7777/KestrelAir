@@ -17,7 +17,7 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | T6 | Panel lighting (L, centre, R, EL) on / off |
 | T7 | Engine (fan) sync on / off |
 | E1 encoder | Pressurization rate knob − / + |
-| Five-position selector | **Left engine:** OFF = ignition off, R = NORM, L = ignition ON (continuous), BOTH = NORM, **START = starts engine 1** |
+| Five-position selector | **Left IRS:** OFF, ALIGN, NAV, ATT, ATT across the five detents; replaces engine ignition/start |
 | B3 / B6 | Tobii head-tracking toggle (Alt+7) / tracking reset. B6 sends Alt+8 and then Shift+Space, so it works on both the custom and the sim-default keyboard profile (Citation only; the Baron and Bonanzas keep Alt+8 alone) |
 | Mini-stick | Mouse pointer; pressing it in (button 13) is the left click. No right click. This is the ka-mouse helper, so it applies in every aircraft |
 | Trim, rudder trim, drone, zoom | Unchanged |
@@ -37,8 +37,8 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | T7 | Windshield heat, both sides |
 | T8 | Seat belt sign |
 | B6 (red, was STEP) | Autothrottle (ATS) engage/disengage button |
-| Rotary selector | **Right engine**, same positions as the throttle selector; START starts engine 2 |
-| L / R switch | **Engine start**: L starts the left engine, R the right (same command as the selectors' START; ignored while that engine is running) |
+| Rotary selector | **Right IRS:** OFF, ALIGN, NAV, ATT, ATT across the five detents; replaces engine ignition/start |
+| L / R switch | **Engine start**: L starts the left engine, R the right; ignored while that engine is running |
 | Inner lever, left (was prop) | **Speedbrake**: forward stowed, pull back to extend |
 | Inner lever, right (was prop) | Unassigned (reverse is on the CM3 thrust levers) |
 | Outer levers (were mixtures) | Unassigned. The CP3 levers do the speedbrake only |
@@ -64,7 +64,9 @@ Build: `build-citation-x-profile.py --install` (derives the profile from the ins
 | B4 | APU bleed air on / off |
 | B5 | Standby power on / off |
 | B6 | Emergency lights ARM / OFF |
-| B7 / B8 | Left / right IRS: NAV / OFF |
+| B7 / B8 | Unassigned; IRS controls moved to the throttle and CP3 rotary mode selectors |
+| B9 | Toggle cabin entry lights; white, bright when on and dim when off |
+| B10 | Toggle cabin overhead lights at the saved cabin brightness; white, bright when on and dim when off |
 | E1–E3 | Elevator, rudder and aileron trim, unchanged |
 
 B1–B8 have no state lights in the Citation; they keep their existing colours.
@@ -102,13 +104,13 @@ MSFS 2024 remembers a control profile per device **per aircraft**, and a newly u
 
 ## Starting the engines with this layout
 
-1. B1/B2 batteries, B5 standby power, B7/B8 IRS to NAV, B3/B4 avionics.
+1. B1/B2 batteries, CP2 B5 standby power, throttle and CP3 rotary selectors to NAV (third detent), B3/B4 avionics.
 2. CP2 B1 APU master, B2 APU start; when it's running, B3 APU generator and B4 APU bleed.
 3. Boost pumps NORM (switches down), beacon on. Fuel goes to RUN by itself when a CM3 thrust lever is moved; keep the levers on the idle detent for the start.
-4. Turn the CP3 rotary to START (right engine), then the throttle selector to START (left engine). FADEC adds fuel at about 30 % N2 and the starter cuts out on its own. Leave the selectors on BOTH (NORM ignition) afterwards.
+4. Use the CP3 L/R switch to start each engine: L for left, R for right. FADEC adds fuel at about 30 % N2 and the starter cuts out on its own. Leave both IRS rotary selectors on NAV.
 5. Shutdown: with the aircraft stopped, pull the CM3 levers hard against the rear stop (fuel CUTOFF); back on the detent is RUN.
 
-The starter command only fires if that engine's starter isn't already turning, so moving through START twice won't abort a start. The engines start on APU bleed air: with the APU off, START engages the starter but N2 stays at 0 (seen live 2026-11-04).
+The starter command only fires if that engine's starter isn't already turning, so repeating it won't abort a start. The engines start on APU bleed air: with the APU off, the starter engages but N2 stays at 0 (seen live 2026-11-04).
 
 ## How this was verified (2026-11-04, aircraft parked)
 

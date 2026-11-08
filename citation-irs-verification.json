@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "device": "0x0194",
+      "button": 60,
+      "IRS": "l",
+      "mode": 0.0,
+      "passed": true
+    },
+    {
+      "device": "0x0194",
+      "button": 61,
+      "IRS": "l",
+      "mode": 1.0,
+      "passed": true
+    },
+    {
+      "device": "0x0194",
+      "button": 62,
+      "IRS": "l",
+      "mode": 2.0,
+      "passed": true
+    },
+    {
+      "device": "0x0194",
+      "button": 63,
+      "IRS": "l",
+      "mode": 3.0,
+      "passed": true
+    },
+    {
+      "device": "0x0194",
+      "button": 64,
+      "IRS": "l",
+      "mode": 3.0,
+      "passed": true
+    },
+    {
+      "device": "0x025C",
+      "button": 47,
+      "IRS": "r",
+      "mode": 0.0,
+      "passed": true
+    },
+    {
+      "device": "0x025C",
+      "button": 46,
+      "IRS": "r",
+      "mode": 1.0,
+      "passed": true
+    },
+    {
+      "device": "0x025C",
+      "button": 45,
+      "IRS": "r",
+      "mode": 2.0,
+      "passed": true
+    },
+    {
+      "device": "0x025C",
+      "button": 44,
+      "IRS": "r",
+      "mode": 3.0,
+      "passed": true
+    },
+    {
+      "device": "0x025C",
+      "button": 43,
+      "IRS": "r",
+      "mode": 3.0,
+      "passed": true
+    }
+  ],
+  "restored": {
+    "LVAR:knob_irs_l": 0.0,
+    "LVAR:knob_irs_r": 0.0,
+    "LVAR:Switch_ignition_l": 1.0,
+    "LVAR:Switch_ignition_r": 1.0,
+    "SIMCONNECT:GENERAL ENG STARTER:1": 1.0,
+    "SIMCONNECT:GENERAL ENG STARTER:2": 1.0
+  }
+}

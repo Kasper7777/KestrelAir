@@ -10,7 +10,7 @@ const path = require('path');
 const src = process.argv[2] || path.join(__dirname, 'panels.json');
 const outDir = process.argv[3] || path.join(__dirname, 'out');
 const cfg = JSON.parse(fs.readFileSync(src, 'utf8'));
-const clearance = Number(cfg.hole_clearance_mm || 0);
+const defaultClearance = Number(cfg.hole_clearance_mm || 0);
 fs.mkdirSync(outDir, { recursive: true });
 
 // ---------- geometry ----------
@@ -26,6 +26,27 @@ function roundedRect(cx, cy, w, h, r, layer) {
   }
   return p;
 }
+function filletPoly(pts, r, layer) {
+  // Closed polygon with every corner rounded to radius r (like a FreeCAD Draft wire with FilletRadius).
+  const n = pts.length, p = [], ends = [];
+  for (let i = 0; i < n; i++) {
+    const P = pts[i], A = pts[(i + n - 1) % n], B = pts[(i + 1) % n];
+    const la = Math.hypot(A[0] - P[0], A[1] - P[1]), lb = Math.hypot(B[0] - P[0], B[1] - P[1]);
+    const u1 = [(A[0] - P[0]) / la, (A[1] - P[1]) / la], u2 = [(B[0] - P[0]) / lb, (B[1] - P[1]) / lb];
+    const th = Math.acos(Math.max(-1, Math.min(1, u1[0] * u2[0] + u1[1] * u2[1])));
+    if (!(r > 0) || th > Math.PI - 1e-6) { ends.push([P, P]); continue; }
+    const t = Math.min(r / Math.tan(th / 2), la / 2, lb / 2), rr = t * Math.tan(th / 2);
+    const T1 = [P[0] + u1[0] * t, P[1] + u1[1] * t], T2 = [P[0] + u2[0] * t, P[1] + u2[1] * t];
+    const bi = [u1[0] + u2[0], u1[1] + u2[1]], bl = Math.hypot(...bi), dc = rr / Math.sin(th / 2);
+    const C = [P[0] + bi[0] / bl * dc, P[1] + bi[1] / bl * dc];
+    const a1 = Math.atan2(T1[1] - C[1], T1[0] - C[0]) * 180 / Math.PI, a2 = Math.atan2(T2[1] - C[1], T2[0] - C[0]) * 180 / Math.PI;
+    const sw = ((a2 - a1) % 360 + 360) % 360;
+    p.push(sw <= 180 ? { t: 'arc', layer, a: [C[0], C[1], rr, a1, a1 + sw] } : { t: 'arc', layer, a: [C[0], C[1], rr, a2, a2 + 360 - sw] });
+    ends.push([T1, T2]);
+  }
+  for (let i = 0; i < n; i++) { const a = ends[i][1], b = ends[(i + 1) % n][0]; if (Math.hypot(b[0] - a[0], b[1] - a[1]) > 1e-9) p.push({ t: 'line', layer, a: [a[0], a[1], b[0], b[1]] }); }
+  return p;
+}
 function rotate(prims, cx, cy, deg) {
   if (!deg) return prims;
   const c = Math.cos(deg * Math.PI / 180), s = Math.sin(deg * Math.PI / 180);
@@ -39,6 +60,7 @@ function rotate(prims, cx, cy, deg) {
 
 function buildPanel(name, panel) {
   const o = panel.outline, prims = [], problems = [];
+  const clearance = Number(panel.hole_clearance_mm ?? defaultClearance);
   prims.push(...roundedRect(o.w / 2, o.h / 2, o.w, o.h, o.corner_r, 'CUT'));
   for (const f of panel.features || []) {
     const id = f.id || '?', c = f.no_clearance ? 0 : clearance, layer = f.layer || (f.type === 'text' ? 'ENGRAVE' : 'CUT');
@@ -50,10 +72,14 @@ function buildPanel(name, panel) {
       if (!(f.w > 0 && f.h > 0)) { problems.push(`${id}: missing w/h`); continue; }
       const w = f.w + c, h = f.h + c, r = f.type === 'slot' ? Math.min(w, h) / 2 : (f.r || 0) + (f.r ? c / 2 : 0);
       prims.push(...rotate(roundedRect(f.x, f.y, w, h, r, layer), f.x, f.y, f.angle || 0));
+    } else if (f.type === 'poly') {
+      if (!Array.isArray(f.points) || f.points.length < 3) { problems.push(`${id}: poly needs 3+ points`); continue; }
+      prims.push(...filletPoly(f.points.map(([px, py]) => [f.x + px, f.y + py]), f.fillet || 0, layer));
     } else if (f.type === 'text') {
       prims.push({ t: 'text', layer, a: [f.x, f.y, f.h || 3, String(f.text || '')], align: f.align || 'center' });
     } else problems.push(`${id}: unknown type ${f.type}`);
-    if (f.type !== 'text') {
+    if (cfg.id_labels !== false && f.type !== 'text' && f.id && !f.no_id) prims.push({ t: 'text', layer: 'IDS', a: [f.x + (f.id_dx || 0), f.y + (f.id_dy || 0) - 1, 2, f.id], align: 'center' });
+    if (!f.edge && (f.type === 'circle' || f.type === 'rect' || f.type === 'slot')) {
       let ex, ey;
       if (f.type === 'circle') ex = ey = (f.d + c) / 2;
       else {
@@ -68,7 +94,7 @@ function buildPanel(name, panel) {
   prims.push({ t: 'line', layer: 'CHECK', a: [0, sy, 50, sy] }, { t: 'line', layer: 'CHECK', a: [0, sy - 2, 0, sy + 2] },
              { t: 'line', layer: 'CHECK', a: [50, sy - 2, 50, sy + 2] },
              ...roundedRect(70, sy, 20, 20, 0, 'CHECK'),
-             { t: 'text', layer: 'CHECK', a: [0, sy - 18, 3, `${name}  |  bar = 50.00 mm, square = 20.00 mm  |  hole clearance +${clearance} mm`], align: 'left' });
+             { t: 'text', layer: 'CHECK', a: [0, sy - 18, 3, `${name}  |  bar = 50.00 mm, square = 20.00 mm  |  extra hole clearance +${clearance} mm`], align: 'left' });
   return { prims, problems };
 }
 
@@ -87,8 +113,8 @@ const n = v => (Math.abs(v) < 1e-9 ? 0 : +v.toFixed(4));
 // ---------- DXF (R12 ASCII, mm) ----------
 function toDXF(prims) {
   const out = ['0', 'SECTION', '2', 'HEADER', '9', '$ACADVER', '1', 'AC1009', '9', '$INSUNITS', '70', '4', '9', '$MEASUREMENT', '70', '1', '0', 'ENDSEC',
-    '0', 'SECTION', '2', 'TABLES', '0', 'TABLE', '2', 'LAYER', '70', '3'];
-  for (const [l, col] of [['CUT', 1], ['ENGRAVE', 5], ['CHECK', 3]]) out.push('0', 'LAYER', '2', l, '70', '0', '62', String(col), '6', 'CONTINUOUS');
+    '0', 'SECTION', '2', 'TABLES', '0', 'TABLE', '2', 'LAYER', '70', '5'];
+  for (const [l, col] of [['CUT', 1], ['POCKET', 6], ['ENGRAVE', 5], ['IDS', 8], ['CHECK', 3]]) out.push('0', 'LAYER', '2', l, '70', '0', '62', String(col), '6', 'CONTINUOUS');
   out.push('0', 'ENDTAB', '0', 'ENDSEC', '0', 'SECTION', '2', 'ENTITIES');
   for (const p of prims) {
     const a = p.a;
@@ -107,7 +133,7 @@ function toDXF(prims) {
 // ---------- SVG (mm units, Y flipped) ----------
 function toSVG(prims, b, m) {
   const W = b.x1 - b.x0 + 2 * m, H = b.y1 - b.y0 + 2 * m, X = x => n(x - b.x0 + m), Y = y => n(b.y1 + m - y);
-  const col = { CUT: '#ff0000', ENGRAVE: '#0000ff', CHECK: '#00a000' }, s = [];
+  const col = { CUT: '#ff0000', POCKET: '#d000d0', ENGRAVE: '#0000ff', IDS: '#888888', CHECK: '#00a000' }, s = [];
   s.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${n(W)}mm" height="${n(H)}mm" viewBox="0 0 ${n(W)} ${n(H)}">`);
   for (const p of prims) {
     const a = p.a, st = `fill="none" stroke="${col[p.layer] || '#000'}" stroke-width="0.1"`;
@@ -127,9 +153,12 @@ function toSVG(prims, b, m) {
 
 // ---------- PDF (1:1, page sized to drawing) ----------
 function toPDF(prims, b, m) {
-  const k = 72 / 25.4, W = (b.x1 - b.x0 + 2 * m) * k, H = (b.y1 - b.y0 + 2 * m) * k + 14;
-  const P = (x, y) => `${((x - b.x0 + m) * k).toFixed(3)} ${((y - b.y0 + m) * k).toFixed(3)}`;
-  const rgb = { CUT: '1 0 0', ENGRAVE: '0 0 1', CHECK: '0 0.6 0' }, ops = ['0.283 w'];
+  // Real paper size (A4, else A3, portrait), drawing centred, so "Actual size" printing is unambiguous.
+  const k = 72 / 25.4, dw = b.x1 - b.x0 + 2 * m, dh = b.y1 - b.y0 + 2 * m;
+  const [pw, ph] = [[210, 297], [297, 420]].find(([w, h]) => dw <= w - 10 && dh <= h - 20) || [dw, dh + 14];
+  const W = pw * k, H = ph * k, offX = (pw - dw) / 2 * k, offY = (ph - dh) / 2 * k;
+  const P = (x, y) => `${(offX + (x - b.x0 + m) * k).toFixed(3)} ${(offY + (y - b.y0 + m) * k).toFixed(3)}`;
+  const rgb = { CUT: '1 0 0', POCKET: '0.8 0 0.8', ENGRAVE: '0 0 1', IDS: '0.55 0.55 0.55', CHECK: '0 0.6 0' }, ops = ['0.283 w'];
   const arcOps = (cx, cy, r, d0, d1, move) => {
     let sweep = d1 - d0; while (sweep <= 0) sweep += 360;
     const segs = Math.ceil(sweep / 90 - 1e-9), step = sweep / segs * Math.PI / 180, out = [];
@@ -154,7 +183,7 @@ function toPDF(prims, b, m) {
       ops.push(`${c} rg BT /F1 ${sz.toFixed(2)} Tf ${P(a[0] + dx, a[1])} Td (${str}) Tj ET`);
     }
   }
-  ops.push(`0 0 0 rg BT /F1 8 Tf 6 ${(H - 10).toFixed(2)} Td (Print at 100% / Actual size - no fit-to-page. Check the 50 mm bar with a ruler.) Tj ET`);
+  ops.push(`0 0 0 rg BT /F1 8 Tf ${(10 * k).toFixed(2)} ${(H - 10 * k).toFixed(2)} Td (${pw === 210 ? 'A4' : pw === 297 ? 'A3' : 'Custom'} page. Print at 100% / Actual size - NOT fit-to-page. Check: green bar = 50 mm, square = 20 x 20 mm.) Tj ET`);
   const stream = ops.join('\n');
   const objs = ['<< /Type /Catalog /Pages 2 0 R >>', '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
     `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W.toFixed(3)} ${H.toFixed(3)}] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>`,

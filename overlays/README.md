@@ -1,53 +1,57 @@
 # VIRPIL Control Panel overlays (CP1 / CP2 / CP3)
 
-VIRPIL doesn't publish faceplate drawings or CAD for the Control Panels. Their manuals and stores give only the overall
-housing size (CP2 236×201×164 mm, CP3 236×201×130.5 mm, CP1 236×202×83 mm). Those figures include the legs and
-levers, so they're no use for hole positions. The geometry has to come from your own panels. This folder turns your
-measurements into true-scale files.
+These are ready-made, true-scale faceplate drawings. All three panels share the same plate: **170 × 200 mm with
+20 mm corner radii**. Origin is the bottom-left corner as you look at the panel.
+
+## Files in `out/`
 
 | File | Use |
 |---|---|
-| `panels.json` | Your measurements (mm). `EXAMPLE` shows every feature type. |
-| `make-overlays.js` | Generator. No dependencies. |
-| `out/<panel>.dxf` | **Import this into Fusion.** It's true scale in mm, with layers CUT (red), ENGRAVE (blue) and CHECK (green). |
-| `out/<panel>.svg` | For LightBurn or Inkscape. The units are mm. |
-| `out/<panel>.pdf` | 1:1 paper test print. |
+| `CP1.dxf`, `CP2.dxf`, `CP3.dxf` | **Import into Fusion:** Insert → Insert DXF, pick a plane, units **mm**. |
+| `*.svg` | For LightBurn or Inkscape. The units are mm. |
+| `*.pdf` | 1:1 paper test print. Use 100% / Actual size and check the green 50 mm bar. The page is larger than A4, so use A3 or tile it. |
 
-Run it with:
+DXF layers:
+- **CUT** (red): the plate edge and every control opening.
+- **POCKET** (magenta): screw-head recesses. The original is a 3 mm plate with 2 mm-deep recesses on the back so the panel's faceplate screw heads don't lift it. You can engrave them from the back, cut them through, or delete them.
+- **IDS** (grey): control names, for reference only. Don't cut this layer.
+- **CHECK** (green): the scale bar and square, for checking scale only. Don't cut this layer.
+
+Some shapes deliberately overlap the plate edge: the CP3 lever slots, the side notches, and the CP3 selector keyhole,
+which is a circle plus two tabs. They still cut correctly. In Fusion, select all the regions of each opening when you
+extrude-cut.
+
+## Where the numbers come from
+
+| Panel | Source | Accuracy |
+|---|---|---|
+| CP1, CP2 | Exact CAD values from xchrishawk's FreeCAD model, [Virpil Throttle / Control Panel Label Plates](https://www.printables.com/model/1106661) (CC BY-NC-SA, personal non-commercial use). The designer modelled every control by VIRPIL's name (B1, T7, E2, Gear Handle…), and the openings are already clearance-sized. | Exact to that model. |
+| CP3 | Nobody publishes CP3 CAD, so I measured it from DeathDonky Prints' [SharKa-50 template](https://www.deathdonkyprints.com/downloads). The CP3 uses the SharKa-50 faceplate. The template is to scale at 5.68 px/mm. When I ran the same method on DeathDonky's CP2 template, its holes landed within about 0.8 mm of the exact CP2 CAD. | About ±0.5–0.8 mm. The IDs are generic: SQ = button, R = toggle/encoder, LEVER = axis slot, SEL = rotary selector, SS = screw-head clearance, M = corner mounting hole. |
+
+The original downloads are in `source/`. That folder also has DeathDonky's CP1 and CP2 templates, which show a second
+designer's take. That design uses through-holes for the screw heads and small corner holes, so it can be screwed on
+with the panel's own corner screws.
+
+## Changing things
+
+Edit `panels.json`, then run:
 
 ```
 ..\.tools\playwright-runtime\node-v26.13.0-win-x64\node.exe make-overlays.js
 ```
 
-## Getting accurate numbers (±0.1–0.2 mm)
+Feature types (`x`, `y` = centre):
+- `circle` takes `d`.
+- `rect` takes `w`, `h`, an optional corner radius `r` and an optional `angle`.
+- `slot` takes `w` and `h` and has round ends.
+- `poly` takes `points` relative to `x`/`y`, plus `fillet`.
+- `text` takes `text` and `h`. It goes on the ENGRAVE layer.
 
-1. **Scan, don't photograph.** Pull the knobs and switch caps off and lay the panel face-down on a flatbed scanner.
-   Scan at 600 dpi with no scaling. A scanner is orthographic, so it has no lens distortion and no perspective error.
-   A phone photo has both.
-2. Put a steel ruler or a caliper-checked object in the scan. It confirms the scale and lets you calibrate the image.
-3. **Fusion, if you trace:** Insert → Canvas. Right-click the canvas → Calibrate, and click two points a known
-   distance apart on the ruler. Then sketch over it.
-   **This generator, if you prefer typing numbers:** read hole centres off the scan (in GIMP or Fusion) and enter them
-   in `panels.json`.
-4. Use **calipers** to check the scan on 2–3 things: the plate width, one hole diameter, and one centre-to-centre
-   distance. Calipers beat the scan on hole diameters, so type those in directly.
-5. For toggle switches, note any anti-rotation key tab or flat on the bushing. Model a tab as a small `slot` next to
-   the hole (see `SW1-key` in the example).
+`hole_clearance_mm` is added to every opening. It's 0 here because the source cutouts already include clearance.
+Kerf compensation is a separate setting: make it in your laser software, not here.
 
-### Feature types (`x`, `y` = centre, origin = bottom-left of the plate, Y up)
+## Before cutting acrylic
 
-- `circle`: `d`
-- `rect`: `w`, `h`, optional corner radius `r`, optional `angle`
-- `slot`: `w`, `h`, with fully rounded ends (gear-lever channels)
-- `text`: `text`, `h` (cap height). It goes on the ENGRAVE layer.
-- `"no_clearance": true` keeps a hole at its exact size, which is right for screw holes.
-
-`hole_clearance_mm` (0.4 by default) is added to every opening's diameter or width so the overlay slips over the
-bushings. Kerf compensation is a separate setting: make it in your laser software (LightBurn's kerf offset), not here.
-
-## Before you cut acrylic
-
-1. Print the PDF at **100% / Actual size**, not fit-to-page. Measure the green 50 mm bar. Larger panels need A3 paper,
-   or tile the PDF.
-2. Cut the print out and lay it over the real panel. Fix anything that's off, regenerate, and repeat.
-3. Next, cut it once in card or 3 mm MDF. When it fits, set `"verified": true` and cut the real material.
+1. Print the PDF at 100%, cut it out, and lay it over the panel. This is especially important for CP3.
+2. Cut one in card or 3 mm MDF.
+3. When it fits, set `"verified": true` for that panel and cut the real material.

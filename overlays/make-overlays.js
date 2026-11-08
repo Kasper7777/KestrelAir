@@ -7,11 +7,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const src = process.argv[2] || path.join(__dirname, 'panels.json');
-const outDir = process.argv[3] || path.join(__dirname, 'out');
+const main = require.main === module;
+const src = (main && process.argv[2]) || path.join(__dirname, 'panels.json');
+const outDir = (main && process.argv[3]) || path.join(__dirname, 'out');
 const cfg = JSON.parse(fs.readFileSync(src, 'utf8'));
 const defaultClearance = Number(cfg.hole_clearance_mm || 0);
-fs.mkdirSync(outDir, { recursive: true });
+if (main) fs.mkdirSync(outDir, { recursive: true });
 
 // ---------- geometry ----------
 // Primitives: {t:'line',a:[x1,y1,x2,y2]} {t:'arc',a:[cx,cy,r,deg0,deg1]} (CCW) {t:'circle',a:[cx,cy,r]} {t:'text',a:[x,y,h,str]}
@@ -58,24 +59,148 @@ function rotate(prims, cx, cy, deg) {
   });
 }
 
+// ---------- clean contours: overlapping cut shapes merged into single closed outlines, true lines/arcs kept ----------
+const TAU = 2 * Math.PI, rad = d => d * Math.PI / 180;
+const arcSpan = p => p.t === 'circle' ? [0, 360] : [p.a[3], ((p.a[4] - p.a[3]) % 360 + 360) % 360 || 360];
+function primPoint(p, u) { // u in [0,1] along the primitive
+  if (p.t === 'line') return [p.a[0] + (p.a[2] - p.a[0]) * u, p.a[1] + (p.a[3] - p.a[1]) * u];
+  const [a0, sw] = arcSpan(p), t = rad(a0 + sw * u); return [p.a[0] + p.a[2] * Math.cos(t), p.a[1] + p.a[2] * Math.sin(t)];
+}
+function tess(p, sag = 1e-4) {
+  if (p.t === 'line') return [[p.a[0], p.a[1]], [p.a[2], p.a[3]]];
+  const sw = arcSpan(p)[1], n = Math.max(2, Math.ceil(rad(sw) / (2 * Math.acos(1 - Math.min(sag / p.a[2], 1)))));
+  return Array.from({ length: n + 1 }, (_, i) => primPoint(p, i / n));
+}
+function shapeOf(prims) { // segment soup for inside / distance tests
+  const segs = []; let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const p of prims) { const q = tess(p); for (let i = 1; i < q.length; i++) { segs.push([...q[i - 1], ...q[i]]); for (const v of [q[i - 1], q[i]]) { x0 = Math.min(x0, v[0]); x1 = Math.max(x1, v[0]); y0 = Math.min(y0, v[1]); y1 = Math.max(y1, v[1]); } } }
+  return { segs, box: [x0, y0, x1, y1] };
+}
+function inside(sh, x, y) {
+  const [x0, y0, x1, y1] = sh.box; if (x < x0 || x > x1 || y < y0 || y > y1) return false;
+  let c = false; for (const s of sh.segs) if ((s[1] > y) !== (s[3] > y) && x < (s[2] - s[0]) * (y - s[1]) / (s[3] - s[1]) + s[0]) c = !c; return c;
+}
+function nearest(sh, x, y) {
+  let best = Infinity, q = null;
+  for (const s of sh.segs) { const dx = s[2] - s[0], dy = s[3] - s[1], t = Math.max(0, Math.min(1, ((x - s[0]) * dx + (y - s[1]) * dy) / (dx * dx + dy * dy || 1)));
+    const px = s[0] + t * dx, py = s[1] + t * dy, d = Math.hypot(x - px, y - py); if (d < best) { best = d; q = [px, py]; } }
+  return { d: best, q };
+}
+function params(p, X, Y) { // parameter u in [0,1] of point (X,Y) on p, or null if off its span
+  if (p.t === 'line') { const dx = p.a[2] - p.a[0], dy = p.a[3] - p.a[1], u = ((X - p.a[0]) * dx + (Y - p.a[1]) * dy) / (dx * dx + dy * dy); return u > -1e-9 && u < 1 + 1e-9 ? Math.min(1, Math.max(0, u)) : null; }
+  const [a0, sw] = arcSpan(p), ang = ((Math.atan2(Y - p.a[1], X - p.a[0]) * 180 / Math.PI - a0) % 360 + 360) % 360;
+  if (sw === 360) return ang / 360; return ang <= sw + 1e-7 ? Math.min(1, ang / sw) : (ang > 360 - 1e-7 ? 0 : null);
+}
+function intersect(p, q) { // points where primitives p and q cross
+  const pts = [], L = r => r.t === 'line', C = r => [r.a[0], r.a[1], r.a[2]];
+  const lineCircle = (l, c) => { const [x1, y1, x2, y2] = l.a, [cx, cy, r] = C(c), dx = x2 - x1, dy = y2 - y1, A = dx * dx + dy * dy, B = 2 * (dx * (x1 - cx) + dy * (y1 - cy)), D = B * B - 4 * A * ((x1 - cx) ** 2 + (y1 - cy) ** 2 - r * r);
+    if (D < -1e-12) return []; const s = Math.sqrt(Math.max(D, 0)); return [(-B - s) / (2 * A), (-B + s) / (2 * A)].map(t => [x1 + t * dx, y1 + t * dy]); };
+  let cand;
+  if (L(p) && L(q)) { const [x1, y1, x2, y2] = p.a, [x3, y3, x4, y4] = q.a, d = (x2 - x1) * (y4 - y3) - (y2 - y1) * (x4 - x3);
+    if (Math.abs(d) < 1e-12) return []; const t = ((x3 - x1) * (y4 - y3) - (y3 - y1) * (x4 - x3)) / d; cand = [[x1 + t * (x2 - x1), y1 + t * (y2 - y1)]]; }
+  else if (L(p)) cand = lineCircle(p, q); else if (L(q)) cand = lineCircle(q, p);
+  else { const [x1, y1, r1] = C(p), [x2, y2, r2] = C(q), d = Math.hypot(x2 - x1, y2 - y1);
+    if (d < 1e-12 || d > r1 + r2 + 1e-9 || d < Math.abs(r1 - r2) - 1e-9) return [];
+    const a = (r1 * r1 - r2 * r2 + d * d) / (2 * d), h = Math.sqrt(Math.max(0, r1 * r1 - a * a)), mx = x1 + a * (x2 - x1) / d, my = y1 + a * (y2 - y1) / d;
+    cand = [[mx + h * (y2 - y1) / d, my - h * (x2 - x1) / d], [mx - h * (y2 - y1) / d, my + h * (x2 - x1) / d]]; }
+  for (const c of cand) if (params(p, ...c) !== null && params(q, ...c) !== null) pts.push(c);
+  return pts;
+}
+// groups: [{id, outline:bool, prims}] -> boundary pieces of (outline minus all holes)
+function mergeContours(groups) {
+  const shapes = groups.map(g => shapeOf(g.prims)), out = [], warnings = [], seen = new Set();
+  const material = (x, y) => inside(shapes[0], x, y) && !shapes.some((sh, i) => i > 0 && inside(sh, x, y));
+  groups.forEach((g, gi) => g.prims.forEach(p => {
+    let us = [0, 1];
+    groups.forEach((h, hi) => { if (hi !== gi) for (const q of h.prims) for (const c of intersect(p, q)) us.push(params(p, ...c)); });
+    const len = p.t === 'line' ? Math.hypot(p.a[2] - p.a[0], p.a[3] - p.a[1]) : rad(arcSpan(p)[1]) * p.a[2];
+    us.sort((a, b) => a - b); const uu = [];
+    for (const u of us) if (!uu.length || (u - uu[uu.length - 1]) * len > 1e-5) uu.push(u); else if (u === 1) uu[uu.length - 1] = 1;
+    if (uu[uu.length - 1] !== 1) uu.push(1);
+    const full = p.t === 'circle', pieces = [];
+    for (let i = 0; i + 1 < uu.length; i++) pieces.push([uu[i], uu[i + 1]]);
+    for (const [u0, u1] of pieces) {
+      // keep a piece only where there is material on exactly one side of it (robust for shared / coincident edges)
+      // test at the point of the piece furthest from every other contour (near-tangent pieces can be ~0.001 mm from one)
+      let um = (u0 + u1) / 2, clear = -1;
+      for (const f of [0.5, 0.3, 0.7, 0.15, 0.85, 0.05, 0.95]) {
+        const u = u0 + (u1 - u0) * f, q = primPoint(p, u);
+        let c = Infinity; groups.forEach((h, hi) => { if (hi === gi) return; const b = shapes[hi].box; if (q[0] < b[0] - 1 || q[0] > b[2] + 1 || q[1] < b[1] - 1 || q[1] > b[3] + 1) return; c = Math.min(c, nearest(shapes[hi], ...q).d); });
+        if (c > clear) { clear = c; um = u; }
+        if (clear > 0.01) break;
+      }
+      const m = primPoint(p, um), m2 = primPoint(p, um + 1e-6 * (um < 1 ? 1 : -1));
+      let nx = -(m2[1] - m[1]), ny = m2[0] - m[0]; const nl = Math.hypot(nx, ny) || 1; nx /= nl; ny /= nl;
+      const e = clear > 1e-6 ? Math.min(2e-3, clear / 2) : 2e-3, A = material(m[0] + nx * e, m[1] + ny * e), B = material(m[0] - nx * e, m[1] - ny * e);
+      if (A === B) continue;
+      const key = [primPoint(p, u0), m, primPoint(p, u1)].map(v => v.map(c => c.toFixed(4)).join(',')), k1 = key.join('|'), k2 = [...key].reverse().join('|');
+      if (seen.has(k1) || seen.has(k2)) continue; seen.add(k1);
+      if (full && pieces.length === 1) { out.push(p); continue; }
+      if (p.t === 'line') out.push({ ...p, a: [...primPoint(p, u0), ...primPoint(p, u1)] });
+      else { const [a0, sw] = arcSpan(p); out.push({ t: 'arc', layer: p.layer, a: [p.a[0], p.a[1], p.a[2], a0 + sw * u0, a0 + sw * u1] }); }
+    }
+  }));
+  // Islands: material completely cut free (it would drop out of the sheet) is removed together with its boundary.
+  const ends = out.map(p => p.t === 'circle' ? null : [primPoint(p, 0), primPoint(p, 1)]), used = new Set(), loops = [];
+  out.forEach((p, i) => {
+    if (used.has(i)) return; used.add(i);
+    const loop = [i];
+    if (p.t !== 'circle') {
+      let [start, end] = ends[i];
+      for (let guard = 0; guard < out.length && Math.hypot(end[0] - start[0], end[1] - start[1]) > 2e-3; guard++) {
+        const j = out.findIndex((q, k) => !used.has(k) && ends[k] && (Math.hypot(ends[k][0][0] - end[0], ends[k][0][1] - end[1]) < 2e-3 || Math.hypot(ends[k][1][0] - end[0], ends[k][1][1] - end[1]) < 2e-3));
+        if (j < 0) break;
+        used.add(j); loop.push(j);
+        end = Math.hypot(ends[j][0][0] - end[0], ends[j][0][1] - end[1]) < 2e-3 ? ends[j][1] : ends[j][0];
+      }
+    }
+    loops.push(loop);
+  });
+  const ring = loop => { const pts = []; for (const i of loop) { const q = tess(out[i], 1e-3); const last = pts[pts.length - 1];
+    if (last && Math.hypot(q[0][0] - last[0], q[0][1] - last[1]) > 2e-3) q.reverse(); pts.push(...(pts.length ? q.slice(1) : q)); } return pts; };
+  const info = loops.map(loop => {
+    const r = ring(loop), A = r.reduce((t, p, k) => { const q = r[(k + 1) % r.length]; return t + p[0] * q[1] - q[0] * p[1]; }, 0) / 2;
+    // a point just inside the loop (left of travel for CCW): is it material?
+    const k = Math.floor(r.length / 2), a = r[k], b = r[k + 1] || r[0], dl = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, sg = A > 0 ? 1 : -1;
+    const mx = (a[0] + b[0]) / 2 - sg * (b[1] - a[1]) / dl * 1e-3, my = (a[1] + b[1]) / 2 + sg * (b[0] - a[0]) / dl * 1e-3;
+    return { loop, r, area: Math.abs(A), outer: material(mx, my), sh: { segs: r.map((p, k2) => [...p, ...r[(k2 + 1) % r.length]]), box: [Math.min(...r.map(p => p[0])), Math.min(...r.map(p => p[1])), Math.max(...r.map(p => p[0])), Math.max(...r.map(p => p[1]))] } };
+  });
+  const outers = info.filter(l => l.outer).sort((x, y) => y.area - x.area), drop = new Set(), islands = [];
+  for (const isl of outers.slice(1)) {
+    islands.push({ area: isl.area, sh: isl.sh });
+    for (const l of info) if (l === isl || (!l.outer && inside(isl.sh, ...l.r[0]))) for (const i of l.loop) drop.add(i);
+  }
+  return { prims: out.filter((p, i) => !drop.has(i)), warnings: [...new Set(warnings)], islands };
+}
+
+function featurePrims(f, c, layer) {
+  if (f.type === 'circle') return [{ t: 'circle', layer, a: [f.x, f.y, (f.d + c) / 2] }];
+  if (f.type === 'rect' || f.type === 'slot') {
+    const w = f.w + c, h = f.h + c, r = f.type === 'slot' ? Math.min(w, h) / 2 : (f.r || 0) + (f.r ? c / 2 : 0);
+    return rotate(roundedRect(f.x, f.y, w, h, r, layer), f.x, f.y, f.angle || 0);
+  }
+  if (f.type === 'poly') return filletPoly(f.points.map(([px, py]) => [f.x + px, f.y + py]), f.fillet || 0, layer);
+  return [];
+}
+
 function buildPanel(name, panel) {
-  const o = panel.outline, prims = [], problems = [];
+  const o = panel.outline, prims = [], problems = [], notes = [], cutGroups = [];
   const clearance = Number(panel.hole_clearance_mm ?? defaultClearance);
   // outline: rounded rectangle, or a polygon of [x, y, cornerRadius] points (e.g. the L-shaped CM3 throttle plate)
-  prims.push(...(o.points ? filletPoly(o.points, 0, 'CUT') : roundedRect(o.w / 2, o.h / 2, o.w, o.h, o.corner_r, 'CUT')));
+  cutGroups.push({ id: 'plate edge', outline: true, prims: o.points ? filletPoly(o.points, 0, 'CUT') : roundedRect(o.w / 2, o.h / 2, o.w, o.h, o.corner_r, 'CUT') });
+  // screw_holes: "through" = cut every screw position right through (laser), true = keep the original layers (POCKET recesses), false = leave them out
+  const screwMode = panel.screw_holes ?? cfg.screw_holes ?? true, screwHoles = screwMode !== false;
   for (const f of panel.features || []) {
-    const id = f.id || '?', c = f.no_clearance ? 0 : clearance, layer = f.layer || (f.type === 'text' ? 'ENGRAVE' : 'CUT');
+    if (f.screw && !screwHoles) continue;
+    const id = f.id || '?', c = f.no_clearance ? 0 : clearance;
+    const layer = f.screw && screwMode === 'through' ? 'CUT' : f.layer || (f.type === 'text' ? 'ENGRAVE' : 'CUT');
     if (![f.x, f.y].every(Number.isFinite)) { problems.push(`${id}: missing x/y`); continue; }
-    if (f.type === 'circle') {
-      if (!(f.d > 0)) { problems.push(`${id}: missing d`); continue; }
-      prims.push({ t: 'circle', layer, a: [f.x, f.y, (f.d + c) / 2] });
-    } else if (f.type === 'rect' || f.type === 'slot') {
-      if (!(f.w > 0 && f.h > 0)) { problems.push(`${id}: missing w/h`); continue; }
-      const w = f.w + c, h = f.h + c, r = f.type === 'slot' ? Math.min(w, h) / 2 : (f.r || 0) + (f.r ? c / 2 : 0);
-      prims.push(...rotate(roundedRect(f.x, f.y, w, h, r, layer), f.x, f.y, f.angle || 0));
-    } else if (f.type === 'poly') {
-      if (!Array.isArray(f.points) || f.points.length < 3) { problems.push(`${id}: poly needs 3+ points`); continue; }
-      prims.push(...filletPoly(f.points.map(([px, py]) => [f.x + px, f.y + py]), f.fillet || 0, layer));
+    if (f.type === 'circle' && !(f.d > 0)) { problems.push(`${id}: missing d`); continue; }
+    if ((f.type === 'rect' || f.type === 'slot') && !(f.w > 0 && f.h > 0)) { problems.push(`${id}: missing w/h`); continue; }
+    if (f.type === 'poly' && (!Array.isArray(f.points) || f.points.length < 3)) { problems.push(`${id}: poly needs 3+ points`); continue; }
+    if (f.type === 'circle' || f.type === 'rect' || f.type === 'slot' || f.type === 'poly') {
+      const fp = featurePrims(f, c, layer);
+      if (layer === 'CUT') cutGroups.push({ id, screw: !!f.screw, f, prims: fp }); else prims.push(...fp);
     } else if (f.type === 'text') {
       prims.push({ t: 'text', layer, a: [f.x, f.y, f.h || 3, String(f.text || '')], align: f.align || 'center' });
     } else problems.push(`${id}: unknown type ${f.type}`);
@@ -90,13 +215,73 @@ function buildPanel(name, panel) {
       if (f.x - ex < 0 || f.y - ey < 0 || f.x + ex > o.w || f.y + ey > o.h) problems.push(`${id}: extends past plate edge (check coordinates)`);
     }
   }
+  // Laser-cut screw holes: where a hole would leave a web thinner than min_web_mm to the plate edge or to a control
+  // opening (it was only a 2 mm-deep recess in the 3D-printed original), open it into that neighbour with a straight,
+  // full-width bridge instead of leaving a sliver that snaps or burns away.
+  const minWeb = Number(panel.min_web_mm ?? cfg.min_web_mm ?? 1.0), minHorn = Number(cfg.min_horn_deg ?? 35), bridges = [];
+  // degrees of material around point X once screw s and neighbour g are both cut out
+  const materialAngle = (X, s, g) => { let n = 0; const sp = shapeOf(s.prims), gs = shapeOf(g.prims), ps = shapeOf(cutGroups[0].prims);
+    for (let i = 0; i < 720; i++) { const t = i / 720 * TAU, x = X[0] + 0.05 * Math.cos(t), y = X[1] + 0.05 * Math.sin(t);
+      if (!inside(sp, x, y) && (g.outline ? inside(gs, x, y) : !inside(gs, x, y) && inside(ps, x, y))) n++; } return n / 2; };
+  if (screwMode === 'through') {
+    const shapes = new Map(cutGroups.map(g => [g, shapeOf(g.prims)])), plate = cutGroups[0];
+    for (const s of cutGroups.filter(g => g.screw)) {
+      const [cx, cy, r] = s.prims[0].a;
+      const targets = cutGroups.filter(g => !g.bridge && (!g.screw || (g !== s && (g.prims[0].a[2] > r || (g.prims[0].a[2] === r && cutGroups.indexOf(g) > cutGroups.indexOf(s))))));
+      for (const g of targets) {
+        const sh = shapes.get(g);
+        if (!g.outline && inside(sh, cx, cy)) continue; // screw centre already inside the opening: plain union is clean
+        const { d, q } = nearest(sh, cx, cy), web = d - r;
+        if (web >= minWeb) continue;
+        // overlapping already: only a problem if a crossing leaves a sharp horn of material
+        let horn = null;
+        if (web < 0) { horn = 360; for (const sp of s.prims) for (const gp of g.prims) for (const X of intersect(sp, gp)) horn = Math.min(horn, materialAngle(X, s, g)); if (horn >= minHorn) continue; }
+        const u = [(q[0] - cx) / d, (q[1] - cy) / d], nv = [-u[1], u[0]];
+        // far end must land at least 0.5 mm inside the neighbour opening / outside the plate, corners included
+        const ok = (x, y) => (g.outline ? !inside(sh, x, y) : inside(sh, x, y)) && nearest(sh, x, y).d >= 0.5;
+        let L = null;
+        for (let l = d + 0.5; l <= d + 3 * r + 5; l += 0.05) {
+          const F = [cx + u[0] * l, cy + u[1] * l];
+          if (ok(F[0] + nv[0] * r, F[1] + nv[1] * r) && ok(F[0] - nv[0] * r, F[1] - nv[1] * r) && ok(...F)) { L = l; break; }
+        }
+        if (L === null && horn !== null) { notes.push(`${s.id} overlaps ${g.id}, leaving a ${horn.toFixed(0)}° corner on solid plate; no bridge needed`); continue; }
+        if (L === null) { problems.push(`${s.id}: ${horn !== null ? horn.toFixed(0) + '° horn where it overlaps' : web.toFixed(2) + ' mm from'} ${g.id} and no clean bridge fits; check it`); continue; }
+        const ang = Math.atan2(u[1], u[0]) * 180 / Math.PI, bx = cx + u[0] * L / 2, by = cy + u[1] * L / 2;
+        const b = { id: `${s.id}>${g.id}`, bridge: true, f: { type: 'rect', x: bx, y: by, w: L, h: 2 * r, angle: ang }, prims: rotate(roundedRect(bx, by, L, 2 * r, 0, 'CUT'), bx, by, ang) };
+        bridges.push({ screw: s.id, to: g.id, web, horn, ...b.f }); cutGroups.push(b); shapes.set(b, shapeOf(b.prims));
+      }
+    }
+  }
+  // A screw hole that passes within min_web_mm of a sharp corner of an opening (e.g. clipping a square button's corner)
+  // would leave a hair-thin neck there: fill the gap with the two tangent lines from that corner to the hole.
+  if (screwMode === 'through') {
+    for (const s of cutGroups.filter(g => g.screw)) {
+      const [cx, cy, r] = s.prims[0].a;
+      for (const g of cutGroups.filter(g => !g.screw && !g.bridge && !g.outline && g.f && (g.f.type === 'rect' || g.f.type === 'poly'))) {
+        const ends = g.prims.filter(p => p.t === 'line').flatMap(p => [[p.a[0], p.a[1]], [p.a[2], p.a[3]]]);
+        const corners = ends.filter((v, i) => ends.findIndex(w => Math.hypot(w[0] - v[0], w[1] - v[1]) < 1e-6) !== i); // where two straight edges meet
+        for (const V of corners) {
+          const D = Math.hypot(V[0] - cx, V[1] - cy), gap = D - r;
+          if (!(gap > 0 && gap < minWeb) || cutGroups.some(h => h.bridge && inside(shapeOf(h.prims), ...V))) continue;
+          const phi = Math.atan2(V[1] - cy, V[0] - cx), beta = Math.acos(r / D), T = sgn => [cx + r * Math.cos(phi + sgn * beta), cy + r * Math.sin(phi + sgn * beta)];
+          const t1 = T(1), t2 = T(-1), fp = [{ t: 'line', layer: 'CUT', a: [...V, ...t1] }, { t: 'line', layer: 'CUT', a: [...t1, ...t2] }, { t: 'line', layer: 'CUT', a: [...t2, ...V] }];
+          cutGroups.push({ id: `${s.id}>${g.id} corner`, bridge: true, f: { type: 'poly', x: 0, y: 0, points: [V, t1, t2] }, prims: fp });
+          bridges.push({ screw: s.id, to: g.id + ' corner', web: gap, horn: null });
+        }
+      }
+    }
+  }
+  const merged = mergeContours(cutGroups);
+  prims.unshift(...merged.prims);
+  for (const w of merged.warnings) problems.push(`coincident edge: ${w}`);
+  for (const { area: a } of merged.islands) notes.push(`a ${a.toFixed(0)} mm² strip was cut completely free by the through screw holes and is left out (it would drop out of the sheet)`);
   // Scale check, kept outside the plate on its own layer: a 50 mm bar and a 20 mm square.
   const sy = -12;
   prims.push({ t: 'line', layer: 'CHECK', a: [0, sy, 50, sy] }, { t: 'line', layer: 'CHECK', a: [0, sy - 2, 0, sy + 2] },
              { t: 'line', layer: 'CHECK', a: [50, sy - 2, 50, sy + 2] },
              ...roundedRect(70, sy, 20, 20, 0, 'CHECK'),
-             { t: 'text', layer: 'CHECK', a: [0, sy - 18, 3, `${name}  |  bar = 50.00 mm, square = 20.00 mm  |  extra hole clearance +${clearance} mm`], align: 'left' });
-  return { prims, problems };
+             { t: 'text', layer: 'CHECK', a: [0, sy - 18, 3, `${name}  |  bar = 50.00 mm, square = 20.00 mm  |  extra hole clearance +${clearance} mm  |  ${screwMode === "through" ? "screw holes" : screwHoles ? "screw recesses" : "no screw holes"}`], align: 'left' });
+  return { prims, problems, notes, bridges, cutGroups, islands: merged.islands };
 }
 
 function bounds(prims) {
@@ -198,17 +383,22 @@ function toPDF(prims, b, m) {
 }
 
 // ---------- run ----------
+module.exports = { buildPanel, cfg, shapeOf, inside, nearest, tess };
+if (require.main === module) {
 let made = 0;
 for (const [name, panel] of Object.entries(cfg.panels || {})) {
   const o = panel.outline;
   if (!o || !((o.w > 0 && o.h > 0) || o.points)) { console.log(`${name}: skipped (outline not measured yet)`); continue; }
-  const { prims, problems } = buildPanel(name, panel);
+  const { prims, problems, notes, bridges } = buildPanel(name, panel);
   const b = bounds(prims), m = 10, file = name.replace(/[^\w.-]+/g, '_');
   fs.writeFileSync(path.join(outDir, file + '.dxf'), toDXF(prims));
   fs.writeFileSync(path.join(outDir, file + '.svg'), toSVG(prims, b, m));
   fs.writeFileSync(path.join(outDir, file + '.pdf'), toPDF(prims, b, m), 'latin1');
   made++;
-  console.log(`${name}: ${o.w} x ${o.h} mm, ${(panel.features || []).length} features -> ${file}.dxf/.svg/.pdf${panel.verified ? '' : '  [NOT VERIFIED against the real panel]'}`);
+  console.log(`${name}: ${o.w} x ${o.h} mm, ${(panel.features || []).filter(f => !(f.screw && (panel.screw_holes ?? cfg.screw_holes ?? true) === false)).length} openings -> ${file}.dxf/.svg/.pdf${panel.verified ? '' : '  [NOT VERIFIED against the real panel]'}`);
+  for (const b of bridges) console.log(`  bridge  ${b.screw} -> ${b.to} (${b.horn !== null ? 'overlap left a ' + b.horn.toFixed(0) + '° horn' : 'web was ' + b.web.toFixed(2) + ' mm'})`);
+  for (const nt of notes) console.log(`  note    ${nt}`);
   for (const pr of problems) console.log(`  ! ${pr}`);
 }
 console.log(`${made} panel(s) written to ${outDir}`);
+}

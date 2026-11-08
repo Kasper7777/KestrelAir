@@ -1,1589 +1,1674 @@
 {
- "_readme": "All values mm. Origin = bottom-left corner of the plate as you look at the panel, X right, Y up; x/y = centre of each shape. Regenerate with make-overlays.js. See README.md for where each panel's numbers came from.",
- "hole_clearance_mm": 0,
- "id_labels": true,
- "panels": {
-  "CP1": {
-   "_source": "Exact CAD values from xchrishawk's 'Virpil Throttle / Control Panel Label Plates' FreeCAD model (Printables 1106661, CC BY-NC-SA). Cutouts are already sized for clearance. LS*/SS* are 2 mm deep screw-head recesses on the back of the original 3 mm plate (POCKET layer).",
-   "verified": false,
-   "outline": {
-    "w": 170,
-    "h": 200,
-    "corner_r": 20
-   },
-   "features": [
-    {
-     "id": "B7",
-     "type": "rect",
-     "x": 88.25,
-     "y": 177.5,
-     "w": 17,
-     "h": 17,
-     "r": 0
+  "_readme": "All values mm. Origin = bottom-left corner of the plate as you look at the panel, X right, Y up; x/y = centre of each shape. Regenerate with make-overlays.js. See README.md for where each panel's numbers came from.",
+  "hole_clearance_mm": 0,
+  "id_labels": true,
+  "screw_holes": "through",
+  "panels": {
+    "CP1": {
+      "_source": "Exact CAD values from xchrishawk's 'Virpil Throttle / Control Panel Label Plates' FreeCAD model (Printables 1106661, CC BY-NC-SA). Cutouts are already sized for clearance. LS*/SS* are 2 mm deep screw-head recesses on the back of the original 3 mm plate (POCKET layer).",
+      "verified": false,
+      "outline": {
+        "w": 170,
+        "h": 200,
+        "corner_r": 20
+      },
+      "features": [
+        {
+          "id": "B7",
+          "type": "rect",
+          "x": 88.25,
+          "y": 177.5,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B8",
+          "type": "rect",
+          "x": 114,
+          "y": 177.5,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B9",
+          "type": "rect",
+          "x": 139.75,
+          "y": 177.5,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B10",
+          "type": "rect",
+          "x": 88.25,
+          "y": 150.5,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B11",
+          "type": "rect",
+          "x": 114,
+          "y": 150.5,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B12",
+          "type": "rect",
+          "x": 139.75,
+          "y": 150.5,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B1",
+          "type": "rect",
+          "x": 26.25,
+          "y": 79.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B2",
+          "type": "rect",
+          "x": 53,
+          "y": 79.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B3",
+          "type": "rect",
+          "x": 26.25,
+          "y": 54,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B4",
+          "type": "rect",
+          "x": 53,
+          "y": 54,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B5",
+          "type": "rect",
+          "x": 26.25,
+          "y": 28.25,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B6",
+          "type": "rect",
+          "x": 53,
+          "y": 28.25,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "T1",
+          "type": "rect",
+          "x": 24.25,
+          "y": 159.5,
+          "w": 19,
+          "h": 48,
+          "r": 2
+        },
+        {
+          "id": "T2",
+          "type": "rect",
+          "x": 56.25,
+          "y": 159.5,
+          "w": 19,
+          "h": 48,
+          "r": 2
+        },
+        {
+          "id": "T3",
+          "type": "rect",
+          "x": 24.25,
+          "y": 111,
+          "w": 21,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "T4",
+          "type": "rect",
+          "x": 56.25,
+          "y": 111,
+          "w": 21,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "T5-guard-L",
+          "type": "rect",
+          "x": 73,
+          "y": 83.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T5-guard-R",
+          "type": "rect",
+          "x": 99,
+          "y": 83.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T7-guard-L",
+          "type": "rect",
+          "x": 129,
+          "y": 83.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T7-guard-R",
+          "type": "rect",
+          "x": 155,
+          "y": 83.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T8-guard-L",
+          "type": "rect",
+          "x": 73,
+          "y": 52.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T8-guard-R",
+          "type": "rect",
+          "x": 99,
+          "y": 52.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T10-guard-L",
+          "type": "rect",
+          "x": 129,
+          "y": 52.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T10-guard-R",
+          "type": "rect",
+          "x": 155,
+          "y": 52.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "E1",
+          "type": "circle",
+          "x": 84,
+          "y": 20,
+          "d": 17
+        },
+        {
+          "id": "E2",
+          "type": "circle",
+          "x": 114,
+          "y": 20,
+          "d": 17
+        },
+        {
+          "id": "E3",
+          "type": "circle",
+          "x": 144,
+          "y": 20,
+          "d": 17
+        },
+        {
+          "id": "A1",
+          "type": "circle",
+          "x": 93,
+          "y": 118,
+          "d": 30.038
+        },
+        {
+          "id": "A2",
+          "type": "circle",
+          "x": 135,
+          "y": 118,
+          "d": 30.038
+        },
+        {
+          "id": "T5",
+          "type": "circle",
+          "x": 86,
+          "y": 83.5,
+          "d": 18
+        },
+        {
+          "id": "T6",
+          "type": "circle",
+          "x": 114,
+          "y": 83.5,
+          "d": 18
+        },
+        {
+          "id": "T7",
+          "type": "circle",
+          "x": 142,
+          "y": 83.5,
+          "d": 18
+        },
+        {
+          "id": "T8",
+          "type": "circle",
+          "x": 86,
+          "y": 52.5,
+          "d": 18
+        },
+        {
+          "id": "T9",
+          "type": "circle",
+          "x": 114,
+          "y": 52.5,
+          "d": 18
+        },
+        {
+          "id": "T10",
+          "type": "circle",
+          "x": 142,
+          "y": 52.5,
+          "d": 18
+        },
+        {
+          "id": "LS1",
+          "type": "circle",
+          "x": 8.999,
+          "y": 9.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS2",
+          "type": "circle",
+          "x": 161,
+          "y": 9.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS3",
+          "type": "circle",
+          "x": 9,
+          "y": 190.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS4",
+          "type": "circle",
+          "x": 161,
+          "y": 190.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS5",
+          "type": "circle",
+          "x": 5,
+          "y": 100,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS6",
+          "type": "circle",
+          "x": 165,
+          "y": 100,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS1",
+          "type": "circle",
+          "x": 14.25,
+          "y": 17,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS2",
+          "type": "circle",
+          "x": 65,
+          "y": 17,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS3",
+          "type": "circle",
+          "x": 14.25,
+          "y": 91,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS4",
+          "type": "circle",
+          "x": 65,
+          "y": 91,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS5",
+          "type": "circle",
+          "x": 77,
+          "y": 138.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS6",
+          "type": "circle",
+          "x": 150.75,
+          "y": 138.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS7",
+          "type": "circle",
+          "x": 77,
+          "y": 189.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS8",
+          "type": "circle",
+          "x": 150.75,
+          "y": 189.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        }
+      ]
     },
-    {
-     "id": "B8",
-     "type": "rect",
-     "x": 114,
-     "y": 177.5,
-     "w": 17,
-     "h": 17,
-     "r": 0
+    "CP2": {
+      "_source": "Exact CAD values from xchrishawk's FreeCAD model (Printables 1106661, CC BY-NC-SA), the same as CP1. Gear Indicator = the 9-point wire with 2 mm fillets.",
+      "verified": false,
+      "outline": {
+        "w": 170,
+        "h": 200,
+        "corner_r": 20
+      },
+      "features": [
+        {
+          "id": "Gear Indicator",
+          "type": "poly",
+          "x": 74,
+          "y": 141,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              24,
+              -19
+            ],
+            [
+              24,
+              -29
+            ],
+            [
+              9,
+              -38
+            ],
+            [
+              -9,
+              -38
+            ],
+            [
+              -24,
+              -29
+            ],
+            [
+              -24,
+              -19
+            ],
+            [
+              -10,
+              0
+            ]
+          ],
+          "fillet": 2,
+          "id_dy": -19
+        },
+        {
+          "id": "B9",
+          "type": "rect",
+          "x": 116,
+          "y": 28.25,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B7",
+          "type": "rect",
+          "x": 116,
+          "y": 54,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B5",
+          "type": "rect",
+          "x": 116,
+          "y": 79.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B6",
+          "type": "rect",
+          "x": 142.75,
+          "y": 79.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B8",
+          "type": "rect",
+          "x": 142.75,
+          "y": 54,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B10",
+          "type": "rect",
+          "x": 142.75,
+          "y": 28.25,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "T9",
+          "type": "rect",
+          "x": 114,
+          "y": 111,
+          "w": 21,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "T10",
+          "type": "rect",
+          "x": 146,
+          "y": 111,
+          "w": 21,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B1",
+          "type": "rect",
+          "x": 63,
+          "y": 176.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B2",
+          "type": "rect",
+          "x": 85,
+          "y": 176.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B3",
+          "type": "rect",
+          "x": 63,
+          "y": 151.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B4",
+          "type": "rect",
+          "x": 85,
+          "y": 151.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "T7",
+          "type": "rect",
+          "x": 114,
+          "y": 159.5,
+          "w": 19,
+          "h": 48,
+          "r": 2
+        },
+        {
+          "id": "T8",
+          "type": "rect",
+          "x": 146,
+          "y": 159.5,
+          "w": 19,
+          "h": 48,
+          "r": 2
+        },
+        {
+          "id": "Gear Handle",
+          "type": "rect",
+          "x": 25,
+          "y": 145.25,
+          "w": 45,
+          "h": 81.5,
+          "r": 7
+        },
+        {
+          "id": "T1-guard-L",
+          "type": "rect",
+          "x": 15,
+          "y": 58.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T1-guard-R",
+          "type": "rect",
+          "x": 41,
+          "y": 58.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T3-guard-L",
+          "type": "rect",
+          "x": 71,
+          "y": 58.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T3-guard-R",
+          "type": "rect",
+          "x": 97,
+          "y": 58.75,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T4-guard-L",
+          "type": "rect",
+          "x": 15,
+          "y": 27.5,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T4-guard-R",
+          "type": "rect",
+          "x": 41,
+          "y": 27.5,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T6-guard-L",
+          "type": "rect",
+          "x": 71,
+          "y": 27.5,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T6-guard-R",
+          "type": "rect",
+          "x": 97,
+          "y": 27.5,
+          "w": 4,
+          "h": 21,
+          "r": 1,
+          "no_id": true
+        },
+        {
+          "id": "T1",
+          "type": "circle",
+          "x": 28,
+          "y": 58.5,
+          "d": 18
+        },
+        {
+          "id": "T2",
+          "type": "circle",
+          "x": 56,
+          "y": 58.5,
+          "d": 18
+        },
+        {
+          "id": "T3",
+          "type": "circle",
+          "x": 84,
+          "y": 58.5,
+          "d": 18
+        },
+        {
+          "id": "T4",
+          "type": "circle",
+          "x": 28,
+          "y": 27.5,
+          "d": 18
+        },
+        {
+          "id": "T5",
+          "type": "circle",
+          "x": 56,
+          "y": 27.5,
+          "d": 18
+        },
+        {
+          "id": "T6",
+          "type": "circle",
+          "x": 84,
+          "y": 27.5,
+          "d": 18
+        },
+        {
+          "id": "E1",
+          "type": "circle",
+          "x": 26,
+          "y": 87,
+          "d": 17
+        },
+        {
+          "id": "E2",
+          "type": "circle",
+          "x": 56,
+          "y": 87,
+          "d": 17
+        },
+        {
+          "id": "E3",
+          "type": "circle",
+          "x": 86,
+          "y": 87,
+          "d": 17
+        },
+        {
+          "id": "LS1",
+          "type": "circle",
+          "x": 8.999,
+          "y": 9.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS2",
+          "type": "circle",
+          "x": 161,
+          "y": 9.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS3",
+          "type": "circle",
+          "x": 9,
+          "y": 190.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS4",
+          "type": "circle",
+          "x": 161,
+          "y": 190.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS5",
+          "type": "circle",
+          "x": 5,
+          "y": 100,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS6",
+          "type": "circle",
+          "x": 165,
+          "y": 100,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS1",
+          "type": "circle",
+          "x": 104,
+          "y": 17,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS2",
+          "type": "circle",
+          "x": 155,
+          "y": 17,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS3",
+          "type": "circle",
+          "x": 104,
+          "y": 91,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS4",
+          "type": "circle",
+          "x": 155,
+          "y": 91,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS5",
+          "type": "circle",
+          "x": 53,
+          "y": 106.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS6",
+          "type": "circle",
+          "x": 95,
+          "y": 106.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS7",
+          "type": "circle",
+          "x": 53,
+          "y": 139.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS8",
+          "type": "circle",
+          "x": 95,
+          "y": 139.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS9",
+          "type": "circle",
+          "x": 53,
+          "y": 188.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS10",
+          "type": "circle",
+          "x": 95,
+          "y": 188.5,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        }
+      ]
     },
-    {
-     "id": "B9",
-     "type": "rect",
-     "x": 139.75,
-     "y": 177.5,
-     "w": 17,
-     "h": 17,
-     "r": 0
+    "CM3": {
+      "_source": "Exact CAD values from xchrishawk's 'Virpil Throttle Plate' FreeCAD model (Printables 1106661, CC BY-NC-SA), for the MongoosT-50CM3 throttle base panel. The plate is the 170x200 base with the throttle-lever area cut away: x<103.5, y>101, with a 4 mm inner corner. LS*/SS* = 2 mm back recesses (POCKET layer). Mode = rotary selector clearance, Flaps = flaps-lever slot.",
+      "verified": false,
+      "outline": {
+        "w": 170,
+        "h": 200,
+        "points": [
+          [
+            0,
+            0,
+            20
+          ],
+          [
+            170,
+            0,
+            20
+          ],
+          [
+            170,
+            200,
+            20
+          ],
+          [
+            103.5,
+            200,
+            0
+          ],
+          [
+            103.5,
+            101,
+            4
+          ],
+          [
+            0,
+            101,
+            0
+          ]
+        ]
+      },
+      "features": [
+        {
+          "id": "Flaps",
+          "type": "rect",
+          "x": 140.5,
+          "y": 140,
+          "w": 32,
+          "h": 71,
+          "r": 15.99
+        },
+        {
+          "id": "T2",
+          "type": "rect",
+          "x": 114,
+          "y": 122.75,
+          "w": 17,
+          "h": 21,
+          "r": 0
+        },
+        {
+          "id": "T3",
+          "type": "rect",
+          "x": 21.5,
+          "y": 83.75,
+          "w": 17,
+          "h": 21,
+          "r": 0
+        },
+        {
+          "id": "T4",
+          "type": "rect",
+          "x": 21.5,
+          "y": 55.75,
+          "w": 17,
+          "h": 21,
+          "r": 0
+        },
+        {
+          "id": "T1",
+          "type": "rect",
+          "x": 114,
+          "y": 157.75,
+          "w": 17,
+          "h": 21,
+          "r": 0
+        },
+        {
+          "id": "B1",
+          "type": "rect",
+          "x": 48.5,
+          "y": 81.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B2",
+          "type": "rect",
+          "x": 74.25,
+          "y": 81.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B3",
+          "type": "rect",
+          "x": 100,
+          "y": 81.75,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B4",
+          "type": "rect",
+          "x": 48.5,
+          "y": 55,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B5",
+          "type": "rect",
+          "x": 74.25,
+          "y": 55,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "B6",
+          "type": "rect",
+          "x": 100,
+          "y": 55,
+          "w": 17,
+          "h": 17,
+          "r": 0
+        },
+        {
+          "id": "Mode",
+          "type": "circle",
+          "x": 137,
+          "y": 62,
+          "d": 35
+        },
+        {
+          "id": "T5",
+          "type": "circle",
+          "x": 23.5,
+          "y": 24,
+          "d": 18
+        },
+        {
+          "id": "T6",
+          "type": "circle",
+          "x": 51.5,
+          "y": 24,
+          "d": 18
+        },
+        {
+          "id": "T7",
+          "type": "circle",
+          "x": 79.5,
+          "y": 24,
+          "d": 18
+        },
+        {
+          "id": "E1",
+          "type": "circle",
+          "x": 112,
+          "y": 23.75,
+          "d": 18
+        },
+        {
+          "id": "E2",
+          "type": "circle",
+          "x": 144,
+          "y": 23.75,
+          "d": 18
+        },
+        {
+          "id": "LS1",
+          "type": "circle",
+          "x": 8.999,
+          "y": 9.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS2",
+          "type": "circle",
+          "x": 161,
+          "y": 9.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS4",
+          "type": "circle",
+          "x": 161,
+          "y": 190.5,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "LS5",
+          "type": "circle",
+          "x": 5,
+          "y": 100,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "edge": true,
+          "screw": true
+        },
+        {
+          "id": "LS6",
+          "type": "circle",
+          "x": 165,
+          "y": 100,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS1",
+          "type": "circle",
+          "x": 37.25,
+          "y": 94,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS2",
+          "type": "circle",
+          "x": 37.25,
+          "y": 44,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS3",
+          "type": "circle",
+          "x": 120.75,
+          "y": 88,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS4",
+          "type": "circle",
+          "x": 120.75,
+          "y": 44,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS5",
+          "type": "circle",
+          "x": 153.25,
+          "y": 88,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS6",
+          "type": "circle",
+          "x": 153.25,
+          "y": 44,
+          "d": 8,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true
+        }
+      ]
     },
-    {
-     "id": "B10",
-     "type": "rect",
-     "x": 88.25,
-     "y": 150.5,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B11",
-     "type": "rect",
-     "x": 114,
-     "y": 150.5,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B12",
-     "type": "rect",
-     "x": 139.75,
-     "y": 150.5,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B1",
-     "type": "rect",
-     "x": 26.25,
-     "y": 79.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B2",
-     "type": "rect",
-     "x": 53,
-     "y": 79.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B3",
-     "type": "rect",
-     "x": 26.25,
-     "y": 54,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B4",
-     "type": "rect",
-     "x": 53,
-     "y": 54,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B5",
-     "type": "rect",
-     "x": 26.25,
-     "y": 28.25,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B6",
-     "type": "rect",
-     "x": 53,
-     "y": 28.25,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "T1",
-     "type": "rect",
-     "x": 24.25,
-     "y": 159.5,
-     "w": 19,
-     "h": 48,
-     "r": 2
-    },
-    {
-     "id": "T2",
-     "type": "rect",
-     "x": 56.25,
-     "y": 159.5,
-     "w": 19,
-     "h": 48,
-     "r": 2
-    },
-    {
-     "id": "T3",
-     "type": "rect",
-     "x": 24.25,
-     "y": 111,
-     "w": 21,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "T4",
-     "type": "rect",
-     "x": 56.25,
-     "y": 111,
-     "w": 21,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "T5-guard-L",
-     "type": "rect",
-     "x": 73,
-     "y": 83.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T5-guard-R",
-     "type": "rect",
-     "x": 99,
-     "y": 83.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T7-guard-L",
-     "type": "rect",
-     "x": 129,
-     "y": 83.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T7-guard-R",
-     "type": "rect",
-     "x": 155,
-     "y": 83.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T8-guard-L",
-     "type": "rect",
-     "x": 73,
-     "y": 52.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T8-guard-R",
-     "type": "rect",
-     "x": 99,
-     "y": 52.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T10-guard-L",
-     "type": "rect",
-     "x": 129,
-     "y": 52.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T10-guard-R",
-     "type": "rect",
-     "x": 155,
-     "y": 52.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "E1",
-     "type": "circle",
-     "x": 84,
-     "y": 20,
-     "d": 17
-    },
-    {
-     "id": "E2",
-     "type": "circle",
-     "x": 114,
-     "y": 20,
-     "d": 17
-    },
-    {
-     "id": "E3",
-     "type": "circle",
-     "x": 144,
-     "y": 20,
-     "d": 17
-    },
-    {
-     "id": "A1",
-     "type": "circle",
-     "x": 93,
-     "y": 118,
-     "d": 30.038
-    },
-    {
-     "id": "A2",
-     "type": "circle",
-     "x": 135,
-     "y": 118,
-     "d": 30.038
-    },
-    {
-     "id": "T5",
-     "type": "circle",
-     "x": 86,
-     "y": 83.5,
-     "d": 18
-    },
-    {
-     "id": "T6",
-     "type": "circle",
-     "x": 114,
-     "y": 83.5,
-     "d": 18
-    },
-    {
-     "id": "T7",
-     "type": "circle",
-     "x": 142,
-     "y": 83.5,
-     "d": 18
-    },
-    {
-     "id": "T8",
-     "type": "circle",
-     "x": 86,
-     "y": 52.5,
-     "d": 18
-    },
-    {
-     "id": "T9",
-     "type": "circle",
-     "x": 114,
-     "y": 52.5,
-     "d": 18
-    },
-    {
-     "id": "T10",
-     "type": "circle",
-     "x": 142,
-     "y": 52.5,
-     "d": 18
-    },
-    {
-     "id": "LS1",
-     "type": "circle",
-     "x": 8.999,
-     "y": 9.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS2",
-     "type": "circle",
-     "x": 161,
-     "y": 9.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS3",
-     "type": "circle",
-     "x": 9,
-     "y": 190.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS4",
-     "type": "circle",
-     "x": 161,
-     "y": 190.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS5",
-     "type": "circle",
-     "x": 5,
-     "y": 100,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS6",
-     "type": "circle",
-     "x": 165,
-     "y": 100,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS1",
-     "type": "circle",
-     "x": 14.25,
-     "y": 17,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS2",
-     "type": "circle",
-     "x": 65,
-     "y": 17,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS3",
-     "type": "circle",
-     "x": 14.25,
-     "y": 91,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS4",
-     "type": "circle",
-     "x": 65,
-     "y": 91,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS5",
-     "type": "circle",
-     "x": 77,
-     "y": 138.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS6",
-     "type": "circle",
-     "x": 150.75,
-     "y": 138.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS7",
-     "type": "circle",
-     "x": 77,
-     "y": 189.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS8",
-     "type": "circle",
-     "x": 150.75,
-     "y": 189.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
+    "CP3": {
+      "_source": "No CAD exists. Measured from DeathDonky Prints' SharKa-50 template (the CP3 shares the SharKa-50 faceplate). It's to scale at 5.68 px/mm, about 0.18 mm per pixel. On CP2 the same method agreed with exact CAD to within about 0.8 mm. IDs are generic (SQ = square button, R = round toggle/encoder, LEVER = axis slot, SEL = rotary selector), not VIRPIL's numbering. Test-fit a paper print first.",
+      "verified": false,
+      "outline": {
+        "w": 170,
+        "h": 200,
+        "corner_r": 20
+      },
+      "features": [
+        {
+          "id": "LEVER1",
+          "type": "rect",
+          "x": 24.64,
+          "y": 174.315,
+          "w": 5.28,
+          "h": 53.37,
+          "edge": true,
+          "id_dy": -22
+        },
+        {
+          "id": "LEVER2",
+          "type": "rect",
+          "x": 61.86,
+          "y": 174.315,
+          "w": 5.46,
+          "h": 53.37,
+          "edge": true,
+          "id_dy": -22
+        },
+        {
+          "id": "LEVER3",
+          "type": "rect",
+          "x": 108.23,
+          "y": 174.315,
+          "w": 5.28,
+          "h": 53.37,
+          "edge": true,
+          "id_dy": -22
+        },
+        {
+          "id": "LEVER4",
+          "type": "rect",
+          "x": 145.54,
+          "y": 174.315,
+          "w": 5.28,
+          "h": 53.37,
+          "edge": true,
+          "id_dy": -22
+        },
+        {
+          "id": "SEL",
+          "type": "circle",
+          "x": 40.39,
+          "y": 31.11,
+          "d": 20.9
+        },
+        {
+          "id": "SEL-key-L",
+          "type": "slot",
+          "x": 31.37,
+          "y": 31.11,
+          "w": 18.04,
+          "h": 8.44,
+          "no_id": true
+        },
+        {
+          "id": "SEL-key-R",
+          "type": "rect",
+          "x": 49.5,
+          "y": 31.11,
+          "w": 18.21,
+          "h": 8.44,
+          "no_id": true
+        },
+        {
+          "id": "SQ1",
+          "type": "rect",
+          "x": 20.85,
+          "y": 129.09,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ2",
+          "type": "rect",
+          "x": 42.5,
+          "y": 129.09,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ3",
+          "type": "rect",
+          "x": 20.85,
+          "y": 104.48,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ4",
+          "type": "rect",
+          "x": 42.5,
+          "y": 104.48,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ5",
+          "type": "rect",
+          "x": 83.15,
+          "y": 79.35,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ6",
+          "type": "rect",
+          "x": 105.15,
+          "y": 79.35,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ7",
+          "type": "rect",
+          "x": 127.32,
+          "y": 79.35,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ8",
+          "type": "rect",
+          "x": 149.32,
+          "y": 79.35,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ9",
+          "type": "rect",
+          "x": 105.15,
+          "y": 53.87,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "SQ10",
+          "type": "rect",
+          "x": 127.32,
+          "y": 53.87,
+          "w": 19.18,
+          "h": 19.16
+        },
+        {
+          "id": "R1",
+          "type": "circle",
+          "x": 63.87,
+          "y": 129.2,
+          "d": 18.5
+        },
+        {
+          "id": "R2",
+          "type": "circle",
+          "x": 84.78,
+          "y": 129.19,
+          "d": 18.51
+        },
+        {
+          "id": "R3",
+          "type": "circle",
+          "x": 105.7,
+          "y": 129.19,
+          "d": 18.51
+        },
+        {
+          "id": "R4",
+          "type": "circle",
+          "x": 128.87,
+          "y": 114.1,
+          "d": 18.22
+        },
+        {
+          "id": "R5",
+          "type": "circle",
+          "x": 151.05,
+          "y": 114.1,
+          "d": 18.22
+        },
+        {
+          "id": "R6",
+          "type": "circle",
+          "x": 84.78,
+          "y": 106.05,
+          "d": 18.21
+        },
+        {
+          "id": "R7",
+          "type": "circle",
+          "x": 17.32,
+          "y": 71.83,
+          "d": 18.22
+        },
+        {
+          "id": "R8",
+          "type": "circle",
+          "x": 39.38,
+          "y": 71.83,
+          "d": 18.2
+        },
+        {
+          "id": "R9",
+          "type": "circle",
+          "x": 61.46,
+          "y": 71.83,
+          "d": 18.22
+        },
+        {
+          "id": "R10",
+          "type": "circle",
+          "x": 83.32,
+          "y": 53.81,
+          "d": 16.21
+        },
+        {
+          "id": "R11",
+          "type": "circle",
+          "x": 149.54,
+          "y": 53.81,
+          "d": 16.21
+        },
+        {
+          "id": "R12",
+          "type": "circle",
+          "x": 74.55,
+          "y": 20.81,
+          "d": 18.21
+        },
+        {
+          "id": "R13",
+          "type": "circle",
+          "x": 96.41,
+          "y": 20.8,
+          "d": 18.21
+        },
+        {
+          "id": "R14",
+          "type": "circle",
+          "x": 125.95,
+          "y": 20.81,
+          "d": 18.21
+        },
+        {
+          "id": "R15",
+          "type": "circle",
+          "x": 147.81,
+          "y": 20.8,
+          "d": 18.21
+        },
+        {
+          "id": "SS1",
+          "type": "circle",
+          "x": 12.48,
+          "y": 141.77,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS2",
+          "type": "circle",
+          "x": 50.78,
+          "y": 141.77,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS3",
+          "type": "circle",
+          "x": 12.47,
+          "y": 92.27,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS4",
+          "type": "circle",
+          "x": 50.77,
+          "y": 92.26,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS5",
+          "type": "circle",
+          "x": 74.55,
+          "y": 91.05,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS6",
+          "type": "circle",
+          "x": 157.4,
+          "y": 91.05,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS7",
+          "type": "circle",
+          "x": 13.99,
+          "y": 47.48,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS8",
+          "type": "circle",
+          "x": 58.33,
+          "y": 47.49,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS9",
+          "type": "circle",
+          "x": 74.56,
+          "y": 41.55,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS10",
+          "type": "circle",
+          "x": 157.39,
+          "y": 41.54,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS11",
+          "type": "circle",
+          "x": 13.99,
+          "y": 14.47,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "SS12",
+          "type": "circle",
+          "x": 58.33,
+          "y": 14.47,
+          "d": 6.53,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "M1",
+          "type": "circle",
+          "x": 8.45,
+          "y": 8.44,
+          "d": 4.73,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "M2",
+          "type": "circle",
+          "x": 161.62,
+          "y": 8.43,
+          "d": 4.73,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "M3",
+          "type": "circle",
+          "x": 8.45,
+          "y": 191.1,
+          "d": 4.73,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "M4",
+          "type": "circle",
+          "x": 161.62,
+          "y": 191.1,
+          "d": 4.73,
+          "no_id": true,
+          "screw": true
+        },
+        {
+          "id": "NOTCH-L",
+          "type": "slot",
+          "x": 3.99,
+          "y": 99.56,
+          "w": 9.98,
+          "h": 8.26,
+          "edge": true,
+          "no_id": true
+        },
+        {
+          "id": "NOTCH-R",
+          "type": "slot",
+          "x": 166.01,
+          "y": 99.56,
+          "w": 9.98,
+          "h": 8.26,
+          "edge": true,
+          "no_id": true
+        }
+      ]
     }
-   ]
-  },
-  "CP2": {
-   "_source": "Exact CAD values from xchrishawk's FreeCAD model (Printables 1106661, CC BY-NC-SA), the same as CP1. Gear Indicator = the 9-point wire with 2 mm fillets.",
-   "verified": false,
-   "outline": {
-    "w": 170,
-    "h": 200,
-    "corner_r": 20
-   },
-   "features": [
-    {
-     "id": "Gear Indicator",
-     "type": "poly",
-     "x": 74,
-     "y": 141,
-     "points": [
-      [0, 0],
-      [10, 0],
-      [24, -19],
-      [24, -29],
-      [9, -38],
-      [-9, -38],
-      [-24, -29],
-      [-24, -19],
-      [-10, 0]
-     ],
-     "fillet": 2,
-     "id_dy": -19
-    },
-    {
-     "id": "B9",
-     "type": "rect",
-     "x": 116,
-     "y": 28.25,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B7",
-     "type": "rect",
-     "x": 116,
-     "y": 54,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B5",
-     "type": "rect",
-     "x": 116,
-     "y": 79.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B6",
-     "type": "rect",
-     "x": 142.75,
-     "y": 79.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B8",
-     "type": "rect",
-     "x": 142.75,
-     "y": 54,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B10",
-     "type": "rect",
-     "x": 142.75,
-     "y": 28.25,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "T9",
-     "type": "rect",
-     "x": 114,
-     "y": 111,
-     "w": 21,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "T10",
-     "type": "rect",
-     "x": 146,
-     "y": 111,
-     "w": 21,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B1",
-     "type": "rect",
-     "x": 63,
-     "y": 176.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B2",
-     "type": "rect",
-     "x": 85,
-     "y": 176.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B3",
-     "type": "rect",
-     "x": 63,
-     "y": 151.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B4",
-     "type": "rect",
-     "x": 85,
-     "y": 151.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "T7",
-     "type": "rect",
-     "x": 114,
-     "y": 159.5,
-     "w": 19,
-     "h": 48,
-     "r": 2
-    },
-    {
-     "id": "T8",
-     "type": "rect",
-     "x": 146,
-     "y": 159.5,
-     "w": 19,
-     "h": 48,
-     "r": 2
-    },
-    {
-     "id": "Gear Handle",
-     "type": "rect",
-     "x": 25,
-     "y": 145.25,
-     "w": 45,
-     "h": 81.5,
-     "r": 7
-    },
-    {
-     "id": "T1-guard-L",
-     "type": "rect",
-     "x": 15,
-     "y": 58.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T1-guard-R",
-     "type": "rect",
-     "x": 41,
-     "y": 58.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T3-guard-L",
-     "type": "rect",
-     "x": 71,
-     "y": 58.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T3-guard-R",
-     "type": "rect",
-     "x": 97,
-     "y": 58.75,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T4-guard-L",
-     "type": "rect",
-     "x": 15,
-     "y": 27.5,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T4-guard-R",
-     "type": "rect",
-     "x": 41,
-     "y": 27.5,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T6-guard-L",
-     "type": "rect",
-     "x": 71,
-     "y": 27.5,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T6-guard-R",
-     "type": "rect",
-     "x": 97,
-     "y": 27.5,
-     "w": 4,
-     "h": 21,
-     "r": 1,
-     "no_id": true
-    },
-    {
-     "id": "T1",
-     "type": "circle",
-     "x": 28,
-     "y": 58.5,
-     "d": 18
-    },
-    {
-     "id": "T2",
-     "type": "circle",
-     "x": 56,
-     "y": 58.5,
-     "d": 18
-    },
-    {
-     "id": "T3",
-     "type": "circle",
-     "x": 84,
-     "y": 58.5,
-     "d": 18
-    },
-    {
-     "id": "T4",
-     "type": "circle",
-     "x": 28,
-     "y": 27.5,
-     "d": 18
-    },
-    {
-     "id": "T5",
-     "type": "circle",
-     "x": 56,
-     "y": 27.5,
-     "d": 18
-    },
-    {
-     "id": "T6",
-     "type": "circle",
-     "x": 84,
-     "y": 27.5,
-     "d": 18
-    },
-    {
-     "id": "E1",
-     "type": "circle",
-     "x": 26,
-     "y": 87,
-     "d": 17
-    },
-    {
-     "id": "E2",
-     "type": "circle",
-     "x": 56,
-     "y": 87,
-     "d": 17
-    },
-    {
-     "id": "E3",
-     "type": "circle",
-     "x": 86,
-     "y": 87,
-     "d": 17
-    },
-    {
-     "id": "LS1",
-     "type": "circle",
-     "x": 8.999,
-     "y": 9.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS2",
-     "type": "circle",
-     "x": 161,
-     "y": 9.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS3",
-     "type": "circle",
-     "x": 9,
-     "y": 190.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS4",
-     "type": "circle",
-     "x": 161,
-     "y": 190.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS5",
-     "type": "circle",
-     "x": 5,
-     "y": 100,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS6",
-     "type": "circle",
-     "x": 165,
-     "y": 100,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS1",
-     "type": "circle",
-     "x": 104,
-     "y": 17,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS2",
-     "type": "circle",
-     "x": 155,
-     "y": 17,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS3",
-     "type": "circle",
-     "x": 104,
-     "y": 91,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS4",
-     "type": "circle",
-     "x": 155,
-     "y": 91,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS5",
-     "type": "circle",
-     "x": 53,
-     "y": 106.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS6",
-     "type": "circle",
-     "x": 95,
-     "y": 106.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS7",
-     "type": "circle",
-     "x": 53,
-     "y": 139.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS8",
-     "type": "circle",
-     "x": 95,
-     "y": 139.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS9",
-     "type": "circle",
-     "x": 53,
-     "y": 188.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS10",
-     "type": "circle",
-     "x": 95,
-     "y": 188.5,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    }
-   ]
-  },
-  "CM3": {
-   "_source": "Exact CAD values from xchrishawk's 'Virpil Throttle Plate' FreeCAD model (Printables 1106661, CC BY-NC-SA), for the MongoosT-50CM3 throttle base panel. The plate is the 170x200 base with the throttle-lever area cut away: x<103.5, y>101, with a 4 mm inner corner. LS*/SS* = 2 mm back recesses (POCKET layer). Mode = rotary selector clearance, Flaps = flaps-lever slot.",
-   "verified": false,
-   "outline": {
-    "w": 170,
-    "h": 200,
-    "points": [
-     [
-      0,
-      0,
-      20
-     ],
-     [
-      170,
-      0,
-      20
-     ],
-     [
-      170,
-      200,
-      20
-     ],
-     [
-      103.5,
-      200,
-      0
-     ],
-     [
-      103.5,
-      101,
-      4
-     ],
-     [
-      0,
-      101,
-      0
-     ]
-    ]
-   },
-   "features": [
-    {
-     "id": "Flaps",
-     "type": "rect",
-     "x": 140.5,
-     "y": 140,
-     "w": 32,
-     "h": 71,
-     "r": 15.99
-    },
-    {
-     "id": "T2",
-     "type": "rect",
-     "x": 114,
-     "y": 122.75,
-     "w": 17,
-     "h": 21,
-     "r": 0
-    },
-    {
-     "id": "T3",
-     "type": "rect",
-     "x": 21.5,
-     "y": 83.75,
-     "w": 17,
-     "h": 21,
-     "r": 0
-    },
-    {
-     "id": "T4",
-     "type": "rect",
-     "x": 21.5,
-     "y": 55.75,
-     "w": 17,
-     "h": 21,
-     "r": 0
-    },
-    {
-     "id": "T1",
-     "type": "rect",
-     "x": 114,
-     "y": 157.75,
-     "w": 17,
-     "h": 21,
-     "r": 0
-    },
-    {
-     "id": "B1",
-     "type": "rect",
-     "x": 48.5,
-     "y": 81.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B2",
-     "type": "rect",
-     "x": 74.25,
-     "y": 81.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B3",
-     "type": "rect",
-     "x": 100,
-     "y": 81.75,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B4",
-     "type": "rect",
-     "x": 48.5,
-     "y": 55,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B5",
-     "type": "rect",
-     "x": 74.25,
-     "y": 55,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "B6",
-     "type": "rect",
-     "x": 100,
-     "y": 55,
-     "w": 17,
-     "h": 17,
-     "r": 0
-    },
-    {
-     "id": "Mode",
-     "type": "circle",
-     "x": 137,
-     "y": 62,
-     "d": 35
-    },
-    {
-     "id": "T5",
-     "type": "circle",
-     "x": 23.5,
-     "y": 24,
-     "d": 18
-    },
-    {
-     "id": "T6",
-     "type": "circle",
-     "x": 51.5,
-     "y": 24,
-     "d": 18
-    },
-    {
-     "id": "T7",
-     "type": "circle",
-     "x": 79.5,
-     "y": 24,
-     "d": 18
-    },
-    {
-     "id": "E1",
-     "type": "circle",
-     "x": 112,
-     "y": 23.75,
-     "d": 18
-    },
-    {
-     "id": "E2",
-     "type": "circle",
-     "x": 144,
-     "y": 23.75,
-     "d": 18
-    },
-    {
-     "id": "LS1",
-     "type": "circle",
-     "x": 8.999,
-     "y": 9.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS2",
-     "type": "circle",
-     "x": 161,
-     "y": 9.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS4",
-     "type": "circle",
-     "x": 161,
-     "y": 190.5,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "LS5",
-     "type": "circle",
-     "x": 5,
-     "y": 100,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true,
-     "edge": true
-    },
-    {
-     "id": "LS6",
-     "type": "circle",
-     "x": 165,
-     "y": 100,
-     "d": 10,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS1",
-     "type": "circle",
-     "x": 37.25,
-     "y": 94,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS2",
-     "type": "circle",
-     "x": 37.25,
-     "y": 44,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS3",
-     "type": "circle",
-     "x": 120.75,
-     "y": 88,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS4",
-     "type": "circle",
-     "x": 120.75,
-     "y": 44,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS5",
-     "type": "circle",
-     "x": 153.25,
-     "y": 88,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    },
-    {
-     "id": "SS6",
-     "type": "circle",
-     "x": 153.25,
-     "y": 44,
-     "d": 8,
-     "layer": "POCKET",
-     "no_id": true
-    }
-   ]
-  },
-  "CP3": {
-   "_source": "No CAD exists. Measured from DeathDonky Prints' SharKa-50 template (the CP3 shares the SharKa-50 faceplate). It's to scale at 5.68 px/mm, about 0.18 mm per pixel. On CP2 the same method agreed with exact CAD to within about 0.8 mm. IDs are generic (SQ = square button, R = round toggle/encoder, LEVER = axis slot, SEL = rotary selector), not VIRPIL's numbering. Test-fit a paper print first.",
-   "verified": false,
-   "outline": {
-    "w": 170,
-    "h": 200,
-    "corner_r": 20
-   },
-   "features": [
-    {
-     "id": "LEVER1",
-     "type": "rect",
-     "x": 24.64,
-     "y": 174.315,
-     "w": 5.28,
-     "h": 53.37,
-     "edge": true,
-     "id_dy": -22
-    },
-    {
-     "id": "LEVER2",
-     "type": "rect",
-     "x": 61.86,
-     "y": 174.315,
-     "w": 5.46,
-     "h": 53.37,
-     "edge": true,
-     "id_dy": -22
-    },
-    {
-     "id": "LEVER3",
-     "type": "rect",
-     "x": 108.23,
-     "y": 174.315,
-     "w": 5.28,
-     "h": 53.37,
-     "edge": true,
-     "id_dy": -22
-    },
-    {
-     "id": "LEVER4",
-     "type": "rect",
-     "x": 145.54,
-     "y": 174.315,
-     "w": 5.28,
-     "h": 53.37,
-     "edge": true,
-     "id_dy": -22
-    },
-    {
-     "id": "SEL",
-     "type": "circle",
-     "x": 40.39,
-     "y": 31.11,
-     "d": 20.9
-    },
-    {
-     "id": "SEL-key-L",
-     "type": "slot",
-     "x": 31.37,
-     "y": 31.11,
-     "w": 18.04,
-     "h": 8.44,
-     "no_id": true
-    },
-    {
-     "id": "SEL-key-R",
-     "type": "rect",
-     "x": 49.5,
-     "y": 31.11,
-     "w": 18.21,
-     "h": 8.44,
-     "no_id": true
-    },
-    {
-     "id": "SQ1",
-     "type": "rect",
-     "x": 20.85,
-     "y": 129.09,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ2",
-     "type": "rect",
-     "x": 42.5,
-     "y": 129.09,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ3",
-     "type": "rect",
-     "x": 20.85,
-     "y": 104.48,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ4",
-     "type": "rect",
-     "x": 42.5,
-     "y": 104.48,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ5",
-     "type": "rect",
-     "x": 83.15,
-     "y": 79.35,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ6",
-     "type": "rect",
-     "x": 105.15,
-     "y": 79.35,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ7",
-     "type": "rect",
-     "x": 127.32,
-     "y": 79.35,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ8",
-     "type": "rect",
-     "x": 149.32,
-     "y": 79.35,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ9",
-     "type": "rect",
-     "x": 105.15,
-     "y": 53.87,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "SQ10",
-     "type": "rect",
-     "x": 127.32,
-     "y": 53.87,
-     "w": 19.18,
-     "h": 19.16
-    },
-    {
-     "id": "R1",
-     "type": "circle",
-     "x": 63.87,
-     "y": 129.2,
-     "d": 18.5
-    },
-    {
-     "id": "R2",
-     "type": "circle",
-     "x": 84.78,
-     "y": 129.19,
-     "d": 18.51
-    },
-    {
-     "id": "R3",
-     "type": "circle",
-     "x": 105.7,
-     "y": 129.19,
-     "d": 18.51
-    },
-    {
-     "id": "R4",
-     "type": "circle",
-     "x": 128.87,
-     "y": 114.1,
-     "d": 18.22
-    },
-    {
-     "id": "R5",
-     "type": "circle",
-     "x": 151.05,
-     "y": 114.1,
-     "d": 18.22
-    },
-    {
-     "id": "R6",
-     "type": "circle",
-     "x": 84.78,
-     "y": 106.05,
-     "d": 18.21
-    },
-    {
-     "id": "R7",
-     "type": "circle",
-     "x": 17.32,
-     "y": 71.83,
-     "d": 18.22
-    },
-    {
-     "id": "R8",
-     "type": "circle",
-     "x": 39.38,
-     "y": 71.83,
-     "d": 18.2
-    },
-    {
-     "id": "R9",
-     "type": "circle",
-     "x": 61.46,
-     "y": 71.83,
-     "d": 18.22
-    },
-    {
-     "id": "R10",
-     "type": "circle",
-     "x": 83.32,
-     "y": 53.81,
-     "d": 16.21
-    },
-    {
-     "id": "R11",
-     "type": "circle",
-     "x": 149.54,
-     "y": 53.81,
-     "d": 16.21
-    },
-    {
-     "id": "R12",
-     "type": "circle",
-     "x": 74.55,
-     "y": 20.81,
-     "d": 18.21
-    },
-    {
-     "id": "R13",
-     "type": "circle",
-     "x": 96.41,
-     "y": 20.8,
-     "d": 18.21
-    },
-    {
-     "id": "R14",
-     "type": "circle",
-     "x": 125.95,
-     "y": 20.81,
-     "d": 18.21
-    },
-    {
-     "id": "R15",
-     "type": "circle",
-     "x": 147.81,
-     "y": 20.8,
-     "d": 18.21
-    },
-    {
-     "id": "SS1",
-     "type": "circle",
-     "x": 12.48,
-     "y": 141.77,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS2",
-     "type": "circle",
-     "x": 50.78,
-     "y": 141.77,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS3",
-     "type": "circle",
-     "x": 12.47,
-     "y": 92.27,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS4",
-     "type": "circle",
-     "x": 50.77,
-     "y": 92.26,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS5",
-     "type": "circle",
-     "x": 74.55,
-     "y": 91.05,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS6",
-     "type": "circle",
-     "x": 157.4,
-     "y": 91.05,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS7",
-     "type": "circle",
-     "x": 13.99,
-     "y": 47.48,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS8",
-     "type": "circle",
-     "x": 58.33,
-     "y": 47.49,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS9",
-     "type": "circle",
-     "x": 74.56,
-     "y": 41.55,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS10",
-     "type": "circle",
-     "x": 157.39,
-     "y": 41.54,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS11",
-     "type": "circle",
-     "x": 13.99,
-     "y": 14.47,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "SS12",
-     "type": "circle",
-     "x": 58.33,
-     "y": 14.47,
-     "d": 6.53,
-     "no_id": true
-    },
-    {
-     "id": "M1",
-     "type": "circle",
-     "x": 8.45,
-     "y": 8.44,
-     "d": 4.73,
-     "no_id": true
-    },
-    {
-     "id": "M2",
-     "type": "circle",
-     "x": 161.62,
-     "y": 8.43,
-     "d": 4.73,
-     "no_id": true
-    },
-    {
-     "id": "M3",
-     "type": "circle",
-     "x": 8.45,
-     "y": 191.1,
-     "d": 4.73,
-     "no_id": true
-    },
-    {
-     "id": "M4",
-     "type": "circle",
-     "x": 161.62,
-     "y": 191.1,
-     "d": 4.73,
-     "no_id": true
-    },
-    {
-     "id": "NOTCH-L",
-     "type": "slot",
-     "x": 3.99,
-     "y": 99.56,
-     "w": 9.98,
-     "h": 8.26,
-     "edge": true,
-     "no_id": true
-    },
-    {
-     "id": "NOTCH-R",
-     "type": "slot",
-     "x": 166.01,
-     "y": 99.56,
-     "w": 9.98,
-     "h": 8.26,
-     "edge": true,
-     "no_id": true
-    }
-   ]
   }
- }
 }

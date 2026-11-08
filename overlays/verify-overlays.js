@@ -49,18 +49,18 @@ function unzipEntry(file, wanted) {
   throw Error(`${wanted} not in ${file}`);
 }
 // Boundary edges of the top face (z = max) of a 3MF plate mesh = every through-cut edge as seen from above.
-function meshTopEdges(file) {
+function meshTopEdges(file, face = 'top') {
   const x = unzipEntry(file, '3D/3dmodel.model').toString('utf8');
   const V = [...x.matchAll(/<vertex x="([^"]+)" y="([^"]+)" z="([^"]+)"/g)].map(m => [+m[1], +m[2], +m[3]]);
   const T = [...x.matchAll(/<triangle v1="(\d+)" v2="(\d+)" v3="(\d+)"/g)].map(m => [+m[1], +m[2], +m[3]]);
-  const zt = Math.max(...V.map(v => v[2])), cnt = new Map();
+  const zt = face === 'top' ? Math.max(...V.map(v => v[2])) : Math.min(...V.map(v => v[2])), cnt = new Map();
   for (const t of T) {
     if (!t.every(i => Math.abs(V[i][2] - zt) < 1e-4)) continue;
     for (let j = 0; j < 3; j++) { const a = t[j], c = t[(j + 1) % 3], key = a < c ? a + ',' + c : c + ',' + a; cnt.set(key, (cnt.get(key) || 0) + 1); }
   }
   const segs = [];
   for (const [key, c] of cnt) if (c === 1) { const [a, d] = key.split(',').map(Number); segs.push([V[a][0], V[a][1], V[d][0], V[d][1]]); }
-  return { segs, thickness: zt };
+  return { segs, thickness: Math.max(...V.map(v => v[2])) - Math.min(...V.map(v => v[2])) };
 }
 // nearest distance from point to set of segments / points, via grid hashing
 function segIndex(segs, cell = 2) {
@@ -184,22 +184,120 @@ function centreCompare(name, png) {
   console.log(`  INFO  centre agreement with that independent template: median ${off[Math.floor(off.length / 2)].toFixed(2)} mm, worst ${off[off.length - 1].toFixed(2)} mm (${rows.find(r => r[1] === off[off.length - 1])[0]})`);
 }
 
+// ---------- clean-contour checks on the final CUT geometry ----------
+const GEN = require('./make-overlays.js');
+const pc = require(path.join(D, '..', '.tools', 'stl-deps', 'node_modules', 'polygon-clipping'));
+function cutLoops(ents) { // DXF CUT entities -> closed loops, plus count of loose / doubled ends
+  const P = ents.filter(e => e['8'] === 'CUT').map(e => e.type === 'LINE' ? { t: 'line', a: [e['10'], e['20'], e['11'], e['21']] }
+    : e.type === 'ARC' ? { t: 'arc', a: [e['10'], e['20'], e['40'], e['50'], e['51']] } : { t: 'circle', a: [e['10'], e['20'], e['40']] });
+  const pts = P.map(p => GEN.tess(p, 2e-4)), snap = [];
+  // end points closer than 0.002 mm count as the same joint
+  const key = v => { let i = snap.findIndex(w => Math.hypot(w[0] - v[0], w[1] - v[1]) < 2e-3); if (i < 0) { snap.push(v); i = snap.length - 1; } return 'j' + i; };
+  const deg = new Map();
+  pts.forEach((q, i) => { if (P[i].t !== 'circle') for (const v of [q[0], q[q.length - 1]]) deg.set(key(v), (deg.get(key(v)) || 0) + 1); });
+  const odd = [...deg.values()].filter(c => c !== 2).length, loops = [], used = new Set();
+  pts.forEach((q, i) => { if (P[i].t === 'circle') { loops.push({ prims: [P[i]], pts: q.slice(0, -1), corners: [] }); used.add(i); } });
+  for (let i = 0; i < P.length; i++) {
+    if (used.has(i)) continue;
+    used.add(i);
+    let ring = pts[i].slice(); const corners = [ring[ring.length - 1]], prims = [P[i]];
+    for (let guard = 0; guard < P.length && key(ring[0]) !== key(ring[ring.length - 1]); guard++) {
+      const end = key(ring[ring.length - 1]); let j = -1, rev = false;
+      for (let k = 0; k < P.length && j < 0; k++) if (!used.has(k) && P[k].t !== 'circle') {
+        if (key(pts[k][0]) === end) j = k; else if (key(pts[k][pts[k].length - 1]) === end) { j = k; rev = true; }
+      }
+      if (j < 0) break;
+      used.add(j); prims.push(P[j]);
+      const add = rev ? pts[j].slice().reverse() : pts[j];
+      ring = ring.concat(add.slice(1)); corners.push(ring[ring.length - 1]);
+    }
+    loops.push({ prims, pts: ring.slice(0, -1), corners, open: key(ring[0]) !== key(ring[ring.length - 1]) });
+  }
+  return { loops, odd };
+}
+const area = r => r.reduce((s, p, i) => { const q = r[(i + 1) % r.length]; return s + p[0] * q[1] - q[0] * p[1]; }, 0) / 2;
+function contourChecks(name, ents) {
+  const { loops, odd } = cutLoops(ents), minWeb = Number(cfg.panels[name].min_web_mm ?? cfg.min_web_mm ?? 1.0);
+  check(odd === 0 && !loops.some(l => l.open), `CUT layer is clean closed contours: ${loops.length} loops, no loose ends or doubled lines`);
+  loops.sort((x, y) => Math.abs(area(y.pts)) - Math.abs(area(x.pts)));
+  const sh = loops.map(l => GEN.shapeOf(l.prims));
+  const material = (x, y) => GEN.inside(sh[0], x, y) && !sh.some((s, i) => i > 0 && GEN.inside(s, x, y));
+  const close = r => [...r, r[0]], sumA = Math.abs(area(loops[0].pts)) - loops.slice(1).reduce((t, l) => t + Math.abs(area(l.pts)), 0);
+  const res = pc.difference([close(loops[0].pts)], ...loops.slice(1).map(l => [close(l.pts)]));
+  const resA = res.reduce((t, poly) => t + poly.reduce((u, r, i) => u + (i ? -1 : 1) * Math.abs(area(r.slice(0, -1))), 0), 0);
+  check(Math.abs(resA - sumA) < 0.01 && res.length === 1, `no openings overlap each other or the edge, plate is one piece (${(resA / 100).toFixed(2)} cm² of material)`);
+  // thinnest web: closest approach across material between different contours, or far-apart parts of one contour
+  const S = [];
+  loops.forEach((l, li) => { let acc = 0; l.pts.forEach((p, i) => { if (i) acc += Math.hypot(p[0] - l.pts[i - 1][0], p[1] - l.pts[i - 1][1]); S.push([p[0], p[1], li, acc]); }); });
+  const per = loops.map(l => l.pts.reduce((t, p, i) => t + Math.hypot(p[0] - l.pts[(i + 1) % l.pts.length][0], p[1] - l.pts[(i + 1) % l.pts.length][1]), 0));
+  const g = new Map(), c = 1.5;
+  S.forEach((s, i) => { const k = Math.floor(s[0] / c) + ',' + Math.floor(s[1] / c); if (!g.has(k)) g.set(k, []); g.get(k).push(i); });
+  let web = Infinity, where = '';
+  for (const s of S) {
+    const cx = Math.floor(s[0] / c), cy = Math.floor(s[1] / c);
+    for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) for (const j of g.get((cx + dx) + ',' + (cy + dy)) || []) {
+      const t = S[j], d = Math.hypot(s[0] - t[0], s[1] - t[1]);
+      if (d >= web || d < 1e-6) continue;
+      if (t[2] === s[2]) { const along = Math.abs(t[3] - s[3]); if (Math.min(along, per[s[2]] - along) < 10) continue; }
+      if (!material((s[0] + t[0]) / 2, (s[1] + t[1]) / 2)) continue;
+      web = d; where = `(${s[0].toFixed(1)}, ${s[1].toFixed(1)})`;
+    }
+  }
+  check(web >= minWeb - 0.01, `thinnest strip of material between cuts: ${web === Infinity ? 'over 1.5' : web.toFixed(2)} mm${where ? ' at ' + where : ''} (minimum ${minWeb} mm)`);
+  // sharpest corner of material at any contour joint
+  let sharp = 360, at = '';
+  for (const l of loops) for (const v of l.corners) {
+    let n = 0;
+    for (let i = 0; i < 360; i++) { const t = i * Math.PI / 180; if (material(v[0] + 0.03 * Math.cos(t), v[1] + 0.03 * Math.sin(t))) n++; }
+    if (n > 0 && n < sharp) { sharp = n; at = `(${v[0].toFixed(1)}, ${v[1].toFixed(1)})`; }
+  }
+  check(sharp >= 15, `sharpest corner of material: ${sharp}° at ${at} (no slivers or needle points)`);
+  return { material };
+}
+
 // ---------- run ----------
 for (const name of ['CP1', 'CP2', 'CP3', 'CM3']) {
   console.log(`\n${name}`);
-  const ents = readDXF(path.join(OUT, name + '.dxf'));
-  const cut = samples(ents, 'CUT'), pocket = samples(ents, 'POCKET');
-  check(cut.length > 0, `DXF parses: ${ents.length} entities, ${ents.filter(e => e['8'] === 'CUT').length} on CUT`);
+  const ents = readDXF(path.join(OUT, name + '.dxf')), built = GEN.buildPanel(name, cfg.panels[name]);
+  const screwMode = cfg.panels[name].screw_holes ?? cfg.screw_holes ?? true, screws = cfg.panels[name].features.filter(f => f.screw);
+  // regions changed on purpose for laser cutting: the through screw holes and their bridges / corner fills
+  const mods = screwMode === 'through' ? [...built.cutGroups.filter(g => g.screw || g.bridge).map(g => GEN.shapeOf(g.prims)), ...built.islands.map(i => i.sh)] : [];
+  const nearMod = (x, y) => mods.some(m => GEN.inside(m, x, y) || GEN.nearest(m, x, y).d < 0.05);
+  const allCut = samples(ents, 'CUT'), pocket = samples(ents, 'POCKET'), cut = allCut.filter(p => !nearMod(...p));
+  check(allCut.length > 0, `DXF parses: ${ents.length} entities, ${ents.filter(e => e['8'] === 'CUT').length} on CUT`);
   checkPDF(name);
+  const { material } = contourChecks(name, ents);
+  if (screwMode === 'through') {
+    const notCut = screws.filter(f => { for (let i = 0; i < 48; i++) for (const k of [0.3, 0.7, 0.97]) { const t = i / 48 * 2 * Math.PI; if (material(f.x + k * f.d / 2 * Math.cos(t), f.y + k * f.d / 2 * Math.sin(t))) return true; } return false; });
+    check(!notCut.length && !pocket.length, `all ${screws.length} screw holes are cut right through${notCut.length ? ' (not cut: ' + notCut.map(f => f.id).join(', ') + ')' : ''}`);
+    if (built.bridges.length) console.log(`  INFO  ${built.bridges.length} screw hole(s) opened into the neighbouring opening / edge instead of leaving a web under ${cfg.min_web_mm ?? 1} mm: ${built.bridges.map(b => b.screw + '>' + b.to).join(', ')}`);
+    for (const n of built.notes) console.log(`  INFO  ${n}`);
+  }
+  if (screwMode === false) {
+    const hit = screws.filter(f => ents.some(e => e.type === 'CIRCLE' && Math.hypot(+e['10'] - f.x, +e['20'] - f.y) < 0.5));
+    check(!ents.some(e => e['8'] === 'POCKET') && hit.length === 0, `no screw holes or screw recesses in the output (${screws.length} screw positions left out${hit.length ? '; still present: ' + hit.map(f => f.id).join(', ') : ''})`);
+  }
   const mesh = path.join(SRC, 'printables', name === 'CM3' ? 'virpil-throttle-plate.3mf' : `virpil-control-panel-${name.slice(2)}-plate.3mf`);
   if (fs.existsSync(mesh)) {
     const { segs, thickness } = meshTopEdges(mesh), near = segIndex(segs);
     const d1 = cut.map(([x, y]) => near(x, y)), max1 = d1.length ? Math.max(...d1) : Infinity;
-    const cutSegs = []; for (let j = 1; j < cut.length; j++) if (Math.hypot(cut[j][0] - cut[j - 1][0], cut[j][1] - cut[j - 1][1]) < 0.2) cutSegs.push([...cut[j - 1], ...cut[j]]);
-    const near2 = segIndex(cutSegs), d2 = segs.map(s => near2(s[0], s[1])), max2 = Math.max(...d2);
-    check(max1 < 0.06, `every DXF cut line lies on the original 3D model's edge (worst ${max1.toFixed(3)} mm; ${cut.length} points)`);
-    check(max2 < 0.06, `every edge of the original 3D model is in the DXF (worst ${max2.toFixed(3)} mm; ${segs.length} mesh edges)`);
-    console.log(`        original plate thickness ${thickness} mm; ${pocket.length ? 'POCKET layer = 2 mm back recesses' : ''}`);
+    const cutSegs = []; for (let j = 1; j < allCut.length; j++) if (Math.hypot(allCut[j][0] - allCut[j - 1][0], allCut[j][1] - allCut[j - 1][1]) < 0.2) cutSegs.push([...allCut[j - 1], ...allCut[j]]);
+    const keep = segs.filter(s => !nearMod(s[0], s[1])), near2 = segIndex(cutSegs), d2 = keep.map(s => near2(s[0], s[1])), max2 = Math.max(...d2);
+    const extra = screwMode === 'through' ? ' (away from the screw holes, bridges and removed strips)' : '';
+    check(max1 < 0.06, `every DXF cut line lies on the original 3D model's edge${extra} (worst ${max1.toFixed(3)} mm; ${cut.length} points)`);
+    check(max2 < 0.06, `every edge of the original 3D model is in the DXF${extra} (worst ${max2.toFixed(3)} mm; ${keep.length} of ${segs.length} mesh edges)`);
+    if (screwMode === 'through') {
+      // each screw hole: where its circle borders material, it must sit on the screw-head recess outline on the back of the original
+      const nb = segIndex(meshTopEdges(mesh, 'bottom').segs);
+      const fit = screws.map(f => {
+        const d = [];
+        for (let i = 0; i < 360; i++) { const t = i * Math.PI / 180, x = f.x + f.d / 2 * Math.cos(t), y = f.y + f.d / 2 * Math.sin(t); if (material(x + 0.05 * Math.cos(t), y + 0.05 * Math.sin(t))) d.push(nb(x, y)); }
+        d.sort((u, v) => u - v); return { id: f.id, med: d.length ? d[d.length >> 1] : 0 };
+      });
+      const bad = fit.filter(r => r.med > 0.06);
+      check(!bad.length, `each screw hole matches its screw-head recess on the back of the original 3D model (worst median ${Math.max(...fit.map(r => r.med)).toFixed(3)} mm)${bad.length ? ' bad: ' + bad.map(r => r.id).join(', ') : ''}`);
+    }
+    console.log(`        original plate thickness ${thickness} mm`);
   }
   const tpl = path.join(SRC, 'deathdonky', name === 'CP3' ? 'SharKA-50-Template.png' : name === 'CM3' ? 'Throttle-Template-Image.png' : `${name}-Template-Image.png`);
   if (fs.existsSync(tpl)) {

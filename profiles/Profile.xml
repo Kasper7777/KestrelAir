@@ -159,14 +159,7 @@
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>E</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_H" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -204,14 +197,7 @@
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>Q</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_H" Value="-1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -446,14 +432,7 @@
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>E</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_H" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -491,14 +470,7 @@
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>Q</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_H" Value="-1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

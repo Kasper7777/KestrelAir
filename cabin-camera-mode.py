@@ -17,11 +17,13 @@ E.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
 WALK = 'LVAR:KA_WALK_MODE'
 CAM = 'SIMCONNECT:CAMERA STATE'
 HELPER = ROOT / '.tools/ka-drone-leds/ka-walk-leds.exe'
-# Grip wheel up / down -> Shift+E / Shift+Q = KEY_COCKPIT_CAMERA_HEIGHT_INC / _DEC (stand up / crouch), from the
-# sim defaults in Packages/fs-input-profiles/.../Keyboard_2024_Transversal.xml. Not Shift+R/F: Shift+F is
-# KEY_COCKPIT_QUICKVIEW4 (looks left) and Shift+R does nothing in the cockpit.
-WHEEL = {'BUTTON_22': 'E', 'BUTTON_21': 'Q'}
-WHEEL_HOLD_MS = 150  # each wheel click holds the key this long; MSFS moves the camera while it is held
+# Grip wheel up / down -> L:KA_CABIN_H +1 / -1. ka-walk-leds turns that into Shift+E / Shift+Q
+# (KEY_COCKPIT_CAMERA_HEIGHT_INC / _DEC, sim defaults in Keyboard_2024_Transversal.xml) held for 150 ms.
+WHEEL = {'BUTTON_22': 1, 'BUTTON_21': -1}
+GROUND = 'SIMCONNECT:SIM ON GROUND'
+ONFOOT_ALLOW = [(GROUND,1,'Equals'),(CAM,3,'Unequal'),(WALK,1,'Unequal')]
+ONFOOT_RELEASE = [(GROUND,1,'Unequal'),(CAM,3,'Equals'),(WALK,1,'Equals')]
+ONFOOT_RELEASE_KEYS = [(src,str(val),cmp) for src,val,cmp in ONFOOT_RELEASE]
 
 def sub(parent, name, **attrs):
     return E.SubElement(parent, '{'+NS+'}'+name, **{k: str(v) for k,v in attrs.items()})
@@ -67,53 +69,44 @@ def patch(root):
                     condition(d,WALK,1,'Unequal')
             if dev.get('DeviceIndex')=='1' and bound in ('RX_AXIS','RY_AXIS'):
                 defs=event.find('s:EventDefinitions',N)
-                # Replace our camera definitions; retain the existing on-foot and drone controls.
+                axis=bound[:2]
+                stick='PROFILE:KA_STICK1_'+axis
+                letters=('A','D') if axis=='RX' else ('S','W')
                 for d in list(defs):
                     targets=[a.get('TargetDataDefinition','') for a in d.findall('s:EventActions/*',N)]
-                    if any(t.startswith('PROFILE:KA_CABIN_') for t in targets): defs.remove(d)
-                    elif d.find('.//s:EventActionKeyboard',N) is not None: condition(d,CAM,2,'Unequal')
-                axis=bound[:2]
-                state='PROFILE:KA_CABIN_'+axis
-                other='PROFILE:KA_CABIN_'+('RY' if axis=='RX' else 'RX')
-                low,high=('A','D') if axis=='RX' else ('S','W')
-                base=[(WALK,1,'Equals'),(CAM,2,'Equals')]
-                for zone,compare,threshold,pressed,released in [(-1,'Less',12000,low,high),(1,'Greater',48000,high,low)]:
-                    d,a=definition(defs,conds=base+[('EVENT:VALUE',threshold,compare),(state,zone,'Unequal')])
-                    sub(a,'EventActionChangeValue',TargetDataDefinition=state,Value=zone)
-                    key(a,'RELEASE',released)
-                    key(a,'PRESS','LShiftKey',pressed)
-                d,a=definition(defs,conds=[('EVENT:VALUE',12000,'GreaterOrEqual'),('EVENT:VALUE',48000,'LessOrEqual'),(state,0,'Unequal')])
-                sub(a,'EventActionChangeValue',TargetDataDefinition=state,Value=0)
-                key(a,'RELEASE',low,high)
-                # Release Shift only when the other axis is centred, to allow diagonal movement.
-                d,a=definition(defs,conds=[('EVENT:VALUE',12000,'GreaterOrEqual'),('EVENT:VALUE',48000,'LessOrEqual'),(other,0,'Equals')])
-                # Use a state guard to avoid flooding key-up macros at rest.
-                condition(d,'PROFILE:KA_CABIN_SHIFT',1)
-                sub(a,'EventActionChangeValue',TargetDataDefinition='PROFILE:KA_CABIN_SHIFT',Value=0)
-                key(a,'RELEASE','LShiftKey')
-                for d in defs:
-                    for a in d.findall('s:EventActions',N):
-                        if any(x.get('MacroType')=='PRESS' for x in a.findall('s:EventActionKeyboard',N)) and any(x.get('TargetDataDefinition')==state for x in a):
-                            sub(a,'EventActionChangeValue',TargetDataDefinition='PROFILE:KA_CABIN_SHIFT',Value=1)
-                for source,value in [(WALK,1),(CAM,2)]:
-                    d,a=definition(defs,conds=[(source,value,'Unequal'),(state,0,'Unequal')])
-                    sub(a,'EventActionChangeValue',TargetDataDefinition=state,Value=0)
-                    sub(a,'EventActionChangeValue',TargetDataDefinition='PROFILE:KA_CABIN_SHIFT',Value=0)
-                    key(a,'RELEASE',low,high,'LShiftKey')
-        # Pink mode in the cockpit camera (CAMERA STATE 2): the grip wheel raises/lowers the camera height instead
-        # of driving the ATC reply menus. Pink mode in any other view: the wheel does nothing. Drone mode
-        # (CAMERA STATE 4) keeps the wheel on drone speed.
+                    sources={(c.get('ConditionValueSource'),c.get('ConditionTargetValue'),c.get('ConditionComparator','Equals')) for c in d.iter('{'+NS+'}EventCondition')}
+                    presses=[k for k in d.findall('.//s:EventActionKeyboard',N) if k.get('MacroType')!='RELEASE']
+                    # Our own definitions (old keyboard cabin walk, LVAR zones, on-foot safety releases): rebuilt below.
+                    if any(t.startswith(('PROFILE:KA_CABIN_','LVAR:KA_CABIN_')) for t in targets): defs.remove(d)
+                    elif stick in targets and not presses and sources & set(ONFOOT_RELEASE_KEYS): defs.remove(d)
+                    elif presses:
+                        # On-foot walking sends BARE W/A/S/D, which are aileron/elevator keys in the air. Only allow
+                        # it on the ground, outside pink mode, never in the cockpit (2), outside (3) or drone (4) views.
+                        for src,val,cmp in ONFOOT_ALLOW: condition(d,src,val,cmp)
+                # Release any held on-foot key as soon as one of those guards stops holding.
+                for src,val,cmp in ONFOOT_RELEASE:
+                    d,a=definition(defs,conds=[(stick,0,'Unequal'),(src,val,cmp)])
+                    sub(a,'EventActionChangeValue',TargetDataDefinition=stick,Value=0)
+                    key(a,'RELEASE',*letters)
+                # Pink-mode cabin walk: SPAD only records the MiniStick zone; ka-walk-leds presses Shift+key safely.
+                lvar='LVAR:KA_CABIN_'+('X' if axis=='RX' else 'Y')
+                for zone,conds in [(-1,[('EVENT:VALUE',12000,'Less')]),(1,[('EVENT:VALUE',48000,'Greater')]),
+                                   (0,[('EVENT:VALUE',12000,'GreaterOrEqual'),('EVENT:VALUE',48000,'LessOrEqual')])]:
+                    d,a=definition(defs,conds=conds+[(lvar,zone,'Unequal')])
+                    sub(a,'EventActionChangeValue',TargetDataDefinition=lvar,Value=zone)
+        # Pink mode in the cockpit camera (CAMERA STATE 2): a wheel click asks ka-walk-leds for one camera-height
+        # step (L:KA_CABIN_H = +1 up / -1 down) instead of the ATC reply menus. Pink mode in any other view: nothing.
+        # Drone mode (CAMERA STATE 4) keeps the wheel on drone speed.
         for event in events:
             hid=event.get('BoundTo')
             if hid not in WHEEL: continue
             defs=event.find('s:EventDefinitions',N)
             for d in list(defs):
-                if d.find('.//s:EventActionKeyboard',N) is not None: defs.remove(d)
+                targets=[a.get('TargetDataDefinition','') for a in d.findall('s:EventActions/*',N)]
+                if d.find('.//s:EventActionKeyboard',N) is not None or 'LVAR:KA_CABIN_H' in targets: defs.remove(d)
                 elif d.find('.//s:EventActionCommand',N) is not None: condition(d,WALK,1,'Unequal')
             d,a=definition(defs,'PRESS',[(WALK,1,'Equals'),(CAM,2,'Equals')])
-            a=sub(a,'EventActionKeyboard',MacroType='PRESSANDRELEASE',TargetWindow='__ACTIVEWINDOW__')
-            ks=sub(sub(a,'KeyboardMacro',Duration=WHEEL_HOLD_MS,Repeat=1,Pause=25),'Keys')
-            for k in ('LShiftKey',WHEEL[hid]): sub(ks,'Keys').text=k
+            sub(a,'EventActionChangeValue',TargetDataDefinition='LVAR:KA_CABIN_H',Value=WHEEL[hid])
         # Flip lever edges release any held camera keys and start the shared lighting/state helper.
         for old in list(events):
             if old.get('BoundTo')=='BUTTON_2': events.remove(old)

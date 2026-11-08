@@ -120,6 +120,7 @@ static class KaDroneLeds
         {
             if (!first) return 0;
             Log("started");
+            ReleaseAllKeys();
             StartLeverReaders();
             IntPtr h = IntPtr.Zero;
             int state = -1;
@@ -132,6 +133,7 @@ static class KaDroneLeds
                 bool drone = state == 4;
                 double walk = RaisedGrips;
                 if (h != IntPtr.Zero) SetData(h, 2, 0, 0, 0, 8, ref walk);
+                CabinKeys(h, walk == 1 && state == 2 && h != IntPtr.Zero && SimInFront());
                 int colour = walk == 1 ? HotPink : drone ? SkyBlue : 0;
                 // Re-send every 2 s as well: the VIRPIL configurator or a replug can reset the LEDs.
                 if (shown != colour || (colour != 0 && (DateTime.UtcNow - lastWrite).TotalSeconds >= 2))
@@ -140,9 +142,80 @@ static class KaDroneLeds
                     if (shown != colour) Log((walk == 1 ? "walk -> hot pink" : drone ? "drone -> sky blue" : "flight -> firmware colours") + " on " + n + " grip(s)");
                     shown = colour; lastWrite = DateTime.UtcNow;
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(30);
             }
         }
+    }
+
+    // ---- Cabin camera keys (2026-11-08) ----
+    // In MSFS's default airplane keyboard profile the BARE letters fly the aircraft: A/D ailerons, W/S elevator,
+    // Q/E rudder. Only Shift+W/A/S/D (slide) and Shift+E/Q (height) move the cockpit camera. SPAD's split
+    // press/release macros don't reliably deliver Shift, which left bare letters held and rolled/pitched the plane in
+    // pink mode. So SPAD now only writes L:KA_CABIN_X/Y (-1/0/1, left MiniStick zones) and L:KA_CABIN_H (+1/-1 per
+    // wheel click), and this helper presses the keys with scan codes under one invariant: a letter goes down only
+    // after Windows reports left Shift held, and every letter is released before Shift. Keys are only held in pink
+    // mode, cockpit camera, with MSFS in front; anything else releases everything.
+    [StructLayout(LayoutKind.Sequential)] struct KEYBDINPUT { public ushort vk, scan; public uint flags, time; public IntPtr extra; }
+    [StructLayout(LayoutKind.Explicit, Size = 40)] struct INPUT { [FieldOffset(0)] public uint type; [FieldOffset(8)] public KEYBDINPUT ki; }
+    [DllImport("user32.dll", SetLastError = true)] static extern uint SendInput(uint n, INPUT[] inputs, int size);
+    [DllImport("user32.dll")] static extern short GetAsyncKeyState(int vk);
+    [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
+    [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr h, out uint pid);
+    const ushort ScShift = 0x2A, ScW = 0x11, ScA = 0x1E, ScS = 0x1F, ScD = 0x20, ScE = 0x12, ScQ = 0x10;
+    static readonly ushort[] Letters = { ScW, ScA, ScS, ScD, ScE, ScQ };
+    static readonly HashSet<ushort> Down = new HashSet<ushort>();
+    static double CabinX, CabinY, CabinH;
+    static int HeightDir; static DateTime HeightUntil = DateTime.MinValue;
+    const int HeightHoldMs = 150;
+
+    static void Key(ushort scan, bool down)
+    {
+        var input = new INPUT[1];
+        input[0].type = 1;  // keyboard
+        input[0].ki.scan = scan;
+        input[0].ki.flags = 0x0008 | (down ? 0u : 0x0002u);  // SCANCODE (| KEYUP)
+        SendInput(1, input, Marshal.SizeOf(typeof(INPUT)));
+        if (down) Down.Add(scan); else Down.Remove(scan);
+    }
+    static void ReleaseAllKeys()
+    {
+        foreach (ushort k in Letters) Key(k, false);  // letters first, then Shift
+        Key(ScShift, false);
+    }
+    static bool SimInFront()
+    {
+        uint pid; GetWindowThreadProcessId(GetForegroundWindow(), out pid);
+        try { string n = Process.GetProcessById((int)pid).ProcessName; return n == "FlightSimulator2024" || n == "FlightSimulator"; }
+        catch { return false; }
+    }
+    static void CabinKeys(IntPtr h, bool active)
+    {
+        if (CabinH != 0)
+        {
+            // One wheel click: consume it, and if active, hold Shift+E (up) / Shift+Q (down) briefly.
+            if (active) { HeightDir = CabinH > 0 ? 1 : -1; HeightUntil = DateTime.UtcNow.AddMilliseconds(HeightHoldMs); }
+            double zero = 0; CabinH = 0;
+            if (h != IntPtr.Zero) SetData(h, 4, 0, 0, 0, 8, ref zero);
+        }
+        var want = new HashSet<ushort>();
+        if (active)
+        {
+            if (CabinX < -0.5) want.Add(ScA); else if (CabinX > 0.5) want.Add(ScD);
+            if (CabinY < -0.5) want.Add(ScS); else if (CabinY > 0.5) want.Add(ScW);
+            if (DateTime.UtcNow < HeightUntil) want.Add(HeightDir > 0 ? ScE : ScQ);
+        }
+        // Release letters no longer wanted (always before Shift).
+        foreach (ushort k in Letters) if (Down.Contains(k) && !want.Contains(k)) Key(k, false);
+        if (want.Count == 0) { if (Down.Contains(ScShift)) Key(ScShift, false); return; }
+        if (!Down.Contains(ScShift)) { Key(ScShift, true); Thread.Sleep(15); }
+        if ((GetAsyncKeyState(0xA0) & 0x8000) == 0)  // VK_LSHIFT not seen as held: never send a bare letter
+        {
+            foreach (ushort k in Letters) if (Down.Contains(k)) Key(k, false);
+            Key(ScShift, false);
+            Log("cabin keys: Shift not held, letters suppressed");
+            return;
+        }
+        foreach (ushort k in want) if (!Down.Contains(k)) Key(k, true);
     }
 
     // ---- LEDs ----
@@ -240,6 +313,11 @@ static class KaDroneLeds
         if (AddDef(h, 1, "CAMERA STATE", "number", 1, 0, 0xffffffff) != 0 || Request(h, 1, 1, 0, 3, 1, 0, 0, 0) != 0)
         { Close(h); return IntPtr.Zero; }
         if (AddDef(h, 2, "L:KA_WALK_MODE", "number", 4, 0, 0xffffffff) != 0) { Close(h); return IntPtr.Zero; }
+        // Cabin inputs written by SPAD (FLOAT64 = 4), read every frame on change; def 4 clears the wheel click.
+        foreach (string v in new[] { "L:KA_CABIN_X", "L:KA_CABIN_Y", "L:KA_CABIN_H" })
+            if (AddDef(h, 3, v, "number", 4, 0, 0xffffffff) != 0) { Close(h); return IntPtr.Zero; }
+        if (Request(h, 3, 3, 0, 3, 1, 0, 0, 0) != 0 || AddDef(h, 4, "L:KA_CABIN_H", "number", 4, 0, 0xffffffff) != 0)
+        { Close(h); return IntPtr.Zero; }
         Log("connected to MSFS");
         return h;
     }
@@ -253,7 +331,14 @@ static class KaDroneLeds
             if (size < 12) continue;
             int id = Marshal.ReadInt32(data, 8);
             if (id == 3) return false;
-            if (id == 8 && size >= 44) state = Marshal.ReadInt32(data, 40);
+            if (id != 8 || size < 44) continue;
+            int def = Marshal.ReadInt32(data, 20);  // SIMCONNECT_RECV_SIMOBJECT_DATA.dwDefineID
+            if (def == 1) state = Marshal.ReadInt32(data, 40);
+            else if (def == 3 && size >= 64)
+            {
+                var v = new double[3]; Marshal.Copy(data + 40, v, 0, 3);
+                CabinX = v[0]; CabinY = v[1]; CabinH = v[2];
+            }
         }
         return true;
     }

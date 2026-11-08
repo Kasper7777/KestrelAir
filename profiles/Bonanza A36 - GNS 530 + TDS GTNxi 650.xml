@@ -239,14 +239,7 @@
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>E</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_H" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -284,14 +277,7 @@
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>Q</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_H" Value="-1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4406,6 +4392,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="-1" ConditionValueSource="PROFILE:KA_STICK1_RX" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:SIM ON GROUND" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="3" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="-1" />
@@ -4431,6 +4420,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_STICK1_RX" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:SIM ON GROUND" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="3" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="1" />
@@ -4507,130 +4499,81 @@
               </EventDefinition>
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
+                  <EventCondition ConditionValueSource="PROFILE:KA_STICK1_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:SIM ON GROUND" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>A</Keys>
+                        <Keys>D</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="PROFILE:KA_STICK1_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="3" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>A</Keys>
+                        <Keys>D</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="PROFILE:KA_STICK1_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
                   <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
-                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RX" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>A</Keys>
+                        <Keys>D</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
                   <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="Less" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="-1" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_CABIN_X" ConditionTargetValue="-1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="-1" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>D</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>A</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_X" Value="-1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
-                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
-                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                   <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="Greater" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_CABIN_X" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="1" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>A</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>D</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_X" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="GreaterOrEqual" />
                   <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="LessOrEqual" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_CABIN_X" ConditionTargetValue="0" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>A</Keys>
-                        <Keys>D</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="GreaterOrEqual" />
-                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="LessOrEqual" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="0" ConditionComparator="Equals" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_SHIFT" ConditionTargetValue="1" ConditionComparator="Equals" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>A</Keys>
-                        <Keys>D</Keys>
-                        <Keys>LShiftKey</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="0" ConditionComparator="Unequal" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RX" Value="0" />
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>A</Keys>
-                        <Keys>D</Keys>
-                        <Keys>LShiftKey</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_X" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4643,6 +4586,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="-1" ConditionValueSource="PROFILE:KA_STICK1_RY" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:SIM ON GROUND" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="3" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="-1" />
@@ -4668,6 +4614,9 @@
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="1" ConditionValueSource="PROFILE:KA_STICK1_RY" />
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:SIM ON GROUND" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="3" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="1" />
@@ -4744,130 +4693,81 @@
               </EventDefinition>
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
+                  <EventCondition ConditionValueSource="PROFILE:KA_STICK1_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:SIM ON GROUND" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>S</Keys>
+                        <Keys>W</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="PROFILE:KA_STICK1_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="3" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>S</Keys>
+                        <Keys>W</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="PROFILE:KA_STICK1_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
                   <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
-                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_STICK1_RY" Value="0" />
+                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>S</Keys>
+                        <Keys>W</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="VALUE">
+                <EventConditions>
                   <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="Less" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="-1" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_CABIN_Y" ConditionTargetValue="-1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="-1" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>W</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>S</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_Y" Value="-1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
-                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
-                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                   <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="Greater" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="1" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_CABIN_Y" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="1" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>S</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionKeyboard MacroType="PRESS" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>W</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="1" />
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_Y" Value="1" />
                 </EventActions>
               </EventDefinition>
               <EventDefinition Trigger="VALUE">
                 <EventConditions>
                   <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="GreaterOrEqual" />
                   <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="LessOrEqual" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
+                  <EventCondition ConditionValueSource="LVAR:KA_CABIN_Y" ConditionTargetValue="0" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>S</Keys>
-                        <Keys>W</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="12000" ConditionComparator="GreaterOrEqual" />
-                  <EventCondition ConditionValueSource="EVENT:VALUE" ConditionTargetValue="48000" ConditionComparator="LessOrEqual" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RX" ConditionTargetValue="0" ConditionComparator="Equals" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_SHIFT" ConditionTargetValue="1" ConditionComparator="Equals" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>S</Keys>
-                        <Keys>W</Keys>
-                        <Keys>LShiftKey</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
-                </EventActions>
-              </EventDefinition>
-              <EventDefinition Trigger="VALUE">
-                <EventConditions>
-                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Unequal" />
-                  <EventCondition ConditionValueSource="PROFILE:KA_CABIN_RY" ConditionTargetValue="0" ConditionComparator="Unequal" />
-                </EventConditions>
-                <EventActions>
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_RY" Value="0" />
-                  <EventActionChangeValue TargetDataDefinition="PROFILE:KA_CABIN_SHIFT" Value="0" />
-                  <EventActionKeyboard MacroType="RELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="20" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>S</Keys>
-                        <Keys>W</Keys>
-                        <Keys>LShiftKey</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_Y" Value="0" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -5014,14 +4914,7 @@
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>E</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_H" Value="1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -5059,14 +4952,7 @@
                   <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
-                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
-                      <Keys>
-                        <Keys>LShiftKey</Keys>
-                        <Keys>Q</Keys>
-                      </Keys>
-                    </KeyboardMacro>
-                  </EventActionKeyboard>
+                  <EventActionChangeValue TargetDataDefinition="LVAR:KA_CABIN_H" Value="-1" />
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

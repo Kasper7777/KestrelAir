@@ -106,7 +106,9 @@ function checkPDF(name) {
   // plate outline = the 4 straight edges, which are the longest red lines
   const lines = red.filter(p => p.length === 2), xs = [], ys = [];
   for (const p of lines) { if (Math.abs(p[0][0] - p[1][0]) < 1e-6 && Math.abs(p[0][1] - p[1][1]) > 150) xs.push(p[0][0]); if (Math.abs(p[0][1] - p[1][1]) < 1e-6 && Math.abs(p[0][0] - p[1][0]) > 120) ys.push(p[0][1]); }
-  const w = Math.max(...xs) - Math.min(...xs), h = Math.max(...ys) - Math.min(...ys);
+  const all0 = red.flat();
+  const w = xs.length > 1 ? Math.max(...xs) - Math.min(...xs) : Math.max(...all0.map(p => p[0])) - Math.min(...all0.map(p => p[0]));
+  const h = ys.length > 1 ? Math.max(...ys) - Math.min(...ys) : Math.max(...all0.map(p => p[1])) - Math.min(...all0.map(p => p[1]));
   check(Math.abs(w - 170) < 0.01 && Math.abs(h - 200) < 0.01, `printed plate = ${w.toFixed(3)} x ${h.toFixed(3)} mm (should be 170 x 200)`);
   const all = red.flat(), minX = Math.min(...all.map(p => p[0])), maxX = Math.max(...all.map(p => p[0])), minY = Math.min(...all.map(p => p[1])), maxY = Math.max(...all.map(p => p[1]));
   check(minX > 5 && maxX < pw - 5 && minY > 5 && maxY < ph - 15, `cut lines sit inside the page with >= 5 mm margin (x ${minX.toFixed(1)}-${maxX.toFixed(1)}, y ${minY.toFixed(1)}-${maxY.toFixed(1)} mm)`);
@@ -183,13 +185,13 @@ function centreCompare(name, png) {
 }
 
 // ---------- run ----------
-for (const name of ['CP1', 'CP2', 'CP3']) {
+for (const name of ['CP1', 'CP2', 'CP3', 'CM3']) {
   console.log(`\n${name}`);
   const ents = readDXF(path.join(OUT, name + '.dxf'));
   const cut = samples(ents, 'CUT'), pocket = samples(ents, 'POCKET');
   check(cut.length > 0, `DXF parses: ${ents.length} entities, ${ents.filter(e => e['8'] === 'CUT').length} on CUT`);
   checkPDF(name);
-  const mesh = path.join(SRC, 'printables', `virpil-control-panel-${name.slice(2)}-plate.3mf`);
+  const mesh = path.join(SRC, 'printables', name === 'CM3' ? 'virpil-throttle-plate.3mf' : `virpil-control-panel-${name.slice(2)}-plate.3mf`);
   if (fs.existsSync(mesh)) {
     const { segs, thickness } = meshTopEdges(mesh), near = segIndex(segs);
     const d1 = cut.map(([x, y]) => near(x, y)), max1 = d1.length ? Math.max(...d1) : Infinity;
@@ -199,7 +201,7 @@ for (const name of ['CP1', 'CP2', 'CP3']) {
     check(max2 < 0.06, `every edge of the original 3D model is in the DXF (worst ${max2.toFixed(3)} mm; ${segs.length} mesh edges)`);
     console.log(`        original plate thickness ${thickness} mm; ${pocket.length ? 'POCKET layer = 2 mm back recesses' : ''}`);
   }
-  const tpl = path.join(SRC, 'deathdonky', name === 'CP3' ? 'SharKA-50-Template.png' : `${name}-Template-Image.png`);
+  const tpl = path.join(SRC, 'deathdonky', name === 'CP3' ? 'SharKA-50-Template.png' : name === 'CM3' ? 'Throttle-Template-Image.png' : `${name}-Template-Image.png`);
   if (fs.existsSync(tpl)) {
     const r = templateCompare(name, tpl);
     const msg = `${path.basename(tpl)}: scale ${r.scale[0].toFixed(3)}/${r.scale[1].toFixed(3)} px/mm (1 px = ${r.px1.toFixed(2)} mm); 99% of differing pixels within ${r.p99.toFixed(2)} mm of our edges, worst ${r.max.toFixed(2)} mm`;

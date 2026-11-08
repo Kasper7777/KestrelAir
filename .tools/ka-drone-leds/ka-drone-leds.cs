@@ -1,5 +1,5 @@
-// ka-walk-leds: either grip flip lever raised disables flight inputs through L:KA_WALK_MODE and paints both
-// grips hot pink. With both lowered, drone camera is sky blue; otherwise stored firmware colours return.
+// ka-walk-leds: either grip flip lever LOWERED (folded down) disables flight inputs through L:KA_WALK_MODE and
+// paints both grips hot pink (swapped 2026-11-08; was lever up). With both raised, drone camera is sky blue; otherwise stored firmware colours return.
 //
 // Reads CAMERA STATE through the running sim's SimConnect_internal.dll (same approach as ka-sfs-watch) and
 // writes VIRPIL's LED feature report (report 2, command 102, then one byte per LED: 00 = firmware colour,
@@ -87,7 +87,8 @@ static class KaDroneLeds
                             bool raised = false, lowered = false;
                             for (int i = 0; i < count; i++) { if (buttons[i] == 1) raised = true; if (buttons[i] == 2) lowered = true; }
                             if (!raised && !lowered) continue;
-                            lock (Levers) { Levers[path] = raised; RaisedGrips = Levers.Count < 2 || Levers.ContainsValue(true) ? 1 : 0; }
+                            // Pink (walk) mode while folded DOWN (user request 2026-11-08; previously while UP).
+                            lock (Levers) { Levers[path] = lowered; RaisedGrips = Levers.Count < 2 || Levers.ContainsValue(true) ? 1 : 0; }
                         }
                     }
                     finally { HidD_FreePreparsedData(pp); }

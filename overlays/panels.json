@@ -456,42 +456,15 @@
      "x": 74,
      "y": 141,
      "points": [
-      [
-       0,
-       0
-      ],
-      [
-       10,
-       0
-      ],
-      [
-       24,
-       -19
-      ],
-      [
-       24,
-       -29
-      ],
-      [
-       9,
-       -38
-      ],
-      [
-       -9,
-       -38
-      ],
-      [
-       -24,
-       -29
-      ],
-      [
-       -24,
-       -19
-      ],
-      [
-       -10,
-       0
-      ]
+      [0, 0],
+      [10, 0],
+      [24, -19],
+      [24, -29],
+      [9, -38],
+      [-9, -38],
+      [-24, -29],
+      [-24, -19],
+      [-10, 0]
      ],
      "fillet": 2,
      "id_dy": -19
@@ -914,6 +887,289 @@
      "type": "circle",
      "x": 95,
      "y": 188.5,
+     "d": 8,
+     "layer": "POCKET",
+     "no_id": true
+    }
+   ]
+  },
+  "CM3": {
+   "_source": "Exact CAD values from xchrishawk's 'Virpil Throttle Plate' FreeCAD model (Printables 1106661, CC BY-NC-SA), for the MongoosT-50CM3 throttle base panel. The plate is the 170x200 base with the throttle-lever area cut away: x<103.5, y>101, with a 4 mm inner corner. LS*/SS* = 2 mm back recesses (POCKET layer). Mode = rotary selector clearance, Flaps = flaps-lever slot.",
+   "verified": false,
+   "outline": {
+    "w": 170,
+    "h": 200,
+    "points": [
+     [
+      0,
+      0,
+      20
+     ],
+     [
+      170,
+      0,
+      20
+     ],
+     [
+      170,
+      200,
+      20
+     ],
+     [
+      103.5,
+      200,
+      0
+     ],
+     [
+      103.5,
+      101,
+      4
+     ],
+     [
+      0,
+      101,
+      0
+     ]
+    ]
+   },
+   "features": [
+    {
+     "id": "Flaps",
+     "type": "rect",
+     "x": 140.5,
+     "y": 140,
+     "w": 32,
+     "h": 71,
+     "r": 15.99
+    },
+    {
+     "id": "T2",
+     "type": "rect",
+     "x": 114,
+     "y": 122.75,
+     "w": 17,
+     "h": 21,
+     "r": 0
+    },
+    {
+     "id": "T3",
+     "type": "rect",
+     "x": 21.5,
+     "y": 83.75,
+     "w": 17,
+     "h": 21,
+     "r": 0
+    },
+    {
+     "id": "T4",
+     "type": "rect",
+     "x": 21.5,
+     "y": 55.75,
+     "w": 17,
+     "h": 21,
+     "r": 0
+    },
+    {
+     "id": "T1",
+     "type": "rect",
+     "x": 114,
+     "y": 157.75,
+     "w": 17,
+     "h": 21,
+     "r": 0
+    },
+    {
+     "id": "B1",
+     "type": "rect",
+     "x": 48.5,
+     "y": 81.75,
+     "w": 17,
+     "h": 17,
+     "r": 0
+    },
+    {
+     "id": "B2",
+     "type": "rect",
+     "x": 74.25,
+     "y": 81.75,
+     "w": 17,
+     "h": 17,
+     "r": 0
+    },
+    {
+     "id": "B3",
+     "type": "rect",
+     "x": 100,
+     "y": 81.75,
+     "w": 17,
+     "h": 17,
+     "r": 0
+    },
+    {
+     "id": "B4",
+     "type": "rect",
+     "x": 48.5,
+     "y": 55,
+     "w": 17,
+     "h": 17,
+     "r": 0
+    },
+    {
+     "id": "B5",
+     "type": "rect",
+     "x": 74.25,
+     "y": 55,
+     "w": 17,
+     "h": 17,
+     "r": 0
+    },
+    {
+     "id": "B6",
+     "type": "rect",
+     "x": 100,
+     "y": 55,
+     "w": 17,
+     "h": 17,
+     "r": 0
+    },
+    {
+     "id": "Mode",
+     "type": "circle",
+     "x": 137,
+     "y": 62,
+     "d": 35
+    },
+    {
+     "id": "T5",
+     "type": "circle",
+     "x": 23.5,
+     "y": 24,
+     "d": 18
+    },
+    {
+     "id": "T6",
+     "type": "circle",
+     "x": 51.5,
+     "y": 24,
+     "d": 18
+    },
+    {
+     "id": "T7",
+     "type": "circle",
+     "x": 79.5,
+     "y": 24,
+     "d": 18
+    },
+    {
+     "id": "E1",
+     "type": "circle",
+     "x": 112,
+     "y": 23.75,
+     "d": 18
+    },
+    {
+     "id": "E2",
+     "type": "circle",
+     "x": 144,
+     "y": 23.75,
+     "d": 18
+    },
+    {
+     "id": "LS1",
+     "type": "circle",
+     "x": 8.999,
+     "y": 9.5,
+     "d": 10,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "LS2",
+     "type": "circle",
+     "x": 161,
+     "y": 9.5,
+     "d": 10,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "LS4",
+     "type": "circle",
+     "x": 161,
+     "y": 190.5,
+     "d": 10,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "LS5",
+     "type": "circle",
+     "x": 5,
+     "y": 100,
+     "d": 10,
+     "layer": "POCKET",
+     "no_id": true,
+     "edge": true
+    },
+    {
+     "id": "LS6",
+     "type": "circle",
+     "x": 165,
+     "y": 100,
+     "d": 10,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "SS1",
+     "type": "circle",
+     "x": 37.25,
+     "y": 94,
+     "d": 8,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "SS2",
+     "type": "circle",
+     "x": 37.25,
+     "y": 44,
+     "d": 8,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "SS3",
+     "type": "circle",
+     "x": 120.75,
+     "y": 88,
+     "d": 8,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "SS4",
+     "type": "circle",
+     "x": 120.75,
+     "y": 44,
+     "d": 8,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "SS5",
+     "type": "circle",
+     "x": 153.25,
+     "y": 88,
+     "d": 8,
+     "layer": "POCKET",
+     "no_id": true
+    },
+    {
+     "id": "SS6",
+     "type": "circle",
+     "x": 153.25,
+     "y": 44,
      "d": 8,
      "layer": "POCKET",
      "no_id": true

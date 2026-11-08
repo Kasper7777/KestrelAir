@@ -1,15 +1,15 @@
-# VIRPIL Control Panel overlays (CP1 / CP2 / CP3)
+# VIRPIL overlays: Control Panels CP1 / CP2 / CP3 and the CM3 throttle
 
-These are ready-made, true-scale faceplate drawings. All three panels share the same plate: **170 × 200 mm with
-20 mm corner radii**. Origin is the bottom-left corner as you look at the panel.
+These are ready-made, true-scale faceplate drawings. Every plate fits a **170 × 200 mm** footprint with 20 mm outer
+corners. The CM3 throttle plate is L-shaped, because the throttle-lever area is cut away. Origin is the bottom-left corner as you look at the panel.
 
 ## Files in `out/`
 
 | File | Use |
 |---|---|
-| `CP1.dxf`, `CP2.dxf`, `CP3.dxf` | **Import into Fusion:** Insert → Insert DXF, pick a plane, units **mm**. |
+| `CP1.dxf`, `CP2.dxf`, `CP3.dxf`, `CM3.dxf` | **Import into Fusion:** Insert → Insert DXF, pick a plane, units **mm**. |
 | `*.svg` | For LightBurn or Inkscape. The units are mm. |
-| `*.pdf` | 1:1 paper test print. Use 100% / Actual size and check the green 50 mm bar. The page is larger than A4, so use A3 or tile it. |
+| `*.pdf` | 1:1 paper test print on **A4 portrait**. Choose "Actual size" or 100%, never "Fit". Afterwards, check that the green bar measures 50 mm and the green square 20 × 20 mm. |
 
 DXF layers:
 - **CUT** (red): the plate edge and every control opening.
@@ -26,6 +26,7 @@ extrude-cut.
 | Panel | Source | Accuracy |
 |---|---|---|
 | CP1, CP2 | Exact CAD values from xchrishawk's FreeCAD model, [Virpil Throttle / Control Panel Label Plates](https://www.printables.com/model/1106661) (CC BY-NC-SA, personal non-commercial use). The designer modelled every control by VIRPIL's name (B1, T7, E2, Gear Handle…), and the openings are already clearance-sized. | Exact to that model. |
+| CM3 throttle | Exact CAD values from the same author's throttle plate model, for the MongoosT-50CM3 base panel: T1–T7, B1–B6, E1/E2, Mode selector, Flaps slot. | Exact to that model. Matches DeathDonky's independent throttle template to a median of 0.86 mm. |
 | CP3 | Nobody publishes CP3 CAD, so I measured it from DeathDonky Prints' [SharKa-50 template](https://www.deathdonkyprints.com/downloads). The CP3 uses the SharKa-50 faceplate. The template is to scale at 5.68 px/mm. When I ran the same method on DeathDonky's CP2 template, its holes landed within about 0.8 mm of the exact CP2 CAD. | About ±0.5–0.8 mm. The IDs are generic: SQ = button, R = toggle/encoder, LEVER = axis slot, SEL = rotary selector, SS = screw-head clearance, M = corner mounting hole. |
 
 The original downloads are in `source/`. That folder also has DeathDonky's CP1 and CP2 templates, which show a second
@@ -49,6 +50,17 @@ Feature types (`x`, `y` = centre):
 
 `hole_clearance_mm` is added to every opening. It's 0 here because the source cutouts already include clearance.
 Kerf compensation is a separate setting: make it in your laser software, not here.
+
+## Verification
+
+`verify-overlays.js` re-checks the outputs against the sources and prints PASS or FAIL. Run it the same way as
+`make-overlays.js`. It checks:
+- **PDFs:** the page is A4, the scale bar prints at 50.000 mm, and the plate prints at 170.000 × 200.000 mm.
+- **CP1/CP2/CM3 DXFs:** every cut line lies within 0.006 mm of the original 3D model's edges, and every model edge is
+  present in the DXF.
+- **CP2 template:** each control on DeathDonky's independent CP2 template lines up with ours to a median of 0.65 mm.
+  T7/T8 differ by about 2 mm because the Printables design cuts those slots longer, which adds clearance.
+- **CP3:** it matches the SharKa-50 template, with 99% of edges within 0.44 mm.
 
 ## Before cutting acrylic
 

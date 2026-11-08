@@ -2,7 +2,7 @@
 
 Profile: **Citation Longitude - Asobo G5000.xml** for MSFS 2024. Built by `build-longitude-profile.py`; `--install` requires SPAD closed, backs up the installed profile and aircraft assignments, and assigns the installed flyable Longitude entries. The existing Citation X profile remains separate.
 
-The two WarBRD sticks, pedals, ATC/window controls, Tobii, drone controls and cabin-camera mode are retained. Either flip lever up disables the main sticks and paints both grips bright pink; both down restores flight controls. Left MiniStick moves the cabin camera and right MiniStick looks around. Keep SFS Monitor closed to use the RotAIR/PulsAIR panels through SPAD.
+The two WarBRD sticks, pedals, ATC/window controls, Tobii, drone controls and cabin-camera mode are retained. Either flip lever down disables the main sticks and paints both grips bright pink, and the stick wheels raise/lower the camera; both up restores flight controls. Left MiniStick moves the cabin camera and right MiniStick looks around. Keep SFS Monitor closed to use the RotAIR/PulsAIR panels through SPAD.
 
 ## Throttle
 

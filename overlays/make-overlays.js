@@ -26,11 +26,11 @@ function roundedRect(cx, cy, w, h, r, layer) {
   }
   return p;
 }
-function filletPoly(pts, r, layer) {
-  // Closed polygon with every corner rounded to radius r (like a FreeCAD Draft wire with FilletRadius).
+function filletPoly(pts, rDefault, layer) {
+  // Closed polygon with corners rounded (like a FreeCAD Draft wire with FilletRadius). A point's optional 3rd value overrides the radius.
   const n = pts.length, p = [], ends = [];
   for (let i = 0; i < n; i++) {
-    const P = pts[i], A = pts[(i + n - 1) % n], B = pts[(i + 1) % n];
+    const P = pts[i], A = pts[(i + n - 1) % n], B = pts[(i + 1) % n], r = P[2] ?? rDefault;
     const la = Math.hypot(A[0] - P[0], A[1] - P[1]), lb = Math.hypot(B[0] - P[0], B[1] - P[1]);
     const u1 = [(A[0] - P[0]) / la, (A[1] - P[1]) / la], u2 = [(B[0] - P[0]) / lb, (B[1] - P[1]) / lb];
     const th = Math.acos(Math.max(-1, Math.min(1, u1[0] * u2[0] + u1[1] * u2[1])));
@@ -61,7 +61,8 @@ function rotate(prims, cx, cy, deg) {
 function buildPanel(name, panel) {
   const o = panel.outline, prims = [], problems = [];
   const clearance = Number(panel.hole_clearance_mm ?? defaultClearance);
-  prims.push(...roundedRect(o.w / 2, o.h / 2, o.w, o.h, o.corner_r, 'CUT'));
+  // outline: rounded rectangle, or a polygon of [x, y, cornerRadius] points (e.g. the L-shaped CM3 throttle plate)
+  prims.push(...(o.points ? filletPoly(o.points, 0, 'CUT') : roundedRect(o.w / 2, o.h / 2, o.w, o.h, o.corner_r, 'CUT')));
   for (const f of panel.features || []) {
     const id = f.id || '?', c = f.no_clearance ? 0 : clearance, layer = f.layer || (f.type === 'text' ? 'ENGRAVE' : 'CUT');
     if (![f.x, f.y].every(Number.isFinite)) { problems.push(`${id}: missing x/y`); continue; }
@@ -200,7 +201,7 @@ function toPDF(prims, b, m) {
 let made = 0;
 for (const [name, panel] of Object.entries(cfg.panels || {})) {
   const o = panel.outline;
-  if (!o || !(o.w > 0 && o.h > 0)) { console.log(`${name}: skipped (outline not measured yet)`); continue; }
+  if (!o || !((o.w > 0 && o.h > 0) || o.points)) { console.log(`${name}: skipped (outline not measured yet)`); continue; }
   const { prims, problems } = buildPanel(name, panel);
   const b = bounds(prims), m = 10, file = name.replace(/[^\w.-]+/g, '_');
   fs.writeFileSync(path.join(outDir, file + '.dxf'), toDXF(prims));

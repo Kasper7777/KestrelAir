@@ -131,6 +131,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionCommand>
@@ -152,6 +153,22 @@
                   <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="4" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>E</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
             </EventDefinitions>
           </Event>
           <Event BoundTo="BUTTON_21">
@@ -159,6 +176,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionCommand>
@@ -178,6 +196,22 @@
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
                   <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="5" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>Q</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -384,6 +418,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionCommand>
@@ -405,6 +440,22 @@
                   <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="4" JoystickMode="RELEASE" />
                 </EventActions>
               </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>E</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
+                </EventActions>
+              </EventDefinition>
             </EventDefinitions>
           </Event>
           <Event BoundTo="BUTTON_21">
@@ -412,6 +463,7 @@
               <EventDefinition Trigger="PRESS">
                 <EventConditions>
                   <EventCondition ConditionComparator="Unequal" ConditionTargetValue="4" ConditionValueSource="SIMCONNECT:CAMERA STATE" />
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
                   <EventActionCommand>
@@ -431,6 +483,22 @@
               <EventDefinition Trigger="RELEASE">
                 <EventActions>
                   <EventActionVirtualJoyStick JoystickAction="VJOY_BUTTON" JoystickNumber="1" JoystickTarget="5" JoystickMode="RELEASE" />
+                </EventActions>
+              </EventDefinition>
+              <EventDefinition Trigger="PRESS">
+                <EventConditions>
+                  <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Equals" />
+                  <EventCondition ConditionValueSource="SIMCONNECT:CAMERA STATE" ConditionTargetValue="2" ConditionComparator="Equals" />
+                </EventConditions>
+                <EventActions>
+                  <EventActionKeyboard MacroType="PRESSANDRELEASE" TargetWindow="__ACTIVEWINDOW__">
+                    <KeyboardMacro Duration="150" Repeat="1" Pause="25">
+                      <Keys>
+                        <Keys>LShiftKey</Keys>
+                        <Keys>Q</Keys>
+                      </Keys>
+                    </KeyboardMacro>
+                  </EventActionKeyboard>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

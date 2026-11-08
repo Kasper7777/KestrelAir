@@ -1,4 +1,5 @@
-"""SPAD cabin camera mode: either grip flip lever raised disables both flight sticks."""
+"""SPAD cabin camera mode (pink): either grip flip lever DOWN disables both flight sticks, and the grip wheels
+raise/lower the cockpit camera. The lever state itself is read by ka-walk-leds.exe (L:KA_WALK_MODE)."""
 from pathlib import Path
 import copy
 import shutil
@@ -16,6 +17,11 @@ E.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
 WALK = 'LVAR:KA_WALK_MODE'
 CAM = 'SIMCONNECT:CAMERA STATE'
 HELPER = ROOT / '.tools/ka-drone-leds/ka-walk-leds.exe'
+# Grip wheel up / down -> Shift+E / Shift+Q = KEY_COCKPIT_CAMERA_HEIGHT_INC / _DEC (stand up / crouch), from the
+# sim defaults in Packages/fs-input-profiles/.../Keyboard_2024_Transversal.xml. Not Shift+R/F: Shift+F is
+# KEY_COCKPIT_QUICKVIEW4 (looks left) and Shift+R does nothing in the cockpit.
+WHEEL = {'BUTTON_22': 'E', 'BUTTON_21': 'Q'}
+WHEEL_HOLD_MS = 150  # each wheel click holds the key this long; MSFS moves the camera while it is held
 
 def sub(parent, name, **attrs):
     return E.SubElement(parent, '{'+NS+'}'+name, **{k: str(v) for k,v in attrs.items()})
@@ -94,6 +100,20 @@ def patch(root):
                     sub(a,'EventActionChangeValue',TargetDataDefinition=state,Value=0)
                     sub(a,'EventActionChangeValue',TargetDataDefinition='PROFILE:KA_CABIN_SHIFT',Value=0)
                     key(a,'RELEASE',low,high,'LShiftKey')
+        # Pink mode in the cockpit camera (CAMERA STATE 2): the grip wheel raises/lowers the camera height instead
+        # of driving the ATC reply menus. Pink mode in any other view: the wheel does nothing. Drone mode
+        # (CAMERA STATE 4) keeps the wheel on drone speed.
+        for event in events:
+            hid=event.get('BoundTo')
+            if hid not in WHEEL: continue
+            defs=event.find('s:EventDefinitions',N)
+            for d in list(defs):
+                if d.find('.//s:EventActionKeyboard',N) is not None: defs.remove(d)
+                elif d.find('.//s:EventActionCommand',N) is not None: condition(d,WALK,1,'Unequal')
+            d,a=definition(defs,'PRESS',[(WALK,1,'Equals'),(CAM,2,'Equals')])
+            a=sub(a,'EventActionKeyboard',MacroType='PRESSANDRELEASE',TargetWindow='__ACTIVEWINDOW__')
+            ks=sub(sub(a,'KeyboardMacro',Duration=WHEEL_HOLD_MS,Repeat=1,Pause=25),'Keys')
+            for k in ('LShiftKey',WHEEL[hid]): sub(ks,'Keys').text=k
         # Flip lever edges release any held camera keys and start the shared lighting/state helper.
         for old in list(events):
             if old.get('BoundTo')=='BUTTON_2': events.remove(old)

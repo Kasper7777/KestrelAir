@@ -215,59 +215,103 @@ function buildPanel(name, panel) {
       if (f.x - ex < 0 || f.y - ey < 0 || f.x + ex > o.w || f.y + ey > o.h) problems.push(`${id}: extends past plate edge (check coordinates)`);
     }
   }
-  // Laser-cut screw holes: where a hole would leave a web thinner than min_web_mm to the plate edge or to a control
-  // opening (it was only a 2 mm-deep recess in the 3D-printed original), open it into that neighbour with a straight,
-  // full-width bridge instead of leaving a sliver that snaps or burns away.
-  const minWeb = Number(panel.min_web_mm ?? cfg.min_web_mm ?? 1.0), minHorn = Number(cfg.min_horn_deg ?? 35), bridges = [];
-  // degrees of material around point X once screw s and neighbour g are both cut out
-  const materialAngle = (X, s, g) => { let n = 0; const sp = shapeOf(s.prims), gs = shapeOf(g.prims), ps = shapeOf(cutGroups[0].prims);
-    for (let i = 0; i < 720; i++) { const t = i / 720 * TAU, x = X[0] + 0.05 * Math.cos(t), y = X[1] + 0.05 * Math.sin(t);
-      if (!inside(sp, x, y) && (g.outline ? inside(gs, x, y) : !inside(gs, x, y) && inside(ps, x, y))) n++; } return n / 2; };
+  // Laser-cut screw holes. In the 3D-printed original these were 2 mm-deep recesses on the back; cut right through, a
+  // hole that ends up closer than min_web_mm to something else would leave a sliver that snaps or burns away.
+  // One fixed rule set, applied identically everywhere, so every joint on a panel looks the same:
+  //   screw diagonally off a control opening's corner -> full-width bridge aimed straight at that corner
+  //   screw overlapping an opening's edge (CP3 style)  -> left as a round "ear"; a hairline neck to the corner is filled
+  //   screw at the plate edge                         -> straight full-width notch out through the edge
+  //   edge screw + screw + opening in a row            -> one straight channel of constant width (no zig-zag)
+  //   two screws too close otherwise                   -> one slot with straight tangent sides
+  const minWeb = Number(panel.min_web_mm ?? cfg.min_web_mm ?? 1.0), bridges = [];
   if (screwMode === 'through') {
-    const shapes = new Map(cutGroups.map(g => [g, shapeOf(g.prims)])), plate = cutGroups[0];
-    for (const s of cutGroups.filter(g => g.screw)) {
-      const [cx, cy, r] = s.prims[0].a;
-      const targets = cutGroups.filter(g => !g.bridge && (!g.screw || (g !== s && (g.prims[0].a[2] > r || (g.prims[0].a[2] === r && cutGroups.indexOf(g) > cutGroups.indexOf(s))))));
-      for (const g of targets) {
-        const sh = shapes.get(g);
-        if (!g.outline && inside(sh, cx, cy)) continue; // screw centre already inside the opening: plain union is clean
-        const { d, q } = nearest(sh, cx, cy), web = d - r;
-        if (web >= minWeb) continue;
-        // overlapping already: only a problem if a crossing leaves a sharp horn of material
-        let horn = null;
-        if (web < 0) { horn = 360; for (const sp of s.prims) for (const gp of g.prims) for (const X of intersect(sp, gp)) horn = Math.min(horn, materialAngle(X, s, g)); if (horn >= minHorn) continue; }
-        const u = [(q[0] - cx) / d, (q[1] - cy) / d], nv = [-u[1], u[0]];
-        // far end must land at least 0.5 mm inside the neighbour opening / outside the plate, corners included
-        const ok = (x, y) => (g.outline ? !inside(sh, x, y) : inside(sh, x, y)) && nearest(sh, x, y).d >= 0.5;
-        let L = null;
-        for (let l = d + 0.5; l <= d + 3 * r + 5; l += 0.05) {
-          const F = [cx + u[0] * l, cy + u[1] * l];
-          if (ok(F[0] + nv[0] * r, F[1] + nv[1] * r) && ok(F[0] - nv[0] * r, F[1] - nv[1] * r) && ok(...F)) { L = l; break; }
+    const shapes = new Map(cutGroups.map(g => [g, shapeOf(g.prims)]));
+    const plate = cutGroups[0], screws = cutGroups.filter(g => g.screw), openings = cutGroups.filter(g => !g.screw && !g.outline);
+    const circ = g => g.prims[0].a;
+    const addJoin = (id, s, to, web, prims, f) => { const b = { id, bridge: true, f, prims }; bridges.push({ screw: s.id, to, web }); cutGroups.push(b); shapes.set(b, shapeOf(prims)); };
+    const corners = g => {
+      const f = g.f;
+      if (f.type === 'rect') { const t = rad(f.angle || 0), c = Math.cos(t), sn = Math.sin(t); return [[-1, -1], [1, -1], [1, 1], [-1, 1]].map(([i, j]) => { const dx = i * f.w / 2, dy = j * f.h / 2; return [f.x + dx * c - dy * sn, f.y + dx * sn + dy * c]; }); }
+      if (f.type === 'poly') return f.points.map(([px, py]) => [f.x + px, f.y + py]);
+      return [];
+    };
+    // straight bridge of half-width hw from the screw centre along u, long enough that its far end sits >= 0.5 mm
+    // inside the target opening (or outside the plate)
+    const bridge = (s, g, u, hw) => {
+      const [cx, cy] = circ(s), sh = shapes.get(g), nv = [-u[1], u[0]];
+      const ok = (x, y) => (g.outline ? !inside(sh, x, y) : inside(sh, x, y)) && nearest(sh, x, y).d >= 0.5;
+      for (let l = 0.5; l <= 4 * hw + 12; l += 0.05) {
+        const F = [cx + u[0] * l, cy + u[1] * l];
+        if (ok(F[0] + nv[0] * hw, F[1] + nv[1] * hw) && ok(F[0] - nv[0] * hw, F[1] - nv[1] * hw) && ok(...F)) {
+          const ang = Math.atan2(u[1], u[0]) * 180 / Math.PI, bx = cx + u[0] * l / 2, by = cy + u[1] * l / 2;
+          return { f: { type: 'rect', x: bx, y: by, w: l, h: 2 * hw, angle: ang }, prims: rotate(roundedRect(bx, by, l, 2 * hw, 0, 'CUT'), bx, by, ang) };
         }
-        if (L === null && horn !== null) { notes.push(`${s.id} overlaps ${g.id}, leaving a ${horn.toFixed(0)}° corner on solid plate; no bridge needed`); continue; }
-        if (L === null) { problems.push(`${s.id}: ${horn !== null ? horn.toFixed(0) + '° horn where it overlaps' : web.toFixed(2) + ' mm from'} ${g.id} and no clean bridge fits; check it`); continue; }
-        const ang = Math.atan2(u[1], u[0]) * 180 / Math.PI, bx = cx + u[0] * L / 2, by = cy + u[1] * L / 2;
-        const b = { id: `${s.id}>${g.id}`, bridge: true, f: { type: 'rect', x: bx, y: by, w: L, h: 2 * r, angle: ang }, prims: rotate(roundedRect(bx, by, L, 2 * r, 0, 'CUT'), bx, by, ang) };
-        bridges.push({ screw: s.id, to: g.id, web, horn, ...b.f }); cutGroups.push(b); shapes.set(b, shapeOf(b.prims));
+      }
+      return null;
+    };
+    const unit = (a, b) => { const d = Math.hypot(b[0] - a[0], b[1] - a[1]); return [(b[0] - a[0]) / d, (b[1] - a[1]) / d]; };
+
+    // what each screw needs
+    const need = new Map(screws.map(s => [s, { edge: null, open: [] }]));
+    for (const s of screws) {
+      const [cx, cy, r] = circ(s), n = need.get(s);
+      const e = nearest(shapes.get(plate), cx, cy); if (e.d - r < minWeb) n.edge = { web: e.d - r, u: unit([cx, cy], e.q) };
+      for (const g of openings) {
+        const sh = shapes.get(g); if (inside(sh, cx, cy)) continue;
+        const { d, q } = nearest(sh, cx, cy); if (d - r >= minWeb) continue;
+        const cs = corners(g).map(P => [P, Math.hypot(P[0] - cx, P[1] - cy)]).sort((m, k) => m[1] - k[1]);
+        n.open.push({ g, web: d - r, P: cs.length && cs[0][1] - d < r ? cs[0][0] : q, q });
       }
     }
-  }
-  // A screw hole that passes within min_web_mm of a sharp corner of an opening (e.g. clipping a square button's corner)
-  // would leave a hair-thin neck there: fill the gap with the two tangent lines from that corner to the hole.
-  if (screwMode === 'through') {
-    for (const s of cutGroups.filter(g => g.screw)) {
-      const [cx, cy, r] = s.prims[0].a;
-      for (const g of cutGroups.filter(g => !g.screw && !g.bridge && !g.outline && g.f && (g.f.type === 'rect' || g.f.type === 'poly'))) {
-        const ends = g.prims.filter(p => p.t === 'line').flatMap(p => [[p.a[0], p.a[1]], [p.a[2], p.a[3]]]);
-        const corners = ends.filter((v, i) => ends.findIndex(w => Math.hypot(w[0] - v[0], w[1] - v[1]) < 1e-6) !== i); // where two straight edges meet
-        for (const V of corners) {
+    const pairs = [];
+    screws.forEach((a, i) => screws.slice(i + 1).forEach(b => { const [x1, y1, r1] = circ(a), [x2, y2, r2] = circ(b), d = Math.hypot(x2 - x1, y2 - y1); if (d - r1 - r2 < minWeb && d > Math.abs(r1 - r2)) pairs.push([a, b, d - r1 - r2]); }));
+
+    // edge screw + neighbour screw + opening in a row: one straight channel of the larger screw's width
+    const done = new Set();
+    for (const [a, b, web] of pairs) {
+      const e = need.get(a).edge ? a : need.get(b).edge ? b : null, o = e === a ? b : a;
+      const oo = e && (need.get(o).open[0] || need.get(e).open[0]);
+      if (!e || !oo) continue;
+      const hw = Math.max(circ(a)[2], circ(b)[2]), A = circ(e), u = unit(A, oo.P);
+      const off = (s) => { const c = circ(s); return Math.abs((c[0] - A[0]) * u[1] - (c[1] - A[1]) * u[0]) + c[2]; };
+      if (off(o) > hw + 1e-6) continue; // not in a row: fall back to separate joints
+      const inner = bridge(e, oo.g, u, hw), outer = bridge(e, plate, [-u[0], -u[1]], hw);
+      if (!inner || !outer) continue;
+      addJoin(`${e.id}~${oo.g.id}`, e, `${o.id} + ${oo.g.id} (one straight channel)`, web, inner.prims, inner.f);
+      addJoin(`${e.id}~edge`, e, 'plate edge (same channel)', need.get(e).edge.web, outer.prims, outer.f);
+      done.add(a); done.add(b);
+    }
+    // screw <-> screw: tangent slot
+    for (const [a, b, web] of pairs) {
+      if (done.has(a) && done.has(b)) continue;
+      const [x1, y1, r1] = circ(a), [x2, y2, r2] = circ(b), d = Math.hypot(x2 - x1, y2 - y1);
+      const th = Math.atan2(y2 - y1, x2 - x1), ph = Math.acos((r1 - r2) / d), P = (x, y, r, t) => [x + r * Math.cos(t), y + r * Math.sin(t)];
+      const q = [P(x1, y1, r1, th + ph), P(x2, y2, r2, th + ph), P(x2, y2, r2, th - ph), P(x1, y1, r1, th - ph)];
+      addJoin(`${a.id}+${b.id}`, a, b.id, web, q.map((p, k) => ({ t: 'line', layer: 'CUT', a: [...p, ...q[(k + 1) % 4]] })), { type: 'poly', x: 0, y: 0, points: q });
+    }
+    for (const s of screws) {
+      if (done.has(s)) continue;
+      const [cx, cy, r] = circ(s), n = need.get(s);
+      // screw <-> control opening
+      for (const { g, web, P, q } of n.open) {
+        const b = bridge(s, g, unit([cx, cy], P), r) || bridge(s, g, unit([cx, cy], q), r);
+        if (b) { addJoin(`${s.id}>${g.id}`, s, g.id, web, b.prims, b.f); continue; }
+        if (web >= 0) { problems.push(`${s.id}: ${web.toFixed(2)} mm from ${g.id} and no clean bridge fits; check it`); continue; }
+        // overlapping the opening's edge: keep the round ear; fill a hairline neck to a nearby corner with tangent lines
+        for (const V of corners(g)) {
           const D = Math.hypot(V[0] - cx, V[1] - cy), gap = D - r;
-          if (!(gap > 0 && gap < minWeb) || cutGroups.some(h => h.bridge && inside(shapeOf(h.prims), ...V))) continue;
+          if (!(gap > 0 && gap < minWeb)) continue;
           const phi = Math.atan2(V[1] - cy, V[0] - cx), beta = Math.acos(r / D), T = sgn => [cx + r * Math.cos(phi + sgn * beta), cy + r * Math.sin(phi + sgn * beta)];
-          const t1 = T(1), t2 = T(-1), fp = [{ t: 'line', layer: 'CUT', a: [...V, ...t1] }, { t: 'line', layer: 'CUT', a: [...t1, ...t2] }, { t: 'line', layer: 'CUT', a: [...t2, ...V] }];
-          cutGroups.push({ id: `${s.id}>${g.id} corner`, bridge: true, f: { type: 'poly', x: 0, y: 0, points: [V, t1, t2] }, prims: fp });
-          bridges.push({ screw: s.id, to: g.id + ' corner', web: gap, horn: null });
+          const t1 = T(1), t2 = T(-1);
+          addJoin(`${s.id}>${g.id} corner`, s, `${g.id} (ear, corner neck filled)`, gap, [{ t: 'line', layer: 'CUT', a: [...V, ...t1] }, { t: 'line', layer: 'CUT', a: [...t1, ...t2] }, { t: 'line', layer: 'CUT', a: [...t2, ...V] }], { type: 'poly', x: 0, y: 0, points: [V, t1, t2] });
         }
+        notes.push(`${s.id} overlaps the edge of ${g.id}: kept as a round ear`);
+      }
+      // screw <-> plate edge
+      if (n.edge) {
+        const b = bridge(s, plate, n.edge.u, r);
+        if (b) addJoin(`${s.id}>edge`, s, 'plate edge', n.edge.web, b.prims, b.f);
+        else problems.push(`${s.id}: ${n.edge.web.toFixed(2)} mm from the plate edge and no clean notch fits; check it`);
       }
     }
   }
@@ -396,7 +440,7 @@ for (const [name, panel] of Object.entries(cfg.panels || {})) {
   fs.writeFileSync(path.join(outDir, file + '.pdf'), toPDF(prims, b, m), 'latin1');
   made++;
   console.log(`${name}: ${o.w} x ${o.h} mm, ${(panel.features || []).filter(f => !(f.screw && (panel.screw_holes ?? cfg.screw_holes ?? true) === false)).length} openings -> ${file}.dxf/.svg/.pdf${panel.verified ? '' : '  [NOT VERIFIED against the real panel]'}`);
-  for (const b of bridges) console.log(`  bridge  ${b.screw} -> ${b.to} (${b.horn !== null ? 'overlap left a ' + b.horn.toFixed(0) + '° horn' : 'web was ' + b.web.toFixed(2) + ' mm'})`);
+  for (const b of bridges) console.log(`  join    ${b.screw} -> ${b.to} (${b.web < 0 ? 'overlapping' : b.web.toFixed(2) + ' mm apart'})`);
   for (const nt of notes) console.log(`  note    ${nt}`);
   for (const pr of problems) console.log(`  ! ${pr}`);
 }

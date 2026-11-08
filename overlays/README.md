@@ -25,11 +25,16 @@ is cut twice, and arcs are true arcs. In Fusion that gives one profile, so a sin
 
 Some screw holes needed adjusting, because cutting a screw recess right through leaves geometry a laser can't cut
 cleanly:
-- **Bridges.** A screw hole that would leave less than 1 mm of material (`min_web_mm`) to the edge, a control opening
-  or another screw hole is opened straight into it with a full-width bridge. Otherwise you'd get a sliver that snaps or
-  burns away. This affects the corner screws, the side screws at the plate edge, and several screws beside buttons.
-- **Corner fills.** On CP3, two screw holes graze a square button's corner. Tangent lines fill the gap so there's no
-  0.07 mm neck.
+- **Joins.** A screw hole that would leave less than 1 mm of material (`min_web_mm`) is joined to its neighbour.
+  Otherwise you'd get a sliver that snaps or burns away. The same rule applies everywhere, so every joint on a panel
+  looks alike:
+  - **Screw diagonally off a button's corner:** a full-width bridge aimed straight at that corner. This is how all the
+    button screws on CP1, CP2 and CM3 are done.
+  - **Screw at the plate edge:** a straight notch, square to the edge.
+  - **Corner screw, button screw and button in a row** (CP1 by B5, CP2 by B10): one straight channel the width of the
+    corner screw, from the plate corner to the button corner.
+  - **Screw overlapping a square's edge** (CP3): kept as a round ear. Where it grazes the corner, tangent lines fill
+    the 0.07 mm neck.
 - **Removed strip on CP2.** The 2.5 mm strip left of the Gear Handle is cut free by screw holes LS3 and LS5, so it would
   drop out. It's left out, which opens the Gear Handle cut-out to the left edge.
 

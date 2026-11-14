@@ -1,0 +1,11 @@
+
+# NeoFly photo mod runtime files
+neofly-photo-mod/NeoflyPhoto.old.exe
+neofly-photo-mod/std.bin.before-xp-grant-*.bak
+neofly-photo-mod/xp-grant*.txt
+
+# Logbook generated data (rebuilt from NeoFly + screenshots)
+logbook/web/data/
+logbook/web/media/
+logbook/logbook.log
+__pycache__/

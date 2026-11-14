@@ -1,0 +1,6 @@
+{
+  "_help": "Hand corrections applied on every build. gaps: keyed 'FROM>TO', set mode (walk|taxi|train|ferry|airline), label, note. legs: keyed by leg id (e.g. nf-fl-12), any field to add/replace, e.g. title or note. aircraft: keyed by aircraft id, e.g. a nicer name.",
+  "gaps": {},
+  "legs": {},
+  "aircraft": {}
+}

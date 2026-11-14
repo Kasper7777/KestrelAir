@@ -82,6 +82,8 @@ namespace NeoflyPhoto
             ProgramStack.Redirect(self, cfg.StateDir);
 
             Environment.CurrentDirectory = cfg.NeoflyDir; // NeoFly opens its DB relative to this
+            try { File.Delete(Path.Combine(selfDir, "NeoflyPhoto.old.exe")); } catch { } // left over from a rebuild while NeoFly ran
+            XpGrant.ApplyPending(cfg.NeoflyDir, cfg.StateDir);
 
             var setup = new AppDomainSetup();
             setup.ApplicationBase = cfg.NeoflyDir.TrimEnd('\\') + "\\";
@@ -142,6 +144,112 @@ namespace NeoflyPhoto
             var parts = new List<string>();
             foreach (string a in args) parts.Add("\"" + a.Replace("\"", "\\\"") + "\"");
             return string.Join(" ", parts.ToArray());
+        }
+    }
+
+    // One-shot XP top-up. If xp-grant.txt exists (lines "player=<id>" and "xp=<amount>"),
+    // the amount is added to that pilot in NeoFly's save (std.bin) before NeoFly starts,
+    // so NeoFly's in-memory player can't overwrite it. std.bin is backed up first and the
+    // file is renamed to xp-grant.done.txt so it is never applied twice.
+    public static class XpGrant
+    {
+        public static void ApplyPending(string nfDir, string stateDir)
+        {
+            string pending = Path.Combine(stateDir, "xp-grant.txt");
+            if (!File.Exists(pending)) return;
+            try
+            {
+                int player = -1, rank = -1, qualScore = -1; long xp = 0;
+                foreach (string raw in File.ReadAllLines(pending))
+                {
+                    string line = raw.Trim();
+                    if (line.StartsWith(";") || line.StartsWith("#")) continue;
+                    int eq = line.IndexOf('=');
+                    if (eq < 0) continue;
+                    string k = line.Substring(0, eq).Trim().ToLowerInvariant(), v = line.Substring(eq + 1).Trim();
+                    if (k == "player") int.TryParse(v, out player);
+                    else if (k == "xp") long.TryParse(v, out xp);
+                    else if (k == "rank") int.TryParse(v, out rank);
+                    else if (k == "qualscore") int.TryParse(v, out qualScore);
+                }
+                if (rank > 4) rank = 4;
+                if (qualScore > 3) qualScore = 3;
+                if (player < 0 || (xp <= 0 && rank < 0 && qualScore < 0)) { Log.Write(stateDir, "XP grant skipped: xp-grant.txt needs player= and xp=/rank=/qualscore="); return; }
+
+                string self = Process.GetCurrentProcess().Id.ToString();
+                foreach (Process p in Process.GetProcesses())
+                {
+                    string n = p.ProcessName;
+                    if ((n.Equals("Neofly", StringComparison.OrdinalIgnoreCase) || n.Equals("NeoflyPhoto", StringComparison.OrdinalIgnoreCase))
+                        && p.Id.ToString() != self)
+                    { Log.Write(stateDir, "XP grant waiting: NeoFly is already running"); return; }
+                }
+
+                string db = Path.Combine(nfDir, "std.bin");
+                string backup = Path.Combine(stateDir, "std.bin.before-xp-grant-" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bak");
+                File.Copy(db, backup);
+
+                var setup = new AppDomainSetup { ApplicationBase = nfDir.TrimEnd('\\') + "\\" };
+                AppDomain dom = AppDomain.CreateDomain("NeoflyXpGrant", null, setup);
+                string result;
+                try
+                {
+                    var w = (XpWriter)dom.CreateInstanceFromAndUnwrap(Assembly.GetExecutingAssembly().Location, typeof(XpWriter).FullName);
+                    result = w.Add(nfDir, db, player, xp, rank, qualScore);
+                }
+                finally { AppDomain.Unload(dom); }
+
+                File.Move(pending, Path.Combine(stateDir, "xp-grant.done-" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".txt"));
+                Log.Write(stateDir, "XP grant applied to pilot " + player + ": " + result + ", backup " + Path.GetFileName(backup));
+            }
+            catch (Exception ex) { Log.Write(stateDir, "XP grant failed (NeoFly starts normally): " + ex.Message); }
+        }
+    }
+
+    public class XpWriter : MarshalByRefObject
+    {
+        // xp > 0: add XP. rank >= 0: set rank (0 Cadet .. 4 Senior Captain).
+        // qualScore >= 0: raise every qualification the pilot owns to that many stars (max 3).
+        public string Add(string nfDir, string db, int player, long xp, int rank, int qualScore)
+        {
+            Assembly sqlite = Assembly.LoadFrom(Path.Combine(nfDir, "System.Data.SQLite.dll"));
+            Type connType = sqlite.GetType("System.Data.SQLite.SQLiteConnection", true);
+            var conn = (System.Data.IDbConnection)Activator.CreateInstance(connType, new object[] { "Data Source=" + db + ";Pooling=False" });
+            conn.Open();
+            try
+            {
+                using (var tx = conn.BeginTransaction())
+                {
+                    object before = Scalar(conn, tx, "SELECT xp FROM players WHERE id=" + player);
+                    if (before == null) throw new Exception("pilot " + player + " not found");
+                    var parts = new List<string>();
+                    if (xp > 0)
+                    {
+                        Scalar(conn, tx, "UPDATE players SET xp = xp + " + xp + " WHERE id=" + player);
+                        parts.Add("xp " + before + " -> " + Scalar(conn, tx, "SELECT xp FROM players WHERE id=" + player));
+                    }
+                    if (rank >= 0)
+                    {
+                        object r0 = Scalar(conn, tx, "SELECT rank FROM players WHERE id=" + player);
+                        Scalar(conn, tx, "UPDATE players SET rank = " + rank + " WHERE id=" + player + " AND rank < " + rank);
+                        parts.Add("rank " + r0 + " -> " + Scalar(conn, tx, "SELECT rank FROM players WHERE id=" + player));
+                    }
+                    if (qualScore >= 0)
+                    {
+                        object n = Scalar(conn, tx, "SELECT count(*) FROM playerQualifications WHERE ownerId=" + player + " AND (score < " + qualScore + " OR success <> 1)");
+                        Scalar(conn, tx, "UPDATE playerQualifications SET score = " + qualScore + ", success = 1 WHERE ownerId=" + player + " AND (score < " + qualScore + " OR success <> 1)");
+                        parts.Add(n + " licences -> " + qualScore + " stars");
+                    }
+                    tx.Commit();
+                    return string.Join(", ", parts.ToArray());
+                }
+            }
+            finally { conn.Close(); }
+        }
+
+        static object Scalar(System.Data.IDbConnection c, System.Data.IDbTransaction tx, string sql)
+        {
+            using (var cmd = c.CreateCommand()) { cmd.Transaction = tx; cmd.CommandText = sql; return cmd.ExecuteScalar(); }
         }
     }
 

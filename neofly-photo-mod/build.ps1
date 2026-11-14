@@ -14,7 +14,12 @@ if ((Test-Path $nf) -and -not (Test-Path $ico)) {
 }
 
 $cscArgs = @('/nologo', '/target:winexe', '/platform:anycpu', '/optimize+', "/out:$exe",
-    '/r:System.Drawing.dll', '/r:System.Windows.Forms.dll')
+    '/r:System.Drawing.dll', '/r:System.Windows.Forms.dll', '/r:System.Data.dll')
+# NeoFly runs inside this exe, so a rebuild while it is open can't overwrite it: move it aside.
+if (Test-Path $exe) {
+    try { [IO.File]::Open($exe, 'Open', 'ReadWrite', 'None').Close() }
+    catch { $old = Join-Path $here 'NeoflyPhoto.old.exe'; Remove-Item $old -ErrorAction SilentlyContinue; Rename-Item $exe 'NeoflyPhoto.old.exe' }
+}
 if (Test-Path $ico) { $cscArgs += "/win32icon:$ico" }
 $cscArgs += (Join-Path $here 'NeoflyPhoto.cs')
 & $csc @cscArgs

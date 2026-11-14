@@ -195,6 +195,49 @@ def main(fetch=True):
     except Exception as e:
         print(f'  ! aircraft dossiers skipped: {e}')
 
+    # SimBrief plans + saved plan files as documents on each flight
+    try:
+        import simbrief
+        sb_dir = os.path.join(me, 'simbrief')
+        mine_cfg = pcfg.get('pilots', {}).get(nf['pilot']['name'], {})
+        simbrief.archive_latest(mine_cfg.get('simbrief'), sb_dir, fetch)
+        saved = simbrief.find_saved_plans(legs, [r'%USERPROFILE%\Downloads', r'%USERPROFILE%\Documents', r'%USERPROFILE%\Desktop'])
+        n = simbrief.attach(legs, simbrief.summaries(sb_dir) if os.path.isdir(sb_dir) else [], saved, sb_dir,
+                            os.path.join(web, 'media', 'docs'))
+        print(f'Documents: {n} attached to flights' + ('' if mine_cfg.get('simbrief') else ' (add your SimBrief username in Pilot settings to archive plans)'))
+    except Exception as e:
+        print(f'  ! documents skipped: {e}')
+
+    # local news where you landed, from around the day you landed (fetched as you go; cached)
+    news_db = {}
+    try:
+        import news as news_mod
+        news_dir = os.path.join(backup, 'news')
+        media_news = os.path.join(web, 'media', 'news')
+        os.makedirs(media_news, exist_ok=True)
+        for l in legs:
+            if l['kind'] != 'flight' or l.get('local'):
+                continue
+            items = news_mod.stories_for(airports[l['to']], datetime.fromisoformat(l['end']), news_dir, fetch)
+            ids = []
+            for st in items:
+                st = dict(st)
+                if st.get('image'):
+                    src = os.path.join(news_dir, 'img', st['image'])
+                    dst = os.path.join(media_news, st['image'])
+                    if os.path.exists(src) and not os.path.exists(dst):
+                        shutil.copy2(src, dst)
+                    st['image'] = f'media/news/{st["image"]}' if os.path.exists(dst) else None
+                if not st.get('image') and airports[l['to']].get('wiki', {}).get('image'):
+                    st['image'], st['placeImage'] = airports[l['to']]['wiki']['image'], True   # the place's photo, labelled as such
+                st['airport'] = l['to']
+                news_db.setdefault(st['id'], st)
+                ids.append(st['id'])
+            l['news'] = ids
+        print(f'News: {len(news_db)} local stories across {sum(1 for l in legs if l.get("news"))} arrivals')
+    except Exception as e:
+        print(f'  ! news skipped: {e}')
+
     # layover diary: real places near airports where the pilot stayed 8 h or more
     try:
         import places as places_mod
@@ -207,7 +250,7 @@ def main(fetch=True):
                     long_stays[s['airport']] = airports[s['airport']]
         pl = places_mod.for_airports(long_stays, os.path.join(backup, 'places'), fetch)
         n = diary.build(stops, legs, airports, pl, os.path.join(web, 'media', 'places'), os.path.join(backup, 'places', 'img'),
-                        places_mod, fetch)
+                        places_mod, fetch, {p['id']: p for p in photos}, aircraft, news_db)
         places_mod.save_cache(os.path.join(backup, 'places'))
         print(f'Diary: {n} layovers written up')
     except Exception as e:
@@ -251,7 +294,7 @@ def main(fetch=True):
                  'pilots': [p['name'] for p in nf['pilots']], 'pilotSlug': slugify(nf['pilot']['name']), 'pilotChosen': chosen or ''},
         'pilot': nf['pilot'], 'aircraft': aircraft, 'airports': airports, 'legs': legs, 'stops': stops,
         'photos': {p['id']: p for p in photos},
-        'unplacedPhotos': unplaced, 'stats': stats,
+        'unplacedPhotos': unplaced, 'stats': stats, 'news': news_db,
     }
     # flights your hired pilots flew in company aircraft (shown in the logbook's Company view)
     company = []
@@ -275,6 +318,7 @@ def main(fetch=True):
     # per-pilot settings: display name and photo (set from the app's Pilot settings)
     mine = pcfg.get('pilots', {}).get(nf['pilot']['name'], {})
     out['pilot']['character'] = mine.get('displayName') or nf['pilot']['name']
+    out['pilot']['simbrief'] = mine.get('simbrief') or ''
     candidates = [os.path.join(me, 'pilot.jpg')] + ([os.path.normpath(os.path.join(ROOT, mine['photo']))] if mine.get('photo') else [])
     src = next((c for c in candidates if os.path.exists(c)), None)
     dst = os.path.join(web, 'media', 'pilot.jpg')

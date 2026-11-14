@@ -62,7 +62,7 @@ def _venue(place):
 
 
 def _tagify(text):
-    return '#' + ''.join(w.capitalize() for w in re.findall(r'[^\W\d_]+', text or ''))[:28]
+    return '#' + ''.join(w[:1].upper() + w[1:] for w in re.findall(r'[^\W_]+', text or ''))[:28]
 
 
 def _finish(posts_by_day, a, city, ident, used, web_root):
@@ -85,21 +85,74 @@ def _finish(posts_by_day, a, city, ident, used, web_root):
                 keep.append(sl)
             p['slides'] = keep
             country = (a.get('country') or {})
+            if p.get('flight'):     # a flight post: tag where it went, not where the layover is
+                f = p['flight']
+                p['tags'] = [{'t': '#' + f['from'], 'k': 'airport', 'ident': f['from']}, {'t': '#' + f['to'], 'k': 'airport', 'ident': f['to']},
+                             {'t': _tagify(f['aircraft']), 'k': 'aircraft'}, {'t': '#MSFS2024', 'k': 'shots'}]
+                continue
             tags = [{'t': _tagify(country.get('name')), 'k': 'country', 'iso': country.get('iso'), 'name': country.get('name')},
                     {'t': _tagify(city), 'k': 'town', 'name': city, 'country': country.get('name')},
                     {'t': '#' + ident, 'k': 'airport', 'ident': ident}]
+            if p.get('flight'):
+                tags.append({'t': _tagify(p['flight']['aircraft']), 'k': 'aircraft'})
             if p.get('venue'):
                 tags.append({'t': _tagify(p['venue']['name']), 'k': 'venue'})
             if p.get('sight'):
                 tags.append({'t': _tagify(p['sight']['title']), 'k': 'sight'})
             if any(sl['kind'] in ('menu', 'menutext', 'menulink') for sl in p['slides']):
                 tags.append({'t': '#Menu', 'k': 'menu'})
+            if p.get('newsRef'):
+                tags.append({'t': p['newsRef']['tag'], 'k': 'news', 'id': p['newsRef']['id']})
             p['tags'] = [t for t in tags if len(t['t']) > 1]
 
 
-def build(stops, legs, airports, places, web_media, places_img, places_mod=None, fetch=False):
+FLIGHT_LINES = ["Wheels down at {to} after {dur} from {frm}.", "{frm} to {to} in the {ac}. {dur} well spent.",
+                 "Made it to {to}. {dur} in the {ac} from {frm}.", "Touchdown {to}. {dur} from {frm}, {fpm}."]
+
+
+def _flight_post(leg, airports, aircraft, photos, stop_photos, rng):
+    """The pilot's own MSFS screenshots from the flight in (and from the ground there) as a real post."""
+    shots = [photos[i] for i in list(leg.get('photos') or []) + list(stop_photos or []) if i in photos]
+    if not shots:
+        return None
+    dep, arr = airports[leg['from']], airports[leg['to']]
+    acd = aircraft.get(leg.get('aircraft')) or {}
+    # the aircraft's proper type name (e.g. "Cessna 172") rather than the add-on's long title
+    ac = (acd.get('wiki') or {}).get('title') or re.sub(r'^(Asobo|A2A|FlightFX|Black Square|PMDG|Carenado)\s+', '', acd.get('name') or 'aircraft')
+    mins = round(leg.get('minutes') or 0)
+    dur = f'{mins // 60}h {mins % 60:02d}m' if mins >= 60 else f'{mins} min'
+    fpm = f'landed at {leg["landingFpm"]} fpm' if leg.get('landingFpm') else 'smooth enough'
+    return {'kind': 'flight', 'time': leg['end'][:16], 'place': f'{leg["from"]} → {leg["to"]}',
+            'where': f'{dep["name"]} → {arr["name"]} · {ac}', 'own': True,
+            'slides': [{'kind': 'shot', 'src': p['src'], 'pid': p['id'], 'label': f'{p["takenAt"][11:16]} · {leg["from"]} → {leg["to"]}'} for p in shots[:10]],
+            'flight': {'leg': leg['id'], 'from': leg['from'], 'to': leg['to'], 'minutes': leg.get('minutes'), 'aircraft': ac,
+                       'aircraftId': leg.get('aircraft'),
+                       'landingFpm': leg.get('landingFpm'), 'distanceNm': leg.get('distanceNm')},
+            'caption': rng.choice(FLIGHT_LINES).format(to=leg['to'], frm=leg['from'], dur=dur, ac=ac, fpm=fpm),
+            'likes': rng.randint(60, 480)}
+
+
+NEWS_LINES = ["Picked up the {src} with breakfast: “{h}”. Big talk round here.",
+               "Everyone at the bar was on about this: “{h}”.",
+               "Local paper on the table: “{h}”. Never a dull day in {town}.",
+               "Overheard at the next table: “{h}”."]
+NEWS_SAD = ["Sobering read in the local paper this morning: “{h}”. Thoughts with everyone affected.",
+            "Quiet mood in {town} today. “{h}”."]
+STOP = {'the', 'and', 'for', 'with', 'from', 'that', 'this', 'into', 'after', 'over', 'have', 'will', 'set', 'new', 'says', 'said', 'are', 'was', 'its'}
+
+
+def _news_tag(title, town):
+    """A hashtag for a story from its distinctive words, e.g. '#HighStreetParking'."""
+    skip = STOP | {w.lower() for w in re.findall(r'[^\W\d_]+', town or '')}
+    ws = [w for w in re.findall(r"[^\W\d_][\w']+", title) if w.lower() not in skip and len(w) > 2]
+    caps = [w for w in ws if w[0].isupper()] or ws
+    return '#' + ''.join(w[:1].upper() + w[1:] for w in caps[:3])[:30]
+
+
+def build(stops, legs, airports, places, web_media, places_img, places_mod=None, fetch=False, photos=None, aircraft=None, news=None):
     os.makedirs(web_media, exist_ok=True)
     by_id = {l['id']: l for l in legs}
+    photos, aircraft, news = photos or {}, aircraft or {}, news or {}
     used_photos = set()
     web_root = os.path.dirname(os.path.dirname(web_media))
 
@@ -162,6 +215,8 @@ def build(stops, legs, airports, places, web_media, places_img, places_mod=None,
         return slides
 
     count = 0
+    leg_index = {l['id']: i for i, l in enumerate(legs)}
+    prev_idx = -1          # legs after the previous layover = how the pilot got to this one
     for s in stops:
         if not s.get('arrive'):
             continue
@@ -171,6 +226,18 @@ def build(stops, legs, airports, places, web_media, places_img, places_mod=None,
         nxt = by_id.get(s.get('before'))
         if hours < MIN_HOURS or (nxt and nxt['kind'] == 'ground') or s['airport'] not in places:
             continue
+        # "Getting here": a post for every flight since the last layover with the pilot's own screenshots
+        here_idx = leg_index.get(s.get('after'), prev_idx)
+        stop_photo_by_leg = {st['after']: st.get('photos') for st in stops if st.get('after')}
+        inbound = []
+        for li in range(prev_idx + 1, here_idx + 1):
+            lg = legs[li]
+            if lg['kind'] != 'flight':
+                continue
+            fp = _flight_post(lg, airports, aircraft, photos, stop_photo_by_leg.get(lg['id']), _rng(lg['id']))
+            if fp:
+                inbound.append(fp)
+        prev_idx = here_idx
         a, p = airports[s['airport']], places[s['airport']]
         rng = _rng(s['id'])
         # places with their own website (real photos, real menu) first, then the rest
@@ -271,6 +338,23 @@ def build(stops, legs, airports, places, web_media, places_img, places_mod=None,
         extra = max(0, len(days) - MAX_DAYS)
         if extra:
             days = days[:MAX_DAYS - 1] + [days[-1]]
+        # flavour the days with real local stories from when the pilot was there (one per day, each once)
+        stories = [news[i] for i in (by_id.get(s.get('after')) or {}).get('news', []) if i in news]
+        for di, day in enumerate(days):
+            if di >= len(stories):
+                break
+            target = next((p for p in day['posts'] if p['kind'] in ('breakfast', 'lunch', 'dinner', 'hotel')), None) or \
+                     next((p for p in day['posts'] if p['kind'] != 'flight'), None)
+            if not target:
+                continue
+            st = stories[di]
+            headline = st['title'] if len(st['title']) <= 90 else st['title'][:87].rsplit(' ', 1)[0] + '…'
+            line = rng.choice(NEWS_SAD if st.get('tone') == 'sad' else NEWS_LINES).format(
+                h=headline, src=st.get('source') or 'local paper', town=city)
+            target['caption'] = f'{target["caption"]} {line}'
+            target['newsRef'] = {'id': st['id'], 'text': headline, 'tag': _news_tag(st['title'], city)}
+        if inbound:
+            days.insert(0, {'date': inbound[0]['time'][:10], 'posts': inbound, 'inbound': True})
         _finish(days, a, city, s['airport'], used_photos, web_root)
         s['diary'] = {'hours': round(hours, 1), 'nights': max(0, (depart.date() - arrive.date()).days), 'city': city,
                       'tags': tags, 'days': days, 'skippedDays': extra, 'ongoing': not s.get('depart'),

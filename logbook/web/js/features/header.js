@@ -11,7 +11,7 @@ export default {
 
     render(document.getElementById('titlebar'), html`
       <button class="icon-btn" id="side-toggle" title="Show / hide the journey">${icon('sidebar')}</button>
-      <img class="app-mark" src="icon.png" alt="Kestrel Air">
+      <span class="app-logo" title="Kestrel Air"></span>
       <div class="brand"><b>Kestrel Air</b><small>Logbook</small></div>
       <div class="tb-sep"></div>
       <button class="pilot-btn" title="Pilot settings: choose the NeoFly pilot, name and photo">
@@ -19,6 +19,12 @@ export default {
         <span class="brand pilot"><b>${p.character || p.name}</b><small>Captain · Rank ${p.rank}</small></span></button>`);
     document.getElementById('side-toggle').addEventListener('click', () => document.body.classList.toggle('list-collapsed'));
     document.querySelector('.pilot-btn').addEventListener('click', () => ui.openSettings?.());
+    // the vulture, rendered as luminous frosted glass inside a glass tile
+    fetch('mark.svg').then((r) => r.text()).then((svg) => {
+      const defs = '<defs><linearGradient id="lg-bird" x1="0" y1="0" x2="0.4" y2="1">' +
+        '<stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#ffe3b8"/><stop offset="1" stop-color="#ffb547"/></linearGradient></defs>';
+      document.querySelector('.app-logo').innerHTML = svg.replace(/currentColor/g, 'url(#lg-bird)').replace(/(<svg[^>]*>)/, `$1${defs}`);
+    }).catch(() => { document.querySelector('.app-logo').innerHTML = '<img src="icon.png" alt="" style="width:100%">'; });
 
     render(document.getElementById('stats'), html`
       <div class="stat"><b>${num(s.flights)}</b><span>Flights</span></div>
@@ -36,6 +42,7 @@ export default {
       <button class="tb-btn" data-act="logbook" title="Every flight, written up in a pilot's logbook">${icon('book')}<span>Logbook</span></button>
       <button class="tb-btn" data-act="diary" title="What ${p.character || p.name} got up to on the ground between flights">${icon('diary')}<span>Diary</span></button>
       <button class="tb-btn" data-act="photos" title="Every screenshot, as prints">${icon('photo')}<span>Photos</span></button>
+      <button class="tb-btn" data-act="news" title="Local news from where you landed, from the day you landed">${icon('news')}<span>News</span></button>
       <button class="tb-btn" data-act="insights" title="Records, charts and favourite airports">${icon('chart')}<span>Insights</span></button>
       <div class="tb-sep"></div>
       <button class="tb-btn primary backup-btn" data-act="backup" title="Copy your NeoFly save, original screenshots and a flight list into the logbook's backup folder">${icon('save')}<span>Back up</span></button>`);
@@ -46,6 +53,7 @@ export default {
       if (act === 'all') { store.set('selected', null); ui.fitAll(); }
       if (act === 'view') toggleMenu(b);
       if (act === 'photos') ui.openGallery();
+      if (act === 'news') ui.openNews?.();
       if (act === 'insights') ui.openInsights();
       if (act === 'logbook') ui.openLogbook();
       if (act === 'diary') ui.openDiary?.();

@@ -234,6 +234,22 @@ export async function createMap(db, ui) {
       setTimeout(() => { m.remove(); const k = drops.indexOf(m); if (k >= 0) drops.splice(k, 1); }, 5000 / Math.sqrt(store.get('speed')));
     },
     clearDrops() { drops.splice(0).forEach((m) => m.remove()); },
+    // a local news story pops up over the airport as the plane lands
+    dropNews(story, lngLat, onClick) {
+      const el = document.createElement('div');
+      const card = document.createElement('div');
+      card.className = 'map-news glass-soft';
+      const esc = (t) => String(t || '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+      card.innerHTML = `${story.image ? `<img src="${esc(story.image)}" alt="">` : ''}<div><span>Local news · ${esc(story.source)}</span><b>${esc(story.title)}</b></div><i></i>`;
+      el.append(card);
+      el.addEventListener('click', (e) => { e.stopPropagation(); onClick?.(); });
+      const m = new maplibregl.Marker({ element: el, anchor: 'bottom', offset: [0, -14] }).setLngLat(lngLat).addTo(map);
+      drops.push(m);
+      while (drops.length > 3) drops.shift().remove();
+      const k = Math.sqrt(store.get('speed'));
+      setTimeout(() => card.classList.add('out'), 5200 / k);
+      setTimeout(() => { m.remove(); const i = drops.indexOf(m); if (i >= 0) drops.splice(i, 1); }, 6000 / k);
+    },
     setTrail(features) { map.getSource('trail')?.setData(fc(features)); },
     dimRoutes(on) {
       if (!map.getLayer('legs-line')) return;

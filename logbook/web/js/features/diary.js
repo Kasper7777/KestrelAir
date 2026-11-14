@@ -18,7 +18,7 @@ export default {
     const stays = db.stops.filter((s) => s.diary);
 
     // Instagram-style carousel: dish, the real place, its menu
-    const slideLabel = { dish: 'Ordered', place: '', menu: 'Menu' };
+    const slideLabel = { dish: 'Ordered', place: '', menu: 'Menu', shot: 'Your shot' };
     const carousel = (p) => {
       const slides = p.slides || [];
       if (!slides.length) return html`<div class="ig-photo"><div class="ig-blank">${icon(p.kind === 'hotel' ? 'pin' : 'fork')}<span>${p.place}</span></div></div>`;
@@ -30,19 +30,24 @@ export default {
               <a href="${sl.url}" target="_blank" rel="noopener">Full menu on their website ↗</a></div></div>`
           : sl.kind === 'menulink'
           ? html`<a class="ig-slide ig-menucard" href="${sl.url}" target="_blank" rel="noopener">${icon('fork')}<b>${sl.isMenu ? 'See the menu' : 'Visit their website'}</b><span>${sl.label}</span><small>${new URL(sl.url, location.href).hostname.replace(/^www\./, '')}</small></a>`
-          : html`<figure class="ig-slide"><img src="${sl.src}" alt="" loading="lazy">
+          : html`<figure class="ig-slide ${sl.kind === 'shot' ? 'own' : ''}" ${sl.pid ? html`data-shots="${slides.filter((x) => x.pid).map((x) => x.pid).join(',')}" data-pid="${sl.pid}"` : ''}>
+              <img src="${sl.src}" alt="" loading="lazy" draggable="false">
               <figcaption>${slideLabel[sl.kind] ? html`<b>${slideLabel[sl.kind]}</b> ` : ''}${sl.label}</figcaption>
               ${sl.credit ? html`<a class="ig-credit" href="${sl.credit}" target="_blank" rel="noopener" title="${sl.from ? `Photo from ${sl.from}` : 'Photo source'}">©</a>` : ''}</figure>`)}</div>
-        ${slides.length > 1 ? html`<button class="ig-nav prev" data-d="-1" aria-label="Previous">${icon('back')}</button>
-          <button class="ig-nav next" data-d="1" aria-label="Next">${icon('forward')}</button>
-          <div class="ig-dots">${slides.map((_, i) => html`<i class="${i ? '' : 'on'}"></i>`)}</div>` : ''}</div>`;
+        ${slides.length > 1 ? html`<button class="ig-nav prev" data-d="-1" aria-label="Previous photo">${icon('back')}</button>
+          <button class="ig-nav next" data-d="1" aria-label="Next photo">${icon('forward')}</button>
+          <span class="ig-count">1/${slides.length}</span>
+          <div class="ig-dots">${slides.map((_, i) => html`<button class="${i ? '' : 'on'}" data-go="${i}" aria-label="Photo ${i + 1}"></button>`)}</div>` : ''}</div>`;
     };
-    const slide = (car, d) => {
+    // move a carousel to slide `to` (absolute) or by `d` (relative)
+    const slide = (car, d, to) => {
       const track = car.querySelector('.ig-track'), n = track.children.length;
-      const i = Math.max(0, Math.min(n - 1, +car.dataset.i + d));
+      const i = Math.max(0, Math.min(n - 1, to ?? +car.dataset.i + d));
       car.dataset.i = i;
       track.style.transform = `translateX(-${i * 100}%)`;
-      car.querySelectorAll('.ig-dots i').forEach((dot, k) => dot.classList.toggle('on', k === i));
+      car.querySelectorAll('.ig-dots button').forEach((dot, k) => dot.classList.toggle('on', k === i));
+      const c = car.querySelector('.ig-count');
+      if (c) c.textContent = `${i + 1}/${n}`;
     };
 
     // ---------- hashtags: every tag opens a card with real information
@@ -79,8 +84,11 @@ export default {
       card = document.createElement('div');
       card.className = 'glass tagcard';
       document.body.append(card);
-      const a = db.airports[s.airport];
-      const show = (tpl) => { if (!card) return; render(card, html`<button class="tc-close" aria-label="Close">${icon('close')}</button>${tpl}`); place(card, x, y); };
+      const a = db.airports[t.k === 'airport' && t.ident ? t.ident : s.airport];
+      if (t.k === 'aircraft') { ui.openAircraft?.(p.flight?.aircraftId); closeCard(); return; }
+      if (t.k === 'news') { closeCard(); ui.openStory?.(t.id, x, y); return; }
+      if (t.k === 'shots') { const ids = (p.slides || []).filter((x) => x.pid).map((x) => x.pid); ui.openPhotos(ids, 0); closeCard(); return; }
+      const show =(tpl) => { if (!card) return; render(card, html`<button class="tc-close" aria-label="Close">${icon('close')}</button>${tpl}`); place(card, x, y); };
       const loading = html`<div class="tc-body"><div class="tc-kind">${t.k}</div><h3>${t.t}</h3><div class="loading"><span class="spinner"></span>Looking it up…</div></div>`;
       if (t.k === 'country') {
         show(loading);
@@ -104,7 +112,7 @@ export default {
           ${a.wiki?.extract ? html`<p>${a.wiki.extract}</p>` : ''}
           ${facts([['Elevation', a.elevationFt != null ? `${num(a.elevationFt)} ft` : null], ['Longest runway', a.longestRunwayFt ? `${num(a.longestRunwayFt)} ft` : null],
                    ['Your visits', a.visits], ['Opened', a.wiki?.opened]])}
-          <div class="links"><button class="link-btn" data-goleg="${s.after}">${icon('plane')}Your flight in</button>
+          <div class="links"><button class="link-btn" data-goleg="${p.flight && t.ident === p.flight.from ? p.flight.leg : p.flight?.leg || s.after}">${icon('plane')}${p.flight ? 'This flight' : 'Your flight in'}</button>
             ${a.wiki?.url ? html`<a class="link-btn" href="${a.wiki.url}" target="_blank" rel="noopener">Wikipedia ${icon('external')}</a>` : ''}</div></div>`);
       } else if (t.k === 'venue') {
         const v = p.venue;
@@ -144,13 +152,21 @@ export default {
     }, true);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && card) { e.stopImmediatePropagation(); closeCard(); } }, true);
 
+    // the quoted headline in a caption is a link to the real story
+    const captionWithNews = (p) => {
+      const ref = p.newsRef;
+      const at = ref ? p.caption.indexOf(ref.text) : -1;
+      if (at < 0) return p.caption;
+      return html`${p.caption.slice(0, at)}<button class="news-ref" data-story="${ref.id}" title="Read the local story">${ref.text}</button>${p.caption.slice(at + ref.text.length)}`;
+    };
+
     const post = (s, p, dayNo) => html`<article class="ig">
       <header><span class="ig-av">${avatar ? html`<img src="${avatar}" alt="">` : ''}</span>
-        <div><b>${handle}</b><small>${p.place}</small></div><span class="ig-kind">${p.kind === 'sight' ? icon('pin') : icon('fork')}</span></header>
+        <div><b>${handle}</b><small>${p.place}</small></div><span class="ig-kind">${icon({ sight: 'pin', flight: 'plane', hotel: 'pin' }[p.kind] || 'fork')}</span></header>
       ${carousel(p)}
-      <div class="ig-actions">${icon('heart')}<span>${p.likes.toLocaleString('en-GB')} likes</span><time>Day ${dayNo} · ${p.time.slice(11, 16)}</time></div>
-      <p class="ig-cap"><b>${handle}</b> ${p.caption} <span class="ig-tags">${(p.tags || []).map((t, i) =>
-        html`<button class="tag-btn ${t.k === 'menu' ? 'menu' : ''}" data-post="${keyOf(s, p)}" data-tag="${i}" title="About ${t.t.slice(1)}">${t.t}</button>`)}</span></p>
+      <div class="ig-actions">${icon('heart')}<span>${p.likes.toLocaleString('en-GB')} likes</span><time>${dayNo ? `Day ${dayNo} · ` : `${shortFmt.format(new Date(p.time))} · `}${p.time.slice(11, 16)}</time></div>
+      <p class="ig-cap"><b>${handle}</b> ${captionWithNews(p)} <span class="ig-tags">${(p.tags || []).map((t, i) =>
+        html`<button class="tag-btn ${t.k === 'menu' ? 'menu' : t.k === 'news' ? 'news' : ''}" data-post="${keyOf(s, p)}" data-tag="${i}" title="About ${t.t.slice(1)}">${t.t}</button>`)}</span></p>
       <p class="ig-where">${p.where}${p.hours ? html`<br>Open ${p.hours}` : ''}</p>
       ${p.menu || p.website || p.url ? html`<div class="ig-links">
         ${p.menu ? html`<a class="link-btn" href="${p.menu}" target="_blank" rel="noopener">${icon('fork')}Menu</a>` : ''}
@@ -170,8 +186,14 @@ export default {
           <button class="link-btn" data-leg="${s.after}">${icon('plane')}See the flight in</button>
         </div>
         ${d.days.map((day, i) => {
-          const dayNo = i === d.days.length - 1 && d.skippedDays ? i + 1 + d.skippedDays : i + 1;
-          return html`${i === d.days.length - 1 && d.skippedDays ? html`<p class="stay-skip">… ${d.skippedDays} more days in ${d.city} …</p>` : ''}
+          if (day.inbound) {
+            return html`<h4 class="stay-day inbound">${icon('plane')}Getting here<small>${day.posts.length} flight${day.posts.length === 1 ? '' : 's'} · your own screenshots</small></h4>
+              <div class="ig-row">${day.posts.map((p) => post(s, p, 0))}</div>`;
+          }
+          const k = i - (d.days[0]?.inbound ? 1 : 0);
+          const last = i === d.days.length - 1;
+          const dayNo = last && d.skippedDays ? k + 1 + d.skippedDays : k + 1;
+          return html`${last && d.skippedDays ? html`<p class="stay-skip">… ${d.skippedDays} more days in ${d.city} …</p>` : ''}
             <h4 class="stay-day">${dayFmt.format(new Date(day.date))}<small>Day ${dayNo}</small></h4>
             <div class="ig-row">${day.posts.map((p) => post(s, p, dayNo))}</div>`;
         })}
@@ -182,20 +204,31 @@ export default {
       const { body } = openSheet({ id: 'diary', title: `${who}'s layover diary`,
         sub: `${stays.length} long stops · the restaurants and sights are real and near each airport; what ${who} got up to is imagined` });
       render(body, html`${stays.length ? stays.map(stayBlock) : html`<p class="note">No stops of 8 hours or more yet.</p>`}`);
+      let swiped = false;
       body.addEventListener('click', (e) => {
         const nav = e.target.closest('.ig-nav');
         if (nav) { slide(nav.closest('.ig-carousel'), +nav.dataset.d); return; }
+        const dot = e.target.closest('.ig-dots [data-go]');
+        if (dot) { slide(dot.closest('.ig-carousel'), 0, +dot.dataset.go); return; }
+        const shot = e.target.closest('[data-shots]');
+        if (shot && !swiped) { const ids = shot.dataset.shots.split(','); ui.openPhotos(ids, ids.indexOf(shot.dataset.pid)); return; }
         const b = e.target.closest('[data-leg]');
         if (b) { closeSheet(); store.set('selected', b.dataset.leg); }
       });
-      // swipe on touch screens / trackpads
+      // swipe / drag through a post's photos
       let sx = null;
-      body.addEventListener('pointerdown', (e) => { if (e.target.closest('.ig-carousel')) sx = e.clientX; });
+      body.addEventListener('pointerdown', (e) => { swiped = false; if (e.target.closest('.ig-carousel') && !e.target.closest('button')) sx = e.clientX; });
       body.addEventListener('pointerup', (e) => {
         const car = e.target.closest('.ig-carousel');
-        if (car && sx != null && Math.abs(e.clientX - sx) > 40) slide(car, e.clientX < sx ? 1 : -1);
+        if (car && sx != null && Math.abs(e.clientX - sx) > 40) { slide(car, e.clientX < sx ? 1 : -1); swiped = true; }
         sx = null;
       });
+      // arrow keys flip the carousel under the pointer
+      document.addEventListener('keydown', (e) => {
+        if (!document.body.contains(body) || document.body.classList.contains('lightbox-open')) return;
+        const car = body.querySelector('.ig-carousel:hover');
+        if (car && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); e.stopImmediatePropagation(); slide(car, e.key === 'ArrowRight' ? 1 : -1); }
+      }, true);
       if (stopId) body.querySelector(`#stay-${CSS.escape(stopId)}`)?.scrollIntoView({ block: 'start' });
     };
 

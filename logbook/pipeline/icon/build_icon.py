@@ -17,29 +17,37 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 bird = open(os.path.join(HERE, 'vulture.svg'), encoding='utf-8').read()
 inner = re.search(r'<svg[^>]*>(.*)</svg>', bird, re.S).group(1)
 
+# the glass tile: deep tinted glass with coloured light glowing through from behind
+# (like the map under the app's panels), a frosted luminous vulture, a curved
+# specular highlight and a lit rim
+_bird_glass = inner.replace('fill="#141414"', 'fill="url(#bird)"').replace('#f3eee6', '#1b2236')
 TILE = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fbf6ec"/><stop offset=".55" stop-color="#f1e6d2"/><stop offset="1" stop-color="#dcc7a4"/>
-    </linearGradient>
-    <radialGradient id="glow" cx=".5" cy="1.05" r=".75"><stop offset="0" stop-color="#ffb547" stop-opacity=".55"/><stop offset="1" stop-color="#ffb547" stop-opacity="0"/></radialGradient>
-    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset=".45" stop-color="#fff" stop-opacity=".18"/><stop offset=".46" stop-color="#fff" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".4" stop-color="#fff" stop-opacity=".15"/>
-      <stop offset=".7" stop-color="#7a5a2a" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity=".6"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#3a2a10" flood-opacity=".35"/></filter>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26324f"/><stop offset="1" stop-color="#0c1120"/></linearGradient>
+    <radialGradient id="g1" cx=".22" cy=".88" r=".55"><stop offset="0" stop-color="#ffb547" stop-opacity=".95"/><stop offset="1" stop-color="#ffb547" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2" cx=".9" cy=".25" r=".5"><stop offset="0" stop-color="#4ec7ff" stop-opacity=".75"/><stop offset="1" stop-color="#4ec7ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g3" cx=".75" cy="1" r=".45"><stop offset="0" stop-color="#ff5d8f" stop-opacity=".55"/><stop offset="1" stop-color="#ff5d8f" stop-opacity="0"/></radialGradient>
+    <linearGradient id="bird" x1=".2" y1="0" x2=".6" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#ffeccc"/><stop offset="1" stop-color="#ffbe5c"/></linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset=".52" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".35" stop-color="#fff" stop-opacity=".18"/>
+      <stop offset=".7" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#ffd59a" stop-opacity=".7"/></linearGradient>
+    <linearGradient id="foot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="28"/></filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur in="SourceAlpha" stdDeviation="9" result="b"/>
+      <feFlood flood-color="#ffc77a" flood-opacity=".75"/><feComposite in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <clipPath id="tile"><rect x="16" y="16" width="480" height="480" rx="112"/></clipPath>
   </defs>
   <g clip-path="url(#tile)">
-    <rect x="16" y="16" width="480" height="480" fill="url(#paper)"/>
-    <rect x="16" y="16" width="480" height="480" fill="url(#glow)"/>
-    <g filter="url(#shadow)" transform="translate(38 30) scale(.86)">{inner.replace('#f3eee6', '#f1e6d2')}</g>
-    <path d="M16 16 H496 V196 C380 236 140 236 16 196 Z" fill="url(#sheen)" opacity=".75"/>
+    <rect x="16" y="16" width="480" height="480" fill="url(#base)"/>
+    <g filter="url(#blur)"><rect x="16" y="16" width="480" height="480" fill="url(#g1)"/><rect x="16" y="16" width="480" height="480" fill="url(#g2)"/>
+      <rect x="16" y="16" width="480" height="480" fill="url(#g3)"/></g>
+    <rect x="16" y="16" width="480" height="480" fill="#ffffff" opacity=".06"/>
+    <g filter="url(#glow)" transform="translate(38 30) scale(.86)">{_bird_glass}</g>
+    <path d="M16 16 H496 V210 C390 250 150 255 16 222 Z" fill="url(#sheen)"/>
+    <rect x="16" y="360" width="480" height="136" fill="url(#foot)"/>
   </g>
-  <rect x="18" y="18" width="476" height="476" rx="110" fill="none" stroke="url(#rim)" stroke-width="4"/>
+  <rect x="19" y="19" width="474" height="474" rx="109" fill="none" stroke="url(#rim)" stroke-width="5"/>
 </svg>'''
 
 

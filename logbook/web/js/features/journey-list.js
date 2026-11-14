@@ -39,7 +39,7 @@ export default {
     }
     const row = (l) => {
       const n = l.photos.length;
-      const cam = n ? html` · <span class="cam">${icon('photo')}${n}</span>` : '';
+      const cam = html`${n ? html` · <span class="cam">${icon('photo')}${n}</span>` : ''}${l.docs?.length ? html` · <span class="cam doc" title="Flight plan attached">${icon('doc')}</span>` : ''}${l.news?.some((x) => db.news?.[x]) ? html` · <span class="cam news" title="Local news from that day">${icon('news')}</span>` : ''}`;
       if (l.kind === 'ground') return html`
         <li class="leg ground" data-id="${l.id}">${badge(l)}
           <div class="leg-main"><div class="leg-route">${l.from}<span class="to-arrow">→</span>${l.to}</div>

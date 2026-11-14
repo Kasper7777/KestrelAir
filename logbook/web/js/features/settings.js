@@ -23,6 +23,9 @@ export default {
           <small>${pilots.length} pilot${pilots.length === 1 ? '' : 's'} in this NeoFly save. Showing <b>${db.pilot.name}</b>.</small></label>
         <label class="field"><span>Name shown in the logbook and diary</span>
           <input name="displayName" value="${db.pilot.character || db.pilot.name}" maxlength="40" autocomplete="off"></label>
+        <label class="field"><span>SimBrief username or Pilot ID</span>
+          <input name="simbrief" value="${db.pilot.simbrief || ''}" placeholder="e.g. kazber or 123456" autocomplete="off">
+          <small>Each time the logbook runs it saves your latest SimBrief plan (briefing, PDF, route map) and attaches it to that flight.</small></label>
         <div class="field"><span>Photo</span>
           <div class="photo-row"><img class="avatar big" src="${db.pilot.photo || 'icon.png'}" alt="">
             <label class="link-btn">${icon('photo')}Choose a photo<input type="file" name="photo" accept="image/*" hidden></label></div></div>
@@ -53,7 +56,7 @@ export default {
         const target = form.pilot.value || db.pilot.name;
         try {
           const r = await fetch('/__settings', { method: 'POST', headers: { 'X-Logbook': '1', 'Content-Type': 'application/json' },
-            body: JSON.stringify({ pilot: form.pilot.value, for: target, displayName: form.displayName.value, photo }) }).then((x) => x.json());
+            body: JSON.stringify({ pilot: form.pilot.value, for: target, displayName: form.displayName.value, simbrief: form.simbrief.value, photo }) }).then((x) => x.json());
           if (!r.ok) throw new Error(r.error || 'Could not save');
           msg.textContent = 'Saved. Reloading…';
           location.reload();

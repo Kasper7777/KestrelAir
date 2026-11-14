@@ -236,6 +236,12 @@ def save_settings(req):
                 me['displayName'] = dn[:40]
             else:
                 me.pop('displayName', None)
+        if 'simbrief' in req:
+            sb = (req.get('simbrief') or '').strip()
+            if sb:
+                me['simbrief'] = sb[:60]
+            else:
+                me.pop('simbrief', None)
         if req.get('photo'):  # data URL from the file picker
             from PIL import Image, ImageOps
             raw = base64.b64decode(req['photo'].split(',', 1)[-1])

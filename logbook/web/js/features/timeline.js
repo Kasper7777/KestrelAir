@@ -97,6 +97,7 @@ export default {
         if (my !== token) return;
         await fly(l, my);
         if (my !== token) return;
+        if (l.kind === 'flight') ui.popNews?.(l);      // what was in the local news the day you landed
         trail.push(feature(l, l.coords));
         map.setTrail(trail);
         await wait(250 / store.get('speed'));

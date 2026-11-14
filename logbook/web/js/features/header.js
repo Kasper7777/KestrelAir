@@ -22,7 +22,7 @@ export default {
     // the vulture, rendered as luminous frosted glass inside a glass tile
     fetch('mark.svg').then((r) => r.text()).then((svg) => {
       const defs = '<defs><linearGradient id="lg-bird" x1="0" y1="0" x2="0.4" y2="1">' +
-        '<stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#ffe3b8"/><stop offset="1" stop-color="#ffb547"/></linearGradient></defs>';
+        '<stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#f6ebc8"/><stop offset="1" stop-color="#d9b45f"/></linearGradient></defs>';
       document.querySelector('.app-logo').innerHTML = svg.replace(/currentColor/g, 'url(#lg-bird)').replace(/(<svg[^>]*>)/, `$1${defs}`);
     }).catch(() => { document.querySelector('.app-logo').innerHTML = '<img src="icon.png" alt="" style="width:100%">'; });
 

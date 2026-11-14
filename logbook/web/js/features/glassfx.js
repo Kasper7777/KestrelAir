@@ -31,7 +31,10 @@ export default {
       }
       lastPanel = panel;
     };
-    document.addEventListener('pointermove', (e) => { ev = e; if (!raf) raf = requestAnimationFrame(frame); }, { passive: true });
+    document.addEventListener('pointermove', (e) => {
+      if (document.body.classList.contains('sim-running')) return;      // keep the GPU free for the sim
+      ev = e; if (!raf) raf = requestAnimationFrame(frame);
+    }, { passive: true });
     document.addEventListener('pointerleave', () => { lastEl?.classList.remove('lit'); lastPanel?.style.removeProperty('--gx'); });
   },
 };

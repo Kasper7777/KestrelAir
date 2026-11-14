@@ -1,4 +1,4 @@
-﻿// Kestrel Air Logbook.exe - the button you click.
+// Kestrel Air Logbook.exe - the button you click.
 // Lives in the logbook folder and works wherever the repo is cloned:
 //   1. if the logbook is already open, just shows it again
 //   2. finds uv (installs it once, with permission, on a new PC)
@@ -41,7 +41,7 @@ static class Launcher
             if (uv == null) { Say("uv didn't install. Check the internet connection and try again."); return 1; }
         }
 
-        var p = Run(uv, "run --no-project --with pillow --with pypdfium2 pythonw \"" + serve + "\"", dir);
+        var p = Run(uv, "run --no-project --with pillow --with pypdfium2 --with SimConnect pythonw \"" + serve + "\"", dir);
         // serve.py opens the browser itself; wait only to catch a failed start
         // (the first run on a new PC downloads Python, so allow a few minutes)
         for (int i = 0; i < 360; i++)

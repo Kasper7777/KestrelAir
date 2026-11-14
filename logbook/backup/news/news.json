@@ -825,7 +825,14 @@
 "PABI|2026-10-28",
 "PAJN|2026-10-29",
 "CEX3|2026-10-31",
-"KBLI|2026-10-31"
+"KBLI|2026-10-31",
+"KMOD|2026-11-01",
+"KWJF|2026-11-01",
+"MMLP|2026-11-01",
+"KHYI|2026-11-02",
+"KRKW|2026-11-03",
+"7FL6|2026-11-03",
+"KJFK|2026-11-04"
 ],
 "_qv": {
 "LFRC|2026-08-16": 2,
@@ -1153,7 +1160,9 @@
 "place": "Pontivy",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695535
 }
 ],
 "LFEQ|2026-08-17": [
@@ -1260,7 +1269,9 @@
 "place": "La Baule-Escoublac",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695302
 },
 {
 "id": "d0681efb389a",
@@ -1288,7 +1299,9 @@
 "place": "La Baule-Escoublac",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695312
 },
 {
 "id": "33b7562a1ee2",
@@ -1316,7 +1329,9 @@
 "place": "La Baule-Escoublac",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695122
 },
 {
 "id": "5f4e358cd2fd",
@@ -1329,7 +1344,9 @@
 "place": "La Baule-Escoublac",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695147
 }
 ],
 "LFRS|2026-08-17": [
@@ -1344,7 +1361,9 @@
 "place": "Nantes/Atlantique",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695541
 },
 {
 "id": "b45e77a7ead7",
@@ -1372,7 +1391,9 @@
 "place": "Nantes",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695548
 },
 {
 "id": "aacf621525db",
@@ -1385,7 +1406,9 @@
 "place": "Nantes",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695704
 },
 {
 "id": "802c4a55065a",
@@ -1413,7 +1436,9 @@
 "place": "Nantes",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695580
 }
 ],
 "LFRI|2026-08-17": [
@@ -1428,7 +1453,9 @@
 "place": "La Roche-Sur-Yon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695589
 },
 {
 "id": "91d579e057d8",
@@ -1441,7 +1468,9 @@
 "place": "La Roche-Sur-Yon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794695604
 }
 ],
 "LFCY|2026-08-17": [
@@ -1550,7 +1579,9 @@
 "place": "Girona",
 "lang": "es",
 "tone": "neutral",
-"site": "https://www.sofascore.com"
+"site": "https://www.sofascore.com",
+"tries": 1,
+"triedAt": 1794695897
 },
 {
 "id": "5dc36c89e180",
@@ -1640,7 +1671,9 @@
 "place": "Constantine",
 "lang": "en",
 "tone": "neutral",
-"site": "http://www.daily-sun.com"
+"site": "http://www.daily-sun.com",
+"tries": 1,
+"triedAt": 1794695682
 },
 {
 "id": "9682a04bfd8d",
@@ -1698,7 +1731,9 @@
 "place": "Constantine",
 "lang": "en",
 "tone": "sad",
-"site": "https://www.aps.dz"
+"site": "https://www.aps.dz",
+"tries": 1,
+"triedAt": 1794695710
 }
 ],
 "LDSP|2026-08-19": [
@@ -1790,7 +1825,9 @@
 "place": "Balikesir",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://www.dha.com.tr"
+"site": "https://www.dha.com.tr",
+"tries": 1,
+"triedAt": 1794695709
 },
 {
 "id": "427e8f1bb3ff",
@@ -2017,7 +2054,9 @@
 "place": "Ağrı",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://www.benguturk.com"
+"site": "https://www.benguturk.com",
+"tries": 1,
+"triedAt": 1794695709
 },
 {
 "id": "5faf3670abd2",
@@ -2093,7 +2132,9 @@
 "place": "Bingöl",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://www.bingolsurmanset.com"
+"site": "https://www.bingolsurmanset.com",
+"tries": 1,
+"triedAt": 1794695717
 }
 ],
 "LTAJ|2026-08-31": [
@@ -2123,7 +2164,9 @@
 "place": "Gaziantep",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://www.sofascore.com"
+"site": "https://www.sofascore.com",
+"tries": 1,
+"triedAt": 1794695799
 }
 ],
 "LCEN|2026-08-31": [
@@ -2138,7 +2181,9 @@
 "place": "Northern Cyprus",
 "lang": "en",
 "tone": "neutral",
-"site": "https://news.sky.com"
+"site": "https://news.sky.com",
+"tries": 1,
+"triedAt": 1794695827
 },
 {
 "id": "c173cdaa76fb",
@@ -2209,7 +2254,9 @@
 "place": "Northern Cyprus",
 "lang": "en",
 "tone": "sad",
-"site": "https://www.aa.com.tr"
+"site": "https://www.aa.com.tr",
+"tries": 1,
+"triedAt": 1794695965
 }
 ],
 "LTBZ|2026-08-31": [
@@ -2219,12 +2266,15 @@
 "summary": "",
 "image": null,
 "source": "Gençlik ve Spor Bakanlığı",
-"url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOODVDV1A3ZE9NaUlydi1VX1ZfeTMzM1otOFJYZXpPeWpUcnUyUlZfcHBDSEhQdHBiRzNXbmkxZVNFVXdMekM0cXBreXdkU09uWmRBUktOOFFmcVJxTi1zc3Y3NlU3YUVrZXYtbW95OTRhdWdJbUtaVzdRd2lwc3I1N1ViZElPTWVtQ18ycWlGQl8xZW1Ybm40aHkybF94YTVyM2tJXw?oc=5",
+"url": "https://gsb.gov.tr/tr/haber-detay/302739-bakan-bak-kutahyada-30-agustos-zafer-bayrami-torenine-katildi",
 "date": "2026-08-31",
 "place": "Kütahya",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://gsb.gov.tr"
+"site": "https://gsb.gov.tr",
+"tries": 4,
+"triedAt": 1794695867,
+"resolved": true
 },
 {
 "id": "ad0bd15e6575",
@@ -2237,7 +2287,9 @@
 "place": "Kütahya",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://www.sabah.com.tr"
+"site": "https://www.sabah.com.tr",
+"tries": 1,
+"triedAt": 1794695970
 },
 {
 "id": "6f9f4802cb12",
@@ -2250,7 +2302,9 @@
 "place": "Kütahya",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://www.insaatdunyasi.com.tr"
+"site": "https://www.insaatdunyasi.com.tr",
+"tries": 1,
+"triedAt": 1794695898
 },
 {
 "id": "2871ff196ef2",
@@ -2263,7 +2317,9 @@
 "place": "Kütahya",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://genclikhizmetleri.gov.tr"
+"site": "https://genclikhizmetleri.gov.tr",
+"tries": 1,
+"triedAt": 1794695904
 },
 {
 "id": "130a68a87808",
@@ -2276,7 +2332,9 @@
 "place": "Kütahya",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://www.kutahyaninsesi.com"
+"site": "https://www.kutahyaninsesi.com",
+"tries": 1,
+"triedAt": 1794695921
 },
 {
 "id": "eb838976ea19",
@@ -3112,7 +3170,8 @@
 "date": "2026-09-15",
 "place": "Tottori",
 "lang": "ja",
-"tone": "neutral"
+"tone": "neutral",
+"site": ""
 }
 ],
 "RJNW|2026-09-18": [],
@@ -3133,7 +3192,8 @@
 "date": "2026-10-27",
 "place": "Fort Greely",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.thearcticinstitute.org"
 }
 ],
 "PAJN|2026-10-29": [
@@ -3147,7 +3207,8 @@
 "date": "2026-10-30",
 "place": "Juneau",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ktoo.org"
 },
 {
 "id": "57b7899dad70",
@@ -3159,7 +3220,8 @@
 "date": "2026-10-29",
 "place": "Juneau",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.noaa.gov"
 },
 {
 "id": "9ec32c77b74e",
@@ -3171,7 +3233,8 @@
 "date": "2026-10-30",
 "place": "Juneau",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://alaskapublic.org"
 },
 {
 "id": "baf764effd1e",

@@ -74,6 +74,8 @@ export default {
       try {
         const s = await fetch('/__status').then((r) => r.json());
         // background work shows as a soft glow turning round the glass cogwheel, not a pill over the map
+        // while Flight Simulator runs: lighter glass, no looping animations, background downloads paused
+        document.body.classList.toggle('sim-running', !!s.simRunning);
         const cog = document.querySelector('.cog-btn');
         cog?.classList.toggle('busy', !!s.fetching);
         if (cog) cog.title = s.fetching ? 'Settings - looking up news pictures, places and photos in the background' : 'Settings';

@@ -1,7 +1,7 @@
 {
  "meta": {
   "version": 1,
-  "builtAt": "2026-11-14T21:17:33",
+  "builtAt": "2026-11-14T22:50:00",
   "online": false,
   "sources": [
    "neofly",
@@ -5167,7 +5167,14 @@
    "local": false,
    "missions": [],
    "photos": [],
-   "news": []
+   "news": [
+    "79e5934a8734",
+    "5f6e61b2be05",
+    "de65c8c3df65",
+    "45f872618802",
+    "98c765b53b90",
+    "97016946af01"
+   ]
   },
   {
    "id": "nf-fl-49",
@@ -5287,7 +5294,12 @@
     "501bbf4ffe6a"
    ],
    "news": [
-    "43f63bff756f"
+    "fe1ca7222870",
+    "2a1247ec79c9",
+    "41a6556bc208",
+    "cb8496c93a96",
+    "06b7d4111df0",
+    "0c57096e95f8"
    ]
   },
   {
@@ -5330,7 +5342,14 @@
     }
    ],
    "photos": [],
-   "news": []
+   "news": [
+    "fec0d7e6fb37",
+    "cad1e2005894",
+    "17cf2926dde2",
+    "285a6a9ba7ea",
+    "bb4047796df1",
+    "ad9682d89272"
+   ]
   },
   {
    "id": "nf-fl-53",
@@ -5555,12 +5574,12 @@
     "32a2b484d6b3"
    ],
    "news": [
-    "a2ba7cfcfe0f",
-    "583940f1b1fe",
-    "31485502fc10",
-    "469b445717f0",
-    "0dfc9979c4db",
-    "2a571e38b2ba"
+    "3476ad72cf2c",
+    "682ab843283f",
+    "53c7e505d154",
+    "bd6cbc5143df",
+    "128e640a5368",
+    "27ace81b0d4f"
    ]
   },
   {
@@ -5603,7 +5622,14 @@
     }
    ],
    "photos": [],
-   "news": []
+   "news": [
+    "ae9d86eadb41",
+    "02ca5dbf4fa2",
+    "7336aaa0be04",
+    "5671c61932a1",
+    "f00592c3e737",
+    "4c0c2b1bb650"
+   ]
   },
   {
    "id": "nf-fl-58",
@@ -5689,7 +5715,14 @@
     }
    ],
    "photos": [],
-   "news": []
+   "news": [
+    "9a5d60397659",
+    "fc8428cba9cd",
+    "fa4029785e8a",
+    "a86f2ca1233e",
+    "482671b6e80f",
+    "0b4596809502"
+   ]
   },
   {
    "id": "nf-fl-60",
@@ -5731,7 +5764,10 @@
     }
    ],
    "photos": [],
-   "news": []
+   "news": [
+    "6e45f8aefcbc",
+    "006952946dc9"
+   ]
   },
   {
    "id": "nf-fl-61",
@@ -11300,12 +11336,12 @@
          "lon": 47.9965313,
          "km": 1.1
         },
-        "caption": "Room key in hand at Аэропорт. Long day in the air. Picked up the Известия.Саратов with breakfast: “Общественница заподозрила бывших чиновников в уводе собственности » Интернет-издание”. Big talk round here.",
+        "caption": "Room key in hand at Аэропорт. Long day in the air. Picked up the monavista.ru with breakfast: “В Астрахани прошла церемония передачи капсулы с обращением ветерана”. Big talk round here.",
         "likes": 178,
         "newsRef": {
-         "id": "43f63bff756f",
-         "text": "Общественница заподозрила бывших чиновников в уводе собственности » Интернет-издание",
-         "tag": "#ОбщественницаИнтернет"
+         "id": "fe1ca7222870",
+         "text": "В Астрахани прошла церемония передачи капсулы с обращением ветерана",
+         "tag": "#Астрахани"
         },
         "tags": [
          {
@@ -11330,9 +11366,9 @@
           "k": "venue"
          },
          {
-          "t": "#ОбщественницаИнтернет",
+          "t": "#Астрахани",
           "k": "news",
-          "id": "43f63bff756f"
+          "id": "fe1ca7222870"
          }
         ]
        },
@@ -11986,12 +12022,12 @@
          "lon": 93.912117,
          "km": 4.4
         },
-        "caption": "Home for the night: SAI Boy's Hostel, 4.4 km from VEIM. Picked up the Awaz The Voice with breakfast: “US envoy Sergio Gor meets Manipur CM in Imphal on two-day visit”. Big talk round here.",
+        "caption": "Home for the night: SAI Boy's Hostel, 4.4 km from VEIM. Picked up the timesofindia.indiatimes.com with breakfast: “Manipuri musician Chongtham Vikram Singh cremated in Imphal | Guwahati News”. Big talk round here.",
         "likes": 86,
         "newsRef": {
-         "id": "a2ba7cfcfe0f",
-         "text": "US envoy Sergio Gor meets Manipur CM in Imphal on two-day visit",
-         "tag": "#SergioGorManipur"
+         "id": "3476ad72cf2c",
+         "text": "Manipuri musician Chongtham Vikram Singh cremated in Imphal | Guwahati News",
+         "tag": "#ManipuriChongthamVikram"
         },
         "tags": [
          {
@@ -12016,9 +12052,9 @@
           "k": "venue"
          },
          {
-          "t": "#SergioGorManipur",
+          "t": "#ManipuriChongthamVikram",
           "k": "news",
-          "id": "a2ba7cfcfe0f"
+          "id": "3476ad72cf2c"
          }
         ]
        },
@@ -12318,8 +12354,13 @@
          "lon": 110.478053,
          "km": 3.6
         },
-        "caption": "Checked in at Breeze Alley Inn. Bags down, flight bag charging.",
+        "caption": "Checked in at Breeze Alley Inn. Bags down, flight bag charging. Overheard at the next table: “世界级嗅觉宝库 ？ 中法专家解密张家界深处的  亿万家产  |文旅|旅游|玻璃桥|香文化”.",
         "likes": 133,
+        "newsRef": {
+         "id": "9a5d60397659",
+         "text": "世界级嗅觉宝库 ？ 中法专家解密张家界深处的  亿万家产  |文旅|旅游|玻璃桥|香文化",
+         "tag": "#世界级嗅觉宝库中法专家解密张家界深处的亿万家产"
+        },
         "tags": [
          {
           "t": "#China",
@@ -12341,6 +12382,11 @@
          {
           "t": "#BreezeAlleyInn",
           "k": "venue"
+         },
+         {
+          "t": "#世界级嗅觉宝库中法专家解密张家界深处的亿万家产",
+          "k": "news",
+          "id": "9a5d60397659"
          }
         ]
        }
@@ -12381,8 +12427,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Fried chicken at KFC before checking the weather.",
+        "caption": "Coffee and Fried chicken at KFC before checking the weather. Local paper on the table: “智能时代 网安护航 张家界市2026年国家网络安全宣传周正式启动”. Never a dull day in Zhangjiajie Hehua International Airport.",
         "likes": 143,
+        "newsRef": {
+         "id": "fc8428cba9cd",
+         "text": "智能时代 网安护航 张家界市2026年国家网络安全宣传周正式启动",
+         "tag": "#智能时代网安护航张家界市2026年国家网络安全宣传周正式启动"
+        },
         "tags": [
          {
           "t": "#China",
@@ -12408,6 +12459,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#智能时代网安护航张家界市2026年国家网络安全宣传周正式启动",
+          "k": "news",
+          "id": "fc8428cba9cd"
          }
         ]
        },
@@ -12599,8 +12655,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Cheeseburger at McDonald's, 4.5 km from the field. Good fuel for a pilot.",
+        "caption": "Cheeseburger at McDonald's, 4.5 km from the field. Good fuel for a pilot. Picked up the baijiahao.baidu.com with breakfast: “中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传周活动”. Big talk round here.",
         "likes": 172,
+        "newsRef": {
+         "id": "fa4029785e8a",
+         "text": "中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传周活动",
+         "tag": "#中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传"
+        },
         "tags": [
          {
           "t": "#China",
@@ -12626,6 +12687,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传",
+          "k": "news",
+          "id": "fa4029785e8a"
          }
         ]
        },
@@ -12818,8 +12884,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Buffalo wing at KFC, 0.7 km from the field. Good fuel for a pilot.",
+        "caption": "Buffalo wing at KFC, 0.7 km from the field. Good fuel for a pilot. Overheard at the next table: “清朗金融网络 守护安心消费 中国银行张家界市分行开展金融教育宣传周进街道宣讲活动”.",
         "likes": 62,
+        "newsRef": {
+         "id": "a86f2ca1233e",
+         "text": "清朗金融网络 守护安心消费 中国银行张家界市分行开展金融教育宣传周进街道宣讲活动",
+         "tag": "#清朗金融网络守护安心消费中国银行张家界市分行开展金融教育宣传"
+        },
         "tags": [
          {
           "t": "#China",
@@ -12841,6 +12912,11 @@
          {
           "t": "#KFC",
           "k": "venue"
+         },
+         {
+          "t": "#清朗金融网络守护安心消费中国银行张家界市分行开展金融教育宣传",
+          "k": "news",
+          "id": "a86f2ca1233e"
          }
         ]
        },
@@ -12993,8 +13069,13 @@
          "lon": 118.27907,
          "km": 2.4
         },
-        "caption": "Checked in at 黄山市君瑞百合酒店. Bags down, flight bag charging.",
+        "caption": "Checked in at 黄山市君瑞百合酒店. Bags down, flight bag charging. Picked up the hznews.hangzhou.com.cn with breakfast: “杭州出发部分热门车次已售罄 ， 抢票攻略来了”. Big talk round here.",
         "likes": 163,
+        "newsRef": {
+         "id": "6e45f8aefcbc",
+         "text": "杭州出发部分热门车次已售罄 ， 抢票攻略来了",
+         "tag": "#杭州出发部分热门车次已售罄抢票攻略来了"
+        },
         "tags": [
          {
           "t": "#China",
@@ -13016,6 +13097,11 @@
          {
           "t": "#黄山市君瑞百合酒店",
           "k": "venue"
+         },
+         {
+          "t": "#杭州出发部分热门车次已售罄抢票攻略来了",
+          "k": "news",
+          "id": "6e45f8aefcbc"
          }
         ]
        }
@@ -13044,8 +13130,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Flat white at Starbucks, 4.7 km from the field. Good fuel for a pilot.",
+        "caption": "Flat white at Starbucks, 4.7 km from the field. Good fuel for a pilot. Overheard at the next table: “纪念币发行最新消息 （ 纪念币发行最新消息2021 ）”.",
         "likes": 92,
+        "newsRef": {
+         "id": "006952946dc9",
+         "text": "纪念币发行最新消息 （ 纪念币发行最新消息2021 ）",
+         "tag": "#纪念币发行最新消息纪念币发行最新消息2021"
+        },
         "tags": [
          {
           "t": "#China",
@@ -13067,6 +13158,11 @@
          {
           "t": "#Starbucks",
           "k": "venue"
+         },
+         {
+          "t": "#纪念币发行最新消息纪念币发行最新消息2021",
+          "k": "news",
+          "id": "006952946dc9"
          }
         ]
        },
@@ -19836,9 +19932,16 @@
    "after": "nf-fl-90",
    "before": null,
    "events": [],
-   "photos": [],
+   "photos": [
+    "b19314af7d99",
+    "0fbc60e5f6d3",
+    "39c4e38048e2",
+    "3fb53f34b0bc",
+    "63c142895da4",
+    "dee3da813c65"
+   ],
    "diary": {
-    "hours": 17.4,
+    "hours": 19.0,
     "nights": 0,
     "city": "Mount Pleasant",
     "tags": [
@@ -19849,6 +19952,89 @@
      "#pilotlife"
     ],
     "days": [
+     {
+      "date": "2026-11-14",
+      "posts": [
+       {
+        "kind": "flight",
+        "time": "2026-11-14T03:51",
+        "place": "SCVD → EGYP",
+        "where": "Pichoy → Mount Pleasant · Cessna Citation X",
+        "own": true,
+        "slides": [
+         {
+          "kind": "shot",
+          "src": "media/photos/b19314af7d99.jpg",
+          "pid": "b19314af7d99",
+          "label": "21:26 · SCVD → EGYP"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/0fbc60e5f6d3.jpg",
+          "pid": "0fbc60e5f6d3",
+          "label": "21:33 · SCVD → EGYP"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/39c4e38048e2.jpg",
+          "pid": "39c4e38048e2",
+          "label": "21:55 · SCVD → EGYP"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/3fb53f34b0bc.jpg",
+          "pid": "3fb53f34b0bc",
+          "label": "22:25 · SCVD → EGYP"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/63c142895da4.jpg",
+          "pid": "63c142895da4",
+          "label": "22:39 · SCVD → EGYP"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/dee3da813c65.jpg",
+          "pid": "dee3da813c65",
+          "label": "22:46 · SCVD → EGYP"
+         }
+        ],
+        "flight": {
+         "leg": "nf-fl-90",
+         "from": "SCVD",
+         "to": "EGYP",
+         "minutes": 156.7,
+         "aircraft": "Cessna Citation X",
+         "aircraftId": "neofly:12",
+         "landingFpm": -465,
+         "distanceNm": 951
+        },
+        "caption": "SCVD to EGYP in the Cessna Citation X. 2h 37m well spent.",
+        "likes": 188,
+        "tags": [
+         {
+          "t": "#SCVD",
+          "k": "airport",
+          "ident": "SCVD"
+         },
+         {
+          "t": "#EGYP",
+          "k": "airport",
+          "ident": "EGYP"
+         },
+         {
+          "t": "#CessnaCitationX",
+          "k": "aircraft"
+         },
+         {
+          "t": "#MSFS2024",
+          "k": "shots"
+         }
+        ]
+       }
+      ],
+      "inbound": true
+     },
      {
       "date": "2026-11-14",
       "posts": [
@@ -21005,6 +21191,78 @@
    "width": 2560,
    "height": 1440,
    "leg": "nf-fl-89"
+  },
+  "b19314af7d99": {
+   "id": "b19314af7d99",
+   "takenAt": "2026-11-14T21:26:57",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261114212657_1.jpg",
+   "src": "media/photos/b19314af7d99.jpg",
+   "thumb": "media/thumbs/b19314af7d99.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
+  },
+  "0fbc60e5f6d3": {
+   "id": "0fbc60e5f6d3",
+   "takenAt": "2026-11-14T21:33:26",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261114213326_1.jpg",
+   "src": "media/photos/0fbc60e5f6d3.jpg",
+   "thumb": "media/thumbs/0fbc60e5f6d3.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
+  },
+  "39c4e38048e2": {
+   "id": "39c4e38048e2",
+   "takenAt": "2026-11-14T21:55:09",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261114215509_1.jpg",
+   "src": "media/photos/39c4e38048e2.jpg",
+   "thumb": "media/thumbs/39c4e38048e2.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
+  },
+  "3fb53f34b0bc": {
+   "id": "3fb53f34b0bc",
+   "takenAt": "2026-11-14T22:25:35",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261114222535_1.jpg",
+   "src": "media/photos/3fb53f34b0bc.jpg",
+   "thumb": "media/thumbs/3fb53f34b0bc.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
+  },
+  "63c142895da4": {
+   "id": "63c142895da4",
+   "takenAt": "2026-11-14T22:39:02",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261114223902_1.jpg",
+   "src": "media/photos/63c142895da4.jpg",
+   "thumb": "media/thumbs/63c142895da4.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
+  },
+  "dee3da813c65": {
+   "id": "dee3da813c65",
+   "takenAt": "2026-11-14T22:46:04",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261114224604_1.jpg",
+   "src": "media/photos/dee3da813c65.jpg",
+   "thumb": "media/thumbs/dee3da813c65.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
   }
  },
  "unplacedPhotos": [
@@ -21103,7 +21361,7 @@
   "softestLanding": -87,
   "averageLanding": -409,
   "longestFlight": "nf-fl-89",
-  "photos": 86,
+  "photos": 92,
   "first": "2026-08-12T20:59:29",
   "last": "2026-11-14T03:51:31"
  },
@@ -22160,6 +22418,7 @@
    "place": "Constantine",
    "lang": "en",
    "tone": "neutral",
+   "site": "http://www.daily-sun.com",
    "airport": "DABC"
   },
   "9682a04bfd8d": {
@@ -22212,6 +22471,7 @@
    "place": "Constantine",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.aps.dz",
    "airport": "DABC"
   },
   "13bb8a8c3bc5": {
@@ -22290,6 +22550,7 @@
    "place": "Balikesir",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://www.dha.com.tr",
    "airport": "LTFD"
   },
   "427e8f1bb3ff": {
@@ -22485,6 +22746,7 @@
    "place": "Ağrı",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://www.benguturk.com",
    "airport": "LTCO"
   },
   "5faf3670abd2": {
@@ -22550,6 +22812,7 @@
    "place": "Bingöl",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://www.bingolsurmanset.com",
    "airport": "LTCU"
   },
   "15fdb90adc6c": {
@@ -22576,6 +22839,7 @@
    "place": "Gaziantep",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://www.sofascore.com",
    "airport": "LTAJ"
   },
   "047dddf13f6f": {
@@ -22589,6 +22853,7 @@
    "place": "Northern Cyprus",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://news.sky.com",
    "airport": "LCEN"
   },
   "c173cdaa76fb": {
@@ -22641,6 +22906,7 @@
    "place": "Northern Cyprus",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.aljazeera.com",
    "airport": "LCEN"
   },
   "296c420a727d": {
@@ -22654,6 +22920,7 @@
    "place": "Northern Cyprus",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.aa.com.tr",
    "airport": "LCEN"
   },
   "2fd2aa5bb244": {
@@ -22662,11 +22929,12 @@
    "summary": "",
    "image": null,
    "source": "Gençlik ve Spor Bakanlığı",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOODVDV1A3ZE9NaUlydi1VX1ZfeTMzM1otOFJYZXpPeWpUcnUyUlZfcHBDSEhQdHBiRzNXbmkxZVNFVXdMekM0cXBreXdkU09uWmRBUktOOFFmcVJxTi1zc3Y3NlU3YUVrZXYtbW95OTRhdWdJbUtaVzdRd2lwc3I1N1ViZElPTWVtQ18ycWlGQl8xZW1Ybm40aHkybF94YTVyM2tJXw?oc=5",
+   "url": "https://gsb.gov.tr/tr/haber-detay/302739-bakan-bak-kutahyada-30-agustos-zafer-bayrami-torenine-katildi",
    "date": "2026-08-31",
    "place": "Kütahya",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://gsb.gov.tr",
    "airport": "LTBZ"
   },
   "ad0bd15e6575": {
@@ -22680,6 +22948,7 @@
    "place": "Kütahya",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://www.sabah.com.tr",
    "airport": "LTBZ"
   },
   "6f9f4802cb12": {
@@ -22693,6 +22962,7 @@
    "place": "Kütahya",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://www.insaatdunyasi.com.tr",
    "airport": "LTBZ"
   },
   "2871ff196ef2": {
@@ -22706,6 +22976,7 @@
    "place": "Kütahya",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://genclikhizmetleri.gov.tr",
    "airport": "LTBZ"
   },
   "130a68a87808": {
@@ -22719,6 +22990,7 @@
    "place": "Kütahya",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://www.kutahyaninsesi.com",
    "airport": "LTBZ"
   },
   "eb838976ea19": {
@@ -22732,6 +23004,7 @@
    "place": "Kütahya",
    "lang": "tr",
    "tone": "neutral",
+   "site": "https://www.kutahyaninsesi.com",
    "airport": "LTBZ"
   },
   "e56ad752f258": {
@@ -23203,6 +23476,7 @@
    "place": "Kristiansand",
    "lang": "no",
    "tone": "neutral",
+   "site": "",
    "airport": "ENCN"
   },
   "5744336ad969": {
@@ -23216,6 +23490,7 @@
    "place": "Kristiansand",
    "lang": "no",
    "tone": "neutral",
+   "site": "https://snl.no",
    "airport": "ENCN"
   },
   "4d117aa42bca": {
@@ -23229,6 +23504,7 @@
    "place": "Kristiansand",
    "lang": "no",
    "tone": "neutral",
+   "site": "https://www.krs.no",
    "airport": "ENCN"
   },
   "539bc4d65828": {
@@ -23242,6 +23518,7 @@
    "place": "Helsinki",
    "lang": "fi",
    "tone": "neutral",
+   "site": "https://www.hs.fi",
    "airport": "EFHK"
   },
   "57f68a3abcb3": {
@@ -23255,6 +23532,7 @@
    "place": "Helsinki",
    "lang": "fi",
    "tone": "neutral",
+   "site": "https://www.sttinfo.fi",
    "airport": "EFHK"
   },
   "0fc8adc46dcf": {
@@ -23268,98 +23546,398 @@
    "place": "Helsinki",
    "lang": "fi",
    "tone": "neutral",
+   "site": "https://www.greenpeace.org",
    "airport": "EFHK"
   },
-  "43f63bff756f": {
-   "id": "43f63bff756f",
-   "title": "Общественница заподозрила бывших чиновников в уводе собственности » Интернет-издание",
-   "summary": "",
+  "79e5934a8734": {
+   "id": "79e5934a8734",
+   "title": "Как проходит заседание регионального оргкомитета премии « Человек труда » в Пскове , читайте на ПАИ",
+   "summary": "Заседание регионального организационного комитета национальной премии «Человек труда» проходит в Пскове сегодня, 4 сентября. Мероприятие организовано в рамках форума и конференции реготделения партии «Единая Россия». Подробнее – на сайте ПАИ.",
+   "image": "media/news/news-79e5934a8734.jpg",
+   "source": "informpskov.ru",
+   "url": "https://informpskov.ru/news/516816.html",
+   "date": "2026-09-04",
+   "place": "Ivanovo",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "UUBI"
+  },
+  "5f6e61b2be05": {
+   "id": "5f6e61b2be05",
+   "title": "Названо самое дешевое направление для отдыха среди городов Золотого кольца",
+   "summary": "Аналитики геосервиса 2ГИС и сервиса бронирования отелей «Отелло» сравнили направления Золотого кольца России по средней стоимости одного дня путешествия. Результаты их исследования оказались в распоряжении «Ленты.ру»",
+   "image": "media/news/news-5f6e61b2be05.jpg",
+   "source": "lenta.ru",
+   "url": "https://lenta.ru/news/2026/09/04/nazvano-samoe-deshevoe-napravlenie-dlya-otdyha-sredi-gorodov-zolotogo-koltsa/",
+   "date": "2026-09-04",
+   "place": "Ivanovo",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "UUBI"
+  },
+  "de65c8c3df65": {
+   "id": "de65c8c3df65",
+   "title": "Верховный суд оставил в силе приговор экс - замминистра обороны Иванову",
+   "summary": "Последние новости на сайте Вести: Верховный суд России оставил без изменения первый приговор бывшему первому заместителю министра обороны Тимуру Иванову, осужденному на 13 лет колонии.. Актуальные события России и мира на сайте Вести.",
+   "image": "media/news/news-de65c8c3df65.jpg",
+   "source": "vesti.ru",
+   "url": "https://www.vesti.ru/ns/verkhovnyj-sud-ostavil-v-sile-prigovor-ehks-zamministra-oborony-ivanovu",
+   "date": "2026-09-03",
+   "place": "Ivanovo",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "UUBI"
+  },
+  "45f872618802": {
+   "id": "45f872618802",
+   "title": "Свет вернули тысячам жителей Ивановской области",
+   "summary": "Электроснабжение восстановили в населенных пунктах Ивановской области после прохождения грозового фронта. Из-за непогоды без электричества ранее оставались более 3,3 тысячи человек.",
+   "image": "media/news/news-45f872618802.jpg",
+   "source": "mk.ru",
+   "url": "https://www.mk.ru/incident/2026/09/05/svet-vernuli-tysyacham-zhiteley-ivanovskoy-oblasti.html",
+   "date": "2026-09-05",
+   "place": "Ivanovo",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "UUBI"
+  },
+  "98c765b53b90": {
+   "id": "98c765b53b90",
+   "title": "В Калининградской области установили бюст Николая II",
+   "summary": "Бюсты императора Николая II и его супруги императрицы Александры Федоровны установили на территории историко-краеведческого музея в городе Гусеве под... РИА Новости, 06.09.2026",
    "image": null,
-   "source": "Известия.Саратов",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOS2lIMmJIeWRlQ1V4WFN2OXNlYlhBa0M2X2g4TEdHT3MyNUVZSlZkU3BjUE1ZS3pySHJ5bGRKRzgyZVU2VGVoclduUGZ0NGUzcDZpSWhTMF9PSzFJUGoxTVloTlRJMDF2cEk1LVV5ekRLR3hFZTFWRXJsbzkyVkllWmtYODdaaWRXWFBJUGNYOGU3b0RtdDBxMWFES250dDlKSml3ZTIzM2wwQi1B?oc=5",
+   "source": "ria.ru",
+   "url": "https://ria.ru/20260906/rossiya-2115874317.html",
+   "date": "2026-09-06",
+   "place": "Ivanovo",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "UUBI"
+  },
+  "97016946af01": {
+   "id": "97016946af01",
+   "title": "В Раде назвали штрафы за русский язык попыткой отвлечь от темы коррупции",
+   "summary": "Угрозы украинского языкового омбудсмена Елены Ивановской о штрафах для родителей школьников за общение в чатах с учителями на русском призваны отвлечь... РИА Новости, 04.09.2026",
+   "image": null,
+   "source": "ria.ru",
+   "url": "https://ria.ru/20260904/rada-2115392333.html",
+   "date": "2026-09-04",
+   "place": "Ivanovo",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "UUBI"
+  },
+  "fe1ca7222870": {
+   "id": "fe1ca7222870",
+   "title": "В Астрахани прошла церемония передачи капсулы с обращением ветерана",
+   "summary": "В Астрахани, у мемориала Вечного огня, расположенного в Братском саду, прошла значимая церемония, посвященная Всероссийской военно-патриотической акции «Послание Победителей: Связь поколений 1945–2045». На мероприятии внучка астраханского ветерана, Анна Басова, передала капсулу с обращением своего",
+   "image": "media/news/news-fe1ca7222870.jpg",
+   "source": "monavista.ru",
+   "url": "https://monavista.ru/3/4883065-v-astrahani-proshla-ceremoniya-peredachi-kapsuly-s-obrascheniem-veterana.html",
+   "date": "2026-09-04",
+   "place": "Astrakhan",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "URWA"
+  },
+  "2a1247ec79c9": {
+   "id": "2a1247ec79c9",
+   "title": "Скончался астраханский композитор Александр Рындин",
+   "summary": "В Астраханской области пришла печальная новость о кончине известного композитора Александра Рындина. Министерство культуры региона выразило свои искренние соболезнования родным, близким и коллегам музыканта. Александр Рындин появился на свет 16 февраля 1962 года в Астрахани. Его жизненный и",
+   "image": "media/news/news-2a1247ec79c9.jpg",
+   "source": "monavista.ru",
+   "url": "https://monavista.ru/3/4883252-skonchalsya-astrahanskiy-kompozitor-aleksandr-ryndin.html",
    "date": "2026-09-07",
    "place": "Astrakhan",
    "lang": "ru",
    "tone": "neutral",
    "airport": "URWA"
   },
-  "a2ba7cfcfe0f": {
-   "id": "a2ba7cfcfe0f",
-   "title": "US envoy Sergio Gor meets Manipur CM in Imphal on two-day visit",
-   "summary": "",
-   "image": null,
-   "source": "Awaz The Voice",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPcjFxMEV4b3RqQ0JaMEZkWjNTY1k1QWdsTTl3dlp4THhVejFaQ0pFcHozamYyRi14RElrMzMzRjlVSlY0R3ZaSHFTVXY0M2F2ZC1nbzJlaU1qRjVQNFc4Wkl3aHI4OXk1dW9sOTVJU1haWUtoTGxiZ0Z1X0p0emR5SnVsY2o1cWdYZlJVUFlVd1c2UHdrenF3ellPVXRoUDMtSjBjeHRLcmtMMzc5OWFtRW1wRQ?oc=5",
-   "date": "2026-09-11",
-   "place": "Imphal",
-   "lang": "en",
+  "41a6556bc208": {
+   "id": "41a6556bc208",
+   "title": "Молодых астраханцев предупредили , что  фотография по заказу  грозит тюрьмой",
+   "summary": "С виду «лёгкая» подработка в виде съемки зданий таит в себе серьёзную угрозу, вплоть до возбуждения уголовного дела и поломанной судьбы.",
+   "image": "media/news/news-41a6556bc208.jpg",
+   "source": "u-f.ru",
+   "url": "https://u-f.ru/news/society/u9/2026/09/05/424483",
+   "date": "2026-09-05",
+   "place": "Astrakhan",
+   "lang": "ru",
    "tone": "neutral",
-   "airport": "VEIM"
+   "airport": "URWA"
   },
-  "583940f1b1fe": {
-   "id": "583940f1b1fe",
-   "title": "Manipuri musician Chongtham Vikram Singh cremated in Imphal",
+  "cb8496c93a96": {
+   "id": "cb8496c93a96",
+   "title": "Специалистам астраханского аэропорта губернатор вручил награды в честь 90 - летия предприятия",
+   "summary": "Почетные грамоты и благодарственные письма специалистам, внесшим значимый вклад в развитие астраханского аэропорта, вручил губернатор Игорь Бабушкин. Он отметил, что почти за вековую историю астраханский аэропорт стал современным транспортным узлом, который имеет особое значение для экономики региона и всей России.",
+   "image": null,
+   "source": "nakanune.ru",
+   "url": "https://www.nakanune.ru/news/2026/9/5/22886077/",
+   "date": "2026-09-05",
+   "place": "Astrakhan",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "URWA"
+  },
+  "06b7d4111df0": {
+   "id": "06b7d4111df0",
+   "title": "Вопросы научно - образовательного сотрудничества обсуждались на встрече Игоря Мартынова с ректором Санкт - Петербургского политехнического университета",
+   "summary": "Председатель Думы Астраханской области Игорь Мартынов провел в региональном парламенте рабочую встречу с ректором Санкт-Петербургского политехнического университета Петра Великого, вице-президентом РАН, председателем Санкт-Петербургского отделения РАН, академиком РАН Андреем Рудским.",
+   "image": null,
+   "source": "nakanune.ru",
+   "url": "https://www.nakanune.ru/news/2026/9/4/22885941/",
+   "date": "2026-09-04",
+   "place": "Astrakhan",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "URWA"
+  },
+  "0c57096e95f8": {
+   "id": "0c57096e95f8",
+   "title": "За последние 4 года в Астраханской области отремонтировали более 30 мостов",
+   "summary": "&quot;В Красноярском округе после капитального ремонта введён в эксплуатацию мост через реку Корсака&quot;, - сообщил на своих страницах в соцсетях губернатор Астраханской области Игорь Бабушкин.",
+   "image": null,
+   "source": "nakanune.ru",
+   "url": "https://www.nakanune.ru/news/2026/9/5/22886079/",
+   "date": "2026-09-05",
+   "place": "Astrakhan",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "URWA"
+  },
+  "fec0d7e6fb37": {
+   "id": "fec0d7e6fb37",
+   "title": "Следствие арестовало акции СЭГЗ на 6 млрд руб . в деле о мошенничестве",
+   "summary": "Подробнее на сайте",
+   "image": "media/news/news-fec0d7e6fb37.jpg",
+   "source": "kommersant.ru",
+   "url": "https://www.kommersant.ru/doc/8937546",
+   "date": "2026-09-06",
+   "place": "Izhevsk",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "USII"
+  },
+  "cad1e2005894": {
+   "id": "cad1e2005894",
+   "title": "СВО новости : взят укрепрайон ВСУ на ореховском направлении , БПЛА атаковали Пермь , ВС РФ ударили по порту « Измаил » - БлокнотРУ - Новости СВО . Новости СВО на сегодня . Удары по России . СВО новости . БПЛА сегодня . Удары по России сегодня . Атака...",
+   "summary": "Главные новости СВО на утро 7 сентября 2026 года.",
+   "image": "media/news/news-cad1e2005894.jpg",
+   "source": "bloknot.ru",
+   "url": "https://bloknot.ru/obshhestvo/novosti-svo-bpla-atakovali-perm-vs-rf-udarili-po-portu-izmail-vzyat-ukreprajon-vsu-na-orehovskom-napravlenii-1537208.html",
+   "date": "2026-09-07",
+   "place": "Izhevsk",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "USII"
+  },
+  "17cf2926dde2": {
+   "id": "17cf2926dde2",
+   "title": "Дешевле « Гранты », дороже иномарки : как новый утильсбор обвалил и взвинтил цены на Kia KX1",
+   "summary": "Минимальная цена на новый кроссовер Kia KX1 из Китая оказалась ниже топ-версии Lada Granta, тогда как у крупных дилеров тот же автомобиль стоит почти 2,7 млн рублей. Причина колоссального разрыва — новый порядок расчета утилизационного сбора, который с 1 декабря 2025 года жестко привязан к мощности двигателя.",
+   "image": "media/news/news-17cf2926dde2.jpg",
+   "source": "runews24.ru",
+   "url": "https://runews24.ru/auto/07/09/2026/deshevle-grantyi-dorozhe-inomarki-kak-novyij-utilsbor-obvalil-i-vzvintil-czenyi-na-kia-kx1",
+   "date": "2026-09-07",
+   "place": "Izhevsk",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "USII"
+  },
+  "285a6a9ba7ea": {
+   "id": "285a6a9ba7ea",
+   "title": "Как живет россиянка с редким заболеванием мойя - мойя людей с таким диагнозом в мире всего пять - 5 сентября 2026",
+   "summary": "Болезнь опасная и неизлечимая",
+   "image": null,
+   "source": "161.ru",
+   "url": "https://161.ru/text/health/2026/09/05/76624317/",
+   "date": "2026-09-05",
+   "place": "Izhevsk",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "USII"
+  },
+  "bb4047796df1": {
+   "id": "bb4047796df1",
+   "title": "Карта боевых действий в зоне СВО на 05 . 09 . 2026 : Бойня под Харьковом , боевики ВСУ зажаты в « котле »",
    "summary": "",
    "image": null,
-   "source": "The Times of India",
-   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOOTk2Y05JbHl2ZkRGbGtrNDNvdmhWbklJVklmaHExWDRGaFBwR3FaWmFQN3FubDhJTktiamJkOW5MX2dBRFRIS3NScDN2emdpN2lzYUctVU16bHdyZi1XNVoxQmZfdG1pbzM4cFktaC1BRXcxSy1PajZleVJOUmJaSHdqbjRLT3dLaTN6eTlldjJnaVN1ZlJiZTRtVjVTVlR2alhFaVVoSUM5MHNJcHBxNGNyOXppLWhVdFJ0Z2UyNkZMeGJvaTRpLVNUQmMxOE5z0gHWAUFVX3lxTE9xTVlHdVZOZ1daZ3ZSa2NMR01xb1gxTWMyR1JoMGlsM1lyVkhDSXRqRXVsaXVPVUxUTjhwUXB4MEVuRzRvNGxmT2ItSDhfTUNreEk4SnE5MkU5OTRHeEVRUHhoczBwSHUwUXFPRzhheXBPSU9xTUdUVzl1U3kzRHhhaEx0bVNNQ0RIQzkyVUozc194N1QyMGltQjdtQlJqOWhpdkxwcTNYSUJCdmxYWWZpRU9GWS14SmZwZ2VDU2VzcWtXMnBER25naTJSR1JtX0xudUo1a1E?oc=5",
+   "source": "pronedra.ru",
+   "url": "https://pronedra.ru/kolczo-szhimaetsya-pod-harkovom-vsu-teryayut-poziczii-i-puti-othoda-karta-svo-na-5-sentyabrya-2026-goda-i-analiz-sobytij-v-mire-830701.html",
+   "date": "2026-09-05",
+   "place": "Izhevsk",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "USII"
+  },
+  "ad9682d89272": {
+   "id": "ad9682d89272",
+   "title": "Где вкусно поесть . Гид по самым интересным гастрофестивалям сентября",
+   "summary": "Осень — время гастрономических приключений, период сбора урожая и неспешных дегустаций, когда от процесса не отвлекают море, солнце и пляжи. Во многих городах... РИА Новости, 29.09.2026",
+   "image": null,
+   "source": "ria.ru",
+   "url": "https://ria.ru/20260907/gastrofestivali-2115567023.html",
+   "date": "2026-09-07",
+   "place": "Izhevsk",
+   "lang": "ru",
+   "tone": "neutral",
+   "airport": "USII"
+  },
+  "3476ad72cf2c": {
+   "id": "3476ad72cf2c",
+   "title": "Manipuri musician Chongtham Vikram Singh cremated in Imphal | Guwahati News",
+   "summary": "Manipuri musician Chongtham Vikram Singh cremated in Imphal after body flown from Delhi; family, fans and MP seek justice and action against racism.",
+   "image": "media/news/news-3476ad72cf2c.jpg",
+   "source": "timesofindia.indiatimes.com",
+   "url": "https://timesofindia.indiatimes.com/city/guwahati/manipuri-musician-chongtham-vikram-singh-cremated-in-imphal/articleshow/133975528.cms",
    "date": "2026-09-09",
    "place": "Imphal",
    "lang": "en",
    "tone": "neutral",
    "airport": "VEIM"
   },
-  "31485502fc10": {
-   "id": "31485502fc10",
-   "title": "Imphal Ring Road project to gain momentum as land acquisition nears completion: Manipur CM",
-   "summary": "",
-   "image": null,
-   "source": "India Today NE",
-   "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPMm9sSFhWbU53TlNoMWdncW1aYjZjUjE5aEFuRzhXZEo0dnJrTEhyb3AwWTdhMElZU3FNLXQ2c1Eya2F3RmtNNFloMTJ6OTlyWU1Xenc4QlhtMUVVSjY1dWREczNhT0dKRU9EeER6X0Nzc2VHVXF3RzltbTBWd25GM1hkNk1YUzZzSGl5Y1pVY2tQSWNrMEhnWmVIZlJEN0xMX1pDZlhSaDhrLU5rT0VzUXQ1Q0o4dk9DenNPd3haWUhVazNLRXdTUzRmS19uQkd4Zzl3NXNsZjF1QzBjaEROSGpQdGTSAeoBQVVfeXFMT0FyUXZobERSRmV5YlJGdHRnTEo3d1d5UC0wMEhDMTdEMk95YUUyVUxjT0Q5MXBhS0VzMklNcXRiQUZLZ2Vid2VHWFhaQXlfSWxlU0tzdVdJTm9DbUc5S1Z3a085aE5rLW95MWF5YUhLd3JwdWQ1d3l3WFlmeHh5RkZsTzR4MXdlVmJZd0Z2STVicWxueGJFcnl1YTNwUE1TX0l0TjBMbkktNS1tcVlLY3JqaTVUZ29YdUNGamR5Y29IdVl3aDlJejh4UzIzd04tN2NWME5Jazl0ZE5jbG5UdC1mVEZQenNERWJR?oc=5",
+  "682ab843283f": {
+   "id": "682ab843283f",
+   "title": "দিল্লিতে মণিপুরের সংগীতশিল্পীকে খুন , কেন্দ্রকে নিশানা রাহুল গান্ধীর",
+   "summary": "দিল্লিতে মণিপুরের সংগীতশিল্পী চোংথাম বিক্রম সিংকে খুনের অভিযোগ। রাহুল গান্ধী নিরাপত্তার প্রশ্ন তুলেছেন। বিস্তারিত পড়ুন।",
+   "image": "media/news/news-682ab843283f.jpg",
+   "source": "bartamanpatrika.com",
+   "url": "https://bartamanpatrika.com/news/rahul-gandhi-targets-centre-over-manipur-musicians-murder-in-delhi",
+   "date": "2026-09-09",
+   "place": "Imphal",
+   "lang": "be",
+   "tone": "neutral",
+   "airport": "VEIM"
+  },
+  "53c7e505d154": {
+   "id": "53c7e505d154",
+   "title": "Manipur CM Yumnam Khemchand Singh visits home of slain musician Chongtham Vikram",
+   "summary": "Chongtham Vikram, a respected musician and music teacher from Manipur, died following a brutal assault at his residence in Kilokri, New Delhi. He is survived by his wife and son.",
+   "image": "media/news/news-53c7e505d154.jpg",
+   "source": "economictimes.indiatimes.com",
+   "url": "https://economictimes.indiatimes.com/news/india/manipur-cm-yumnam-khemchand-singh-visits-home-of-slain-musician-chongtham-vikram/articleshow/134009703.cms",
+   "date": "2026-09-10",
+   "place": "Imphal",
+   "lang": "en",
+   "tone": "neutral",
+   "airport": "VEIM"
+  },
+  "bd6cbc5143df": {
+   "id": "bd6cbc5143df",
+   "title": "Amid global turmoil , India maintained momentum of its economic growth , says Amit Shah",
+   "summary": "India maintained economic growth momentum despite global geopolitical turmoil.  Strategic partnerships were built in key areas like defense and energy.  Nine free trade agreements will be concluded by the year 2026.  This engagement contributed to a robust GDP growth rate of 7.8 percent.  The nation is pursuing further trade arrangements with many countries.",
+   "image": "media/news/news-bd6cbc5143df.jpg",
+   "source": "economictimes.indiatimes.com",
+   "url": "https://economictimes.indiatimes.com/news/india/amid-global-turmoil-india-maintained-momentum-of-its-economic-growth-says-amit-shah/articleshow/133879486.cms",
    "date": "2026-09-07",
    "place": "Imphal",
    "lang": "en",
    "tone": "neutral",
    "airport": "VEIM"
   },
-  "469b445717f0": {
-   "id": "469b445717f0",
-   "title": "US Ambassador Sergio Gor Arrives In Imphal As BRICS Summit Brings Global Leaders To India",
-   "summary": "",
+  "128e640a5368": {
+   "id": "128e640a5368",
+   "title": "We deserve to be treated with the same dignity ...: Chongtham Vikram Singh kin demand justice as musician mortal remains arrive in Impha",
+   "summary": "The mortal remains of renowned Manipuri guitarist and music teacher Chongtham Vikram Singh arrived at Imphal International Airport on Wednesday, where grieving family members, friends, fellow musicians and local residents gathered to receive his body and demand justice over his death following an alleged assault in New Delhi.",
    "image": null,
-   "source": "News18",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNSkNIb0VWVFpGclZsN3cza0c4Tng0U091V2R3QU94b2J1TGtuTDd1Tms2U0ZId2k1WDM4dUM0ZERLWVRuSEF3TzBfMmY4YVdiVVhyT1hnbWgyNW1mMTk5SUNNSEhSV3FiMzE5VDZmWmpfUGlWcGpYaGJEY2w1QzFtZERoTjRWTHVmbWwzbjFmZFFKc204MzJEX0g3eEZRQlROX2VjeWhhV1VTODBvMU5vSDVLNWk1aGVBdWJfV2hTRVQydVFZXzNPZ1JlVHfSAdIBQVVfeXFMTVJFRkIyMmVMbHlhZzF2dm1sNWVwcU9DMVBndFpHckNsaTBXbG02U0NTWGhuQ1hnbGFyXy1fQ3A1LTJVcWFwXzFablpIUkJPWEZncFNpM25MNU1PVE9PTkRlVVFvY1Z3VWRvaTVmeXBKNlFCa2NreDZfb2hhdUpZamZCaEtBNl9SZ2l2RWVSQmZ5R2F1S2tITFplOGVOalk2UDZYa2JtQjNoRXZ1Y2NRRkhzTThSUzU4eEdMY0syQlhZemJYeWVOa0pJamNmUTNpd1N3?oc=5",
-   "date": "2026-09-11",
+   "source": "aninews.in",
+   "url": "https://aninews.in/news/entertainment/out-of-box/we-deserve-to-be-treated-with-the-same-dignity-chongtham-vikram-singh8217s-kin-demand-justice-as-musicians-mortal-remains-arrive-in-impha20260909172435/",
+   "date": "2026-09-09",
    "place": "Imphal",
    "lang": "en",
    "tone": "neutral",
    "airport": "VEIM"
   },
-  "0dfc9979c4db": {
-   "id": "0dfc9979c4db",
-   "title": "Gor meets Manipur CM & Governor, discusses tourism, economic ties",
-   "summary": "",
-   "image": null,
-   "source": "The Indian Express",
-   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOd3M3RGxESDUyY21yOEFfcE94SXVNZ0E0czlDcWFOSkZ5Q2x1WWd3S3hIa3BmcjJpRWVIaHZ0bkwtcXFtMkhGMm51ZGUxT0xfUEdmOVZFckVzZm9qZzZqOTNfcXJPSXlSRlZGWDZJMjlMMzljZGVUM2xybEtVbmlfYlNVYnVFNzFxSjF0b1VGcjNjMm03d2hsV0hlejJ5aTBqSEs0cDRZR21XTUXSAbIBQVVfeXFMTXpLdllzZmVlUWdNalB3dUstVm5OaXpQX190TmdDSWJuRDFJc1NoSE5jdnlFaDUtOEdMUUE1aHhVb1l0ZURiLWk1RFlwaUpINEE2YnJKSWJCUVEteEZnenNuZlRYNmVHNFRRYnJGTVhzclFXeWxIS2dScTFpX3I4UFo4UXVFRWpxMTlUNWFBSU1tM2ZCSFpndU5DN3dISnJkZHpxX0hlMTVkdHJnTE8xak5Jdw?oc=5",
-   "date": "2026-09-11",
-   "place": "Imphal",
-   "lang": "en",
-   "tone": "neutral",
-   "airport": "VEIM"
-  },
-  "2a571e38b2ba": {
-   "id": "2a571e38b2ba",
-   "title": "CRPF convoy attacked on NH-2 in Manipur’s Imphal West, no casualties | India News",
-   "summary": "",
-   "image": null,
-   "source": "Hindustan Times",
-   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ2gwbzBLVzdzSVljOGMtdEhXNU5VQlc1RkgzUEVyNkRYZXpPTWJUeUN2MEhFTGtad3lvcVJCQU1vVEo2cWlKT2pYbXhkVnBtajdhN0U1Q3otOHVONWo5eTJGY0dJNG9zRmNOdmZLSlo2b19wQUlWcWZ3cXhpR3pseXRzRzRNMkJ3SDNTc3JjRTZhVHJqTU9fNTBkWnRQRktqV2p0RnhPUnVBajB5Y3g2OHlDcXhKbHZaMDM3emFhZ0FfZThEN29ON2J30gHPAUFVX3lxTFBySXNLU0pOczluQ2N5bU9ta1lIRVppdTBqdXMwcURMV1JlYVR6dXpPY2VBbXl0T3BUTjFIeXZZRWgyRGNYWXJNU0gzaUhIX3h4ZGhQU2ZDZUJZa1ljcTUwSDdENHMyQlJ2QTJnQVN0MmUyWXZtR3NpdHV2TkZUQ0RMcS1rZ2E0VFlYQzFqQmtHTFBrYXBZaVUtRjFtVFN2alNsTlAzR1BjUmRXS2wtREpvanJQYzdzUFNicFU5YXJNRWdMd01SVlI3Znp0N3UzZw?oc=5",
+  "27ace81b0d4f": {
+   "id": "27ace81b0d4f",
+   "title": "Manipur Musician Murder :  Treat Northeast people as Indian : Brother of Manipur musician beaten to death in Delhi | Imphal News",
+   "summary": "IMPHAL: The brother of Manipuri guitarist and music teacher Chongtham Vikram Singh urged the government to ensure that people from the Northeast are “properly treated as Indians” in the national capital.",
+   "image": "media/news/news-27ace81b0d4f.jpg",
+   "source": "timesofindia.indiatimes.com",
+   "url": "https://timesofindia.indiatimes.com/city/imphal/treat-northeast-people-as-indians-brother-of-manipur-musician-beaten-to-death-in-delhi/articleshow/134000223.cms",
    "date": "2026-09-10",
    "place": "Imphal",
    "lang": "en",
    "tone": "sad",
    "airport": "VEIM"
+  },
+  "ae9d86eadb41": {
+   "id": "ae9d86eadb41",
+   "title": "เตือนฝนตกหนัก 10 - 13 ก . ย . เฝ้าระวังน้ำท่วมฉับพลัน น้ำท่วมขัง",
+   "summary": "กรมอุตุนิยมวิทยาเตือน 8–13 ก.ย. ฝนหนักถึงหนักมากหลายพื้นที่ กทม.–ปริมณฑลเฝ้าระวัง นำท่วมขัง ต่างจัหหวัดระวังน้ำท่วมฉับพลัน",
+   "image": "media/news/news-ae9d86eadb41.jpg",
+   "source": "posttoday.com",
+   "url": "https://www.posttoday.com/general-news/748372",
+   "date": "2026-09-09",
+   "place": "Roi Et",
+   "lang": "th",
+   "tone": "neutral",
+   "airport": "VTUV"
+  },
+  "02ca5dbf4fa2": {
+   "id": "02ca5dbf4fa2",
+   "title": "สภาพอากาศวันนี้  เหนือ - อีสาน - กทม . มีฝน 70 % ตกหนักบางแห่ง",
+   "summary": "กรมอุตุฯ เตือนฝนตกหนักถึงหนักมาก ระวังน้ำท่วมฉับพลันและน้ำป่าไหลหลาก โดยภาคเหนือ-อีสาน รวมถึงกรุงเทพฯ-ปริมณฑล มีฝนฟ้าคะนอง 70% ของพื้นที่",
+   "image": "media/news/news-02ca5dbf4fa2.jpg",
+   "source": "thaipbs.or.th",
+   "url": "https://www.thaipbs.or.th/news/content/557641",
+   "date": "2026-09-09",
+   "place": "Roi Et",
+   "lang": "th",
+   "tone": "neutral",
+   "airport": "VTUV"
+  },
+  "7336aaa0be04": {
+   "id": "7336aaa0be04",
+   "title": "อนุรักษ์  แจงซื้อเสื้อเกราะแพงกว่า กอ . รมน . เพราะใช้นวัตกรรมเหนือกว่า",
+   "summary": "",
+   "image": null,
+   "source": "dailynews.co.th",
+   "url": "https://www.dailynews.co.th/news/6176286/",
+   "date": "2026-09-09",
+   "place": "Roi Et",
+   "lang": "th",
+   "tone": "neutral",
+   "airport": "VTUV"
+  },
+  "5671c61932a1": {
+   "id": "5671c61932a1",
+   "title": "มารีย์วิทยา  นครราชสีมา กวาด 4 รางวัล คว้าแชมป์วงโยธวาทิตชิงถ้วยพระราชทานฯ ครั้งแรกในกาฬสินธุ์",
+   "summary": "",
+   "image": null,
+   "source": "dailynews.co.th",
+   "url": "https://www.dailynews.co.th/news/6181745/",
+   "date": "2026-09-11",
+   "place": "Roi Et",
+   "lang": "th",
+   "tone": "neutral",
+   "airport": "VTUV"
+  },
+  "f00592c3e737": {
+   "id": "f00592c3e737",
+   "title": "อุตุฯเตือน 8 - 13 ก . ย . 69 ฝนตกหนักมากหลายพื้นที่ โดยจะเริ่มจากภาคอีสานก่อน",
+   "summary": "",
+   "image": null,
+   "source": "dailynews.co.th",
+   "url": "https://www.dailynews.co.th/news/6171053/",
+   "date": "2026-09-08",
+   "place": "Roi Et",
+   "lang": "th",
+   "tone": "neutral",
+   "airport": "VTUV"
+  },
+  "4c0c2b1bb650": {
+   "id": "4c0c2b1bb650",
+   "title": "เปิดรายชื่อ 32 จังหวัด  เหนือ - อีสาน  มีฝนตกหนักมากร้อยละ 70",
+   "summary": "",
+   "image": null,
+   "source": "dailynews.co.th",
+   "url": "https://www.dailynews.co.th/news/6174251/",
+   "date": "2026-09-09",
+   "place": "Roi Et",
+   "lang": "th",
+   "tone": "neutral",
+   "airport": "VTUV"
   },
   "b6003d51f45a": {
    "id": "b6003d51f45a",
@@ -23372,7 +23950,112 @@
    "place": "Nakhon Si Thammarat",
    "lang": "th",
    "tone": "neutral",
+   "site": "https://www.facebook.com",
    "airport": "VTSF"
+  },
+  "9a5d60397659": {
+   "id": "9a5d60397659",
+   "title": "世界级嗅觉宝库 ？ 中法专家解密张家界深处的  亿万家产  |文旅|旅游|玻璃桥|香文化",
+   "summary": "世界级嗅觉宝库？中法专家解密张家界深处的“亿万家产”,文旅,旅游,玻璃桥,香文化,中法专家,张家界大峡谷",
+   "image": null,
+   "source": "163.com",
+   "url": "https://www.163.com/dy/article/L6IB5TS20514R9OJ.html",
+   "date": "2026-09-11",
+   "place": "Zhangjiajie",
+   "lang": "ch",
+   "tone": "neutral",
+   "airport": "ZGDY"
+  },
+  "fc8428cba9cd": {
+   "id": "fc8428cba9cd",
+   "title": "智能时代 网安护航 张家界市2026年国家网络安全宣传周正式启动",
+   "summary": "",
+   "image": null,
+   "source": "baijiahao.baidu.com",
+   "url": "https://baijiahao.baidu.com/s?id=1876121381327849043",
+   "date": "2026-09-12",
+   "place": "Zhangjiajie",
+   "lang": "ch",
+   "tone": "neutral",
+   "airport": "ZGDY"
+  },
+  "fa4029785e8a": {
+   "id": "fa4029785e8a",
+   "title": "中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传周活动",
+   "summary": "",
+   "image": null,
+   "source": "baijiahao.baidu.com",
+   "url": "https://baijiahao.baidu.com/s?id=1876040096707655093",
+   "date": "2026-09-12",
+   "place": "Zhangjiajie",
+   "lang": "ch",
+   "tone": "neutral",
+   "airport": "ZGDY"
+  },
+  "a86f2ca1233e": {
+   "id": "a86f2ca1233e",
+   "title": "清朗金融网络 守护安心消费 中国银行张家界市分行开展金融教育宣传周进街道宣讲活动",
+   "summary": "",
+   "image": null,
+   "source": "baijiahao.baidu.com",
+   "url": "https://baijiahao.baidu.com/s?id=1875814201590942949",
+   "date": "2026-09-09",
+   "place": "Zhangjiajie",
+   "lang": "ch",
+   "tone": "neutral",
+   "airport": "ZGDY"
+  },
+  "482671b6e80f": {
+   "id": "482671b6e80f",
+   "title": "暖心服务无国界 ！ 吴家峪门票站高效助力外籍游客找回遗失钱包",
+   "summary": "",
+   "image": null,
+   "source": "baijiahao.baidu.com",
+   "url": "https://baijiahao.baidu.com/s?id=1875814201593108567",
+   "date": "2026-09-09",
+   "place": "Zhangjiajie",
+   "lang": "ch",
+   "tone": "neutral",
+   "airport": "ZGDY"
+  },
+  "0b4596809502": {
+   "id": "0b4596809502",
+   "title": "翼装飞行世锦赛 ： 澳大利亚选手实现三连冠 中国选手获季军 -- 文旅 · 体育 -- 人民网",
+   "summary": "第十二届翼装飞行世界锦标赛弯道竞速决赛11日在湖南张家界天门山举行，澳大利亚选手塔希·保罗·门罗以24.051秒的成绩，第三次夺得该赛事竞速赛冠军。“中国翼装飞行第一人”张树鹏以24.663秒的成绩斩",
+   "image": null,
+   "source": "ent.people.com.cn",
+   "url": "http://ent.people.com.cn/n1/2026/0912/c1012-40797450.html",
+   "date": "2026-09-12",
+   "place": "Zhangjiajie",
+   "lang": "ch",
+   "tone": "neutral",
+   "airport": "ZGDY"
+  },
+  "6e45f8aefcbc": {
+   "id": "6e45f8aefcbc",
+   "title": "杭州出发部分热门车次已售罄 ， 抢票攻略来了",
+   "summary": "",
+   "image": null,
+   "source": "hznews.hangzhou.com.cn",
+   "url": "https://hznews.hangzhou.com.cn/chengshi/content/2026-09/12/content_9305155.htm",
+   "date": "2026-09-12",
+   "place": "Huangshan",
+   "lang": "ch",
+   "tone": "neutral",
+   "airport": "ZSTX"
+  },
+  "006952946dc9": {
+   "id": "006952946dc9",
+   "title": "纪念币发行最新消息 （ 纪念币发行最新消息2021 ）",
+   "summary": "2022年兔年纪念币发行量\n2022年兔年纪念币发行量预测会在1.2~1.8亿之间。兔年纪念币，也将在2023年的春节之前发行，预计也会发行1.2亿枚左右。历年生肖币预约都非常火爆，兔年纪念币会非常受欢迎。它的信息是最容易确定的。兔币的面值是10元，发行量在1.2或1.5亿枚，发行时间是12月。2022年兔年纪念币的用处纪念币具有收藏价值。纪念币虽然具备普通人民币的流通作用，但是一般情况是很少有人会直接拿纪念币支付的，因为纪念币的发行是为了纪念一些有意义的特殊事件，购买纪念币的人一般都会将纪念币收藏起来。",
+   "image": null,
+   "source": "mastv.cc",
+   "url": "https://www.mastv.cc/shbk/201.html",
+   "date": "2026-09-11",
+   "place": "Huangshan",
+   "lang": "ch",
+   "tone": "neutral",
+   "airport": "ZSTX"
   },
   "68dea4764013": {
    "id": "68dea4764013",
@@ -23385,6 +24068,7 @@
    "place": "Tottori",
    "lang": "ja",
    "tone": "neutral",
+   "site": "",
    "airport": "RJOR"
   },
   "6bf8c965c3fd": {
@@ -23398,6 +24082,7 @@
    "place": "Tottori",
    "lang": "ja",
    "tone": "neutral",
+   "site": "",
    "airport": "RJOR"
   },
   "d3b8812bce4b": {
@@ -23411,6 +24096,7 @@
    "place": "Fort Greely",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.thearcticinstitute.org",
    "airport": "PABI"
   },
   "520d86196c8d": {
@@ -23424,6 +24110,7 @@
    "place": "Juneau",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.ktoo.org",
    "airport": "PAJN"
   },
   "57b7899dad70": {
@@ -23437,6 +24124,7 @@
    "place": "Juneau",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.noaa.gov",
    "airport": "PAJN"
   },
   "9ec32c77b74e": {
@@ -23450,6 +24138,7 @@
    "place": "Juneau",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://alaskapublic.org",
    "airport": "PAJN"
   },
   "baf764effd1e": {

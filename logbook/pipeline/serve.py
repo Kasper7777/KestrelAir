@@ -108,6 +108,7 @@ class Rebuilder:
         try:
             while True:
                 self.again = False
+                wait_for_sim(self)
                 with self.lock:
                     import build
                     t = time.time()
@@ -144,6 +145,7 @@ class Rebuilder:
         try:
             unpublished = 0
             while not self.stop_retry:
+                wait_for_sim(self)
                 self.pictures_left = news.pending(news_dir)
                 if not self.pictures_left and not unpublished:
                     break
@@ -164,6 +166,7 @@ class Rebuilder:
         finally:
             self.finding = False
 
+    paused_for_sim = False
     finding = False
     pictures_left = 0
     enriching = False
@@ -180,6 +183,33 @@ def built_at():
             return json.load(fh)['meta'].get('builtAt')
     except (OSError, ValueError, KeyError):
         return None
+
+
+_live = [None, None]     # (config signature, Live)
+_simsrc = []
+
+
+def _sim_source(live):
+    if not _simsrc:
+        _simsrc.append(live.SimSource())
+    return _simsrc[0]
+
+
+def live_state():
+    """What's flying right now (see live.py). Never raises: the page just shows nothing."""
+    try:
+        import build
+        import live
+        cfg = build.load_json(os.path.join(ROOT, 'config.json'), {})
+        nf_dir = os.path.expandvars(cfg.get('neofly', {}).get('dir', r'%LOCALAPPDATA%\Programs\Neofly'))
+        pilot = (cfg.get('pilot') or {}).get('neofly')
+        pilot = None if pilot in (None, '', 'auto') else pilot
+        sig = (nf_dir, pilot)
+        if _live[0] != sig:
+            _live[0], _live[1] = sig, live.Live([live.NeoFlySource(nf_dir, pilot)], sim=_sim_source(live))
+        return _live[1].state()
+    except Exception as e:
+        return {'flights': [], 'at': None, 'errors': [str(e)]}
 
 
 rebuilder = Rebuilder()
@@ -208,9 +238,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if path == '/__status':
             import backup
             return self._json({'error': rebuilder.error, 'lastBackup': backup.last(),
-                               'builtAt': built_at(), 'fetching': rebuilder.enriching and rebuilder.next_check is None})
+                               'builtAt': built_at(), 'fetching': rebuilder.enriching and rebuilder.next_check is None and not rebuilder.paused_for_sim,
+                               'simRunning': sim_running(), 'pausedForSim': rebuilder.paused_for_sim})
         if path == '/__datainfo':
             return self._json(data_info())
+        if path == '/__live':
+            return self._json(live_state())
         if path.startswith('/__manual/'):
             return self._manual(path.rsplit('/', 1)[-1])
         if path in ('/', '/index.html'):
@@ -418,6 +451,52 @@ def auto_backup():
             log('auto-backup failed:\n' + traceback.format_exc())
 
 
+# ---------- stay out of the simulator's way
+SIM_EXES = ('flightsimulator.exe', 'flightsimulator2024.exe')
+_sim = [False, 0.0]
+
+
+def sim_running():
+    """Is Microsoft Flight Simulator open? (checked at most every 30 s; cheap)"""
+    if time.time() - _sim[1] > 30:
+        _sim[1] = time.time()
+        try:
+            import subprocess
+            out = subprocess.run(['tasklist', '/NH', '/FO', 'CSV'], capture_output=True, text=True, timeout=10,
+                                 creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)).stdout.lower()
+            _sim[0] = any(f'"{exe}"' in out for exe in SIM_EXES)
+        except Exception:
+            pass
+    return _sim[0]
+
+
+def wait_for_sim(rb):
+    """Heavy background work (downloads, image processing) waits while the sim is running."""
+    while sim_running() and not rb.stop_retry:
+        rb.paused_for_sim = True
+        time.sleep(30)
+    rb.paused_for_sim = False
+
+
+def background_priority():
+    """Run the whole logbook at background priority (CPU, disk and memory), so the
+    simulator always comes first - on Windows; elsewhere, a lower nice value."""
+    try:
+        if os.name == 'nt':
+            import ctypes
+            from ctypes import wintypes
+            k = ctypes.windll.kernel32
+            k.GetCurrentProcess.restype = wintypes.HANDLE
+            k.SetPriorityClass.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+            h = k.GetCurrentProcess()
+            k.SetPriorityClass(h, 0x00100000)          # PROCESS_MODE_BACKGROUND_BEGIN (low disk + memory priority)
+            k.SetPriorityClass(h, 0x00000040)          # then IDLE_PRIORITY_CLASS for the CPU (order matters)
+        else:
+            os.nice(10)
+    except Exception:
+        pass
+
+
 def already_running():
     with socket.socket() as s:
         s.settimeout(0.5)
@@ -429,6 +508,7 @@ def main():
         webbrowser.open(URL)
         return
     log('starting')
+    background_priority()
     rebuilder.ensure()
     srv = http.server.ThreadingHTTPServer(('127.0.0.1', PORT), Handler)
     threading.Thread(target=srv.serve_forever, daemon=True).start()

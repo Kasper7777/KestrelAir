@@ -10,7 +10,7 @@ const drops = [];
 const CARTO_DARK = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 const CARTO_LIGHT = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
 const FALLBACK_FONT = { glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf', font: 'Open Sans Semibold' };
-const ACCENT = '#ffb547';
+const ACCENT = '#d9b45f';
 
 export async function createMap(db, ui) {
   const [dark, light, countries, flags] = await Promise.all([
@@ -46,9 +46,15 @@ export async function createMap(db, ui) {
 
   const fc = (features) => ({ type: 'FeatureCollection', features });
   const empty = fc([]);
+  // how strongly a route shows for its age: full for recent flights, easing to 35% for the oldest
+  const fade = (base) => ['*', base, ['interpolate', ['linear'], ['coalesce', ['get', 'age'], 0], 0, 1, 0.35, 0.82, 0.7, 0.55, 1, 0.35]];
+  const ageWidth = (w1, w6) => ['interpolate', ['linear'], ['zoom'], 1, ['*', w1, ['-', 1, ['*', 0.25, ['coalesce', ['get', 'age'], 0]]]],
+    6, ['*', w6, ['-', 1, ['*', 0.25, ['coalesce', ['get', 'age'], 0]]]]];
   const legFeatures = () => fc(db.legs.map((l) => ({
     type: 'Feature', id: l.index,
-    properties: { id: l.id, kind: l.kind, color: l.color, mcolor: l.monthColor, aircraft: l.aircraft || '' },
+    // age: 0 for the newest leg, 1 for the oldest - older routes fade back, never out
+    properties: { id: l.id, kind: l.kind, color: l.color, mcolor: l.monthColor, aircraft: l.aircraft || '',
+      age: db.legs.length > 1 ? 1 - l.index / (db.legs.length - 1) : 0 },
     geometry: { type: 'LineString', coordinates: l.coords },
   })));
   const airportFeatures = () => fc(Object.values(db.airports).map((a) => ({
@@ -98,12 +104,12 @@ export async function createMap(db, ui) {
     const flight = ['==', ['get', 'kind'], 'flight'];
     const ground = ['==', ['get', 'kind'], 'ground'];
     map.addLayer({ id: 'legs-casing', type: 'line', source: 'legs', filter: flight, layout: { 'line-cap': 'round', 'line-join': 'round' },
-      paint: { 'line-color': onLight ? '#ffffff' : '#000000', 'line-width': ['interpolate', ['linear'], ['zoom'], 1, 3, 6, 5.5], 'line-opacity': onLight ? 0.9 : 0.35, 'line-blur': 1 } });
+      paint: { 'line-color': onLight ? '#ffffff' : '#000000', 'line-width': ageWidth(3, 5.5), 'line-opacity': fade(onLight ? 0.9 : 0.35), 'line-blur': 1 } });
     map.addLayer({ id: 'legs-line', type: 'line', source: 'legs', filter: flight, layout: { 'line-cap': 'round', 'line-join': 'round' },
-      paint: { 'line-color': colorExpr(), 'line-width': ['interpolate', ['linear'], ['zoom'], 1, 1.4, 6, 2.8] } });
+      paint: { 'line-color': colorExpr(), 'line-width': ageWidth(1.4, 2.8), 'line-opacity': fade(1) } });
     map.addLayer({ id: 'ground-line', type: 'line', source: 'legs', filter: ground, layout: { 'line-cap': 'round', 'line-join': 'round' },
       paint: { 'line-color': onLight ? '#3b4252' : '#ffffff', 'line-width': ['interpolate', ['linear'], ['zoom'], 1, 1.3, 6, 2.2],
-        'line-dasharray': [0.2, 2.2], 'line-opacity': 0.9 } });
+        'line-dasharray': [0.2, 2.2], 'line-opacity': fade(0.9) } });
     map.addLayer({ id: 'legs-hit', type: 'line', source: 'legs', paint: { 'line-color': '#000', 'line-width': 18, 'line-opacity': 0.001 } });
 
     map.addSource('preview', { type: 'geojson', data: empty });
@@ -199,7 +205,7 @@ export async function createMap(db, ui) {
       const x = Math.max(0, Math.min(1, (now - t0) / D)), e = ease(x);
       const p = Math.max(0.004, Math.min(1, e * 1.08));
       map.setPaintProperty('sel-line', 'line-gradient', p >= 0.998 ? full
-        : ['interpolate', ['linear'], ['line-progress'], 0, '#ffffff', p, ACCENT, p + 0.002, 'rgba(255,181,71,0)', 1, 'rgba(255,181,71,0)']);
+        : ['interpolate', ['linear'], ['line-progress'], 0, '#ffffff', p, ACCENT, p + 0.002, 'rgba(217,180,95,0)', 1, 'rgba(217,180,95,0)']);
       map.setPaintProperty('sel-halo', 'line-opacity', Math.max(0, 0.45 * e + 0.35 * Math.sin(Math.PI * Math.min(1, x * 1.4)) * (1 - x)));
       map.setPaintProperty('sel-halo', 'line-width', 12 + 16 * Math.sin(Math.PI * x) * (1 - x * 0.5));
       map.setPaintProperty('sel-halo', 'line-blur', 8 + 8 * (1 - e));
@@ -213,7 +219,7 @@ export async function createMap(db, ui) {
     map.fitBounds(b, { padding: ui.padding(), maxZoom: span < 0.5 ? 9.5 : 8.5, duration: 1400, essential: true, ...opts });
   }
 
-  store.on('selected', (id) => { paintSelected(id); if (id && !store.get('playing')) fitLegs([db.legById.get(id)]); });
+  store.on('selected', (id) => { paintSelected(id); if (id && !store.get('playing') && !store.get('scrubbing') && ui.scrubbedLeg?.() !== id) fitLegs([db.legById.get(id)]); });
   store.on('hiddenAircraft', applyFilter);
   store.on('layers', applyLayers);
   store.on('colorBy', applyLayers);
@@ -277,9 +283,10 @@ export async function createMap(db, ui) {
     setTrail(features) { map.getSource('trail')?.setData(fc(features)); },
     dimRoutes(on) {
       if (!map.getLayer('legs-line')) return;
-      map.setPaintProperty('legs-line', 'line-opacity', on ? 0.22 : 1);
-      map.setPaintProperty('legs-casing', 'line-opacity', on ? 0.1 : 0.35);
-      map.setPaintProperty('ground-line', 'line-opacity', on ? 0.25 : 0.9);
+      const light = store.get('basemap') === 'light';
+      map.setPaintProperty('legs-line', 'line-opacity', fade(on ? 0.22 : 1));
+      map.setPaintProperty('legs-casing', 'line-opacity', fade(on ? 0.1 : light ? 0.9 : 0.35));
+      map.setPaintProperty('ground-line', 'line-opacity', fade(on ? 0.25 : 0.9));
     },
   };
   await new Promise((r) => (map.loaded() ? r() : map.once('load', r)));

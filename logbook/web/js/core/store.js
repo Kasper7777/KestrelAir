@@ -15,10 +15,11 @@ const state = {
   layers: pref('layers', { routes: true, transfers: true, airports: true, labels: true, photos: true, countries: true }),
   playing: false,
   follow: pref('follow', false),
-  speed: 1,
+  speed: pref('speed', 1),                  // replay speed: 0.25 .. 8
+  newsMode: pref('newsMode', 'both'),       // replay news: map | side | both | off
 };
 const handlers = new Map();
-const PREFS = ['basemap', 'projection', 'colorBy', 'layers', 'follow'];
+const PREFS = ['basemap', 'projection', 'colorBy', 'layers', 'follow', 'speed', 'newsMode'];
 
 // view preferences are remembered per browser (nice-to-have; falls back silently)
 function pref(k, dflt) {

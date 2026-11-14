@@ -45,6 +45,7 @@ export default {
       <button class="tb-btn" data-act="news" title="Local news from where you landed, from the day you landed">${icon('news')}<span>News</span></button>
       <button class="tb-btn" data-act="insights" title="Records, charts and favourite airports">${icon('chart')}<span>Insights</span></button>
       <div class="tb-sep"></div>
+      <button class="tb-btn cog-btn" data-act="cog" title="Settings">${icon('cog')}</button>
       <button class="tb-btn primary backup-btn" data-act="backup" title="Copy your NeoFly save, original screenshots and a flight list into the logbook's backup folder">${icon('save')}<span>Back up</span></button>`);
     bar.addEventListener('click', (e) => {
       const b = e.target.closest('button');
@@ -54,6 +55,7 @@ export default {
       if (act === 'view') toggleMenu(b);
       if (act === 'photos') ui.openGallery();
       if (act === 'news') ui.openNews?.();
+      if (act === 'cog') ui.openAppSettings?.();
       if (act === 'insights') ui.openInsights();
       if (act === 'logbook') ui.openLogbook();
       if (act === 'diary') ui.openDiary?.();

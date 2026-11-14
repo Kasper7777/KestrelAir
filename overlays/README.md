@@ -106,3 +106,12 @@ It needs `polygon-clipping` and `earcut` in `..\.tools\stl-deps`.
 1. Print the PDF at 100%, cut it out, and lay it over the panel. This is especially important for CP3.
 2. Cut one in card or 3 mm MDF.
 3. When it fits, set `"verified": true` for that panel and cut the real material.
+
+## One-sheet laser layout (600 × 400 mm)
+
+`out/sheet-600x400.svg` / `.dxf` / `.pdf` hold all four plates on one 600 × 400 mm acrylic sheet. They contain the CUT layer
+only (red, 0.1 mm lines), so no labels or check marks get engraved. Each plate is turned 90° (200 wide × 170 tall) and
+laid out 2 × 2: CP1 and CP2 on top, CP3 and CM3 below. There's a 10 mm margin and a 10 mm gap, which leaves a free
+180 mm strip on the right. The geometry is the same as the single-panel files. It's only rotated and moved, never
+scaled. Regenerate with `make-sheet.js` (run it the same way as `make-overlays.js`). It checks each plate's size, cut
+length and spacing, then prints PASS or FAIL.

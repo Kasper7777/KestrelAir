@@ -10,6 +10,7 @@ Logs to logbook/logbook.log.
 import http.server
 import json
 import os
+import shutil
 import socket
 import sys
 import threading
@@ -23,6 +24,14 @@ WEB = os.path.join(ROOT, 'web')
 PORT = int(os.environ.get('LOGBOOK_PORT', 8787))
 URL = f'http://127.0.0.1:{PORT}/'
 IDLE_EXIT = 6 * 60
+RETRY_SECONDS = 120          # how often the background top-up runs while something is still missing
+ARCHIVES = {                 # what Settings can show and wipe (relative to logbook/)
+    'news': ('Local news', 'backup/news'),
+    'places': ('Restaurants, hotels, menus & venue photos', 'backup/places'),
+    'wiki': ('Wikipedia: airports & aircraft', 'backup/wiki'),
+    'flags': ('Flag fills', 'web/geo/flags'),
+    'media': ('Display copies (rebuilt from the archives)', 'web/media'),
+}
 LOG = os.path.join(ROOT, 'logbook.log')
 
 sys.path[:0] = [HERE, os.path.join(HERE, 'importers')]
@@ -59,26 +68,32 @@ class Rebuilder:
                 out.append((p, None))
         return out
 
-    def ensure(self, force=False):
+    def ensure(self, force=False, wait=True):
         """Fast offline build whenever NeoFly / screenshots / settings changed; then
-        fetch anything new (Wikipedia, places, hotels, flags) in the background."""
-        with self.lock:
-            try:
-                sig = self.signature()
-                if not force and sig == self.sig and os.path.exists(os.path.join(WEB, 'data', 'logbook.json')):
-                    return
-                import build
-                t = time.time()
-                build.main(fetch=False)
-                self.sig, self.error = sig, None
-                log(f'rebuilt in {time.time() - t:.1f}s')
-            except Exception:
-                self.error = traceback.format_exc()
-                log('build failed:\n' + self.error)
+        fetch anything new (Wikipedia, places, hotels, flags, news) in the background.
+        wait=False (page loads): if a build is already running, serve what's there now
+        rather than making the page wait - the background fetch can take minutes."""
+        if not self.lock.acquire(blocking=wait):
+            return
+        try:
+            sig = self.signature()
+            if not force and sig == self.sig and os.path.exists(os.path.join(WEB, 'data', 'logbook.json')):
                 return
+            import build
+            t = time.time()
+            build.main(fetch=False)
+            self.sig, self.error = sig, None
+            log(f'rebuilt in {time.time() - t:.1f}s')
+        except Exception:
+            self.error = traceback.format_exc()
+            log('build failed:\n' + self.error)
+            return
+        finally:
+            self.lock.release()
         self.enrich()
 
     def enrich(self):
+        self.pictures()
         if self.enriching:
             self.again = True
             return
@@ -86,6 +101,10 @@ class Rebuilder:
         threading.Thread(target=self._enrich, daemon=True).start()
 
     def _enrich(self):
+        """Fetch anything new, then keep topping up the archive every 2 minutes while
+        something is still missing (e.g. news pictures GDELT throttled) - adding to
+        what's archived, never re-downloading it."""
+        import news
         try:
             while True:
                 self.again = False
@@ -93,16 +112,66 @@ class Rebuilder:
                     import build
                     t = time.time()
                     build.main(fetch=True)
+                    self.last_run = time.strftime('%Y-%m-%dT%H:%M:%S')
                     log(f'background details fetched in {time.time() - t:.1f}s')
-                if not self.again:
+                self.pictures()
+                self.pending = news.pending_arrivals(os.path.join(ROOT, 'backup', 'news'))
+                if self.again:
+                    continue
+                if not self.pending or self.stop_retry:
                     break
+                self.next_check = time.time() + RETRY_SECONDS
+                while time.time() < self.next_check and not self.again and not self.stop_retry:
+                    time.sleep(2)
+                self.next_check = None
         except Exception:
             log('background fetch failed:\n' + traceback.format_exc())
         finally:
             self.enriching = False
 
+    def pictures(self):
+        """Start the news picture finder (once): it keeps looking up each story's real
+        article - one search every few seconds - and republishes the logbook whenever
+        it has found new pictures, so they appear without waiting for a full refresh."""
+        if self.finding:
+            return
+        self.finding = True
+        threading.Thread(target=self._pictures, daemon=True).start()
+
+    def _pictures(self):
+        import news
+        news_dir = os.path.join(ROOT, 'backup', 'news')
+        try:
+            unpublished = 0
+            while not self.stop_retry:
+                self.pictures_left = news.pending(news_dir)
+                if not self.pictures_left and not unpublished:
+                    break
+                found = news.resolve(news_dir, budget_s=60, log=log) if self.pictures_left else 0
+                unpublished += found
+                if unpublished and self.lock.acquire(timeout=1):      # a full fetch run will publish them anyway
+                    try:
+                        import build
+                        build.main(fetch=False)
+                        log(f'news: published {unpublished} new story pictures')
+                        unpublished = 0
+                    finally:
+                        self.lock.release()
+                if not found:
+                    time.sleep(20)          # nothing due right now (search resting, or retries not due yet)
+        except Exception:
+            log('news picture finder failed:\n' + traceback.format_exc())
+        finally:
+            self.finding = False
+
+    finding = False
+    pictures_left = 0
     enriching = False
     again = False
+    stop_retry = False
+    last_run = None
+    next_check = None
+    pending = 0
 
 
 def built_at():
@@ -139,11 +208,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if path == '/__status':
             import backup
             return self._json({'error': rebuilder.error, 'lastBackup': backup.last(),
-                               'builtAt': built_at(), 'fetching': rebuilder.enriching})
+                               'builtAt': built_at(), 'fetching': rebuilder.enriching and rebuilder.next_check is None})
+        if path == '/__datainfo':
+            return self._json(data_info())
         if path.startswith('/__manual/'):
             return self._manual(path.rsplit('/', 1)[-1])
         if path in ('/', '/index.html'):
-            rebuilder.ensure()
+            rebuilder.ensure(wait=False)     # never make the page wait on a background fetch
         return super().do_GET()
 
     def _manual(self, mid):
@@ -177,7 +248,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if path == '/__backup':
             import backup
-            rebuilder.ensure()  # back up the latest flights
+            rebuilder.ensure(wait=False)  # back up the latest flights (don't wait on a background fetch)
             with backup_lock:
                 try:
                     res = backup.run()
@@ -194,6 +265,45 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             os.makedirs(d, exist_ok=True)
             os.startfile(d)
             return self._json({'ok': True})
+        if path == '/__refresh':
+            rebuilder.again = True
+            if not rebuilder.enriching:
+                rebuilder.enrich()
+            elif rebuilder.next_check:
+                rebuilder.next_check = time.time()
+            return self._json({'ok': True})
+        if path == '/__wipe':
+            try:
+                n = int(self.headers.get('Content-Length') or 0)
+                req = json.loads(self.rfile.read(n) or b'{}')
+                what = req.get('what')
+                if what == 'pilot':
+                    import backup
+                    target = backup.current_dest()
+                    if (req.get('confirm') or '').strip().lower() != os.path.basename(target).lower():
+                        return self._json({'ok': False, 'error': 'Type the pilot name to confirm'})
+                elif what in ARCHIVES:
+                    target = os.path.join(ROOT, *ARCHIVES[what][1].split('/'))
+                else:
+                    return self._json({'ok': False, 'error': 'Unknown archive'})
+                if not rebuilder.lock.acquire(timeout=15):
+                    return self._json({'ok': False, 'error': 'A background update is busy - try again in a moment'})
+                try:
+                    if os.path.isdir(target):
+                        shutil.rmtree(target)
+                    if what == 'flags':
+                        try:
+                            os.remove(os.path.join(WEB, 'geo', 'flags.json'))
+                        except OSError:
+                            pass
+                finally:
+                    rebuilder.lock.release()
+                log(f'wiped {what}: {target}')
+                rebuilder.ensure(force=True)          # rebuild from what's left; the background fetch refills it
+                return self._json({'ok': True})
+            except Exception as e:
+                log('wipe failed:\n' + traceback.format_exc())
+                return self._json({'ok': False, 'error': str(e)})
         if path == '/__settings':
             try:
                 n = int(self.headers.get('Content-Length') or 0)
@@ -215,6 +325,46 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Content-Length', str(len(body)))
         self.end_headers()
         self.wfile.write(body)
+
+
+def _size(path):
+    total = files = 0
+    for dp, _, fs in os.walk(path):
+        for f in fs:
+            try:
+                total += os.path.getsize(os.path.join(dp, f))
+                files += 1
+            except OSError:
+                pass
+    return total, files
+
+
+def data_info():
+    """Archive sizes, background-update status and the last self-check, for Settings."""
+    import backup
+    import news
+    out = {'archives': []}
+    for key, (label, rel) in ARCHIVES.items():
+        b, n = _size(os.path.join(ROOT, *rel.split('/')))
+        out['archives'].append({'key': key, 'label': label, 'mb': round(b / 1e6, 1), 'files': n})
+    pdir = backup.current_dest()
+    b, n = _size(pdir)
+    out['pilot'] = {'name': os.path.basename(pdir), 'mb': round(b / 1e6, 1), 'files': n}
+    try:
+        cache = json.load(open(os.path.join(ROOT, 'backup', 'news', 'news.json'), encoding='utf-8'))
+        out['newsStories'] = sum(len(v) for k, v in cache.items() if not k.startswith('_') and isinstance(v, list))
+    except (OSError, ValueError):
+        out['newsStories'] = 0
+    out['background'] = {'running': rebuilder.enriching and rebuilder.next_check is None,
+                         'nextCheckIn': max(0, round(rebuilder.next_check - time.time())) if rebuilder.next_check else None,
+                         'lastRun': rebuilder.last_run, 'pending': news.pending(os.path.join(ROOT, 'backup', 'news')),
+                         'retrySeconds': RETRY_SECONDS}
+    try:
+        with open(os.path.join(WEB, 'data', 'logbook.json'), encoding='utf-8') as fh:
+            out['checks'] = json.load(fh)['meta'].get('checks', [])
+    except (OSError, ValueError, KeyError):
+        out['checks'] = []
+    return out
 
 
 def save_settings(req):

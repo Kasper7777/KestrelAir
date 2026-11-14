@@ -122,7 +122,7 @@ export default {
           <div class="tc-body"><div class="tc-kind">${p.kind === 'hotel' ? 'Hotel' : 'Restaurant'}</div><h3>${v.name}</h3>
           <div class="tc-sub">${[v.cuisine, v.kind && v.kind !== 'restaurant' ? v.kind : null, v.stars ? `${v.stars}★` : null].filter(Boolean).join(' · ')}</div>
           ${facts([['Address', [v.street, v.town].filter(Boolean).join(', ')], ['From the airport', v.km != null ? `${v.km} km from ${s.airport}` : null],
-                   ['Opening hours', v.hours], p.price ? ['Kazber had', `${p.dish} · ${p.price}`] : p.dish ? ['Kazber had', p.dish] : null])}
+                   ['Opening hours', v.hours], p.price ? [`${db.pilot.character || db.pilot.name} had`, `${p.dish} · ${p.price}`] : p.dish ? [`${db.pilot.character || db.pilot.name} had`, p.dish] : null])}
           <div class="links">${v.menu ? html`<a class="link-btn" href="${v.menu}" target="_blank" rel="noopener">${icon('fork')}Menu</a>` : ''}
             ${v.website ? html`<a class="link-btn" href="${v.website}" target="_blank" rel="noopener">Website ${icon('external')}</a>` : ''}
             ${osm ? html`<a class="link-btn" href="${osm}" target="_blank" rel="noopener">${icon('pin')}Map</a>` : ''}</div>

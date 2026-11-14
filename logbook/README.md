@@ -14,6 +14,24 @@ the browser. Nothing has to be typed in by hand. Refresh the page after a sessio
 to pick up new flights and screenshots. It runs hidden and stops by itself a few
 minutes after you close the tab.
 
+## Someone else using it
+
+Nothing in the app is tied to one person. To use it with your own NeoFly career:
+
+1. Clone or download the repo and double-click **`Kestrel Air Logbook.exe`**. The first
+   time, it offers to install **uv** (a small free Python runner); say yes.
+2. It reads *your* NeoFly save (`%LOCALAPPDATA%\Programs\Neofly`) and *your* Steam
+   screenshots automatically. If the pilot named in `config.json` isn't in your save,
+   it uses whoever is logged in to NeoFly.
+3. Click the pilot in the title bar to pick your NeoFly pilot, the name to show, a photo
+   and your SimBrief username.
+4. To start clean, open the **⚙ cogwheel** → *Archives* and wipe what you don't want
+   (the previous owner's backups are under their pilot's name; downloaded news, places
+   and Wikipedia are shared and refill by themselves).
+
+Everything it looks up (news, restaurants, hotels, Wikipedia, flags) needs no account
+or key. Each pilot's own data lives in `backup/pilots/<pilot>/`.
+
 ## Backups, and opening it on another PC
 
 Every launch, and the **💾 Back up** button, copies into `backup/`:
@@ -38,7 +56,7 @@ runner), which then downloads Python by itself.
 | ← / → | Previous / next leg |
 | Space or ▶ | Replay from the selected leg (1× to 8×). The aircraft's own silhouette flies the route, and your photos drop onto the map as prints where they were taken |
 | Follow button (next to speed) | Cinematic replay: tilted camera riding along behind the aircraft |
-| Logbook | Every flight written up as an EASA-style paper logbook with your NeoFly pilot (Kazber) as pilot in command: page totals carried forward, night time from the sun's position, page tabs. **Company** shows the flights your hired pilots flew. Click an entry to see it on the map |
+| Logbook | Every flight written up as an EASA-style paper logbook with your NeoFly pilot as pilot in command: page totals carried forward, night time from the sun's position, page tabs. **Company** shows the flights your hired pilots flew. Click an entry to see it on the map |
 | Diary | For every stop of 8 hours or more: an Instagram-style, day-by-day account of your pilot on the ground. The restaurants (OpenStreetMap) and sights (Wikipedia) are real and near the airport; the day out is imagined |
 | Hashtags in the diary | Tap any: #Country / #Town (live Wikipedia), #Airport, #TheRestaurant or #TheHotel (address, hours, website, menu, map), #Menu (the actual menu) |
 | Fleet → tap an aircraft | Dossier: real history (Wikipedia), specifications (Wikidata), photos, your record in it, and any manuals for it found on this PC (PDFs with the aircraft's name, e.g. in Downloads) |

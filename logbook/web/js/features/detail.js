@@ -6,6 +6,7 @@ import { store } from '../core/store.js';
 import { html, raw, render, day, time, duration, num, money, landing, flagUrl } from '../core/format.js';
 import { icon, MODE_ICON } from '../core/icons.js';
 import { sectionsFor } from './registry.js';
+import { liquidTabs } from '../core/liquid.js';
 
 // skip Wikipedia entries that are list/disambiguation pages rather than real articles
 const useful = (w) => !!w && !!w.extract && !/may refer to|is the name of several|can refer to/i.test(w.extract);
@@ -157,8 +158,87 @@ export default {
         card.append(s.el);
         extra.append(card);
       }
+      buildSectionTabs();
       el.scrollTop = 0;
     };
+
+    // ---------- section tabs: jump straight to Landing, Photos, News... (stays pinned while you scroll)
+    const SECTIONS = [
+      [/why this flight/i, 'Evidence', 'check'], [/^landing/i, 'Landing', 'speed'], [/^mission/i, 'Mission', 'moneybag'],
+      [/your photos/i, 'Photos', 'photo'], [/on the ground/i, 'Ground', 'pin'], [/diary|layover/i, 'Diary', 'diary'],
+      [/news/i, 'News', 'news'], [/plan|document|simbrief|brief/i, 'Plan', 'doc'], [/^about|what happened/i, 'Airport', 'globe'],
+    ];
+    function buildSectionTabs() {
+      const body = el.querySelector('.body');
+      if (!body) return;
+      const found = [];
+      const add = (node, label, ic) => { if (node && !found.some((f) => f.label === label)) found.push({ node, label, ic }); };
+      add(body.querySelector('.route'), 'Flight', 'plane');
+      add(body.querySelector('.card.aircraft'), 'Aircraft', 'plane');
+      body.querySelectorAll(':scope > .card, :scope > details, .extra > .card, :scope > .diary-prev, :scope > [class*=diary]').forEach((c) => {
+        const h = (c.querySelector('h4, summary, h3')?.textContent || '').trim();
+        const hit = SECTIONS.find(([re]) => re.test(h));
+        if (hit) add(c, hit[1], hit[2]);
+      });
+      found.sort((a, b) => (a.node.compareDocumentPosition(b.node) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
+      if (found.length < 3) return;
+      const nav = document.createElement('nav');
+      nav.className = 'sec-tabs';
+      nav.innerHTML = `<div class="segmented sec-track">${found.map((f, i) =>
+        `<button data-sec="${i}" class="${i === 0 ? 'on' : ''}">${icon(f.ic).s}<span>${f.label}</span></button>`).join('')}</div>`;
+      body.prepend(nav);
+      const track = nav.firstElementChild;
+      liquidTabs(track);
+      let jumping = 0;
+      const mark = (i) => {
+        const b = track.querySelector(`[data-sec="${i}"]`);
+        if (!b || b.classList.contains('on')) return;
+        track.querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b));
+        track.scrollTo({ left: b.offsetLeft - track.clientWidth / 2 + b.offsetWidth / 2, behavior: 'smooth' });
+      };
+      track.addEventListener('click', (e) => {
+        const b = e.target.closest('button');
+        if (!b) return;
+        const f = found[+b.dataset.sec];
+        if (f.node.tagName === 'DETAILS') f.node.open = true;
+        mark(+b.dataset.sec);
+        const top = +b.dataset.sec === 0 ? 0 : f.node.getBoundingClientRect().top - el.getBoundingClientRect().top + el.scrollTop - nav.offsetHeight - 10;
+        glide(Math.max(0, Math.min(top, el.scrollHeight - el.clientHeight)), () => shimmer(f.node));
+      });
+      // an unhurried, eased glide instead of a jump (the tabs follow along)
+      let glideRaf = 0;
+      const glide = (to, done) => {
+        cancelAnimationFrame(glideRaf);
+        const from = el.scrollTop, d = to - from, D = Math.min(1100, 520 + Math.abs(d) * 0.35), t0 = performance.now();
+        jumping = Date.now() + D;
+        const ease = (x) => (x < 0.5 ? 4 * x ** 3 : 1 - (-2 * x + 2) ** 3 / 2);
+        const step = (now) => {
+          const x = Math.min(1, (now - t0) / D);
+          el.scrollTop = from + d * ease(x);
+          nav.classList.toggle('stuck', el.scrollTop > nav.offsetTop - 2);
+          if (x < 1) glideRaf = requestAnimationFrame(step); else { jumping = 0; done?.(); }
+        };
+        glideRaf = requestAnimationFrame(step);
+      };
+      // the section you arrive at lights up with a ripple of light, then settles
+      const shimmer = (node) => {
+        node.classList.remove('sec-shimmer');
+        void node.offsetWidth;
+        node.classList.add('sec-shimmer');
+        setTimeout(() => node.classList.remove('sec-shimmer'), 1700);
+      };
+      el.onwheel = () => { cancelAnimationFrame(glideRaf); jumping = 0; };
+      el.onscroll = () => {
+        nav.classList.toggle('stuck', el.scrollTop > nav.offsetTop - 2);
+        if (jumping && Date.now() < jumping) return;
+        const y = el.getBoundingClientRect().top + nav.offsetHeight + 40;
+        let cur = 0;
+        found.forEach((f, i) => { if (f.node.getBoundingClientRect().top <= y) cur = i; });
+        if (el.scrollTop + el.clientHeight >= el.scrollHeight - 4) cur = found.length - 1;
+        mark(cur);
+        nav.classList.toggle('stuck', nav.getBoundingClientRect().top <= el.getBoundingClientRect().top + 1);
+      };
+    }
 
     el.addEventListener('click', (e) => {
       const ac = e.target.closest('[data-aircraft]');

@@ -21,8 +21,9 @@ import aircraft from './features/aircraft.js';
 import glassfx from './features/glassfx.js';
 import newsFeature from './features/news.js';
 import docs from './features/docs.js';
+import appsettings from './features/appsettings.js';
 
-const FEATURES = [header, journeyList, detail, lightbox, timeline, gallery, insights, logbook, layers, diary, settings, aircraft, newsFeature, docs, glassfx];
+const FEATURES = [header, journeyList, detail, lightbox, timeline, gallery, insights, logbook, layers, diary, settings, aircraft, newsFeature, docs, appsettings, glassfx];
 
 async function start() {
   // keep the local launcher alive while this tab is open; surface build errors

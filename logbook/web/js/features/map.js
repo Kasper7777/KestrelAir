@@ -84,7 +84,9 @@ export async function createMap(db, ui) {
       try {
         map.addSource(id, { type: 'image', url: `geo/flags/${part.file}`, coordinates: part.coordinates });
         map.addLayer({ id, type: 'raster', source: id,
-          paint: { 'raster-opacity': base === 'satellite' ? 0.8 : 0.72, 'raster-fade-duration': 0, 'raster-resampling': 'linear' } });
+          // vivid on the globe, stepping aside as you zoom in to airports and routes
+          paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 2, base === 'satellite' ? 0.8 : 0.72, 4.5, 0.5, 6.5, 0.18, 8, 0],
+                   'raster-fade-duration': 0, 'raster-resampling': 'linear' } });
       } catch (e) { console.warn('flag fill skipped', id, e); }
     }
     // a crisp two-tone border round each visited country, so neighbours never run together
@@ -182,6 +184,28 @@ export async function createMap(db, ui) {
     if (!src) return;
     const l = id && db.legById.get(id);
     src.setData(l ? { type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: l.coords } } : empty);
+    if (l) revealSelected();
+  }
+  // the chosen route flows in like water: the line draws itself from departure to
+  // arrival while a soft glow swells around it and settles
+  let revealRaf = 0;
+  function revealSelected() {
+    cancelAnimationFrame(revealRaf);
+    if (!map.getLayer('sel-line') || store.get('playing') || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const t0 = performance.now(), D = 1300;
+    const ease = (x) => 1 - (1 - x) ** 3;
+    const full = ['interpolate', ['linear'], ['line-progress'], 0, '#ffffff', 1, ACCENT];
+    const step = (now) => {
+      const x = Math.max(0, Math.min(1, (now - t0) / D)), e = ease(x);
+      const p = Math.max(0.004, Math.min(1, e * 1.08));
+      map.setPaintProperty('sel-line', 'line-gradient', p >= 0.998 ? full
+        : ['interpolate', ['linear'], ['line-progress'], 0, '#ffffff', p, ACCENT, p + 0.002, 'rgba(255,181,71,0)', 1, 'rgba(255,181,71,0)']);
+      map.setPaintProperty('sel-halo', 'line-opacity', Math.max(0, 0.45 * e + 0.35 * Math.sin(Math.PI * Math.min(1, x * 1.4)) * (1 - x)));
+      map.setPaintProperty('sel-halo', 'line-width', 12 + 16 * Math.sin(Math.PI * x) * (1 - x * 0.5));
+      map.setPaintProperty('sel-halo', 'line-blur', 8 + 8 * (1 - e));
+      if (x < 1) revealRaf = requestAnimationFrame(step);
+    };
+    revealRaf = requestAnimationFrame(step);
   }
   function fitLegs(legs, opts = {}) {
     const b = bounds(legs.map((l) => l.coords));

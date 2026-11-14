@@ -24,7 +24,7 @@ export default {
         <label class="field"><span>Name shown in the logbook and diary</span>
           <input name="displayName" value="${db.pilot.character || db.pilot.name}" maxlength="40" autocomplete="off"></label>
         <label class="field"><span>SimBrief username or Pilot ID</span>
-          <input name="simbrief" value="${db.pilot.simbrief || ''}" placeholder="e.g. kazber or 123456" autocomplete="off">
+          <input name="simbrief" value="${db.pilot.simbrief || ''}" placeholder="your SimBrief username or pilot ID" autocomplete="off">
           <small>Each time the logbook runs it saves your latest SimBrief plan (briefing, PDF, route map) and attaches it to that flight.</small></label>
         <div class="field"><span>Photo</span>
           <div class="photo-row"><img class="avatar big" src="${db.pilot.photo || 'icon.png'}" alt="">
@@ -73,14 +73,16 @@ export default {
     const check = async () => {
       try {
         const s = await fetch('/__status').then((r) => r.json());
-        if (s.builtAt && s.builtAt !== loaded && !s.fetching) {
-          render(pill, html`${icon('check')}New places and photos found <button>Refresh</button>`);
+        // background work shows as a soft glow turning round the glass cogwheel, not a pill over the map
+        const cog = document.querySelector('.cog-btn');
+        cog?.classList.toggle('busy', !!s.fetching);
+        if (cog) cog.title = s.fetching ? 'Settings - looking up news pictures, places and photos in the background' : 'Settings';
+        if (s.builtAt && s.builtAt !== loaded && pill.dataset.dismissed !== s.builtAt) {
+          render(pill, html`${icon('check')}<span>New pictures and details are in</span><button class="go">Show them</button><button class="x" aria-label="Later">${icon('close')}</button>`);
           pill.hidden = false;
-          pill.querySelector('button').onclick = () => location.reload();
-          return;
+          pill.querySelector('.go').onclick = () => location.reload();
+          pill.querySelector('.x').onclick = () => { pill.dataset.dismissed = s.builtAt; pill.hidden = true; };
         }
-        if (s.fetching) { render(pill, html`<span class="spinner"></span>Looking up places and photos…`); pill.hidden = false; }
-        else pill.hidden = true;
       } catch { /* server gone */ }
       setTimeout(check, 8000);
     };

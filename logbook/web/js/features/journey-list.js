@@ -3,6 +3,7 @@
 import { store } from '../core/store.js';
 import { html, render, shortDay, dayKey, time, duration, num, flagUrl, compact } from '../core/format.js';
 import { icon, MODE_ICON } from '../core/icons.js';
+import { liquidTabs } from '../core/liquid.js';
 
 const dayFmt = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
 
@@ -16,7 +17,8 @@ export default {
     // ---------- tabs
     const tabs = document.getElementById('tabs');
     const panes = { journey: 'pane-journey', fleet: 'pane-fleet', countries: 'pane-countries' };
-    render(tabs, html`<button data-tab="journey" class="on">Journey</button><button data-tab="fleet">Fleet</button><button data-tab="countries">Countries</button>`);
+    render(tabs, html`<button data-tab="journey" class="on">${icon('map')}Journey</button><button data-tab="fleet">${icon('plane')}Fleet</button><button data-tab="countries">${icon('flag')}Countries</button>`);
+    liquidTabs(tabs);
     tabs.addEventListener('click', (e) => {
       const b = e.target.closest('button');
       if (!b) return;

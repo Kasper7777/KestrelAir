@@ -382,10 +382,10 @@ function toSVG(prims, b, m) {
 }
 
 // ---------- PDF (1:1, page sized to drawing) ----------
-function toPDF(prims, b, m) {
+function toPDF(prims, b, m, page) {
   // Real paper size (A4, else A3, portrait), drawing centred, so "Actual size" printing is unambiguous.
   const k = 72 / 25.4, dw = b.x1 - b.x0 + 2 * m, dh = b.y1 - b.y0 + 2 * m;
-  const [pw, ph] = [[210, 297], [297, 420]].find(([w, h]) => dw <= w - 10 && dh <= h - 20) || [dw, dh + 14];
+  const [pw, ph] = page || [[210, 297], [297, 420]].find(([w, h]) => dw <= w - 10 && dh <= h - 20) || [dw, dh + 14];
   const W = pw * k, H = ph * k, offX = (pw - dw) / 2 * k, offY = (ph - dh) / 2 * k;
   const P = (x, y) => `${(offX + (x - b.x0 + m) * k).toFixed(3)} ${(offY + (y - b.y0 + m) * k).toFixed(3)}`;
   const rgb = { CUT: '1 0 0', POCKET: '0.8 0 0.8', ENGRAVE: '0 0 1', IDS: '0.55 0.55 0.55', CHECK: '0 0.6 0' }, ops = ['0.283 w'];
@@ -413,7 +413,7 @@ function toPDF(prims, b, m) {
       ops.push(`${c} rg BT /F1 ${sz.toFixed(2)} Tf ${P(a[0] + dx, a[1])} Td (${str}) Tj ET`);
     }
   }
-  ops.push(`0 0 0 rg BT /F1 8 Tf ${(10 * k).toFixed(2)} ${(H - 10 * k).toFixed(2)} Td (${pw === 210 ? 'A4' : pw === 297 ? 'A3' : 'Custom'} page. Print at 100% / Actual size - NOT fit-to-page. Check: green bar = 50 mm, square = 20 x 20 mm.) Tj ET`);
+  if (!page) ops.push(`0 0 0 rg BT /F1 8 Tf ${(10 * k).toFixed(2)} ${(H - 10 * k).toFixed(2)} Td (${pw === 210 ? 'A4' : pw === 297 ? 'A3' : 'Custom'} page. Print at 100% / Actual size - NOT fit-to-page. Check: green bar = 50 mm, square = 20 x 20 mm.) Tj ET`);
   const stream = ops.join('\n');
   const objs = ['<< /Type /Catalog /Pages 2 0 R >>', '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
     `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W.toFixed(3)} ${H.toFixed(3)}] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>`,
@@ -427,7 +427,7 @@ function toPDF(prims, b, m) {
 }
 
 // ---------- run ----------
-module.exports = { buildPanel, cfg, shapeOf, inside, nearest, tess };
+module.exports = { buildPanel, cfg, shapeOf, inside, nearest, tess, rotate, bounds, toDXF, toSVG, toPDF };
 if (require.main === module) {
 let made = 0;
 for (const [name, panel] of Object.entries(cfg.panels || {})) {

@@ -6,7 +6,7 @@
   "panels": {
     "CP1": {
       "_source": "Exact CAD values from xchrishawk's 'Virpil Throttle / Control Panel Label Plates' FreeCAD model (Printables 1106661, CC BY-NC-SA). Cutouts are already sized for clearance. LS*/SS* are 2 mm deep screw-head recesses on the back of the original 3 mm plate (POCKET layer).",
-      "verified": false,
+      "verified": true,
       "outline": {
         "w": 170,
         "h": 200,
@@ -458,7 +458,7 @@
     },
     "CP2": {
       "_source": "Exact CAD values from xchrishawk's FreeCAD model (Printables 1106661, CC BY-NC-SA), the same as CP1. Gear Indicator = the 9-point wire with 2 mm fillets.",
-      "verified": false,
+      "verified": true,
       "outline": {
         "w": 170,
         "h": 200,
@@ -953,7 +953,7 @@
     },
     "CM3": {
       "_source": "Exact CAD values from xchrishawk's 'Virpil Throttle Plate' FreeCAD model (Printables 1106661, CC BY-NC-SA), for the MongoosT-50CM3 throttle base panel. The plate is the 170x200 base with the throttle-lever area cut away: x<103.5, y>101, with a 4 mm inner corner. LS*/SS* = 2 mm back recesses (POCKET layer). Mode = rotary selector clearance, Flaps = flaps-lever slot.",
-      "verified": false,
+      "verified": true,
       "outline": {
         "w": 170,
         "h": 200,
@@ -1247,7 +1247,7 @@
     },
     "CP3": {
       "_source": "No CAD exists. Measured from DeathDonky Prints' SharKa-50 template (the CP3 shares the SharKa-50 faceplate). It's to scale at 5.68 px/mm, about 0.18 mm per pixel. On CP2 the same method agreed with exact CAD to within about 0.8 mm. IDs are generic (SQ = square button, R = round toggle/encoder, LEVER = axis slot, SEL = rotary selector), not VIRPIL's numbering. Test-fit a paper print first.",
-      "verified": false,
+      "verified": true,
       "outline": {
         "w": 170,
         "h": 200,

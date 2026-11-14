@@ -1,0 +1,652 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600mm" height="400mm" viewBox="0 0 600 400">
+<line x1="210" y1="190" x2="210" y2="60" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="190" y1="40" x2="115" y2="40" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="105" y1="40" x2="30" y2="40" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="60" x2="10" y2="190" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="30" y1="210" x2="105" y2="210" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115" y1="210" x2="190" y2="210" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 210 60 A 20 20 0 0 0 206.9833 49.4374" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 199.7468 42.5357 A 20 20 0 0 0 190 40" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 30 40 A 20 20 0 0 0 20.2532 42.5357" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 13.0167 49.4374 A 20 20 0 0 0 10 60" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 10 190 A 20 20 0 0 0 13.0167 200.5626" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 20.2532 207.4643 A 20 20 0 0 0 30 210" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 190 210 A 20 20 0 0 0 200.1198 207.2508" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 207.2232 200.1666 A 20 20 0 0 0 210 190" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="41" y1="130.25" x2="41" y2="113.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="41" y1="113.25" x2="24" y2="113.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="24" y1="113.25" x2="24" y2="125.163" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="30.4744" y1="130.25" x2="41" y2="130.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="41" y1="104.5" x2="41" y2="87.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="41" y1="87.5" x2="24" y2="87.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="24" y1="87.5" x2="24" y2="104.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="24" y1="104.5" x2="41" y2="104.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="41" y1="78.75" x2="41" y2="61.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="41" y1="61.75" x2="30.8819" y2="61.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="24" y1="66.6656" x2="24" y2="78.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="24" y1="78.75" x2="41" y2="78.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="68" y1="125.163" x2="68" y2="113.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="68" y1="113.25" x2="51" y2="113.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="51" y1="113.25" x2="51" y2="130.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="51" y1="130.25" x2="61.5256" y2="130.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="68" y1="104.5" x2="68" y2="87.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="68" y1="87.5" x2="51" y2="87.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="51" y1="87.5" x2="51" y2="104.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="51" y1="104.5" x2="68" y2="104.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="68" y1="78.75" x2="68" y2="66.6656" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="61.1181" y1="61.75" x2="51" y2="61.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="51" y1="61.75" x2="51" y2="78.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="51" y1="78.75" x2="68" y2="78.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="138.75" y1="192.25" x2="138.75" y2="175.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="138.75" y1="175.25" x2="121.75" y2="175.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.75" y1="175.25" x2="121.75" y2="185.7756" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="126.837" y1="192.25" x2="138.75" y2="192.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="138.75" y1="165.5" x2="138.75" y2="148.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="138.75" y1="148.5" x2="126.837" y2="148.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.75" y1="154.9744" x2="121.75" y2="165.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.75" y1="165.5" x2="138.75" y2="165.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="164.5" y1="192.25" x2="164.5" y2="175.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="164.5" y1="175.25" x2="147.5" y2="175.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="147.5" y1="175.25" x2="147.5" y2="192.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="147.5" y1="192.25" x2="164.5" y2="192.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="164.5" y1="165.5" x2="164.5" y2="148.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="164.5" y1="148.5" x2="147.5" y2="148.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="147.5" y1="148.5" x2="147.5" y2="165.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="147.5" y1="165.5" x2="164.5" y2="165.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="190.25" y1="185.6756" x2="190.25" y2="175.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="190.25" y1="175.25" x2="173.25" y2="175.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="173.25" y1="175.25" x2="173.25" y2="192.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="173.25" y1="192.25" x2="182.5495" y2="192.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="190.25" y1="165.5" x2="190.25" y2="154.9744" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="185.163" y1="148.5" x2="173.25" y2="148.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="173.25" y1="148.5" x2="173.25" y2="165.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="173.25" y1="165.5" x2="190.25" y2="165.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="74.5" y1="193.25" x2="74.5" y2="178.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="72.5" y1="176.25" x2="28.5" y2="176.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="26.5" y1="178.25" x2="26.5" y2="193.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="28.5" y1="195.25" x2="72.5" y2="195.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 74.5 178.25 A 2 2 0 0 0 72.5 176.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 28.5 176.25 A 2 2 0 0 0 26.5 178.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 26.5 193.25 A 2 2 0 0 0 28.5 195.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 72.5 195.25 A 2 2 0 0 0 74.5 193.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="74.5" y1="161.25" x2="74.5" y2="146.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="72.5" y1="144.25" x2="28.5" y2="144.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="26.5" y1="146.25" x2="26.5" y2="161.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="28.5" y1="163.25" x2="72.5" y2="163.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 74.5 146.25 A 2 2 0 0 0 72.5 144.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 28.5 144.25 A 2 2 0 0 0 26.5 146.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 26.5 161.25 A 2 2 0 0 0 28.5 163.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 72.5 163.25 A 2 2 0 0 0 74.5 161.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="107.5" y1="196.25" x2="107.5" y2="175.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="107.5" y1="175.25" x2="90.5" y2="175.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="90.5" y1="175.25" x2="90.5" y2="196.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="90.5" y1="196.25" x2="107.5" y2="196.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="107.5" y1="164.25" x2="107.5" y2="143.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="107.5" y1="143.25" x2="90.5" y2="143.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="90.5" y1="143.25" x2="90.5" y2="164.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="90.5" y1="164.25" x2="107.5" y2="164.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="136.75" y1="138" x2="136.75" y2="136" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="135.75" y1="135" x2="116.75" y2="135" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115.75" y1="136" x2="115.75" y2="138" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="116.75" y1="139" x2="135.75" y2="139" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 136.75 136 A 1 1 0 0 0 135.75 135" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 116.75 135 A 1 1 0 0 0 115.75 136" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 115.75 138 A 1 1 0 0 0 116.75 139" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 135.75 139 A 1 1 0 0 0 136.75 138" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="136.75" y1="112" x2="136.75" y2="110" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="135.75" y1="109" x2="116.75" y2="109" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115.75" y1="110" x2="115.75" y2="112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="116.75" y1="113" x2="135.75" y2="113" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 136.75 110 A 1 1 0 0 0 135.75 109" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 116.75 109 A 1 1 0 0 0 115.75 110" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 115.75 112 A 1 1 0 0 0 116.75 113" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 135.75 113 A 1 1 0 0 0 136.75 112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="136.75" y1="82" x2="136.75" y2="80" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="135.75" y1="79" x2="116.75" y2="79" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115.75" y1="80" x2="115.75" y2="82" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="116.75" y1="83" x2="135.75" y2="83" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 136.75 80 A 1 1 0 0 0 135.75 79" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 116.75 79 A 1 1 0 0 0 115.75 80" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 115.75 82 A 1 1 0 0 0 116.75 83" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 135.75 83 A 1 1 0 0 0 136.75 82" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="136.75" y1="56" x2="136.75" y2="54" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="135.75" y1="53" x2="116.75" y2="53" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115.75" y1="54" x2="115.75" y2="56" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="116.75" y1="57" x2="135.75" y2="57" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 136.75 54 A 1 1 0 0 0 135.75 53" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 116.75 53 A 1 1 0 0 0 115.75 54" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 115.75 56 A 1 1 0 0 0 116.75 57" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 135.75 57 A 1 1 0 0 0 136.75 56" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="167.75" y1="138" x2="167.75" y2="136" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="166.75" y1="135" x2="147.75" y2="135" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="146.75" y1="136" x2="146.75" y2="138" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="147.75" y1="139" x2="166.75" y2="139" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 167.75 136 A 1 1 0 0 0 166.75 135" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 147.75 135 A 1 1 0 0 0 146.75 136" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 146.75 138 A 1 1 0 0 0 147.75 139" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 166.75 139 A 1 1 0 0 0 167.75 138" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="167.75" y1="112" x2="167.75" y2="110" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="166.75" y1="109" x2="147.75" y2="109" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="146.75" y1="110" x2="146.75" y2="112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="147.75" y1="113" x2="166.75" y2="113" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 167.75 110 A 1 1 0 0 0 166.75 109" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 147.75 109 A 1 1 0 0 0 146.75 110" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 146.75 112 A 1 1 0 0 0 147.75 113" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 166.75 113 A 1 1 0 0 0 167.75 112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="167.75" y1="82" x2="167.75" y2="80" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="166.75" y1="79" x2="147.75" y2="79" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="146.75" y1="80" x2="146.75" y2="82" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="147.75" y1="83" x2="166.75" y2="83" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 167.75 80 A 1 1 0 0 0 166.75 79" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 147.75 79 A 1 1 0 0 0 146.75 80" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 146.75 82 A 1 1 0 0 0 147.75 83" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 166.75 83 A 1 1 0 0 0 167.75 82" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="167.75" y1="56" x2="167.75" y2="54" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="166.75" y1="53" x2="147.75" y2="53" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="146.75" y1="54" x2="146.75" y2="56" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="147.75" y1="57" x2="166.75" y2="57" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 167.75 54 A 1 1 0 0 0 166.75 53" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 147.75 53 A 1 1 0 0 0 146.75 54" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 146.75 56 A 1 1 0 0 0 147.75 57" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 166.75 57 A 1 1 0 0 0 167.75 56" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="190" cy="126" r="8.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="190" cy="96" r="8.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="190" cy="66" r="8.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="92" cy="117" r="15.019" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="92" cy="75" r="15.019" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="126.5" cy="124" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="126.5" cy="96" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="126.5" cy="68" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="157.5" cy="124" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="157.5" cy="96" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="157.5" cy="68" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 196.8764 45.5548 A 5 5 0 1 0 204.1236 52.4452" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 19.5 196 A 5 5 0 0 0 15.8764 197.5548" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 23.1236 204.4452 A 5 5 0 0 0 19.5 196" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 15.8764 52.4452 A 5 5 0 1 0 23.1236 45.5548" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 110 200 A 5 5 0 0 0 105 205" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 115 205 A 5 5 0 0 0 110 200" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 105 45 A 5 5 0 0 0 115 45" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 193 141 A 4 4 0 0 0 189.8547 142.5287" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 196.1453 147.4713 A 4 4 0 0 0 193 141" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 115.8547 193.2787 A 4 4 0 1 0 122.1453 198.2213" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 119 141 A 4 4 0 0 0 115.8547 147.4713" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 122.1453 142.5287 A 4 4 0 0 0 119 141" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 69.0287 136.1453 A 4 4 0 0 0 73.9713 129.8547" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 71.5 55.25 A 4 4 0 0 0 69.175 55.9951" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 73.825 62.5049 A 4 4 0 0 0 71.5 55.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 18.0287 129.8547 A 4 4 0 1 0 22.9713 136.1453" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 20.5 55.25 A 4 4 0 0 0 18.175 62.5049" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 22.825 55.9951 A 4 4 0 0 0 20.5 55.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="203.7465" y1="197.1984" x2="190.25" y2="185.6756" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="182.5495" y1="192.25" x2="197.2535" y2="204.8036" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="197.2535" y1="204.8036" x2="200.1198" y2="207.2508" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="207.2232" y1="200.1666" x2="203.7465" y2="197.1984" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="204.1236" y1="52.4452" x2="206.9833" y2="49.4374" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="199.7468" y1="42.5357" x2="196.8764" y2="45.5548" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="15.8764" y1="197.5548" x2="13.0167" y2="200.5626" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="20.2532" y1="207.4643" x2="23.1236" y2="204.4452" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="23.1236" y1="45.5548" x2="20.2532" y2="42.5357" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="13.0167" y1="49.4374" x2="15.8764" y2="52.4452" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="105" y1="205" x2="105" y2="210" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115" y1="210" x2="115" y2="205" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115" y1="45" x2="115" y2="40" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="105" y1="40" x2="105" y2="45" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="189.8547" y1="142.5287" x2="185.163" y2="148.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="190.25" y1="154.9744" x2="196.1453" y2="147.4713" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="122.1453" y1="198.2213" x2="126.837" y2="192.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.75" y1="185.7756" x2="115.8547" y2="193.2787" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115.8547" y1="147.4713" x2="121.75" y2="154.9744" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="126.837" y1="148.5" x2="122.1453" y2="142.5287" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="73.9713" y1="129.8547" x2="68" y2="125.163" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="61.5256" y1="130.25" x2="69.0287" y2="136.1453" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="69.175" y1="55.9951" x2="61.1181" y2="61.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="68" y1="66.6656" x2="73.825" y2="62.5049" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="22.9713" y1="136.1453" x2="30.4744" y2="130.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="24" y1="125.163" x2="18.0287" y2="129.8547" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="18.175" y1="62.5049" x2="24" y2="66.6656" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="30.8819" y1="61.75" x2="22.825" y2="55.9951" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="420" y1="190" x2="420" y2="60" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="400" y1="40" x2="325" y2="40" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="315" y1="40" x2="240" y2="40" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="220" y1="60" x2="220" y2="190" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="325" y1="210" x2="400" y2="210" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 420 60 A 20 20 0 0 0 417.0982 49.6244" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 409.9314 42.6401 A 20 20 0 0 0 400 40" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 240 40 A 20 20 0 0 0 230.2532 42.5357" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 223.0167 49.4374 A 20 20 0 0 0 220 60" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 220 190 A 20 20 0 0 0 223.0167 200.5626" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 400 210 A 20 20 0 0 0 409.7462 207.4646" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 416.9829 200.5632 A 20 20 0 0 0 420 190" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 279.8136 125.4005 A 2 2 0 0 0 279 127.0106" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 298.6573 112 A 2 2 0 0 0 297.4709 112.3899" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 308.5826 112.971 A 2 2 0 0 0 306.8676 112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 317 127.554 A 2 2 0 0 0 316.715 126.525" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 316.715 145.475 A 2 2 0 0 0 317 144.446" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 306.8676 160 A 2 2 0 0 0 308.5826 159.029" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 297.4709 159.6101 A 2 2 0 0 0 298.6573 160" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 279 144.9894 A 2 2 0 0 0 279.8136 146.5995" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="279" y1="136" x2="279" y2="127.0106" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="279.8136" y1="125.4005" x2="297.4709" y2="112.3899" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="298.6573" y1="112" x2="306.8676" y2="112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="308.5826" y1="112.971" x2="308.7214" y2="113.2024" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="312.8374" y1="120.0623" x2="316.715" y2="126.525" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="317" y1="127.554" x2="317" y2="144.446" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="316.715" y1="145.475" x2="312.8374" y2="151.9377" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="308.7214" y1="158.7976" x2="308.5826" y2="159.029" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="306.8676" y1="160" x2="298.6573" y2="160" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="297.4709" y1="159.6101" x2="279.8136" y2="146.5995" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="279" y1="144.9894" x2="279" y2="136" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="400.25" y1="96.0256" x2="400.25" y2="85.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="400.25" y1="85.5" x2="383.25" y2="85.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="383.25" y1="85.5" x2="383.25" y2="102.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="383.25" y1="102.5" x2="395.163" y2="102.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="374.5" y1="102.5" x2="374.5" y2="85.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="374.5" y1="85.5" x2="357.5" y2="85.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="357.5" y1="85.5" x2="357.5" y2="102.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="357.5" y1="102.5" x2="374.5" y2="102.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="348.75" y1="102.5" x2="348.75" y2="85.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="348.75" y1="85.5" x2="331.75" y2="85.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="331.75" y1="85.5" x2="331.75" y2="96.0256" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="336.837" y1="102.5" x2="348.75" y2="102.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="348.75" y1="75.75" x2="348.75" y2="58.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="348.75" y1="58.75" x2="336.7103" y2="58.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="331.75" y1="65.514" x2="331.75" y2="75.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="331.75" y1="75.75" x2="348.75" y2="75.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="374.5" y1="75.75" x2="374.5" y2="58.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="374.5" y1="58.75" x2="357.5" y2="58.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="357.5" y1="58.75" x2="357.5" y2="75.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="357.5" y1="75.75" x2="374.5" y2="75.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="400.25" y1="75.75" x2="400.25" y2="65.6508" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="392.9954" y1="58.75" x2="383.25" y2="58.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="383.25" y1="58.75" x2="383.25" y2="75.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="383.25" y1="75.75" x2="400.25" y2="75.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="317.5" y1="106.5" x2="317.5" y2="85.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="317.5" y1="85.5" x2="300.5" y2="85.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="300.5" y1="85.5" x2="300.5" y2="106.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="300.5" y1="106.5" x2="317.5" y2="106.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="317.5" y1="74.5" x2="317.5" y2="53.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="317.5" y1="53.5" x2="300.5" y2="53.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="300.5" y1="53.5" x2="300.5" y2="74.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="300.5" y1="74.5" x2="317.5" y2="74.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="251.75" y1="155.5" x2="251.75" y2="138.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="251.75" y1="138.5" x2="234.75" y2="138.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="234.75" y1="138.5" x2="234.75" y2="151.0945" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="244.2952" y1="155.5" x2="251.75" y2="155.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="251.75" y1="133.5" x2="251.75" y2="116.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="251.75" y1="116.5" x2="244.2952" y2="116.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="234.75" y1="120.9055" x2="234.75" y2="133.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="234.75" y1="133.5" x2="251.75" y2="133.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="276.75" y1="151.1919" x2="276.75" y2="138.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="276.75" y1="138.5" x2="259.75" y2="138.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="259.75" y1="138.5" x2="259.75" y2="155.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="259.75" y1="155.5" x2="265.9797" y2="155.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="276.75" y1="133.5" x2="276.75" y2="120.8081" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="265.9797" y1="116.5" x2="259.75" y2="116.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="259.75" y1="116.5" x2="259.75" y2="133.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="259.75" y1="133.5" x2="276.75" y2="133.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="284.5" y1="103.5" x2="284.5" y2="88.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="282.5" y1="86.5" x2="238.5" y2="86.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="236.5" y1="88.5" x2="236.5" y2="103.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="238.5" y1="105.5" x2="282.5" y2="105.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 284.5 88.5 A 2 2 0 0 0 282.5 86.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 238.5 86.5 A 2 2 0 0 0 236.5 88.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 236.5 103.5 A 2 2 0 0 0 238.5 105.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 282.5 105.5 A 2 2 0 0 0 284.5 103.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="284.5" y1="71.5" x2="284.5" y2="56.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="282.5" y1="54.5" x2="238.5" y2="54.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="236.5" y1="56.5" x2="236.5" y2="71.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="238.5" y1="73.5" x2="282.5" y2="73.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 284.5 56.5 A 2 2 0 0 0 282.5 54.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 238.5 54.5 A 2 2 0 0 0 236.5 56.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 236.5 71.5 A 2 2 0 0 0 238.5 73.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 282.5 73.5 A 2 2 0 0 0 284.5 71.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="315.5" y1="197.8796" x2="315.5" y2="169.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="308.5" y1="162.5" x2="241" y2="162.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="234" y1="169.5" x2="234" y2="195.7944" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 315.5 169.5 A 7 7 0 0 0 308.5 162.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 241 162.5 A 7 7 0 0 0 234 169.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="371.75" y1="196" x2="371.75" y2="194" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="370.75" y1="193" x2="351.75" y2="193" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="350.75" y1="194" x2="350.75" y2="196" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="351.75" y1="197" x2="370.75" y2="197" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 371.75 194 A 1 1 0 0 0 370.75 193" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 351.75 193 A 1 1 0 0 0 350.75 194" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 350.75 196 A 1 1 0 0 0 351.75 197" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 370.75 197 A 1 1 0 0 0 371.75 196" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="371.75" y1="170" x2="371.75" y2="168" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="370.75" y1="167" x2="351.75" y2="167" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="350.75" y1="168" x2="350.75" y2="170" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="351.75" y1="171" x2="370.75" y2="171" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 371.75 168 A 1 1 0 0 0 370.75 167" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 351.75 167 A 1 1 0 0 0 350.75 168" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 350.75 170 A 1 1 0 0 0 351.75 171" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 370.75 171 A 1 1 0 0 0 371.75 170" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="371.75" y1="140" x2="371.75" y2="138" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="370.75" y1="137" x2="351.75" y2="137" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="350.75" y1="138" x2="350.75" y2="140" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="351.75" y1="141" x2="370.75" y2="141" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 371.75 138 A 1 1 0 0 0 370.75 137" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 351.75 137 A 1 1 0 0 0 350.75 138" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 350.75 140 A 1 1 0 0 0 351.75 141" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 370.75 141 A 1 1 0 0 0 371.75 140" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="371.75" y1="114" x2="371.75" y2="112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="370.75" y1="111" x2="351.75" y2="111" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="350.75" y1="112" x2="350.75" y2="114" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="351.75" y1="115" x2="370.75" y2="115" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 371.75 112 A 1 1 0 0 0 370.75 111" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 351.75 111 A 1 1 0 0 0 350.75 112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 350.75 114 A 1 1 0 0 0 351.75 115" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 370.75 115 A 1 1 0 0 0 371.75 114" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="403" y1="196" x2="403" y2="194" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="402" y1="193" x2="383" y2="193" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="382" y1="194" x2="382" y2="196" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="383" y1="197" x2="402" y2="197" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 403 194 A 1 1 0 0 0 402 193" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 383 193 A 1 1 0 0 0 382 194" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 382 196 A 1 1 0 0 0 383 197" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 402 197 A 1 1 0 0 0 403 196" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="403" y1="170" x2="403" y2="168" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="402" y1="167" x2="383" y2="167" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="382" y1="168" x2="382" y2="170" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="383" y1="171" x2="402" y2="171" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 403 168 A 1 1 0 0 0 402 167" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 383 167 A 1 1 0 0 0 382 168" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 382 170 A 1 1 0 0 0 383 171" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 402 171 A 1 1 0 0 0 403 170" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="403" y1="140" x2="403" y2="138" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="402" y1="137" x2="383" y2="137" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="382" y1="138" x2="382" y2="140" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="383" y1="141" x2="402" y2="141" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 403 138 A 1 1 0 0 0 402 137" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 383 137 A 1 1 0 0 0 382 138" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 382 140 A 1 1 0 0 0 383 141" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 402 141 A 1 1 0 0 0 403 140" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="403" y1="114" x2="403" y2="112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="402" y1="111" x2="383" y2="111" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="382" y1="112" x2="382" y2="114" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="383" y1="115" x2="402" y2="115" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 403 112 A 1 1 0 0 0 402 111" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 383 111 A 1 1 0 0 0 382 112" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 382 114 A 1 1 0 0 0 383 115" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 402 115 A 1 1 0 0 0 403 114" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="361.5" cy="182" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="361.5" cy="154" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="361.5" cy="126" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="392.5" cy="182" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="392.5" cy="154" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="392.5" cy="126" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="333" cy="184" r="8.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="333" cy="154" r="8.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="333" cy="124" r="8.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 410.5 196.001 A 5 5 0 0 0 406.8764 204.4462" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 414.1236 197.5558 A 5 5 0 0 0 410.5 196.001" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 229.2773 196.005 A 5 5 0 0 0 225.8764 197.5548" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 225.8764 52.4452 A 5 5 0 1 0 233.1236 45.5548" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 325 205 A 5 5 0 0 0 321.8158 200.3414" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 315 45 A 5 5 0 0 0 325 45" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 399.8547 108.4713 A 4 4 0 0 0 406.1453 103.5287" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 325.8547 103.5287 A 4 4 0 0 0 332.1453 108.4713" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 329 51 A 4 4 0 0 0 325.7744 57.3655" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 332.2256 52.6345 A 4 4 0 0 0 329 51" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 311.442 160.43 A 4 4 0 1 0 315.558 153.57" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 313.5 111 A 4 4 0 0 0 311.442 111.57" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 315.558 118.43 A 4 4 0 0 0 313.5 111" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 279.0144 160.7139 A 4 4 0 0 0 281.9856 153.2861" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 280.5 111 A 4 4 0 0 0 279.0144 111.2861" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 281.9856 118.7139 A 4 4 0 0 0 280.5 111" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 229.8238 153.3682 A 4 4 0 1 0 233.1762 160.6318" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 231.5 111 A 4 4 0 0 0 229.8238 118.6318" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 233.1762 111.3682 A 4 4 0 0 0 231.5 111" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="407.0539" y1="45.3772" x2="392.9954" y2="58.75" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="400.25" y1="65.6508" x2="413.9461" y2="52.6228" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="413.9461" y1="52.6228" x2="417.0982" y2="49.6244" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="409.9314" y1="42.6401" x2="407.0539" y2="45.3772" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="406.8764" y1="204.4462" x2="409.7462" y2="207.4646" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="416.9829" y1="200.5632" x2="414.1236" y2="197.5558" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="234" y1="195.7944" x2="229.2773" y2="196.005" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="225.8764" y1="197.5548" x2="223.0167" y2="200.5626" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="233.1236" y1="45.5548" x2="230.2532" y2="42.5357" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="223.0167" y1="49.4374" x2="225.8764" y2="52.4452" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="321.8158" y1="200.3414" x2="315.5" y2="197.8796" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="325" y1="210" x2="325" y2="205" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="325" y1="45" x2="325" y2="40" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="315" y1="40" x2="315" y2="45" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="406.1453" y1="103.5287" x2="400.25" y2="96.0256" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="395.163" y1="102.5" x2="399.8547" y2="108.4713" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="332.1453" y1="108.4713" x2="336.837" y2="102.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="331.75" y1="96.0256" x2="325.8547" y2="103.5287" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="325.7744" y1="57.3655" x2="331.75" y2="65.514" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="336.7103" y1="58.75" x2="332.2256" y2="52.6345" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="315.558" y1="153.57" x2="312.8374" y2="151.9377" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="308.7214" y1="158.7976" x2="311.442" y2="160.43" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="311.442" y1="111.57" x2="308.7214" y2="113.2024" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="312.8374" y1="120.0623" x2="315.558" y2="118.43" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="281.9856" y1="153.2861" x2="276.75" y2="151.1919" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="265.9797" y1="155.5" x2="279.0144" y2="160.7139" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="279.0144" y1="111.2861" x2="265.9797" y2="116.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="276.75" y1="120.8081" x2="281.9856" y2="118.7139" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="233.1762" y1="160.6318" x2="244.2952" y2="155.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="234.75" y1="151.0945" x2="229.8238" y2="153.3682" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="229.8238" y1="118.6318" x2="234.75" y2="120.9055" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="244.2952" y1="116.5" x2="233.1762" y2="111.3682" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="210" y1="370" x2="210" y2="240" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="190" y1="220" x2="113.1344" y2="220" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="107.7456" y1="220" x2="30" y2="220" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="240" x2="10" y2="241.82" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="247.1" x2="10" y2="279.13" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="284.41" x2="10" y2="325.41" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="330.87" x2="10" y2="362.72" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="368" x2="10" y2="370" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="30" y1="390" x2="107.7456" y2="390" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="113.1344" y1="390" x2="190" y2="390" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 210 240 A 20 20 0 0 0 190 220" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 30 220 A 20 20 0 0 0 10 240" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 10 370 A 20 20 0 0 0 30 390" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 190 390 A 20 20 0 0 0 210 370" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="62.37" y1="368" x2="62.37" y2="362.72" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="62.37" y1="362.72" x2="10" y2="362.72" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="368" x2="62.37" y2="368" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="62.37" y1="330.87" x2="62.37" y2="325.41" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="62.37" y1="325.41" x2="10" y2="325.41" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="330.87" x2="62.37" y2="330.87" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="62.37" y1="284.41" x2="62.37" y2="279.13" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="62.37" y1="279.13" x2="10" y2="279.13" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="284.41" x2="62.37" y2="284.41" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="62.37" y1="247.1" x2="62.37" y2="241.82" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="62.37" y1="241.82" x2="10" y2="241.82" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="10" y1="247.1" x2="62.37" y2="247.1" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 174.67 340.05 A 10.45 10.45 0 0 0 174.67 359.17" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 183.11 359.17 A 10.45 10.45 0 0 0 183.11 340.05" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="183.11" y1="363.43" x2="183.11" y2="359.17" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="174.67" y1="359.17" x2="174.67" y2="363.43" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 174.67 363.43 A 4.22 4.22 0 0 0 178.89 367.65" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 178.89 367.65 A 4.22 4.22 0 0 0 183.11 363.43" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="183.11" y1="340.05" x2="183.11" y2="331.395" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="183.11" y1="331.395" x2="174.67" y2="331.395" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="174.67" y1="331.395" x2="174.67" y2="340.05" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="90.49" y1="378.74" x2="90.49" y2="359.56" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="90.49" y1="359.56" x2="71.33" y2="359.56" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="71.33" y1="359.56" x2="71.33" y2="376.4952" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="71.33" y1="378.74" x2="90.49" y2="378.74" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="90.49" y1="357.09" x2="90.49" y2="337.91" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="90.49" y1="337.91" x2="71.33" y2="337.91" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="71.33" y1="340.2448" x2="71.33" y2="357.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="71.33" y1="357.09" x2="90.49" y2="357.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115.1" y1="375.5952" x2="115.1" y2="359.56" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115.1" y1="359.56" x2="95.94" y2="359.56" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="95.94" y1="359.56" x2="95.94" y2="378.74" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="95.94" y1="378.74" x2="114.6975" y2="378.74" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="115.1" y1="357.09" x2="115.1" y2="341.1511" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="114.7537" y1="337.91" x2="95.94" y2="337.91" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="95.94" y1="337.91" x2="95.94" y2="357.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="95.94" y1="357.09" x2="115.1" y2="357.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="140.23" y1="316.44" x2="140.23" y2="297.26" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="140.23" y1="297.26" x2="121.07" y2="297.26" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.07" y1="297.26" x2="121.07" y2="312.9669" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="122.0613" y1="316.44" x2="140.23" y2="316.44" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="140.23" y1="294.44" x2="140.23" y2="275.26" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="140.23" y1="275.26" x2="121.07" y2="275.26" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.07" y1="275.26" x2="121.07" y2="294.44" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.07" y1="294.44" x2="140.23" y2="294.44" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="140.23" y1="272.27" x2="140.23" y2="253.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="140.23" y1="253.09" x2="121.07" y2="253.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.07" y1="253.09" x2="121.07" y2="272.27" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.07" y1="272.27" x2="140.23" y2="272.27" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="140.23" y1="250.27" x2="140.23" y2="231.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="140.23" y1="231.09" x2="121.8448" y2="231.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.07" y1="235.0831" x2="121.07" y2="250.27" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="121.07" y1="250.27" x2="140.23" y2="250.27" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="165.71" y1="294.44" x2="165.71" y2="275.26" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="165.71" y1="275.26" x2="146.55" y2="275.26" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="146.55" y1="275.26" x2="146.55" y2="294.44" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="146.55" y1="294.44" x2="165.71" y2="294.44" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="165.71" y1="272.27" x2="165.71" y2="253.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="165.71" y1="253.09" x2="146.55" y2="253.09" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="146.55" y1="253.09" x2="146.55" y2="272.27" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="146.55" y1="272.27" x2="165.71" y2="272.27" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="80.8" cy="326.13" r="9.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="80.81" cy="305.22" r="9.255" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="80.81" cy="284.3" r="9.255" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="95.9" cy="261.13" r="9.11" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="95.9" cy="238.95" r="9.11" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="103.95" cy="305.22" r="9.105" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="138.17" cy="372.68" r="9.11" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="138.17" cy="350.62" r="9.1" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="138.17" cy="328.54" r="9.11" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="156.19" cy="306.68" r="8.105" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="156.19" cy="240.46" r="8.105" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="189.19" cy="315.45" r="9.105" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="189.2" cy="293.59" r="9.105" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="189.19" cy="264.05" r="9.105" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="189.2" cy="242.19" r="9.105" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 68.23 374.255 A 3.265 3.265 0 1 0 70.97 379.2955" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 71.33 376.4952 A 3.265 3.265 0 0 0 68.23 374.255" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 68.23 335.955 A 3.265 3.265 0 1 0 71.33 340.2448" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 70.8396 337.2578 A 3.265 3.265 0 0 0 68.23 335.955" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 117.73 374.265 A 3.265 3.265 0 0 0 115.1 375.5952" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 114.6975 378.74 A 3.265 3.265 0 1 0 117.73 374.265" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 117.74 335.965 A 3.265 3.265 0 0 0 114.7537 337.91" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 115.1 341.1511 A 3.265 3.265 0 1 0 117.74 335.965" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 118.95 312.185 A 3.265 3.265 0 1 0 122.0613 316.44" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 121.07 312.9669 A 3.265 3.265 0 0 0 118.95 312.185" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 118.95 229.335 A 3.265 3.265 0 1 0 121.07 235.0831" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 121.8448 231.09 A 3.265 3.265 0 0 0 118.95 229.335" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="162.52" cy="376.01" r="3.265" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="162.51" cy="331.67" r="3.265" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="168.45" cy="315.44" r="3.265" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="168.46" cy="232.61" r="3.265" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="195.53" cy="376.01" r="3.265" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="195.53" cy="331.67" r="3.265" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="201.56" cy="381.55" r="2.365" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="201.57" cy="228.38" r="2.365" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="18.9" cy="381.55" r="2.365" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="18.9" cy="228.38" r="2.365" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="114.57" y1="386.87" x2="114.57" y2="385.15" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="106.31" y1="385.15" x2="106.31" y2="386.87" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 114.57 385.15 A 4.13 4.13 0 0 0 110.44 381.02" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 110.44 381.02 A 4.13 4.13 0 0 0 106.31 385.15" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 106.31 386.87 A 4.13 4.13 0 0 0 107.7456 390" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 113.1344 390 A 4.13 4.13 0 0 0 114.57 386.87" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="114.57" y1="224.85" x2="114.57" y2="223.13" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="106.31" y1="223.13" x2="106.31" y2="224.85" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 114.57 223.13 A 4.13 4.13 0 0 0 113.1344 220" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 107.7456 220 A 4.13 4.13 0 0 0 106.31 223.13" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 106.31 224.85 A 4.13 4.13 0 0 0 110.44 228.98" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 110.44 228.98 A 4.13 4.13 0 0 0 114.57 224.85" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="70.97" y1="379.2955" x2="71.33" y2="378.74" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="71.33" y1="337.91" x2="70.8396" y2="337.2578" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 400 390 A 20 20 0 0 0 409.7462 387.4646" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 416.9829 380.5632 A 20 20 0 0 0 420 370" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 420 240 A 20 20 0 0 0 416.9833 229.4374" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 409.7468 222.5357 A 20 20 0 0 0 400 220" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 240 220 A 20 20 0 0 0 230.2532 222.5357" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 223.0167 229.4374 A 20 20 0 0 0 220 240" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 319 290.5 A 4 4 0 0 0 315 286.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="420" y1="370" x2="420" y2="240" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="400" y1="220" x2="325" y2="220" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="315" y1="220" x2="240" y2="220" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="220" y1="240" x2="220" y2="286.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="220" y1="286.5" x2="315" y2="286.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="319" y1="290.5" x2="319" y2="380" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="320" y1="390" x2="400" y2="390" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="315.5" y1="249.51" x2="315.5" y2="249.49" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="299.51" y1="233.5" x2="260.49" y2="233.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="244.5" y1="249.49" x2="244.5" y2="249.51" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="260.49" y1="265.5" x2="299.51" y2="265.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 315.5 249.49 A 15.99 15.99 0 0 0 299.51 233.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 260.49 233.5 A 15.99 15.99 0 0 0 244.5 249.49" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 244.5 249.51 A 15.99 15.99 0 0 0 260.49 265.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 299.51 265.5 A 15.99 15.99 0 0 0 315.5 249.51" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="307.75" y1="284.5" x2="307.75" y2="267.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="307.75" y1="267.5" x2="286.75" y2="267.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="286.75" y1="267.5" x2="286.75" y2="284.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="286.75" y1="284.5" x2="307.75" y2="284.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="346.75" y1="377" x2="346.75" y2="360" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="346.75" y1="360" x2="325.75" y2="360" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="325.75" y1="360" x2="325.75" y2="377" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="325.75" y1="377" x2="346.75" y2="377" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="374.75" y1="377" x2="374.75" y2="360" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="374.75" y1="360" x2="353.75" y2="360" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="353.75" y1="360" x2="353.75" y2="377" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="353.75" y1="377" x2="374.75" y2="377" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="272.75" y1="284.5" x2="272.75" y2="267.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="272.75" y1="267.5" x2="251.75" y2="267.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="251.75" y1="267.5" x2="251.75" y2="284.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="251.75" y1="284.5" x2="272.75" y2="284.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="346.75" y1="350" x2="346.75" y2="333" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="346.75" y1="333" x2="329.75" y2="333" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="329.75" y1="333" x2="329.75" y2="345.0397" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="336.514" y1="350" x2="346.75" y2="350" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="346.75" y1="324.25" x2="346.75" y2="307.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="346.75" y1="307.25" x2="329.75" y2="307.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="329.75" y1="307.25" x2="329.75" y2="324.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="329.75" y1="324.25" x2="346.75" y2="324.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="346.75" y1="298.5" x2="346.75" y2="281.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="346.75" y1="281.5" x2="329.75" y2="281.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="329.75" y1="281.5" x2="329.75" y2="298.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="329.75" y1="298.5" x2="346.75" y2="298.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="373.5" y1="344.0536" x2="373.5" y2="333" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="373.5" y1="333" x2="356.5" y2="333" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="356.5" y1="333" x2="356.5" y2="350" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="356.5" y1="350" x2="368.0942" y2="350" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="373.5" y1="324.25" x2="373.5" y2="307.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="373.5" y1="307.25" x2="356.5" y2="307.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="356.5" y1="307.25" x2="356.5" y2="324.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="356.5" y1="324.25" x2="373.5" y2="324.25" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="373.5" y1="298.5" x2="373.5" y2="281.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="373.5" y1="281.5" x2="356.5" y2="281.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="356.5" y1="281.5" x2="356.5" y2="298.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="356.5" y1="298.5" x2="373.5" y2="298.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="358" cy="253" r="17.5" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="396" cy="366.5" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="396" cy="338.5" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="396" cy="310.5" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="396.25" cy="278" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="396.25" cy="246" r="9" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 410.5 376.001 A 5 5 0 0 0 406.8764 384.4462" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 414.1236 377.5558 A 5 5 0 0 0 410.5 376.001" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 406.8764 225.5548 A 5 5 0 1 0 414.1236 232.4452" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 225.8764 232.4452 A 5 5 0 1 0 233.1236 225.5548" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 320 390 A 5 5 0 0 0 320 380" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 315 225 A 5 5 0 0 0 325 225" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 323.6345 349.5244 A 4 4 0 0 0 328.3655 355.9756" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<path d="M 373.0402 355.4407 A 4 4 0 0 0 378.9598 350.0593" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="332" cy="269.25" r="4" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="376" cy="269.25" r="4" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="332" cy="236.75" r="4" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<circle cx="376" cy="236.75" r="4" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="406.8764" y1="384.4462" x2="409.7462" y2="387.4646" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="416.9829" y1="380.5632" x2="414.1236" y2="377.5558" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="414.1236" y1="232.4452" x2="416.9833" y2="229.4374" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="409.7468" y1="222.5357" x2="406.8764" y2="225.5548" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="233.1236" y1="225.5548" x2="230.2532" y2="222.5357" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="223.0167" y1="229.4374" x2="225.8764" y2="232.4452" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="320" y1="380" x2="319" y2="380" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="325" y1="225" x2="325" y2="220" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="315" y1="220" x2="315" y2="225" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="328.3655" y1="355.9756" x2="336.514" y2="350" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="329.75" y1="345.0397" x2="323.6345" y2="349.5244" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="378.9598" y1="350.0593" x2="373.5" y2="344.0536" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+<line x1="368.0942" y1="350" x2="373.0402" y2="355.4407" fill="none" stroke="#ff0000" stroke-width="0.1"/>
+</svg>

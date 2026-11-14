@@ -215,6 +215,11 @@ def main(fetch=True):
         news_dir = os.path.join(backup, 'news')
         media_news = os.path.join(web, 'media', 'news')
         os.makedirs(media_news, exist_ok=True)
+        if fetch and os.environ.get('LOGBOOK_STANDALONE'):
+            try:
+                news_mod.resolve(news_dir)      # (in the app, serve.py's picture finder does this continuously)
+            except Exception as e:
+                print(f'  ! news pictures: {e}')
         for l in legs:
             if l['kind'] != 'flight' or l.get('local'):
                 continue
@@ -228,8 +233,9 @@ def main(fetch=True):
                     if os.path.exists(src) and not os.path.exists(dst):
                         shutil.copy2(src, dst)
                     st['image'] = f'media/news/{st["image"]}' if os.path.exists(dst) else None
-                if not st.get('image') and airports[l['to']].get('wiki', {}).get('image'):
-                    st['image'], st['placeImage'] = airports[l['to']]['wiki']['image'], True   # the place's photo, labelled as such
+                # no stand-in pictures: a story without its own photo is shown as a newspaper cutting
+                for k in ('tries', 'triedAt', 'resolved'):
+                    st.pop(k, None)
                 st['airport'] = l['to']
                 news_db.setdefault(st['id'], st)
                 ids.append(st['id'])

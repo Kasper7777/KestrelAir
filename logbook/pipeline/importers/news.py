@@ -265,8 +265,19 @@ def _site_for(s):
     return ''
 
 
-def _archive_list(site, date):
-    """Every page of a paper the Internet Archive saw in the week around a date (cached)."""
+def _archive_query(host, d, keyword=None, timeout=60):
+    params = [('url', re.sub(r'^www\.', '', host) + '/*'), ('from', f'{d - timedelta(days=3):%Y%m%d}'), ('to', f'{d + timedelta(days=5):%Y%m%d}'),
+              ('output', 'json'), ('fl', 'original'), ('collapse', 'urlkey'), ('limit', '25000'), ('filter', 'mimetype:text/html')]
+    if keyword:
+        params.append(('filter', f'original:.*{keyword}.*'))
+    raw, _, _ = _get('https://web.archive.org/cdx/search/cdx?' + urllib.parse.urlencode(params), timeout=timeout, limit=40_000_000)
+    return [r[0] for r in json.loads(raw or b'[]')[1:]]
+
+
+def _archive_list(site, date, title=''):
+    """Pages of a paper the Internet Archive saw in the week around a date: the whole
+    week's list (cached, shared by that paper's stories), or - when that's too big or
+    slow - just the pages whose address contains the headline's most telling word."""
     host = urllib.parse.urlparse(site).netloc or site
     try:
         d = datetime.strptime(date, '%Y-%m-%d')
@@ -277,31 +288,36 @@ def _archive_list(site, date):
         return _ARCHIVE_LISTS[k]
     if _archive_off[0] > time.time():
         return None
-    wait = 6 - (time.time() - _last_archive[0])
-    if wait > 0:
-        time.sleep(wait)
-    _last_archive[0] = time.time()
-    url = 'https://web.archive.org/cdx/search/cdx?' + urllib.parse.urlencode({
-        'url': re.sub(r'^www\.', '', host) + '/*', 'from': f'{d - timedelta(days=3):%Y%m%d}', 'to': f'{d + timedelta(days=5):%Y%m%d}',
-        'output': 'json', 'fl': 'original', 'collapse': 'urlkey', 'limit': 25000, 'filter': 'mimetype:text/html'})
+    def pace():
+        wait = 6 - (time.time() - _last_archive[0])
+        if wait > 0:
+            time.sleep(wait)
+        _last_archive[0] = time.time()
+    if _ARCHIVE_SLOW.get(host, 0) < 2:
+        pace()
+        try:
+            rows = _archive_query(host, d, timeout=45)
+            _ARCHIVE_LISTS[k] = rows
+            return rows
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 503):
+                _archive_off[0] = time.time() + 300
+                return None
+        except Exception:
+            _ARCHIVE_SLOW[host] = _ARCHIVE_SLOW.get(host, 0) + 1     # big site or a slow moment
+    words = sorted({w for w in re.findall(r'[a-z0-9]{5,}', _fold(title))}, key=len, reverse=True)
+    if not words:
+        return []
+    pace()
     try:
-        raw, _, _ = _get(url, timeout=50, limit=40_000_000)
-        rows = [r[0] for r in json.loads(raw or b'[]')[1:]]
+        return _archive_query(host, d, keyword=words[0], timeout=60)
     except urllib.error.HTTPError as e:
         if e.code in (429, 503):
             _archive_off[0] = time.time() + 300
-            return None
-        rows = []
+        return None
     except Exception:
-        # slow answer: try again later; a paper that times out twice is too big to list (search covers it)
-        _ARCHIVE_SLOW[host] = _ARCHIVE_SLOW.get(host, 0) + 1
-        if _ARCHIVE_SLOW[host] < 2:
-            _archive_off[0] = time.time() + 120
-            return None
-        rows = []
-    _ARCHIVE_LISTS[k] = rows
-    return rows
-
+        _archive_off[0] = time.time() + 120
+        return None
 
 def _from_archive_list(s, rows):
     W = _words(s['title'])
@@ -347,14 +363,14 @@ def resolve(cache_dir, budget_s=150, log=print):
     os.makedirs(img_dir, exist_ok=True)
     now, t0, found, checked = time.time(), time.time(), 0, 0
     with _LOCK:
-        if cache.get('_finder', 0) < 2:             # tries "used up" while the search engine was refusing: give them back
+        if cache.get('_finder', 0) < 3:             # tries "used up" while the search engine was refusing: give them back
             for k, v in list(cache.items()):
                 if not k.startswith('_') and isinstance(v, list):
                     for s in v:
                         if not s.get('image') and not s.get('resolved'):
                             s.pop('tries', None)
                             s.pop('triedAt', None)
-            cache['_finder'] = 2
+            cache['_finder'] = 3
         todo = [s for k, v in list(cache.items()) if not k.startswith('_') and isinstance(v, list) for s in v
                 if not s.get('image') and s.get('tries', 0) < MAX_TRIES and now - s.get('triedAt', 0) > RETRY_AFTER]
     todo.sort(key=lambda s: s.get('tries', 0))       # fresh stories first
@@ -368,7 +384,7 @@ def resolve(cache_dir, budget_s=150, log=print):
             s['site'] = site
         ran, cands = False, []
         if s.get('site'):
-            rows = _archive_list(s['site'], s.get('date'))
+            rows = _archive_list(s['site'], s.get('date'), s['title'])
             if rows is not None:
                 ran = True
                 cands += _from_archive_list(s, rows)

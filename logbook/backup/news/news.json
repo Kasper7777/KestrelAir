@@ -78,16 +78,17 @@
 "id": "a264c75eca90",
 "title": "'An alternative to AI slop': Banbury music collective to bring live electronic night to town",
 "summary": "",
-"image": null,
+"image": "news-a264c75eca90.jpg",
 "source": "Banbury Guardian",
-"url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNVy0zYXhxcm9fTDlRTm5uUGtQRWFsUnRiR2ZSS0ZrbkJyR1B0WERibThCSTZrQ2JvekhWNDNlVXZJTUZHa0FMRTVCdDFPUGxKYW80UWZYY0RPSUEzMkluQzR0MVRnSVFuQ215azJxU3lBaTUxVDVZcmIyMThhT3dmMEhuc2FDMWpJT3BGWWxqWE53LWRjQ0FRbWViUUxCdDllUnYxS1BObTcwbk5zZEQxYjVmT3Zsc2QzNktMZkpCOC0ybWVWeVNxRDJERUd1TDdzMXdWSkc5NEN3R3NJN3VRY3FiQlpLZm1pa3JBWkxxZG15LVRJbWc?oc=5",
+"url": "https://www.banburyguardian.co.uk/whats-on/arts-and-entertainment/an-alternative-to-ai-slop-banbury-music-collective-to-bring-live-electronic-night-to-town-8849569",
 "date": "2026-08-10",
 "place": "Hook Norton",
 "lang": "en",
 "tone": "neutral",
 "site": "https://www.banburyguardian.co.uk",
 "tries": 1,
-"triedAt": 1794689576
+"triedAt": 1794690431,
+"resolved": true
 },
 {
 "id": "af16d948c922",
@@ -135,7 +136,7 @@
 "tone": "neutral",
 "site": "https://www.air-shows.org.uk",
 "tries": 1,
-"triedAt": 1794689744
+"triedAt": 1794690435
 },
 {
 "id": "d5fbfe88321e",
@@ -289,7 +290,7 @@
 "tone": "neutral",
 "site": "https://www.southampton.gov.uk",
 "tries": 1,
-"triedAt": 1794689762
+"triedAt": 1794690451
 },
 {
 "id": "f750b805f5e9",
@@ -662,7 +663,7 @@
 "tone": "neutral",
 "site": "https://www.nifootballleague.com",
 "tries": 1,
-"triedAt": 1794689774
+"triedAt": 1794690453
 },
 {
 "id": "d2dd1f022f86",
@@ -794,7 +795,12 @@
 "LTBZ|2026-08-31",
 "LQMO|2026-09-01",
 "EDLW|2026-09-01",
-"LEMR|2026-09-02"
+"LEMR|2026-09-02",
+"LEJR|2026-09-02",
+"LEAS|2026-09-03",
+"EGOS|2026-09-04",
+"ENCN|2026-09-04",
+"EFHK|2026-09-04"
 ],
 "_qv": {
 "LFRC|2026-08-16": 2,
@@ -879,9 +885,7 @@
 "place": "Cherbourg",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794689999
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "547ba0260afa",
@@ -894,9 +898,7 @@
 "place": "Cherbourg",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690049
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "a35c098fcc30",
@@ -956,9 +958,7 @@
 "place": "Lessay",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690105
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "210cea1c275b",
@@ -986,9 +986,7 @@
 "place": "Lessay",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690105
+"site": "https://www.ouest-france.fr"
 }
 ],
 "LFRD|2026-08-16": [
@@ -1077,9 +1075,7 @@
 "place": "Pontivy",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690106
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "db0d2d2c3a17",
@@ -1107,9 +1103,7 @@
 "place": "Pontivy",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690108
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "dc297f71bc60",
@@ -1122,9 +1116,7 @@
 "place": "Pontivy",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690109
+"site": "https://www.ouest-france.fr"
 }
 ],
 "LFEQ|2026-08-17": [
@@ -1139,9 +1131,7 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690160
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "aeadce6341b6",
@@ -1154,9 +1144,7 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://lorient.maville.com",
-"tries": 1,
-"triedAt": 1794690186
+"site": "https://lorient.maville.com"
 },
 {
 "id": "7b0061a1306b",
@@ -1169,9 +1157,7 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690186
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "fe18aec4d26c",
@@ -1184,9 +1170,7 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr",
-"tries": 1,
-"triedAt": 1794690238
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "e957be29682b",
@@ -1198,7 +1182,8 @@
 "date": "2026-08-17",
 "place": "Quiberon",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "71c7d1bfaf93",
@@ -1210,7 +1195,8 @@
 "date": "2026-08-16",
 "place": "Quiberon",
 "lang": "fr",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.ouest-france.fr"
 }
 ],
 "LFRE|2026-08-17": [
@@ -1224,7 +1210,8 @@
 "date": "2026-08-18",
 "place": "La Baule-Escoublac",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "d0681efb389a",
@@ -1251,7 +1238,8 @@
 "date": "2026-08-18",
 "place": "La Baule-Escoublac",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "33b7562a1ee2",
@@ -1278,7 +1266,8 @@
 "date": "2026-08-19",
 "place": "La Baule-Escoublac",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "5f4e358cd2fd",
@@ -1290,7 +1279,8 @@
 "date": "2026-08-17",
 "place": "La Baule-Escoublac",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 }
 ],
 "LFRS|2026-08-17": [
@@ -1304,7 +1294,8 @@
 "date": "2026-08-18",
 "place": "Nantes/Atlantique",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "b45e77a7ead7",
@@ -1331,7 +1322,8 @@
 "date": "2026-08-19",
 "place": "Nantes",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "aacf621525db",
@@ -1343,7 +1335,8 @@
 "date": "2026-08-17",
 "place": "Nantes",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "802c4a55065a",
@@ -1370,7 +1363,8 @@
 "date": "2026-08-18",
 "place": "Nantes",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 }
 ],
 "LFRI|2026-08-17": [
@@ -1384,7 +1378,8 @@
 "date": "2026-08-19",
 "place": "La Roche-Sur-Yon",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 },
 {
 "id": "91d579e057d8",
@@ -1396,7 +1391,8 @@
 "date": "2026-08-19",
 "place": "La Roche-Sur-Yon",
 "lang": "fr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ouest-france.fr"
 }
 ],
 "LFCY|2026-08-17": [
@@ -1504,7 +1500,8 @@
 "date": "2026-08-16",
 "place": "Girona",
 "lang": "es",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.sofascore.com"
 },
 {
 "id": "5dc36c89e180",
@@ -2309,67 +2306,152 @@
 "LEMR|2026-09-02": [],
 "LEJR|2026-09-02": [
 {
-"id": "47de6fba6c18",
-"title": "El tiempo en Jerez de la Frontera para hoy: alerta amarilla por temperaturas máximas",
-"summary": "",
-"image": null,
-"source": "El Confidencial",
-"url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWTFzSFVOSnJKSXJOSkdXc2ZlS1ZVX1BubDNZZDh6X3FYZXJvU2FLbk1PZ2xFamgyR01USUVvdXVHd1JBWUI4STBjZTRYTHN2U1lIV2pmcHZDSTMxeE51eDMxZTFiNWJXU3AzZV83b3cyaXd2dGt1aGE1OWtxTURzSWhOZVZJMkpNaHdDNVJlQURZck5kVF92RVRUSUNIVnZEWTI2eg?oc=5",
-"date": "2026-09-04",
-"place": "Jerez de la Frontera",
-"lang": "es",
-"tone": "neutral"
-},
-{
-"id": "9e97c9a28633",
-"title": "Jerez descubre que el tequila es mucho más que un chupito: hasta las mexicanas recuerdan cómo se toma un buen vaso",
-"summary": "",
-"image": null,
-"source": "lavozdelsur.es",
-"url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOMnZPLTNKWV9NUy1JdU1MNzNtWGlUMm9CUzR2S2VfZUhpWjR3aTlLV2dkdjloTFdtU1Joc1pxeDZoNDNrQ3hTOE00aU8wREZtSTJlcVBkaEFJV2ltRjhWNzJaRGQxZGp4b1Jfcl8yMWxzVzJfdnZGSG1XcDNHS1drMnJqb1l2NE5OMlkxLWFTTmFsV0dzeWkzVHdLR2NJVkk0cm5XQlFLcmx4NG1EalZRbUV3SDFfV2ltTlRZVGRoa2c1NTI1b2c2ZWRNcUZlMHMtUG1DNUxXQkF4SzNobXNBNHRlc3FrbDZxUlFMMEdwTFA2VGs?oc=5",
+"id": "41fb462ca337",
+"title": "Herranz apoya al Consejo Regulador de Brandy de Jerez y pondrá en valor en Bruselas su histórico sistema envejecimiento",
+"summary": "&nbsp;&nbsp;&nbsp;La eurodiputada del Partido Popular Europeo (EPP) y copresidenta del Intergrupo Vino del...",
+"image": "news-41fb462ca337.jpg",
+"source": "europapress.es",
+"url": "https://www.europapress.es/la-rioja/noticia-herranz-apoya-consejo-regulador-brandy-jerez-pondra-valor-bruselas-historico-sistema-envejecimiento-20260904132424.html",
 "date": "2026-09-04",
 "place": "Jerez",
-"lang": "es",
+"lang": "sp",
 "tone": "neutral"
 },
 {
-"id": "8ea8d0a51080",
-"title": "La capital gastronómica ya celebra sus Fiestas de la Vendimia: aquí, la programación completa",
-"summary": "",
-"image": null,
-"source": "CosasDeCome",
-"url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNSHVnaUEzVy16V1F5Zm9XN0Fwc0hIUGt2bnlrNUlVRlV2dkZEcTVSdjNGaGVBLVo0MTU4UFlPTmc3di04WnNocU9LLXZkVldzUmxWMmY2NlBDcFVhd21MaE1sOE9vQnp4T3Z4Wk1YY0xJQV9zLVh0RlV4WFBHSXNPUzBDd20tNEJnTkkyYzRld3U2SlEwb0E?oc=5",
+"id": "b6a71df25ece",
+"title": "Jerez y Jalisco se encuentran en La Carboná con un menú a cuatro manos",
+"summary": "El restaurante jerezano acoge varias experiencias gastronómicas junto al chef mexicano Óscar Garza, del restaurante Bruna de Guadalajara, dentro de Original Xérès",
+"image": "news-b6a71df25ece.jpg",
+"source": "lavozdigital.es",
+"url": "https://www.lavozdigital.es/gurme/cadiz/jerez-jalisco-encuentran-carbona-menu-cuatro-manos-20260902122634-ntv.html",
+"date": "2026-09-03",
+"place": "Jerez",
+"lang": "sp",
+"tone": "neutral"
+},
+{
+"id": "5147d6954243",
+"title": "Berrocal firma hasta 2027 con el Málaga CF",
+"summary": "El central llega libre, procedente del Getafe, y firma por una campaña con el conjunto blanquiazul",
+"image": "news-5147d6954243.jpg",
+"source": "laopiniondemalaga.es",
+"url": "https://www.laopiniondemalaga.es/malagacf/2026/09/01/berrocal-firma-2027-malaga-cf-133834054.html",
 "date": "2026-09-01",
 "place": "Jerez",
-"lang": "es",
+"lang": "sp",
 "tone": "neutral"
 },
 {
-"id": "e3beebc8cc34",
-"title": "Auténtica 2026 reunirá en Sevilla a 350 expertos para abordar la transformación de la cadena de suministro alimentaria",
-"summary": "",
-"image": null,
-"source": "Interempresas Media",
-"url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdnQzOUFTLUZFRVNyWk90ZDVFT2NCMml3TTFNUW1sN0taY0tRVllzM0J1S0M4V1dvSUpvMDh1cElLZ2ZYbjI4dEpoTUtjRlVNbkZkVXM4dXFnSmVYT2Y4XzJVbzhhUW4zTDJZb21MRzVSVDlyUTJnSURiRTNjT3NKTWVmeU5OclhhemhNY0JvTFNZQ25wcWtHejl1WXdqc25uaVpJaUlNVHRmT2pvMGZtTjVMem90MzE1YlhlTFI5ZWtnV3l3THRBWGZGcDhCWGVvWXJlQg?oc=5",
+"id": "fdfa748caa11",
+"title": "Fútbol sala | José Tirado :  Vamos convencidos y preparados para intentar ganar la Supercopa",
+"summary": "El presidente del Palma Futsal y el técnico Antonio Vadillo confían en una plantilla que mantiene gran parte del bloque que se estrenará este sábado ante ElPozo Murcia",
+"image": "news-fdfa748caa11.jpg",
+"source": "diariodemallorca.es",
+"url": "https://www.diariodemallorca.es/deportes/2026/09/03/jose-tirado-convencidos-preparados-ganar-133913193.html",
 "date": "2026-09-03",
-"place": "Jerez de la Frontera",
-"lang": "es",
+"place": "Jerez",
+"lang": "sp",
 "tone": "neutral"
 },
 {
-"id": "1599524760e1",
-"title": "\"Ceuta no se vende, Ceuta se defiende\": así se moviliza España en apoyo a la ciudad autónoma",
-"summary": "",
-"image": null,
-"source": "El Faro de Ceuta",
-"url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNb2Z0QWc1YmFpdkpMRzFfRVNDSlF2VVhmSEFUaDRMSVNUV0syTWVqVnk5ZjFzVjdBX2VLRGpoQ1ZPWnh3UkRCR2xENHd5YXFjXzlqaXJoTHhRa2s2ZGJkRU1TX1lhWWI3TDlNZlNXMFZlSjVubHBKNUw1eGZLalR5SkZfeklaV3JEdXhPS1N0bjFQVktNQnFsMnNuQXhtLUU?oc=5",
-"date": "2026-09-02",
-"place": "Jerez de la Frontera",
-"lang": "es",
+"id": "98e7f4084123",
+"title": "« Este vestuario es una familia y venimos a ayudar a este grupo tan consolidado »",
+"summary": "Pablo Martínez, Aznou, Juan Berrocal y Jens Cajuste fueron presentados de una tacada este jueves, mostrando su predisposición a aportar al equipo lo antes posible",
+"image": "news-98e7f4084123.jpg",
+"source": "diariosur.es",
+"url": "https://www.diariosur.es/malagacf/presentacion-nuevos-fichajes-malaga-futbol-vestuario-familia--20260903144736-nt.html",
+"date": "2026-09-03",
+"place": "Jerez",
+"lang": "sp",
+"tone": "neutral"
+},
+{
+"id": "0266044e7e10",
+"title": "Así era la Puerta del Sol hace más de 150 años",
+"summary": "Historia viva de revueltas y proclamaciones, de heroísmo y acampadas, la que fuera calle ancha ha crecido en su arquitectura e importancia política",
+"image": "news-0266044e7e10.jpg",
+"source": "larazon.es",
+"url": "https://www.larazon.es/madrid/asi-era-puerta-sol-hace-mas-150-anos_202609046a9a69713bfe5d1eff42bfb1.html",
+"date": "2026-09-04",
+"place": "Jerez",
+"lang": "sp",
 "tone": "neutral"
 }
 ],
-"LEAS|2026-09-03": [],
+"LEAS|2026-09-03": [
+{
+"id": "281a19a2e3e8",
+"title": "Leiva afronta el tramo final de su  Tour Gigante  en Madrid y Oviedo tras reunir a más de 350 . 000 espectadores",
+"summary": "El cantante y compositor Leiva encara este mes de septiembre la recta final de su 'Tour Gigante Fin de...",
+"image": "news-281a19a2e3e8.jpg",
+"source": "europapress.es",
+"url": "https://www.europapress.es/asturias/noticia-leiva-afronta-tramo-final-tour-gigante-madrid-oviedo-reunir-mas-350000-espectadores-20260902144413.html",
+"date": "2026-09-02",
+"place": "Oviedo",
+"lang": "sp",
+"tone": "neutral"
+},
+{
+"id": "2de1fdbe512c",
+"title": "« Elrow  es algo de lo que se hablará durante décadas en Oviedo » | El Comercio : Diario de Asturias",
+"summary": "Luz, color, confeti y un despliegue visual sin precedentes llega este sábado al recinto de La Ería con",
+"image": "news-2de1fdbe512c.jpg",
+"source": "elcomercio.es",
+"url": "https://www.elcomercio.es/oviedo/elrow-hablara-decadas-oviedo-20260904205523-nt.html",
+"date": "2026-09-04",
+"place": "Oviedo",
+"lang": "sp",
+"tone": "neutral"
+},
+{
+"id": "fc9d819ab2c6",
+"title": "El arzobispo de Oviedo reivindica la  reconquista  ante la crisis migratoria de Ceuta :  Hemos de recuperar lo que vale la pena",
+"summary": "Jesús Sanz Montes carga contra la gestión del Gobierno y vincula la situación de Ceuta con la defensa de la identidad española",
+"image": "news-fc9d819ab2c6.jpg",
+"source": "marca.com",
+"url": "https://www.marca.com/tiramillas/sociedad/2026/09/04/arzobispo-oviedo-reivindica-reconquista-crisis-migratoria-ceuta-hemos-recuperar-vale-pena.html",
+"date": "2026-09-04",
+"place": "Oviedo",
+"lang": "sp",
+"tone": "neutral"
+},
+{
+"id": "eb0d483a98c7",
+"title": "La intrahistoria de la salida de Luka Ilic del Oviedo : una rescisión cocinada a fuego lento",
+"summary": "El conjunto azul le había ofrecido al serbio diferentes opciones a lo largo del verano y finalmente se ahorrará una parte importante de sus emolumentos",
+"image": "news-eb0d483a98c7.jpg",
+"source": "lne.es",
+"url": "https://www.lne.es/real-oviedo/2026/09/03/intrahistoria-salida-luka-ilic-oviedo-133889639.html",
+"date": "2026-09-03",
+"place": "Oviedo",
+"lang": "sp",
+"tone": "neutral"
+},
+{
+"id": "864448a7778e",
+"title": "El arzobispo de Oviedo llama a la  Reconquista  frente a  la pretensión marroquí  | España",
+"summary": "Jesús Sanz publica un tuit sobre las manifestaciones contra la gestión de la crisis migratoria en Ceuta donde también arremete contra el Gobierno",
+"image": "news-864448a7778e.jpg",
+"source": "elpais.com",
+"url": "https://elpais.com/espana/2026-09-03/el-arzobispo-de-oviedo-llama-a-la-reconquista-frente-a-la-pretension-marroqui.html",
+"date": "2026-09-03",
+"place": "Oviedo",
+"lang": "sp",
+"tone": "neutral"
+},
+{
+"id": "cbfb833440d2",
+"title": "Paula Amor cierra su etapa en el Club de Natación Ciudad de Oviedo tras 41 años a pie de piscina",
+"summary": "La entrenadora pone fin a una trayectoria que comenz� cuando ten�a diez a�os y que la llev� de nadadora a monitoria, entrenadora y directora deportiva",
+"image": "news-cbfb833440d2.jpg",
+"source": "lavozdeasturias.es",
+"url": "https://www.lavozdeasturias.es/noticia/deportes/2026/08/28/paula-amor-41-anos-despues-deja-estar-pie-piscina/00031787930054972631589.htm",
+"date": "2026-09-01",
+"place": "Oviedo",
+"lang": "sp",
+"tone": "neutral"
+}
+],
 "ENCN|2026-09-04": [
 {
 "id": "1f930a5e276b",
@@ -3960,7 +4042,8 @@
 "c9780124c87fe517faee62aab2494b0b502f529d": "15fdb90adc6c",
 "9aec3aec8c8e5d1d3166c44c413ea5853e8cf08b": "c173cdaa76fb",
 "cbecdc8ea6bd7af8d813292a5e226e1d200ae446": "15cb27a9a330",
-"fb619396081366084519e9a0826b45dd6a50cead": "6622c720d97e"
+"fb619396081366084519e9a0826b45dd6a50cead": "6622c720d97e",
+"feacf1b75da53f0ace905ed8d4d5788e2c519908": "a264c75eca90"
 },
-"_finder": 2
+"_finder": 3
 }

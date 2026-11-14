@@ -1,7 +1,7 @@
 {
  "meta": {
   "version": 1,
-  "builtAt": "2026-11-14T20:55:41",
+  "builtAt": "2026-11-14T21:06:45",
   "online": false,
   "sources": [
    "neofly",
@@ -4681,11 +4681,12 @@
    ],
    "photos": [],
    "news": [
-    "d3c342b56663",
-    "64c459b9bfa1",
-    "11acf34b9315",
-    "9e801f2f3ff0",
-    "94ffa1e6ecba"
+    "e56ad752f258",
+    "414ae4916ae3",
+    "7415b116d638",
+    "92478bbe7084",
+    "511a80301c48",
+    "b3a124ce8a7a"
    ]
   },
   {
@@ -4848,11 +4849,12 @@
    "missions": [],
    "photos": [],
    "news": [
-    "47de6fba6c18",
-    "9e97c9a28633",
-    "8ea8d0a51080",
-    "e3beebc8cc34",
-    "1599524760e1"
+    "41fb462ca337",
+    "b6a71df25ece",
+    "5147d6954243",
+    "fdfa748caa11",
+    "98e7f4084123",
+    "0266044e7e10"
    ]
   },
   {
@@ -4895,7 +4897,14 @@
     }
    ],
    "photos": [],
-   "news": []
+   "news": [
+    "281a19a2e3e8",
+    "2de1fdbe512c",
+    "fc9d819ab2c6",
+    "eb0d483a98c7",
+    "864448a7778e",
+    "cbfb833440d2"
+   ]
   },
   {
    "id": "nf-fl-43",
@@ -10038,12 +10047,12 @@
          "lon": 7.6238046,
          "km": 0.9
         },
-        "caption": "Checked in at B&B HOTEL Dortmund-Airport. Bags down, flight bag charging. Local paper on the table: “Dortmund vs. HSV Tipp, KI Prognose & Quoten 29.08.2026 – Bundesliga”. Never a dull day in Dortmund.",
+        "caption": "Checked in at B&B HOTEL Dortmund-Airport. Bags down, flight bag charging. Local paper on the table: “Grillfürst zündet nächste Expansionsstufe : Dortmund wird neuer BBQ - Hotspot / Mit ...”. Never a dull day in Dortmund.",
         "likes": 80,
         "newsRef": {
-         "id": "d3c342b56663",
-         "text": "Dortmund vs. HSV Tipp, KI Prognose & Quoten 29.08.2026 – Bundesliga",
-         "tag": "#HSVTippPrognose"
+         "id": "e56ad752f258",
+         "text": "Grillfürst zündet nächste Expansionsstufe : Dortmund wird neuer BBQ - Hotspot / Mit ...",
+         "tag": "#GrillfürstExpansionsstufeBBQ"
         },
         "tags": [
          {
@@ -10068,9 +10077,9 @@
           "k": "venue"
          },
          {
-          "t": "#HSVTippPrognose",
+          "t": "#GrillfürstExpansionsstufeBBQ",
           "k": "news",
-          "id": "d3c342b56663"
+          "id": "e56ad752f258"
          }
         ]
        },
@@ -10554,8 +10563,13 @@
          "lon": -6.0308397,
          "km": 0.8
         },
-        "caption": "Home for the night: Hotel Arias Aeropuerto, 0.8 km from LEAS.",
+        "caption": "Home for the night: Hotel Arias Aeropuerto, 0.8 km from LEAS. Local paper on the table: “Leiva afronta el tramo final de su  Tour Gigante  en Madrid y Oviedo tras reunir a más…”. Never a dull day in Oviedo.",
         "likes": 37,
+        "newsRef": {
+         "id": "281a19a2e3e8",
+         "text": "Leiva afronta el tramo final de su  Tour Gigante  en Madrid y Oviedo tras reunir a más…",
+         "tag": "#LeivaTourGigante"
+        },
         "tags": [
          {
           "t": "#Spain",
@@ -10577,6 +10591,11 @@
          {
           "t": "#HotelAriasAeropuerto",
           "k": "venue"
+         },
+         {
+          "t": "#LeivaTourGigante",
+          "k": "news",
+          "id": "281a19a2e3e8"
          }
         ]
        },
@@ -19819,7 +19838,7 @@
    "events": [],
    "photos": [],
    "diary": {
-    "hours": 17.1,
+    "hours": 17.3,
     "nights": 0,
     "city": "Mount Pleasant",
     "tags": [
@@ -19919,6 +19938,47 @@
          {
           "t": "#MareHarbour",
           "k": "sight"
+         }
+        ]
+       },
+       {
+        "kind": "dinner",
+        "time": "2026-11-14T19:30",
+        "place": "the only place still open near EGYP",
+        "where": "EGYP",
+        "dish": "Shepherd's pie",
+        "price": null,
+        "slides": [
+         {
+          "kind": "dish",
+          "src": "media/places/dish-shepherd-s-pie.jpg",
+          "label": "Shepherd's pie"
+         }
+        ],
+        "realMenu": false,
+        "venue": null,
+        "website": null,
+        "menu": null,
+        "hours": null,
+        "caption": "Shepherd's pie at the only place still open near EGYP. Locals swear by it - so do I now.",
+        "likes": 253,
+        "tags": [
+         {
+          "t": "#FalklandIslands",
+          "k": "country",
+          "iso": "FK",
+          "name": "Falkland Islands"
+         },
+         {
+          "t": "#MountPleasant",
+          "k": "town",
+          "name": "Mount Pleasant",
+          "country": "Falkland Islands"
+         },
+         {
+          "t": "#EGYP",
+          "k": "airport",
+          "ident": "EGYP"
          }
         ]
        }
@@ -21177,6 +21237,7 @@
    "place": "Boscombe Down",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.air-shows.org.uk",
    "airport": "EGDM"
   },
   "d5fbfe88321e": {
@@ -21307,6 +21368,7 @@
    "place": "Southampton",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.southampton.gov.uk",
    "airport": "EGHI"
   },
   "f750b805f5e9": {
@@ -21385,6 +21447,7 @@
    "place": "Cherbourg",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRC"
   },
   "547ba0260afa": {
@@ -21398,6 +21461,7 @@
    "place": "Cherbourg",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRC"
   },
   "a35c098fcc30": {
@@ -21489,6 +21553,7 @@
    "place": "Lessay",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFOM"
   },
   "210cea1c275b": {
@@ -21515,6 +21580,7 @@
    "place": "Lessay",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFOM"
   },
   "64f642b588cf": {
@@ -21606,6 +21672,7 @@
    "place": "Pontivy",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFED"
   },
   "db0d2d2c3a17": {
@@ -21632,6 +21699,7 @@
    "place": "Pontivy",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFED"
   },
   "dc297f71bc60": {
@@ -21645,6 +21713,7 @@
    "place": "Pontivy",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFED"
   },
   "41e643de24dd": {
@@ -21658,6 +21727,7 @@
    "place": "Quiberon",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFEQ"
   },
   "aeadce6341b6": {
@@ -21671,6 +21741,7 @@
    "place": "Quiberon",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://lorient.maville.com",
    "airport": "LFEQ"
   },
   "7b0061a1306b": {
@@ -21684,6 +21755,7 @@
    "place": "Quiberon",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFEQ"
   },
   "fe18aec4d26c": {
@@ -21697,6 +21769,7 @@
    "place": "Quiberon",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFEQ"
   },
   "e957be29682b": {
@@ -21710,6 +21783,7 @@
    "place": "Quiberon",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFEQ"
   },
   "71c7d1bfaf93": {
@@ -21723,6 +21797,7 @@
    "place": "Quiberon",
    "lang": "fr",
    "tone": "sad",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFEQ"
   },
   "89c9d0387000": {
@@ -21736,6 +21811,7 @@
    "place": "La Baule-Escoublac",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRE"
   },
   "d0681efb389a": {
@@ -21762,6 +21838,7 @@
    "place": "La Baule-Escoublac",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRE"
   },
   "33b7562a1ee2": {
@@ -21788,6 +21865,7 @@
    "place": "La Baule-Escoublac",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRE"
   },
   "5f4e358cd2fd": {
@@ -21801,6 +21879,7 @@
    "place": "La Baule-Escoublac",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRE"
   },
   "f913927c501d": {
@@ -21814,6 +21893,7 @@
    "place": "Nantes/Atlantique",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRS"
   },
   "b45e77a7ead7": {
@@ -21840,6 +21920,7 @@
    "place": "Nantes",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRS"
   },
   "aacf621525db": {
@@ -21853,6 +21934,7 @@
    "place": "Nantes",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRS"
   },
   "802c4a55065a": {
@@ -21879,6 +21961,7 @@
    "place": "Nantes",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRS"
   },
   "1275291f0dab": {
@@ -21892,6 +21975,7 @@
    "place": "La Roche-Sur-Yon",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRI"
   },
   "91d579e057d8": {
@@ -21905,6 +21989,7 @@
    "place": "La Roche-Sur-Yon",
    "lang": "fr",
    "tone": "neutral",
+   "site": "https://www.ouest-france.fr",
    "airport": "LFRI"
   },
   "167542befcbd": {
@@ -21996,6 +22081,7 @@
    "place": "Girona",
    "lang": "es",
    "tone": "neutral",
+   "site": "https://www.sofascore.com",
    "airport": "LEGE"
   },
   "5dc36c89e180": {
@@ -22648,69 +22734,82 @@
    "tone": "neutral",
    "airport": "LTBZ"
   },
-  "d3c342b56663": {
-   "id": "d3c342b56663",
-   "title": "Dortmund vs. HSV Tipp, KI Prognose & Quoten 29.08.2026 – Bundesliga",
-   "summary": "",
-   "image": null,
-   "source": "Wettbasis",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNYmNVclNpVVBRMlhKRUhRakU1cV94WXF1eDlza1dfOFBpOXQ4WUQxN21kMVJrTWM1NnVjbFhCLWh6UnliNlVUM2cxMFBHWmN2d0dVMlZ3ZjhXWTZUdlVWSC0wd1MtakJqT21rbFl6WWxYVWxLckdjWFM4WnVWa0JZbzgyaGxqbnhiYWI0bGpLdEZDQlkwSi1TZEF3?oc=5",
-   "date": "2026-08-30",
-   "place": "Dortmund",
-   "lang": "de",
-   "tone": "neutral",
-   "airport": "EDLW"
-  },
-  "64c459b9bfa1": {
-   "id": "64c459b9bfa1",
-   "title": "25.000 Besucher beim Beachvolle­yball-event im Revierpark | Westdeutsc­he Allgemeine Zeitung (Dortmund-Sud II)",
-   "summary": "",
-   "image": null,
-   "source": "PressReader",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOM0NoTGVLSk1jb2dMTzJwM3VyQVpfQ3dGZzAwUklNdmJXRl9vM3ZTMnFqSDZMOHBCNWF5Nl9QdFBqMWh4T3FDSUc4Mlo2bnZ3STcyRVhqOWQ4QmdBNDItRTh0T1R4Ri1BQzFaMGl4YWpzblJHTTgyTjdralpaeTFtWVJ5T28wN2w4N1huLVF2bjdMSXdVNmp6NjJELUNINFYydDBhQWJfZjc1U0gy?oc=5",
+  "e56ad752f258": {
+   "id": "e56ad752f258",
+   "title": "Grillfürst zündet nächste Expansionsstufe : Dortmund wird neuer BBQ - Hotspot / Mit ...",
+   "summary": "Bad Hersfeld (ots) - Dortmund bekommt einen neuen BBQ-Hotspot: Zum 1. November 2026 übernimmt Grillfürst den von Stellfeld & Ernst aufgebauten Grill- und...",
+   "image": "media/news/news-e56ad752f258.jpg",
+   "source": "presseportal.de",
+   "url": "https://www.presseportal.de/pm/113289/6343558",
    "date": "2026-09-01",
    "place": "Dortmund",
-   "lang": "de",
+   "lang": "ge",
    "tone": "neutral",
    "airport": "EDLW"
   },
-  "11acf34b9315": {
-   "id": "11acf34b9315",
-   "title": "Hamburg-Eimsbütteler Ballspiel Club 1911 - Borussia Dortmund Live ticker, H2H und Aufstellungen",
-   "summary": "",
-   "image": null,
-   "source": "Sofascore",
-   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQakROYjdQblA1UlM0NWFXajFaWnhqZzZFX1BaZXZQX0xUdllRN1FfVjhlZWZSc09RR1ByVXBPZUphQlYteG04bDFIQWN3NmQ0WW1XQy1EWG12MC1yREI1bTE4aHlUWVVnVllPZTZWR3VmZWhodkdUc2ZkNWlkRmVNTjdPajE2TG5mYzlkc0dkYno4NGdYUHJBZmc0SEJVQ0tnME5VSk4tc1J3QWlFYVhscg?oc=5",
-   "date": "2026-09-01",
-   "place": "Dortmund",
-   "lang": "de",
-   "tone": "neutral",
-   "airport": "EDLW"
-  },
-  "9e801f2f3ff0": {
-   "id": "9e801f2f3ff0",
-   "title": "Bundesliga: Leipzig und Dortmund gewinnen zum Auftakt souverän",
-   "summary": "",
-   "image": null,
-   "source": "90PLUS",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPeHhXTmlhemZvODRKRk12OWJQWmM5Wkc1RHNtVzczRm1OMnZFbmd2bDdCckNDbkh3VWxjUHkxM1pKRHExU0E3RW5DRGY1QXB6bVQxaHo4aFFUWFBTSGVSY25GS2doLWVWUzJNcTR0THNlWWJ1YTRzY2otWWk3eU9XTnhTclRESk1qU0tkdlV5eUF6RDctakhoSWFVdVR4dw?oc=5",
+  "414ae4916ae3": {
+   "id": "414ae4916ae3",
+   "title": "Konstantinos Karetsas and Giannis Konstantelias star as Dortmund impress on opening day",
+   "summary": "Greek duo Giannis Konstantelias and Konstantinos Karetsas played starring roles in Borussia Dortmund",
+   "image": "media/news/news-414ae4916ae3.jpg",
+   "source": "bundesliga.com",
+   "url": "https://www.bundesliga.com/en/bundesliga/news/borussia-dortmund-hamburg-karetsas-konstantelias-impress-38889",
    "date": "2026-08-30",
    "place": "Dortmund",
-   "lang": "de",
+   "lang": "en",
    "tone": "neutral",
    "airport": "EDLW"
   },
-  "94ffa1e6ecba": {
-   "id": "94ffa1e6ecba",
-   "title": "Donetz informiert beim Frühstück Anwohner über Mammutbaus­telle",
-   "summary": "",
+  "7415b116d638": {
+   "id": "7415b116d638",
+   "title": "HSV zu passiv in Dortmund - Vieira vor Rückkehr",
+   "summary": "Nur bis Dienstag ist der Transfermarkt noch offen. In Hamburg sehnen die HSV-Fans die Rückkehr des Portugiesen Fabio Vieira herbei. Es gibt eine neue Entwicklung.",
+   "image": "media/news/news-7415b116d638.jpg",
+   "source": "welt.de",
+   "url": "https://www.welt.de/regionales/hamburg/article6a93fa2299cae3c1912aab98/hsv-zu-passiv-in-dortmund-vieira-vor-rueckkehr.html",
+   "date": "2026-08-30",
+   "place": "Dortmund",
+   "lang": "ge",
+   "tone": "neutral",
+   "airport": "EDLW"
+  },
+  "92478bbe7084": {
+   "id": "92478bbe7084",
+   "title": "Dortmund erweitert Aktionsplan gegen Rechtsextremismus 2026",
+   "summary": "Dortmund plant, seinen Aktionsplan gegen Extremismus bis 2026 auszuweiten. Schwerpunkt: Rechtsextremismus, Antisemitismus und türkischer Ultranationalismus.",
+   "image": "media/news/news-92478bbe7084.jpg",
+   "source": "ruhrnachrichten.de",
+   "url": "https://www.ruhrnachrichten.de/dortmund/dortmund-aktionsplan-extremismus-rechtsextremismus-antisemitismus-praevention-2026-w1239638-2002206950/",
+   "date": "2026-09-01",
+   "place": "Dortmund",
+   "lang": "ge",
+   "tone": "neutral",
+   "airport": "EDLW"
+  },
+  "511a80301c48": {
+   "id": "511a80301c48",
+   "title": "BVB - Deal am Deadline Day : Hier landet Nwaneri in Dortmund",
+   "summary": "Der BVB findet am Deadline Day den Ersatz für den verletzten Giannis Konstantelias. Ethan Nwaneri ist am Mittag in Dortmund gelandet. Exklusive Bilder.",
+   "image": "media/news/news-511a80301c48.jpg",
+   "source": "ruhrnachrichten.de",
+   "url": "https://www.ruhrnachrichten.de/bvb/bvb-transfer-konstantelias-ersatz-ethan-nwaneri-marcel-regula-dortmund-ankunft-w1241910-2002207823/",
+   "date": "2026-09-01",
+   "place": "Dortmund",
+   "lang": "ge",
+   "tone": "sad",
+   "airport": "EDLW"
+  },
+  "b3a124ce8a7a": {
+   "id": "b3a124ce8a7a",
+   "title": "EQS - News : VIB Vermögen AG : Weitere Mietverträge über 3 . 300 m2 Büro - und Dienstleistungsflächen im HCC Dortmund abgeschlossen",
+   "summary": "EQS-News: VIB Vermögen AG / Schlagwort(e): Immobilien VIB Vermögen AG: Weitere Mietverträge über 3.300 m2 Büro- und Dienstleistungsflächen im HCC Dortmund abgeschlossen 02.09.2026",
    "image": null,
-   "source": "PressReader",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOb0c5UHJMWVRkM2MwakJXYnFSRmJuQWg2RDlhZUdmLUV1aEdySi1DQmgwRzd2MTN5RnVNVmpCb1F5enVlbGJDNHhHWTRFLXVvNTNUVEFXdi1pZVpPWUtGZFBwM3o5TkplQlhWRGlvenk0SDAwNU51blQwM09ZVTBiVXdtN25KcENvMm9VQTFqcEZfRjV1aW1YeWR6QkM5T3d2cDJCRDU5R0xIaHpU?oc=5",
+   "source": "finanznachrichten.de",
+   "url": "https://www.finanznachrichten.de/nachrichten-2026-09/69470074-eqs-news-vib-vermoegen-ag-weitere-mietvertraege-ueber-3-300-m2-buero-und-dienstleistungsflaechen-im-hcc-dortmund-abgeschlossen-022.htm",
    "date": "2026-09-02",
    "place": "Dortmund",
-   "lang": "de",
-   "tone": "neutral",
+   "lang": "ge",
+   "tone": "sad",
    "airport": "EDLW"
   },
   "8b1fed3adba2": {
@@ -22737,6 +22836,7 @@
    "place": "Dundee",
    "lang": "en",
    "tone": "neutral",
+   "site": "",
    "airport": "EGPN"
   },
   "ad3e84239a72": {
@@ -22804,70 +22904,161 @@
    "tone": "sad",
    "airport": "EGNO"
   },
-  "47de6fba6c18": {
-   "id": "47de6fba6c18",
-   "title": "El tiempo en Jerez de la Frontera para hoy: alerta amarilla por temperaturas máximas",
-   "summary": "",
-   "image": null,
-   "source": "El Confidencial",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWTFzSFVOSnJKSXJOSkdXc2ZlS1ZVX1BubDNZZDh6X3FYZXJvU2FLbk1PZ2xFamgyR01USUVvdXVHd1JBWUI4STBjZTRYTHN2U1lIV2pmcHZDSTMxeE51eDMxZTFiNWJXU3AzZV83b3cyaXd2dGt1aGE1OWtxTURzSWhOZVZJMkpNaHdDNVJlQURZck5kVF92RVRUSUNIVnZEWTI2eg?oc=5",
-   "date": "2026-09-04",
-   "place": "Jerez de la Frontera",
-   "lang": "es",
-   "tone": "neutral",
-   "airport": "LEJR"
-  },
-  "9e97c9a28633": {
-   "id": "9e97c9a28633",
-   "title": "Jerez descubre que el tequila es mucho más que un chupito: hasta las mexicanas recuerdan cómo se toma un buen vaso",
-   "summary": "",
-   "image": null,
-   "source": "lavozdelsur.es",
-   "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOMnZPLTNKWV9NUy1JdU1MNzNtWGlUMm9CUzR2S2VfZUhpWjR3aTlLV2dkdjloTFdtU1Joc1pxeDZoNDNrQ3hTOE00aU8wREZtSTJlcVBkaEFJV2ltRjhWNzJaRGQxZGp4b1Jfcl8yMWxzVzJfdnZGSG1XcDNHS1drMnJqb1l2NE5OMlkxLWFTTmFsV0dzeWkzVHdLR2NJVkk0cm5XQlFLcmx4NG1EalZRbUV3SDFfV2ltTlRZVGRoa2c1NTI1b2c2ZWRNcUZlMHMtUG1DNUxXQkF4SzNobXNBNHRlc3FrbDZxUlFMMEdwTFA2VGs?oc=5",
+  "41fb462ca337": {
+   "id": "41fb462ca337",
+   "title": "Herranz apoya al Consejo Regulador de Brandy de Jerez y pondrá en valor en Bruselas su histórico sistema envejecimiento",
+   "summary": "&nbsp;&nbsp;&nbsp;La eurodiputada del Partido Popular Europeo (EPP) y copresidenta del Intergrupo Vino del...",
+   "image": "media/news/news-41fb462ca337.jpg",
+   "source": "europapress.es",
+   "url": "https://www.europapress.es/la-rioja/noticia-herranz-apoya-consejo-regulador-brandy-jerez-pondra-valor-bruselas-historico-sistema-envejecimiento-20260904132424.html",
    "date": "2026-09-04",
    "place": "Jerez",
-   "lang": "es",
+   "lang": "sp",
    "tone": "neutral",
    "airport": "LEJR"
   },
-  "8ea8d0a51080": {
-   "id": "8ea8d0a51080",
-   "title": "La capital gastronómica ya celebra sus Fiestas de la Vendimia: aquí, la programación completa",
-   "summary": "",
-   "image": null,
-   "source": "CosasDeCome",
-   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNSHVnaUEzVy16V1F5Zm9XN0Fwc0hIUGt2bnlrNUlVRlV2dkZEcTVSdjNGaGVBLVo0MTU4UFlPTmc3di04WnNocU9LLXZkVldzUmxWMmY2NlBDcFVhd21MaE1sOE9vQnp4T3Z4Wk1YY0xJQV9zLVh0RlV4WFBHSXNPUzBDd20tNEJnTkkyYzRld3U2SlEwb0E?oc=5",
+  "b6a71df25ece": {
+   "id": "b6a71df25ece",
+   "title": "Jerez y Jalisco se encuentran en La Carboná con un menú a cuatro manos",
+   "summary": "El restaurante jerezano acoge varias experiencias gastronómicas junto al chef mexicano Óscar Garza, del restaurante Bruna de Guadalajara, dentro de Original Xérès",
+   "image": "media/news/news-b6a71df25ece.jpg",
+   "source": "lavozdigital.es",
+   "url": "https://www.lavozdigital.es/gurme/cadiz/jerez-jalisco-encuentran-carbona-menu-cuatro-manos-20260902122634-ntv.html",
+   "date": "2026-09-03",
+   "place": "Jerez",
+   "lang": "sp",
+   "tone": "neutral",
+   "airport": "LEJR"
+  },
+  "5147d6954243": {
+   "id": "5147d6954243",
+   "title": "Berrocal firma hasta 2027 con el Málaga CF",
+   "summary": "El central llega libre, procedente del Getafe, y firma por una campaña con el conjunto blanquiazul",
+   "image": "media/news/news-5147d6954243.jpg",
+   "source": "laopiniondemalaga.es",
+   "url": "https://www.laopiniondemalaga.es/malagacf/2026/09/01/berrocal-firma-2027-malaga-cf-133834054.html",
    "date": "2026-09-01",
    "place": "Jerez",
-   "lang": "es",
+   "lang": "sp",
    "tone": "neutral",
    "airport": "LEJR"
   },
-  "e3beebc8cc34": {
-   "id": "e3beebc8cc34",
-   "title": "Auténtica 2026 reunirá en Sevilla a 350 expertos para abordar la transformación de la cadena de suministro alimentaria",
-   "summary": "",
-   "image": null,
-   "source": "Interempresas Media",
-   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdnQzOUFTLUZFRVNyWk90ZDVFT2NCMml3TTFNUW1sN0taY0tRVllzM0J1S0M4V1dvSUpvMDh1cElLZ2ZYbjI4dEpoTUtjRlVNbkZkVXM4dXFnSmVYT2Y4XzJVbzhhUW4zTDJZb21MRzVSVDlyUTJnSURiRTNjT3NKTWVmeU5OclhhemhNY0JvTFNZQ25wcWtHejl1WXdqc25uaVpJaUlNVHRmT2pvMGZtTjVMem90MzE1YlhlTFI5ZWtnV3l3THRBWGZGcDhCWGVvWXJlQg?oc=5",
+  "fdfa748caa11": {
+   "id": "fdfa748caa11",
+   "title": "Fútbol sala | José Tirado :  Vamos convencidos y preparados para intentar ganar la Supercopa",
+   "summary": "El presidente del Palma Futsal y el técnico Antonio Vadillo confían en una plantilla que mantiene gran parte del bloque que se estrenará este sábado ante ElPozo Murcia",
+   "image": "media/news/news-fdfa748caa11.jpg",
+   "source": "diariodemallorca.es",
+   "url": "https://www.diariodemallorca.es/deportes/2026/09/03/jose-tirado-convencidos-preparados-ganar-133913193.html",
    "date": "2026-09-03",
-   "place": "Jerez de la Frontera",
-   "lang": "es",
+   "place": "Jerez",
+   "lang": "sp",
    "tone": "neutral",
    "airport": "LEJR"
   },
-  "1599524760e1": {
-   "id": "1599524760e1",
-   "title": "\"Ceuta no se vende, Ceuta se defiende\": así se moviliza España en apoyo a la ciudad autónoma",
-   "summary": "",
-   "image": null,
-   "source": "El Faro de Ceuta",
-   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNb2Z0QWc1YmFpdkpMRzFfRVNDSlF2VVhmSEFUaDRMSVNUV0syTWVqVnk5ZjFzVjdBX2VLRGpoQ1ZPWnh3UkRCR2xENHd5YXFjXzlqaXJoTHhRa2s2ZGJkRU1TX1lhWWI3TDlNZlNXMFZlSjVubHBKNUw1eGZLalR5SkZfeklaV3JEdXhPS1N0bjFQVktNQnFsMnNuQXhtLUU?oc=5",
-   "date": "2026-09-02",
-   "place": "Jerez de la Frontera",
-   "lang": "es",
+  "98e7f4084123": {
+   "id": "98e7f4084123",
+   "title": "« Este vestuario es una familia y venimos a ayudar a este grupo tan consolidado »",
+   "summary": "Pablo Martínez, Aznou, Juan Berrocal y Jens Cajuste fueron presentados de una tacada este jueves, mostrando su predisposición a aportar al equipo lo antes posible",
+   "image": "media/news/news-98e7f4084123.jpg",
+   "source": "diariosur.es",
+   "url": "https://www.diariosur.es/malagacf/presentacion-nuevos-fichajes-malaga-futbol-vestuario-familia--20260903144736-nt.html",
+   "date": "2026-09-03",
+   "place": "Jerez",
+   "lang": "sp",
    "tone": "neutral",
    "airport": "LEJR"
+  },
+  "0266044e7e10": {
+   "id": "0266044e7e10",
+   "title": "Así era la Puerta del Sol hace más de 150 años",
+   "summary": "Historia viva de revueltas y proclamaciones, de heroísmo y acampadas, la que fuera calle ancha ha crecido en su arquitectura e importancia política",
+   "image": "media/news/news-0266044e7e10.jpg",
+   "source": "larazon.es",
+   "url": "https://www.larazon.es/madrid/asi-era-puerta-sol-hace-mas-150-anos_202609046a9a69713bfe5d1eff42bfb1.html",
+   "date": "2026-09-04",
+   "place": "Jerez",
+   "lang": "sp",
+   "tone": "neutral",
+   "airport": "LEJR"
+  },
+  "281a19a2e3e8": {
+   "id": "281a19a2e3e8",
+   "title": "Leiva afronta el tramo final de su  Tour Gigante  en Madrid y Oviedo tras reunir a más de 350 . 000 espectadores",
+   "summary": "El cantante y compositor Leiva encara este mes de septiembre la recta final de su 'Tour Gigante Fin de...",
+   "image": "media/news/news-281a19a2e3e8.jpg",
+   "source": "europapress.es",
+   "url": "https://www.europapress.es/asturias/noticia-leiva-afronta-tramo-final-tour-gigante-madrid-oviedo-reunir-mas-350000-espectadores-20260902144413.html",
+   "date": "2026-09-02",
+   "place": "Oviedo",
+   "lang": "sp",
+   "tone": "neutral",
+   "airport": "LEAS"
+  },
+  "2de1fdbe512c": {
+   "id": "2de1fdbe512c",
+   "title": "« Elrow  es algo de lo que se hablará durante décadas en Oviedo » | El Comercio : Diario de Asturias",
+   "summary": "Luz, color, confeti y un despliegue visual sin precedentes llega este sábado al recinto de La Ería con",
+   "image": "media/news/news-2de1fdbe512c.jpg",
+   "source": "elcomercio.es",
+   "url": "https://www.elcomercio.es/oviedo/elrow-hablara-decadas-oviedo-20260904205523-nt.html",
+   "date": "2026-09-04",
+   "place": "Oviedo",
+   "lang": "sp",
+   "tone": "neutral",
+   "airport": "LEAS"
+  },
+  "fc9d819ab2c6": {
+   "id": "fc9d819ab2c6",
+   "title": "El arzobispo de Oviedo reivindica la  reconquista  ante la crisis migratoria de Ceuta :  Hemos de recuperar lo que vale la pena",
+   "summary": "Jesús Sanz Montes carga contra la gestión del Gobierno y vincula la situación de Ceuta con la defensa de la identidad española",
+   "image": "media/news/news-fc9d819ab2c6.jpg",
+   "source": "marca.com",
+   "url": "https://www.marca.com/tiramillas/sociedad/2026/09/04/arzobispo-oviedo-reivindica-reconquista-crisis-migratoria-ceuta-hemos-recuperar-vale-pena.html",
+   "date": "2026-09-04",
+   "place": "Oviedo",
+   "lang": "sp",
+   "tone": "neutral",
+   "airport": "LEAS"
+  },
+  "eb0d483a98c7": {
+   "id": "eb0d483a98c7",
+   "title": "La intrahistoria de la salida de Luka Ilic del Oviedo : una rescisión cocinada a fuego lento",
+   "summary": "El conjunto azul le había ofrecido al serbio diferentes opciones a lo largo del verano y finalmente se ahorrará una parte importante de sus emolumentos",
+   "image": "media/news/news-eb0d483a98c7.jpg",
+   "source": "lne.es",
+   "url": "https://www.lne.es/real-oviedo/2026/09/03/intrahistoria-salida-luka-ilic-oviedo-133889639.html",
+   "date": "2026-09-03",
+   "place": "Oviedo",
+   "lang": "sp",
+   "tone": "neutral",
+   "airport": "LEAS"
+  },
+  "864448a7778e": {
+   "id": "864448a7778e",
+   "title": "El arzobispo de Oviedo llama a la  Reconquista  frente a  la pretensión marroquí  | España",
+   "summary": "Jesús Sanz publica un tuit sobre las manifestaciones contra la gestión de la crisis migratoria en Ceuta donde también arremete contra el Gobierno",
+   "image": "media/news/news-864448a7778e.jpg",
+   "source": "elpais.com",
+   "url": "https://elpais.com/espana/2026-09-03/el-arzobispo-de-oviedo-llama-a-la-reconquista-frente-a-la-pretension-marroqui.html",
+   "date": "2026-09-03",
+   "place": "Oviedo",
+   "lang": "sp",
+   "tone": "neutral",
+   "airport": "LEAS"
+  },
+  "cbfb833440d2": {
+   "id": "cbfb833440d2",
+   "title": "Paula Amor cierra su etapa en el Club de Natación Ciudad de Oviedo tras 41 años a pie de piscina",
+   "summary": "La entrenadora pone fin a una trayectoria que comenz� cuando ten�a diez a�os y que la llev� de nadadora a monitoria, entrenadora y directora deportiva",
+   "image": "media/news/news-cbfb833440d2.jpg",
+   "source": "lavozdeasturias.es",
+   "url": "https://www.lavozdeasturias.es/noticia/deportes/2026/08/28/paula-amor-41-anos-despues-deja-estar-pie-piscina/00031787930054972631589.htm",
+   "date": "2026-09-01",
+   "place": "Oviedo",
+   "lang": "sp",
+   "tone": "neutral",
+   "airport": "LEAS"
   },
   "3ee55969178a": {
    "id": "3ee55969178a",
@@ -22906,6 +23097,7 @@
    "place": "Derry",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.nifootballleague.com",
    "airport": "EGAE"
   },
   "d2dd1f022f86": {
@@ -22997,6 +23189,7 @@
    "place": "Edinburgh",
    "lang": "en",
    "tone": "neutral",
+   "site": "",
    "airport": "EGPH"
   },
   "1f930a5e276b": {

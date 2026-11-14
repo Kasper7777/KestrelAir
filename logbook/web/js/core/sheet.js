@@ -33,5 +33,10 @@ export function closeSheet() {
 export const sheetOpen = (id) => current && (!id || current.id === id);
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && current && !document.body.classList.contains('lightbox-open')) { e.stopImmediatePropagation(); closeSheet(); }
+  // Esc closes only the topmost layer: a hashtag card or the photo viewer first, then the sheet
+  if (e.key !== 'Escape' || !current || document.body.classList.contains('lightbox-open')) return;
+  const tag = document.querySelector('.tagcard');
+  if (tag) { e.stopImmediatePropagation(); tag.remove(); return; }
+  e.stopImmediatePropagation();
+  closeSheet();
 }, true);

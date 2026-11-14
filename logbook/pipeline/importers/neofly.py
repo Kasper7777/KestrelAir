@@ -55,7 +55,7 @@ def _clean_aircraft_name(name):
     return re.split(r',', name or '')[0].strip() or None
 
 
-def load(neofly_dir, backup_dir=None, airports_cache=None):
+def load(neofly_dir, backup_dir=None, airports_cache=None, pilot_name=None):
     """Live NeoFly install if this PC has one, otherwise the newest save in the
     repo's backup folder (so a fresh clone on another PC still builds).
     airports_cache: {ident: airport} saved by earlier builds, used when
@@ -74,7 +74,7 @@ def load(neofly_dir, backup_dir=None, airports_cache=None):
         db = _snapshot(std, tmp)
         navdb = _snapshot(nav, tmp) if os.path.exists(nav) else None
         try:
-            out = _read(db, navdb, airports_cache or {})
+            out = _read(db, navdb, airports_cache or {}, pilot_name)
             out['source'] = source
             return out
         finally:
@@ -83,9 +83,13 @@ def load(neofly_dir, backup_dir=None, airports_cache=None):
                 navdb.close()
 
 
-def _read(db, navdb, airports_cache):
-    row = db.execute('select pilotID from currentpilot').fetchone()
-    pid = row[0] if row else db.execute('select id from players order by id limit 1').fetchone()[0]
+def _read(db, navdb, airports_cache, pilot_name=None):
+    # which NeoFly pilot: the one named in config, else whoever is logged in to NeoFly
+    pilots = [{'id': r[0], 'name': r[1]} for r in db.execute('select id, name from players order by id')]
+    pid = next((p['id'] for p in pilots if pilot_name and p['name'].lower() == pilot_name.lower()), None)
+    if pid is None:
+        row = db.execute('select pilotID from currentpilot').fetchone()
+        pid = row[0] if row else pilots[0]['id']
     p = db.execute('select * from players where id=?', (pid,)).fetchone()
     pilot = {
         'name': p['name'], 'rank': p['rank'], 'xp': p['xp'], 'cash': p['cash'],
@@ -252,7 +256,7 @@ def _read(db, navdb, airports_cache):
     for e in events:
         if e['ident']:
             airport(e['ident'])
-    return {'pilot': pilot, 'aircraft': aircraft, 'flights': flights, 'events': events, 'aiFlights': ai_flights,
+    return {'pilot': pilot, 'pilots': pilots, 'aircraft': aircraft, 'flights': flights, 'events': events, 'aiFlights': ai_flights,
             'airport': lambda ident: cache.get((ident or '').strip().upper()),
             'airports': {k: v for k, v in cache.items() if v}}
 

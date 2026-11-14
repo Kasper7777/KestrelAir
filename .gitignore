@@ -10,3 +10,4 @@ logbook/web/media/
 logbook/logbook.log
 __pycache__/
 logbook/backup/neofly/std.tmp
+logbook/manuals-index.json

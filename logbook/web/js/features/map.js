@@ -22,6 +22,17 @@ export async function createMap(db, ui) {
   const font = pickFont(dark);
   const styles = { satellite: rasterStyle(font, 'satellite'), dark: dark || rasterStyle(font, 'dark'), light: light || rasterStyle(font, 'light') };
   const visited = new Set(db.stats.countryIsos || []);
+  // flag fill pieces (a country crossing the date line has one per side); anything malformed is ignored
+  const flagParts = new Map();
+  for (const [iso, c] of Object.entries(flags?.countries || {})) {
+    if (!visited.has(iso)) continue;
+    (c.parts || []).forEach((p, k) => {
+      const ok = Array.isArray(p.coordinates) && p.coordinates.length === 4 &&
+        p.coordinates.every(([x, y]) => Number.isFinite(x) && Number.isFinite(y) && x >= -180 && x <= 180 && y >= -90 && y <= 90);
+      if (ok && p.file) flagParts.set(`flag-${iso}-${k}`, p);
+    });
+  }
+  const flagLayerIds = [...flagParts.keys()];
 
   const map = new maplibregl.Map({
     container: 'map', style: styles[store.get('basemap')] || styles.satellite,
@@ -68,14 +79,19 @@ export async function createMap(db, ui) {
     map.addSource('photos', { type: 'geojson', data: photoFeatures() });
 
     // every visited country coloured in with its own flag (pre-clipped to the outline at build time)
-    for (const [iso, f] of Object.entries(flags || {})) {
-      if (!visited.has(iso)) continue;
-      map.addSource(`flag-${iso}`, { type: 'image', url: `geo/flags/${iso}.png`, coordinates: f.coordinates });
-      map.addLayer({ id: `flag-${iso}`, type: 'raster', source: `flag-${iso}`,
-        paint: { 'raster-opacity': base === 'satellite' ? 0.78 : 0.7, 'raster-fade-duration': 0, 'raster-resampling': 'linear' } });
+    for (const id of flagLayerIds) {
+      const part = flagParts.get(id);
+      try {
+        map.addSource(id, { type: 'image', url: `geo/flags/${part.file}`, coordinates: part.coordinates });
+        map.addLayer({ id, type: 'raster', source: id,
+          paint: { 'raster-opacity': base === 'satellite' ? 0.8 : 0.72, 'raster-fade-duration': 0, 'raster-resampling': 'linear' } });
+      } catch (e) { console.warn('flag fill skipped', id, e); }
     }
-    map.addLayer({ id: 'country-line', type: 'line', source: 'countries',
-      paint: { 'line-color': onLight ? '#1d2433' : '#ffffff', 'line-width': ['interpolate', ['linear'], ['zoom'], 1, 0.5, 6, 1.4], 'line-opacity': 0.55 } });
+    // a crisp two-tone border round each visited country, so neighbours never run together
+    map.addLayer({ id: 'country-casing', type: 'line', source: 'countries', layout: { 'line-join': 'round' },
+      paint: { 'line-color': '#05070d', 'line-width': ['interpolate', ['linear'], ['zoom'], 1, 1.6, 6, 3.6], 'line-opacity': 0.55 } });
+    map.addLayer({ id: 'country-line', type: 'line', source: 'countries', layout: { 'line-join': 'round' },
+      paint: { 'line-color': '#ffffff', 'line-width': ['interpolate', ['linear'], ['zoom'], 1, 0.7, 6, 1.6], 'line-opacity': 0.9 } });
 
     const flight = ['==', ['get', 'kind'], 'flight'];
     const ground = ['==', ['get', 'kind'], 'ground'];
@@ -158,7 +174,7 @@ export async function createMap(db, ui) {
     set(['ap-dot'], L.airports);
     set(['ap-label'], L.airports && L.labels);
     set(['photo-pin'], L.photos);
-    set(['country-line', ...Object.keys(flags || {}).map((iso) => `flag-${iso}`)], L.countries);
+    set(['country-line', 'country-casing', ...flagLayerIds], L.countries);
     if (map.getLayer('legs-line')) map.setPaintProperty('legs-line', 'line-color', colorExpr());
   }
   function paintSelected(id) {

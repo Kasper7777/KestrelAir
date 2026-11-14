@@ -89,20 +89,26 @@ export default {
     // ---------- fleet
     const fleetEl = document.getElementById('pane-fleet');
     const fleet = Object.values(db.aircraft).sort((a, b) => (a.firstFlight || '').localeCompare(b.firstFlight || ''));
-    const drawFleet = () => render(fleetEl, html`<div class="pane-note">Tap an aircraft to hide or show its flights.</div>
-      ${fleet.map((a) => html`<button class="fleet-card ${store.get('hiddenAircraft').has(a.id) ? 'off' : ''}" data-id="${a.id}">
+    const drawFleet = () => render(fleetEl, html`<div class="pane-note">Tap an aircraft for its dossier: history, specs, photos and manuals. The eye hides its routes.</div>
+      ${fleet.map((a) => html`<div class="fleet-card ${store.get('hiddenAircraft').has(a.id) ? 'off' : ''}" data-id="${a.id}" role="button" tabindex="0">
         <div class="ph">${a.wiki?.image ? html`<img src="${a.wiki.image}" alt="" loading="lazy">` : ''}<i style="background:${a.color}"></i></div>
         <div><b>${a.name}</b><small>${a.wiki?.description || a.category || ''}</small>
-          <div class="nums"><span>${a.legs} <em>flights</em></span><span>${duration(a.minutes)} <em>flown</em></span><span>${compact(a.nm)} <em>nm</em></span></div></div>
-      </button>`)}`);
+          <div class="nums"><span>${a.legs} <em>flights</em></span><span>${duration(a.minutes)} <em>flown</em></span><span>${compact(a.nm)} <em>nm</em></span>
+            ${a.manuals?.length ? html`<span class="has-book">${icon('book')}${a.manuals.length}</span>` : ''}</div></div>
+        <button class="eye ${store.get('hiddenAircraft').has(a.id) ? '' : 'on'}" data-eye="${a.id}" title="Show / hide this aircraft's routes">${icon('globe')}</button>
+      </div>`)}`);
     drawFleet();
     fleetEl.addEventListener('click', (e) => {
+      const eye = e.target.closest('[data-eye]');
+      if (eye) {
+        const set = new Set(store.get('hiddenAircraft'));
+        set.has(eye.dataset.eye) ? set.delete(eye.dataset.eye) : set.add(eye.dataset.eye);
+        store.set('hiddenAircraft', set);
+        drawFleet();
+        return;
+      }
       const b = e.target.closest('.fleet-card');
-      if (!b) return;
-      const set = new Set(store.get('hiddenAircraft'));
-      set.has(b.dataset.id) ? set.delete(b.dataset.id) : set.add(b.dataset.id);
-      store.set('hiddenAircraft', set);
-      drawFleet();
+      if (b) ui.openAircraft(b.dataset.id);
     });
 
     // ---------- countries

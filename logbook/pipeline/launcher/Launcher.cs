@@ -41,7 +41,7 @@ static class Launcher
             if (uv == null) { Say("uv didn't install. Check the internet connection and try again."); return 1; }
         }
 
-        var p = Run(uv, "run --no-project --with pillow pythonw \"" + serve + "\"", dir);
+        var p = Run(uv, "run --no-project --with pillow --with pypdfium2 pythonw \"" + serve + "\"", dir);
         // serve.py opens the browser itself; wait only to catch a failed start
         // (the first run on a new PC downloads Python, so allow a few minutes)
         for (int i = 0; i < 360; i++)

@@ -120,11 +120,11 @@ def _geosearch(a):
     return (hits[0]['title'], 'nearby') if hits else (None, None)
 
 
-def airports(airports_by_ident, cache_dir):
+def airports(airports_by_ident, cache_dir, fetch=True):
     os.makedirs(os.path.join(cache_dir, 'img'), exist_ok=True)
     path = os.path.join(cache_dir, 'airports.json')
     cache = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {}
-    todo = [i for i in airports_by_ident if i not in cache]
+    todo = [i for i in airports_by_ident if i not in cache] if fetch else []
     if todo:
         print(f'  Wikipedia: looking up {len(todo)} new airport(s)')
         try:
@@ -161,7 +161,17 @@ def airports(airports_by_ident, cache_dir):
     return cache
 
 
-def aircraft(aircraft_by_id, cache_dir, overrides=None):
+def title_for(a, overrides=None):
+    """(Wikipedia title, name regex) for an aircraft, e.g. ('Cessna Citation X', 'citation\\s*x|c750')."""
+    o = (overrides or {}).get(a.get('id'), {})
+    name = f'{a.get("name", "")} {a.get("livery") or ""}'.lower()
+    for rx, t in AIRCRAFT_ALIASES:
+        if re.search(rx, name):
+            return o.get('wiki') or t, rx
+    return o.get('wiki'), None
+
+
+def aircraft(aircraft_by_id, cache_dir, overrides=None, fetch=True):
     os.makedirs(os.path.join(cache_dir, 'img'), exist_ok=True)
     path = os.path.join(cache_dir, 'aircraft.json')
     cache = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {}
@@ -171,7 +181,7 @@ def aircraft(aircraft_by_id, cache_dir, overrides=None):
         if not title:
             name = f'{a.get("name", "")} {a.get("livery") or ""}'.lower()
             title = next((t for rx, t in AIRCRAFT_ALIASES if re.search(rx, name)), None)
-        if not title or title in cache:
+        if not title or title in cache or not fetch:
             continue
         try:
             s = _summary(title)

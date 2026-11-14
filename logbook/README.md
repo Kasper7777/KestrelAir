@@ -38,8 +38,10 @@ runner), which then downloads Python by itself.
 | ← / → | Previous / next leg |
 | Space or ▶ | Replay from the selected leg (1× to 8×). The aircraft's own silhouette flies the route, and your photos drop onto the map as prints where they were taken |
 | Follow button (next to speed) | Cinematic replay: tilted camera riding along behind the aircraft |
-| Logbook | Every flight written up as an EASA-style paper logbook with Casper as pilot in command: page totals carried forward, night time from the sun's position, page tabs. **Company** shows the flights your hired pilots flew. Click an entry to see it on the map |
-| Diary | For every stop of 8 hours or more: an Instagram-style, day-by-day account of Casper on the ground. The restaurants (OpenStreetMap) and sights (Wikipedia) are real and near the airport; the day out is imagined |
+| Logbook | Every flight written up as an EASA-style paper logbook with your NeoFly pilot (Kazber) as pilot in command: page totals carried forward, night time from the sun's position, page tabs. **Company** shows the flights your hired pilots flew. Click an entry to see it on the map |
+| Diary | For every stop of 8 hours or more: an Instagram-style, day-by-day account of your pilot on the ground. The restaurants (OpenStreetMap) and sights (Wikipedia) are real and near the airport; the day out is imagined |
+| Hashtags in the diary | Tap any: #Country / #Town (live Wikipedia), #Airport, #TheRestaurant or #TheHotel (address, hours, website, menu, map), #Menu (the actual menu) |
+| Fleet → tap an aircraft | Dossier: real history (Wikipedia), specifications (Wikidata), photos, your record in it, and any manuals for it found on this PC (PDFs with the aircraft's name, e.g. in Downloads) |
 | Layer strip (right edge of the map) | Turn country flags, flights, transfers, airports, codes and photo pins on or off |
 | Photos | Photo wall of every screenshot as prints, month by month |
 | Insights | Records (longest, farthest, softest landing, best-paid job…), hours per month, landing spread, most-visited airports |
@@ -66,8 +68,25 @@ never locks or changes your save.
 | OpenStreetMap + Wikipedia (once, cached in `backup/places/`) | restaurants and sights near layover airports, local dishes, for the diary |
 | flagcdn + Natural Earth (once, cached in `backup/flags/`, `web/geo/`) | each visited country filled in with its flag |
 
-The pilot's character name (pilot in command in the logbook, the diary handle) is
-`pilot.character` in `config.json`. The app icon is drawn from `pipeline/icon/vulture.svg`
+**Any NeoFly pilot.** The logbook follows whoever is logged in to NeoFly. Click the
+pilot in the title bar to pick a different NeoFly pilot, change the name shown, or set
+a photo; it saves to `config.json` and rebuilds. Each pilot's own data (NeoFly save
+copies, screenshot originals, flight list) lives in `backup/pilots/<name>/`, so
+several people can share the repo without mixing logbooks. Shared look-ups
+(Wikipedia, places, flags) live once in `backup/`.
+
+**Checked on every build.** Each airport's country comes from the real border it
+sits inside (ICAO codes are only a fallback for airports just off a coast). Every
+flag fill is validated (corners, outline, image). Countries crossing the date line
+get a piece on each side, and very large countries get their flag tiled so it reads
+everywhere. Every file the page uses must exist. Problems are listed in the log and
+skipped, never drawn.
+
+**Fetched as you go.** Opening the logbook never waits for the internet: it builds in
+a few seconds from NeoFly, your screenshots and what's already saved, then looks up
+anything new in the background (Wikipedia for new airports, restaurants, hotels,
+menus and photos near new layovers, flags for new countries). A small notice offers
+a refresh when it finds something. The app icon is drawn from `pipeline/icon/vulture.svg`
 by `pipeline/icon/build_icon.py`.
 
 **Gaps are worked out from NeoFly's own records.** When one flight ends somewhere

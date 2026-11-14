@@ -38,21 +38,42 @@ def load_json(path, default):
         return default
 
 
-def main():
+def slugify(name):
+    import re
+    return re.sub(r'[^a-z0-9]+', '-', (name or 'pilot').lower()).strip('-') or 'pilot'
+
+
+def pilot_dir(name):
+    return os.path.join(ROOT, 'backup', 'pilots', slugify(name))
+
+
+def main(fetch=True):
+    """fetch=False: build only from NeoFly, screenshots and what's already saved (fast,
+    offline). fetch=True: also look up anything new online (Wikipedia, places, flags)."""
     cfg = load_json(os.path.join(ROOT, 'config.json'), {})
     overrides = load_json(os.path.join(ROOT, 'overrides.json'), {})
     web = os.path.join(ROOT, 'web')
     os.makedirs(os.path.join(web, 'data'), exist_ok=True)
+    pcfg = cfg.get('pilot', {})
+    chosen = pcfg.get('neofly') if pcfg.get('neofly') not in (None, '', 'auto') else None
 
     nf_dir = os.path.expandvars(cfg.get('neofly', {}).get('dir', r'%LOCALAPPDATA%\Programs\Neofly'))
-    print(f'NeoFly: {nf_dir}')
+    print(f'NeoFly: {nf_dir}' + (f' (pilot {chosen})' if chosen else ''))
     backup = os.path.join(ROOT, 'backup')
     cache_path = os.path.join(backup, 'airports.json')
     try:
         cache = load_json(cache_path, {})
     except ValueError:
         cache = {}
-    nf = neofly.load(nf_dir, os.path.join(backup, 'neofly'), cache)
+    # without NeoFly on this PC, read the newest saved copy: the chosen pilot's, else any pilot's
+    fallback = os.path.join(pilot_dir(chosen), 'neofly') if chosen else None
+    if not fallback or not os.path.isdir(fallback):
+        root = os.path.join(backup, 'pilots')
+        dirs = [os.path.join(root, d, 'neofly') for d in sorted(os.listdir(root))] if os.path.isdir(root) else []
+        fallback = next((d for d in dirs if os.path.isdir(d)), None)
+    nf = neofly.load(nf_dir, fallback, cache, chosen)
+    me = pilot_dir(nf['pilot']['name'])
+    os.makedirs(me, exist_ok=True)
     print(f'  {len(nf["flights"])} flights ({sum(f["inferred"] for f in nf["flights"])} recovered from the job log), from {nf["source"]}')
     os.makedirs(backup, exist_ok=True)
     cache.update(nf['airports'])  # lets another PC without NeoFly still place airports
@@ -61,8 +82,8 @@ def main():
     os.replace(cache_path + '.tmp', cache_path)
 
     sources = screenshots.expand_sources(cfg.get('photos', {}).get('sources', [{'auto': 'steam'}]))
-    # originals saved by the Back up button: on another PC these are the photos
-    shots = os.path.join(backup, 'photos')
+    # this pilot's originals saved by the Back up button: on another PC these are the photos
+    shots = os.path.join(me, 'photos')
     if os.path.isdir(shots):
         sources += [{'label': d, 'path': os.path.join(shots, d)} for d in sorted(os.listdir(shots))
                     if os.path.isdir(os.path.join(shots, d))]
@@ -72,6 +93,25 @@ def main():
 
     legs, stops, airports, unplaced = journey.build(nf['flights'], nf['airport'], nf['events'], photos, overrides,
                                                     nf['aircraft'], nf['aiFlights'])
+
+    # each airport's country from the real borders it sits inside (ICAO prefixes are only a fallback)
+    import geocountry
+    import countries as ctab
+    names = {}
+    for code, (nm, iso) in ctab.PREFIXES.items():
+        names.setdefault(iso, nm)
+    names.update({'JE': 'Jersey', 'GG': 'Guernsey', 'US': 'United States', 'GB': 'United Kingdom'})
+    cpath = os.path.join(web, 'geo', 'countries.json')
+    for ident, a in airports.items():
+        found = geocountry.country_at(a['lon'], a['lat'], cpath)
+        if not found:
+            continue
+        iso, ne_name, how = found
+        if how == 'near' and a['country'].get('iso'):
+            continue   # just off a coast (e.g. Alderney): trust the airport's own registry country over the nearest shore
+        if a['country'].get('iso') != iso:
+            print(f'  country: {ident} was {a["country"].get("name")}, its location says {ne_name} ({how})')
+        a['country'] = {'name': names.get(iso, ne_name), 'iso': iso}
 
     # general-purpose capture folders (Windows/Game Bar/NVIDIA) also hold non-sim
     # shots: keep those only when they were taken during the journey
@@ -117,16 +157,45 @@ def main():
         return e
 
     try:
-        aw = wikipedia.airports(airports, wiki_dir)
+        aw = wikipedia.airports(airports, wiki_dir, fetch)
         for ident, a in airports.items():
             if aw.get(ident, {}).get('title'):
                 a['wiki'] = publish(aw[ident])
-        for k, w in wikipedia.aircraft(aircraft, wiki_dir, overrides.get('aircraft')).items():
+        for k, w in wikipedia.aircraft(aircraft, wiki_dir, overrides.get('aircraft'), fetch).items():
             aircraft[k]['wiki'] = publish(w)
     except Exception as e:
         print(f'  ! Wikipedia step skipped: {e}')
 
-    # layover diary: real places near airports where Casper stayed 8 h or more
+    # aircraft dossiers: real history/specs/photos + real manuals found on this PC
+    try:
+        import aircraftinfo
+        repo = os.path.dirname(ROOT)
+        roots = cfg.get('manuals', {}).get('folders') or [
+            repo, r'%USERPROFILE%\Downloads', r'%USERPROFILE%\Documents', r'%USERPROFILE%\Desktop',
+            r'%APPDATA%\Microsoft Flight Simulator 2024\Packages\Community',
+            r'%APPDATA%\Microsoft Flight Simulator\Packages\Community',
+            r'%LOCALAPPDATA%\Packages\Microsoft.Limitless_8wekyb3d8bbwe\LocalCache\Packages\Community']
+        registry = {}
+        for k, a in aircraft.items():
+            title, rx = wikipedia.title_for({**a, 'id': k}, overrides.get('aircraft'))
+            if title:
+                d = aircraftinfo.details(title, wiki_dir, fetch)
+                if d:
+                    a['dossier'] = {'title': d.get('title'), 'url': d.get('url'), 'history': d.get('history', []),
+                                    'specs': d.get('specs', []),
+                                    'photos': [{'src': publish({'imageFile': ph['file']}).get('image'), 'credit': ph['credit']}
+                                               for ph in d.get('photos', []) if publish({'imageFile': ph['file']}).get('image')]}
+            if rx:
+                mans = aircraftinfo.find_manuals([rx], roots)
+                a['manuals'] = [{k2: m[k2] for k2 in ('id', 'title', 'mb')} for m in mans]
+                registry.update({m['id']: m['path'] for m in mans})
+        with open(os.path.join(ROOT, 'manuals-index.json'), 'w', encoding='utf-8') as fh:   # server-side only, not served
+            json.dump(registry, fh, indent=1)
+        print(f'Aircraft: {sum(1 for a in aircraft.values() if a.get("dossier"))} dossiers, {len(registry)} manuals found on this PC')
+    except Exception as e:
+        print(f'  ! aircraft dossiers skipped: {e}')
+
+    # layover diary: real places near airports where the pilot stayed 8 h or more
     try:
         import places as places_mod
         import diary
@@ -136,8 +205,10 @@ def main():
                 end = datetime.fromisoformat(s['depart']) if s.get('depart') else datetime.now()
                 if (end - datetime.fromisoformat(s['arrive'])).total_seconds() >= diary.MIN_HOURS * 3600:
                     long_stays[s['airport']] = airports[s['airport']]
-        pl = places_mod.for_airports(long_stays, os.path.join(backup, 'places'))
-        n = diary.build(stops, legs, airports, pl, os.path.join(web, 'media', 'places'), os.path.join(backup, 'places', 'img'))
+        pl = places_mod.for_airports(long_stays, os.path.join(backup, 'places'), fetch)
+        n = diary.build(stops, legs, airports, pl, os.path.join(web, 'media', 'places'), os.path.join(backup, 'places', 'img'),
+                        places_mod, fetch)
+        places_mod.save_cache(os.path.join(backup, 'places'))
         print(f'Diary: {n} layovers written up')
     except Exception as e:
         import traceback
@@ -149,7 +220,7 @@ def main():
         import flagfills
         isos = sorted({a['country']['iso'] for a in airports.values() if a['country'].get('iso')})
         n = flagfills.build(isos, os.path.join(web, 'geo', 'countries.json'), os.path.join(web, 'geo', 'flags'),
-                            os.path.join(backup, 'flags'))
+                            os.path.join(backup, 'flags'), fetch)
         if n:
             print(f'  flag fills: {n} new countries')
     except Exception as e:
@@ -175,8 +246,9 @@ def main():
     }
 
     out = {
-        'meta': {'version': 1, 'builtAt': datetime.now().strftime('%Y-%m-%dT%H:%M:%S'),
-                 'sources': ['neofly', 'screenshots'], 'neofly': nf['source'], 'timezone': 'local PC time'},
+        'meta': {'version': 1, 'builtAt': datetime.now().strftime('%Y-%m-%dT%H:%M:%S'), 'online': fetch,
+                 'sources': ['neofly', 'screenshots'], 'neofly': nf['source'], 'timezone': 'local PC time',
+                 'pilots': [p['name'] for p in nf['pilots']], 'pilotSlug': slugify(nf['pilot']['name']), 'pilotChosen': chosen or ''},
         'pilot': nf['pilot'], 'aircraft': aircraft, 'airports': airports, 'legs': legs, 'stops': stops,
         'photos': {p['id']: p for p in photos},
         'unplacedPhotos': unplaced, 'stats': stats,
@@ -200,19 +272,36 @@ def main():
                         'type': f['type'], 'pay': f['pay'], 'completed': f['status'] == 0})
     out['companyFlights'] = company
     print(f'Company: {len(company)} flights by hired pilots')
-    out['pilot']['character'] =cfg.get('pilot', {}).get('character') or nf['pilot']['name']
-    avatar = cfg.get('pilot', {}).get('photo')
-    if avatar:
-        src = os.path.normpath(os.path.join(ROOT, avatar))
-        if os.path.exists(src):
-            dst = os.path.join(web, 'media', 'pilot.jpg')
-            if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
-                import shutil
-                shutil.copy2(src, dst)
-            out['pilot']['photo'] = 'media/pilot.jpg'
+    # per-pilot settings: display name and photo (set from the app's Pilot settings)
+    mine = pcfg.get('pilots', {}).get(nf['pilot']['name'], {})
+    out['pilot']['character'] = mine.get('displayName') or nf['pilot']['name']
+    candidates = [os.path.join(me, 'pilot.jpg')] + ([os.path.normpath(os.path.join(ROOT, mine['photo']))] if mine.get('photo') else [])
+    src = next((c for c in candidates if os.path.exists(c)), None)
+    dst = os.path.join(web, 'media', 'pilot.jpg')
+    if src:
+        if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src) or os.path.getsize(dst) != os.path.getsize(src):
+            import shutil
+            shutil.copy2(src, dst)
+        out['pilot']['photo'] = 'media/pilot.jpg?v=' + str(int(os.path.getmtime(src)))
+    elif os.path.exists(dst):
+        os.remove(dst)  # another pilot's photo must not linger
 
-    with open(os.path.join(web, 'data', 'logbook.json'), 'w', encoding='utf-8') as fh:
+    # self-check before publishing: anything inconsistent is reported (and in meta, for the app)
+    try:
+        import selftest
+        problems = selftest.run(out, web)
+    except Exception as e:
+        problems = [f'self-check failed to run: {e}']
+    out['meta']['checks'] = problems
+    print('Self-check: ' + ('all good' if not problems else f'{len(problems)} problem(s)'))
+    for p in problems[:20]:
+        print(f'  ! {p}')
+
+    # write atomically so the page never reads a half-written file
+    tmp = os.path.join(web, 'data', 'logbook.json.tmp')
+    with open(tmp, 'w', encoding='utf-8') as fh:
         json.dump(out, fh, ensure_ascii=False, indent=1)
+    os.replace(tmp, os.path.join(web, 'data', 'logbook.json'))
     placed = len(photos) - len(unplaced)
     print(f'Journey: {len(flights)} flights + {len(ground)} transfers across {len(airports)} airports, '
           f'{len(countries)} countries; {placed}/{len(photos)} photos placed')

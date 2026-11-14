@@ -81,7 +81,7 @@ export default {
             <div class="tile"><span>Flight time</span><b>${duration(l.minutes)}</b></div>
             <div class="tile"><span>Distance</span><b>${num(l.distanceNm)}</b><small>nm direct</small></div>
           </div>
-          <div class="card aircraft" style="--c:${l.color}">
+          <div class="card aircraft clickable" style="--c:${l.color}" data-aircraft="${l.aircraft}" title="Open the aircraft's dossier">
             <div class="ph">${ac.wiki?.image ? html`<img src="${ac.wiki.image}" alt="">` : ''}</div>
             <div><b>${ac.name || 'Unknown aircraft'}</b><small>${[ac.livery && ac.livery !== ac.name && ac.livery].filter(Boolean).join('')}</small>
               <small>${[ac.wiki?.description, ac.cruiseKt && `${ac.cruiseKt} kt cruise`].filter(Boolean).join(' · ')}</small></div>
@@ -161,6 +161,8 @@ export default {
     };
 
     el.addEventListener('click', (e) => {
+      const ac = e.target.closest('[data-aircraft]');
+      if (ac) { ui.openAircraft?.(ac.dataset.aircraft); return; }
       const t = e.target.closest('button, img[data-photos]');
       if (!t) return;
       if (t.classList.contains('close')) store.set('selected', null);

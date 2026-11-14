@@ -1,0 +1,703 @@
+{
+"https://cotswoldsclub.co.uk/": {
+"photos": [
+"venue-6310294308-0.jpg",
+"venue-6310294308-1.jpg",
+"venue-6310294308-2.jpg",
+"venue-6310294308-3.jpg"
+],
+"menu": {
+"kind": "image",
+"file": "venue-6310294308-menu.jpg",
+"url": "https://cotswoldsclub.co.uk/pdfs/Wedding-Menu.pdf"
+},
+"site": "https://cotswoldsclub.co.uk/",
+"fetched": "2026-11-14"
+},
+"https://www.whichfordpottery.com/visit/straw-kitchen": {
+"photos": [
+"venue-c1ac5442d2-0.jpg",
+"venue-c1ac5442d2-1.jpg",
+"venue-c1ac5442d2-2.jpg",
+"venue-c1ac5442d2-3.jpg"
+],
+"menu": null,
+"site": "https://www.whichfordpottery.com/visit/straw-kitchen",
+"fetched": "2026-11-14"
+},
+"https://www.lansdownestrand.co.uk/": {
+"photos": [
+"venue-383b0555e5-0.jpg",
+"venue-383b0555e5-1.jpg",
+"venue-383b0555e5-2.jpg",
+"venue-383b0555e5-3.jpg"
+],
+"menu": {
+"kind": "image",
+"file": "venue-383b0555e5-menu.jpg",
+"url": "https://lansdownestrand.co.uk/pdfs/christmas26.pdf"
+},
+"site": "https://www.lansdownestrand.co.uk/",
+"fetched": "2026-11-14"
+},
+"https://www.chefandbrewer.com/pubs/wiltshire/red-lion": {
+"photos": [
+"venue-b4a21ee93b-0.jpg",
+"venue-b4a21ee93b-1.jpg",
+"venue-b4a21ee93b-2.jpg",
+"venue-b4a21ee93b-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://www.chefandbrewer.com/pubs/wiltshire/red-lion/menu"
+},
+"site": "https://www.chefandbrewer.com/pubs/wiltshire/red-lion",
+"fetched": "2026-11-14"
+},
+"https://www.premierinn.com/gb/en/hotels/england/hampshire/gosport/gosport.html": {
+"photos": [
+"venue-11a21a5f85-0.jpg",
+"venue-11a21a5f85-1.jpg",
+"venue-11a21a5f85-2.jpg",
+"venue-11a21a5f85-3.jpg"
+],
+"menu": null,
+"site": "https://www.premierinn.com/gb/en/hotels/england/hampshire/gosport/gosport.html",
+"fetched": "2026-11-14"
+},
+"https://lizzrestaurant.co.uk/": {
+"photos": [
+"venue-b2b9fbb87b-0.jpg",
+"venue-b2b9fbb87b-1.jpg",
+"venue-b2b9fbb87b-2.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://www.lizzrestaurant.co.uk/menus"
+},
+"site": "https://lizzrestaurant.co.uk/",
+"fetched": "2026-11-14"
+},
+"https://www.hotelpontivy.com/": {
+"photos": [],
+"menu": null,
+"site": "https://www.hotelpontivy.com/",
+"fetched": "2026-11-14",
+"error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+},
+"https://www.dominos.fr/magasin/pontivy_56300": {
+"photos": [
+"venue-2725b23a54-0.jpg",
+"venue-2725b23a54-1.jpg",
+"venue-2725b23a54-2.jpg",
+"venue-2725b23a54-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://www.dominos.fr/la-carte/"
+},
+"site": "https://www.dominos.fr/magasin/pontivy_56300",
+"fetched": "2026-11-14"
+},
+"https://thaomirestaurant.fr/": {
+"photos": [
+"venue-6592c1669b-0.jpg"
+],
+"menu": null,
+"site": "https://thaomirestaurant.fr/",
+"fetched": "2026-11-14"
+},
+"https://www.hotellemarin.com/": {
+"photos": [
+"venue-c245c30d7c-0.jpg",
+"venue-c245c30d7c-1.jpg",
+"venue-c245c30d7c-2.jpg",
+"venue-c245c30d7c-3.jpg"
+],
+"menu": null,
+"site": "https://www.hotellemarin.com/",
+"fetched": "2026-11-14"
+},
+"https://tineltrogir.business.site/": {
+"photos": [],
+"menu": null,
+"site": "https://tineltrogir.business.site/",
+"fetched": "2026-11-14",
+"error": "HTTP Error 404: Not Found"
+},
+"https://www.hotel-bb.com/de/hotel/dortmund-airport": {
+"photos": [
+"venue-dcbbed470e-0.jpg",
+"venue-dcbbed470e-1.jpg",
+"venue-dcbbed470e-2.jpg",
+"venue-dcbbed470e-3.jpg"
+],
+"menu": null,
+"site": "https://www.hotel-bb.com/de/hotel/dortmund-airport",
+"fetched": "2026-11-14"
+},
+"https://www.stations-grill.de": {
+"photos": [],
+"menu": null,
+"site": "https://www.stations-grill.de",
+"fetched": "2026-11-14",
+"error": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1081)>"
+},
+"https://cliftonarmslytham.com/": {
+"photos": [
+"venue-7490ea3a14-0.jpg",
+"venue-7490ea3a14-1.jpg",
+"venue-7490ea3a14-2.jpg",
+"venue-7490ea3a14-3.jpg"
+],
+"menu": {
+"kind": "text",
+"items": [
+{
+"name": "Live entertainment from Tony Benedict",
+"price": "6.30"
+},
+{
+"name": "A Non refundable deposit of",
+"price": "£10"
+},
+{
+"name": "2 courses",
+"price": "£33"
+},
+{
+"name": "3 courses",
+"price": "£38"
+},
+{
+"name": "Afternoon Tea from",
+"price": "£29"
+},
+{
+"name": "Champagne Afternoon Tea from",
+"price": "£39"
+},
+{
+"name": "Monday to Friday 7am",
+"price": "10.00"
+},
+{
+"name": "Saturday & Sunday 8am",
+"price": "10.30"
+}
+],
+"url": "https://www.cliftonarmslytham.com/eat-drink"
+},
+"site": "https://cliftonarmslytham.com/",
+"fetched": "2026-11-14"
+},
+"https://seniorsfishandchips.co.uk/": {
+"photos": [
+"venue-125cecde57-0.jpg",
+"venue-125cecde57-1.jpg",
+"venue-125cecde57-2.jpg",
+"venue-125cecde57-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://eat-marketing.co.uk/"
+},
+"site": "https://seniorsfishandchips.co.uk/",
+"fetched": "2026-11-14"
+},
+"https://hotelariasaeropuerto.com": {
+"photos": [
+"venue-7810b1a7a5-0.jpg",
+"venue-7810b1a7a5-1.jpg",
+"venue-7810b1a7a5-2.jpg",
+"venue-7810b1a7a5-3.jpg"
+],
+"menu": null,
+"site": "https://hotelariasaeropuerto.com",
+"fetched": "2026-11-14"
+},
+"https://smarttravelers.areas.com": {
+"photos": [
+"venue-2997bbcae7-0.jpg",
+"venue-2997bbcae7-1.jpg",
+"venue-2997bbcae7-2.jpg",
+"venue-2997bbcae7-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://blogsmarttravelers.areas.com/?utm_source=web-st&utm_medium=enlace&utm_campaign=menu&utm_content=blog"
+},
+"site": "https://smarttravelers.areas.com",
+"fetched": "2026-11-14"
+},
+"https://www.travelodge.co.uk/hotels/289/Shrewsbury-Battlefield-hotel": {
+"photos": [
+"venue-5b6e30ce86-0.jpg",
+"venue-5b6e30ce86-1.jpg",
+"venue-5b6e30ce86-2.jpg",
+"venue-5b6e30ce86-3.jpg"
+],
+"menu": null,
+"site": "https://www.travelodge.co.uk/hotels/289/Shrewsbury-Battlefield-hotel",
+"fetched": "2026-11-14"
+},
+"https://аэропортастрахань.рф/services/hotel/": {
+"photos": [],
+"menu": null,
+"site": "https://аэропортастрахань.рф/services/hotel/",
+"fetched": "2026-11-14",
+"error": "'latin-1' codec can't encode characters in position 0-16: ordinal not in range(256)"
+},
+"https://chaban.2gis.biz/": {
+"photos": [],
+"menu": null,
+"site": "https://chaban.2gis.biz/",
+"fetched": "2026-11-14",
+"error": "HTTP Error 404: Not Found"
+},
+"https://trend.restaurant/iremel-lounge": {
+"photos": [],
+"menu": null,
+"site": "https://trend.restaurant/iremel-lounge",
+"fetched": "2026-11-14",
+"error": "<urlopen error [Errno 11002] getaddrinfo failed>"
+},
+"https://trend.restaurant/noc": {
+"photos": [],
+"menu": null,
+"site": "https://trend.restaurant/noc",
+"fetched": "2026-11-14",
+"error": "<urlopen error [Errno 11002] getaddrinfo failed>"
+},
+"https://trend.restaurant/aerocafe": {
+"photos": [],
+"menu": null,
+"site": "https://trend.restaurant/aerocafe",
+"fetched": "2026-11-14",
+"error": "<urlopen error [Errno 11002] getaddrinfo failed>"
+},
+"https://shoko.ru/": {
+"photos": [
+"venue-d2945c4633-0.jpg",
+"venue-d2945c4633-1.jpg",
+"venue-d2945c4633-2.jpg",
+"venue-d2945c4633-3.jpg"
+],
+"menu": null,
+"site": "https://shoko.ru/",
+"fetched": "2026-11-14"
+},
+"https://www.booking.cn/hotel/cn/xiao-wu-ding-inn.zh-cn.html?": {
+"photos": [],
+"menu": null,
+"site": "https://www.booking.cn/hotel/cn/xiao-wu-ding-inn.zh-cn.html?",
+"fetched": "2026-11-14"
+},
+"http://www.oyado-totoya.jp/daijyu/": {
+"photos": [
+"venue-5c3f864483-0.jpg",
+"venue-5c3f864483-1.jpg"
+],
+"menu": null,
+"site": "http://www.oyado-totoya.jp/daijyu/",
+"fetched": "2026-11-14"
+},
+"https://trees-coffee.com/": {
+"photos": [
+"venue-646ea84c50-0.jpg",
+"venue-646ea84c50-1.jpg",
+"venue-646ea84c50-2.jpg",
+"venue-646ea84c50-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://trees-coffee.com/menu/lunch/"
+},
+"site": "https://trees-coffee.com/",
+"fetched": "2026-11-14"
+},
+"https://www.torisaku.co.jp/shop#b16": {
+"photos": [
+"venue-952fed2ec9-0.jpg",
+"venue-952fed2ec9-1.jpg",
+"venue-952fed2ec9-2.jpg",
+"venue-952fed2ec9-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://www.torisaku.co.jp/menu"
+},
+"site": "https://www.torisaku.co.jp/shop#b16",
+"fetched": "2026-11-14"
+},
+"http://www.pizzabellarestaurant.com/": {
+"photos": [
+"venue-aa52f8f2d6-0.jpg"
+],
+"menu": {
+"kind": "text",
+"items": [
+{
+"name": "Mozzarella Cheese",
+"price": "13.95"
+},
+{
+"name": "1 Topping",
+"price": "15.95"
+},
+{
+"name": "2 Toppings",
+"price": "17.95"
+},
+{
+"name": "Veggie Delight",
+"price": "19.95"
+},
+{
+"name": "Greek",
+"price": "19.95"
+},
+{
+"name": "Meat Lover’s",
+"price": "19.95"
+},
+{
+"name": "Combination",
+"price": "19.95"
+},
+{
+"name": "Hawaiian",
+"price": "17.95"
+},
+{
+"name": "Extra Toppings",
+"price": "2.50"
+},
+{
+"name": "Extra Feta Cheese",
+"price": "2.50"
+},
+{
+"name": "No half-and-half on Greek pizza. Extra pizza boxes are",
+"price": "$2.00"
+},
+{
+"name": "Meat Lovers Calzone",
+"price": "$18.95"
+},
+{
+"name": "Vegetable Calzone",
+"price": "$18.95"
+},
+{
+"name": "Combination Calzone",
+"price": "$18.95"
+},
+{
+"name": "Greek Calzone",
+"price": "$18.95"
+},
+{
+"name": "Garlic Bread With Marinara Sauce",
+"price": "$7.95"
+},
+{
+"name": "Garlic Bread With Mozzerella And Marinara Sauce",
+"price": "$9.95"
+},
+{
+"name": "Homemade Greek Meatball With Marinara Sauce",
+"price": "$11.95"
+}
+],
+"url": "https://www.pizzabellarestaurant.com/menu"
+},
+"site": "http://www.pizzabellarestaurant.com/",
+"fetched": "2026-11-14"
+},
+"https://restaurants.subway.com/united-states/ak/juneau/8777-glacier-hwy": {
+"photos": [
+"venue-12403b510c-0.jpg",
+"venue-12403b510c-1.jpg",
+"venue-12403b510c-2.jpg",
+"venue-12403b510c-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://www.subway.com/en-us/sustainability/well-being/quality-and-food-safety"
+},
+"site": "https://restaurants.subway.com/united-states/ak/juneau/8777-glacier-hwy",
+"fetched": "2026-11-14"
+},
+"https://www.bullwinklespizza.com/": {
+"photos": [
+"venue-2e2e739703-0.jpg",
+"venue-2e2e739703-1.jpg",
+"venue-2e2e739703-2.jpg",
+"venue-2e2e739703-3.jpg"
+],
+"menu": {
+"kind": "text",
+"items": [
+{
+"name": "Mini Moose",
+"price": "$10.99"
+},
+{
+"name": "Small",
+"price": "$10.59"
+},
+{
+"name": "Large",
+"price": "$12.49"
+},
+{
+"name": "One trip salad bar",
+"price": "$7.99"
+},
+{
+"name": "All you can eat salad",
+"price": "$10.99"
+}
+],
+"url": "https://www.bullwinklespizza.com/menus/"
+},
+"site": "https://www.bullwinklespizza.com/",
+"fetched": "2026-11-14"
+},
+"http://www.albertainn.ca/": {
+"photos": [
+"venue-04762f0df2-0.jpg",
+"venue-04762f0df2-1.jpg",
+"venue-04762f0df2-2.jpg",
+"venue-04762f0df2-3.jpg"
+],
+"menu": null,
+"site": "http://www.albertainn.ca/",
+"fetched": "2026-11-14"
+},
+"https://www.bestwestern.com/en_US/book/hotels-in-modesto/best-western-town-house-lodge/propertyCode.05063.html": {
+"photos": [
+"venue-983c967cda-0.jpg",
+"venue-983c967cda-1.jpg",
+"venue-983c967cda-2.jpg",
+"venue-983c967cda-3.jpg"
+],
+"menu": null,
+"site": "https://www.bestwestern.com/en_US/book/hotels-in-modesto/best-western-town-house-lodge/propertyCode.05063.html",
+"fetched": "2026-11-14"
+},
+"https://www.habitburger.com/locations/ceres/": {
+"photos": [
+"venue-c4f55b21f3-0.jpg",
+"venue-c4f55b21f3-1.jpg",
+"venue-c4f55b21f3-2.jpg",
+"venue-c4f55b21f3-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://www.habitburger.com/menu/"
+},
+"site": "https://www.habitburger.com/locations/ceres/",
+"fetched": "2026-11-14"
+},
+"https://www.starbucks.com/store-locator/store/14107/": {
+"photos": [],
+"menu": null,
+"site": "https://www.starbucks.com/store-locator/store/14107/",
+"fetched": "2026-11-14"
+},
+"https://www.twahotel.com/hotel": {
+"photos": [
+"venue-ffc625ce57-0.jpg",
+"venue-ffc625ce57-1.jpg",
+"venue-ffc625ce57-2.jpg",
+"venue-ffc625ce57-3.jpg"
+],
+"menu": {
+"kind": "image",
+"file": "venue-ffc625ce57-menu.jpg",
+"url": "https://www.twahotel.com/sites/default/files/2023-11/TWA%20Corner%20Store%20Menu.pdf"
+},
+"site": "https://www.twahotel.com/hotel",
+"fetched": "2026-11-14"
+},
+"https://www.bk.com/store-locator/store/restaurant_1602": {
+"photos": [],
+"menu": {
+"kind": "link",
+"url": "https://www.bk.com/menu"
+},
+"site": "https://www.bk.com/store-locator/store/restaurant_1602",
+"fetched": "2026-11-14"
+},
+"https://www.starbucks.com/store-locator/store/1030180/target-lawrence-3382-345-rockaway-turnpike-lawrence-ny-11559-us": {
+"photos": [],
+"menu": null,
+"site": "https://www.starbucks.com/store-locator/store/1030180/target-lawrence-3382-345-rockaway-turnpike-lawrence-ny-11559-us",
+"fetched": "2026-11-14"
+},
+"https://bayhousebar.com": {
+"photos": [
+"venue-45b4061367-0.jpg",
+"venue-45b4061367-1.jpg",
+"venue-45b4061367-2.jpg",
+"venue-45b4061367-3.jpg"
+],
+"menu": {
+"kind": "text",
+"items": [
+{
+"name": "Wings",
+"price": "$17"
+},
+{
+"name": "Mozzarella Sticks",
+"price": "$13"
+},
+{
+"name": "Chicken Fingers",
+"price": "$13"
+},
+{
+"name": "Zucchini Sticks",
+"price": "$10"
+},
+{
+"name": "Sampler",
+"price": "$20"
+},
+{
+"name": "Fried Calamari",
+"price": "$18"
+},
+{
+"name": "Whole Lotta Mussels",
+"price": "$18"
+},
+{
+"name": "Crab Cakes",
+"price": "$18"
+},
+{
+"name": "Baked Clams",
+"price": "$18"
+},
+{
+"name": "Chicken Teriyaki Dumplings",
+"price": "$14"
+},
+{
+"name": "French Onion Soup",
+"price": "$9"
+},
+{
+"name": "Soup du Jour",
+"price": "$8"
+},
+{
+"name": "Signature",
+"price": "$19"
+},
+{
+"name": "Garden Salad",
+"price": "$14"
+},
+{
+"name": "Chicken",
+"price": "$20"
+},
+{
+"name": "· Shrimp",
+"price": "$23"
+},
+{
+"name": "· Scallops",
+"price": "$23"
+},
+{
+"name": "· Steak",
+"price": "$25"
+}
+],
+"url": "https://bayhousebar.com/menu/"
+},
+"site": "https://bayhousebar.com",
+"fetched": "2026-11-14"
+},
+"https://www.popeyes.com/store-locator/store/restaurant_84858": {
+"photos": [],
+"menu": null,
+"site": "https://www.popeyes.com/store-locator/store/restaurant_84858",
+"fetched": "2026-11-14"
+},
+"https://www.ihg.com/holidayinnexpress/hotels/us/en/lawrence/boslm/hoteldetail": {
+"photos": [],
+"menu": null,
+"site": "https://www.ihg.com/holidayinnexpress/hotels/us/en/lawrence/boslm/hoteldetail",
+"fetched": "2026-11-14",
+"error": "HTTP Error 403: Forbidden"
+},
+"https://littlecaesars.com/en-us/store/10449/": {
+"photos": [],
+"menu": null,
+"site": "https://littlecaesars.com/en-us/store/10449/",
+"fetched": "2026-11-14"
+},
+"https://bgood.com/": {
+"photos": [
+"venue-46b2c300e3-0.jpg",
+"venue-46b2c300e3-1.jpg",
+"venue-46b2c300e3-2.jpg",
+"venue-46b2c300e3-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://bgood.com/menu"
+},
+"site": "https://bgood.com/",
+"fetched": "2026-11-14"
+},
+"https://www.mcdonalds.com/us/en-us/location/6294.html": {
+"photos": [],
+"menu": null,
+"site": "https://www.mcdonalds.com/us/en-us/location/6294.html",
+"fetched": "2026-11-14",
+"error": "HTTP Error 403: Forbidden"
+},
+"https://www.choicehotels.com/ohio/mayfield-heights/comfort-inn-hotels/oh502": {
+"photos": [],
+"menu": null,
+"site": "https://www.choicehotels.com/ohio/mayfield-heights/comfort-inn-hotels/oh502",
+"fetched": "2026-11-14",
+"error": "HTTP Error 403: Forbidden"
+},
+"https://restaurants.subway.com/united-states/oh/south-euclid/4265-monticello-blvd": {
+"photos": [
+"venue-f19653ea8d-0.jpg",
+"venue-f19653ea8d-1.jpg",
+"venue-f19653ea8d-2.jpg",
+"venue-f19653ea8d-3.jpg"
+],
+"menu": {
+"kind": "link",
+"url": "https://www.subway.com/en-us/sustainability/well-being/quality-and-food-safety"
+},
+"site": "https://restaurants.subway.com/united-states/oh/south-euclid/4265-monticello-blvd",
+"fetched": "2026-11-14"
+},
+"cuicobello.com": {
+"photos": [],
+"menu": null,
+"site": "cuicobello.com",
+"fetched": "2026-11-14",
+"error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+},
+"https://www.hilton.com/en/hotels/kinocup-rok-hotel-kingston/": {
+"photos": [],
+"menu": null,
+"site": "https://www.hilton.com/en/hotels/kinocup-rok-hotel-kingston/",
+"fetched": "2026-11-14",
+"error": "HTTP Error 403: Forbidden"
+}
+}

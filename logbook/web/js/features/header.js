@@ -14,9 +14,11 @@ export default {
       <img class="app-mark" src="icon.png" alt="Kestrel Air">
       <div class="brand"><b>Kestrel Air</b><small>Logbook</small></div>
       <div class="tb-sep"></div>
-      ${p.photo ? html`<img class="avatar" src="${p.photo}" alt="">` : ''}
-      <div class="brand pilot"><b>${p.character || p.name}</b><small>Captain · Rank ${p.rank}</small></div>`);
+      <button class="pilot-btn" title="Pilot settings: choose the NeoFly pilot, name and photo">
+        ${p.photo ? html`<img class="avatar" src="${p.photo}" alt="">` : html`<span class="avatar ph">${(p.character || p.name)[0]}</span>`}
+        <span class="brand pilot"><b>${p.character || p.name}</b><small>Captain · Rank ${p.rank}</small></span></button>`);
     document.getElementById('side-toggle').addEventListener('click', () => document.body.classList.toggle('list-collapsed'));
+    document.querySelector('.pilot-btn').addEventListener('click', () => ui.openSettings?.());
 
     render(document.getElementById('stats'), html`
       <div class="stat"><b>${num(s.flights)}</b><span>Flights</span></div>
@@ -32,7 +34,7 @@ export default {
       <button class="tb-btn" data-act="view" title="Map style and layers">${icon('layers')}<span>View</span></button>
       <div class="tb-sep"></div>
       <button class="tb-btn" data-act="logbook" title="Every flight, written up in a pilot's logbook">${icon('book')}<span>Logbook</span></button>
-      <button class="tb-btn" data-act="diary" title="What Casper got up to on the ground between flights">${icon('diary')}<span>Diary</span></button>
+      <button class="tb-btn" data-act="diary" title="What ${p.character || p.name} got up to on the ground between flights">${icon('diary')}<span>Diary</span></button>
       <button class="tb-btn" data-act="photos" title="Every screenshot, as prints">${icon('photo')}<span>Photos</span></button>
       <button class="tb-btn" data-act="insights" title="Records, charts and favourite airports">${icon('chart')}<span>Insights</span></button>
       <div class="tb-sep"></div>

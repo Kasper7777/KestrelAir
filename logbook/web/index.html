@@ -21,6 +21,12 @@
       <feGaussianBlur in="noise" stdDeviation="2.5" result="soft"/>
       <feDisplacementMap in="SourceGraphic" in2="soft" scale="46" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
+    <!-- gentler refraction for the big panels, so text behind stays calm -->
+    <filter id="lg-soft" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="2" seed="5" result="noise"/>
+      <feGaussianBlur in="noise" stdDeviation="3" result="soft"/>
+      <feDisplacementMap in="SourceGraphic" in2="soft" scale="26" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
   </svg>
   <div id="map"></div>
   <div id="boot"><img src="icon-512.png" alt=""><b>Kestrel Air</b><span>Loading your logbook…</span></div>
@@ -46,6 +52,7 @@
   <footer id="timeline" class="glass"></footer>
   <div id="lightbox" hidden></div>
   <div id="toast" class="glass" hidden></div>
+  <div id="fetchpill" class="glass" hidden></div>
 
   <script type="module" src="js/main.js"></script>
 </body>

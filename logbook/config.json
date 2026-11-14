@@ -3,15 +3,34 @@
     "dir": "%LOCALAPPDATA%\\Programs\\Neofly"
   },
   "pilot": {
-    "character": "Casper",
-    "photo": "../Profile/profile.jpg"
+    "neofly": "Kazber",
+    "pilots": {
+      "Kazber": {
+        "photo": "../Profile/profile.jpg"
+      }
+    }
   },
   "photos": {
     "sources": [
-      { "auto": "steam" },
-      { "label": "Windows screenshots", "path": "%USERPROFILE%\\Pictures\\Screenshots", "minBytes": 150000, "onlyDuringJourney": true },
-      { "label": "Xbox Game Bar", "path": "%USERPROFILE%\\Videos\\Captures", "onlyDuringJourney": true },
-      { "label": "NVIDIA", "path": "%USERPROFILE%\\Videos\\NVIDIA", "onlyDuringJourney": true }
+      {
+        "auto": "steam"
+      },
+      {
+        "label": "Windows screenshots",
+        "path": "%USERPROFILE%\\Pictures\\Screenshots",
+        "minBytes": 150000,
+        "onlyDuringJourney": true
+      },
+      {
+        "label": "Xbox Game Bar",
+        "path": "%USERPROFILE%\\Videos\\Captures",
+        "onlyDuringJourney": true
+      },
+      {
+        "label": "NVIDIA",
+        "path": "%USERPROFILE%\\Videos\\NVIDIA",
+        "onlyDuringJourney": true
+      }
     ]
   }
 }

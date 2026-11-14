@@ -59,20 +59,58 @@ class Rebuilder:
                 out.append((p, None))
         return out
 
-    def ensure(self):
+    def ensure(self, force=False):
+        """Fast offline build whenever NeoFly / screenshots / settings changed; then
+        fetch anything new (Wikipedia, places, hotels, flags) in the background."""
         with self.lock:
             try:
                 sig = self.signature()
-                if sig == self.sig and os.path.exists(os.path.join(WEB, 'data', 'logbook.json')):
+                if not force and sig == self.sig and os.path.exists(os.path.join(WEB, 'data', 'logbook.json')):
                     return
                 import build
                 t = time.time()
-                build.main()
+                build.main(fetch=False)
                 self.sig, self.error = sig, None
                 log(f'rebuilt in {time.time() - t:.1f}s')
             except Exception:
                 self.error = traceback.format_exc()
                 log('build failed:\n' + self.error)
+                return
+        self.enrich()
+
+    def enrich(self):
+        if self.enriching:
+            self.again = True
+            return
+        self.enriching = True
+        threading.Thread(target=self._enrich, daemon=True).start()
+
+    def _enrich(self):
+        try:
+            while True:
+                self.again = False
+                with self.lock:
+                    import build
+                    t = time.time()
+                    build.main(fetch=True)
+                    log(f'background details fetched in {time.time() - t:.1f}s')
+                if not self.again:
+                    break
+        except Exception:
+            log('background fetch failed:\n' + traceback.format_exc())
+        finally:
+            self.enriching = False
+
+    enriching = False
+    again = False
+
+
+def built_at():
+    try:
+        with open(os.path.join(WEB, 'data', 'logbook.json'), encoding='utf-8') as fh:
+            return json.load(fh)['meta'].get('builtAt')
+    except (OSError, ValueError, KeyError):
+        return None
 
 
 rebuilder = Rebuilder()
@@ -100,10 +138,35 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self._json({'ok': True})
         if path == '/__status':
             import backup
-            return self._json({'error': rebuilder.error, 'lastBackup': backup.last()})
+            return self._json({'error': rebuilder.error, 'lastBackup': backup.last(),
+                               'builtAt': built_at(), 'fetching': rebuilder.enriching})
+        if path.startswith('/__manual/'):
+            return self._manual(path.rsplit('/', 1)[-1])
         if path in ('/', '/index.html'):
             rebuilder.ensure()
         return super().do_GET()
+
+    def _manual(self, mid):
+        """Open a manual found on this PC (only files the build listed - never arbitrary paths)."""
+        try:
+            reg = json.load(open(os.path.join(ROOT, 'manuals-index.json'), encoding='utf-8'))
+        except (OSError, ValueError):
+            reg = {}
+        p = reg.get(mid)
+        if not p or not os.path.isfile(p) or not p.lower().endswith('.pdf'):
+            return self.send_error(404)
+        size = os.path.getsize(p)
+        self.send_response(200)
+        self.send_header('Content-Type', 'application/pdf')
+        self.send_header('Content-Length', str(size))
+        self.send_header('Content-Disposition', f'inline; filename="{os.path.basename(p)}"')
+        self.end_headers()
+        with open(p, 'rb') as fh:
+            while True:
+                chunk = fh.read(1 << 20)
+                if not chunk:
+                    break
+                self.wfile.write(chunk)
 
     def do_POST(self):
         global last_seen
@@ -127,9 +190,22 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     return self._json({'ok': False, 'error': err.strip().splitlines()[-1]})
         if path == '/__open-backup':
             import backup
-            os.makedirs(backup.DEST, exist_ok=True)
-            os.startfile(backup.DEST)
+            d = backup.current_dest()
+            os.makedirs(d, exist_ok=True)
+            os.startfile(d)
             return self._json({'ok': True})
+        if path == '/__settings':
+            try:
+                n = int(self.headers.get('Content-Length') or 0)
+                if n > 25_000_000:
+                    raise ValueError('photo too large')
+                req = json.loads(self.rfile.read(n) or b'{}')
+                save_settings(req)
+                rebuilder.ensure(force=True)
+                return self._json({'ok': not rebuilder.error, 'error': rebuilder.error and rebuilder.error.strip().splitlines()[-1]})
+            except Exception as e:
+                log('settings failed:\n' + traceback.format_exc())
+                return self._json({'ok': False, 'error': str(e)})
         self.send_error(404)
 
     def _json(self, obj):
@@ -139,6 +215,39 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Content-Length', str(len(body)))
         self.end_headers()
         self.wfile.write(body)
+
+
+def save_settings(req):
+    """Pilot settings from the app: which NeoFly pilot, their display name, their photo."""
+    import base64, io
+    import build
+    path = os.path.join(ROOT, 'config.json')
+    cfg = build.load_json(path, {})
+    p = cfg.setdefault('pilot', {})
+    name = (req.get('pilot') or '').strip()          # '' = whoever is logged in to NeoFly
+    p['neofly'] = name or 'auto'
+    target = (req.get('for') or name).strip()       # whose name/photo is being edited
+    if target:
+        name = target
+        me = p.setdefault('pilots', {}).setdefault(name, {})
+        if 'displayName' in req:
+            dn = (req.get('displayName') or '').strip()
+            if dn and dn != name:
+                me['displayName'] = dn[:40]
+            else:
+                me.pop('displayName', None)
+        if req.get('photo'):  # data URL from the file picker
+            from PIL import Image, ImageOps
+            raw = base64.b64decode(req['photo'].split(',', 1)[-1])
+            im = ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert('RGB')
+            im.thumbnail((800, 800))
+            d = build.pilot_dir(name)
+            os.makedirs(d, exist_ok=True)
+            im.save(os.path.join(d, 'pilot.jpg'), 'JPEG', quality=88)
+            me.pop('photo', None)
+    with open(path, 'w', encoding='utf-8') as fh:
+        json.dump(cfg, fh, indent=2)
+    log(f'settings saved: pilot={p["neofly"]}')
 
 
 def auto_backup():

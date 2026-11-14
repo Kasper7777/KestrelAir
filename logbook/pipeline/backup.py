@@ -24,6 +24,16 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DEST = os.path.join(ROOT, 'backup')
+
+
+def current_dest():
+    """This pilot's own backup folder: backup/pilots/<pilot>/ (from the last build)."""
+    try:
+        with open(os.path.join(ROOT, 'web', 'data', 'logbook.json'), encoding='utf-8') as fh:
+            slug = json.load(fh)['meta'].get('pilotSlug') or 'pilot'
+    except (OSError, ValueError, KeyError):
+        slug = 'pilot'
+    return os.path.join(ROOT, 'backup', 'pilots', slug)
 sys.path[:0] = [HERE, os.path.join(HERE, 'importers')]
 
 
@@ -116,6 +126,8 @@ def run():
     t = time.time()
     cfg = build.load_json(os.path.join(ROOT, 'config.json'), {})
     nf_dir = os.path.expandvars(cfg.get('neofly', {}).get('dir', r'%LOCALAPPDATA%\Programs\Neofly'))
+    global DEST
+    DEST = current_dest()
     os.makedirs(DEST, exist_ok=True)
     result = {'at': time.strftime('%Y-%m-%dT%H:%M:%S'), 'folder': DEST}
     if os.path.exists(os.path.join(nf_dir, 'std.bin')):
@@ -148,7 +160,7 @@ def run():
 
 def last():
     try:
-        with open(os.path.join(DEST, 'last-backup.json'), encoding='utf-8') as fh:
+        with open(os.path.join(current_dest(), 'last-backup.json'), encoding='utf-8') as fh:
             return json.load(fh)
     except (OSError, ValueError):
         return None

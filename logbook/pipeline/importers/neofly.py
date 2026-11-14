@@ -55,24 +55,35 @@ def _clean_aircraft_name(name):
     return re.split(r',', name or '')[0].strip() or None
 
 
-def load(neofly_dir):
+def load(neofly_dir, backup_dir=None, airports_cache=None):
+    """Live NeoFly install if this PC has one, otherwise the newest save in the
+    repo's backup folder (so a fresh clone on another PC still builds).
+    airports_cache: {ident: airport} saved by earlier builds, used when
+    navdata.sqlite isn't installed here."""
     std = os.path.join(neofly_dir, 'std.bin')
     nav = os.path.join(neofly_dir, 'navdata.sqlite')
+    source = 'live'
+    if not os.path.exists(std) and backup_dir and os.path.isdir(backup_dir):
+        saves = sorted(f for f in os.listdir(backup_dir) if re.match(r'std-\d{8}-\d{6}\.bin$', f))
+        if saves:
+            std, source = os.path.join(backup_dir, saves[-1]), 'backup:' + saves[-1]
     if not os.path.exists(std):
-        raise FileNotFoundError(f'NeoFly save not found: {std}')
+        raise FileNotFoundError(f'NeoFly save not found: {std} (and no backup in {backup_dir})')
 
     with tempfile.TemporaryDirectory() as tmp:
         db = _snapshot(std, tmp)
         navdb = _snapshot(nav, tmp) if os.path.exists(nav) else None
         try:
-            return _read(db, navdb)
+            out = _read(db, navdb, airports_cache or {})
+            out['source'] = source
+            return out
         finally:
             db.close()
             if navdb:
                 navdb.close()
 
 
-def _read(db, navdb):
+def _read(db, navdb, airports_cache):
     row = db.execute('select pilotID from currentpilot').fetchone()
     pid = row[0] if row else db.execute('select id from players order by id limit 1').fetchone()[0]
     p = db.execute('select * from players where id=?', (pid,)).fetchone()
@@ -132,6 +143,8 @@ def _read(db, navdb):
                      'longestRunwayFt': r['longest_runway_length'], 'surface': r['longest_runway_surface'],
                      'runways': r['num_runways'], 'tower': bool(r['has_tower_object']),
                      'country': country_for(ident, r['country'], r['state'], r['region'])}
+        if a is None and ident in airports_cache:
+            a = airports_cache[ident]
         if a is None and ident in job_coords:
             lat, lon, nm = job_coords[ident]
             a = {'ident': ident, 'name': nm or ident, 'lat': lat, 'lon': lon, 'country': country_for(ident)}
@@ -198,10 +211,17 @@ def _read(db, navdb):
 
     # ---- ledger events that explain moves between flights
     events = []
-    for r in db.execute('select * from finances where ownerId=? order by date', (pid,)):
+    rows = db.execute('select * from finances where ownerId=? order by date', (pid,)).fetchall()
+    staff_times = {r['date'] for r in rows if (r['description'] or '').startswith('Staff pilot')}
+    for r in rows:
         d = r['description'] or ''
         kind = None
-        if d.startswith('Moving pilot to'):
+        if d.startswith('Airport fees'):
+            # a landing fee - unless it belongs to a hired pilot's mission (same timestamp)
+            kind = None if r['date'] in staff_times else 'landing-fee'
+        elif d.startswith('Buying fuel'):
+            kind = 'fuel'
+        elif d.startswith('Moving pilot to'):
             kind = 'pilot-move'
         elif d.startswith('Aircraft movement to'):
             kind = 'aircraft-move'
@@ -214,7 +234,17 @@ def _read(db, navdb):
         if kind:
             m = re.search(r':\s*([A-Z0-9]{3,5})\b', d)
             events.append({'kind': kind, 'at': _ts(r['date']), 'text': d, 'cost': r['expenses'] or 0,
-                           'income': r['incomes'] or 0, 'ident': m.group(1) if (m and kind.endswith('move')) else None})
+                           'income': r['incomes'] or 0, 'ident': m.group(1) if (m and kind.endswith('move')) else None,
+                           'subject': d.split(':', 1)[1].strip() if ':' in d else None})
+
+    # where hired (AI) pilots flew your planes - tells us where a plane really was
+    ai_flights = []
+    for r in db.execute('select * from aipilotflightlog where ownerId=? order by dateStart', (pid,)):
+        ai_flights.append({'id': r['id'], 'aircraft': plane_id(r['aircraftID']), 'from': r['departure'], 'to': r['destination'],
+                           'start': _ts(r['dateStart']), 'end': _ts(r['dateEnd']), 'pilot': r['pilotName'],
+                           'status': r['status'], 'pay': r['pay'], 'distanceNm': r['distance'],
+                           'type': MISSION_TYPES.get(r['missiontype'], f'Mission {r["missiontype"]}')})
+        airport(r['departure']), airport(r['destination'])
 
     # resolve every airport now: the databases close when load() returns
     for f in flights:
@@ -222,8 +252,9 @@ def _read(db, navdb):
     for e in events:
         if e['ident']:
             airport(e['ident'])
-    return {'pilot': pilot, 'aircraft': aircraft, 'flights': flights, 'events': events,
-            'airport': lambda ident: cache.get((ident or '').strip().upper())}
+    return {'pilot': pilot, 'aircraft': aircraft, 'flights': flights, 'events': events, 'aiFlights': ai_flights,
+            'airport': lambda ident: cache.get((ident or '').strip().upper()),
+            'airports': {k: v for k, v in cache.items() if v}}
 
 
 def _nm(a, b):

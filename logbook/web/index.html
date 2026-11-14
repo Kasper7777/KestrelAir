@@ -4,39 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kestrel Air Logbook</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234cc9f0' d='M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z'/%3E%3C/svg%3E">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Kalam:wght@400;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css" rel="stylesheet">
   <link href="css/app.css" rel="stylesheet">
   <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
 </head>
 <body>
+  <!-- liquid-glass refraction: bends the map seen through the floating capsules -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="lg-refract" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="11" result="noise"/>
+      <feGaussianBlur in="noise" stdDeviation="2.5" result="soft"/>
+      <feDisplacementMap in="SourceGraphic" in2="soft" scale="46" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
   <div id="map"></div>
-  <div id="boot"><div class="boot-plane">✈</div><div>Loading your logbook…</div></div>
+  <div id="boot"><img src="icon-512.png" alt=""><b>Kestrel Air</b><span>Loading your logbook…</span></div>
 
-  <header id="topbar">
-    <div id="pilot"></div>
-    <div id="stats"></div>
-    <div id="toggles"></div>
-  </header>
+  <header id="titlebar" class="glass"></header>
+  <nav id="toolbar" class="glass"></nav>
+  <div id="viewmenu" class="glass popover" hidden></div>
 
-  <aside id="sidebar">
-    <div class="side-head">
-      <input id="leg-search" type="search" placeholder="Search airport, city, country, aircraft…" autocomplete="off">
-      <button id="panel-toggle" title="Hide / show the journey list">⟨</button>
+  <aside id="sidebar" class="glass">
+    <section id="stats"></section>
+    <div id="tabs" class="segmented" role="tablist"></div>
+    <div id="pane-journey" class="pane">
+      <label class="search"><span class="search-ico"></span><input id="leg-search" type="search" placeholder="Search airports, places, aircraft" autocomplete="off"></label>
+      <ol id="legs"></ol>
     </div>
-    <div id="fleet"></div>
-    <div id="countries"></div>
-    <ol id="legs"></ol>
+    <div id="pane-fleet" class="pane" hidden></div>
+    <div id="pane-countries" class="pane" hidden></div>
   </aside>
 
-  <aside id="detail"></aside>
+  <aside id="detail" class="glass"></aside>
+  <div id="layerdock" class="glass" role="toolbar" aria-label="Show on map"></div>
   <div id="flash"></div>
-  <footer id="timeline"></footer>
+  <footer id="timeline" class="glass"></footer>
   <div id="lightbox" hidden></div>
-  <div id="toast" hidden></div>
+  <div id="toast" class="glass" hidden></div>
 
   <script type="module" src="js/main.js"></script>
 </body>

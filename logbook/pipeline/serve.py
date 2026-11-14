@@ -141,6 +141,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
 
+def auto_backup():
+    """Every launch: copy any new NeoFly progress and screenshots into backup/."""
+    import backup
+    time.sleep(3)
+    with backup_lock:
+        try:
+            r = backup.run()
+            log(f'auto-backup: neofly {r["neofly"]["file"]} (new={r["neofly"]["new"]}), {r["photos"]["copied"]} photos copied')
+        except Exception:
+            log('auto-backup failed:\n' + traceback.format_exc())
+
+
 def already_running():
     with socket.socket() as s:
         s.settimeout(0.5)
@@ -158,6 +170,7 @@ def main():
     if not os.environ.get('LOGBOOK_NO_BROWSER'):
         webbrowser.open(URL)
     log(f'serving {URL}')
+    threading.Thread(target=auto_backup, daemon=True).start()
     while time.time() - last_seen < IDLE_EXIT:
         time.sleep(5)
     log('no open tabs - stopping')

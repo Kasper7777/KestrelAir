@@ -10,7 +10,7 @@ PREFIXES = {
     'K': ('United States', 'US'), 'C': ('Canada', 'CA'), 'Y': ('Australia', 'AU'),
     'Z': ('China', 'CN'), 'U': ('Russia', 'RU'), 'P': ('United States', 'US'),
     # Europe
-    'EG': ('United Kingdom', 'GB'), 'EGJ': ('Channel Islands', 'JE'), 'EGJB': ('Guernsey', 'GG'),
+    'EG': ('United Kingdom', 'GB'), 'EGJ': ('Channel Islands', 'JE'), 'EGJJ': ('Jersey', 'JE'),'EGJB': ('Guernsey', 'GG'),
     'EGJA': ('Alderney', 'GG'), 'EGY': ('Falkland Islands', 'FK'), 'EGN': ('United Kingdom', 'GB'),
     'EGNS': ('Isle of Man', 'IM'), 'EI': ('Ireland', 'IE'), 'EB': ('Belgium', 'BE'),
     'ED': ('Germany', 'DE'), 'ET': ('Germany', 'DE'), 'EE': ('Estonia', 'EE'), 'EF': ('Finland', 'FI'),

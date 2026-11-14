@@ -1,0 +1,1274 @@
+{
+ "7FL6": {
+  "cities": [],
+  "description": "Private airport near Daytona Beach, FL, US",
+  "extract": "Spruce Creek Airport is a private airport located in Port Orange, seven miles (11 km) south of the central business district of Daytona Beach, Florida, United States. It was originally constructed during World War II as an outlying field (OLF) to nearby Naval Air Station DeLand and NAS Daytona Beach. OLF Spruce Creek originally had four paved 4,000-foot runways and was abandoned by the U.S. Navy in 1946.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/SpruceCreekFlyInAerial.jpg/330px-SpruceCreekFlyInAerial.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-7FL6.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Spruce Creek Airport",
+  "url": "https://en.wikipedia.org/wiki/Spruce_Creek_Airport"
+ },
+ "CEX3": {
+  "cities": [],
+  "description": "City in Alberta, Canada",
+  "extract": "Wetaskiwin is a city in the province of Alberta, Canada. The city is 70 kilometres (43 mi) south of the provincial capital of Edmonton. The city name comes from the Cree word wītaskiwinihk, meaning \"the hills where peace was made\".",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Reynolds-Alberta_Museum_2005-09-06.jpg/330px-Reynolds-Alberta_Museum_2005-09-06.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-CEX3.jpg",
+  "kind": "town",
+  "opened": null,
+  "operators": [],
+  "title": "Wetaskiwin",
+  "url": "https://en.wikipedia.org/wiki/Wetaskiwin"
+ },
+ "DABC": {
+  "cities": [
+   "Constantine"
+  ],
+  "description": "Airport in Constantine, Algeria",
+  "extract": "Mohamed Boudiaf International Airport is an airport in Algeria, located approximately 9 kilometres (5.6 mi) south of Constantine; about 320 kilometres (200 mi) east-southeast of Algiers.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Constantine_airport.jpg/330px-Constantine_airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-DABC.jpg",
+  "kind": "airport",
+  "opened": "1943",
+  "operators": [],
+  "title": "Mohamed Boudiaf International Airport",
+  "url": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport"
+ },
+ "EDLW": {
+  "cities": [
+   "Dortmund"
+  ],
+  "description": "Airport in Dortmund, North Rhine-Westphalia, Germany",
+  "extract": "Dortmund Airport is a minor international airport located 10 km (6.2 mi) east of Dortmund, North Rhine-Westphalia. It serves the eastern Rhine-Ruhr area, the largest urban agglomeration in Germany, and is mainly used for low-cost and leisure charter flights. In 2023 the airport served nearly 3 million passengers. The nearest major international airport is Düsseldorf Airport approx. 70 km (43 mi) to the southwest.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Aerial_image_of_the_Dortmund_Airport.jpg/330px-Aerial_image_of_the_Dortmund_Airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EDLW.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Dortmund Airport",
+  "url": "https://en.wikipedia.org/wiki/Dortmund_Airport"
+ },
+ "EFHK": {
+  "cities": [
+   "Helsinki"
+  ],
+  "description": "Airport in Finland",
+  "extract": "Helsinki-Vantaa Airport, or simply Helsinki Airport, is the main international airport serving Helsinki, the capital of Finland, as well as its surrounding metropolitan area, and the Uusimaa region in Finland. The airport is located in the neighbouring city of Vantaa, about 5 kilometres (3 mi) west of Tikkurila, the administrative centre of Vantaa and 9.2 NM north of Helsinki's city centre. The airport is operated by state-owned Finavia. The facility covers a total of 1,800 hectares of land and contains three runways.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Helsinki-Vantaa_airport.jpg/330px-Helsinki-Vantaa_airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EFHK.jpg",
+  "kind": "airport",
+  "opened": "1952",
+  "operators": [
+   "Finavia"
+  ],
+  "title": "Helsinki Airport",
+  "url": "https://en.wikipedia.org/wiki/Helsinki_Airport"
+ },
+ "EGAE": {
+  "cities": [
+   "Derry"
+  ],
+  "description": "Airport in Northern Ireland",
+  "extract": "City of Derry Airport, previously known as RAF Eglinton and Londonderry Eglinton Airport, is a regional airport located 7 mi (11 km) northeast of Derry, Northern Ireland. It is located on the south bank of Lough Foyle, a short distance from the village of Eglinton and 8 mi (13 km) from the city centre.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/9a/City_of_Derry_Airport_logo.svg/330px-City_of_Derry_Airport_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGAE.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "City of Derry Airport",
+  "url": "https://en.wikipedia.org/wiki/City_of_Derry_Airport"
+ },
+ "EGAV": {
+  "cities": [],
+  "description": "Neolithic henge monument in Wiltshire, England",
+  "extract": "Avebury is a Neolithic henge monument containing three stone circles, around the village of Avebury in Wiltshire, in south-west England. One of the best-known prehistoric sites in Britain, it contains the largest megalithic stone circle in the world. It is both a tourist attraction and a place of religious importance to contemporary pagans.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Wiltshire-Avebury.jpg/330px-Wiltshire-Avebury.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGAV.jpg",
+  "kind": "town",
+  "opened": null,
+  "operators": [],
+  "title": "Avebury",
+  "url": "https://en.wikipedia.org/wiki/Avebury"
+ },
+ "EGBB": {
+  "cities": [
+   "Birmingham"
+  ],
+  "description": "International airport in the West Midlands, England",
+  "extract": "Birmingham Airport, formerly Birmingham International Airport, is an international airport in the Metropolitan Borough of Solihull, West Midlands, England. It lies 7 nautical miles east-south-east of Birmingham city centre and 9.5 nautical miles west-north-west of Coventry, slightly north of Bickenhill village.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Birmingham-Airport-Terminal-Buildings.jpg/330px-Birmingham-Airport-Terminal-Buildings.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGBB.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Birmingham Airport",
+  "url": "https://en.wikipedia.org/wiki/Birmingham_Airport"
+ },
+ "EGBO": {
+  "cities": [
+   "Wolverhampton"
+  ],
+  "description": "Airport in Staffordshire, England",
+  "extract": "Wolverhampton Halfpenny Green Airport, formerly Halfpenny Green Airport and Wolverhampton Business Airport, locally Bobbington Airport, is a small, 400-acre (1.6 km2) airport situated near the village of Bobbington, Staffordshire, England. The airport is situated 8 mi (13 km) south-west of Wolverhampton, the city which it serves.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Control_tower_and_helicopters_-_geograph.org.uk_-_810787.jpg/330px-Control_tower_and_helicopters_-_geograph.org.uk_-_810787.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGBO.jpg",
+  "kind": "airport",
+  "opened": "1941",
+  "operators": [
+   "Royal Air Force"
+  ],
+  "title": "Wolverhampton Airport",
+  "url": "https://en.wikipedia.org/wiki/Wolverhampton_Airport"
+ },
+ "EGDM": {
+  "cities": [],
+  "description": "Military airfield in Wiltshire, England",
+  "extract": "MOD Boscombe Down (ICAO: EGDM) is the home of a military aircraft testing site, on the south-eastern outskirts of the town of Amesbury, Wiltshire, England.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/RAF_Boscombe_Down_04.jpg/330px-RAF_Boscombe_Down_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGDM.jpg",
+  "kind": "airport",
+  "opened": "1917",
+  "operators": [
+   "Royal Air Force",
+   "QinetiQ"
+  ],
+  "title": "MOD Boscombe Down",
+  "url": "https://en.wikipedia.org/wiki/MOD_Boscombe_Down"
+ },
+ "EGHF": {
+  "cities": [],
+  "description": "Airport in Lee-on-the-Solent, Hampshire",
+  "extract": "Solent Airport Daedalus is a general aviation airport in Hampshire, England.",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Royal Navy"
+  ],
+  "title": "Solent Airport Daedalus",
+  "url": "https://en.wikipedia.org/wiki/Solent_Airport_Daedalus"
+ },
+ "EGHI": {
+  "cities": [
+   "Southampton"
+  ],
+  "description": "Airport in Southampton, England",
+  "extract": "Southampton Airport is an international airport located in both Eastleigh and Southampton, Hampshire, in England. The airport is located 3.5 nautical miles north-northeast of central Southampton.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Southampton%2C_the_main_airport_terminal_-_geograph.org.uk_-_3887291.jpg/330px-Southampton%2C_the_main_airport_terminal_-_geograph.org.uk_-_3887291.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGHI.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Heathrow Airport Holdings"
+  ],
+  "title": "Southampton Airport",
+  "url": "https://en.wikipedia.org/wiki/Southampton_Airport"
+ },
+ "EGHJ": {
+  "cities": [],
+  "description": "Airport in Bembridge",
+  "extract": "Bembridge Airport is an unlicensed aerodrome located about a mile south-west of the village of Bembridge, Isle of Wight, England. It is one of four airstrips on the Isle of Wight, and one of two large airfields, the other major one being Isle of Wight/Sandown Airport about four miles to the south-west.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Bembridge_Airport%2C_Isle_of_Wight%2C_UK.jpg/330px-Bembridge_Airport%2C_Isle_of_Wight%2C_UK.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGHJ.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Bembridge Airport",
+  "url": "https://en.wikipedia.org/wiki/Bembridge_Airport"
+ },
+ "EGIZ": {
+  "cities": [],
+  "description": "Village in Oxfordshire, England",
+  "extract": "Hook Norton is a village and civil parish in Oxfordshire, England. It lies 4+1⁄2 miles (7 km) northeast of Chipping Norton, close to the Cotswold Hills. The 2011 Census recorded the parish's population as 2,117. The village is formed of four neighbourhoods: East End, Scotland End, Down End and Southrop.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Hook_norton_brewery_1.jpg/330px-Hook_norton_brewery_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGIZ.jpg",
+  "kind": "town",
+  "opened": null,
+  "operators": [],
+  "title": "Hook Norton",
+  "url": "https://en.wikipedia.org/wiki/Hook_Norton"
+ },
+ "EGJA": {
+  "cities": [
+   "Q179313"
+  ],
+  "description": "Airport in the Channel Islands",
+  "extract": "Alderney Airport is the only airport on the island of Alderney, Guernsey. Built in 1935, Alderney Airport was the first airport in the Channel Islands. Located on the Blaye, it is the closest Channel Island airport to the south coast of England and the coast of France. Its facilities include an air traffic control tower, a hangar, and the Airport Fire Station.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Alderney_Airport.JPG/330px-Alderney_Airport.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGJA.jpg",
+  "kind": "airport",
+  "opened": "1935",
+  "operators": [
+   "States of Guernsey"
+  ],
+  "title": "Alderney Airport",
+  "url": "https://en.wikipedia.org/wiki/Alderney_Airport"
+ },
+ "EGJB": {
+  "cities": [
+   "Guernsey"
+  ],
+  "description": "Airport on the island of Guernsey",
+  "extract": "Guernsey Airport is an international airport on the island of Guernsey and the largest airport in the Bailiwick of Guernsey. It is located in the Forest, a parish in Guernsey, 2.5 nautical miles southwest of St. Peter Port and features mostly flights to Great Britain and some other European destinations.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Guernsey_Airport_Terminal.jpg/330px-Guernsey_Airport_Terminal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGJB.jpg",
+  "kind": "airport",
+  "opened": "1939",
+  "operators": [
+   "States of Guernsey"
+  ],
+  "title": "Guernsey Airport",
+  "url": "https://en.wikipedia.org/wiki/Guernsey_Airport"
+ },
+ "EGJJ": {
+  "cities": [
+   "Jersey"
+  ],
+  "description": "Airport in Jersey, Channel Islands",
+  "extract": "Jersey Airport is an international airport located in the parish of Saint Peter, 4 NM west northwest of Saint Helier in Jersey, in the Channel Islands.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Terminal_Jersey_Airport_Abfertigungsgeb%C3%A4ude_Flughafen_Jersey_Channel_Islands_Great_Britain_Gro%C3%9Fbritannien_Foto_Wolfgang_Pehlemann_DSC04977.jpg/330px-Terminal_Jersey_Airport_Abfertigungsgeb%C3%A4ude_Flughafen_Jersey_Channel_Islands_Great_Britain_Gro%C3%9Fbritannien_Foto_Wolfgang_Pehlemann_DSC04977.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGJJ.jpg",
+  "kind": "airport",
+  "opened": "1937",
+  "operators": [],
+  "title": "Jersey Airport",
+  "url": "https://en.wikipedia.org/wiki/Jersey_Airport"
+ },
+ "EGNO": {
+  "cities": [],
+  "description": "Airfield in Lancashire, England",
+  "extract": "Warton Aerodrome is an airfield located in Warton village on the Fylde in Lancashire, England. It is 7 miles (11 km) west of Preston, Lancashire. The eastern end of the site adjoins the village of Freckleton.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/RAF_Warton_-_10_Aug_1945_Airphoto.jpg/330px-RAF_Warton_-_10_Aug_1945_Airphoto.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGNO.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Royal Air Force"
+  ],
+  "title": "Warton Aerodrome",
+  "url": "https://en.wikipedia.org/wiki/Warton_Aerodrome"
+ },
+ "EGOS": {
+  "cities": [],
+  "description": "Royal Air Force base in Shropshire, England",
+  "extract": "Royal Air Force Shawbury, otherwise known as RAF Shawbury, is a Royal Air Force station near the village of Shawbury in Shropshire in the West Midlands of England.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/RAF_Airbus_EC135T3_%28JUNO_HT1%29_Helicopter_MOD_45165492.jpg/330px-RAF_Airbus_EC135T3_%28JUNO_HT1%29_Helicopter_MOD_45165492.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGOS.jpg",
+  "kind": "airport",
+  "opened": "1937",
+  "operators": [
+   "Royal Air Force"
+  ],
+  "title": "RAF Shawbury",
+  "url": "https://en.wikipedia.org/wiki/RAF_Shawbury"
+ },
+ "EGPH": {
+  "cities": [
+   "Edinburgh"
+  ],
+  "description": "International airport serving Edinburgh, Scotland",
+  "extract": "Edinburgh Airport is an international airport located in the Ingliston area of Edinburgh, Scotland. It is located 6 miles (9 km)\n west of the city centre, just off the M8 and M9 motorways. It is owned and operated by Edinburgh Airport Limited.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Edinburgh_Airport.jpg/330px-Edinburgh_Airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGPH.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Edinburgh Airport",
+  "url": "https://en.wikipedia.org/wiki/Edinburgh_Airport"
+ },
+ "EGPN": {
+  "cities": [
+   "Dundee"
+  ],
+  "description": "Airport in Dundee, Scotland",
+  "extract": "Dundee Airport is an airport adjacent to the Firth of Tay in Dundee, Scotland. As of October 2026, the airport, which is operated by Highlands and Islands Airports, has no scheduled services.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/DND_Airport_Building.jpg/330px-DND_Airport_Building.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGPN.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Highlands and Islands Airports"
+  ],
+  "title": "Dundee Airport",
+  "url": "https://en.wikipedia.org/wiki/Dundee_Airport"
+ },
+ "EGTW": {
+  "cities": [],
+  "description": "Civilian airport in Gloucestershire, England",
+  "extract": "Cotswold Airport is a private general aviation airport, near the village of Kemble in Gloucestershire, England. Located 5 miles (8.0 km) southwest of Cirencester, it was built as a Royal Air Force (RAF) station and was known as RAF Kemble. The Red Arrows aerobatics team was based there until 1983. Since 2000, it is used for the storage and recycling of retired airliners, as well as flying schools, clubs, and industry.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Control_Tower_at_Cotswold_Airport_2017.jpg/330px-Control_Tower_at_Cotswold_Airport_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGTW.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Cotswold Airport",
+  "url": "https://en.wikipedia.org/wiki/Cotswold_Airport"
+ },
+ "EGYP": {
+  "cities": [],
+  "description": "Royal Air Force station in the Falkland Islands",
+  "extract": "RAF Mount Pleasant is a Royal Air Force station in the British Overseas Territory of the Falkland Islands. The airfield goes by the motto of \"Defend the right\" and is part of the British Forces South Atlantic Islands (BFSAI). Home to between 1,000 and 2,000 British military personnel, it is about 33 miles (53 km) southwest of Stanley, the capital of the Falklands, on the island of East Falkland.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Mount_Pleasant_Airport_-_Donald_Morrison.jpg/330px-Mount_Pleasant_Airport_-_Donald_Morrison.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-EGYP.jpg",
+  "kind": "airport",
+  "opened": "1985",
+  "operators": [
+   "Royal Air Force",
+   "British Forces South Atlantic Islands"
+  ],
+  "title": "RAF Mount Pleasant",
+  "url": "https://en.wikipedia.org/wiki/RAF_Mount_Pleasant"
+ },
+ "ENCN": {
+  "cities": [
+   "Kristiansand Municipality",
+   "Kristiansand"
+  ],
+  "description": "Airport in Kristiansand Municipality, Agder",
+  "extract": "Kristiansand Airport is an international airport serving Kristiansand Municipality in Agder county, Norway. The airport is located in the district of Tveit in the Oddernes borough, about 16 kilometers (9.9 mi) by road and 8 kilometers (5.0 mi) by air from the center of town of Kristiansand. Operated by the state-owned Avinor, it is the sole airport in Southern Norway with scheduled flights. It has a 2,035-meter (6,677 ft) runway aligned 03/21 and served 1,061,130 passengers in 2018. Scheduled flights are provided by Scandinavian Airlines, Norwegian Air Shuttle, Widerøe, KLM Cityhopper and Wizz Air. The Royal Norwegian Air Force has a training center at the airport.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/KRS_Approach_RWY04.jpg/330px-KRS_Approach_RWY04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-ENCN.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Avinor"
+  ],
+  "title": "Kristiansand Airport",
+  "url": "https://en.wikipedia.org/wiki/Kristiansand_Airport"
+ },
+ "GQPP": {
+  "cities": [
+   "Nouadhibou"
+  ],
+  "description": "Airport serving Nouadhibou, Mauritania",
+  "extract": "Nouadhibou International Airport is an international airport serving Nouadhibou, a city in the Dakhlet Nouadhibou region of Mauritania.",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Nouadhibou International Airport",
+  "url": "https://en.wikipedia.org/wiki/Nouadhibou_International_Airport"
+ },
+ "KBLI": {
+  "cities": [
+   "Bellingham"
+  ],
+  "description": "Airport in Washington, United States",
+  "extract": "Bellingham International Airport is three miles (5 km) northwest of Bellingham, in Whatcom County, Washington, United States. BLI covers 2,190 acres (886 ha) of land, and is the fourth-largest commercial airport in Washington.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Bellingham_International_Airport%2C_passenger_terminal%2C_June_2012.jpg/330px-Bellingham_International_Airport%2C_passenger_terminal%2C_June_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-KBLI.jpg",
+  "kind": "airport",
+  "opened": "1940",
+  "operators": [
+   "Port of Bellingham"
+  ],
+  "title": "Bellingham International Airport",
+  "url": "https://en.wikipedia.org/wiki/Bellingham_International_Airport"
+ },
+ "KCGF": {
+  "cities": [
+   "Cleveland"
+  ],
+  "description": "Airport in Richmond Heights, Willoughby Hills",
+  "extract": "Cuyahoga County Airport, also known as Robert D. Shea Field, is a public use airport in northeastern Cuyahoga County, Ohio, United States. Owned and operated by Cuyahoga County since 1946, it also serves Lake County and Geauga County. The airport is located 10 nautical miles east of downtown Cleveland and sits on the border of three cities: Highland Heights, Richmond Heights and Willoughby Hills. It is included in the National Plan of Integrated Airport Systems for 2011–2015, which categorized it as a general aviation reliever airport for Cleveland Hopkins International Airport.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/CGF_TOWER.JPG/330px-CGF_TOWER.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-KCGF.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Cuyahoga County Airport",
+  "url": "https://en.wikipedia.org/wiki/Cuyahoga_County_Airport"
+ },
+ "KHYI": {
+  "cities": [
+   "San Marcos"
+  ],
+  "description": "Public airport in Caldwell County, Texas, United States",
+  "extract": "San Marcos Regional Airport is a public use airport located in Caldwell County, Texas, United States. It is 4 nmi (7.4 km) east of the central business district of San Marcos, a city that is mostly in Hays County. The airport is owned by the City of San Marcos and operated by Texas Aviation Partners. It is located east of the border of Caldwell County and Hays County. Before it was operated as a civilian airport it was known as Gary Air Force Base.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/5/5e/San_Marcos_Municipal_Airport_logo.png/330px-San_Marcos_Municipal_Airport_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-KHYI.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "San Marcos Regional Airport",
+  "url": "https://en.wikipedia.org/wiki/San_Marcos_Regional_Airport"
+ },
+ "KJFK": {
+  "cities": [
+   "New York City"
+  ],
+  "description": "International airport serving New York City",
+  "extract": "John F. Kennedy International Airport is the primary international airport serving the New York metropolitan area. It is located on the southwestern shore of Long Island, in Queens, New York City, bordering Jamaica Bay. It is the busiest of the three airports in the New York airport system and the sixth-busiest airport in the United States. The airport, which covers 5,200 acres (2,104 ha), is the largest in the New York metropolitan area. Nearly 100 airlines operate from JFK Airport, with nonstop or direct flights to destinations on all six permanently inhabited continents.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/JFK_Aerial_Nov_14_2018.jpg/330px-JFK_Aerial_Nov_14_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-KJFK.jpg",
+  "kind": "airport",
+  "opened": "1948",
+  "operators": [
+   "Port Authority of New York and New Jersey"
+  ],
+  "title": "John F. Kennedy International Airport",
+  "url": "https://en.wikipedia.org/wiki/John_F._Kennedy_International_Airport"
+ },
+ "KLWM": {
+  "cities": [
+   "Lawrence"
+  ],
+  "description": "Airport in North Andover, Massachusetts",
+  "extract": "Lawrence Municipal Airport is two miles east of Lawrence, in Essex County, Massachusetts, United States. It is owned by the City of Lawrence, though it is in North Andover.",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Lawrence Municipal Airport (Massachusetts)",
+  "url": "https://en.wikipedia.org/wiki/Lawrence_Municipal_Airport_(Massachusetts)"
+ },
+ "KMOD": {
+  "cities": [],
+  "description": "Airport in Modesto, California",
+  "extract": "Modesto City–County Airport is two miles (3 km) southeast of Modesto in Stanislaus County, California, United States.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Modesto_City%E2%80%93County_Airport_photo_Don_Ramey_Logan.jpg/330px-Modesto_City%E2%80%93County_Airport_photo_Don_Ramey_Logan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-KMOD.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Modesto City–County Airport",
+  "url": "https://en.wikipedia.org/wiki/Modesto_City%E2%80%93County_Airport"
+ },
+ "KRKW": {
+  "cities": [
+   "Rockwood"
+  ],
+  "description": "Airport",
+  "extract": "Rockwood Municipal Airport is a public use airport in Morgan County and Cumberland County, Tennessee, United States. It is located three nautical miles (6 km) north of Rockwood, which owns the airport, and about 6 miles (9.7 km) west of the Harriman, both cities in Roane County. Situated on Walden Ridge near the southern end of the Cumberland Plateau, the airport is convenient to Interstate 40. It is included in the National Plan of Integrated Airport Systems for 2011–2015, which categorized it as a general aviation facility.",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Rockwood Municipal Airport",
+  "url": "https://en.wikipedia.org/wiki/Rockwood_Municipal_Airport"
+ },
+ "KWJF": {
+  "cities": [
+   "Lancaster"
+  ],
+  "description": "General aviation airport in California, United States",
+  "extract": "General William J. Fox Airfield is a county-owned, public airport in Los Angeles County, California, five miles northwest of Lancaster, California, United States. Locally known as Fox Field, the airport serves the Antelope Valley. The airport is named after Brigadier General William J. Fox, \"a Marine war hero, a movie stunt man, the first Los Angeles County engineer and, for 20 years after his retirement, a cowboy.\"",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Kluft-photo-Lancaster-Fox-Field-Feb-2008-Img_0428.jpg/330px-Kluft-photo-Lancaster-Fox-Field-Feb-2008-Img_0428.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-KWJF.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "General William J. Fox Airfield",
+  "url": "https://en.wikipedia.org/wiki/General_William_J._Fox_Airfield"
+ },
+ "LCEN": {
+  "cities": [
+   "Northern Cyprus"
+  ],
+  "description": "Airport in Northern Cyprus",
+  "extract": "Ercan International Airport is the primary civilian airport of Northern Cyprus. It is located about 13 kilometres east of Nicosia, near the village of Kırklar. The airport only serves flights to and from Turkey.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Ercan_Uluslararas%C4%B1_Havaliman%C4%B1.jpg/330px-Ercan_Uluslararas%C4%B1_Havaliman%C4%B1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LCEN.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Ercan International Airport",
+  "url": "https://en.wikipedia.org/wiki/Ercan_International_Airport"
+ },
+ "LDSP": {
+  "cities": [
+   "Split"
+  ],
+  "description": "Airport in Kaštela, Croatia",
+  "extract": "Split Saint Jerome Airport, also known as Split Airport, is an international airport serving the city of Split, Croatia. It is located 19 km (12 mi) from Split, on the west side of Kaštela Bay, in the town of Kaštela, and extending into the adjacent town of Trogir. It is named after Saint Jerome, the patron saint of Split-Dalmatia County.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Split_Airport_new_terminal_night.jpg/330px-Split_Airport_new_terminal_night.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LDSP.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Split Airport",
+  "url": "https://en.wikipedia.org/wiki/Split_Airport"
+ },
+ "LEAS": {
+  "cities": [
+   "Oviedo"
+  ],
+  "description": "International airport in Castrillón, Spain",
+  "extract": "Asturias Airport is the only international airport of Asturias, Spain, in Castrillón. Traffic consists primarily of scheduled domestic flights and some seasonal scheduled international flights. In 2024, the airport handled \t1,993,256 passengers and managed 15,465 operations. The airport is located in Anzu, parish of Santiago del Monte, municipality of Castrillón, 15 km from Avilés, 40 km from Gijón and 47 km from the regional capital, Oviedo.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Aeropuerto_20.11.21.jpg/330px-Aeropuerto_20.11.21.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LEAS.jpg",
+  "kind": "airport",
+  "opened": "1968",
+  "operators": [
+   "ENAIRE"
+  ],
+  "title": "Asturias Airport",
+  "url": "https://en.wikipedia.org/wiki/Asturias_Airport"
+ },
+ "LEGE": {
+  "cities": [
+   "Girona"
+  ],
+  "description": "Airport",
+  "extract": "Girona–Costa Brava Airport is an airport located 12.5 km (7.8 mi) southwest of the city of Girona, next to the small village of Vilobí d'Onyar, in the north-east of Catalonia, Spain. The airport is well connected to the Costa Brava and the Pyrenees. Girona Airport is used as an alternative airport for Barcelona as well, even though the airport is 74 km (46 mi) north of the center of Barcelona.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Girona-Costa_Brava_Airport_-_View_from_plane.JPG/330px-Girona-Costa_Brava_Airport_-_View_from_plane.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LEGE.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Aena"
+  ],
+  "title": "Girona–Costa Brava Airport",
+  "url": "https://en.wikipedia.org/wiki/Girona%E2%80%93Costa_Brava_Airport"
+ },
+ "LEJR": {
+  "cities": [
+   "Jerez de la Frontera"
+  ],
+  "description": "Airport in Andalusia, Spain",
+  "extract": "Jerez Airport is an airport located 9 km (5.6 mi) northeast of Jerez de la Frontera in Andalusia, Spain, about 28.1 mi (45.2 km) from Cádiz.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Jerez_Airport_back.JPG/330px-Jerez_Airport_back.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LEJR.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Aena"
+  ],
+  "title": "Jerez Airport",
+  "url": "https://en.wikipedia.org/wiki/Jerez_Airport"
+ },
+ "LEMR": {
+  "cities": [
+   "Asturias"
+  ],
+  "fetched": "2026-11-14",
+  "kind": null,
+  "opened": "1942",
+  "operators": []
+ },
+ "LFCY": {
+  "cities": [
+   "Royan"
+  ],
+  "description": "Airport in south-west France",
+  "extract": "Royan–Médis Aerodrome is an aerodrome located 4 km east of Royan, France.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/RY9.jpg/330px-RY9.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LFCY.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Royan–Médis Aerodrome",
+  "url": "https://en.wikipedia.org/wiki/Royan%E2%80%93M%C3%A9dis_Aerodrome"
+ },
+ "LFED": {
+  "cities": [],
+  "description": "Subprefecture and commune in Brittany, France",
+  "extract": "Pontivy is a commune in the Morbihan department in Brittany in north-western France. It lies at the confluence of the river Blavet and the Canal de Nantes à Brest. Inhabitants of Pontivy are called Pontivyens in French.",
+  "fetched": "2026-11-14",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Rohan_pontivy.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+  "imageFile": "airport-LFED.jpg",
+  "kind": "town",
+  "opened": null,
+  "operators": [
+   "Pontivy Communauté"
+  ],
+  "title": "Pontivy",
+  "url": "https://en.wikipedia.org/wiki/Pontivy"
+ },
+ "LFEQ": {
+  "cities": [],
+  "description": "Commune in Brittany, France",
+  "extract": "Quiberon is a commune in the French department of Morbihan, administrative region of Brittany, western France.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Quiberon_-_Plage_%281%29.jpg/330px-Quiberon_-_Plage_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LFEQ.jpg",
+  "kind": "town",
+  "opened": null,
+  "operators": [],
+  "title": "Quiberon",
+  "url": "https://en.wikipedia.org/wiki/Quiberon"
+ },
+ "LFIV": {
+  "cities": [],
+  "fetched": "2026-11-14",
+  "kind": null,
+  "opened": null,
+  "operators": []
+ },
+ "LFOM": {
+  "cities": [
+   "Lessay"
+  ],
+  "description": "Airport in Lessay, France",
+  "extract": "Lessay Airport is a regional airport in Lessay, Normandy, France. It supports general aviation with no scheduled commercial airline services.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Aerial_image_of_the_Lessay_airfield.jpg/330px-Aerial_image_of_the_Lessay_airfield.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LFOM.jpg",
+  "kind": "airport",
+  "opened": "1923",
+  "operators": [
+   "departmental council of Manche"
+  ],
+  "title": "Lessay Airport",
+  "url": "https://en.wikipedia.org/wiki/Lessay_Airport"
+ },
+ "LFRC": {
+  "cities": [
+   "Cherbourg-Octeville",
+   "Army of the Coasts of Cherbourg"
+  ],
+  "description": "Airport in Maupertus-sur-Mer",
+  "extract": "Cherbourg–Manche Airport or Aéroport de Cherbourg–Manche is an airport located 11 km east of Cherbourg-en-Cotentin, between Maupertus-sur-Mer and Gonneville-le-Theil. These are all communes of the Manche département in the Normandy région of France. The airport is managed by SNC-Lavalin Airports since 1 October 2009.",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "airport",
+  "opened": "1939",
+  "operators": [
+   "AtkinsRéalis"
+  ],
+  "title": "Cherbourg–Maupertus Airport",
+  "url": "https://en.wikipedia.org/wiki/Cherbourg%E2%80%93Maupertus_Airport"
+ },
+ "LFRD": {
+  "cities": [
+   "Saint-Malo"
+  ],
+  "description": "Airport serving St-Malo, France",
+  "extract": "Dinard–Pleurtuit–Saint-Malo Airport or Aéroport de Dinard – Pleurtuit – Saint-Malo is an airport serving the city of Saint-Malo, France. It is located 5 km (3.1 mi) south-southwest of Dinard in Pleurtuit, a commune of the département of Ille-et-Vilaine. It was the base of regional operator Rousseau Aviation",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Dinard-Pleurtuit-Saint-Malo_Airport.jpg/330px-Dinard-Pleurtuit-Saint-Malo_Airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LFRD.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Dinard–Pleurtuit–Saint-Malo Airport",
+  "url": "https://en.wikipedia.org/wiki/Dinard%E2%80%93Pleurtuit%E2%80%93Saint-Malo_Airport"
+ },
+ "LFRE": {
+  "cities": [
+   "La Baule-Escoublac"
+  ],
+  "description": "Commune in Pays de la Loire, France",
+  "extract": "La Baule-Escoublac, commonly referred to as La Baule, is a commune in Loire-Atlantique, a department in Pays de la Loire, western France. La Baule beach is one of the longest beaches in Europe.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/LaBaule%28cropped%29.jpg/330px-LaBaule%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LFRE.jpg",
+  "kind": "town",
+  "opened": null,
+  "operators": [
+   "Q115909761"
+  ],
+  "title": "La Baule-Escoublac",
+  "url": "https://en.wikipedia.org/wiki/La_Baule-Escoublac"
+ },
+ "LFRI": {
+  "cities": [
+   "La Roche-sur-Yon"
+  ],
+  "fetched": "2026-11-14",
+  "kind": null,
+  "opened": null,
+  "operators": []
+ },
+ "LFRS": {
+  "cities": [
+   "Nantes"
+  ],
+  "description": "International airport in Nantes, France",
+  "extract": "Nantes Atlantique Airport is an international airport serving Nantes, France. It is located 8 kilometres (5.0 mi) southwest of the city, in Bouguenais.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/A%C3%A9roport_Nantes_Atlantique.jpg/330px-A%C3%A9roport_Nantes_Atlantique.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LFRS.jpg",
+  "kind": "airport",
+  "opened": "1928",
+  "operators": [
+   "Q2876137"
+  ],
+  "title": "Nantes Atlantique Airport",
+  "url": "https://en.wikipedia.org/wiki/Nantes_Atlantique_Airport"
+ },
+ "LQMO": {
+  "cities": [
+   "Mostar"
+  ],
+  "description": "Airport serving Mostar, Bosnia and Herzegovina",
+  "extract": "Mostar International Airport is an airport near Mostar, Bosnia and Herzegovina, in the village of Ortiješ, 4 NM southeast of Mostar's railway station.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/OMO4.jpg/330px-OMO4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LQMO.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Mostar International Airport",
+  "url": "https://en.wikipedia.org/wiki/Mostar_International_Airport"
+ },
+ "LTAJ": {
+  "cities": [
+   "Gaziantep"
+  ],
+  "description": "Airport in Gaziantep, Turkey",
+  "extract": "Gaziantep Oğuzeli International Airport is a public airport in Gaziantep, Turkey. Inaugurated in 1976, it is 20 km from the city. Gaziantep Airport was extended with construction starting in 1998, and achieved international airport status in 2006. The passenger terminal covers an area of 5.799 m2 and has a parking lot for 400 cars.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Gaziantep_Airport_Karakas-1.jpg/330px-Gaziantep_Airport_Karakas-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LTAJ.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "General Directorate of State Airports (Turkey)"
+  ],
+  "title": "Gaziantep Oğuzeli Airport",
+  "url": "https://en.wikipedia.org/wiki/Gaziantep_O%C4%9Fuzeli_Airport"
+ },
+ "LTBI": {
+  "cities": [],
+  "description": "Airport in Eskişehir, Turkey",
+  "extract": "Eskişehir Air Base is a military airport in the city of Eskişehir, Turkey.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Eskisehir-Airport-Diagram.png/330px-Eskisehir-Airport-Diagram.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LTBI.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Eskişehir Air Base",
+  "url": "https://en.wikipedia.org/wiki/Eski%C5%9Fehir_Air_Base"
+ },
+ "LTBZ": {
+  "cities": [
+   "Kütahya",
+   "Kütahya Lisesi"
+  ],
+  "description": "Airport in Kütahya, Turkey",
+  "extract": "Zafer Airport is an international regional airport that serves the cities of Kütahya, Afyonkarahisar and Uşak in Turkey. The airport opened on 25 November 2012.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/ZaferAirport_%282%29.JPG/330px-ZaferAirport_%282%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LTBZ.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Zafer Airport",
+  "url": "https://en.wikipedia.org/wiki/Zafer_Airport"
+ },
+ "LTCO": {
+  "cities": [
+   "Ağrı"
+  ],
+  "description": "Airport in Ağrı, Turkey",
+  "extract": "Ağrı Ahmed-i Hani Airport is an airport in Ağrı, in eastern Turkey. The airport is situated about 8 km (5.0 mi) south of Ağrı's city center.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Agri_Airport_Karakas-1.jpg/330px-Agri_Airport_Karakas-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LTCO.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "General Directorate of State Airports (Turkey)"
+  ],
+  "title": "Ağrı Airport",
+  "url": "https://en.wikipedia.org/wiki/A%C4%9Fr%C4%B1_Airport"
+ },
+ "LTCU": {
+  "cities": [
+   "Bingöl"
+  ],
+  "description": "Airport in Bingöl, Turkey",
+  "extract": "Bingöl Airport is an airport located in Çeltiksuyu, 20 km away to the south-east of the city of Bingöl, in the Bingöl Province of Turkey. It was inaugurated in July 2013 by prime minister Recep Tayyip Erdoğan. It has a passenger capacity of 500'000 a year.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Bing%C3%B6l_Airport.jpg/330px-Bing%C3%B6l_Airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LTCU.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Bingöl Airport",
+  "url": "https://en.wikipedia.org/wiki/Bing%C3%B6l_Airport"
+ },
+ "LTFD": {
+  "cities": [
+   "Balıkesir",
+   "Edremit"
+  ],
+  "description": "Airport in Balıkesir, Turkey",
+  "extract": "Balıkesir Koca Seyit Airport, previously known as Balıkesir Edremit Körfez Airport, is an airport located south of Edremit in the Balıkesir Province of Turkey. The airport's name was changed to Balıkesir Koca Seyit Airport in July 2012 by the Turkish Government.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Flughafen_Bal%C4%B1kesir_Koca_Seyit_-_Abflughalle_01.jpg/330px-Flughafen_Bal%C4%B1kesir_Koca_Seyit_-_Abflughalle_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-LTFD.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "General Directorate of State Airports (Turkey)"
+  ],
+  "title": "Balıkesir Koca Seyit Airport",
+  "url": "https://en.wikipedia.org/wiki/Bal%C4%B1kesir_Koca_Seyit_Airport"
+ },
+ "LTPU": {
+  "cities": [],
+  "fetched": "2026-11-14",
+  "kind": null,
+  "opened": null,
+  "operators": []
+ },
+ "MKJP": {
+  "cities": [
+   "Kingston"
+  ],
+  "description": "Airport in Jamaica",
+  "extract": "Norman Manley International Airport, formerly Palisadoes Airport, is an international airport serving Kingston, Jamaica, and is located in the south of the island, 19 km (12 mi) away from the centre of New Kingston. It is the second busiest airport in the country after Sangster International Airport, recording 629,400 arriving passengers in 2020 and 830,500 in 2021. Over 130 international flights a week depart from Norman Manley International Airport. Named in honour of Jamaican statesman Norman Manley (1893–1969), it is a hub for Caribbean Airlines. It is located on the Palisadoes tombolo in outer Kingston Harbour; it fronts the city on one side and the Caribbean Sea on the other.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Norman_Manley_International_Airport.jpg/330px-Norman_Manley_International_Airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-MKJP.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Norman Manley International Airport",
+  "url": "https://en.wikipedia.org/wiki/Norman_Manley_International_Airport"
+ },
+ "MMLP": {
+  "cities": [
+   "La Paz"
+  ],
+  "description": "International Airport in Baja California Sur, Mexico",
+  "extract": "La Paz International Airport ; officially Aeropuerto Internacional Manuel Márquez de León (Manuel Márquez de León International Airport) is an international airport located in La Paz, Baja California Sur, Mexico, situated along the western shore of the Gulf of California. It serves as the primary air traffic gateway to the city of La Paz and is a focus city for the regional airline Calafia Airlines. The airport also accommodates military facilities for the Mexican Army and the Mexican Navy and supports various tourism, flight training, and general aviation activities.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Aeropuerto-de-la-paz.jpg/330px-Aeropuerto-de-la-paz.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-MMLP.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Grupo Aeroportuario del Pacífico"
+  ],
+  "title": "La Paz International Airport",
+  "url": "https://en.wikipedia.org/wiki/La_Paz_International_Airport"
+ },
+ "PABI": {
+  "cities": [
+   "Fort Greely"
+  ],
+  "description": "Airport in Delta Junction, Alaska",
+  "extract": "Allen Army Airfield is a public and military use airport serving Fort Greely and located three miles (5 km) south of the central business district of Delta Junction, a city in the Southeast Fairbanks Census Area of the U.S. state of Alaska. It is owned by the United States Army, which has an agreement with the City of Delta Junction for joint use of the airfield by both military and civilian aircraft.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Allen-AAF-Airport-Diagram.png/330px-Allen-AAF-Airport-Diagram.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-PABI.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Allen Army Airfield",
+  "url": "https://en.wikipedia.org/wiki/Allen_Army_Airfield"
+ },
+ "PAJN": {
+  "cities": [
+   "Q29445"
+  ],
+  "description": "International airport serving Juneau, Alaska, United States",
+  "extract": "Juneau International Airport is a city-owned, public-use airport and seaplane base located seven nautical miles northwest of the central business district of Juneau, a city and borough in the U.S. state of Alaska which has no direct road access. The airport is a regional hub for all air travel, from bush carriers to major U.S. air carriers such as Alaska Airlines.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/8/89/Juneau_International_Airport_Logo.jpg/330px-Juneau_International_Airport_Logo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-PAJN.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Juneau International Airport",
+  "url": "https://en.wikipedia.org/wiki/Juneau_International_Airport"
+ },
+ "PATC": {
+  "cities": [],
+  "description": "Airport in Tin City, Alaska",
+  "extract": "Tin City LRRS Airport is a military airport located one nautical mile (1.85 km) east of the historic location of Tin City, in the Nome Census Area of the U.S. state of Alaska. It is owned by the U.S. Air Force.",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Tin City LRRS Airport",
+  "url": "https://en.wikipedia.org/wiki/Tin_City_LRRS_Airport"
+ },
+ "PFWS": {
+  "cities": [
+   "South Naknek"
+  ],
+  "description": "Airport",
+  "extract": "South Naknek Airport, also known as South Naknek Nr 2 Airport, is a state-owned public-use airport located one nautical mile (1.85 km) southwest of the central business district of South Naknek, in the Bristol Bay Borough of the U.S. state of Alaska.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/South-Naknek-Airport-FAA-photo.jpg/330px-South-Naknek-Airport-FAA-photo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-PFWS.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Alaska Department of Transportation & Public Facilities"
+  ],
+  "title": "South Naknek Airport",
+  "url": "https://en.wikipedia.org/wiki/South_Naknek_Airport"
+ },
+ "RJCW": {
+  "cities": [
+   "Wakkanai"
+  ],
+  "description": "Airport in Wakkanai, Hokkaido, Japan",
+  "extract": "Wakkanai Airport  is an airport located 10 km (6.2 mi) east southeast of Wakkanai, Hokkaido, Japan.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Wakkanai_Airport06111.jpg/330px-Wakkanai_Airport06111.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-RJCW.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Wakkanai Airport",
+  "url": "https://en.wikipedia.org/wiki/Wakkanai_Airport"
+ },
+ "RJNW": {
+  "cities": [
+   "Wajima"
+  ],
+  "description": "Airport in Wajima, Ishikawa",
+  "extract": "Noto Airport , marketed as Noto Satoyama Airport  and also unofficially known as Wajima Airport  is a domestic airport located 6.4 NM south southeast of the city of Wajima on the Noto Peninsula of Ishikawa Prefecture, Japan.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/NotoAirport_Building.JPG/330px-NotoAirport_Building.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-RJNW.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Noto Airport",
+  "url": "https://en.wikipedia.org/wiki/Noto_Airport"
+ },
+ "RJOR": {
+  "cities": [
+   "Tottori"
+  ],
+  "description": "Airport in Tottori, Japan",
+  "extract": "Tottori Airport  is an airport serving the city of Tottori, Tottori Prefecture, Japan. The airport is owned and operated by the Tottori Prefecture Tottori Airport Authority , and has a passenger volume of approximately 330,000 per year. The airport is nicknamed Tottori Sand Dunes Conan Airport , named after the Tottori Sand Dunes and the manga series Detective Conan by Gosho Aoyama, who was born in Hokuei.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Tottori_Airport_DSCN0064.JPG/330px-Tottori_Airport_DSCN0064.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-RJOR.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Tottori Airport",
+  "url": "https://en.wikipedia.org/wiki/Tottori_Airport"
+ },
+ "RKJK": {
+  "cities": [
+   "Gunsan"
+  ],
+  "description": "Airbase in South Korea",
+  "extract": "Kunsan Air Base (K-8) (Korean: 군산공군기지) is a United States Air Force base located at Gunsan Airport, on the west coast of the Korean Peninsula bordered by the Yellow Sea. It is located in the town of Gunsan, about 180 kilometres (110 mi) south of Seoul.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Kunsan_air_base_with_F-16s.jpg/330px-Kunsan_air_base_with_F-16s.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-RKJK.jpg",
+  "kind": "airport",
+  "opened": "1938",
+  "operators": [
+   "United States Air Force"
+  ],
+  "title": "Kunsan Air Base",
+  "url": "https://en.wikipedia.org/wiki/Kunsan_Air_Base"
+ },
+ "SCVD": {
+  "cities": [
+   "Valdivia"
+  ],
+  "description": "Airport",
+  "extract": "Pichoy Airport is an airport 32 kilometres (20 mi) northeast of Valdivia, a city in the Los Ríos Region of Chile. The airport lies next to Pichoy River.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Aeropuerto_Pichoy.jpg/330px-Aeropuerto_Pichoy.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-SCVD.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Pichoy Airport",
+  "url": "https://en.wikipedia.org/wiki/Pichoy_Airport"
+ },
+ "SKLM": {
+  "cities": [
+   "Maicao"
+  ],
+  "description": "Airport in Albania",
+  "extract": "La Mina Airport, or Jorge Isaacs Airport, is an airport serving Maicao, a municipality in the La Guajira Department in Colombia. The airport is 31 kilometres (19 mi) southwest of Maicao.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Airport_%22La_Mina%22_-_panoramio.jpg/330px-Airport_%22La_Mina%22_-_panoramio.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-SKLM.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Jorge Isaacs Airport",
+  "url": "https://en.wikipedia.org/wiki/Jorge_Isaacs_Airport"
+ },
+ "UAKD": {
+  "cities": [
+   "Jezkazgan"
+  ],
+  "description": "Airport in Kazakhstan",
+  "extract": "Zhezkazgan Airport is an international airport, serving the city of Zhezqazghan in the Ulytau Region of Kazakhstan.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/NASA_FIRMS_2026-08-24_Zhezkazgan.png/330px-NASA_FIRMS_2026-08-24_Zhezkazgan.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-UAKD.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Zhezkazgan Airport",
+  "url": "https://en.wikipedia.org/wiki/Zhezkazgan_Airport"
+ },
+ "UBOK": {
+  "cities": [],
+  "description": "Military airport in Ivanovo, Russia",
+  "extract": "Ivanovo Severny is an air base in Russia located 6 km north of Ivanovo. It is a large transport operation airfield with hangars and significant tarmac space. The runway was built in 1935 and upgraded in 1965. The airfield received the Soviet Union's first Ilyushin Il-76 delivery on June 3, 1974.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/NASA_FIRMS_2024-11-03_Ivanovo_Severny.png/330px-NASA_FIRMS_2024-11-03_Ivanovo_Severny.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-UBOK.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Ivanovo Severny air base",
+  "url": "https://en.wikipedia.org/wiki/Ivanovo_Severny_air_base"
+ },
+ "UHPA": {
+  "cities": [],
+  "description": "Airport in Ust-Pakhachi",
+  "extract": "\n \nPakhachi Airport is an airport in Koryak Okrug, Russia located two kilometers west of Ust-Pakhachi. It services small transport aircraft.",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Pakhachi Airport",
+  "url": "https://en.wikipedia.org/wiki/Pakhachi_Airport"
+ },
+ "UHQO": {
+  "cities": [],
+  "fetched": "2026-11-14",
+  "kind": null,
+  "opened": null,
+  "operators": []
+ },
+ "UHSM": {
+  "cities": [
+   "Yuzhno-Kurilsk"
+  ],
+  "description": "Airport in Yuzhno-Kurilsk, Russia",
+  "extract": "Yuzhno-Kurilsk Mendeleyevo Airport is an airport in Yuzhno-Kurilsk, on Kunashir Island in the Kuril Islands, which is under Russian administration but claimed by Japan.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/%D0%90%D1%8D%D1%80%D0%BE%D0%B4%D1%80%D0%BE%D0%BC%D1%8B_%D0%B8_%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D1%8B-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%2C_%D0%AE%D0%B6%D0%BD%D0%BE-%D0%9A%D1%83%D1%80%D0%B8%D0%BB%D1%8C%D1%81%D0%BA_-_%D0%9C%D0%B5%D0%BD%D0%B4%D0%B5%D0%BB%D0%B5%D0%B5%D0%B2%D0%BE_RP117876.jpg/330px-%D0%90%D1%8D%D1%80%D0%BE%D0%B4%D1%80%D0%BE%D0%BC%D1%8B_%D0%B8_%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D1%8B-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%2C_%D0%AE%D0%B6%D0%BD%D0%BE-%D0%9A%D1%83%D1%80%D0%B8%D0%BB%D1%8C%D1%81%D0%BA_-_%D0%9C%D0%B5%D0%BD%D0%B4%D0%B5%D0%BB%D0%B5%D0%B5%D0%B2%D0%BE_RP117876.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-UHSM.jpg",
+  "kind": "airport",
+  "opened": "2000",
+  "operators": [
+   "Russia"
+  ],
+  "title": "Yuzhno-Kurilsk Mendeleyevo Airport",
+  "url": "https://en.wikipedia.org/wiki/Yuzhno-Kurilsk_Mendeleyevo_Airport"
+ },
+ "URWA": {
+  "cities": [
+   "Astrakhan"
+  ],
+  "description": "Airport in Astrakhan, Russia",
+  "extract": "Narimanovo Airport, officially Astrakhan Boris M. Kustodiev International Airport, is an international airport in Astrakhan, a city in southern Russia near the Caspian Sea. It is operated by JSC \"Aeroport Astrakhan\". In 2018 the airport was renamed in honor of painter Boris Kustodiev.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Airport_Astrakhan_2.jpg/330px-Airport_Astrakhan_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-URWA.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Narimanovo Airport",
+  "url": "https://en.wikipedia.org/wiki/Narimanovo_Airport"
+ },
+ "USII": {
+  "cities": [
+   "Izhevsk"
+  ],
+  "description": "Airport in Izevsk, Russia",
+  "extract": "Mikhail Timofeevich Kalashnikov Izhevsk International Airport is an airport in Udmurtia, Russia, located 15 km east of Izhevsk. It handles small airliners. The airport serves several domestic destinations, as well as cargo flights.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Izhevsk_Airport_%282026-01-09%29_-_0_1.jpg/330px-Izhevsk_Airport_%282026-01-09%29_-_0_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-USII.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Izhavia"
+  ],
+  "title": "Izhevsk Airport",
+  "url": "https://en.wikipedia.org/wiki/Izhevsk_Airport"
+ },
+ "UTOE": {
+  "cities": [],
+  "description": "Index of articles associated with the same name",
+  "extract": "Torbeyevo is the name of several inhabited localities in Russia:Torbeyevo, Republic of Mordovia, an urban-type settlement in the Republic of Mordovia\nTorbeyevo, Smolensk Oblast, a rural locality in Smolensk Oblast\nTorbeyevo, name of several other rural localities",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "town",
+  "opened": null,
+  "operators": [],
+  "title": "Torbeyevo",
+  "url": "https://en.wikipedia.org/wiki/Torbeyevo"
+ },
+ "UUBI": {
+  "cities": [
+   "Ivanovo"
+  ],
+  "description": "Airport in Ivanano, Russia",
+  "extract": "Ivanovo Yuzhny Airport is an airport in Russia located 7 km southwest of Ivanovo. It is a civilian facility that handles medium-sized airliners. It is not to be confused with the Ivanovo Severny airlift base. In 2023, the annual number of passengers served by the airport exceeded 100,000.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/d2/Ivanovo_Airport_logo.png/330px-Ivanovo_Airport_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-UUBI.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Ivanovo Yuzhny Airport",
+  "url": "https://en.wikipedia.org/wiki/Ivanovo_Yuzhny_Airport"
+ },
+ "UWUU": {
+  "cities": [
+   "Ufa"
+  ],
+  "description": "Airport in Russia",
+  "extract": "Ufa International Airport is the primary airport serving Ufa, Bashkortostan, Russia.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Ufa_International_Airport_%28April_2025%29_-0_1.jpg/330px-Ufa_International_Airport_%28April_2025%29_-0_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-UWUU.jpg",
+  "kind": "airport",
+  "opened": "1924",
+  "operators": [],
+  "title": "Ufa International Airport",
+  "url": "https://en.wikipedia.org/wiki/Ufa_International_Airport"
+ },
+ "VEIM": {
+  "cities": [
+   "Imphal"
+  ],
+  "description": "Airport in Manipur, India",
+  "extract": "Bir Tikendrajit International Airport, also known as Imphal Airport, and formerly known as Tulihal International Airport, is an international airport serving Imphal, the capital of Manipur, India, located 7 km south from the city centre. It is the second-largest and the third-busiest airport in Northeast India after Lokpriya Gopinath Bordoloi International Airport in Guwahati and Maharaja Bir Bikram Airport in Agartala. The airport had functioned as an all-weather Royal Air Force (RAF) base during World War II. It replaced civilian operations from Koirengei Airfield in 1959.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Imphal_airport.jpg/330px-Imphal_airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-VEIM.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [
+   "Airports Authority of India"
+  ],
+  "title": "Bir Tikendrajit International Airport",
+  "url": "https://en.wikipedia.org/wiki/Bir_Tikendrajit_International_Airport"
+ },
+ "VTSF": {
+  "cities": [
+   "Nakhon Si Thammarat"
+  ],
+  "description": "Airport in southern Thailand",
+  "extract": "Nakhon Si Thammarat International Airport is in Pak Phun subdistrict, Mueang Nakhon Si Thammarat district, Nakhon Si Thammarat province in southern Thailand.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/NSTairport2024.jpg/330px-NSTairport2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-VTSF.jpg",
+  "kind": "airport",
+  "opened": "1998",
+  "operators": [
+   "Airports of Thailand"
+  ],
+  "title": "Nakhon Si Thammarat Airport",
+  "url": "https://en.wikipedia.org/wiki/Nakhon_Si_Thammarat_Airport"
+ },
+ "VTUV": {
+  "cities": [
+   "Thawat Buri",
+   "king and pawn versus king endgame"
+  ],
+  "description": "Airport in northeastern Thailand",
+  "extract": "Roi Et Airport is a domestic airport in Nong Phok subdistrict, Thawat Buri district, Roi Et province in Northeastern Thailand, and is approximately 11 kilometres from downtown Roi Et.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Airport_ROI.jpg/330px-Airport_ROI.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-VTUV.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Roi Et Airport",
+  "url": "https://en.wikipedia.org/wiki/Roi_Et_Airport"
+ },
+ "ZGDY": {
+  "cities": [
+   "Zhangjiajie"
+  ],
+  "description": "Airport serving Zhangjiajie, Hunan, China",
+  "extract": "Zhangjiajie Hehua International Airport is an international airport serving the city of Zhangjiajie in South Central China's Hunan province. It is located in Huhua village in Yongding District of Zhangjiajie. It is the second largest airport in Hunan, after Changsha Huanghua International Airport, and the only international airport in the Wuling Mountains region. As of 2019 it has a capacity of 5 million passengers, 19,000 tons of cargo and 45,000 aircraft movements.This airport is rated 4-star regional airport for facilities, comfort, cleanliness, shopping, foods, staff service by Skytrax.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/38197-Zhangjiajie_%2849047512127%29.jpg/330px-38197-Zhangjiajie_%2849047512127%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-ZGDY.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Zhangjiajie Hehua International Airport",
+  "url": "https://en.wikipedia.org/wiki/Zhangjiajie_Hehua_International_Airport"
+ },
+ "ZSTX": {
+  "cities": [
+   "Huangshan"
+  ],
+  "description": "Airport serving Huangshan City, Anhui, China",
+  "extract": "Huangshan Tunxi International Airport is an airport in Tunxi District, Huangshan City in East China's Anhui province. It mainly serves tourists to Mount Huangshan, one of China's top tourist destinations. The airport was first built in 1958 and has one 2,600-meter runway.",
+  "fetched": "2026-11-14",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Huangshan_Tunxi_International_Airport_inside.jpg/330px-Huangshan_Tunxi_International_Airport_inside.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-ZSTX.jpg",
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Huangshan Tunxi International Airport",
+  "url": "https://en.wikipedia.org/wiki/Huangshan_Tunxi_International_Airport"
+ },
+ "ZWKC": {
+  "cities": [
+   "Kuqa"
+  ],
+  "description": "Airport in Xinjiang, China",
+  "extract": "Kuqa Qiuci Airport is an airport serving Kuqa County in Xinjiang Autonomous Region, China. It is located 38 kilometers from the city. The airport was first built in 1939, but ceased operation in 1998. In 2009 it was moved and rebuilt at its current location with an investment of 333 million yuan, and was reopened in 2011 under the new name Kuqa Qiuci Airport, after the ancient kingdom based in Kuqa.",
+  "fetched": "2026-11-14",
+  "image": null,
+  "imageFile": null,
+  "kind": "airport",
+  "opened": null,
+  "operators": [],
+  "title": "Kuqa Qiuci Airport",
+  "url": "https://en.wikipedia.org/wiki/Kuqa_Qiuci_Airport"
+ }
+}

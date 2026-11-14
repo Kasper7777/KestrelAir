@@ -1,0 +1,2331 @@
+{
+"7FL6": {
+"city": "Daytona Beach",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 24,
+"ident": "7FL6",
+"lat": 29.080193,
+"lon": -81.046638,
+"longestRunwayFt": 4008,
+"name": "Spruce Creek",
+"runways": 2,
+"state": "Florida",
+"surface": "A",
+"tower": false
+},
+"CEX3": {
+"city": "Wetaskiwin",
+"country": {
+"iso": "CA",
+"name": "Canada"
+},
+"elevationFt": 2503,
+"ident": "CEX3",
+"lat": 52.96492,
+"lon": -113.41114,
+"longestRunwayFt": 3868,
+"name": "Wetaskiwin",
+"runways": 1,
+"state": "Alberta",
+"surface": "A",
+"tower": false
+},
+"DABC": {
+"city": "Constantine",
+"country": {
+"iso": "DZ",
+"name": "Algeria"
+},
+"elevationFt": 2296,
+"ident": "DABC",
+"lat": 36.285267,
+"lon": 6.619156,
+"longestRunwayFt": 9799,
+"name": "Mohamed Boudiaf",
+"runways": 2,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EDLW": {
+"city": "Dortmund",
+"country": {
+"iso": "DE",
+"name": "Germany"
+},
+"elevationFt": 409,
+"ident": "EDLW",
+"lat": 51.518311,
+"lon": 7.612244,
+"longestRunwayFt": 6569,
+"name": "Dortmund",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EDTO": {
+"city": "Offenburg",
+"country": {
+"iso": "DE",
+"name": "Germany"
+},
+"elevationFt": 509,
+"ident": "EDTO",
+"lat": 48.450844,
+"lon": 7.925537,
+"longestRunwayFt": 3770,
+"name": "Offenburg",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EFHK": {
+"city": "Helsinki",
+"country": {
+"iso": "FI",
+"name": "Finland"
+},
+"elevationFt": 154,
+"ident": "EFHK",
+"lat": 60.3172,
+"lon": 24.963333,
+"longestRunwayFt": 11457,
+"name": "Vantaa",
+"runways": 3,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EG32": {
+"city": "Bingham",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 118,
+"ident": "EG32",
+"lat": 52.893562,
+"lon": -0.902039,
+"longestRunwayFt": 4510,
+"name": "Langar Airfield",
+"runways": 2,
+"state": null,
+"surface": "B",
+"tower": false
+},
+"EG48": {
+"city": "Alburgh",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 173,
+"ident": "EG48",
+"lat": 52.464493,
+"lon": 1.309738,
+"longestRunwayFt": 3418,
+"name": "Hardwick Norwich",
+"runways": 1,
+"state": "Norfolk",
+"surface": "A",
+"tower": false
+},
+"EGAC": {
+"city": "Belfast",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 13,
+"ident": "EGAC",
+"lat": 54.618061,
+"lon": -5.872513,
+"longestRunwayFt": 6002,
+"name": "Belfast City",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGAE": {
+"city": "Derry",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 16,
+"ident": "EGAE",
+"lat": 55.042782,
+"lon": -7.161942,
+"longestRunwayFt": 6454,
+"name": "The City Of Derry Airport",
+"runways": 2,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGAV": {
+"city": "Avebury",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 558,
+"ident": "EGAV",
+"lat": 51.431778,
+"lon": -1.91037,
+"longestRunwayFt": 1269,
+"name": "Yatesbury Airfield",
+"runways": 1,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGBB": {
+"city": "Birmingham",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 315,
+"ident": "EGBB",
+"lat": 52.453896,
+"lon": -1.748016,
+"longestRunwayFt": 10002,
+"name": "Birmingham",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGBO": {
+"city": "Wolverhampton",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 273,
+"ident": "EGBO",
+"lat": 52.517784,
+"lon": -2.259705,
+"longestRunwayFt": 3738,
+"name": "Wolverhampton",
+"runways": 4,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"EGCU": {
+"city": "Cromer",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 186,
+"ident": "EGCU",
+"lat": 52.892952,
+"lon": 1.319061,
+"longestRunwayFt": 2177,
+"name": "Cromer/Northrepps Aerodrome",
+"runways": 2,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGDM": {
+"city": "Boscombe Down",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 388,
+"ident": "EGDM",
+"lat": 51.153297,
+"lon": -1.750992,
+"longestRunwayFt": 10595,
+"name": "Boscombe Down",
+"runways": 2,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"EGDZ": {
+"city": "Buckingham",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 272,
+"ident": "EGDZ",
+"lat": 52.005844,
+"lon": -0.935684,
+"longestRunwayFt": 1810,
+"name": "Thornborough Grounds Airstrip",
+"runways": 1,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGGD": {
+"city": "Bristol",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 608,
+"ident": "EGGD",
+"lat": 51.382771,
+"lon": -2.719162,
+"longestRunwayFt": 6602,
+"name": "Bristol",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGGN": {
+"city": "Exning",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 26,
+"ident": "EGGN",
+"lat": 52.290096,
+"lon": 0.369705,
+"longestRunwayFt": 1559,
+"name": "Exning Airstrip",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGGW": {
+"city": "London",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 512,
+"ident": "EGGW",
+"lat": 51.874737,
+"lon": -0.368286,
+"longestRunwayFt": 7094,
+"name": "Luton",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGHF": {
+"city": "Lee-On-Solent",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 31,
+"ident": "EGHF",
+"lat": 50.815559,
+"lon": -1.206665,
+"longestRunwayFt": 4285,
+"name": "Lee-On-Solent",
+"runways": 1,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"EGHH": {
+"city": "Bournemouth",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 34,
+"ident": "EGHH",
+"lat": 50.779987,
+"lon": -1.842468,
+"longestRunwayFt": 7450,
+"name": "Bournemouth",
+"runways": 1,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"EGHI": {
+"city": "Southampton",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 38,
+"ident": "EGHI",
+"lat": 50.950279,
+"lon": -1.356674,
+"longestRunwayFt": 5651,
+"name": "Southampton Intl",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGHJ": {
+"city": "Bembridge",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 31,
+"ident": "EGHJ",
+"lat": 50.678036,
+"lon": -1.109528,
+"longestRunwayFt": 2737,
+"name": "Bembridge",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": true
+},
+"EGIK": {
+"city": "Fakenham",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 182,
+"ident": "EGIK",
+"lat": 52.860992,
+"lon": 0.905228,
+"longestRunwayFt": 2708,
+"name": "Little Snoring Airfield",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGIZ": {
+"city": "Hook Norton",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 589,
+"ident": "EGIZ",
+"lat": 52.009235,
+"lon": -1.489899,
+"longestRunwayFt": 1096,
+"name": "Hook Norton Airstrip",
+"runways": 1,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGJA": {
+"city": "Alderney",
+"country": {
+"iso": "GG",
+"name": "Alderney"
+},
+"elevationFt": 281,
+"ident": "EGJA",
+"lat": 49.706669,
+"lon": -2.214447,
+"longestRunwayFt": 2880,
+"name": "Alderney",
+"runways": 3,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"EGJB": {
+"city": "Guernsey",
+"country": {
+"iso": "GG",
+"name": "Guernsey"
+},
+"elevationFt": 319,
+"ident": "EGJB",
+"lat": 49.435001,
+"lon": -2.602783,
+"longestRunwayFt": 5193,
+"name": "Guernsey",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGJJ": {
+"city": "Jersey",
+"country": {
+"iso": "JE",
+"name": "Jersey"
+},
+"elevationFt": 271,
+"ident": "EGJJ",
+"lat": 49.208057,
+"lon": -2.195557,
+"longestRunwayFt": 5593,
+"name": "Jersey",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGJQ": {
+"city": "Fyfield",
+"country": {
+"iso": "JE",
+"name": "Channel Islands"
+},
+"elevationFt": 241,
+"ident": "EGJQ",
+"lat": 51.732246,
+"lon": 0.290421,
+"longestRunwayFt": 1791,
+"name": "Willingale Airstrip",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGLI": {
+"city": "Little Clacton",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 72,
+"ident": "EGLI",
+"lat": 51.912029,
+"lon": 1.182327,
+"longestRunwayFt": 3026,
+"name": "Great Oakley",
+"runways": 2,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGNO": {
+"city": "Warton",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 42,
+"ident": "EGNO",
+"lat": 53.745037,
+"lon": -2.883408,
+"longestRunwayFt": 8779,
+"name": "Warton",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGOS": {
+"city": "Shawbury",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 241,
+"ident": "EGOS",
+"lat": 52.793636,
+"lon": -2.667953,
+"longestRunwayFt": 6002,
+"name": "Shawbury AB",
+"runways": 2,
+"state": null,
+"surface": "B",
+"tower": false
+},
+"EGPH": {
+"city": "Edinburgh",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 105,
+"ident": "EGPH",
+"lat": 55.949989,
+"lon": -3.372467,
+"longestRunwayFt": 8395,
+"name": "Edinburgh",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGPN": {
+"city": "Dundee",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 15,
+"ident": "EGPN",
+"lat": 56.452484,
+"lon": -3.025818,
+"longestRunwayFt": 4574,
+"name": "Dundee",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGQW": {
+"city": "Blidworth",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 224,
+"ident": "EGQW",
+"lat": 53.061607,
+"lon": -1.093918,
+"longestRunwayFt": 1202,
+"name": "Salterford Farm Airfield",
+"runways": 2,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGSM": {
+"city": "Beccles",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 68,
+"ident": "EGSM",
+"lat": 52.435352,
+"lon": 1.618317,
+"longestRunwayFt": 2263,
+"name": "Beccles",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGSP": {
+"city": "Peterborough",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 114,
+"ident": "EGSP",
+"lat": 52.556377,
+"lon": -0.388809,
+"longestRunwayFt": 3059,
+"name": "Sibson",
+"runways": 3,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGSU": {
+"city": "Duxford",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 113,
+"ident": "EGSU",
+"lat": 52.090561,
+"lon": 0.131393,
+"longestRunwayFt": 4745,
+"name": "Duxford",
+"runways": 2,
+"state": null,
+"surface": "B",
+"tower": false
+},
+"EGSV": {
+"city": "Old Buckenham",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 179,
+"ident": "EGSV",
+"lat": 52.497505,
+"lon": 1.051941,
+"longestRunwayFt": 2789,
+"name": "Old Buckenham",
+"runways": 3,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGTW": {
+"city": "Oaksey Park",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 292,
+"ident": "EGTW",
+"lat": 51.631996,
+"lon": -2.013199,
+"longestRunwayFt": 3299,
+"name": "Oaksey Park",
+"runways": 1,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGTYR": {
+"city": null,
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 133,
+"ident": "EGTYR",
+"lat": 52.376667,
+"lon": 0.882222,
+"longestRunwayFt": 1023,
+"name": "Knettishall Airstrip",
+"runways": 1,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGUL": {
+"city": "Lakenheath",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 28,
+"ident": "EGUL",
+"lat": 52.409416,
+"lon": 0.56102,
+"longestRunwayFt": 8960,
+"name": "Lakenheath AB",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGUP": {
+"city": "Fakenham",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 208,
+"ident": "EGUP",
+"lat": 52.845966,
+"lon": 0.765808,
+"longestRunwayFt": 8978,
+"name": "RAF Sculthorpe",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGVA": {
+"city": "Fairford",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 270,
+"ident": "EGVA",
+"lat": 51.683514,
+"lon": -1.789978,
+"longestRunwayFt": 9989,
+"name": "Fairford",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EGXCS": {
+"city": null,
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 133,
+"ident": "EGXCS",
+"lat": 52.711231,
+"lon": -0.136738,
+"longestRunwayFt": 2024,
+"name": "POSTLAND / SPALDING (Crowland)",
+"runways": 1,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EGXH": {
+"city": "Honington",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 168,
+"ident": "EGXH",
+"lat": 52.342827,
+"lon": 0.77301,
+"longestRunwayFt": 8969,
+"name": "Honington",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGYB": {
+"city": "Woolpit",
+"country": {
+"iso": "FK",
+"name": "Falkland Islands"
+},
+"elevationFt": 285,
+"ident": "EGYB",
+"lat": 52.167381,
+"lon": 0.86673,
+"longestRunwayFt": 3563,
+"name": "Rattlesden",
+"runways": 2,
+"state": null,
+"surface": "D",
+"tower": false
+},
+"EGYD": {
+"city": "Cranwell",
+"country": {
+"iso": "FK",
+"name": "Falkland Islands"
+},
+"elevationFt": 193,
+"ident": "EGYD",
+"lat": 53.029747,
+"lon": -0.492767,
+"longestRunwayFt": 6988,
+"name": "Cranwell AB",
+"runways": 2,
+"state": null,
+"surface": "B",
+"tower": false
+},
+"EGYP": {
+"city": "Mount Pleasant",
+"country": {
+"iso": "FK",
+"name": "Falkland Islands"
+},
+"elevationFt": 206,
+"ident": "EGYP",
+"lat": -51.822708,
+"lon": -58.445976,
+"longestRunwayFt": 8493,
+"name": "Mount Pleasant",
+"runways": 2,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EGZD": {
+"city": "Great Yeldham",
+"country": {
+"iso": "GB",
+"name": "United Kingdom"
+},
+"elevationFt": 249,
+"ident": "EGZD",
+"lat": 51.994408,
+"lon": 0.556427,
+"longestRunwayFt": 2006,
+"name": "Blooms Farm Airstrip",
+"runways": 1,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"EHRD": {
+"city": "Rotterdam",
+"country": {
+"iso": "NL",
+"name": "Netherlands"
+},
+"elevationFt": -2,
+"ident": "EHRD",
+"lat": 51.955925,
+"lon": 4.438034,
+"longestRunwayFt": 7214,
+"name": "Rotterdam The Hague Airport",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"EIWF": {
+"city": "Waterford",
+"country": {
+"iso": "IE",
+"name": "Ireland"
+},
+"elevationFt": 99,
+"ident": "EIWF",
+"lat": 52.187233,
+"lon": -7.086914,
+"longestRunwayFt": 4692,
+"name": "Waterford",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"ENCN": {
+"city": "Kristiansand",
+"country": {
+"iso": "NO",
+"name": "Norway"
+},
+"elevationFt": 46,
+"ident": "ENCN",
+"lat": 58.203861,
+"lon": 8.084915,
+"longestRunwayFt": 6660,
+"name": "Kjevik",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"ETOU": {
+"city": "Wiesbaden",
+"country": {
+"iso": "DE",
+"name": "Germany"
+},
+"elevationFt": 456,
+"ident": "ETOU",
+"lat": 50.04985,
+"lon": 8.32547,
+"longestRunwayFt": 7047,
+"name": "Wiesbaden AAF",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"EYKL": {
+"city": null,
+"country": {
+"iso": "LT",
+"name": "Lithuania"
+},
+"elevationFt": 58,
+"ident": "EYKL",
+"lat": 55.711945,
+"lon": 21.242777,
+"longestRunwayFt": 2048,
+"name": "Klaipeda",
+"runways": 2,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"GMTA": {
+"city": "Al Hoceima",
+"country": {
+"iso": "MA",
+"name": "Morocco"
+},
+"elevationFt": 57,
+"ident": "GMTA",
+"lat": 35.179699,
+"lon": -3.840027,
+"longestRunwayFt": 8192,
+"name": "Cherif El Idrissi",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"GQPP": {
+"city": "Nouadhibou",
+"country": {
+"iso": "MR",
+"name": "Mauritania"
+},
+"elevationFt": 5,
+"ident": "GQPP",
+"lat": 20.928444,
+"lon": -17.031174,
+"longestRunwayFt": 7962,
+"name": "Nouadhibou",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": true
+},
+"KBLI": {
+"city": "Bellingham",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 167,
+"ident": "KBLI",
+"lat": 48.792702,
+"lon": -122.537529,
+"longestRunwayFt": 6709,
+"name": "Bellingham Intl",
+"runways": 1,
+"state": "Washington",
+"surface": "A",
+"tower": true
+},
+"KCGF": {
+"city": "Cleveland",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 873,
+"ident": "KCGF",
+"lat": 41.564583,
+"lon": -81.487228,
+"longestRunwayFt": 5097,
+"name": "Cuyahoga County",
+"runways": 1,
+"state": "Ohio",
+"surface": "A",
+"tower": true
+},
+"KHYI": {
+"city": "San Marcos",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 584,
+"ident": "KHYI",
+"lat": 29.892765,
+"lon": -97.863029,
+"longestRunwayFt": 6296,
+"name": "San Marcos Rgnl",
+"runways": 3,
+"state": "Texas",
+"surface": "A",
+"tower": true
+},
+"KJFK": {
+"city": "New York",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 12,
+"ident": "KJFK",
+"lat": 40.641369,
+"lon": -73.777672,
+"longestRunwayFt": 14510,
+"name": "Kennedy Intl",
+"runways": 4,
+"state": "New York",
+"surface": "A",
+"tower": true
+},
+"KLWM": {
+"city": "Lawrence",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 134,
+"ident": "KLWM",
+"lat": 42.717045,
+"lon": -71.123535,
+"longestRunwayFt": 4981,
+"name": "Lawrence Muni",
+"runways": 2,
+"state": "Massachusetts",
+"surface": "A",
+"tower": true
+},
+"KMOD": {
+"city": "Modesto",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 91,
+"ident": "KMOD",
+"lat": 37.62582,
+"lon": -120.954445,
+"longestRunwayFt": 5897,
+"name": "Modesto City-Co-Harry Sham Fld",
+"runways": 2,
+"state": "California",
+"surface": "A",
+"tower": true
+},
+"KRKW": {
+"city": "Rockwood",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 1644,
+"ident": "KRKW",
+"lat": 35.922295,
+"lon": -84.689774,
+"longestRunwayFt": 4968,
+"name": "Rockwood Mun",
+"runways": 1,
+"state": "Tennessee",
+"surface": "A",
+"tower": false
+},
+"KWJF": {
+"city": "Lancaster",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 2343,
+"ident": "KWJF",
+"lat": 34.741051,
+"lon": -118.218628,
+"longestRunwayFt": 7202,
+"name": "General Wm J Fox Airfield",
+"runways": 1,
+"state": "California",
+"surface": "B",
+"tower": true
+},
+"LCEN": {
+"city": "Geri",
+"country": {
+"iso": "CY",
+"name": "Cyprus"
+},
+"elevationFt": 390,
+"ident": "LCEN",
+"lat": 35.155312,
+"lon": 33.495621,
+"longestRunwayFt": 9045,
+"name": "Ercan International Airport",
+"runways": 2,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LDSB": {
+"city": "Brac",
+"country": {
+"iso": "HR",
+"name": "Croatia"
+},
+"elevationFt": 1740,
+"ident": "LDSB",
+"lat": 43.285721,
+"lon": 16.679718,
+"longestRunwayFt": 5778,
+"name": "Brac Island",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": true
+},
+"LDSP": {
+"city": "Split",
+"country": {
+"iso": "HR",
+"name": "Croatia"
+},
+"elevationFt": 60,
+"ident": "LDSP",
+"lat": 43.53894,
+"lon": 16.297958,
+"longestRunwayFt": 8363,
+"name": "Kastela",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LEAS": {
+"city": "Oviedo",
+"country": {
+"iso": "ES",
+"name": "Spain"
+},
+"elevationFt": 399,
+"ident": "LEAS",
+"lat": 43.563614,
+"lon": -6.034729,
+"longestRunwayFt": 7203,
+"name": "Asturias",
+"runways": 1,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"LECH": {
+"city": "Benlloch",
+"country": {
+"iso": "ES",
+"name": "Spain"
+},
+"elevationFt": 1137,
+"ident": "LECH",
+"lat": 40.214195,
+"lon": 0.073608,
+"longestRunwayFt": 8863,
+"name": "Castellón-Costa Azahar Airport",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LEGE": {
+"city": "Girona",
+"country": {
+"iso": "ES",
+"name": "Spain"
+},
+"elevationFt": 436,
+"ident": "LEGE",
+"lat": 41.900814,
+"lon": 2.760529,
+"longestRunwayFt": 7860,
+"name": "Girona",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LEJR": {
+"city": "Jerez",
+"country": {
+"iso": "ES",
+"name": "Spain"
+},
+"elevationFt": 80,
+"ident": "LEJR",
+"lat": 36.744728,
+"lon": -6.059998,
+"longestRunwayFt": 7544,
+"name": "Jerez",
+"runways": 1,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"LEMR": {
+"city": "La Morgal",
+"country": {
+"iso": "ES",
+"name": "Spain"
+},
+"elevationFt": 524,
+"ident": "LEMR",
+"lat": 43.430645,
+"lon": -5.826782,
+"longestRunwayFt": 3251,
+"name": "La Morgal",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LESO": {
+"city": "San Sebastián",
+"country": {
+"iso": "ES",
+"name": "Spain"
+},
+"elevationFt": 11,
+"ident": "LESO",
+"lat": 43.356392,
+"lon": -1.790573,
+"longestRunwayFt": 5744,
+"name": "San Sebastián",
+"runways": 1,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"LFBE": {
+"city": "Bergerac",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 167,
+"ident": "LFBE",
+"lat": 44.824444,
+"lon": 0.520523,
+"longestRunwayFt": 7243,
+"name": "Roumaniere",
+"runways": 2,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"LFCY": {
+"city": "Royan",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 54,
+"ident": "LFCY",
+"lat": 45.631149,
+"lon": -0.975555,
+"longestRunwayFt": 4111,
+"name": "Medis",
+"runways": 2,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LFED": {
+"city": "Pontivy",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 391,
+"ident": "LFED",
+"lat": 48.056946,
+"lon": -2.92334,
+"longestRunwayFt": 3695,
+"name": "Pontivy",
+"runways": 1,
+"state": null,
+"surface": "B",
+"tower": false
+},
+"LFEQ": {
+"city": "Quiberon",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 33,
+"ident": "LFEQ",
+"lat": 47.481388,
+"lon": -3.101669,
+"longestRunwayFt": 2545,
+"name": "Quiberon",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LFIV": {
+"city": "Soulac-Sur-Mer",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 16,
+"ident": "LFIV",
+"lat": 45.380554,
+"lon": -1.115829,
+"longestRunwayFt": 2604,
+"name": "Vendays Montalivet Airport",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LFOM": {
+"city": "Lessay",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 88,
+"ident": "LFOM",
+"lat": 49.203056,
+"lon": -1.506668,
+"longestRunwayFt": 4100,
+"name": "Lessay",
+"runways": 1,
+"state": null,
+"surface": "G",
+"tower": false
+},
+"LFRC": {
+"city": "Cherbourg",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 440,
+"ident": "LFRC",
+"lat": 49.650826,
+"lon": -1.475357,
+"longestRunwayFt": 8005,
+"name": "Maupertus",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": true
+},
+"LFRD": {
+"city": "Dinard",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 206,
+"ident": "LFRD",
+"lat": 48.587791,
+"lon": -2.079971,
+"longestRunwayFt": 7165,
+"name": "Pleurtuit-St Malo",
+"runways": 2,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LFRE": {
+"city": "La Baule-Escoublac",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 102,
+"ident": "LFRE",
+"lat": 47.288364,
+"lon": -2.346939,
+"longestRunwayFt": 3082,
+"name": "La Baule-Escoublac",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LFRI": {
+"city": "La Roche-Sur-Yon",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 290,
+"ident": "LFRI",
+"lat": 46.702477,
+"lon": -1.381653,
+"longestRunwayFt": 5082,
+"name": "Les Ajoncs",
+"runways": 2,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LFRS": {
+"city": "Nantes/Atlantique",
+"country": {
+"iso": "FR",
+"name": "France"
+},
+"elevationFt": 80,
+"ident": "LFRS",
+"lat": 47.156956,
+"lon": -1.607788,
+"longestRunwayFt": 9531,
+"name": "Nantes/Atlantique",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LICA": {
+"city": "Lamezia",
+"country": {
+"iso": "IT",
+"name": "Italy"
+},
+"elevationFt": 30,
+"ident": "LICA",
+"lat": 38.90834,
+"lon": 16.241638,
+"longestRunwayFt": 9898,
+"name": "Terme",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LICG": {
+"city": "Pantelleria",
+"country": {
+"iso": "IT",
+"name": "Italy"
+},
+"elevationFt": 607,
+"ident": "LICG",
+"lat": 36.813057,
+"lon": 11.960831,
+"longestRunwayFt": 6535,
+"name": "Pantelleria Mil",
+"runways": 2,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LICT": {
+"city": "Trapani",
+"country": {
+"iso": "IT",
+"name": "Italy"
+},
+"elevationFt": 16,
+"ident": "LICT",
+"lat": 37.911934,
+"lon": 12.493332,
+"longestRunwayFt": 8854,
+"name": "Birgi Mil",
+"runways": 2,
+"state": null,
+"surface": "CE",
+"tower": true
+},
+"LIMP": {
+"city": "Parma",
+"country": {
+"iso": "IT",
+"name": "Italy"
+},
+"elevationFt": 153,
+"ident": "LIMP",
+"lat": 44.822224,
+"lon": 10.295273,
+"longestRunwayFt": 5680,
+"name": "Parma",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LIPC": {
+"city": "Cervia",
+"country": {
+"iso": "IT",
+"name": "Italy"
+},
+"elevationFt": 14,
+"ident": "LIPC",
+"lat": 44.221764,
+"lon": 12.317566,
+"longestRunwayFt": 10003,
+"name": "Cervia Mil",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LQMO": {
+"city": "Mostar",
+"country": {
+"iso": "BA",
+"name": "Bosnia & Herzegovina"
+},
+"elevationFt": 164,
+"ident": "LQMO",
+"lat": 43.282902,
+"lon": 17.845856,
+"longestRunwayFt": 7852,
+"name": "Mostar",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LTAJ": {
+"city": "Gaziantep",
+"country": {
+"iso": "TR",
+"name": "Türkiye"
+},
+"elevationFt": 2259,
+"ident": "LTAJ",
+"lat": 36.947731,
+"lon": 37.478882,
+"longestRunwayFt": 9828,
+"name": "Oguzeli",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LTBI": {
+"city": "Eskisehir",
+"country": {
+"iso": "TR",
+"name": "Türkiye"
+},
+"elevationFt": 2575,
+"ident": "LTBI",
+"lat": 39.784134,
+"lon": 30.581894,
+"longestRunwayFt": 10014,
+"name": "Eskisehir",
+"runways": 2,
+"state": null,
+"surface": "B",
+"tower": false
+},
+"LTBZ": {
+"city": null,
+"country": {
+"iso": "TR",
+"name": "Türkiye"
+},
+"elevationFt": 3318,
+"ident": "LTBZ",
+"lat": 39.111389,
+"lon": 30.130278,
+"longestRunwayFt": 3751,
+"name": "Zafer",
+"runways": 1,
+"state": null,
+"surface": "C",
+"tower": false
+},
+"LTCO": {
+"city": "Agri",
+"country": {
+"iso": "TR",
+"name": "Türkiye"
+},
+"elevationFt": 5426,
+"ident": "LTCO",
+"lat": 39.647514,
+"lon": 43.028549,
+"longestRunwayFt": 9844,
+"name": "Agri",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": false
+},
+"LTCU": {
+"city": null,
+"country": {
+"iso": "TR",
+"name": "Türkiye"
+},
+"elevationFt": 3470,
+"ident": "LTCU",
+"lat": 38.861111,
+"lon": 40.592499,
+"longestRunwayFt": 7546,
+"name": "Bingol",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"LTFD": {
+"city": "Balikesir",
+"country": {
+"iso": "TR",
+"name": "Türkiye"
+},
+"elevationFt": 42,
+"ident": "LTFD",
+"lat": 39.552502,
+"lon": 27.010269,
+"longestRunwayFt": 10222,
+"name": "Edremit Korfez",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": false
+},
+"LTFJ": {
+"city": "Istanbul",
+"country": {
+"iso": "TR",
+"name": "Türkiye"
+},
+"elevationFt": 298,
+"ident": "LTFJ",
+"lat": 40.898335,
+"lon": 29.309143,
+"longestRunwayFt": 10238,
+"name": "Sabiha Gokcen",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"LTPU": {
+"city": "Pulur",
+"country": {
+"iso": "TR",
+"name": "Türkiye"
+},
+"elevationFt": 5451,
+"ident": "LTPU",
+"lat": 40.222862,
+"lon": 39.79303,
+"longestRunwayFt": 3845,
+"name": "Salyazı Airport",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": false
+},
+"LWOH": {
+"city": "Ohrid",
+"country": {
+"iso": "MK",
+"name": "North Macedonia"
+},
+"elevationFt": 2301,
+"ident": "LWOH",
+"lat": 41.179996,
+"lon": 20.742233,
+"longestRunwayFt": 8380,
+"name": "Ohrid",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"MKJP": {
+"city": "Kingston",
+"country": {
+"iso": "JM",
+"name": "Jamaica"
+},
+"elevationFt": 13,
+"ident": "MKJP",
+"lat": 17.935562,
+"lon": -76.787506,
+"longestRunwayFt": 8866,
+"name": "Norman Manley Intl",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"MMLP": {
+"city": "La Paz",
+"country": {
+"iso": "MX",
+"name": "Mexico"
+},
+"elevationFt": 69,
+"ident": "MMLP",
+"lat": 24.072762,
+"lon": -110.362564,
+"longestRunwayFt": 8177,
+"name": "Gen Manuel Marquez De Leon",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": true
+},
+"PABI": {
+"city": "Delta Junction/Ft Greely",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 1266,
+"ident": "PABI",
+"lat": 63.995178,
+"lon": -145.720001,
+"longestRunwayFt": 8993,
+"name": "Allen AAF",
+"runways": 3,
+"state": "Alaska",
+"surface": "A",
+"tower": true
+},
+"PAJN": {
+"city": "Juneau",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 24,
+"ident": "PAJN",
+"lat": 58.354721,
+"lon": -134.578491,
+"longestRunwayFt": 8447,
+"name": "Juneau Intl",
+"runways": 1,
+"state": "Alaska",
+"surface": "A",
+"tower": true
+},
+"PATC": {
+"city": "Tin City",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 249,
+"ident": "PATC",
+"lat": 65.564034,
+"lon": -167.922455,
+"longestRunwayFt": 4780,
+"name": "Tin City LRRS",
+"runways": 1,
+"state": "Alaska",
+"surface": "A",
+"tower": false
+},
+"PFWS": {
+"city": "South Naknek",
+"country": {
+"iso": "US",
+"name": "United States"
+},
+"elevationFt": 151,
+"ident": "PFWS",
+"lat": 58.702126,
+"lon": -157.00264,
+"longestRunwayFt": 3767,
+"name": "South Naknek Nr2",
+"runways": 2,
+"state": "Alaska",
+"surface": "A",
+"tower": false
+},
+"RJCW": {
+"city": "Wakkanai",
+"country": {
+"iso": "JP",
+"name": "Japan"
+},
+"elevationFt": 28,
+"ident": "RJCW",
+"lat": 45.404346,
+"lon": 141.802246,
+"longestRunwayFt": 7184,
+"name": "Wakkanai",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"RJNW": {
+"city": "Noto",
+"country": {
+"iso": "JP",
+"name": "Japan"
+},
+"elevationFt": 706,
+"ident": "RJNW",
+"lat": 37.293369,
+"lon": 136.96225,
+"longestRunwayFt": 6512,
+"name": "Noto",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"RJOR": {
+"city": "Tottori",
+"country": {
+"iso": "JP",
+"name": "Japan"
+},
+"elevationFt": 47,
+"ident": "RJOR",
+"lat": 35.530025,
+"lon": 134.164978,
+"longestRunwayFt": 6560,
+"name": "Tottori",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"RKJK": {
+"city": "Gunsan",
+"country": {
+"iso": "KR",
+"name": "South Korea"
+},
+"elevationFt": 22,
+"ident": "RKJK",
+"lat": 35.903889,
+"lon": 126.615845,
+"longestRunwayFt": 9015,
+"name": "Gunsan AB",
+"runways": 1,
+"state": null,
+"surface": "CE",
+"tower": true
+},
+"SCVD": {
+"city": "Valdivia",
+"country": {
+"iso": "CL",
+"name": "Chile"
+},
+"elevationFt": 56,
+"ident": "SCVD",
+"lat": -39.64949,
+"lon": -73.086411,
+"longestRunwayFt": 6899,
+"name": "Pichoy",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"SKLM": {
+"city": "Maicao",
+"country": {
+"iso": "CO",
+"name": "Colombia"
+},
+"elevationFt": 310,
+"ident": "SKLM",
+"lat": 11.232552,
+"lon": -72.489235,
+"longestRunwayFt": 5571,
+"name": "La Mina",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"UAKD": {
+"city": "Zhezkazgan",
+"country": {
+"iso": "KZ",
+"name": "Kazakhstan"
+},
+"elevationFt": 1243,
+"ident": "UAKD",
+"lat": 47.709167,
+"lon": 67.738327,
+"longestRunwayFt": 8509,
+"name": "Zhezkazgan",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"UBOK": {
+"city": "Bogorodskoye",
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 437,
+"ident": "UBOK",
+"lat": 57.058491,
+"lon": 40.979492,
+"longestRunwayFt": 7580,
+"name": "Ivanovo North Air Base",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"UHPA": {
+"city": "Tilichiki",
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 14,
+"ident": "UHPA",
+"lat": 60.556633,
+"lon": 169.107605,
+"longestRunwayFt": 4594,
+"name": "Ust-Pakhachi Airport",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"UHQO": {
+"city": "Ozernovskiy",
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 10,
+"ident": "UHQO",
+"lat": 51.499084,
+"lon": 156.544128,
+"longestRunwayFt": 4184,
+"name": "Ozernovskiy Airport",
+"runways": 1,
+"state": null,
+"surface": "D",
+"tower": false
+},
+"UHSM": {
+"city": null,
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 687,
+"ident": "UHSM",
+"lat": 43.961109,
+"lon": 145.684998,
+"longestRunwayFt": 6744,
+"name": "Mendeleyevo",
+"runways": 1,
+"state": null,
+"surface": "C",
+"tower": false
+},
+"UKOH": {
+"city": null,
+"country": {
+"iso": "UA",
+"name": "Ukraine"
+},
+"elevationFt": 140,
+"ident": "UKOH",
+"lat": 46.676109,
+"lon": 32.506111,
+"longestRunwayFt": 8175,
+"name": "Kherson Intl",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"ULWC": {
+"city": null,
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 374,
+"ident": "ULWC",
+"lat": 59.276112,
+"lon": 38.01889,
+"longestRunwayFt": 8278,
+"name": "Cherepovets",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"URWA": {
+"city": "Astrakhan",
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": -73,
+"ident": "URWA",
+"lat": 46.283333,
+"lon": 48.006378,
+"longestRunwayFt": 10489,
+"name": "Astrakhan",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"USII": {
+"city": null,
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 532,
+"ident": "USII",
+"lat": 56.835278,
+"lon": 53.462502,
+"longestRunwayFt": 8168,
+"name": "Izhevsk",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"UTOE": {
+"city": "Torbeyevo",
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 673,
+"ident": "UTOE",
+"lat": 54.076725,
+"lon": 43.290558,
+"longestRunwayFt": 1418,
+"name": "Torbeyevo Airport",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"UUBI": {
+"city": null,
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 407,
+"ident": "UUBI",
+"lat": 56.942501,
+"lon": 40.93222,
+"longestRunwayFt": 8206,
+"name": "Yuzhny",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"UWUU": {
+"city": "Ufa",
+"country": {
+"iso": "RU",
+"name": "Russia"
+},
+"elevationFt": 405,
+"ident": "UWUU",
+"lat": 54.557777,
+"lon": 55.873871,
+"longestRunwayFt": 12342,
+"name": "Ufa",
+"runways": 3,
+"state": null,
+"surface": "CE",
+"tower": true
+},
+"VEBI": {
+"city": "Barapani",
+"country": {
+"iso": "IN",
+"name": "India"
+},
+"elevationFt": 2910,
+"ident": "VEBI",
+"lat": 25.703278,
+"lon": 91.978058,
+"longestRunwayFt": 5998,
+"name": "Barapani",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": true
+},
+"VEIM": {
+"city": "Imphal",
+"country": {
+"iso": "IN",
+"name": "India"
+},
+"elevationFt": 2541,
+"ident": "VEIM",
+"lat": 24.764328,
+"lon": 93.899658,
+"longestRunwayFt": 8990,
+"name": "Tulihal",
+"runways": 1,
+"state": null,
+"surface": "B",
+"tower": true
+},
+"VOBM": {
+"city": "Belgaum",
+"country": {
+"iso": "IN",
+"name": "India"
+},
+"elevationFt": 2459,
+"ident": "VOBM",
+"lat": 15.858421,
+"lon": 74.617737,
+"longestRunwayFt": 7547,
+"name": "Belgaum",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"VTCL": {
+"city": "Lampang",
+"country": {
+"iso": "TH",
+"name": "Thailand"
+},
+"elevationFt": 800,
+"ident": "VTCL",
+"lat": 18.272141,
+"lon": 99.50412,
+"longestRunwayFt": 6493,
+"name": "Lampang",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"VTSC": {
+"city": "Narathiwat",
+"country": {
+"iso": "TH",
+"name": "Thailand"
+},
+"elevationFt": 18,
+"ident": "VTSC",
+"lat": 6.523239,
+"lon": 101.744843,
+"longestRunwayFt": 8171,
+"name": "Narathiwat",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"VTSE": {
+"city": "Chumphon",
+"country": {
+"iso": "TH",
+"name": "Thailand"
+},
+"elevationFt": 18,
+"ident": "VTSE",
+"lat": 10.711304,
+"lon": 99.361694,
+"longestRunwayFt": 6890,
+"name": "Chumphon",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"VTSF": {
+"city": "Nakhon Si Thammarat",
+"country": {
+"iso": "TH",
+"name": "Thailand"
+},
+"elevationFt": 13,
+"ident": "VTSF",
+"lat": 8.539619,
+"lon": 99.944702,
+"longestRunwayFt": 6882,
+"name": "Nakhon Si Thammarat",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"VTST": {
+"city": "Trang",
+"country": {
+"iso": "TH",
+"name": "Thailand"
+},
+"elevationFt": 59,
+"ident": "VTST",
+"lat": 7.508636,
+"lon": 99.615784,
+"longestRunwayFt": 7579,
+"name": "Trang",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"VTUV": {
+"city": "Roi Et",
+"country": {
+"iso": "TH",
+"name": "Thailand"
+},
+"elevationFt": 451,
+"ident": "VTUV",
+"lat": 16.116783,
+"lon": 103.773834,
+"longestRunwayFt": 6894,
+"name": "Roi Et",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"VVPB": {
+"city": "Hue",
+"country": {
+"iso": "VN",
+"name": "Vietnam"
+},
+"elevationFt": 27,
+"ident": "VVPB",
+"lat": 16.400612,
+"lon": 107.702484,
+"longestRunwayFt": 8875,
+"name": "Phubai",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"ZGDY": {
+"city": null,
+"country": {
+"iso": "CN",
+"name": "China"
+},
+"elevationFt": 711,
+"ident": "ZGDY",
+"lat": 29.103056,
+"lon": 110.443336,
+"longestRunwayFt": 8539,
+"name": "Zhangjiajie Hehua International Airport",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"ZSTX": {
+"city": null,
+"country": {
+"iso": "CN",
+"name": "China"
+},
+"elevationFt": 432,
+"ident": "ZSTX",
+"lat": 29.735001,
+"lon": 118.254997,
+"longestRunwayFt": 8504,
+"name": "Tunxi",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+},
+"ZWKC": {
+"city": "Kuche",
+"country": {
+"iso": "CN",
+"name": "China"
+},
+"elevationFt": 3395,
+"ident": "ZWKC",
+"lat": 41.676678,
+"lon": 82.871613,
+"longestRunwayFt": 8515,
+"name": "Kuqa Airport",
+"runways": 1,
+"state": null,
+"surface": "A",
+"tower": false
+}
+}

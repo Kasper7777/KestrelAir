@@ -11,8 +11,13 @@ import journeyList from './features/journey-list.js';
 import detail from './features/detail.js';
 import lightbox from './features/lightbox.js';
 import timeline from './features/timeline.js';
+import gallery from './features/gallery.js';
+import insights from './features/insights.js';
+import logbook from './features/logbook.js';
+import layers from './features/layers.js';
+import diary from './features/diary.js';
 
-const FEATURES = [header, journeyList, detail, lightbox, timeline];
+const FEATURES = [header, journeyList, detail, lightbox, timeline, gallery, insights, logbook, layers, diary];
 
 async function start() {
   // keep the local launcher alive while this tab is open; surface build errors
@@ -46,13 +51,13 @@ function makeUi(db) {
       if (W < 820) return { top: 80, bottom: (r('timeline')?.height || 80) + 20 + (document.body.classList.contains('has-detail') ? H * 0.45 : 0), left: 30, right: 30 };
       const list = document.body.classList.contains('list-collapsed') ? 0 : (r('sidebar')?.right || 0);
       const det = document.body.classList.contains('has-detail') ? W - (r('detail')?.left ?? W) : 0;
-      return { top: (r('topbar')?.bottom || 0) + 40, bottom: (r('timeline')?.height || 0) + 50, left: list + 50, right: Math.max(0, det) + 50 };
+      return { top: (r('titlebar')?.bottom || 0) + 50, bottom: (r('timeline')?.height || 0) + 60, left: list + 60, right: Math.max(0, det) + 60 };
     },
     legTooltip(l) {
       const ac = db.aircraft[l.aircraft];
-      return html`<b>${l.from} → ${l.to}</b><br>${l.kind === 'flight'
-        ? html`${day(l.start)} · ${time(l.start)}<br>${duration(l.minutes)} · ${num(l.distanceNm)} nm<br><i style="color:${l.color}">●</i> ${ac?.name || ''}`
-        : html`${l.icon} ${l.modeLabel} · ${num(l.distanceKm)} km`}`.s;
+      return html`<b>${l.from} → ${l.to}</b><div class="tip-sub">${l.kind === 'flight'
+        ? html`${day(l.start)} · ${duration(l.minutes)} · ${num(l.distanceNm)} nm<br>${ac?.name || ''}`
+        : html`${l.modeLabel} · ${num(l.distanceKm)} km`}</div>`.s;
     },
     airportPopup(ident, coords) {
       const a = db.airports[ident];
@@ -61,30 +66,28 @@ function makeUi(db) {
       const el = document.createElement('div');
       el.className = 'ap-pop';
       el.innerHTML = html`
+        ${a.wiki?.image ? html`<img class="ap-img" src="${a.wiki.image}" alt="">` : ''}
         <div class="ap-code">${a.ident}${a.country?.iso ? html` <img src="${flagUrl(a.country.iso)}" alt="" onerror="this.remove()">` : ''}</div>
         <div class="ap-name">${a.name}</div>
         <div class="ap-where">${[a.city, a.country?.name].filter(Boolean).join(', ')}</div>
         <div class="ap-facts">${a.elevationFt != null ? html`<span>${num(a.elevationFt)} ft</span>` : ''}${a.longestRunwayFt ? html`<span>${num(a.longestRunwayFt)} ft rwy</span>` : ''}<span>${a.visits} visit${a.visits === 1 ? '' : 's'}</span></div>
+        ${a.wiki?.description ? html`<div class="ap-where">${a.wiki.description}</div>` : ''}
         ${arrivals.length ? html`<div class="ap-legs">${arrivals.map((l) => html`<button data-id="${l.id}">${day(l.start)} · from ${l.from}</button>`)}</div>` : ''}
         ${photos.length ? html`<div class="ap-thumbs">${photos.map((id, i) => html`<img src="${db.photos[id].thumb}" data-i="${i}" alt="">`)}</div>` : ''}`.s;
       el.addEventListener('click', (e) => {
         if (e.target.dataset.id) { pop.remove(); store.set('selected', e.target.dataset.id); }
         if (e.target.dataset.i) ui.openPhotos(photos, +e.target.dataset.i);
       });
-      const pop = new maplibregl.Popup({ className: 'airport-popup', maxWidth: '300px', offset: 10 }).setLngLat(coords).setDOMContent(el).addTo(ui.map.map);
+      const pop = new maplibregl.Popup({ className: 'airport-popup', maxWidth: '300px', offset: 12 }).setLngLat(coords).setDOMContent(el).addTo(ui.map.map);
     },
     // polaroid that pops up while the replay passes the spot a photo was taken
     flashPhoto(p) {
-      const wrap = document.getElementById('flash');
-      const card = document.createElement('figure');
-      card.className = 'polaroid';
-      card.style.setProperty('--tilt', `${(Math.random() * 8 - 4).toFixed(1)}deg`);
-      card.innerHTML = html`<img src="${p.thumb}" alt=""><figcaption>${time(p.takenAt)} · ${day(p.takenAt)}</figcaption>`.s;
-      card.addEventListener('click', () => { ui.stopPlayback?.(); ui.openPhotos(db.legById.get(p.leg)?.photos || [p.id], (db.legById.get(p.leg)?.photos || []).indexOf(p.id)); });
-      wrap.append(card);
-      while (wrap.children.length > 4) wrap.firstElementChild.remove();
-      setTimeout(() => card.classList.add('out'), 3800 / Math.sqrt(store.get('speed')));
-      setTimeout(() => card.remove(), 4600 / Math.sqrt(store.get('speed')));
+      // drops onto the map at the spot the photo was taken
+      ui.map.dropPhoto(p, (ph) => {
+        ui.stopPlayback?.();
+        const set = db.legById.get(ph.leg)?.photos || [ph.id];
+        ui.openPhotos(set, set.indexOf(ph.id));
+      });
     },
   };
   return ui;
@@ -92,5 +95,5 @@ function makeUi(db) {
 
 start().catch((e) => {
   console.error(e);
-  document.getElementById('boot').innerHTML = `<div class="boot-err"><b>Couldn't open the logbook.</b><br>${e.message}<br><small>Start it with Logbook.cmd so the data is rebuilt and served.</small></div>`;
+  document.getElementById('boot').innerHTML = `<div class="boot-err"><b>Couldn't open the logbook.</b><br>${e.message}<br><small>Start it with Kestrel Air Logbook.exe so the data is rebuilt and served.</small></div>`;
 });

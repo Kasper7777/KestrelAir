@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Original vulture silhouette for the Kestrel Air Logbook: hunched, in profile, facing left. -->
+  <g fill="#141414">
+    <!-- body: high hunched shoulders sloping down into a long tail -->
+    <path d="M206 262 C210 214 246 178 296 166 C344 156 382 182 394 228 C406 276 418 330 440 386
+             L476 470 L456 466 L466 486 L438 478 L442 498 L414 482 L410 500 L386 470
+             C366 446 346 430 322 422 C286 424 254 410 236 384 C214 352 202 304 206 262 Z"/>
+    <!-- ruff: ragged feather collar at the base of the neck -->
+    <path d="M190 246 L204 230 L206 244 L222 222 L228 238 L246 220 L248 238 L266 226 L262 246 L282 244 L268 260 L284 272
+             L262 274 L270 292 L248 284 L250 304 L232 290 L222 308 L214 288 L198 300 L200 280 L182 284 L192 268 L176 262 Z"/>
+    <!-- bare neck: thin S rising to a small head -->
+    <path d="M160 174 C152 198 166 222 196 244 L222 262 C202 232 186 208 182 182 Z"/>
+    <ellipse cx="162" cy="164" rx="25" ry="21"/>
+    <!-- hooked beak -->
+    <path d="M142 154 C124 152 110 160 106 178 C105 186 108 192 112 196 C114 184 120 178 130 176 L146 176 Z"/>
+    <!-- legs and talons -->
+    <path d="M262 400 L256 448 L268 448 L278 404 Z"/>
+    <path d="M298 410 L300 450 L312 450 L312 412 Z"/>
+    <path d="M230 458 C236 448 252 444 270 448 L284 458 L270 456 L272 466 L258 458 L252 468 L246 458 Z"/>
+    <path d="M282 460 C288 450 304 446 322 450 L336 460 L322 458 L324 468 L310 460 L304 470 L298 460 Z"/>
+  </g>
+  <!-- folded wing: feather rows and the wing's leading edge, cut out in the background colour -->
+  <g fill="none" stroke="#f3eee6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="157" cy="159" r="4" fill="#f3eee6" stroke="none"/>
+    <path d="M262 214 C300 236 336 292 356 362 C364 392 376 420 392 446" stroke-width="5.5"/>
+    <path d="M296 248 q16 4 26 18 M308 282 q16 4 28 18 M318 316 q18 4 30 18 M330 350 q18 4 30 18 M342 384 q18 4 30 18 M354 416 q18 4 28 18" stroke-width="4"/>
+    <path d="M340 200 C368 230 388 280 398 330" stroke-width="3.5"/>
+    <path d="M398 404 L430 452 M410 398 L446 440" stroke-width="3"/>
+  </g>
+</svg>

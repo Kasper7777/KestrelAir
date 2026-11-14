@@ -4,8 +4,17 @@
 import { greatCircle, bowed, cumulative, along, kmBetween } from './geo.js';
 import { toDate } from './format.js';
 
-export const PALETTE = ['#4cc9f0', '#f8961e', '#b388ff', '#43e97b', '#ff6b9d', '#ffd166', '#ff4d4d', '#7aa2ff', '#c6f432', '#ff9ef5'];
-export const GROUND_COLOR = '#d8dee9';
+// Apple-like system hues: distinct, bright enough for satellite and dark maps
+export const PALETTE = ['#64d2ff', '#ff9f0a', '#bf5af2', '#30d158', '#ff375f', '#ffd60a', '#5e5ce6', '#ff6961', '#66d4cf', '#ac8e68'];
+export const GROUND_COLOR = '#ffffff';
+const MONTH_RAMP = ['#64d2ff', '#5e5ce6', '#bf5af2', '#ff375f', '#ff9f0a', '#ffd60a'];
+
+function ramp(t) {
+  const x = Math.max(0, Math.min(1, t)) * (MONTH_RAMP.length - 1);
+  const i = Math.min(MONTH_RAMP.length - 2, Math.floor(x)), f = x - i;
+  const a = MONTH_RAMP[i].match(/\w\w/g).map((h) => parseInt(h, 16)), b = MONTH_RAMP[i + 1].match(/\w\w/g).map((h) => parseInt(h, 16));
+  return '#' + a.map((v, k) => Math.round(v + (b[k] - v) * f).toString(16).padStart(2, '0')).join('');
+}
 
 export async function loadLogbook(url = 'data/logbook.json') {
   const res = await fetch(url, { cache: 'no-store' });
@@ -38,6 +47,8 @@ function index(db) {
     else l.coords = kmBetween(a, b) > 400 ? greatCircle(a, b) : bowed(a, b);
     l.acc = cumulative(l.coords);
     l.color = l.kind === 'flight' ? aircraft[l.aircraft].color : GROUND_COLOR;
+    const months = [...new Set(legs.map((x) => x.start.slice(0, 7)))].sort();
+    l.monthColor = l.kind === 'flight' ? ramp(months.indexOf(l.start.slice(0, 7)) / Math.max(1, months.length - 1)) : GROUND_COLOR;
     l.photos = l.photos || [];
     l.number = l.kind === 'flight' ? legs.slice(0, i + 1).filter((x) => x.kind === 'flight').length : null;
     legById.set(l.id, l);

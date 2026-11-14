@@ -118,7 +118,12 @@ def run():
     nf_dir = os.path.expandvars(cfg.get('neofly', {}).get('dir', r'%LOCALAPPDATA%\Programs\Neofly'))
     os.makedirs(DEST, exist_ok=True)
     result = {'at': time.strftime('%Y-%m-%dT%H:%M:%S'), 'folder': DEST}
-    result['neofly'] = backup_neofly(nf_dir)
+    if os.path.exists(os.path.join(nf_dir, 'std.bin')):
+        result['neofly'] = backup_neofly(nf_dir)
+    else:  # another PC without NeoFly: keep what's already backed up
+        saves = sorted(f for f in os.listdir(os.path.join(DEST, 'neofly'))) if os.path.isdir(os.path.join(DEST, 'neofly')) else []
+        saves = [f for f in saves if re.match(r'std-\d{8}-\d{6}\.bin$', f)]
+        result['neofly'] = {'file': saves[-1] if saves else None, 'new': False, 'copies': len(saves), 'noNeoflyHere': True}
     lb = os.path.join(ROOT, 'web', 'data', 'logbook.json')
     in_logbook = set()
     if os.path.exists(lb):

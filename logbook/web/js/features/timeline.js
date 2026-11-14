@@ -1,9 +1,10 @@
-// Bottom bar: every leg as a segment in order (click to jump), plus the replay
-// player that flies a little plane along the whole journey, drawing the trail
-// behind it and popping up photos at the spot they were taken.
+﻿// Dock: every leg as a segment in order (click to jump), plus the replay that
+// flies a plane along the whole journey, drawing the trail behind it and
+// popping up your photos where they were taken.
 import { store } from '../core/store.js';
-import { html, render, shortDay, month, day } from '../core/format.js';
+import { html, render, shortDay, month, day, time } from '../core/format.js';
 import { along } from '../core/geo.js';
+import { icon } from '../core/icons.js';
 
 export default {
   id: 'timeline',
@@ -12,10 +13,9 @@ export default {
     const legs = db.legs;
     let lastMonth = '';
     render(bar, html`
-      <div class="tl-controls">
-        <button id="play" class="play" title="Replay the journey (Space)">▶</button>
-        <button id="speed" class="speed" title="Replay speed">1×</button>
-      </div>
+      <button id="play" class="play" title="Replay the journey (Space)">${icon('play')}</button>
+      <button id="speed" class="speed" title="Replay speed">1×</button>
+      <button id="follow" class="follow ${store.get('follow') ? 'on' : ''}" title="Follow camera: ride along behind the aircraft during the replay">${icon('follow')}</button>
       <div class="tl-track">
         <div class="tl-segs">${legs.map((l) => {
           const m = month(l.start), label = m !== lastMonth ? m : '';
@@ -25,14 +25,24 @@ export default {
         })}</div>
         <div class="tl-now"></div>
       </div>
-      <div class="tl-label" id="tl-label">${day(legs[0]?.start)} → ${day(legs[legs.length - 1]?.end)}</div>`);
+      <div class="tl-label" id="tl-label"></div>`);
 
     const segs = [...bar.querySelectorAll('.seg')];
     const now = bar.querySelector('.tl-now');
     const label = bar.querySelector('#tl-label');
     const playBtn = bar.querySelector('#play');
     const speedBtn = bar.querySelector('#speed');
+    const followBtn = bar.querySelector('#follow');
+    followBtn.addEventListener('click', () => {
+      store.set('follow', !store.get('follow'));
+      followBtn.classList.toggle('on', store.get('follow'));
+      if (!store.get('follow') && store.get('playing')) map.map.easeTo({ pitch: 0, bearing: 0, duration: 800 });
+    });
 
+    const setLabel = (l) => render(label, l
+      ? html`${l.from} → ${l.to}<small>${day(l.start)} · ${time(l.start)}</small>`
+      : html`${legs.length} legs<small>${shortDay(legs[0]?.start)} – ${shortDay(legs[legs.length - 1]?.end)}</small>`);
+    setLabel(null);
     const markSeg = (id) => {
       segs.forEach((s) => s.classList.toggle('active', s.dataset.id === id));
       const s = segs.find((x) => x.dataset.id === id);
@@ -45,9 +55,9 @@ export default {
       if (store.get('playing')) stop();
       store.set('selected', s.dataset.id);
     });
-    store.on('selected', (id) => { markSeg(id); const l = db.legById.get(id); label.textContent = l ? `${day(l.start)} · ${l.from} → ${l.to}` : `${day(legs[0]?.start)} → ${day(legs[legs.length - 1]?.end)}`; });
+    store.on('selected', (id) => { markSeg(id); setLabel(db.legById.get(id)); });
 
-    // ---------- player
+    // ---------- replay
     const speeds = [1, 2, 4, 8];
     speedBtn.addEventListener('click', () => {
       const s = speeds[(speeds.indexOf(store.get('speed')) + 1) % speeds.length];
@@ -59,11 +69,13 @@ export default {
     const trail = [];
     const legMs = (l) => Math.min(7000, Math.max(1600, 900 + Math.sqrt(l.acc[l.acc.length - 1] || 1) * 70)) / store.get('speed');
     const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+    const feature = (l, coords) => ({ type: 'Feature', properties: { color: store.get('colorBy') === 'month' ? l.monthColor : l.color },
+      geometry: { type: 'LineString', coordinates: coords } });
 
     async function play() {
       const my = ++token;
       store.set('playing', true);
-      playBtn.textContent = '❚❚';
+      playBtn.innerHTML = icon('pause').s;
       document.body.classList.add('playing');
       const cur = db.legById.get(store.get('selected'));
       const startAt = cur && cur.index < legs.length - 1 ? cur.index : 0;
@@ -76,8 +88,12 @@ export default {
         const l = legs[k];
         if (l.aircraft && store.get('hiddenAircraft').has(l.aircraft)) continue;
         store.set('selected', l.id);
-        map.fitLegs([l], { duration: 900 / store.get('speed'), maxZoom: l.kind === 'ground' ? 7 : 7.5 });
-        await wait(950 / store.get('speed'));
+        if (store.get('follow')) {
+          const km = l.acc[l.acc.length - 1] || 10;
+          const zoom = Math.max(3.6, Math.min(10.5, 10.6 - Math.log2(km / 12)));
+          map.map.flyTo({ center: l.coords[0], zoom, pitch: 58, bearing: l.coords.length > 1 ? bearingOf(l) : 0, duration: 1100 / store.get('speed'), essential: true });
+        } else map.fitLegs([l], { duration: 900 / store.get('speed'), maxZoom: l.kind === 'ground' ? 7 : 7.5 });
+        await wait(1150 / store.get('speed'));
         if (my !== token) return;
         await fly(l, my);
         if (my !== token) return;
@@ -95,10 +111,15 @@ export default {
         const tick = (t) => {
           if (my !== token) return resolve();
           const f = Math.min(1, (t - t0) / ms);
-          const e = f < 0.5 ? 2 * f * f : 1 - (-2 * f + 2) ** 2 / 2; // ease in-out
+          const e = f < 0.5 ? 2 * f * f : 1 - (-2 * f + 2) ** 2 / 2;
           const { point, bearing, index } = along(l.coords, e, l.acc);
-          map.setPlane(point, bearing);
+          map.setPlane(point, bearing, l);
           map.setTrail([...trail, feature(l, [...l.coords.slice(0, index), point])]);
+          if (store.get('follow')) {
+            // ease the camera's heading toward the aircraft's so turns feel smooth
+            const cur = map.map.getBearing(), d = ((bearing - cur + 540) % 360) - 180;
+            map.map.jumpTo({ center: point, bearing: cur + d * 0.08 });
+          }
           while (pending.length && pending[0].fraction <= e) ui.flashPhoto(pending.shift());
           if (f < 1) raf = requestAnimationFrame(tick); else resolve();
         };
@@ -110,14 +131,16 @@ export default {
       token++;
       cancelAnimationFrame(raf);
       store.set('playing', false);
-      playBtn.textContent = '▶';
+      playBtn.innerHTML = icon('play').s;
       document.body.classList.remove('playing');
       map.hidePlane();
       map.setTrail([]);
       map.dimRoutes(false);
+      map.clearDrops();
+      if (map.map.getPitch() > 1) map.map.easeTo({ pitch: 0, bearing: 0, duration: 900 });
     }
+    const bearingOf = (l) => along(l.coords, 0.02, l.acc).bearing ?? 0;
 
-    const feature = (l, coords) => ({ type: 'Feature', properties: { color: l.color }, geometry: { type: 'LineString', coordinates: coords } });
     playBtn.addEventListener('click', () => (store.get('playing') ? stop() : play()));
     document.addEventListener('keydown', (e) => {
       if (e.code === 'Space' && !e.target.matches('input, button') && !document.body.classList.contains('lightbox-open')) {

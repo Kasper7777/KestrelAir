@@ -1,9 +1,18 @@
-// Right panel: a boarding-pass style card for the selected leg, with times,
-// distance, aircraft, landing rate, missions, photos, the stop that followed,
-// and any sections other features register (scrapbook etc.).
+// Inspector: the selected leg. Hero picture (your own screenshot if you took one,
+// else the destination's Wikipedia photo), route, times, aircraft, landing,
+// missions, photos, and Wikipedia about the airports. Other features can add
+// sections through the registry (legSections).
 import { store } from '../core/store.js';
-import { html, raw, render, day, time, duration, num, money, landing, flagUrl, compact } from '../core/format.js';
+import { html, raw, render, day, time, duration, num, money, landing, flagUrl } from '../core/format.js';
+import { icon, MODE_ICON } from '../core/icons.js';
 import { sectionsFor } from './registry.js';
+
+// skip Wikipedia entries that are list/disambiguation pages rather than real articles
+const useful = (w) => !!w && !!w.extract && !/may refer to|is the name of several|can refer to/i.test(w.extract);
+
+// navdata runway surface codes
+const SURFACE = { A: 'asphalt', B: 'bitumen', C: 'concrete', CE: 'cement', G: 'grass', GR: 'gravel', T: 'tarmac', D: 'dirt',
+  W: 'water', S: 'sand', SN: 'snow', I: 'ice', M: 'macadam', OT: 'oil-treated', CR: 'coral', SH: 'shale', TR: 'treated', U: '' };
 
 export default {
   id: 'detail',
@@ -11,122 +20,154 @@ export default {
     const { db, ui } = ctx;
     const el = document.getElementById('detail');
 
-    const place = (a) => html`
-      <div class="place">
-        <div class="code">${a.ident}</div>
-        <div class="name">${a.name}</div>
-        <div class="where">${a.country?.iso ? html`<img src="${flagUrl(a.country.iso)}" alt="" onerror="this.remove()">` : ''}${[a.city, a.state, a.country?.name].filter(Boolean).filter((x, i, arr) => arr.indexOf(x) === i).join(', ')}</div>
-      </div>`;
+    const where = (a) => [a.city, a.state, a.country?.name].filter(Boolean).filter((x, i, arr) => arr.indexOf(x) === i).join(', ');
+    const end = (a) => html`<div class="end"><div class="code">${a.ident}</div><div class="name">${a.name}</div>
+      <div class="where">${a.country?.iso ? html`<img src="${flagUrl(a.country.iso)}" alt="" onerror="this.remove()">` : ''}${where(a)}</div></div>`;
 
-    const photosBlock = (ids, title = 'Photos') => ids.length ? html`
-      <section><h4>${title} <small>${ids.length}</small></h4>
-        <div class="thumbs">${ids.map((id, i) => html`<button class="thumb" data-photos="${ids.join(',')}" data-i="${i}">
-          <img src="${db.photos[id].thumb}" loading="lazy" alt=""><span>${time(db.photos[id].takenAt)}</span></button>`)}</div>
-      </section>` : '';
+    const hero = (l, badge) => {
+      const shot = l.photos[0] && db.photos[l.photos[0]];
+      const wiki = l.arr.wiki?.image || (useful(l.dep.wiki) && l.dep.wiki.image);
+      const src = shot ? shot.src : wiki;
+      const cap = shot ? `Your screenshot · ${time(shot.takenAt)}` : wiki ? `${(l.arr.wiki?.image ? l.arr : l.dep).wiki.title} · Wikipedia` : '';
+      return html`<div class="hero ${src ? '' : 'empty'}">
+        ${src ? html`<img src="${src}" alt="" ${shot ? html`data-photos="${l.photos.join(',')}" data-i="0" style="cursor:zoom-in"` : ''}>` : ''}
+        <div class="hero-top"><span class="chip ${badge ? 'warn' : ''}">${badge || (l.kind === 'flight' ? `Flight ${l.number}` : 'Transfer')}</span>
+          <button class="close" title="Close (Esc)">${icon('close')}</button></div>
+        ${cap ? html`<div class="hero-caption">${cap}</div>` : ''}</div>`;
+    };
+
+    const photos = (ids, title) => ids.length ? html`<div class="card"><h4>${title}<small>${ids.length}</small></h4>
+      <div class="thumbs">${ids.map((id, i) => html`<button class="thumb" data-photos="${ids.join(',')}" data-i="${i}">
+        <img src="${db.photos[id].thumb}" loading="lazy" alt=""><span>${time(db.photos[id].takenAt)}</span></button>`)}</div></div>` : '';
+
+    const wikiCard = (a, heading) => {
+      const w = a.wiki;
+      if (!useful(w)) return '';
+      const label = (xs) => (xs || []).filter((x) => !/^Q\d+$/.test(x)); // drop untranslated Wikidata ids
+      const cities = label(w.cities), ops = label(w.operators);
+      const surf = SURFACE[(a.surface || '').toUpperCase()] || (a.surface && a.surface.length > 2 ? a.surface.toLowerCase() : '');
+      const facts = [
+        cities.length && ['Serves', cities.slice(0, 2).join(', ')], w.opened && ['Opened', w.opened],
+        ops.length && ['Operator', ops[0]], a.elevationFt != null && ['Elevation', `${num(a.elevationFt)} ft`],
+        a.longestRunwayFt && ['Longest runway', `${num(a.longestRunwayFt)} ft${surf ? ' · ' + surf : ''}`],
+        a.visits && ['Your visits', `${a.visits}`],
+      ].filter(Boolean);
+      return html`<div class="card wiki">
+        ${heading ? html`<h4>${heading}</h4>` : ''}
+        ${w.image ? html`<img class="wiki-img" src="${w.image}" alt="" loading="lazy">` : ''}
+        <h3>${w.title}</h3>
+        <div class="desc">${w.kind === 'town' ? `No article for the airfield itself, so here's the nearby town` : w.description || ''}</div>
+        <p>${w.extract || ''}</p>
+        ${facts.length ? html`<div class="facts">${facts.map(([k, v]) => html`<div class="fact"><span>${k}</span><b>${v}</b></div>`)}</div>` : ''}
+        <div class="links">${w.extract && w.extract.length > 320 ? html`<button class="link-btn" data-more>Read more</button>` : ''}
+          ${w.url ? html`<a class="link-btn" href="${w.url}" target="_blank" rel="noopener">Wikipedia ${icon('external')}</a>` : ''}</div>
+      </div>`;
+    };
 
     const flightCard = (l) => {
       const ac = db.aircraft[l.aircraft] || {};
       const land = landing(l.landingFpm, l.crash);
       const b = l.bonus || {};
-      const bonuses = [b.comfort && 'Comfort', b.fly && 'Smooth flying', b.security && 'Safety'].filter(Boolean);
+      const bonuses = [b.comfort && 'Comfort bonus', b.fly && 'Smooth-flying bonus', b.security && 'Safety bonus'].filter(Boolean);
+      const badge = l.unlogged ? 'Not in NeoFly log' : l.inferred ? 'Recovered from job log' : '';
       return html`
-        <div class="pass" style="--leg:${l.color}">
-          <div class="pass-top">
-            <span>Flight ${l.number} · ${day(l.start)}</span>
-            ${l.inferred ? html`<span class="badge" title="NeoFly completed this job but wrote no flight-log row; times are estimated from the job.">recovered</span>` : ''}
+        ${hero(l, badge)}
+        <div class="body">
+          <div class="route" style="--c:${l.color}">${end(l.dep)}
+            <div class="mid">${icon('plane', 'rot')}<div class="line"></div><small>${duration(l.minutes)}</small></div>${end(l.arr)}</div>
+          <div class="tiles">
+            <div class="tile"><span>Departed</span><b>${time(l.start)}</b><small>${day(l.start).replace(/ \d{4}$/, '')}</small></div>
+            <div class="tile"><span>Arrived</span><b>${time(l.end)}</b><small>${l.unlogged || l.inferred ? 'estimated' : 'local time'}</small></div>
+            <div class="tile"><span>Flight time</span><b>${duration(l.minutes)}</b></div>
+            <div class="tile"><span>Distance</span><b>${num(l.distanceNm)}</b><small>nm direct</small></div>
           </div>
-          <div class="pass-route">
-            ${place(l.dep)}
-            <div class="pass-mid">
-              <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
-              <div class="dash"></div>
-              <small>${duration(l.minutes)}</small>
-            </div>
-            ${place(l.arr)}
+          <div class="card aircraft" style="--c:${l.color}">
+            <div class="ph">${ac.wiki?.image ? html`<img src="${ac.wiki.image}" alt="">` : ''}</div>
+            <div><b>${ac.name || 'Unknown aircraft'}</b><small>${[ac.livery && ac.livery !== ac.name && ac.livery].filter(Boolean).join('')}</small>
+              <small>${[ac.wiki?.description, ac.cruiseKt && `${ac.cruiseKt} kt cruise`].filter(Boolean).join(' · ')}</small></div>
           </div>
-          <div class="pass-grid">
-            <div><span>Departed</span><b>${time(l.start)}</b></div>
-            <div><span>Arrived</span><b>${time(l.end)}</b></div>
-            <div><span>Block time</span><b>${duration(l.minutes)}</b></div>
-            <div><span>Distance</span><b>${num(l.distanceNm)} nm</b></div>
-          </div>
-          <div class="pass-ac">
-            <i style="background:${l.color}"></i>
-            <div><b>${ac.name || 'Unknown aircraft'}</b><small>${[ac.livery !== ac.name && ac.livery, ac.category, ac.cruiseKt && `${ac.cruiseKt} kt cruise`].filter(Boolean).join(' · ')}</small></div>
-          </div>
-        </div>
-        ${land ? html`<section><h4>Landing</h4>
-          <div class="landing ${land.tone}"><b>${l.crash ? 'CRASH' : `${num(l.landingFpm)} fpm`}</b><span>${land.label}</span></div>
-          <div class="meter"><i style="left:calc(${Math.round(land.pct * 100)}% - 2px)"></i></div>
-          ${bonuses.length ? html`<div class="tags">${bonuses.map((x) => html`<span class="tag">★ ${x} bonus</span>`)}</div>` : ''}
-        </section>` : ''}
-        ${l.missions.length ? html`<section><h4>Mission${l.missions.length > 1 ? 's' : ''}</h4>
-          ${l.missions.map((m) => html`<div class="mission ${m.status}">
-            <div><b>${m.type}</b><small>${m.from} → ${m.to}</small></div>
-            <div class="mission-meta">${m.pax ? html`<span>👤 ${m.pax}</span>` : ''}${m.cargoLbs ? html`<span>📦 ${num(m.cargoLbs)} lb</span>` : ''}
-              <span class="money">${m.status === 'completed' ? money(m.reward) : m.status}</span></div>
-          </div>`)}
-        </section>` : ''}
-        ${photosBlock(l.photos, 'Photos from this flight')}`;
+          ${l.evidence?.length ? html`<div class="card"><h4>Why this flight is here</h4>
+            <p class="note">NeoFly didn't record this flight, but its own records show you flew it.</p>
+            <ul class="evidence">${l.evidence.map((e) => html`<li>${icon('check')}${e}</li>`)}</ul></div>` : ''}
+          ${land ? html`<div class="card"><h4>Landing</h4>
+            <div class="landing-row"><b>${l.crash ? 'Crash' : html`${num(l.landingFpm)}<small>fpm</small>`}</b><span class="grade ${land.tone}">${land.label}</span></div>
+            <div class="meter"><i style="left:${Math.round(land.pct * 100)}%"></i></div>
+            <div class="meter-scale"><span>Butter</span><span>Firm</span><span>Hard</span></div>
+            ${bonuses.length ? html`<div class="tags">${bonuses.map((x) => html`<span class="tag gold">${x}</span>`)}</div>` : ''}</div>` : ''}
+          ${l.missions.length ? html`<div class="card"><h4>Mission${l.missions.length > 1 ? 's' : ''}</h4>
+            ${l.missions.map((m) => html`<div class="mission ${m.status}"><div><b>${m.type}</b>
+              <small>${[m.pax && `${m.pax} passenger${m.pax > 1 ? 's' : ''}`, m.cargoLbs && `${num(m.cargoLbs)} lb`, `${m.from} → ${m.to}`].filter(Boolean).join(' · ')}</small></div>
+              <span class="money">${m.status === 'completed' ? money(m.reward) : m.status}</span></div>`)}</div>` : ''}
+          ${photos(l.photos, 'Your photos')}
+          ${stopCard(l)}
+          ${ui.diaryPreview?.(db.stopById.get(`stop-${l.id}`)) || ''}
+          ${wikiCard(l.arr, l.local ? 'About the airport' : `About ${l.arr.ident}`)}
+          ${!l.local && useful(l.dep.wiki) ? html`<details class="more"><summary>About ${l.dep.ident}, where you departed</summary>${wikiCard(l.dep)}</details>` : ''}
+          <div class="extra"></div>
+          ${pager(l)}
+        </div>`;
     };
 
     const groundCard = (l) => html`
-      <div class="pass ground">
-        <div class="pass-top"><span>Transfer · ${day(l.start)}</span><span class="badge" title="NeoFly has no record of how you got here, so this leg links the journey up. Change the mode in overrides.json.">${l.auto ? 'auto-linked' : 'edited'}</span></div>
-        <div class="pass-route">
-          ${place(l.dep)}
-          <div class="pass-mid"><div class="mode-big">${l.icon}</div><div class="dash"></div><small>${l.modeLabel}</small></div>
-          ${place(l.arr)}
+      ${hero(l, l.modeLabel)}
+      <div class="body">
+        <div class="route" style="--c:#fff">${end(l.dep)}
+          <div class="mid">${icon(MODE_ICON[l.mode] || 'pin')}<div class="line"></div><small>${l.modeLabel}</small></div>${end(l.arr)}</div>
+        <div class="tiles">
+          <div class="tile"><span>Distance</span><b>${num(l.distanceKm)}</b><small>km</small></div>
+          <div class="tile"><span>Travel</span><b>${l.mode === 'reposition' ? '—' : duration(l.estimatedMinutes)}</b><small>${l.mode === 'reposition' ? 'no travel' : 'estimated'}</small></div>
+          <div class="tile"><span>Left</span><b>${time(l.start)}</b><small>${day(l.start).replace(/ \d{4}$/, '')}</small></div>
+          <div class="tile"><span>Next flight</span><b>${time(l.end)}</b><small>${day(l.end).replace(/ \d{4}$/, '')}</small></div>
         </div>
-        <div class="pass-grid">
-          <div><span>Distance</span><b>${num(l.distanceKm)} km</b></div>
-          <div><span>Est. travel</span><b>${duration(l.estimatedMinutes)}</b></div>
-          <div><span>Left</span><b>${time(l.start)}</b><small>${day(l.start)}</small></div>
-          <div><span>Next flight</span><b>${time(l.end)}</b><small>${day(l.end)}</small></div>
-        </div>
-      </div>
-      <section><p class="note">The flight log jumps from <b>${l.from}</b> to <b>${l.to}</b>, so this ${l.modeLabel.toLowerCase()} connection links the journey (${duration(l.minutes)} between flights).</p>
-        ${l.notes.map((n) => html`<p class="note">${n}</p>`)}</section>
-      ${photosBlock(l.photos)}`;
+        <div class="card"><h4>What happened here</h4>
+          ${l.mode === 'reposition' ? '' : html`<p class="note">None of your aircraft made this trip, so a ${l.modeLabel.toLowerCase()} links the journey. You had ${duration(l.minutes)} between flights.</p>`}
+          ${l.notes.map((n) => html`<p class="note">${n}</p>`)}</div>
+        ${photos(l.photos, 'Your photos')}
+        ${wikiCard(l.arr, `About ${l.arr.ident}`)}
+        <div class="extra"></div>
+        ${pager(l)}
+      </div>`;
 
-    const stopBlock = (l) => {
+    const stopCard = (l) => {
       const s = db.stopById.get(`stop-${l.id}`);
       if (!s || (!s.photos.length && !s.events.length)) return '';
-      return html`<section class="stop"><h4>On the ground at ${s.airport}</h4>
+      return html`<div class="card"><h4>On the ground at ${s.airport}</h4>
         ${s.events.map((e) => html`<p class="note">${e.text}${e.cost ? ` · ${money(e.cost)}` : ''}</p>`)}
-        ${photosBlock(s.photos, 'Photos at ' + s.airport)}</section>`;
+        ${s.photos.length ? html`<div class="thumbs" style="margin-top:8px">${s.photos.map((id, i) => html`<button class="thumb" data-photos="${s.photos.join(',')}" data-i="${i}">
+          <img src="${db.photos[id].thumb}" loading="lazy" alt=""><span>${time(db.photos[id].takenAt)}</span></button>`)}</div>` : ''}</div>`;
+    };
+
+    const pager = (l) => {
+      const prev = db.legs[l.index - 1], next = db.legs[l.index + 1];
+      return html`<nav class="pager">
+        <button data-go="${prev?.id || ''}" ${prev ? '' : 'disabled'}>${icon('back')}${prev ? `${prev.from} – ${prev.to}` : 'Start'}</button>
+        <button data-go="${next?.id || ''}" ${next ? '' : 'disabled'}>${next ? `${next.from} – ${next.to}` : 'Latest'}${icon('forward')}</button></nav>`;
     };
 
     const show = (id) => {
       const l = id && db.legById.get(id);
       document.body.classList.toggle('has-detail', !!l);
-      if (!l) { el.innerHTML = ''; return; }
-      const prev = db.legs[l.index - 1], next = db.legs[l.index + 1];
-      render(el, html`
-        <button class="close" title="Close (Esc)">✕</button>
-        ${l.kind === 'flight' ? flightCard(l) : groundCard(l)}
-        ${stopBlock(l)}
-        <div class="extra"></div>
-        <nav class="pager">
-          <button data-go="${prev?.id || ''}" ${prev ? '' : 'disabled'}>← ${prev ? `${prev.from}–${prev.to}` : ''}</button>
-          <button data-go="${next?.id || ''}" ${next ? '' : 'disabled'}>${next ? `${next.from}–${next.to}` : ''} →</button>
-        </nav>`);
+      if (!l) return;
+      render(el, l.kind === 'flight' ? flightCard(l) : groundCard(l));
       const extra = el.querySelector('.extra');
       for (const s of sectionsFor('legSections', l, ctx)) {
-        const sec = document.createElement('section');
-        if (s.title) sec.innerHTML = `<h4>${s.title}</h4>`;
-        sec.append(s.el);
-        extra.append(sec);
+        const card = document.createElement('div');
+        card.className = 'card';
+        if (s.title) card.innerHTML = `<h4>${s.title}</h4>`;
+        card.append(s.el);
+        extra.append(card);
       }
       el.scrollTop = 0;
     };
 
     el.addEventListener('click', (e) => {
-      const t = e.target.closest('button');
+      const t = e.target.closest('button, img[data-photos]');
       if (!t) return;
       if (t.classList.contains('close')) store.set('selected', null);
       else if (t.dataset.go) store.set('selected', t.dataset.go);
+      else if (t.dataset.diary) ui.openDiary(t.dataset.diary);
       else if (t.dataset.photos) ui.openPhotos(t.dataset.photos.split(','), +t.dataset.i);
+      else if (t.dataset.more !== undefined) { const w = t.closest('.wiki'); w.classList.toggle('open'); t.textContent = w.classList.contains('open') ? 'Show less' : 'Read more'; }
     });
     document.addEventListener('keydown', (e) => {
       if (e.target.matches('input') || document.body.classList.contains('lightbox-open')) return;

@@ -3,6 +3,7 @@
     "dir": "%LOCALAPPDATA%\\Programs\\Neofly"
   },
   "pilot": {
+    "character": "Casper",
     "photo": "../Profile/profile.jpg"
   },
   "photos": {

@@ -96,6 +96,7 @@ def scan(sources, media_dir, rel_prefix='media'):
     os.makedirs(photos_dir, exist_ok=True)
     os.makedirs(thumbs_dir, exist_ok=True)
     out = []
+    seen = set()
     for src in sources:
         root = os.path.expandvars(os.path.expanduser(src['path']))
         if not os.path.isdir(root):
@@ -113,7 +114,12 @@ def scan(sources, media_dir, rel_prefix='media'):
                 if st.st_size < src.get('minBytes', 20000):
                     continue  # skip tiny UI snips
                 when, how = taken_at(full)
-                pid = hashlib.sha1(f'{full}|{st.st_size}'.encode()).hexdigest()[:12]
+                # id from name + size, so the same shot found in Steam and in the
+                # repo's backup folder is one photo, and ids match on every PC
+                pid = hashlib.sha1(f'{fn.lower()}|{st.st_size}'.encode()).hexdigest()[:12]
+                if pid in seen:
+                    continue
+                seen.add(pid)
                 photo = os.path.join(photos_dir, pid + '.jpg')
                 thumb = os.path.join(thumbs_dir, pid + '.jpg')
                 size = _export(full, photo, thumb)

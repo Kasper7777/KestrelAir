@@ -1,0 +1,50 @@
+{
+ "Beechcraft Baron": {
+  "description": "Light aircraft manufactured 1961–present",
+  "extract": "The Beechcraft Baron is a light twin-engined piston aircraft designed and produced by Beechcraft. The aircraft was introduced in 1961. It is a low-wing monoplane developed from the Beechcraft Travel Air.",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Beechcraft_Baron_58.jpg/330px-Beechcraft_Baron_58.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "aircraft-beechcraft-baron.jpg",
+  "title": "Beechcraft Baron",
+  "url": "https://en.wikipedia.org/wiki/Beechcraft_Baron"
+ },
+ "Cessna 152": {
+  "description": "Two-seat tricycle gear general aviation airplane",
+  "extract": "The Cessna 152 is an American two-seat, fixed-tricycle-gear, general aviation airplane, used primarily for flight training and personal use. It was based on the earlier Cessna 150 incorporating a number of minor design changes and a slightly more powerful engine with a longer time between overhaul.",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/G-BRNE-Cessna152.jpg/330px-G-BRNE-Cessna152.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "aircraft-cessna-152.jpg",
+  "title": "Cessna 152",
+  "url": "https://en.wikipedia.org/wiki/Cessna_152"
+ },
+ "Cessna 172": {
+  "description": "Propeller driven single engine aircraft",
+  "extract": "The Cessna 172 Skyhawk is an American four-seat, single-engine, high wing, fixed-wing aircraft made by the Cessna Aircraft Company. First flown in 1955, more 172s have been built than any other aircraft. It was developed from the Cessna 170, which was first manufactured in 1948, but with tricycle landing gear rather than conventional landing gear. The Skyhawk name was originally used for a trim package, but was later applied to all standard-production 172 aircraft; in the 1980s, the 172 was briefly marketed as the Cutlass. The 172 was also produced under license in France by Reims Aviation. The 172 was developed into the more powerful but less successful Cessna 175; after that aircraft's discontinuation, Cessna and Reims used the 175 type certificate to develop the R172 series, which includes several aircraft marketed as 172 variants.",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Cessna_172S_Skyhawk_SP%2C_Private_JP6817606.jpg/330px-Cessna_172S_Skyhawk_SP%2C_Private_JP6817606.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "aircraft-cessna-172.jpg",
+  "title": "Cessna 172",
+  "url": "https://en.wikipedia.org/wiki/Cessna_172"
+ },
+ "Cessna Citation X": {
+  "description": "American business jet",
+  "extract": "The Cessna 750 Citation X is an American mid-size business jet produced by Cessna; it is part of the Citation family.\nAnnounced at the October 1990 NBAA convention, the Model 750 made its maiden flight on December 21, 1993, received its type certification on June 3, 1996, and was first delivered in July 1996.\n\nThe updated Citation X+ was offered from 2012 with a 14 in (360 mm) cabin stretch and upgraded systems.\n\nKeeping the Citation III fuselage cross section, it has a new 37° swept wing with an area of 527 ft² for a fast Mach 0.935 MMO and a 36,600 lb MTOW for a 3,460 nmi (6,408 km) range, a T-tail and two 7,034 lbf (31.29 kN) AE3007 turbofans.\n\nAfter 338 deliveries, production ended in 2018.",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/N975QS_2002_Cessna_750_C-N_750-0175_Citation_X_%287039507775%29.jpg/330px-N975QS_2002_Cessna_750_C-N_750-0175_Citation_X_%287039507775%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "aircraft-cessna-citation-x.jpg",
+  "title": "Cessna Citation X",
+  "url": "https://en.wikipedia.org/wiki/Cessna_Citation_X"
+ },
+ "Piper PA-24 Comanche": {
+  "description": "American four- or six-seat monoplane built 1956–1972",
+  "extract": "The Piper PA-24 Comanche is an American single-engine, low-wing, all-metal monoplane of semimonocoque construction with tricycle retractable landing gear and four or six seats. The Comanche was designed and built by Piper Aircraft and first flew on May 24, 1956. Together with the PA-30 and PA-39 Twin Comanches, it made up the core of Piper's lineup until 1972, when the production lines for both aircraft were destroyed in the 1972 Lock Haven flood.",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Pa24-N5760P-071126-01-16.jpg/330px-Pa24-N5760P-071126-01-16.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "aircraft-piper-pa-24-comanche.jpg",
+  "title": "Piper PA-24 Comanche",
+  "url": "https://en.wikipedia.org/wiki/Piper_PA-24_Comanche"
+ },
+ "Piper PA-60 Aerostar": {
+  "description": "US twin-engined propeller-driven executive aircraft",
+  "extract": "The Piper Aerostar is an American light twin-engined piston aircraft designed by Ted R. Smith. It was originally built by Ted Smith Aircraft Company, but the design was acquired in 1978 by the Piper Aircraft Corporation, which continued production of the aircraft as the PA-60.",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/TedSmith600AerostarC-FEHK.JPG/330px-TedSmith600AerostarC-FEHK.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "aircraft-piper-pa-60-aerostar.jpg",
+  "title": "Piper Aerostar",
+  "url": "https://en.wikipedia.org/wiki/Piper_Aerostar"
+ }
+}

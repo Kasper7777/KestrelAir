@@ -113,5 +113,3106 @@
 }
 ],
 "sights": []
+},
+"EGIZ": {
+"restaurants": [
+{
+"name": "The Gate Hangs High",
+"kind": "pub",
+"cuisine": "",
+"km": 0.5
+},
+{
+"name": "The Pear Tree",
+"kind": "pub",
+"cuisine": "",
+"km": 1.4
+},
+{
+"name": "The Sun Inn",
+"kind": "pub",
+"cuisine": "",
+"km": 1.6
+},
+{
+"name": "The Wykham Arms",
+"kind": "pub",
+"cuisine": "",
+"km": 3.2
+},
+{
+"name": "The Norman Knight",
+"kind": "pub",
+"cuisine": "",
+"km": 3.6
+},
+{
+"name": "The Straw Cafe",
+"kind": "cafe",
+"cuisine": "",
+"km": 3.6
+},
+{
+"name": "The Stag's Head",
+"kind": "pub",
+"cuisine": "",
+"km": 4.2
+},
+{
+"name": "Wyatts",
+"kind": "cafe",
+"cuisine": "",
+"km": 5.0
+}
+],
+"sights": []
+},
+"EGAV": {
+"restaurants": [
+{
+"name": "Unhenged",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 3.9
+},
+{
+"name": "Black Horse",
+"kind": "pub",
+"cuisine": "",
+"km": 2.8
+},
+{
+"name": "Waggon & Horses",
+"kind": "pub",
+"cuisine": "",
+"km": 3.1
+},
+{
+"name": "The White Horse",
+"kind": "pub",
+"cuisine": "",
+"km": 3.2
+},
+{
+"name": "The Circles Café",
+"kind": "cafe",
+"cuisine": "",
+"km": 3.7
+},
+{
+"name": "The Red Lion",
+"kind": "pub",
+"cuisine": "",
+"km": 3.9
+},
+{
+"name": "The Larder at the Gourmet Goat Farmer",
+"kind": "cafe",
+"cuisine": "",
+"km": 4.0
+},
+{
+"name": "New Inn",
+"kind": "pub",
+"cuisine": "",
+"km": 4.1
+}
+],
+"sights": []
+},
+"EGHF": {
+"restaurants": [
+{
+"name": "The Stubbington Tandoori",
+"kind": "restaurant",
+"cuisine": "indian",
+"km": 1.2
+},
+{
+"name": "Domino's",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 1.2
+},
+{
+"name": "Costa",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 1.2
+},
+{
+"name": "New Silver River",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 1.2
+},
+{
+"name": "Karen's Plaice",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 1.5
+},
+{
+"name": "T&J (Solent)",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 1.5
+},
+{
+"name": "Solents Finest Fish & Chips",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 1.5
+},
+{
+"name": "Solent Tandoori",
+"kind": "restaurant",
+"cuisine": "indian",
+"km": 1.5
+},
+{
+"name": "The Spotted Cow",
+"kind": "cafe",
+"cuisine": "cake",
+"km": 1.5
+},
+{
+"name": "Blue Cobra",
+"kind": "restaurant",
+"cuisine": "indian",
+"km": 1.5
+},
+{
+"name": "Smart Fish Bar",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 1.6
+},
+{
+"name": "Lee Ice Cream And Waffle",
+"kind": "cafe",
+"cuisine": "ice cream",
+"km": 1.6
+},
+{
+"name": "Antep Turkish Kitchen",
+"kind": "restaurant",
+"cuisine": "turkish",
+"km": 1.6
+},
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 1.6
+},
+{
+"name": "Mandarin",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 1.7
+},
+{
+"name": "Golden Solent",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 1.7
+},
+{
+"name": "Wah Ying",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 1.8
+},
+{
+"name": "Tses",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 2.1
+},
+{
+"name": "Peels Chippy",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 2.1
+},
+{
+"name": "China Garden",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 2.3
+},
+{
+"name": "H&D Fish and Chips",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 2.4
+},
+{
+"name": "New Kung Fu Wok",
+"kind": "fast_food",
+"cuisine": "chinese, thai, malaysian",
+"km": 2.5
+},
+{
+"name": "Bridgemary's Finest Fish & Chips",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 2.5
+},
+{
+"name": "Hoi's Chinese Takeaway",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 2.5
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 2.5
+},
+{
+"name": "The Harbourside Cafe",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 2.5
+},
+{
+"name": "Golden Peach",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 2.6
+},
+{
+"name": "Asda Café",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 2.6
+},
+{
+"name": "Costa",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 2.9
+},
+{
+"name": "Scott's Plaice",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 3.0
+}
+],
+"sights": []
+},
+"LFED": {
+"restaurants": [
+{
+"name": "Courtepaille",
+"kind": "restaurant",
+"cuisine": "steak house",
+"km": 2.2
+},
+{
+"name": "Le Cerisier",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 2.4
+},
+{
+"name": "Juste Queen",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 2.4
+},
+{
+"name": "Sawadee",
+"kind": "restaurant",
+"cuisine": "japanese",
+"km": 2.6
+},
+{
+"name": "Flunch",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 2.7
+},
+{
+"name": "Domino's",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 2.8
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 2.8
+},
+{
+"name": "Carpaccio Restorante",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 3.1
+},
+{
+"name": "La Cucina",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 3.2
+},
+{
+"name": "Crêperie Aux delices des blés",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 3.2
+},
+{
+"name": "Taj Mahal",
+"kind": "restaurant",
+"cuisine": "indian",
+"km": 3.2
+},
+{
+"name": "Thao Mi",
+"kind": "restaurant",
+"cuisine": "asian",
+"km": 3.3
+},
+{
+"name": "Al Dente",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 3.3
+},
+{
+"name": "La Cantine",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 3.3
+},
+{
+"name": "Dziani Ouzouri",
+"kind": "restaurant",
+"cuisine": "exotique",
+"km": 3.3
+},
+{
+"name": "L'Aiglon Restaurant",
+"kind": "restaurant",
+"cuisine": "fish, french, pizza",
+"km": 3.4
+},
+{
+"name": "La Crêperie des Ajoncs",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 3.4
+},
+{
+"name": "Royal Kebab",
+"kind": "fast_food",
+"cuisine": "kebab",
+"km": 3.4
+},
+{
+"name": "Le Martray",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.4
+},
+{
+"name": "Le P'tit Bouillon",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.4
+},
+{
+"name": "Crêperie l'aiglon",
+"kind": "restaurant",
+"cuisine": "crepe",
+"km": 3.4
+},
+{
+"name": "Restaurant traiteur asiatique",
+"kind": "restaurant",
+"cuisine": "asian",
+"km": 3.5
+},
+{
+"name": "Crêperie Le Sarrazin",
+"kind": "restaurant",
+"cuisine": "crepe, regional",
+"km": 3.6
+},
+{
+"name": "Le Relais de Gohélève",
+"kind": "restaurant",
+"cuisine": "",
+"km": 0.7
+},
+{
+"name": "La Cantine",
+"kind": "restaurant",
+"cuisine": "",
+"km": 2.0
+},
+{
+"name": "O'Taj",
+"kind": "fast_food",
+"cuisine": "",
+"km": 3.2
+},
+{
+"name": "Baradoz",
+"kind": "fast_food",
+"cuisine": "",
+"km": 3.2
+},
+{
+"name": "bob pub",
+"kind": "pub",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "Le Rivoli",
+"kind": "bar",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "Ze Bar",
+"kind": "bar",
+"cuisine": "",
+"km": 3.3
+}
+],
+"sights": []
+},
+"LFIV": {
+"restaurants": [
+{
+"name": "Le 3",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 2.7
+},
+{
+"name": "El Cubanito",
+"kind": "restaurant",
+"cuisine": "french, cuban",
+"km": 2.7
+},
+{
+"name": "La Boutique de Nino",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 2.7
+},
+{
+"name": "La Pause Gourmande",
+"kind": "fast_food",
+"cuisine": "meat",
+"km": 2.7
+},
+{
+"name": "La Table Paysanne",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 2.8
+},
+{
+"name": "Chez Steph",
+"kind": "restaurant",
+"cuisine": "french, tapas",
+"km": 2.9
+},
+{
+"name": "Elia",
+"kind": "restaurant",
+"cuisine": "greek",
+"km": 2.9
+},
+{
+"name": "L'Immortelle",
+"kind": "restaurant",
+"cuisine": "italian, italian pizza",
+"km": 2.9
+},
+{
+"name": "Le Spot",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.0
+},
+{
+"name": "La Villa Arbousier",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.1
+},
+{
+"name": "Le Montanita",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.1
+},
+{
+"name": "Le Papagayo",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.1
+},
+{
+"name": "Ô Comptoir de Monta",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.1
+},
+{
+"name": "O Pizzas de Monta",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 3.1
+},
+{
+"name": "Mama Buns",
+"kind": "fast_food",
+"cuisine": "kebab,  burger, ",
+"km": 3.1
+},
+{
+"name": "Marinheiro",
+"kind": "restaurant",
+"cuisine": "seafood",
+"km": 3.2
+},
+{
+"name": "Deli's",
+"kind": "restaurant",
+"cuisine": "international",
+"km": 3.2
+},
+{
+"name": "Crêperie Teyssier",
+"kind": "fast_food",
+"cuisine": "crepe, burger",
+"km": 3.2
+},
+{
+"name": "Bistro Gourmand",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.3
+},
+{
+"name": "Poumpouille",
+"kind": "restaurant",
+"cuisine": "asian",
+"km": 3.3
+},
+{
+"name": "La Crêperie",
+"kind": "restaurant",
+"cuisine": "crepe",
+"km": 3.3
+},
+{
+"name": "La Toscane",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 3.3
+},
+{
+"name": "L'Océan2",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.3
+},
+{
+"name": "O Dunes de Monta",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.3
+},
+{
+"name": "La Sandwicherie",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 3.3
+},
+{
+"name": "La Potence Grill",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.3
+},
+{
+"name": "Speed n'Rock",
+"kind": "restaurant",
+"cuisine": "hot dog",
+"km": 3.3
+},
+{
+"name": "Au bon accueil",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.3
+},
+{
+"name": "La Part des Anges",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 3.3
+},
+{
+"name": "Chez Jeannot",
+"kind": "restaurant",
+"cuisine": "french",
+"km": 3.3
+}
+],
+"sights": []
+},
+"LDSP": {
+"restaurants": [
+{
+"name": "Konoba Kod Ive",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 2.8
+},
+{
+"name": "Pizza Malo More",
+"kind": "restaurant",
+"cuisine": "pizza, regional",
+"km": 3.1
+},
+{
+"name": "Konoba Pizzeria Lanterna",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 3.4
+},
+{
+"name": "Fresh Corner",
+"kind": "cafe",
+"cuisine": "coffee shop, hot dog, sandwich, pastry",
+"km": 3.4
+},
+{
+"name": "Konoba Intrada",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 3.5
+},
+{
+"name": "Siam Thaifood",
+"kind": "restaurant",
+"cuisine": "thai",
+"km": 3.5
+},
+{
+"name": "Pizzeria Dante",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 3.7
+},
+{
+"name": "KASTILAC",
+"kind": "restaurant",
+"cuisine": "regional, pizza, seafood",
+"km": 3.8
+},
+{
+"name": "Bistro Plaza Beach Bar",
+"kind": "restaurant",
+"cuisine": "pizza, coffee shop, regional, burger",
+"km": 4.2
+},
+{
+"name": "Stari Dvor",
+"kind": "restaurant",
+"cuisine": "regional, pizza, pasta",
+"km": 4.4
+},
+{
+"name": "Dovani",
+"kind": "cafe",
+"cuisine": "ice cream, coffee shop",
+"km": 4.5
+},
+{
+"name": "Deboto",
+"kind": "cafe",
+"cuisine": "ice cream, sandwich, breakfast, coffee shop",
+"km": 4.5
+},
+{
+"name": "Tunaholic",
+"kind": "fast_food",
+"cuisine": "fish, fish and chips",
+"km": 4.5
+},
+{
+"name": "Don Dino - Wine bar",
+"kind": "bar",
+"cuisine": "international",
+"km": 4.6
+},
+{
+"name": "Bubalus Burger Bar",
+"kind": "restaurant",
+"cuisine": "american",
+"km": 4.6
+},
+{
+"name": "Franka",
+"kind": "restaurant",
+"cuisine": "mediterranean",
+"km": 4.6
+},
+{
+"name": "Konoba Kairos",
+"kind": "restaurant",
+"cuisine": "croatian",
+"km": 4.6
+},
+{
+"name": "Restaurant Kamerlengo",
+"kind": "restaurant",
+"cuisine": "grill",
+"km": 4.7
+},
+{
+"name": "Pizzeria Kristian",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 4.7
+},
+{
+"name": "Don Dino",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 4.7
+},
+{
+"name": "Alka Restaurant",
+"kind": "restaurant",
+"cuisine": "croatian, italian",
+"km": 4.7
+},
+{
+"name": "Konoba Fortin",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 4.7
+},
+{
+"name": "Konoba Milla",
+"kind": "restaurant",
+"cuisine": "croatian",
+"km": 4.7
+},
+{
+"name": "Trogir",
+"kind": "restaurant",
+"cuisine": "pasta, barbecue, seafood, pizza",
+"km": 4.8
+},
+{
+"name": "Wild West",
+"kind": "restaurant",
+"cuisine": "burger, steak house",
+"km": 4.8
+},
+{
+"name": "Sjever",
+"kind": "bar",
+"cuisine": "",
+"km": 0.3
+},
+{
+"name": "Jug",
+"kind": "bar",
+"cuisine": "",
+"km": 0.4
+},
+{
+"name": "F1",
+"kind": "cafe",
+"cuisine": "",
+"km": 0.9
+},
+{
+"name": "Leggiero",
+"kind": "cafe",
+"cuisine": "",
+"km": 0.9
+},
+{
+"name": "Jaguar",
+"kind": "cafe",
+"cuisine": "",
+"km": 1.0
+}
+],
+"sights": []
+},
+"EDLW": {
+"restaurants": [
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 0.7
+},
+{
+"name": "Berlin Döner Kebab",
+"kind": "fast_food",
+"cuisine": "kebab",
+"km": 0.7
+},
+{
+"name": "Restaurant Plaka",
+"kind": "restaurant",
+"cuisine": "greek",
+"km": 1.3
+},
+{
+"name": "Holzwickede Grill",
+"kind": "fast_food",
+"cuisine": "kebab",
+"km": 1.3
+},
+{
+"name": "Akropolis Grill",
+"kind": "restaurant",
+"cuisine": "greek",
+"km": 1.4
+},
+{
+"name": "Pizzeria Venezia",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 1.4
+},
+{
+"name": "Pizzeria Primavera",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.5
+},
+{
+"name": "Haus Stiepelmann",
+"kind": "restaurant",
+"cuisine": "international",
+"km": 1.5
+},
+{
+"name": "Pizzeria Gambino 2",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.5
+},
+{
+"name": "Pizzeria Ri-Italia",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 1.5
+},
+{
+"name": "My Döner & Pan Pizza",
+"kind": "fast_food",
+"cuisine": "kebab, pizza, salad",
+"km": 1.6
+},
+{
+"name": "Dö-Pi",
+"kind": "fast_food",
+"cuisine": "kebab",
+"km": 1.6
+},
+{
+"name": "Mylos Grillhaus",
+"kind": "restaurant",
+"cuisine": "greek",
+"km": 1.6
+},
+{
+"name": "N&Ns Fresh Food",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.6
+},
+{
+"name": "Monami",
+"kind": "fast_food",
+"cuisine": "asian, italian",
+"km": 1.6
+},
+{
+"name": "Pizzeria Pinocchio",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 1.6
+},
+{
+"name": "Sim Sala Bim",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.7
+},
+{
+"name": "Pizzeria Sant Antonio",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.8
+},
+{
+"name": "Pizzeria Gepetto",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.8
+},
+{
+"name": "N&N's Fresh Food",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.8
+},
+{
+"name": "La Vita",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.8
+},
+{
+"name": "Athen Grill",
+"kind": "fast_food",
+"cuisine": "greek",
+"km": 2.0
+},
+{
+"name": "Dony's Sushi Bar",
+"kind": "restaurant",
+"cuisine": "sushi",
+"km": 2.0
+},
+{
+"name": "Da Rocco",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 2.1
+},
+{
+"name": "Taverna Gyros Grill",
+"kind": "fast_food",
+"cuisine": "greek",
+"km": 2.1
+},
+{
+"name": "Vivo! Die Glocke",
+"kind": "restaurant",
+"cuisine": "tapas",
+"km": 2.1
+},
+{
+"name": "Istanbul Kebap",
+"kind": "fast_food",
+"cuisine": "kebab",
+"km": 2.2
+},
+{
+"name": "Zum Bürgerkrug",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 2.2
+},
+{
+"name": "Aylin Grill",
+"kind": "fast_food",
+"cuisine": "kebab",
+"km": 2.3
+},
+{
+"name": "J Hari",
+"kind": "restaurant",
+"cuisine": "mediterranean",
+"km": 2.3
+}
+],
+"sights": []
+},
+"EGNO": {
+"restaurants": [
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 0.7
+},
+{
+"name": "Oliver's Chippy",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 0.8
+},
+{
+"name": "Whites Sandwich & Coffee Bar",
+"kind": "cafe",
+"cuisine": "sandwich",
+"km": 0.8
+},
+{
+"name": "Costa",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.8
+},
+{
+"name": "Starbucks",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.8
+},
+{
+"name": "Greggs",
+"kind": "fast_food",
+"cuisine": "sandwich, bakery",
+"km": 0.8
+},
+{
+"name": "The Raj",
+"kind": "restaurant",
+"cuisine": "indian",
+"km": 0.8
+},
+{
+"name": "The Clifton Deli",
+"kind": "cafe",
+"cuisine": "sandwich",
+"km": 0.8
+},
+{
+"name": "Anna's Sandwich Shop",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 1.4
+},
+{
+"name": "Millon",
+"kind": "fast_food",
+"cuisine": "indian",
+"km": 1.6
+},
+{
+"name": "Lucky House",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 1.6
+},
+{
+"name": "Lupo",
+"kind": "restaurant",
+"cuisine": "italian, pizza",
+"km": 1.6
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.5
+},
+{
+"name": "Terrazza",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 3.9
+},
+{
+"name": "Papa Johns",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 3.9
+},
+{
+"name": "Woody's",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 4.0
+},
+{
+"name": "Amalfi",
+"kind": "fast_food",
+"cuisine": "italian",
+"km": 4.1
+},
+{
+"name": "The Nile",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 4.1
+},
+{
+"name": "East Ocean",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 4.1
+},
+{
+"name": "Jononi Balti",
+"kind": "fast_food",
+"cuisine": "curry",
+"km": 4.1
+},
+{
+"name": "Crums",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 4.1
+},
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 4.1
+},
+{
+"name": "Antonio's",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 4.2
+},
+{
+"name": "On A Roll",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 4.2
+},
+{
+"name": "Five Star",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 4.3
+},
+{
+"name": "Kirkham Tandoori",
+"kind": "fast_food",
+"cuisine": "indian",
+"km": 4.4
+},
+{
+"name": "New Fiortune House",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 4.8
+},
+{
+"name": "Lytham Fish & Chips",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 4.9
+},
+{
+"name": "Upper Crust",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 4.9
+},
+{
+"name": "Quattro Stagioni",
+"kind": "fast_food",
+"cuisine": "italian",
+"km": 4.9
+}
+],
+"sights": []
+},
+"LEAS": {
+"restaurants": [
+{
+"name": "Lavazza",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.5
+},
+{
+"name": "Piemonte",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 2.6
+},
+{
+"name": "Restaurante Las Malvinas",
+"kind": "restaurant",
+"cuisine": "spanish",
+"km": 2.8
+},
+{
+"name": "La Esperanza",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 3.3
+},
+{
+"name": "El Barómetro",
+"kind": "cafe",
+"cuisine": "pizza, burger",
+"km": 3.4
+},
+{
+"name": "Restaurante Mar Salada",
+"kind": "restaurant",
+"cuisine": "spanish, fish",
+"km": 3.4
+},
+{
+"name": "Sidrería El Serazo",
+"kind": "restaurant",
+"cuisine": "spanish",
+"km": 3.4
+},
+{
+"name": "Restaurante El Sibarita",
+"kind": "restaurant",
+"cuisine": "regional, spanish, seafood, fish",
+"km": 3.4
+},
+{
+"name": "Restaurante \"La Deva\"",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 3.4
+},
+{
+"name": "El Café de Fa",
+"kind": "cafe",
+"cuisine": "breakfast, coffee shop, sandwich",
+"km": 4.5
+},
+{
+"name": "Telepizza",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 4.8
+},
+{
+"name": "Casa Nemesia",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 4.9
+},
+{
+"name": "La Pausa",
+"kind": "cafe",
+"cuisine": "",
+"km": 0.5
+},
+{
+"name": "Mahou",
+"kind": "cafe",
+"cuisine": "",
+"km": 0.5
+},
+{
+"name": "Casa Pompo",
+"kind": "restaurant",
+"cuisine": "",
+"km": 2.0
+},
+{
+"name": "Hotel Marques de la Moral",
+"kind": "restaurant",
+"cuisine": "",
+"km": 2.3
+},
+{
+"name": "RN SurfBar",
+"kind": "restaurant",
+"cuisine": "",
+"km": 2.5
+},
+{
+"name": "Chiringuito Bahínas",
+"kind": "bar",
+"cuisine": "",
+"km": 2.9
+},
+{
+"name": "Sidrería Las Gaviotas",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.0
+},
+{
+"name": "Bar Bellamar",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.1
+},
+{
+"name": "Sidrería Orbayu",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.2
+},
+{
+"name": "Cervecería La Cerve",
+"kind": "pub",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "Restaurante Marisquería La Escollera",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "Cafetería Barique",
+"kind": "cafe",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "El Pescador",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "Café Bar Ánfora",
+"kind": "pub",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "Cafetería Nalón River",
+"kind": "cafe",
+"cuisine": "",
+"km": 3.4
+},
+{
+"name": "Café Bar Gurugú",
+"kind": "cafe",
+"cuisine": "",
+"km": 3.4
+},
+{
+"name": "Taberna \"El Peñón\"",
+"kind": "pub",
+"cuisine": "",
+"km": 3.4
+},
+{
+"name": "Sidrería La Calea",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.4
+}
+],
+"sights": []
+},
+"EGOS": {
+"restaurants": [
+{
+"name": "Shawbury Fish Bar",
+"kind": "fast_food",
+"cuisine": "fish and chips",
+"km": 1.1
+},
+{
+"name": "Great Wall",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 1.1
+},
+{
+"name": "Elephant and Castle",
+"kind": "pub",
+"cuisine": "",
+"km": 1.1
+},
+{
+"name": "Mumbai Lounge",
+"kind": "restaurant",
+"cuisine": "",
+"km": 1.1
+},
+{
+"name": "Efe's Fast Food",
+"kind": "fast_food",
+"cuisine": "",
+"km": 1.1
+},
+{
+"name": "The Fox & Hounds",
+"kind": "pub",
+"cuisine": "",
+"km": 1.5
+},
+{
+"name": "The Stanton Arms",
+"kind": "pub",
+"cuisine": "",
+"km": 2.7
+},
+{
+"name": "The New Inn",
+"kind": "pub",
+"cuisine": "",
+"km": 3.6
+},
+{
+"name": "Salopian",
+"kind": "bar",
+"cuisine": "",
+"km": 3.9
+},
+{
+"name": "Dog In The Lane",
+"kind": "pub",
+"cuisine": "",
+"km": 4.3
+}
+],
+"sights": []
+},
+"URWA": {
+"restaurants": [
+{
+"name": "Босфор",
+"kind": "cafe",
+"cuisine": "",
+"km": 2.7
+},
+{
+"name": "Сумах",
+"kind": "cafe",
+"cuisine": "",
+"km": 4.1
+},
+{
+"name": "Чабан",
+"kind": "fast_food",
+"cuisine": "",
+"km": 4.5
+},
+{
+"name": "Столовая №100",
+"kind": "fast_food",
+"cuisine": "",
+"km": 5.0
+}
+],
+"sights": []
+},
+"VEIM": {
+"restaurants": [
+{
+"name": "Laziz Pizza",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 4.3
+},
+{
+"name": "D-Box Cafe",
+"kind": "restaurant",
+"cuisine": "international",
+"km": 4.4
+},
+{
+"name": "Books & Coffee",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 4.9
+},
+{
+"name": "Delicious food restaurant",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.8
+},
+{
+"name": "La Vue The Coffee Shop",
+"kind": "cafe",
+"cuisine": "",
+"km": 4.4
+}
+],
+"sights": []
+},
+"ZGDY": {
+"restaurants": [
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 0.7
+},
+{
+"name": "jieshangrenjia resaurant",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 3.2
+},
+{
+"name": "Zhangjiajie Fresh Fish - Even Fresher by Third Madam",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 3.3
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.5
+},
+{
+"name": "Luckin Coffee",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 3.5
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.5
+},
+{
+"name": "Gongpopo Tuchu",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 3.5
+},
+{
+"name": "Zhengxin Chicken Steak",
+"kind": "fast_food",
+"cuisine": "chicken steak",
+"km": 3.7
+},
+{
+"name": "Starbucks",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 4.4
+},
+{
+"name": "Luckin Coffee",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 4.4
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 4.5
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 4.5
+},
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 4.6
+},
+{
+"name": "Zhu Agen",
+"kind": "cafe",
+"cuisine": "chinese",
+"km": 4.7
+},
+{
+"name": "Pizza Hut",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 4.9
+},
+{
+"name": "天门饭店",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.5
+},
+{
+"name": "Authentic Jinshi Beef Noodles",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.6
+},
+{
+"name": "熊厨土家餐厅",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.7
+},
+{
+"name": "腊肉公社",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.8
+}
+],
+"sights": []
+},
+"ZSTX": {
+"restaurants": [
+{
+"name": "Starbucks",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 4.7
+},
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 4.7
+},
+{
+"name": "崔家面馆",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.7
+},
+{
+"name": "杏林大食堂",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.7
+},
+{
+"name": "可可酒家",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.7
+},
+{
+"name": "徽康土菜馆",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.8
+},
+{
+"name": "徐记餐厅",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.8
+},
+{
+"name": "和一羊",
+"kind": "restaurant",
+"cuisine": "",
+"km": 4.7
+},
+{
+"name": "徽州厨娘",
+"kind": "restaurant",
+"cuisine": "",
+"km": 4.8
+}
+],
+"sights": []
+},
+"RKJK": {
+"restaurants": [],
+"sights": []
+},
+"RJOR": {
+"restaurants": [
+{
+"name": "たかうな",
+"kind": "restaurant",
+"cuisine": "ramen",
+"km": 0.5
+},
+{
+"name": "つけ麺 今を粋ろ",
+"kind": "restaurant",
+"cuisine": "ramen",
+"km": 1.3
+},
+{
+"name": "らーめん札幌亭",
+"kind": "restaurant",
+"cuisine": "ramen",
+"km": 1.4
+},
+{
+"name": "周月",
+"kind": "restaurant",
+"cuisine": "ramen",
+"km": 1.6
+},
+{
+"name": "賀露港・市場食堂",
+"kind": "restaurant",
+"cuisine": "fish",
+"km": 1.7
+},
+{
+"name": "紺のれん",
+"kind": "fast_food",
+"cuisine": "ramen",
+"km": 1.8
+},
+{
+"name": "小僧寿し",
+"kind": "restaurant",
+"cuisine": "japanese, sushi",
+"km": 2.7
+},
+{
+"name": "喜むら",
+"kind": "restaurant",
+"cuisine": "japanese",
+"km": 2.8
+},
+{
+"name": "上海茶楼",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 2.8
+},
+{
+"name": "CoCo Ichibanya",
+"kind": "fast_food",
+"cuisine": "japanese",
+"km": 2.9
+},
+{
+"name": "Tenkaippin",
+"kind": "restaurant",
+"cuisine": "ramen",
+"km": 3.2
+},
+{
+"name": "紺のれん 鳥取北店",
+"kind": "restaurant",
+"cuisine": "ramen",
+"km": 3.4
+},
+{
+"name": "Ikinari Steak",
+"kind": "restaurant",
+"cuisine": "steak house",
+"km": 3.4
+},
+{
+"name": "鳥さく イオンモール鳥取北店",
+"kind": "restaurant",
+"cuisine": "chicken",
+"km": 3.4
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.4
+},
+{
+"name": "ばりうまらーめん 鳥取トリニティモール店",
+"kind": "restaurant",
+"cuisine": "noodle",
+"km": 3.4
+},
+{
+"name": "来来亭",
+"kind": "restaurant",
+"cuisine": "noodle",
+"km": 3.4
+},
+{
+"name": "麺や虎我 TAIGA",
+"kind": "restaurant",
+"cuisine": "noodle",
+"km": 3.5
+},
+{
+"name": "Kurazushi",
+"kind": "fast_food",
+"cuisine": "sushi",
+"km": 3.5
+},
+{
+"name": "Sukiya",
+"kind": "fast_food",
+"cuisine": "beef bowl",
+"km": 3.7
+},
+{
+"name": "Hamazushi",
+"kind": "fast_food",
+"cuisine": "sushi",
+"km": 3.7
+},
+{
+"name": "Namaste",
+"kind": "restaurant",
+"cuisine": "indian",
+"km": 3.8
+},
+{
+"name": "Kappazushi",
+"kind": "fast_food",
+"cuisine": "sushi",
+"km": 3.8
+},
+{
+"name": "大阪王将鳥取千代水店",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 4.0
+},
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 4.0
+},
+{
+"name": "Joyfull",
+"kind": "restaurant",
+"cuisine": "western",
+"km": 4.1
+},
+{
+"name": "ラーメン あお屋",
+"kind": "restaurant",
+"cuisine": "noodle, ramen",
+"km": 4.2
+},
+{
+"name": "道頓堀",
+"kind": "restaurant",
+"cuisine": "japanese",
+"km": 4.2
+},
+{
+"name": "ミスター・バーク 鳥取安長店",
+"kind": "restaurant",
+"cuisine": "steak house",
+"km": 4.2
+},
+{
+"name": "キッチンパンチョ 鳥取店",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 4.2
+}
+],
+"sights": []
+},
+"RJNW": {
+"restaurants": [
+{
+"name": "Go!Go!Curry",
+"kind": "fast_food",
+"cuisine": "curry",
+"km": 0.7
+}
+],
+"sights": []
+},
+"UHSM": {
+"restaurants": [],
+"sights": []
+},
+"UHQO": {
+"restaurants": [],
+"sights": []
+},
+"UHPA": {
+"restaurants": [],
+"sights": []
+},
+"PATC": {
+"restaurants": [],
+"sights": []
+},
+"PABI": {
+"restaurants": [
+{
+"name": "Pizza Bella",
+"kind": "restaurant",
+"cuisine": "italian, pizza, sandwich",
+"km": 4.5
+},
+{
+"name": "Buffalo Drive - In",
+"kind": "restaurant",
+"cuisine": "sandwich, regional",
+"km": 4.5
+},
+{
+"name": "Higher Grounds",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 4.6
+},
+{
+"name": "Trophy Lodge Restaurant",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.9
+},
+{
+"name": "Alaskan Steakhouse",
+"kind": "restaurant",
+"cuisine": "",
+"km": 4.1
+},
+{
+"name": "The Hard Wok Cafe",
+"kind": "restaurant",
+"cuisine": "",
+"km": 4.3
+}
+],
+"sights": []
+},
+"PAJN": {
+"restaurants": [
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 0.9
+},
+{
+"name": "Heritage Roasting Co - Airport Drive Thru",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.9
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.1
+},
+{
+"name": "Domino's",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 1.4
+},
+{
+"name": "The Grind Coffee Company LLC",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 1.5
+},
+{
+"name": "Pucker Wilson's",
+"kind": "restaurant",
+"cuisine": "burger",
+"km": 2.0
+},
+{
+"name": "Heritage Coffee Roasting Co - Glacier Cafe",
+"kind": "cafe",
+"cuisine": "coffee shop, sandwich",
+"km": 2.1
+},
+{
+"name": "Bullwinkle's Pizza",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 2.1
+},
+{
+"name": "Papa Murphy's",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 2.1
+},
+{
+"name": "SandBar and Grill",
+"kind": "bar",
+"cuisine": "american",
+"km": 2.2
+},
+{
+"name": "The Flying Squirrel",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 2.4
+},
+{
+"name": "The Grind Coffee Company LLC",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 2.7
+},
+{
+"name": "The Grind Coffee",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 5.0
+},
+{
+"name": "Donna's",
+"kind": "restaurant",
+"cuisine": "",
+"km": 0.9
+},
+{
+"name": "Mi Casa",
+"kind": "restaurant",
+"cuisine": "",
+"km": 1.1
+},
+{
+"name": "Asiana Gardens",
+"kind": "restaurant",
+"cuisine": "",
+"km": 2.1
+}
+],
+"sights": []
+},
+"CEX3": {
+"restaurants": [
+{
+"name": "Smitty's",
+"kind": "restaurant",
+"cuisine": "pancake",
+"km": 1.4
+},
+{
+"name": "Dairy Queen",
+"kind": "fast_food",
+"cuisine": "ice cream, burger, chicken",
+"km": 1.4
+},
+{
+"name": "Edo Japan",
+"kind": "restaurant",
+"cuisine": "japanese",
+"km": 1.4
+},
+{
+"name": "Tim Hortons",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 1.5
+},
+{
+"name": "Wendy's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.5
+},
+{
+"name": "A&W",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.5
+},
+{
+"name": "Boston Pizza",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.5
+},
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 1.5
+},
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 1.6
+},
+{
+"name": "Pizza Hut",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.7
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.8
+},
+{
+"name": "Tim Hortons",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 1.8
+},
+{
+"name": "Huckleberry's Cafe",
+"kind": "restaurant",
+"cuisine": "",
+"km": 1.4
+}
+],
+"sights": []
+},
+"KMOD": {
+"restaurants": [
+{
+"name": "La Morenita Restaurant",
+"kind": "restaurant",
+"cuisine": "mexican",
+"km": 2.0
+},
+{
+"name": "Scotty's Donuts & Teriyaki Chicken",
+"kind": "restaurant",
+"cuisine": "donut, japanese",
+"km": 2.1
+},
+{
+"name": "IHOP",
+"kind": "restaurant",
+"cuisine": "breakfast, pancake",
+"km": 2.1
+},
+{
+"name": "Bamboo Garden Restaurant",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 2.2
+},
+{
+"name": "Teriyaki King Inc",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 2.2
+},
+{
+"name": "Wienerschnitzel",
+"kind": "fast_food",
+"cuisine": "hot dog",
+"km": 2.2
+},
+{
+"name": "Togo's",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 2.3
+},
+{
+"name": "Burger King",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 2.3
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 2.4
+},
+{
+"name": "Wendy's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 2.4
+},
+{
+"name": "Popeyes",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 2.4
+},
+{
+"name": "Dutch Bros. Coffee",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 2.4
+},
+{
+"name": "Raising Cane's",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 2.4
+},
+{
+"name": "Starbucks",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 2.5
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 2.5
+},
+{
+"name": "Taco Bell",
+"kind": "fast_food",
+"cuisine": "tex-mex",
+"km": 2.5
+},
+{
+"name": "Hot Rod Diner",
+"kind": "restaurant",
+"cuisine": "american",
+"km": 2.6
+},
+{
+"name": "Denny's",
+"kind": "restaurant",
+"cuisine": "american",
+"km": 2.6
+},
+{
+"name": "Angry Chickz",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 2.8
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 2.9
+},
+{
+"name": "Little Caesars",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 3.0
+},
+{
+"name": "Panda Express",
+"kind": "fast_food",
+"cuisine": "chinese",
+"km": 3.1
+},
+{
+"name": "Baja Fresh",
+"kind": "fast_food",
+"cuisine": "mexican",
+"km": 3.1
+},
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 3.1
+},
+{
+"name": "El Pollo Loco",
+"kind": "fast_food",
+"cuisine": "mexican",
+"km": 3.2
+},
+{
+"name": "Scenic Drive In",
+"kind": "restaurant",
+"cuisine": "american",
+"km": 3.3
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.3
+},
+{
+"name": "Tacos Vallarta Taco Truck",
+"kind": "restaurant",
+"cuisine": "mexican",
+"km": 3.4
+},
+{
+"name": "Fosters Freeze",
+"kind": "fast_food",
+"cuisine": "burger, ice cream",
+"km": 3.4
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 3.5
+}
+],
+"sights": []
+},
+"MMLP": {
+"restaurants": [
+{
+"name": "hot dogs el matrix",
+"kind": "fast_food",
+"cuisine": "spanish",
+"km": 3.6
+}
+],
+"sights": []
+},
+"KRKW": {
+"restaurants": [],
+"sights": []
+},
+"KJFK": {
+"restaurants": [
+{
+"name": "Beacon Bar and Kitchen",
+"kind": "restaurant",
+"cuisine": "pizza, sandwich",
+"km": 0.1
+},
+{
+"name": "Melt Shop",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 0.3
+},
+{
+"name": "The Brooklyn Counter",
+"kind": "fast_food",
+"cuisine": "bagel, sandwich",
+"km": 0.3
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 0.4
+},
+{
+"name": "Villa Russo Cafe",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 0.4
+},
+{
+"name": "Eataly",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 0.4
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 0.4
+},
+{
+"name": "Brooklyn Tea & Market",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.4
+},
+{
+"name": "Starbucks",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.4
+},
+{
+"name": "Jamba",
+"kind": "fast_food",
+"cuisine": "juice",
+"km": 0.4
+},
+{
+"name": "Eataly",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 0.4
+},
+{
+"name": "Starbucks",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.4
+},
+{
+"name": "Pizza Vino",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 0.4
+},
+{
+"name": "Shake Shack",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 0.5
+},
+{
+"name": "Shake Shack",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 0.5
+},
+{
+"name": "Mi Casa Cantina",
+"kind": "restaurant",
+"cuisine": "mexican",
+"km": 0.5
+},
+{
+"name": "Dunkin Donuts Express",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 0.5
+},
+{
+"name": "USA Brooklyn Delicatessen",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 0.5
+},
+{
+"name": "Joe Coffee",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.5
+},
+{
+"name": "New York Sports Grill",
+"kind": "pub",
+"cuisine": "american",
+"km": 0.6
+},
+{
+"name": "Revolucion",
+"kind": "restaurant",
+"cuisine": "mexican",
+"km": 0.6
+},
+{
+"name": "Cibo Express",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 0.7
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 1.0
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 1.1
+},
+{
+"name": "Starbucks",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 1.2
+},
+{
+"name": "Starbucks",
+"kind": "cafe",
+"cuisine": "coffee shop",
+"km": 1.3
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.3
+},
+{
+"name": "Auntie Anne's",
+"kind": "fast_food",
+"cuisine": "pretzel",
+"km": 1.3
+},
+{
+"name": "Pizza  Pub",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 1.3
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 1.3
+}
+],
+"sights": []
+},
+"KLWM": {
+"restaurants": [
+{
+"name": "DiCor",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 0.6
+},
+{
+"name": "Casa Blanca Mexican Restaurant",
+"kind": "restaurant",
+"cuisine": "mexican",
+"km": 0.6
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 0.6
+},
+{
+"name": "China Blossom",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 0.7
+},
+{
+"name": "Perfecto's Cafe",
+"kind": "cafe",
+"cuisine": "coffee shop, breakfast",
+"km": 0.9
+},
+{
+"name": "Heav'nly Donuts",
+"kind": "cafe",
+"cuisine": "coffee shop, sandwich, donut",
+"km": 1.6
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.9
+},
+{
+"name": "Jimmy John's",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 2.0
+},
+{
+"name": "Salvatore's",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 2.3
+},
+{
+"name": "Famous Restaurant & Taqueria",
+"kind": "restaurant",
+"cuisine": "mexican",
+"km": 2.6
+},
+{
+"name": "House Of Bagels",
+"kind": "cafe",
+"cuisine": "bagel",
+"km": 2.6
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 2.6
+},
+{
+"name": "Sal's Pizza",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 2.6
+},
+{
+"name": "Spicket River Brewery",
+"kind": "restaurant",
+"cuisine": "brewery, pub",
+"km": 2.7
+},
+{
+"name": "Crispelli USA",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 2.7
+},
+{
+"name": "Attika Restaurant",
+"kind": "restaurant",
+"cuisine": "dominican, hispanic, puerto rican, mexican",
+"km": 3.0
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 3.0
+},
+{
+"name": "Domino's",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 3.0
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.1
+},
+{
+"name": "Pekin Garden",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 3.6
+},
+{
+"name": "Little Caesars",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 3.6
+},
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 3.6
+},
+{
+"name": "Wendy's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.6
+},
+{
+"name": "Garden House Korean Restaurant",
+"kind": "restaurant",
+"cuisine": "korean",
+"km": 3.7
+},
+{
+"name": "Pollo Centro",
+"kind": "fast_food",
+"cuisine": "chicken, latin american, spanish",
+"km": 3.7
+},
+{
+"name": "Taco Bell",
+"kind": "fast_food",
+"cuisine": "tex-mex",
+"km": 3.7
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.7
+},
+{
+"name": "Wendy's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.7
+},
+{
+"name": "Lee Chen Chinese Cuisine",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 3.8
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 3.8
+}
+],
+"sights": []
+},
+"KCGF": {
+"restaurants": [
+{
+"name": "Crostatas",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 1.5
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.6
+},
+{
+"name": "Golden Mountain",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 2.0
+},
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 2.1
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 2.4
+},
+{
+"name": "Mr. Hero",
+"kind": "fast_food",
+"cuisine": "sandwich, burger",
+"km": 2.6
+},
+{
+"name": "Romeo's",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 2.7
+},
+{
+"name": "Hunan East",
+"kind": "restaurant",
+"cuisine": "chinese",
+"km": 2.8
+},
+{
+"name": "Arby's",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 2.8
+},
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 2.9
+},
+{
+"name": "La Rich's Pizza",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 2.9
+},
+{
+"name": "Taco Bell",
+"kind": "fast_food",
+"cuisine": "tex-mex",
+"km": 2.9
+},
+{
+"name": "Popeyes",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 2.9
+},
+{
+"name": "Pizza Hut",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 3.0
+},
+{
+"name": "Taj India Palace",
+"kind": "restaurant",
+"cuisine": "indian",
+"km": 3.0
+},
+{
+"name": "Wendy's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.1
+},
+{
+"name": "Five Star Subs",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 3.3
+},
+{
+"name": "McDonald's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.3
+},
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 3.3
+},
+{
+"name": "Dunkin'",
+"kind": "fast_food",
+"cuisine": "donut, coffee shop",
+"km": 3.9
+},
+{
+"name": "Rascal House",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 3.9
+},
+{
+"name": "Denny's",
+"kind": "restaurant",
+"cuisine": "american",
+"km": 3.9
+},
+{
+"name": "Chipotle",
+"kind": "fast_food",
+"cuisine": "mexican",
+"km": 4.0
+},
+{
+"name": "Poké Fresh",
+"kind": "restaurant",
+"cuisine": "hawaiian",
+"km": 4.1
+},
+{
+"name": "Panera Bread",
+"kind": "fast_food",
+"cuisine": "sandwich, bakery",
+"km": 4.1
+},
+{
+"name": "Capps Pizza",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 4.4
+},
+{
+"name": "Guy's Pizza",
+"kind": "restaurant",
+"cuisine": "pizza",
+"km": 4.4
+},
+{
+"name": "Paradise Island Saloon",
+"kind": "restaurant",
+"cuisine": "burger",
+"km": 4.4
+},
+{
+"name": "Subway",
+"kind": "fast_food",
+"cuisine": "sandwich",
+"km": 4.4
+},
+{
+"name": "Mario Fazio's Restaurant & Catering",
+"kind": "restaurant",
+"cuisine": "italian",
+"km": 4.5
+}
+],
+"sights": []
+},
+"MKJP": {
+"restaurants": [
+{
+"name": "Burger King",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 1.1
+},
+{
+"name": "Gloria's Seafood City",
+"kind": "restaurant",
+"cuisine": "seafood",
+"km": 3.2
+},
+{
+"name": "Juici Patties",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.4
+},
+{
+"name": "Burger King",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.4
+},
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 3.4
+},
+{
+"name": "Domino's",
+"kind": "fast_food",
+"cuisine": "pizza",
+"km": 3.5
+},
+{
+"name": "Burger King",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.5
+},
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 3.8
+},
+{
+"name": "KFC",
+"kind": "fast_food",
+"cuisine": "chicken",
+"km": 3.8
+},
+{
+"name": "Wendy's",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 3.9
+},
+{
+"name": "Burger King",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 4.0
+},
+{
+"name": "Tastee",
+"kind": "fast_food",
+"cuisine": "burger",
+"km": 4.1
+},
+{
+"name": "R&W",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 4.2
+},
+{
+"name": "Frances Jerk Centre",
+"kind": "restaurant",
+"cuisine": "regional",
+"km": 4.9
+},
+{
+"name": "Crab Circle",
+"kind": "restaurant",
+"cuisine": "crab, corn, soup",
+"km": 5.0
+},
+{
+"name": "Island Grill",
+"kind": "restaurant",
+"cuisine": "",
+"km": 0.9
+},
+{
+"name": "Island Grill",
+"kind": "fast_food",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "Wholesome Café",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "National Gallery of Jamaica",
+"kind": "cafe",
+"cuisine": "",
+"km": 3.3
+},
+{
+"name": "Rosie Bless",
+"kind": "bar",
+"cuisine": "",
+"km": 3.5
+},
+{
+"name": "Moby Dick",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.5
+},
+{
+"name": "Island Squeeze Diner",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.5
+},
+{
+"name": "Annali's Restaurant",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.5
+},
+{
+"name": "Island Grill",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.9
+},
+{
+"name": "Hoo Campbell Restaurant & Pastry",
+"kind": "restaurant",
+"cuisine": "",
+"km": 3.9
+},
+{
+"name": "Blue Flame Vibes Pub",
+"kind": "pub",
+"cuisine": "",
+"km": 3.9
+},
+{
+"name": "Mother's",
+"kind": "fast_food",
+"cuisine": "",
+"km": 4.0
+},
+{
+"name": "Mother's",
+"kind": "fast_food",
+"cuisine": "",
+"km": 4.0
+},
+{
+"name": "K&K God Bless",
+"kind": "restaurant",
+"cuisine": "",
+"km": 4.0
+},
+{
+"name": "Homestyle Restaurant",
+"kind": "restaurant",
+"cuisine": "",
+"km": 4.0
+}
+],
+"sights": []
+},
+"SKLM": {
+"restaurants": [],
+"sights": []
+},
+"SCVD": {
+"restaurants": [],
+"sights": []
+},
+"EGYP": {
+"restaurants": [],
+"sights": []
 }
 }

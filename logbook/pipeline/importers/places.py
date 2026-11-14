@@ -74,7 +74,15 @@ def _image(url, dest):
     if not url:
         return None
     if not os.path.exists(dest):
-        data = _get(re.sub(r'/(\d+)px-', '/640px-', url)) or _get(url)
+        data = None
+        # Wikimedia only serves standard thumbnail widths (250, 330, 500, 960...)
+        for u in (re.sub(r'/(\d+)px-', '/500px-', url), url):
+            try:
+                data = _get(u, tries=2)
+            except Exception:
+                data = None
+            if data:
+                break
         if not data:
             return None
         with open(dest, 'wb') as fh:
@@ -99,7 +107,7 @@ def restaurants(lat, lon):
 
 def sights(lat, lon, img_dir, ident):
     url = ('https://en.wikipedia.org/w/api.php?action=query&format=json&generator=geosearch&ggsradius=10000&ggslimit=40'
-           f'&ggscoord={lat}|{lon}&prop=pageimages|description|extracts|info&piprop=thumbnail&pithumbsize=640'
+           f'&ggscoord={lat}|{lon}&prop=pageimages|description|extracts|info&piprop=thumbnail&pithumbsize=500'
            '&exintro=1&explaintext=1&exsentences=2&inprop=url')
     data = json.loads(_get(url) or b'{}')
     out = []
@@ -201,6 +209,20 @@ def for_airports(airports, cache_dir):
                 with open(path, 'w', encoding='utf-8') as fh:
                     json.dump(cache, fh, ensure_ascii=False, indent=0)
                 print(f'    {min(k + 10, len(todo))}/{len(todo)}')
+    # sights fetched before the thumbnail-size fix came back empty: fetch those again
+    redo = [i for i in airports if i in cache and not cache[i].get('sightsChecked')]
+    if redo:
+        with ThreadPoolExecutor(4) as pool:
+            jobs = {i: pool.submit(sights, airports[i]['lat'], airports[i]['lon'], img_dir, i) for i in redo}
+            for i, job in jobs.items():
+                try:
+                    cache[i]['sights'] = job.result()
+                    cache[i]['sightsChecked'] = True
+                except Exception as e:
+                    print(f'  ! sights {i}: {e}')
+    for i in cache:
+        if i != '_dishes' and i in [t for t in todo] and 'sights' in cache[i]:
+            cache[i]['sightsChecked'] = True
     out = {}
     for ident in airports:
         if ident in cache:

@@ -1,7 +1,7 @@
 {
  "meta": {
   "version": 1,
-  "builtAt": "2026-11-14T21:06:45",
+  "builtAt": "2026-11-14T21:17:33",
   "online": false,
   "sources": [
    "neofly",
@@ -20,7 +20,7 @@
   "name": "Kazber",
   "rank": 2,
   "xp": 5242,
-  "cash": 4406354,
+  "cash": 3678854,
   "neoflyHours": 109.2,
   "location": "EGYP",
   "reputation": 28.4,
@@ -19838,7 +19838,7 @@
    "events": [],
    "photos": [],
    "diary": {
-    "hours": 17.3,
+    "hours": 17.4,
     "nights": 0,
     "city": "Mount Pleasant",
     "tags": [
@@ -19951,7 +19951,7 @@
         "slides": [
          {
           "kind": "dish",
-          "src": "media/places/dish-shepherd-s-pie.jpg",
+          "src": "media/places/dishv-shepherd-s-pie-6.jpg",
           "label": "Shepherd's pie"
          }
         ],
@@ -21190,9 +21190,9 @@
    "id": "a264c75eca90",
    "title": "'An alternative to AI slop': Banbury music collective to bring live electronic night to town",
    "summary": "",
-   "image": null,
+   "image": "media/news/news-a264c75eca90.jpg",
    "source": "Banbury Guardian",
-   "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNVy0zYXhxcm9fTDlRTm5uUGtQRWFsUnRiR2ZSS0ZrbkJyR1B0WERibThCSTZrQ2JvekhWNDNlVXZJTUZHa0FMRTVCdDFPUGxKYW80UWZYY0RPSUEzMkluQzR0MVRnSVFuQ215azJxU3lBaTUxVDVZcmIyMThhT3dmMEhuc2FDMWpJT3BGWWxqWE53LWRjQ0FRbWViUUxCdDllUnYxS1BObTcwbk5zZEQxYjVmT3Zsc2QzNktMZkpCOC0ybWVWeVNxRDJERUd1TDdzMXdWSkc5NEN3R3NJN3VRY3FiQlpLZm1pa3JBWkxxZG15LVRJbWc?oc=5",
+   "url": "https://www.banburyguardian.co.uk/whats-on/arts-and-entertainment/an-alternative-to-ai-slop-banbury-music-collective-to-bring-live-electronic-night-to-town-8849569",
    "date": "2026-08-10",
    "place": "Hook Norton",
    "lang": "en",

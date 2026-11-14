@@ -1,10 +1,10 @@
 {
- "at": "2026-11-14T21:06:49",
+ "at": "2026-11-14T21:17:36",
  "folder": "C:\\Users\\Aero\\Documents\\GitHub\\KestrelAir\\logbook\\backup\\pilots\\kazber",
  "neofly": {
-  "file": "std-20261114-154821.bin",
-  "new": false,
-  "copies": 1
+  "file": "std-20261114-211736.bin",
+  "new": true,
+  "copies": 2
  },
  "photos": {
   "copied": 0,
@@ -12,6 +12,6 @@
   "copiedMB": 0.0
  },
  "legs": 93,
- "totalMB": 41.6,
- "seconds": 0.1
+ "totalMB": 42.8,
+ "seconds": 0.2
 }

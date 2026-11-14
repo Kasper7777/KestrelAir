@@ -800,7 +800,32 @@
 "LEAS|2026-09-03",
 "EGOS|2026-09-04",
 "ENCN|2026-09-04",
-"EFHK|2026-09-04"
+"EFHK|2026-09-04",
+"UUBI|2026-09-04",
+"UBOK|2026-09-05",
+"URWA|2026-09-06",
+"USII|2026-09-06",
+"UWUU|2026-09-06",
+"UAKD|2026-09-08",
+"ZWKC|2026-09-08",
+"VEIM|2026-09-09",
+"VTUV|2026-09-09",
+"VTSF|2026-09-10",
+"ZGDY|2026-09-10",
+"ZSTX|2026-09-13",
+"RKJK|2026-09-14",
+"RJOR|2026-09-17",
+"RJNW|2026-09-18",
+"RJCW|2026-10-22",
+"UHSM|2026-10-22",
+"UHQO|2026-10-25",
+"UHPA|2026-10-26",
+"PATC|2026-10-27",
+"PFWS|2026-10-28",
+"PABI|2026-10-28",
+"PAJN|2026-10-29",
+"CEX3|2026-10-31",
+"KBLI|2026-10-31"
 ],
 "_qv": {
 "LFRC|2026-08-16": 2,
@@ -885,7 +910,9 @@
 "place": "Cherbourg",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794691369
 },
 {
 "id": "547ba0260afa",
@@ -898,7 +925,9 @@
 "place": "Cherbourg",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794694912
 },
 {
 "id": "a35c098fcc30",
@@ -958,7 +987,9 @@
 "place": "Lessay",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794691378
 },
 {
 "id": "210cea1c275b",
@@ -986,7 +1017,9 @@
 "place": "Lessay",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794693648
 }
 ],
 "LFRD|2026-08-16": [
@@ -1075,7 +1108,9 @@
 "place": "Pontivy",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794693245
 },
 {
 "id": "db0d2d2c3a17",
@@ -1103,7 +1138,9 @@
 "place": "Pontivy",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794692222
 },
 {
 "id": "dc297f71bc60",
@@ -1131,7 +1168,9 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794692845
 },
 {
 "id": "aeadce6341b6",
@@ -1144,7 +1183,9 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://lorient.maville.com"
+"site": "https://lorient.maville.com",
+"tries": 1,
+"triedAt": 1794693017
 },
 {
 "id": "7b0061a1306b",
@@ -1157,7 +1198,9 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794693073
 },
 {
 "id": "fe18aec4d26c",
@@ -1170,7 +1213,9 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794694916
 },
 {
 "id": "e957be29682b",
@@ -1183,7 +1228,9 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "neutral",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794693486
 },
 {
 "id": "71c7d1bfaf93",
@@ -1196,7 +1243,9 @@
 "place": "Quiberon",
 "lang": "fr",
 "tone": "sad",
-"site": "https://www.ouest-france.fr"
+"site": "https://www.ouest-france.fr",
+"tries": 1,
+"triedAt": 1794694931
 }
 ],
 "LFRE|2026-08-17": [
@@ -1590,7 +1639,8 @@
 "date": "2026-08-19",
 "place": "Constantine",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "http://www.daily-sun.com"
 },
 {
 "id": "9682a04bfd8d",
@@ -1647,7 +1697,8 @@
 "date": "2026-08-16",
 "place": "Constantine",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.aps.dz"
 }
 ],
 "LDSP|2026-08-19": [
@@ -1738,7 +1789,8 @@
 "date": "2026-08-21",
 "place": "Balikesir",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.dha.com.tr"
 },
 {
 "id": "427e8f1bb3ff",
@@ -1964,7 +2016,8 @@
 "date": "2026-08-22",
 "place": "Ağrı",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.benguturk.com"
 },
 {
 "id": "5faf3670abd2",
@@ -2039,7 +2092,8 @@
 "date": "2026-08-29",
 "place": "Bingöl",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.bingolsurmanset.com"
 }
 ],
 "LTAJ|2026-08-31": [
@@ -2068,7 +2122,8 @@
 "date": "2026-08-29",
 "place": "Gaziantep",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.sofascore.com"
 }
 ],
 "LCEN|2026-08-31": [
@@ -2082,7 +2137,8 @@
 "date": "2026-08-31",
 "place": "Northern Cyprus",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://news.sky.com"
 },
 {
 "id": "c173cdaa76fb",
@@ -2139,7 +2195,8 @@
 "date": "2026-08-31",
 "place": "Northern Cyprus",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.aljazeera.com"
 },
 {
 "id": "296c420a727d",
@@ -2151,7 +2208,8 @@
 "date": "2026-08-30",
 "place": "Northern Cyprus",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.aa.com.tr"
 }
 ],
 "LTBZ|2026-08-31": [
@@ -2165,7 +2223,8 @@
 "date": "2026-08-31",
 "place": "Kütahya",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://gsb.gov.tr"
 },
 {
 "id": "ad0bd15e6575",
@@ -2177,7 +2236,8 @@
 "date": "2026-08-29",
 "place": "Kütahya",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.sabah.com.tr"
 },
 {
 "id": "6f9f4802cb12",
@@ -2189,7 +2249,8 @@
 "date": "2026-08-31",
 "place": "Kütahya",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.insaatdunyasi.com.tr"
 },
 {
 "id": "2871ff196ef2",
@@ -2201,7 +2262,8 @@
 "date": "2026-08-31",
 "place": "Kütahya",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://genclikhizmetleri.gov.tr"
 },
 {
 "id": "130a68a87808",
@@ -2213,7 +2275,8 @@
 "date": "2026-08-31",
 "place": "Kütahya",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.kutahyaninsesi.com"
 },
 {
 "id": "eb838976ea19",
@@ -2225,7 +2288,8 @@
 "date": "2026-09-01",
 "place": "Kütahya",
 "lang": "tr",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.kutahyaninsesi.com"
 }
 ],
 "LQMO|2026-09-01": [],
@@ -2463,7 +2527,8 @@
 "date": "2026-09-04",
 "place": "Kristiansand",
 "lang": "no",
-"tone": "neutral"
+"tone": "neutral",
+"site": ""
 },
 {
 "id": "5744336ad969",
@@ -2475,7 +2540,8 @@
 "date": "2026-09-04",
 "place": "Kristiansand",
 "lang": "no",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://snl.no"
 },
 {
 "id": "4d117aa42bca",
@@ -2487,7 +2553,8 @@
 "date": "2026-09-04",
 "place": "Kristiansand",
 "lang": "no",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.krs.no"
 }
 ],
 "EFHK|2026-09-04": [
@@ -2501,7 +2568,8 @@
 "date": "2026-09-02",
 "place": "Helsinki",
 "lang": "fi",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.hs.fi"
 },
 {
 "id": "57f68a3abcb3",
@@ -2513,7 +2581,8 @@
 "date": "2026-09-02",
 "place": "Helsinki",
 "lang": "fi",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.sttinfo.fi"
 },
 {
 "id": "0fc8adc46dcf",
@@ -2525,104 +2594,384 @@
 "date": "2026-09-03",
 "place": "Helsinki",
 "lang": "fi",
+"tone": "neutral",
+"site": "https://www.greenpeace.org"
+}
+],
+"UUBI|2026-09-04": [
+{
+"id": "79e5934a8734",
+"title": "Как проходит заседание регионального оргкомитета премии « Человек труда » в Пскове , читайте на ПАИ",
+"summary": "Заседание регионального организационного комитета национальной премии «Человек труда» проходит в Пскове сегодня, 4 сентября. Мероприятие организовано в рамках форума и конференции реготделения партии «Единая Россия». Подробнее – на сайте ПАИ.",
+"image": "news-79e5934a8734.jpg",
+"source": "informpskov.ru",
+"url": "https://informpskov.ru/news/516816.html",
+"date": "2026-09-04",
+"place": "Ivanovo",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "5f6e61b2be05",
+"title": "Названо самое дешевое направление для отдыха среди городов Золотого кольца",
+"summary": "Аналитики геосервиса 2ГИС и сервиса бронирования отелей «Отелло» сравнили направления Золотого кольца России по средней стоимости одного дня путешествия. Результаты их исследования оказались в распоряжении «Ленты.ру»",
+"image": "news-5f6e61b2be05.jpg",
+"source": "lenta.ru",
+"url": "https://lenta.ru/news/2026/09/04/nazvano-samoe-deshevoe-napravlenie-dlya-otdyha-sredi-gorodov-zolotogo-koltsa/",
+"date": "2026-09-04",
+"place": "Ivanovo",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "de65c8c3df65",
+"title": "Верховный суд оставил в силе приговор экс - замминистра обороны Иванову",
+"summary": "Последние новости на сайте Вести: Верховный суд России оставил без изменения первый приговор бывшему первому заместителю министра обороны Тимуру Иванову, осужденному на 13 лет колонии.. Актуальные события России и мира на сайте Вести.",
+"image": "news-de65c8c3df65.jpg",
+"source": "vesti.ru",
+"url": "https://www.vesti.ru/ns/verkhovnyj-sud-ostavil-v-sile-prigovor-ehks-zamministra-oborony-ivanovu",
+"date": "2026-09-03",
+"place": "Ivanovo",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "45f872618802",
+"title": "Свет вернули тысячам жителей Ивановской области",
+"summary": "Электроснабжение восстановили в населенных пунктах Ивановской области после прохождения грозового фронта. Из-за непогоды без электричества ранее оставались более 3,3 тысячи человек.",
+"image": "news-45f872618802.jpg",
+"source": "mk.ru",
+"url": "https://www.mk.ru/incident/2026/09/05/svet-vernuli-tysyacham-zhiteley-ivanovskoy-oblasti.html",
+"date": "2026-09-05",
+"place": "Ivanovo",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "98c765b53b90",
+"title": "В Калининградской области установили бюст Николая II",
+"summary": "Бюсты императора Николая II и его супруги императрицы Александры Федоровны установили на территории историко-краеведческого музея в городе Гусеве под... РИА Новости, 06.09.2026",
+"image": null,
+"source": "ria.ru",
+"url": "https://ria.ru/20260906/rossiya-2115874317.html",
+"date": "2026-09-06",
+"place": "Ivanovo",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "97016946af01",
+"title": "В Раде назвали штрафы за русский язык попыткой отвлечь от темы коррупции",
+"summary": "Угрозы украинского языкового омбудсмена Елены Ивановской о штрафах для родителей школьников за общение в чатах с учителями на русском призваны отвлечь... РИА Новости, 04.09.2026",
+"image": null,
+"source": "ria.ru",
+"url": "https://ria.ru/20260904/rada-2115392333.html",
+"date": "2026-09-04",
+"place": "Ivanovo",
+"lang": "ru",
 "tone": "neutral"
 }
 ],
-"UUBI|2026-09-04": [],
 "UBOK|2026-09-05": [],
 "URWA|2026-09-06": [
 {
-"id": "43f63bff756f",
-"title": "Общественница заподозрила бывших чиновников в уводе собственности » Интернет-издание",
-"summary": "",
-"image": null,
-"source": "Известия.Саратов",
-"url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOS2lIMmJIeWRlQ1V4WFN2OXNlYlhBa0M2X2g4TEdHT3MyNUVZSlZkU3BjUE1ZS3pySHJ5bGRKRzgyZVU2VGVoclduUGZ0NGUzcDZpSWhTMF9PSzFJUGoxTVloTlRJMDF2cEk1LVV5ekRLR3hFZTFWRXJsbzkyVkllWmtYODdaaWRXWFBJUGNYOGU3b0RtdDBxMWFES250dDlKSml3ZTIzM2wwQi1B?oc=5",
+"id": "fe1ca7222870",
+"title": "В Астрахани прошла церемония передачи капсулы с обращением ветерана",
+"summary": "В Астрахани, у мемориала Вечного огня, расположенного в Братском саду, прошла значимая церемония, посвященная Всероссийской военно-патриотической акции «Послание Победителей: Связь поколений 1945–2045». На мероприятии внучка астраханского ветерана, Анна Басова, передала капсулу с обращением своего",
+"image": "news-fe1ca7222870.jpg",
+"source": "monavista.ru",
+"url": "https://monavista.ru/3/4883065-v-astrahani-proshla-ceremoniya-peredachi-kapsuly-s-obrascheniem-veterana.html",
+"date": "2026-09-04",
+"place": "Astrakhan",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "2a1247ec79c9",
+"title": "Скончался астраханский композитор Александр Рындин",
+"summary": "В Астраханской области пришла печальная новость о кончине известного композитора Александра Рындина. Министерство культуры региона выразило свои искренние соболезнования родным, близким и коллегам музыканта. Александр Рындин появился на свет 16 февраля 1962 года в Астрахани. Его жизненный и",
+"image": "news-2a1247ec79c9.jpg",
+"source": "monavista.ru",
+"url": "https://monavista.ru/3/4883252-skonchalsya-astrahanskiy-kompozitor-aleksandr-ryndin.html",
 "date": "2026-09-07",
+"place": "Astrakhan",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "41a6556bc208",
+"title": "Молодых астраханцев предупредили , что  фотография по заказу  грозит тюрьмой",
+"summary": "С виду «лёгкая» подработка в виде съемки зданий таит в себе серьёзную угрозу, вплоть до возбуждения уголовного дела и поломанной судьбы.",
+"image": "news-41a6556bc208.jpg",
+"source": "u-f.ru",
+"url": "https://u-f.ru/news/society/u9/2026/09/05/424483",
+"date": "2026-09-05",
+"place": "Astrakhan",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "cb8496c93a96",
+"title": "Специалистам астраханского аэропорта губернатор вручил награды в честь 90 - летия предприятия",
+"summary": "Почетные грамоты и благодарственные письма специалистам, внесшим значимый вклад в развитие астраханского аэропорта, вручил губернатор Игорь Бабушкин. Он отметил, что почти за вековую историю астраханский аэропорт стал современным транспортным узлом, который имеет особое значение для экономики региона и всей России.",
+"image": null,
+"source": "nakanune.ru",
+"url": "https://www.nakanune.ru/news/2026/9/5/22886077/",
+"date": "2026-09-05",
+"place": "Astrakhan",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "06b7d4111df0",
+"title": "Вопросы научно - образовательного сотрудничества обсуждались на встрече Игоря Мартынова с ректором Санкт - Петербургского политехнического университета",
+"summary": "Председатель Думы Астраханской области Игорь Мартынов провел в региональном парламенте рабочую встречу с ректором Санкт-Петербургского политехнического университета Петра Великого, вице-президентом РАН, председателем Санкт-Петербургского отделения РАН, академиком РАН Андреем Рудским.",
+"image": null,
+"source": "nakanune.ru",
+"url": "https://www.nakanune.ru/news/2026/9/4/22885941/",
+"date": "2026-09-04",
+"place": "Astrakhan",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "0c57096e95f8",
+"title": "За последние 4 года в Астраханской области отремонтировали более 30 мостов",
+"summary": "&quot;В Красноярском округе после капитального ремонта введён в эксплуатацию мост через реку Корсака&quot;, - сообщил на своих страницах в соцсетях губернатор Астраханской области Игорь Бабушкин.",
+"image": null,
+"source": "nakanune.ru",
+"url": "https://www.nakanune.ru/news/2026/9/5/22886079/",
+"date": "2026-09-05",
 "place": "Astrakhan",
 "lang": "ru",
 "tone": "neutral"
 }
 ],
-"USII|2026-09-06": [],
+"USII|2026-09-06": [
+{
+"id": "fec0d7e6fb37",
+"title": "Следствие арестовало акции СЭГЗ на 6 млрд руб . в деле о мошенничестве",
+"summary": "Подробнее на сайте",
+"image": "news-fec0d7e6fb37.jpg",
+"source": "kommersant.ru",
+"url": "https://www.kommersant.ru/doc/8937546",
+"date": "2026-09-06",
+"place": "Izhevsk",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "cad1e2005894",
+"title": "СВО новости : взят укрепрайон ВСУ на ореховском направлении , БПЛА атаковали Пермь , ВС РФ ударили по порту « Измаил » - БлокнотРУ - Новости СВО . Новости СВО на сегодня . Удары по России . СВО новости . БПЛА сегодня . Удары по России сегодня . Атака...",
+"summary": "Главные новости СВО на утро 7 сентября 2026 года.",
+"image": "news-cad1e2005894.jpg",
+"source": "bloknot.ru",
+"url": "https://bloknot.ru/obshhestvo/novosti-svo-bpla-atakovali-perm-vs-rf-udarili-po-portu-izmail-vzyat-ukreprajon-vsu-na-orehovskom-napravlenii-1537208.html",
+"date": "2026-09-07",
+"place": "Izhevsk",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "17cf2926dde2",
+"title": "Дешевле « Гранты », дороже иномарки : как новый утильсбор обвалил и взвинтил цены на Kia KX1",
+"summary": "Минимальная цена на новый кроссовер Kia KX1 из Китая оказалась ниже топ-версии Lada Granta, тогда как у крупных дилеров тот же автомобиль стоит почти 2,7 млн рублей. Причина колоссального разрыва — новый порядок расчета утилизационного сбора, который с 1 декабря 2025 года жестко привязан к мощности двигателя.",
+"image": "news-17cf2926dde2.jpg",
+"source": "runews24.ru",
+"url": "https://runews24.ru/auto/07/09/2026/deshevle-grantyi-dorozhe-inomarki-kak-novyij-utilsbor-obvalil-i-vzvintil-czenyi-na-kia-kx1",
+"date": "2026-09-07",
+"place": "Izhevsk",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "285a6a9ba7ea",
+"title": "Как живет россиянка с редким заболеванием мойя - мойя людей с таким диагнозом в мире всего пять - 5 сентября 2026",
+"summary": "Болезнь опасная и неизлечимая",
+"image": null,
+"source": "161.ru",
+"url": "https://161.ru/text/health/2026/09/05/76624317/",
+"date": "2026-09-05",
+"place": "Izhevsk",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "bb4047796df1",
+"title": "Карта боевых действий в зоне СВО на 05 . 09 . 2026 : Бойня под Харьковом , боевики ВСУ зажаты в « котле »",
+"summary": "",
+"image": null,
+"source": "pronedra.ru",
+"url": "https://pronedra.ru/kolczo-szhimaetsya-pod-harkovom-vsu-teryayut-poziczii-i-puti-othoda-karta-svo-na-5-sentyabrya-2026-goda-i-analiz-sobytij-v-mire-830701.html",
+"date": "2026-09-05",
+"place": "Izhevsk",
+"lang": "ru",
+"tone": "neutral"
+},
+{
+"id": "ad9682d89272",
+"title": "Где вкусно поесть . Гид по самым интересным гастрофестивалям сентября",
+"summary": "Осень — время гастрономических приключений, период сбора урожая и неспешных дегустаций, когда от процесса не отвлекают море, солнце и пляжи. Во многих городах... РИА Новости, 29.09.2026",
+"image": null,
+"source": "ria.ru",
+"url": "https://ria.ru/20260907/gastrofestivali-2115567023.html",
+"date": "2026-09-07",
+"place": "Izhevsk",
+"lang": "ru",
+"tone": "neutral"
+}
+],
 "UWUU|2026-09-06": [],
 "UAKD|2026-09-08": [],
 "ZWKC|2026-09-08": [],
 "VEIM|2026-09-09": [
 {
-"id": "a2ba7cfcfe0f",
-"title": "US envoy Sergio Gor meets Manipur CM in Imphal on two-day visit",
-"summary": "",
-"image": null,
-"source": "Awaz The Voice",
-"url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPcjFxMEV4b3RqQ0JaMEZkWjNTY1k1QWdsTTl3dlp4THhVejFaQ0pFcHozamYyRi14RElrMzMzRjlVSlY0R3ZaSHFTVXY0M2F2ZC1nbzJlaU1qRjVQNFc4Wkl3aHI4OXk1dW9sOTVJU1haWUtoTGxiZ0Z1X0p0emR5SnVsY2o1cWdYZlJVUFlVd1c2UHdrenF3ellPVXRoUDMtSjBjeHRLcmtMMzc5OWFtRW1wRQ?oc=5",
-"date": "2026-09-11",
-"place": "Imphal",
-"lang": "en",
-"tone": "neutral"
-},
-{
-"id": "583940f1b1fe",
-"title": "Manipuri musician Chongtham Vikram Singh cremated in Imphal",
-"summary": "",
-"image": null,
-"source": "The Times of India",
-"url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOOTk2Y05JbHl2ZkRGbGtrNDNvdmhWbklJVklmaHExWDRGaFBwR3FaWmFQN3FubDhJTktiamJkOW5MX2dBRFRIS3NScDN2emdpN2lzYUctVU16bHdyZi1XNVoxQmZfdG1pbzM4cFktaC1BRXcxSy1PajZleVJOUmJaSHdqbjRLT3dLaTN6eTlldjJnaVN1ZlJiZTRtVjVTVlR2alhFaVVoSUM5MHNJcHBxNGNyOXppLWhVdFJ0Z2UyNkZMeGJvaTRpLVNUQmMxOE5z0gHWAUFVX3lxTE9xTVlHdVZOZ1daZ3ZSa2NMR01xb1gxTWMyR1JoMGlsM1lyVkhDSXRqRXVsaXVPVUxUTjhwUXB4MEVuRzRvNGxmT2ItSDhfTUNreEk4SnE5MkU5OTRHeEVRUHhoczBwSHUwUXFPRzhheXBPSU9xTUdUVzl1U3kzRHhhaEx0bVNNQ0RIQzkyVUozc194N1QyMGltQjdtQlJqOWhpdkxwcTNYSUJCdmxYWWZpRU9GWS14SmZwZ2VDU2VzcWtXMnBER25naTJSR1JtX0xudUo1a1E?oc=5",
+"id": "3476ad72cf2c",
+"title": "Manipuri musician Chongtham Vikram Singh cremated in Imphal | Guwahati News",
+"summary": "Manipuri musician Chongtham Vikram Singh cremated in Imphal after body flown from Delhi; family, fans and MP seek justice and action against racism.",
+"image": "news-3476ad72cf2c.jpg",
+"source": "timesofindia.indiatimes.com",
+"url": "https://timesofindia.indiatimes.com/city/guwahati/manipuri-musician-chongtham-vikram-singh-cremated-in-imphal/articleshow/133975528.cms",
 "date": "2026-09-09",
 "place": "Imphal",
 "lang": "en",
 "tone": "neutral"
 },
 {
-"id": "31485502fc10",
-"title": "Imphal Ring Road project to gain momentum as land acquisition nears completion: Manipur CM",
-"summary": "",
-"image": null,
-"source": "India Today NE",
-"url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPMm9sSFhWbU53TlNoMWdncW1aYjZjUjE5aEFuRzhXZEo0dnJrTEhyb3AwWTdhMElZU3FNLXQ2c1Eya2F3RmtNNFloMTJ6OTlyWU1Xenc4QlhtMUVVSjY1dWREczNhT0dKRU9EeER6X0Nzc2VHVXF3RzltbTBWd25GM1hkNk1YUzZzSGl5Y1pVY2tQSWNrMEhnWmVIZlJEN0xMX1pDZlhSaDhrLU5rT0VzUXQ1Q0o4dk9DenNPd3haWUhVazNLRXdTUzRmS19uQkd4Zzl3NXNsZjF1QzBjaEROSGpQdGTSAeoBQVVfeXFMT0FyUXZobERSRmV5YlJGdHRnTEo3d1d5UC0wMEhDMTdEMk95YUUyVUxjT0Q5MXBhS0VzMklNcXRiQUZLZ2Vid2VHWFhaQXlfSWxlU0tzdVdJTm9DbUc5S1Z3a085aE5rLW95MWF5YUhLd3JwdWQ1d3l3WFlmeHh5RkZsTzR4MXdlVmJZd0Z2STVicWxueGJFcnl1YTNwUE1TX0l0TjBMbkktNS1tcVlLY3JqaTVUZ29YdUNGamR5Y29IdVl3aDlJejh4UzIzd04tN2NWME5Jazl0ZE5jbG5UdC1mVEZQenNERWJR?oc=5",
+"id": "682ab843283f",
+"title": "দিল্লিতে মণিপুরের সংগীতশিল্পীকে খুন , কেন্দ্রকে নিশানা রাহুল গান্ধীর",
+"summary": "দিল্লিতে মণিপুরের সংগীতশিল্পী চোংথাম বিক্রম সিংকে খুনের অভিযোগ। রাহুল গান্ধী নিরাপত্তার প্রশ্ন তুলেছেন। বিস্তারিত পড়ুন।",
+"image": "news-682ab843283f.jpg",
+"source": "bartamanpatrika.com",
+"url": "https://bartamanpatrika.com/news/rahul-gandhi-targets-centre-over-manipur-musicians-murder-in-delhi",
+"date": "2026-09-09",
+"place": "Imphal",
+"lang": "be",
+"tone": "neutral"
+},
+{
+"id": "53c7e505d154",
+"title": "Manipur CM Yumnam Khemchand Singh visits home of slain musician Chongtham Vikram",
+"summary": "Chongtham Vikram, a respected musician and music teacher from Manipur, died following a brutal assault at his residence in Kilokri, New Delhi. He is survived by his wife and son.",
+"image": "news-53c7e505d154.jpg",
+"source": "economictimes.indiatimes.com",
+"url": "https://economictimes.indiatimes.com/news/india/manipur-cm-yumnam-khemchand-singh-visits-home-of-slain-musician-chongtham-vikram/articleshow/134009703.cms",
+"date": "2026-09-10",
+"place": "Imphal",
+"lang": "en",
+"tone": "neutral"
+},
+{
+"id": "bd6cbc5143df",
+"title": "Amid global turmoil , India maintained momentum of its economic growth , says Amit Shah",
+"summary": "India maintained economic growth momentum despite global geopolitical turmoil.  Strategic partnerships were built in key areas like defense and energy.  Nine free trade agreements will be concluded by the year 2026.  This engagement contributed to a robust GDP growth rate of 7.8 percent.  The nation is pursuing further trade arrangements with many countries.",
+"image": "news-bd6cbc5143df.jpg",
+"source": "economictimes.indiatimes.com",
+"url": "https://economictimes.indiatimes.com/news/india/amid-global-turmoil-india-maintained-momentum-of-its-economic-growth-says-amit-shah/articleshow/133879486.cms",
 "date": "2026-09-07",
 "place": "Imphal",
 "lang": "en",
 "tone": "neutral"
 },
 {
-"id": "469b445717f0",
-"title": "US Ambassador Sergio Gor Arrives In Imphal As BRICS Summit Brings Global Leaders To India",
-"summary": "",
+"id": "128e640a5368",
+"title": "We deserve to be treated with the same dignity ...: Chongtham Vikram Singh kin demand justice as musician mortal remains arrive in Impha",
+"summary": "The mortal remains of renowned Manipuri guitarist and music teacher Chongtham Vikram Singh arrived at Imphal International Airport on Wednesday, where grieving family members, friends, fellow musicians and local residents gathered to receive his body and demand justice over his death following an alleged assault in New Delhi.",
 "image": null,
-"source": "News18",
-"url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNSkNIb0VWVFpGclZsN3cza0c4Tng0U091V2R3QU94b2J1TGtuTDd1Tms2U0ZId2k1WDM4dUM0ZERLWVRuSEF3TzBfMmY4YVdiVVhyT1hnbWgyNW1mMTk5SUNNSEhSV3FiMzE5VDZmWmpfUGlWcGpYaGJEY2w1QzFtZERoTjRWTHVmbWwzbjFmZFFKc204MzJEX0g3eEZRQlROX2VjeWhhV1VTODBvMU5vSDVLNWk1aGVBdWJfV2hTRVQydVFZXzNPZ1JlVHfSAdIBQVVfeXFMTVJFRkIyMmVMbHlhZzF2dm1sNWVwcU9DMVBndFpHckNsaTBXbG02U0NTWGhuQ1hnbGFyXy1fQ3A1LTJVcWFwXzFablpIUkJPWEZncFNpM25MNU1PVE9PTkRlVVFvY1Z3VWRvaTVmeXBKNlFCa2NreDZfb2hhdUpZamZCaEtBNl9SZ2l2RWVSQmZ5R2F1S2tITFplOGVOalk2UDZYa2JtQjNoRXZ1Y2NRRkhzTThSUzU4eEdMY0syQlhZemJYeWVOa0pJamNmUTNpd1N3?oc=5",
-"date": "2026-09-11",
+"source": "aninews.in",
+"url": "https://aninews.in/news/entertainment/out-of-box/we-deserve-to-be-treated-with-the-same-dignity-chongtham-vikram-singh8217s-kin-demand-justice-as-musicians-mortal-remains-arrive-in-impha20260909172435/",
+"date": "2026-09-09",
 "place": "Imphal",
 "lang": "en",
 "tone": "neutral"
 },
 {
-"id": "0dfc9979c4db",
-"title": "Gor meets Manipur CM & Governor, discusses tourism, economic ties",
-"summary": "",
-"image": null,
-"source": "The Indian Express",
-"url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOd3M3RGxESDUyY21yOEFfcE94SXVNZ0E0czlDcWFOSkZ5Q2x1WWd3S3hIa3BmcjJpRWVIaHZ0bkwtcXFtMkhGMm51ZGUxT0xfUEdmOVZFckVzZm9qZzZqOTNfcXJPSXlSRlZGWDZJMjlMMzljZGVUM2xybEtVbmlfYlNVYnVFNzFxSjF0b1VGcjNjMm03d2hsV0hlejJ5aTBqSEs0cDRZR21XTUXSAbIBQVVfeXFMTXpLdllzZmVlUWdNalB3dUstVm5OaXpQX190TmdDSWJuRDFJc1NoSE5jdnlFaDUtOEdMUUE1aHhVb1l0ZURiLWk1RFlwaUpINEE2YnJKSWJCUVEteEZnenNuZlRYNmVHNFRRYnJGTVhzclFXeWxIS2dScTFpX3I4UFo4UXVFRWpxMTlUNWFBSU1tM2ZCSFpndU5DN3dISnJkZHpxX0hlMTVkdHJnTE8xak5Jdw?oc=5",
-"date": "2026-09-11",
-"place": "Imphal",
-"lang": "en",
-"tone": "neutral"
-},
-{
-"id": "2a571e38b2ba",
-"title": "CRPF convoy attacked on NH-2 in Manipur’s Imphal West, no casualties | India News",
-"summary": "",
-"image": null,
-"source": "Hindustan Times",
-"url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ2gwbzBLVzdzSVljOGMtdEhXNU5VQlc1RkgzUEVyNkRYZXpPTWJUeUN2MEhFTGtad3lvcVJCQU1vVEo2cWlKT2pYbXhkVnBtajdhN0U1Q3otOHVONWo5eTJGY0dJNG9zRmNOdmZLSlo2b19wQUlWcWZ3cXhpR3pseXRzRzRNMkJ3SDNTc3JjRTZhVHJqTU9fNTBkWnRQRktqV2p0RnhPUnVBajB5Y3g2OHlDcXhKbHZaMDM3emFhZ0FfZThEN29ON2J30gHPAUFVX3lxTFBySXNLU0pOczluQ2N5bU9ta1lIRVppdTBqdXMwcURMV1JlYVR6dXpPY2VBbXl0T3BUTjFIeXZZRWgyRGNYWXJNU0gzaUhIX3h4ZGhQU2ZDZUJZa1ljcTUwSDdENHMyQlJ2QTJnQVN0MmUyWXZtR3NpdHV2TkZUQ0RMcS1rZ2E0VFlYQzFqQmtHTFBrYXBZaVUtRjFtVFN2alNsTlAzR1BjUmRXS2wtREpvanJQYzdzUFNicFU5YXJNRWdMd01SVlI3Znp0N3UzZw?oc=5",
+"id": "27ace81b0d4f",
+"title": "Manipur Musician Murder :  Treat Northeast people as Indian : Brother of Manipur musician beaten to death in Delhi | Imphal News",
+"summary": "IMPHAL: The brother of Manipuri guitarist and music teacher Chongtham Vikram Singh urged the government to ensure that people from the Northeast are “properly treated as Indians” in the national capital.",
+"image": "news-27ace81b0d4f.jpg",
+"source": "timesofindia.indiatimes.com",
+"url": "https://timesofindia.indiatimes.com/city/imphal/treat-northeast-people-as-indians-brother-of-manipur-musician-beaten-to-death-in-delhi/articleshow/134000223.cms",
 "date": "2026-09-10",
 "place": "Imphal",
 "lang": "en",
 "tone": "sad"
 }
 ],
-"VTUV|2026-09-09": [],
+"VTUV|2026-09-09": [
+{
+"id": "ae9d86eadb41",
+"title": "เตือนฝนตกหนัก 10 - 13 ก . ย . เฝ้าระวังน้ำท่วมฉับพลัน น้ำท่วมขัง",
+"summary": "กรมอุตุนิยมวิทยาเตือน 8–13 ก.ย. ฝนหนักถึงหนักมากหลายพื้นที่ กทม.–ปริมณฑลเฝ้าระวัง นำท่วมขัง ต่างจัหหวัดระวังน้ำท่วมฉับพลัน",
+"image": "news-ae9d86eadb41.jpg",
+"source": "posttoday.com",
+"url": "https://www.posttoday.com/general-news/748372",
+"date": "2026-09-09",
+"place": "Roi Et",
+"lang": "th",
+"tone": "neutral"
+},
+{
+"id": "02ca5dbf4fa2",
+"title": "สภาพอากาศวันนี้  เหนือ - อีสาน - กทม . มีฝน 70 % ตกหนักบางแห่ง",
+"summary": "กรมอุตุฯ เตือนฝนตกหนักถึงหนักมาก ระวังน้ำท่วมฉับพลันและน้ำป่าไหลหลาก โดยภาคเหนือ-อีสาน รวมถึงกรุงเทพฯ-ปริมณฑล มีฝนฟ้าคะนอง 70% ของพื้นที่",
+"image": "news-02ca5dbf4fa2.jpg",
+"source": "thaipbs.or.th",
+"url": "https://www.thaipbs.or.th/news/content/557641",
+"date": "2026-09-09",
+"place": "Roi Et",
+"lang": "th",
+"tone": "neutral"
+},
+{
+"id": "7336aaa0be04",
+"title": "อนุรักษ์  แจงซื้อเสื้อเกราะแพงกว่า กอ . รมน . เพราะใช้นวัตกรรมเหนือกว่า",
+"summary": "",
+"image": null,
+"source": "dailynews.co.th",
+"url": "https://www.dailynews.co.th/news/6176286/",
+"date": "2026-09-09",
+"place": "Roi Et",
+"lang": "th",
+"tone": "neutral"
+},
+{
+"id": "5671c61932a1",
+"title": "มารีย์วิทยา  นครราชสีมา กวาด 4 รางวัล คว้าแชมป์วงโยธวาทิตชิงถ้วยพระราชทานฯ ครั้งแรกในกาฬสินธุ์",
+"summary": "",
+"image": null,
+"source": "dailynews.co.th",
+"url": "https://www.dailynews.co.th/news/6181745/",
+"date": "2026-09-11",
+"place": "Roi Et",
+"lang": "th",
+"tone": "neutral"
+},
+{
+"id": "f00592c3e737",
+"title": "อุตุฯเตือน 8 - 13 ก . ย . 69 ฝนตกหนักมากหลายพื้นที่ โดยจะเริ่มจากภาคอีสานก่อน",
+"summary": "",
+"image": null,
+"source": "dailynews.co.th",
+"url": "https://www.dailynews.co.th/news/6171053/",
+"date": "2026-09-08",
+"place": "Roi Et",
+"lang": "th",
+"tone": "neutral"
+},
+{
+"id": "4c0c2b1bb650",
+"title": "เปิดรายชื่อ 32 จังหวัด  เหนือ - อีสาน  มีฝนตกหนักมากร้อยละ 70",
+"summary": "",
+"image": null,
+"source": "dailynews.co.th",
+"url": "https://www.dailynews.co.th/news/6174251/",
+"date": "2026-09-09",
+"place": "Roi Et",
+"lang": "th",
+"tone": "neutral"
+}
+],
 "VTSF|2026-09-10": [
 {
 "id": "b6003d51f45a",
@@ -2634,11 +2983,110 @@
 "date": "2026-09-08",
 "place": "Nakhon Si Thammarat",
 "lang": "th",
+"tone": "neutral",
+"site": "https://www.facebook.com"
+}
+],
+"ZGDY|2026-09-10": [
+{
+"id": "9a5d60397659",
+"title": "世界级嗅觉宝库 ？ 中法专家解密张家界深处的  亿万家产  |文旅|旅游|玻璃桥|香文化",
+"summary": "世界级嗅觉宝库？中法专家解密张家界深处的“亿万家产”,文旅,旅游,玻璃桥,香文化,中法专家,张家界大峡谷",
+"image": null,
+"source": "163.com",
+"url": "https://www.163.com/dy/article/L6IB5TS20514R9OJ.html",
+"date": "2026-09-11",
+"place": "Zhangjiajie",
+"lang": "ch",
+"tone": "neutral"
+},
+{
+"id": "fc8428cba9cd",
+"title": "智能时代 网安护航 张家界市2026年国家网络安全宣传周正式启动",
+"summary": "",
+"image": null,
+"source": "baijiahao.baidu.com",
+"url": "https://baijiahao.baidu.com/s?id=1876121381327849043",
+"date": "2026-09-12",
+"place": "Zhangjiajie",
+"lang": "ch",
+"tone": "neutral"
+},
+{
+"id": "fa4029785e8a",
+"title": "中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传周活动",
+"summary": "",
+"image": null,
+"source": "baijiahao.baidu.com",
+"url": "https://baijiahao.baidu.com/s?id=1876040096707655093",
+"date": "2026-09-12",
+"place": "Zhangjiajie",
+"lang": "ch",
+"tone": "neutral"
+},
+{
+"id": "a86f2ca1233e",
+"title": "清朗金融网络 守护安心消费 中国银行张家界市分行开展金融教育宣传周进街道宣讲活动",
+"summary": "",
+"image": null,
+"source": "baijiahao.baidu.com",
+"url": "https://baijiahao.baidu.com/s?id=1875814201590942949",
+"date": "2026-09-09",
+"place": "Zhangjiajie",
+"lang": "ch",
+"tone": "neutral"
+},
+{
+"id": "482671b6e80f",
+"title": "暖心服务无国界 ！ 吴家峪门票站高效助力外籍游客找回遗失钱包",
+"summary": "",
+"image": null,
+"source": "baijiahao.baidu.com",
+"url": "https://baijiahao.baidu.com/s?id=1875814201593108567",
+"date": "2026-09-09",
+"place": "Zhangjiajie",
+"lang": "ch",
+"tone": "neutral"
+},
+{
+"id": "0b4596809502",
+"title": "翼装飞行世锦赛 ： 澳大利亚选手实现三连冠 中国选手获季军 -- 文旅 · 体育 -- 人民网",
+"summary": "第十二届翼装飞行世界锦标赛弯道竞速决赛11日在湖南张家界天门山举行，澳大利亚选手塔希·保罗·门罗以24.051秒的成绩，第三次夺得该赛事竞速赛冠军。“中国翼装飞行第一人”张树鹏以24.663秒的成绩斩",
+"image": null,
+"source": "ent.people.com.cn",
+"url": "http://ent.people.com.cn/n1/2026/0912/c1012-40797450.html",
+"date": "2026-09-12",
+"place": "Zhangjiajie",
+"lang": "ch",
 "tone": "neutral"
 }
 ],
-"ZGDY|2026-09-10": [],
-"ZSTX|2026-09-13": [],
+"ZSTX|2026-09-13": [
+{
+"id": "6e45f8aefcbc",
+"title": "杭州出发部分热门车次已售罄 ， 抢票攻略来了",
+"summary": "",
+"image": null,
+"source": "hznews.hangzhou.com.cn",
+"url": "https://hznews.hangzhou.com.cn/chengshi/content/2026-09/12/content_9305155.htm",
+"date": "2026-09-12",
+"place": "Huangshan",
+"lang": "ch",
+"tone": "neutral"
+},
+{
+"id": "006952946dc9",
+"title": "纪念币发行最新消息 （ 纪念币发行最新消息2021 ）",
+"summary": "2022年兔年纪念币发行量\n2022年兔年纪念币发行量预测会在1.2~1.8亿之间。兔年纪念币，也将在2023年的春节之前发行，预计也会发行1.2亿枚左右。历年生肖币预约都非常火爆，兔年纪念币会非常受欢迎。它的信息是最容易确定的。兔币的面值是10元，发行量在1.2或1.5亿枚，发行时间是12月。2022年兔年纪念币的用处纪念币具有收藏价值。纪念币虽然具备普通人民币的流通作用，但是一般情况是很少有人会直接拿纪念币支付的，因为纪念币的发行是为了纪念一些有意义的特殊事件，购买纪念币的人一般都会将纪念币收藏起来。",
+"image": null,
+"source": "mastv.cc",
+"url": "https://www.mastv.cc/shbk/201.html",
+"date": "2026-09-11",
+"place": "Huangshan",
+"lang": "ch",
+"tone": "neutral"
+}
+],
 "RKJK|2026-09-14": [],
 "RJOR|2026-09-17": [
 {
@@ -2651,7 +3099,8 @@
 "date": "2026-09-16",
 "place": "Tottori",
 "lang": "ja",
-"tone": "neutral"
+"tone": "neutral",
+"site": ""
 },
 {
 "id": "6bf8c965c3fd",

@@ -186,6 +186,16 @@ _last_archive = [0.0]
 _last_google = [0.0]
 _ARCHIVE_LISTS = {}
 _ARCHIVE_SLOW = {}
+_PACE = {}
+
+
+def _pace(last, gap):
+    """Space requests to one service `gap` seconds apart, across all finder threads."""
+    with _PACE.setdefault(id(last), threading.Lock()):
+        wait = gap - (time.time() - last[0])
+        if wait > 0:
+            time.sleep(wait)
+        last[0] = time.time()
 RETRY_AFTER = 900          # a story that wasn't found is tried again 15 min later
 MAX_TRIES = 4
 NOT_A_PHOTO = re.compile(r'logo|placeholder|/default|fallback|blank\.|sprite|favicon|brand[-_]?(?:mark|image)|avatar|og[-_]default', re.I)
@@ -223,10 +233,8 @@ def _search(q):
     if _search_off[0] > time.time():
         return None
     for ep in ('https://html.duckduckgo.com/html/?', 'https://lite.duckduckgo.com/lite/?'):
-        wait = SEARCH_GAP - (time.time() - _last_search[0])
-        if wait > 0:
-            time.sleep(wait)
-        _last_search[0] = time.time()
+        _pace(_last_search, SEARCH_GAP)
+
         try:
             raw, _, _ = _get(ep + urllib.parse.urlencode({'q': q}), timeout=15, limit=800_000)
         except Exception:
@@ -245,10 +253,8 @@ def _search(q):
 def _site_for(s):
     """The paper's own website for a Google News story (Google's feed names it)."""
     for hl, gl in LANG_EDITION.get(s.get('lang') or 'en', [('en-GB', 'GB')]):
-        wait = 1.5 - (time.time() - _last_google[0])
-        if wait > 0:
-            time.sleep(wait)
-        _last_google[0] = time.time()
+        _pace(_last_google, 1.5)
+
         q = ' '.join(re.findall(r'[^\W_]+', s['title'])[:14])
         try:
             raw, _, _ = _get('https://news.google.com/rss/search?' + urllib.parse.urlencode({'q': q, 'hl': hl, 'gl': gl, 'ceid': f'{gl}:{hl[:2]}'}), timeout=15)
@@ -289,10 +295,7 @@ def _archive_list(site, date, title=''):
     if _archive_off[0] > time.time():
         return None
     def pace():
-        wait = 6 - (time.time() - _last_archive[0])
-        if wait > 0:
-            time.sleep(wait)
-        _last_archive[0] = time.time()
+        _pace(_last_archive, 6)
     if _ARCHIVE_SLOW.get(host, 0) < 2:
         pace()
         try:
@@ -374,13 +377,15 @@ def resolve(cache_dir, budget_s=150, log=print):
         todo = [s for k, v in list(cache.items()) if not k.startswith('_') and isinstance(v, list) for s in v
                 if not s.get('image') and s.get('tries', 0) < MAX_TRIES and now - s.get('triedAt', 0) > RETRY_AFTER]
     todo.sort(key=lambda s: s.get('tries', 0))       # fresh stories first
-    for s in todo:
+
+    def one(s):
+        """Look one story up. Returns 'found', 'checked', 'skip' or 'resting'."""
         if time.time() - t0 > budget_s:
-            break
+            return 'skip'
         if 'site' not in s and 'news.google.' in (s.get('url') or ''):
             site = _site_for(s)
             if site is None:
-                continue
+                return 'skip'
             s['site'] = site
         ran, cands = False, []
         if s.get('site'):
@@ -408,25 +413,36 @@ def resolve(cache_dir, budget_s=150, log=print):
                         hit = m
                         break
         if not ran:
-            if _search_off[0] > time.time() and _archive_off[0] > time.time():
-                break                               # every route is resting; carry on next round
-            continue
-        checked += 1
-        s['tries'] = s.get('tries', 0) + 1
-        s['triedAt'] = int(time.time())
+            return 'resting' if (_search_off[0] > time.time() and _archive_off[0] > time.time()) else 'skip'
+        result = 'checked'
+        with _LOCK:
+            s['tries'] = s.get('tries', 0) + 1
+            s['triedAt'] = int(time.time())
         if hit:
-            s['url'] = hit.get('url') or s['url']
-            summ = hit.get('summary') or ''
-            if summ and not _same_story(s['title'], summ):
-                s['summary'] = summ[:400]
+            url = hit.get('url') or s['url']
             f = f'news-{s["id"]}.jpg'
-            if _keep_image(cache, s['id'], hit.get('image'), s['url'], os.path.join(img_dir, f)):
-                s['image'] = f
-                found += 1
-            else:
-                s['tries'] = MAX_TRIES              # the article has no usable picture: a cutting it is
-            s['resolved'] = True
+            with _LOCK:
+                got = _keep_image(cache, s['id'], hit.get('image'), url, os.path.join(img_dir, f))
+                s['url'] = url
+                summ = hit.get('summary') or ''
+                if summ and not _same_story(s['title'], summ):
+                    s['summary'] = summ[:400]
+                if got:
+                    s['image'] = f
+                    result = 'found'
+                else:
+                    s['tries'] = MAX_TRIES          # the article has no usable picture: a cutting it is
+                s['resolved'] = True
         _write(path, cache)
+        return result
+
+    # four stories at a time: one slow archive answer doesn't hold up the rest
+    # (each service still gets its requests one at a time, politely spaced)
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(4) as pool:
+        results = list(pool.map(one, todo[:60]))
+    found = results.count('found')
+    checked = found + results.count('checked')
     if checked:
         log(f'News: found the real article picture for {found} of {checked} stories checked this round')
     return found

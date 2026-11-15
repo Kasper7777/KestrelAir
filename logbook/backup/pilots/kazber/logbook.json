@@ -1,8 +1,8 @@
 {
  "meta": {
   "version": 1,
-  "builtAt": "2026-11-14T23:14:59",
-  "online": false,
+  "builtAt": "2026-11-15T00:19:40",
+  "online": true,
   "sources": [
    "neofly",
    "screenshots"
@@ -6609,12 +6609,10 @@
    "missions": [],
    "photos": [],
    "news": [
-    "5e6ded6c004a",
-    "4721b6eee163",
-    "fdc51fb82989",
-    "a4258406548c",
-    "0192f0e54fb1",
-    "ee630298d070"
+    "b29d6583fbc6",
+    "1fb89eca22d0",
+    "68293dca1d21",
+    "7e3d99102b90"
    ]
   },
   {
@@ -7094,11 +7092,11 @@
          "lon": -1.5131317,
          "km": 7.7
         },
-        "caption": "Room key in hand at Cotswold Hotel & Spa. Long day in the air. Picked up the Banbury Guardian with breakfast: “'An alternative to AI slop': Banbury music collective to bring live electronic night…”. Big talk round here.",
+        "caption": "Room key in hand at Cotswold Hotel & Spa. Long day in the air. Culture corner in the Hook Norton paper: “'An alternative to AI slop': Banbury music collective to bring live electronic night to…”.",
         "likes": 42,
         "newsRef": {
          "id": "a264c75eca90",
-         "text": "'An alternative to AI slop': Banbury music collective to bring live electronic night…",
+         "text": "'An alternative to AI slop': Banbury music collective to bring live electronic night to…",
          "tag": "#Banbury"
         },
         "tags": [
@@ -7179,8 +7177,13 @@
         "website": "https://www.whichfordpottery.com/visit/straw-kitchen",
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Cappuccino at The Straw Cafe before checking the weather.",
+        "caption": "Coffee and Cappuccino at The Straw Cafe before checking the weather. Sky news in Hook Norton: “Solar eclipse in UK skies this month - Here's how and when to see the rare event”. Pilots get the front-row view.",
         "likes": 47,
+        "newsRef": {
+         "id": "af16d948c922",
+         "text": "Solar eclipse in UK skies this month - Here's how and when to see the rare event",
+         "tag": "#SolarHere's"
+        },
         "tags": [
          {
           "t": "#UnitedKingdom",
@@ -7202,6 +7205,11 @@
          {
           "t": "#TheStrawCafe",
           "k": "venue"
+         },
+         {
+          "t": "#SolarHere's",
+          "k": "news",
+          "id": "af16d948c922"
          }
         ]
        },
@@ -7350,7 +7358,7 @@
          "lon": -2.0056844,
          "km": 6.6
         },
-        "caption": "Lansdowne Strand Hotel tonight. Quick shower, then food. Picked up the Swindon 24 with breakfast: “Avebury stones and historic manor inspire artist’s new collection”. Big talk round here.",
+        "caption": "Lansdowne Strand Hotel tonight. Quick shower, then food. “Avebury stones and historic manor inspire artist’s new collection”. The kind of thing that makes a stopover worth it.",
         "likes": 85,
         "newsRef": {
          "id": "1d75c103887a",
@@ -7416,7 +7424,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Flat white at The Larder at the Gourmet Goat Farmer before checking the weather. Picked up the Swindon Link with breakfast: “Avebury landscape inspires new art exhibition”. Big talk round here.",
+        "caption": "Coffee and Flat white at The Larder at the Gourmet Goat Farmer before checking the weather. Saw posters for this all over Avebury: “Avebury landscape inspires new art exhibition”. Very tempted to stay another night.",
         "likes": 101,
         "newsRef": {
          "id": "f58415b09681",
@@ -7557,8 +7565,13 @@
         "website": "https://www.chefandbrewer.com/pubs/wiltshire/red-lion",
         "menu": null,
         "hours": null,
-        "caption": "Asked what's good at The Red Lion. Answer: the Steak and kidney pie.",
+        "caption": "Asked what's good at The Red Lion. Answer: the Steak and kidney pie. “UK's most magical solar eclipse viewing spot is just one hour from Somerset - not…”. Already working out if I can be airborne for it.",
         "likes": 189,
+        "newsRef": {
+         "id": "96ea513ba88b",
+         "text": "UK's most magical solar eclipse viewing spot is just one hour from Somerset - not…",
+         "tag": "#UK'sSomersetStonehenge"
+        },
         "tags": [
          {
           "t": "#UnitedKingdom",
@@ -7584,6 +7597,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#UK'sSomersetStonehenge",
+          "k": "news",
+          "id": "96ea513ba88b"
          }
         ]
        },
@@ -7669,12 +7687,12 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Croissant at Unhenged, 3.9 km from the field. Good fuel for a pilot. Overheard at the next table: “UK's most magical solar eclipse viewing spot is just one hour from Somerset - not…”.",
+        "caption": "Croissant at Unhenged, 3.9 km from the field. Good fuel for a pilot. “When and where in the West Country to see the solar eclipse”. Best seat for that is 35,000 feet - I'll keep an eye out from the flight deck.",
         "likes": 140,
         "newsRef": {
-         "id": "96ea513ba88b",
-         "text": "UK's most magical solar eclipse viewing spot is just one hour from Somerset - not…",
-         "tag": "#UK'sSomersetStonehenge"
+         "id": "765825f7ba5b",
+         "text": "When and where in the West Country to see the solar eclipse",
+         "tag": "#WhenWestCountry"
         },
         "tags": [
          {
@@ -7699,9 +7717,9 @@
           "k": "venue"
          },
          {
-          "t": "#UK'sSomersetStonehenge",
+          "t": "#WhenWestCountry",
           "k": "news",
-          "id": "96ea513ba88b"
+          "id": "765825f7ba5b"
          }
         ]
        },
@@ -7733,8 +7751,13 @@
         "website": null,
         "menu": null,
         "hours": "Mo-Su 10:00-16:00",
-        "caption": "Asked what's good at The Circles Café. Answer: the Flat white.",
+        "caption": "Asked what's good at The Circles Café. Answer: the Flat white. Apparently “Buyers sue London's Alison Jacques gallery over cancelled sale of Monica Sjöö paintings”. Shame my schedule won't stretch to it.",
         "likes": 105,
+        "newsRef": {
+         "id": "45aed0a7209a",
+         "text": "Buyers sue London's Alison Jacques gallery over cancelled sale of Monica Sjöö paintings",
+         "tag": "#BuyersLondon'sAlison"
+        },
         "tags": [
          {
           "t": "#UnitedKingdom",
@@ -7756,6 +7779,11 @@
          {
           "t": "#TheCirclesCafé",
           "k": "venue"
+         },
+         {
+          "t": "#BuyersLondon'sAlison",
+          "k": "news",
+          "id": "45aed0a7209a"
          }
         ]
        }
@@ -7846,7 +7874,7 @@
          "lon": -1.1595144,
          "km": 3.3
         },
-        "caption": "Premier Inn tonight. Quick shower, then food. Picked up the Daily Echo with breakfast: “Pub with mouse droppings in kitchen scores new rating”. Big talk round here.",
+        "caption": "Premier Inn tonight. Quick shower, then food. Fitting reading over a nightcap: “Pub with mouse droppings in kitchen scores new rating”.",
         "likes": 108,
         "newsRef": {
          "id": "cf4ee9b9ccd1",
@@ -7933,8 +7961,13 @@
         "website": "https://lizzrestaurant.co.uk/",
         "menu": null,
         "hours": "Su-Th 12:00-22:00; Fr-Sa 12:00-23:00",
-        "caption": "Crew dinner for one at Lizz Turkish Restaurant & Bar. Doner kebab, no regrets.",
+        "caption": "Crew dinner for one at Lizz Turkish Restaurant & Bar. Doner kebab, no regrets. “Casualty with serious injuries airlifted from popular Dorset tourist spot”. Hard reading. Hope everyone's all right.",
         "likes": 182,
+        "newsRef": {
+         "id": "5966b3d58a94",
+         "text": "Casualty with serious injuries airlifted from popular Dorset tourist spot",
+         "tag": "#CasualtyDorset"
+        },
         "tags": [
          {
           "t": "#UnitedKingdom",
@@ -7960,6 +7993,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#CasualtyDorset",
+          "k": "news",
+          "id": "5966b3d58a94"
          }
         ]
        }
@@ -8209,7 +8247,7 @@
          "lon": -2.9671726,
          "km": 3.3
         },
-        "caption": "Home for the night: Hôtel Le Rohan, 3.3 km from LFED. Everyone at the bar was on about this: “Ucky, l’atout flair du tourisme canin autour de Pontivy - Ouest-France”.",
+        "caption": "Home for the night: Hôtel Le Rohan, 3.3 km from LFED. Picked up the local paper at the hotel bar: “Ucky, l’atout flair du tourisme canin autour de Pontivy - Ouest-France”.",
         "likes": 87,
         "newsRef": {
          "id": "34a6fca628a1",
@@ -8301,8 +8339,13 @@
         "website": "https://www.dominos.fr/magasin/pontivy_56300",
         "menu": null,
         "hours": null,
-        "caption": "Slow start: Pizza Margherita at Domino's. METARs can wait.",
+        "caption": "Slow start: Pizza Margherita at Domino's. METARs can wait. “La sous-préfecture somme Pontivy communauté d’agir en urgence face « à la dégradation…”. You learn a lot about a place from its local paper.",
         "likes": 132,
+        "newsRef": {
+         "id": "db0d2d2c3a17",
+         "text": "La sous-préfecture somme Pontivy communauté d’agir en urgence face « à la dégradation…",
+         "tag": "#OuestFrance"
+        },
         "tags": [
          {
           "t": "#France",
@@ -8328,6 +8371,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#OuestFrance",
+          "k": "news",
+          "id": "db0d2d2c3a17"
          }
         ]
        },
@@ -8574,7 +8622,7 @@
          "km": 3.2,
          "stars": "2"
         },
-        "caption": "Room key in hand at Le Marin. Long day in the air. Overheard at the next table: “86% d'occupation à Lacanau à la mi-août, le tourisme reprend en Gironde”.",
+        "caption": "Room key in hand at Le Marin. Long day in the air. What Soulac-Sur-Mer is talking about today: “86% d'occupation à Lacanau à la mi-août, le tourisme reprend en Gironde”.",
         "likes": 142,
         "newsRef": {
          "id": "900805ce8b85",
@@ -8643,8 +8691,13 @@
         "website": null,
         "menu": null,
         "hours": "Jul-Aug: Mo-Su 10:00-23:00",
-        "caption": "Slow start: Club sandwich at La Sandwicherie. METARs can wait.",
+        "caption": "Slow start: Club sandwich at La Sandwicherie. METARs can wait. Local headlines over breakfast: “Soulac’n Jazz fait vibrer le Médoc pendant quatre jours”.",
         "likes": 198,
+        "newsRef": {
+         "id": "a7db0689a685",
+         "text": "Soulac’n Jazz fait vibrer le Médoc pendant quatre jours",
+         "tag": "#JazzMédoc"
+        },
         "tags": [
          {
           "t": "#France",
@@ -8670,6 +8723,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#JazzMédoc",
+          "k": "news",
+          "id": "a7db0689a685"
          }
         ]
        },
@@ -8807,7 +8865,7 @@
         "website": "https://tineltrogir.business.site/",
         "menu": null,
         "hours": "Mo-Su 07:00-24:00",
-        "caption": "Croissant at Tinel Specialty Coffee Shop, 4.5 km from the field. Good fuel for a pilot. Overheard at the next table: “Images of the Day: Celebrating the spirit of Croatia at Split Airport”.",
+        "caption": "Croissant at Tinel Specialty Coffee Shop, 4.5 km from the field. Good fuel for a pilot. “Images of the Day: Celebrating the spirit of Croatia at Split Airport” - had to tell the barman I'd just flown in myself.",
         "likes": 132,
         "newsRef": {
          "id": "13bb8a8c3bc5",
@@ -9778,7 +9836,7 @@
          "lon": 40.5262481,
          "km": 7.3
         },
-        "caption": "Room key in hand at Grand Hotel Berti. Long day in the air. Everyone at the bar was on about this: “Bingöl'de 1 Eylül Dünya Barış Günü açıklaması”.",
+        "caption": "Room key in hand at Grand Hotel Berti. Long day in the air. “Bingöl'de 1 Eylül Dünya Barış Günü açıklaması”.",
         "likes": 35,
         "newsRef": {
          "id": "e659f18d541e",
@@ -9833,8 +9891,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Baklava at the airfield café, 1 km from the field. Good fuel for a pilot.",
+        "caption": "Baklava at the airfield café, 1 km from the field. Good fuel for a pilot. “Bingöl Hentbol İl Karması’ndan ‘Türkiye Dördüncülüğü’!”. You learn a lot about a place from its local paper.",
         "likes": 149,
+        "newsRef": {
+         "id": "07af9a70a827",
+         "text": "Bingöl Hentbol İl Karması’ndan ‘Türkiye Dördüncülüğü’!",
+         "tag": "#BingölHentbolKarması"
+        },
         "tags": [
          {
           "t": "#Türkiye",
@@ -9852,6 +9915,11 @@
           "t": "#LTCU",
           "k": "airport",
           "ident": "LTCU"
+         },
+         {
+          "t": "#BingölHentbolKarması",
+          "k": "news",
+          "id": "07af9a70a827"
          }
         ]
        },
@@ -10083,7 +10151,7 @@
          "lon": 7.6238046,
          "km": 0.9
         },
-        "caption": "Checked in at B&B HOTEL Dortmund-Airport. Bags down, flight bag charging. Local paper on the table: “Grillfürst zündet nächste Expansionsstufe : Dortmund wird neuer BBQ - Hotspot / Mit ...”. Never a dull day in Dortmund.",
+        "caption": "Checked in at B&B HOTEL Dortmund-Airport. Bags down, flight bag charging. Local headlines over a nightcap: “Grillfürst zündet nächste Expansionsstufe : Dortmund wird neuer BBQ - Hotspot / Mit...”.",
         "likes": 80,
         "newsRef": {
          "id": "e56ad752f258",
@@ -10152,8 +10220,13 @@
         "website": "https://www.stations-grill.de",
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Moussaka at Stations-Grill before checking the weather.",
+        "caption": "Coffee and Moussaka at Stations-Grill before checking the weather. News in Dortmund: “Konstantinos Karetsas and Giannis Konstantelias star as Dortmund impress on opening day”. Greek duo Giannis Konstantelias and Konstantinos Karetsas played starring roles in Borussia Dortmund.",
         "likes": 185,
+        "newsRef": {
+         "id": "414ae4916ae3",
+         "text": "Konstantinos Karetsas and Giannis Konstantelias star as Dortmund impress on opening day",
+         "tag": "#KonstantinosKaretsasGiannis"
+        },
         "tags": [
          {
           "t": "#Germany",
@@ -10179,6 +10252,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#KonstantinosKaretsasGiannis",
+          "k": "news",
+          "id": "414ae4916ae3"
          }
         ]
        },
@@ -10325,11 +10403,11 @@
          "lon": -2.9645865,
          "km": 5.4
         },
-        "caption": "Checked in at Clifton Arms Hotel. Bags down, flight bag charging. Quiet mood in Warton today. “Rae Ann Warton Obituary (2026) - Lockbourne, OH - O. R. Woodyard Co. Funeral &…”.",
+        "caption": "Checked in at Clifton Arms Hotel. Bags down, flight bag charging. Sobering read in the local paper: “Rae Ann Warton Obituary (2026) - Lockbourne, OH - O. R. Woodyard Co. Funeral & Cremation…”. Thoughts with everyone affected.",
         "likes": 40,
         "newsRef": {
          "id": "bc89fdc5a4fc",
-         "text": "Rae Ann Warton Obituary (2026) - Lockbourne, OH - O. R. Woodyard Co. Funeral &…",
+         "text": "Rae Ann Warton Obituary (2026) - Lockbourne, OH - O. R. Woodyard Co. Funeral & Cremation…",
          "tag": "#RaeAnnObituary"
         },
         "tags": [
@@ -10599,11 +10677,11 @@
          "lon": -6.0308397,
          "km": 0.8
         },
-        "caption": "Home for the night: Hotel Arias Aeropuerto, 0.8 km from LEAS. Local paper on the table: “Leiva afronta el tramo final de su  Tour Gigante  en Madrid y Oviedo tras reunir a más…”. Never a dull day in Oviedo.",
+        "caption": "Home for the night: Hotel Arias Aeropuerto, 0.8 km from LEAS. “Leiva afronta el tramo final de su Tour Gigante en Madrid y Oviedo tras reunir a más de…”. El cantante y compositor Leiva encara este mes de septiembre la recta final de su 'Tour Gigante Fin de...",
         "likes": 37,
         "newsRef": {
          "id": "281a19a2e3e8",
-         "text": "Leiva afronta el tramo final de su  Tour Gigante  en Madrid y Oviedo tras reunir a más…",
+         "text": "Leiva afronta el tramo final de su Tour Gigante en Madrid y Oviedo tras reunir a más de…",
          "tag": "#LeivaTourGigante"
         },
         "tags": [
@@ -10691,8 +10769,13 @@
         "website": "https://smarttravelers.areas.com",
         "menu": null,
         "hours": "05:30-21:30",
-        "caption": "Cappuccino at Mahou, 0.5 km from the field. Good fuel for a pilot.",
+        "caption": "Cappuccino at Mahou, 0.5 km from the field. Good fuel for a pilot. What Oviedo is talking about today: “« Elrow es algo de lo que se hablará durante décadas en Oviedo » | El Comercio : Diario…”.",
         "likes": 243,
+        "newsRef": {
+         "id": "2de1fdbe512c",
+         "text": "« Elrow es algo de lo que se hablará durante décadas en Oviedo » | El Comercio : Diario…",
+         "tag": "#ElrowComercioDiario"
+        },
         "tags": [
          {
           "t": "#Spain",
@@ -10718,6 +10801,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#ElrowComercioDiario",
+          "k": "news",
+          "id": "2de1fdbe512c"
          }
         ]
        }
@@ -11336,7 +11424,7 @@
          "lon": 47.9965313,
          "km": 1.1
         },
-        "caption": "Room key in hand at Аэропорт. Long day in the air. Picked up the monavista.ru with breakfast: “В Астрахани прошла церемония передачи капсулы с обращением ветерана”. Big talk round here.",
+        "caption": "Room key in hand at Аэропорт. Long day in the air. Picked up the local paper at the hotel bar: “В Астрахани прошла церемония передачи капсулы с обращением ветерана”.",
         "likes": 178,
         "newsRef": {
          "id": "fe1ca7222870",
@@ -11405,8 +11493,13 @@
         "website": "https://chaban.2gis.biz/",
         "menu": null,
         "hours": "Mo-Su 09:00-20:00",
-        "caption": "Coffee and Pelmeni at Чабан before checking the weather.",
+        "caption": "Coffee and Pelmeni at Чабан before checking the weather. What Astrakhan is talking about today: “Скончался астраханский композитор Александр Рындин”.",
         "likes": 146,
+        "newsRef": {
+         "id": "2a1247ec79c9",
+         "text": "Скончался астраханский композитор Александр Рындин",
+         "tag": "#СкончалсяАлександрРындин"
+        },
         "tags": [
          {
           "t": "#Russia",
@@ -11432,6 +11525,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#СкончалсяАлександрРындин",
+          "k": "news",
+          "id": "2a1247ec79c9"
          }
         ]
        },
@@ -12022,7 +12120,7 @@
          "lon": 93.912117,
          "km": 4.4
         },
-        "caption": "Home for the night: SAI Boy's Hostel, 4.4 km from VEIM. Picked up the timesofindia.indiatimes.com with breakfast: “Manipuri musician Chongtham Vikram Singh cremated in Imphal | Guwahati News”. Big talk round here.",
+        "caption": "Home for the night: SAI Boy's Hostel, 4.4 km from VEIM. “Manipuri musician Chongtham Vikram Singh cremated in Imphal | Guwahati News”. Not my patch, but interesting to see what matters here.",
         "likes": 86,
         "newsRef": {
          "id": "3476ad72cf2c",
@@ -12084,8 +12182,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Croissant at Books & Coffee, 4.9 km from the field. Good fuel for a pilot.",
+        "caption": "Croissant at Books & Coffee, 4.9 km from the field. Good fuel for a pilot. Picked up the local paper at the café: “দিল্লিতে মণিপুরের সংগীতশিল্পীকে খুন , কেন্দ্রকে নিশানা রাহুল গান্ধীর”.",
         "likes": 260,
+        "newsRef": {
+         "id": "682ab843283f",
+         "text": "দিল্লিতে মণিপুরের সংগীতশিল্পীকে খুন , কেন্দ্রকে নিশানা রাহুল গান্ধীর",
+         "tag": "#"
+        },
         "tags": [
          {
           "t": "#India",
@@ -12219,7 +12322,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Slow start: Croissant at Café Amazon. METARs can wait. Overheard at the next table: “ดราม่าหมอโวยหาฟิล์มเอกซเรย์ไม่เจอ ล่าสุด รพ.มหาราชนครศรีธรรมราชออกมาชี้แจงแล้ว…”.",
+        "caption": "Slow start: Croissant at Café Amazon. METARs can wait. “ดราม่าหมอโวยหาฟิล์มเอกซเรย์ไม่เจอ ล่าสุด รพ.มหาราชนครศรีธรรมราชออกมาชี้แจงแล้ว…”.",
         "likes": 223,
         "newsRef": {
          "id": "b6003d51f45a",
@@ -12354,11 +12457,11 @@
          "lon": 110.478053,
          "km": 3.6
         },
-        "caption": "Checked in at Breeze Alley Inn. Bags down, flight bag charging. Overheard at the next table: “世界级嗅觉宝库 ？ 中法专家解密张家界深处的  亿万家产  |文旅|旅游|玻璃桥|香文化”.",
+        "caption": "Checked in at Breeze Alley Inn. Bags down, flight bag charging. “世界级嗅觉宝库 ？ 中法专家解密张家界深处的 亿万家产 |文旅|旅游|玻璃桥|香文化”. You learn a lot about a place from its local paper.",
         "likes": 133,
         "newsRef": {
          "id": "9a5d60397659",
-         "text": "世界级嗅觉宝库 ？ 中法专家解密张家界深处的  亿万家产  |文旅|旅游|玻璃桥|香文化",
+         "text": "世界级嗅觉宝库 ？ 中法专家解密张家界深处的 亿万家产 |文旅|旅游|玻璃桥|香文化",
          "tag": "#世界级嗅觉宝库中法专家解密张家界深处的亿万家产"
         },
         "tags": [
@@ -12427,7 +12530,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Fried chicken at KFC before checking the weather. Local paper on the table: “智能时代 网安护航 张家界市2026年国家网络安全宣传周正式启动”. Never a dull day in Zhangjiajie Hehua International Airport.",
+        "caption": "Coffee and Fried chicken at KFC before checking the weather. Local headlines over breakfast: “智能时代 网安护航 张家界市2026年国家网络安全宣传周正式启动”.",
         "likes": 143,
         "newsRef": {
          "id": "fc8428cba9cd",
@@ -12541,8 +12644,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Zhu Agen for lunch - the Fried rice was the right call.",
+        "caption": "Zhu Agen for lunch - the Fried rice was the right call. What Zhangjiajie Hehua International Airport is talking about today: “中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传周活动”.",
         "likes": 77,
+        "newsRef": {
+         "id": "fa4029785e8a",
+         "text": "中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传周活动",
+         "tag": "#中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传"
+        },
         "tags": [
          {
           "t": "#China",
@@ -12564,6 +12672,11 @@
          {
           "t": "#ZhuAgen",
           "k": "venue"
+         },
+         {
+          "t": "#中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传",
+          "k": "news",
+          "id": "fa4029785e8a"
          }
         ]
        },
@@ -12655,12 +12768,12 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Cheeseburger at McDonald's, 4.5 km from the field. Good fuel for a pilot. Picked up the baijiahao.baidu.com with breakfast: “中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传周活动”. Big talk round here.",
+        "caption": "Cheeseburger at McDonald's, 4.5 km from the field. Good fuel for a pilot. “清朗金融网络 守护安心消费 中国银行张家界市分行开展金融教育宣传周进街道宣讲活动”.",
         "likes": 172,
         "newsRef": {
-         "id": "fa4029785e8a",
-         "text": "中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传周活动",
-         "tag": "#中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传"
+         "id": "a86f2ca1233e",
+         "text": "清朗金融网络 守护安心消费 中国银行张家界市分行开展金融教育宣传周进街道宣讲活动",
+         "tag": "#清朗金融网络守护安心消费中国银行张家界市分行开展金融教育宣传"
         },
         "tags": [
          {
@@ -12689,9 +12802,9 @@
           "k": "menu"
          },
          {
-          "t": "#中国银行张家界市慈利支行营业部积极参与2026年金融教育宣传",
+          "t": "#清朗金融网络守护安心消费中国银行张家界市分行开展金融教育宣传",
           "k": "news",
-          "id": "fa4029785e8a"
+          "id": "a86f2ca1233e"
          }
         ]
        },
@@ -12771,8 +12884,13 @@
         "website": null,
         "menu": null,
         "hours": "Mo-Su 07:00-22:00",
-        "caption": "Grabbed Flat white at Starbucks, a short hop from ZGDY.",
+        "caption": "Grabbed Flat white at Starbucks, a short hop from ZGDY. Local headlines over lunch: “暖心服务无国界 ！ 吴家峪门票站高效助力外籍游客找回遗失钱包”.",
         "likes": 242,
+        "newsRef": {
+         "id": "482671b6e80f",
+         "text": "暖心服务无国界 ！ 吴家峪门票站高效助力外籍游客找回遗失钱包",
+         "tag": "#暖心服务无国界吴家峪门票站高效助力外籍游客找回遗失钱包"
+        },
         "tags": [
          {
           "t": "#China",
@@ -12798,6 +12916,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#暖心服务无国界吴家峪门票站高效助力外籍游客找回遗失钱包",
+          "k": "news",
+          "id": "482671b6e80f"
          }
         ]
        },
@@ -12884,12 +13007,12 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Buffalo wing at KFC, 0.7 km from the field. Good fuel for a pilot. Overheard at the next table: “清朗金融网络 守护安心消费 中国银行张家界市分行开展金融教育宣传周进街道宣讲活动”.",
+        "caption": "Buffalo wing at KFC, 0.7 km from the field. Good fuel for a pilot. “翼装飞行世锦赛 ： 澳大利亚选手实现三连冠 中国选手获季军 -- 文旅 · 体育 -- 人民网”. You learn a lot about a place from its local paper.",
         "likes": 62,
         "newsRef": {
-         "id": "a86f2ca1233e",
-         "text": "清朗金融网络 守护安心消费 中国银行张家界市分行开展金融教育宣传周进街道宣讲活动",
-         "tag": "#清朗金融网络守护安心消费中国银行张家界市分行开展金融教育宣传"
+         "id": "0b4596809502",
+         "text": "翼装飞行世锦赛 ： 澳大利亚选手实现三连冠 中国选手获季军 -- 文旅 · 体育 -- 人民网",
+         "tag": "#翼装飞行世锦赛澳大利亚选手实现三连冠中国选手获季军"
         },
         "tags": [
          {
@@ -12914,9 +13037,9 @@
           "k": "venue"
          },
          {
-          "t": "#清朗金融网络守护安心消费中国银行张家界市分行开展金融教育宣传",
+          "t": "#翼装飞行世锦赛澳大利亚选手实现三连冠中国选手获季军",
           "k": "news",
-          "id": "a86f2ca1233e"
+          "id": "0b4596809502"
          }
         ]
        },
@@ -13069,7 +13192,7 @@
          "lon": 118.27907,
          "km": 2.4
         },
-        "caption": "Checked in at 黄山市君瑞百合酒店. Bags down, flight bag charging. Picked up the hznews.hangzhou.com.cn with breakfast: “杭州出发部分热门车次已售罄 ， 抢票攻略来了”. Big talk round here.",
+        "caption": "Checked in at 黄山市君瑞百合酒店. Bags down, flight bag charging. Picked up the local paper at the hotel bar: “杭州出发部分热门车次已售罄 ， 抢票攻略来了”.",
         "likes": 163,
         "newsRef": {
          "id": "6e45f8aefcbc",
@@ -13130,7 +13253,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Flat white at Starbucks, 4.7 km from the field. Good fuel for a pilot. Overheard at the next table: “纪念币发行最新消息 （ 纪念币发行最新消息2021 ）”.",
+        "caption": "Flat white at Starbucks, 4.7 km from the field. Good fuel for a pilot. Local headlines over breakfast: “纪念币发行最新消息 （ 纪念币发行最新消息2021 ）”.",
         "likes": 92,
         "newsRef": {
          "id": "006952946dc9",
@@ -13769,7 +13892,7 @@
          "lon": 134.1344985,
          "km": 4.5
         },
-        "caption": "Checked in at レーク大樹. Bags down, flight bag charging. Everyone at the bar was on about this: “航空幕僚監部、グローバルホークが鳥取県沖の日本海に墜落したと断定”.",
+        "caption": "Checked in at レーク大樹. Bags down, flight bag charging. What Tottori is talking about today: “航空幕僚監部、グローバルホークが鳥取県沖の日本海に墜落したと断定”.",
         "likes": 92,
         "newsRef": {
          "id": "68dea4764013",
@@ -13865,7 +13988,7 @@
         "website": "https://trees-coffee.com/",
         "menu": null,
         "hours": null,
-        "caption": "Slow start: Cappuccino at TREES COFFEE COMPANY. METARs can wait. Everyone at the bar was on about this: “空自のグローバルホークが鳥取県沖で通信途絶、墜落した可能性が高い”.",
+        "caption": "Slow start: Cappuccino at TREES COFFEE COMPANY. METARs can wait. Picked up the local paper at the café: “空自のグローバルホークが鳥取県沖で通信途絶、墜落した可能性が高い”.",
         "likes": 187,
         "newsRef": {
          "id": "6bf8c965c3fd",
@@ -15663,7 +15786,7 @@
          "lon": -145.7319505,
          "km": 4.1
         },
-        "caption": "Home for the night: Alaskan Steakhouse Motel, 4.1 km from PABI. Local paper on the table: “Collective Memory of C’ulc’ena’ Łuu’ / Gulkana Glacier”. Never a dull day in Delta Junction/Ft Greely.",
+        "caption": "Home for the night: Alaskan Steakhouse Motel, 4.1 km from PABI. “Collective Memory of C’ulc’ena’ Łuu’ / Gulkana Glacier”. You learn a lot about a place from its local paper.",
         "likes": 64,
         "newsRef": {
          "id": "d3b8812bce4b",
@@ -15968,11 +16091,11 @@
          "lon": -134.5699072,
          "km": 0.7
         },
-        "caption": "Home for the night: Aspen Suites, 0.7 km from PAJN. Everyone at the bar was on about this: “Alaska Judicial Council doesn't issue a recommendation on retention election for…”.",
+        "caption": "Home for the night: Aspen Suites, 0.7 km from PAJN. Front page in Juneau: “Alaska Judicial Council doesn't issue a recommendation on retention election for Juneau…”.",
         "likes": 27,
         "newsRef": {
          "id": "520d86196c8d",
-         "text": "Alaska Judicial Council doesn't issue a recommendation on retention election for…",
+         "text": "Alaska Judicial Council doesn't issue a recommendation on retention election for Juneau…",
          "tag": "#AlaskaJudicialCouncil"
         },
         "tags": [
@@ -16065,7 +16188,7 @@
         "website": "https://restaurants.subway.com/united-states/ak/juneau/8777-glacier-hwy",
         "menu": null,
         "hours": null,
-        "caption": "Club sandwich at Subway, 0.9 km from the field. Good fuel for a pilot. Everyone at the bar was on about this: “Mariculture in Alaska! Reflecting on my time spent in the hatchery and creating a home…”.",
+        "caption": "Club sandwich at Subway, 0.9 km from the field. Good fuel for a pilot. Browsing the property pages over breakfast: “Mariculture in Alaska! Reflecting on my time spent in the hatchery and creating a home…”. One day, maybe.",
         "likes": 204,
         "newsRef": {
          "id": "57b7899dad70",
@@ -16234,8 +16357,13 @@
         "website": "https://www.bullwinklespizza.com/",
         "menu": null,
         "hours": "Mo-Su 11:00-22:00",
-        "caption": "Lunch stop: Mini Moose ($10.99) at Bullwinkle's Pizza.",
+        "caption": "Lunch stop: Mini Moose ($10.99) at Bullwinkle's Pizza. “Mary Peltola denies ballot-stacking allegations at Juneau campaign rally”.",
         "likes": 214,
+        "newsRef": {
+         "id": "9ec32c77b74e",
+         "text": "Mary Peltola denies ballot-stacking allegations at Juneau campaign rally",
+         "tag": "#MaryPeltola"
+        },
         "tags": [
          {
           "t": "#UnitedStates",
@@ -16261,6 +16389,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#MaryPeltola",
+          "k": "news",
+          "id": "9ec32c77b74e"
          }
         ]
        },
@@ -16452,7 +16585,7 @@
          "lon": -113.3908471,
          "km": 1.5
         },
-        "caption": "Home for the night: Alberta Inn and Suites, 1.5 km from CEX3. Overheard at the next table: “Stephen Harper: My Alberta Home”.",
+        "caption": "Home for the night: Alberta Inn and Suites, 1.5 km from CEX3. “Stephen Harper: My Alberta Home”. Could get used to that view.",
         "likes": 158,
         "newsRef": {
          "id": "4f5aa0911e14",
@@ -16522,8 +16655,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Bagel at Subway before checking the weather.",
+        "caption": "Coffee and Bagel at Subway before checking the weather. “Taking an inside look…”.",
         "likes": 100,
+        "newsRef": {
+         "id": "a1cb010b4039",
+         "text": "Taking an inside look…",
+         "tag": "#Taking"
+        },
         "tags": [
          {
           "t": "#Canada",
@@ -16549,6 +16687,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#Taking",
+          "k": "news",
+          "id": "a1cb010b4039"
          }
         ]
        },
@@ -16687,7 +16830,7 @@
          "lon": -120.9941574,
          "km": 4.0
         },
-        "caption": "Best Western Town House Lodge tonight. Quick shower, then food. Picked up the Modesto Bee with breakfast: “In Modesto City Schools board races, incumbents likely to hold their seats”. Big talk round here.",
+        "caption": "Best Western Town House Lodge tonight. Quick shower, then food. Everyone at the hotel bar had an opinion on this: “In Modesto City Schools board races, incumbents likely to hold their seats”.",
         "likes": 177,
         "newsRef": {
          "id": "e9b13ad11528",
@@ -16782,8 +16925,13 @@
         "website": "https://www.habitburger.com/locations/ceres/",
         "menu": null,
         "hours": "10:30-20:30",
-        "caption": "Slow start: Cheeseburger at Habit Burger & Grill. METARs can wait.",
+        "caption": "Slow start: Cheeseburger at Habit Burger & Grill. METARs can wait. Local politics in Modesto: “Stanislaus County midterm election results 2026: Live Modesto and Turlock races”.",
         "likes": 228,
+        "newsRef": {
+         "id": "9f343affef43",
+         "text": "Stanislaus County midterm election results 2026: Live Modesto and Turlock races",
+         "tag": "#StanislausCountyLive"
+        },
         "tags": [
          {
           "t": "#UnitedStates",
@@ -16809,6 +16957,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#StanislausCountyLive",
+          "k": "news",
+          "id": "9f343affef43"
          }
         ]
        },
@@ -16927,7 +17080,7 @@
          "lon": -110.3080298,
          "km": 5.6
         },
-        "caption": "Checked in at Bahia Dorada. Bags down, flight bag charging. Local paper on the table: “Diocesis de Victoria eleva oraciones por la paz en Mexico y Tamaulipas”. Never a dull day in La Paz.",
+        "caption": "Checked in at Bahia Dorada. Bags down, flight bag charging. Picked up the local paper at the hotel bar: “Diocesis de Victoria eleva oraciones por la paz en Mexico y Tamaulipas”.",
         "likes": 168,
         "newsRef": {
          "id": "9dca5fe44878",
@@ -16994,11 +17147,11 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Paella at hot dogs el matrix before checking the weather. Local paper on the table: “La Paz une a Bolivia y México en una gran celebración de Todos Santos y Día de…”. Never a dull day in La Paz.",
+        "caption": "Coffee and Paella at hot dogs el matrix before checking the weather. Local politics in La Paz: “La Paz une a Bolivia y México en una gran celebración de Todos Santos y Día de Muertos:…”.",
         "likes": 51,
         "newsRef": {
          "id": "5dad4f394324",
-         "text": "La Paz une a Bolivia y México en una gran celebración de Todos Santos y Día de…",
+         "text": "La Paz une a Bolivia y México en una gran celebración de Todos Santos y Día de Muertos:…",
          "tag": "#BoliviaMéxicoTodos"
         },
         "tags": [
@@ -17097,8 +17250,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Dinner at the only place still open near MMLP: Tamale. Long day, worth it.",
+        "caption": "Dinner at the only place still open near MMLP: Tamale. Long day, worth it. Local headlines over dinner: “La Paz lidera el ranking de competitividad entre ciudades de México - El Sudcaliforniano”.",
         "likes": 213,
+        "newsRef": {
+         "id": "b97ecff889af",
+         "text": "La Paz lidera el ranking de competitividad entre ciudades de México - El Sudcaliforniano",
+         "tag": "#MéxicoSudcaliforniano"
+        },
         "tags": [
          {
           "t": "#Mexico",
@@ -17116,6 +17274,11 @@
           "t": "#MMLP",
           "k": "airport",
           "ident": "MMLP"
+         },
+         {
+          "t": "#MéxicoSudcaliforniano",
+          "k": "news",
+          "id": "b97ecff889af"
          }
         ]
        }
@@ -17180,7 +17343,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Clam chowder at the airfield café, 1 km from the field. Good fuel for a pilot. Local paper on the table: “PS Logistics Buys Rockwood-based Roane Transportation Services”. Never a dull day in Rockwood.",
+        "caption": "Clam chowder at the airfield café, 1 km from the field. Good fuel for a pilot. What Rockwood is talking about today: “PS Logistics Buys Rockwood-based Roane Transportation Services”.",
         "likes": 126,
         "newsRef": {
          "id": "208c8a837365",
@@ -17355,7 +17518,7 @@
          "lon": -73.777674,
          "km": 0.5
         },
-        "caption": "Room key in hand at TWA Hotel. Long day in the air. Everyone at the bar was on about this: “2026 TCS New York City Marathon - The Course”.",
+        "caption": "Room key in hand at TWA Hotel. Long day in the air. Sport pages in New York are all about this: “2026 TCS New York City Marathon - The Course”. Locals take it seriously.",
         "likes": 33,
         "newsRef": {
          "id": "956ca6b68deb",
@@ -17422,8 +17585,13 @@
         "website": "https://www.bk.com/store-locator/store/restaurant_1602",
         "menu": null,
         "hours": "24/7",
-        "caption": "Coffee and Hamburger at Burger King before checking the weather.",
+        "caption": "Coffee and Hamburger at Burger King before checking the weather. Sport pages in New York are all about this: “New York governor race: Hochul defeats Blakeman to win second full term”. Locals take it seriously.",
         "likes": 141,
+        "newsRef": {
+         "id": "fb9545a733b6",
+         "text": "New York governor race: Hochul defeats Blakeman to win second full term",
+         "tag": "#HochulBlakeman"
+        },
         "tags": [
          {
           "t": "#UnitedStates",
@@ -17449,6 +17617,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#HochulBlakeman",
+          "k": "news",
+          "id": "fb9545a733b6"
          }
         ]
        },
@@ -17680,12 +17853,12 @@
         "website": "https://www.starbucks.com/store-locator/store/1030180/target-lawrence-3382-345-rockaway-turnpike-lawrence-ny-11559-us",
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Cappuccino at Starbucks before checking the weather. Everyone at the bar was on about this: “New York governor race: Hochul defeats Blakeman to win second full term”.",
+        "caption": "Coffee and Cappuccino at Starbucks before checking the weather. “He Felt Stuck in New York. So He Started Walking to California.”. You learn a lot about a place from its local paper.",
         "likes": 228,
         "newsRef": {
-         "id": "fb9545a733b6",
-         "text": "New York governor race: Hochul defeats Blakeman to win second full term",
-         "tag": "#HochulBlakeman"
+         "id": "f425786d5a1d",
+         "text": "He Felt Stuck in New York. So He Started Walking to California.",
+         "tag": "#FeltStuckStarted"
         },
         "tags": [
          {
@@ -17710,9 +17883,9 @@
           "k": "venue"
          },
          {
-          "t": "#HochulBlakeman",
+          "t": "#FeltStuckStarted",
           "k": "news",
-          "id": "fb9545a733b6"
+          "id": "f425786d5a1d"
          }
         ]
        },
@@ -17795,8 +17968,13 @@
         "website": "https://www.popeyes.com/store-locator/store/restaurant_84858",
         "menu": null,
         "hours": "Mo-We 09:00-05:00; Th-Sa 09:00-06:00; Su 09:00-05:00",
-        "caption": "Asked what's good at Popeyes. Answer: the Buffalo wing.",
+        "caption": "Asked what's good at Popeyes. Answer: the Buffalo wing. Talk of the town in New York: “New York Times Company in Advanced Talks to Acquire Letterboxd”.",
         "likes": 146,
+        "newsRef": {
+         "id": "33af099d1052",
+         "text": "New York Times Company in Advanced Talks to Acquire Letterboxd",
+         "tag": "#TimesCompanyAdvanced"
+        },
         "tags": [
          {
           "t": "#UnitedStates",
@@ -17822,6 +18000,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#TimesCompanyAdvanced",
+          "k": "news",
+          "id": "33af099d1052"
          }
         ]
        }
@@ -17873,12 +18056,12 @@
          "lon": -71.1397655,
          "km": 3.7
         },
-        "caption": "Home for the night: Holiday Inn Express, 3.7 km from KLWM. Everyone at the bar was on about this: “Lawrence orders removal of homeless encampment”.",
+        "caption": "Home for the night: Holiday Inn Express, 3.7 km from KLWM. Local headlines over a nightcap: “El voto de los « No Sabo Kids » hizo la gran diferencia en EU”.",
         "likes": 79,
         "newsRef": {
-         "id": "5e6ded6c004a",
-         "text": "Lawrence orders removal of homeless encampment",
-         "tag": "#OrdersRemovalHomeless"
+         "id": "b29d6583fbc6",
+         "text": "El voto de los « No Sabo Kids » hizo la gran diferencia en EU",
+         "tag": "#SaboKids"
         },
         "tags": [
          {
@@ -17903,9 +18086,9 @@
           "k": "venue"
          },
          {
-          "t": "#OrdersRemovalHomeless",
+          "t": "#SaboKids",
           "k": "news",
-          "id": "5e6ded6c004a"
+          "id": "b29d6583fbc6"
          }
         ]
        }
@@ -17949,12 +18132,12 @@
         "website": "https://littlecaesars.com/en-us/store/10449/",
         "menu": null,
         "hours": "Mo-Su 11:00-21:00",
-        "caption": "Pizza Margherita at Little Caesars, 3.6 km from the field. Good fuel for a pilot. Picked up the dailyadvance.com with breakfast: “Lawrence Academy earns tennis title”. Big talk round here.",
+        "caption": "Pizza Margherita at Little Caesars, 3.6 km from the field. Good fuel for a pilot. What Lawrence is talking about today: “Central Mass. groups receive share of $4. 6M in MassDevelopment grants”.",
         "likes": 173,
         "newsRef": {
-         "id": "4721b6eee163",
-         "text": "Lawrence Academy earns tennis title",
-         "tag": "#Academy"
+         "id": "1fb89eca22d0",
+         "text": "Central Mass . groups receive share of $4 . 6M in MassDevelopment grants",
+         "tag": "#CentralMassMassDevelopment"
         },
         "tags": [
          {
@@ -17983,9 +18166,9 @@
           "k": "menu"
          },
          {
-          "t": "#Academy",
+          "t": "#CentralMassMassDevelopment",
           "k": "news",
-          "id": "4721b6eee163"
+          "id": "1fb89eca22d0"
          }
         ]
        },
@@ -18096,8 +18279,13 @@
         "website": "https://bgood.com/",
         "menu": null,
         "hours": "Mo-Sa 11:00-21:00; Su 11:00-20:00",
-        "caption": "Crew dinner for one at b.good. Hamburger, no regrets.",
+        "caption": "Crew dinner for one at b.good. Hamburger, no regrets. If you're near Lawrence: “Whatever happened to dating ? New film tackles America relationship crisis”. Sounds like a good night out.",
         "likes": 53,
+        "newsRef": {
+         "id": "68293dca1d21",
+         "text": "Whatever happened to dating ? New film tackles America relationship crisis",
+         "tag": "#WhateverAmerica"
+        },
         "tags": [
          {
           "t": "#UnitedStates",
@@ -18123,6 +18311,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#WhateverAmerica",
+          "k": "news",
+          "id": "68293dca1d21"
          }
         ]
        }
@@ -18561,7 +18754,7 @@
          "lon": -73.777674,
          "km": 0.5
         },
-        "caption": "Home for the night: TWA Hotel, 0.5 km from KJFK. Everyone at the bar was on about this: “How to Spend a Rainy Day in New York City”.",
+        "caption": "Home for the night: TWA Hotel, 0.5 km from KJFK. “How to Spend a Rainy Day in New York City”. You learn a lot about a place from its local paper.",
         "likes": 57,
         "newsRef": {
          "id": "04147775bb3c",
@@ -18627,8 +18820,13 @@
         "website": "https://www.mcdonalds.com/us/en-us/location/6294.html",
         "menu": null,
         "hours": "06:00-24:00",
-        "caption": "Coffee and Cheeseburger at McDonald's before checking the weather.",
+        "caption": "Coffee and Cheeseburger at McDonald's before checking the weather. “26 Things to Do This Winter in New York State”.",
         "likes": 203,
+        "newsRef": {
+         "id": "87e859fb40d4",
+         "text": "26 Things to Do This Winter in New York State",
+         "tag": "#ThingsWinterState"
+        },
         "tags": [
          {
           "t": "#UnitedStates",
@@ -18650,6 +18848,11 @@
          {
           "t": "#McDonaldS",
           "k": "venue"
+         },
+         {
+          "t": "#ThingsWinterState",
+          "k": "news",
+          "id": "87e859fb40d4"
          }
         ]
        },
@@ -18795,7 +18998,7 @@
          "lon": -81.448637,
          "km": 5.7
         },
-        "caption": "Room key in hand at Comfort Inn Mayfield Heights Cleveland East. Long day in the air. Local paper on the table: “U.S. Marshals offer reward for fugitive wanted in Cleveland area”. Never a dull day in Cleveland.",
+        "caption": "Room key in hand at Comfort Inn Mayfield Heights Cleveland East. Long day in the air. Picked up the local paper at the hotel bar: “U.S. Marshals offer reward for fugitive wanted in Cleveland area”.",
         "likes": 74,
         "newsRef": {
          "id": "b8487bf55e9e",
@@ -18866,7 +19069,7 @@
         "website": "https://restaurants.subway.com/united-states/oh/south-euclid/4265-monticello-blvd",
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Club sandwich at Subway before checking the weather. Local paper on the table: “‘Lost & Found in Cleveland’ is now streaming on Prime Video just in time for the holidays”. Never a dull day in Cleveland.",
+        "caption": "Coffee and Club sandwich at Subway before checking the weather. What Cleveland is talking about today: “‘Lost & Found in Cleveland’ is now streaming on Prime Video just in time for the holidays”.",
         "likes": 123,
         "newsRef": {
          "id": "ee631071ed15",
@@ -18988,8 +19191,13 @@
         "website": "cuicobello.com",
         "menu": null,
         "hours": null,
-        "caption": "Ended the day with Carbonara at Cuoco Bello. Tomorrow: wheels up.",
+        "caption": "Ended the day with Carbonara at Cuoco Bello. Tomorrow: wheels up. “2026 Christmas and holiday events in Northeast Ohio: List of celebrations in Cleveland,…”. Might have to come back for that one.",
         "likes": 149,
+        "newsRef": {
+         "id": "d403371a4d35",
+         "text": "2026 Christmas and holiday events in Northeast Ohio: List of celebrations in Cleveland,…",
+         "tag": "#ChristmasNortheastOhio"
+        },
         "tags": [
          {
           "t": "#UnitedStates",
@@ -19015,6 +19223,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#ChristmasNortheastOhio",
+          "k": "news",
+          "id": "d403371a4d35"
          }
         ]
        }
@@ -19236,7 +19449,7 @@
          "lon": -76.7926384,
          "km": 3.2
         },
-        "caption": "Room key in hand at ROK Hotel Kingston, Tapestry Collection by Hilton. Long day in the air. Overheard at the next table: “From Eight Murals to an Official Art District in the Heart of Kingston, Jamaica”.",
+        "caption": "Room key in hand at ROK Hotel Kingston, Tapestry Collection by Hilton. Long day in the air. “From Eight Murals to an Official Art District in the Heart of Kingston, Jamaica”. Might have to come back for that one.",
         "likes": 132,
         "newsRef": {
          "id": "259b9f999e4f",
@@ -19304,8 +19517,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Pizza Margherita at Domino's, 3.5 km from the field. Good fuel for a pilot.",
+        "caption": "Pizza Margherita at Domino's, 3.5 km from the field. Good fuel for a pilot. Culture corner in the Kingston paper: “Kingston Int’l Festival to spotlight art, culture”.",
         "likes": 100,
+        "newsRef": {
+         "id": "d56994b4ba2e",
+         "text": "Kingston Int’l Festival to spotlight art, culture",
+         "tag": "#IntFestival"
+        },
         "tags": [
          {
           "t": "#Jamaica",
@@ -19331,6 +19549,11 @@
          {
           "t": "#Menu",
           "k": "menu"
+         },
+         {
+          "t": "#IntFestival",
+          "k": "news",
+          "id": "d56994b4ba2e"
          }
         ]
        },
@@ -19498,7 +19721,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Slow start: Arepa at the airfield café. METARs can wait. Picked up the Tuu Putchika with breakfast: “19 niños de Maicao y Albania ganan concurso de dibujo sobre el cuidado del agua”. Big talk round here.",
+        "caption": "Slow start: Arepa at the airfield café. METARs can wait. “19 niños de Maicao y Albania ganan concurso de dibujo sobre el cuidado del agua”. Nice to read some good news over breakfast.",
         "likes": 54,
         "newsRef": {
          "id": "8b85f84ef1a1",
@@ -19549,8 +19772,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "the crew room for lunch - the Empanada was the right call.",
+        "caption": "the crew room for lunch - the Empanada was the right call. What Maicao is talking about today: “Policía incauta 254 gramos de marihuana en la vía Maicao–Paraguachón”.",
         "likes": 27,
+        "newsRef": {
+         "id": "ea140d54d4b9",
+         "text": "Policía incauta 254 gramos de marihuana en la vía Maicao–Paraguachón",
+         "tag": "#PolicíaParaguachón"
+        },
         "tags": [
          {
           "t": "#Colombia",
@@ -19568,6 +19796,11 @@
           "t": "#SKLM",
           "k": "airport",
           "ident": "SKLM"
+         },
+         {
+          "t": "#PolicíaParaguachón",
+          "k": "news",
+          "id": "ea140d54d4b9"
          }
         ]
        },
@@ -19630,12 +19863,12 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Bandeja paisa at the airfield café before checking the weather. Local paper on the table: “Policía incauta 254 gramos de marihuana en la vía Maicao–Paraguachón”. Never a dull day in Maicao.",
+        "caption": "Coffee and Bandeja paisa at the airfield café before checking the weather. Local headlines over breakfast: “Capturan a hombre e incautan revólver y seis cartuchos durante operativo en Maicao”.",
         "likes": 19,
         "newsRef": {
-         "id": "ea140d54d4b9",
-         "text": "Policía incauta 254 gramos de marihuana en la vía Maicao–Paraguachón",
-         "tag": "#PolicíaParaguachón"
+         "id": "2a39fed3bafb",
+         "text": "Capturan a hombre e incautan revólver y seis cartuchos durante operativo en Maicao",
+         "tag": "#Capturan"
         },
         "tags": [
          {
@@ -19656,9 +19889,9 @@
           "ident": "SKLM"
          },
          {
-          "t": "#PolicíaParaguachón",
+          "t": "#Capturan",
           "k": "news",
-          "id": "ea140d54d4b9"
+          "id": "2a39fed3bafb"
          }
         ]
        }
@@ -19808,7 +20041,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Pastel de choclo at the airfield café, 1 km from the field. Good fuel for a pilot. Overheard at the next table: “Congreso internacional reúne en Valdivia a especialistas para abordar los desafíos del…”.",
+        "caption": "Pastel de choclo at the airfield café, 1 km from the field. Good fuel for a pilot. Everyone at the café had an opinion on this: “Congreso internacional reúne en Valdivia a especialistas para abordar los desafíos del…”.",
         "likes": 195,
         "newsRef": {
          "id": "76b867100985",
@@ -19859,8 +20092,13 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Asked what's good at the crew room. Answer: the Cazuela.",
+        "caption": "Asked what's good at the crew room. Answer: the Cazuela. “Clínica Alemana Valdivia lidera ranking regional Merco Salud”.",
         "likes": 96,
+        "newsRef": {
+         "id": "75f8a3efb29b",
+         "text": "Clínica Alemana Valdivia lidera ranking regional Merco Salud",
+         "tag": "#ClínicaAlemanaMerco"
+        },
         "tags": [
          {
           "t": "#Chile",
@@ -19878,6 +20116,11 @@
           "t": "#SCVD",
           "k": "airport",
           "ident": "SCVD"
+         },
+         {
+          "t": "#ClínicaAlemanaMerco",
+          "k": "news",
+          "id": "75f8a3efb29b"
          }
         ]
        },
@@ -19940,11 +20183,12 @@
     "63c142895da4",
     "dee3da813c65",
     "6a2306f43e88",
-    "b4fbe47b16e8"
+    "b4fbe47b16e8",
+    "f8660fdb9ad5"
    ],
    "diary": {
-    "hours": 19.4,
-    "nights": 0,
+    "hours": 20.5,
+    "nights": 1,
     "city": "Mount Pleasant",
     "tags": [
      "#FalklandIslands",
@@ -20011,6 +20255,12 @@
           "src": "media/photos/b4fbe47b16e8.jpg",
           "pid": "b4fbe47b16e8",
           "label": "22:55 · SCVD → EGYP"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/f8660fdb9ad5.jpg",
+          "pid": "f8660fdb9ad5",
+          "label": "00:14 · SCVD → EGYP"
          }
         ],
         "flight": {
@@ -21301,6 +21551,18 @@
    "width": 2560,
    "height": 1440,
    "stop": "stop-nf-fl-90"
+  },
+  "f8660fdb9ad5": {
+   "id": "f8660fdb9ad5",
+   "takenAt": "2026-11-15T00:14:00",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115001400_1.jpg",
+   "src": "media/photos/f8660fdb9ad5.jpg",
+   "thumb": "media/thumbs/f8660fdb9ad5.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
   }
  },
  "unplacedPhotos": [
@@ -21399,7 +21661,7 @@
   "softestLanding": -87,
   "averageLanding": -409,
   "longestFlight": "nf-fl-89",
-  "photos": 94,
+  "photos": 95,
   "first": "2026-08-12T20:59:29",
   "last": "2026-11-14T03:51:31"
  },
@@ -24920,82 +25182,56 @@
    "tone": "sad",
    "airport": "KJFK"
   },
-  "5e6ded6c004a": {
-   "id": "5e6ded6c004a",
-   "title": "Lawrence orders removal of homeless encampment",
-   "summary": "",
-   "image": null,
-   "source": "NBC Boston",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPdXZFUDh4MnQ0dXdoOU9CR3JsOWdWR3hneUoyRk9lRFFQLW1BdGxfcFRJOHc0aEtGSXdWX19BdGlJWEQzeG9oTk5ZWXlfOXU0NUtYLXJCTFBkSmVZcXFoajV4V1FFT0xjd3AzRFFMUHZjSWk0RHFJb3hYSmduOTNZOG5aV0RHaWVEN3pQZWE5MGVSLUcweGJV0gGfAUFVX3lxTE5GS2VEanV4em5vWDkyMXdpYXNmOUFFUUVxSHJSZmtWLXBIdnJIX3R6c0E4MmV0bTdrTEFRMXVZVVRQdFptcVkwUHFGRVpaMGx1MkRmQUhaU0NLWUpxcndDQ29TajVoZGdYNzNWejBrM1FxX25NWW9sVG13Mm1YV2VBSkdEbkdNcGdGbU1VYncyUWhhRlBKSE84Z3pBckdyQQ?oc=5",
-   "date": "2026-11-04",
+  "b29d6583fbc6": {
+   "id": "b29d6583fbc6",
+   "title": "El voto de los « No Sabo Kids » hizo la gran diferencia en EU",
+   "summary": "Por mucho tiempo fueron el chiste de la comunidad. El meme. El video de TikTok donde la abuela le dice \"pásame la cuchara\" y el nieto responde \"what?\". Les pusimos una etiqueta burlona: los \"No Sabo K...",
+   "image": "media/news/news-b29d6583fbc6.jpg",
+   "source": "almomento.net",
+   "url": "https://almomento.net/el-voto-de-los-no-sabo-kids-hizo-la-gran-diferencia-en-eu/",
+   "date": "2026-11-06",
    "place": "Lawrence",
-   "lang": "en",
+   "lang": "sp",
    "tone": "neutral",
    "airport": "KLWM"
   },
-  "4721b6eee163": {
-   "id": "4721b6eee163",
-   "title": "Lawrence Academy earns tennis title",
+  "1fb89eca22d0": {
+   "id": "1fb89eca22d0",
+   "title": "Central Mass . groups receive share of $4 . 6M in MassDevelopment grants",
    "summary": "",
-   "image": null,
-   "source": "dailyadvance.com",
-   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQRE9Dc2hYcnAwS3NCWFFNbGNWWWwzUjJEVWRDTTlVOXRqVWJaQkZCaU8yWFB2RWpZejl6TDRzQVQzM0lzMWNpLWx2ZGpqT3hQMjVVUWN6Z0JoOG00UF90c05GeV9TQnhzTmhjZWQ2cjA0ajlqSVE4bk5yTHdOMS1udkhVYVBCOEt2R2dOUEdiLTVHQkZzb1Z3LUVYeDVCUVllRURQSlVRZWNUMHotaVBnS2JOZ0xmWXlHc2VlMVFBVnNRQTVkbXF5UDdzbmdxZU0?oc=5",
+   "image": "media/news/news-1fb89eca22d0.jpg",
+   "source": "wbjournal.com",
+   "url": "https://wbjournal.com/article/central-mass-groups-receive-share-of-4-6m-in-massdevelopment-grants/",
    "date": "2026-11-05",
    "place": "Lawrence",
    "lang": "en",
    "tone": "neutral",
    "airport": "KLWM"
   },
-  "fdc51fb82989": {
-   "id": "fdc51fb82989",
-   "title": "Large fire breaks out at Lawrence home, crews battling blaze",
+  "68293dca1d21": {
+   "id": "68293dca1d21",
+   "title": "Whatever happened to dating ? New film tackles America relationship crisis",
    "summary": "",
-   "image": null,
-   "source": "WCVB",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPS2ZwbXplQmlDcVJWbFJjNkFrRWxVbmFkcmlUdDdxQlRtdEZaSWs1OW55ZmJKWS1feHlfcmh3S2VvS1Zfb09GQnJpRVdzY05oc3MzOWM2RlFvY3Y0Tzl6MU9zdEdvZmEtMEN6X0xzTEdia1N1a0RXM0xtLUFpZGpPYkpCM1gtVTRWVVBQTEQ5djRmbW02RUtPcjI4a0p6QQ?oc=5",
-   "date": "2026-11-03",
+   "image": "media/news/news-68293dca1d21.jpg",
+   "source": "news.crossmap.com",
+   "url": "https://news.crossmap.com/2026/11/07/whatever-happened-to-dating-new-film-tackles-america-s-relationship-crisis/",
+   "date": "2026-11-07",
    "place": "Lawrence",
    "lang": "en",
-   "tone": "sad",
+   "tone": "neutral",
    "airport": "KLWM"
   },
-  "a4258406548c": {
-   "id": "a4258406548c",
-   "title": "Boston 25 News. . Happening Now: Firefighters are responding to a massive fire on Hobson Street in Lawrence.",
-   "summary": "",
+  "7e3d99102b90": {
+   "id": "7e3d99102b90",
+   "title": "More frequent refunds to taxpayers fails on Mass . ballot",
+   "summary": "This year’s Ballot Question 5 asked Massachusetts voters whether to tighten limits on tax collections.",
    "image": null,
-   "source": "Facebook",
-   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOM3FkSXhUU1I4UGNQZU0zZVhOQnBNRVlzb3c3d1ZpSENWWGlGLVJQWTVrYVdsU2tlUFV5X0FweWU3UGJIMXlaWEVDZmVkLUpiSWFXb2FGeUJxbXJBUWhobU9GUkxOaEdPY0FsbksyaVFMRmh2bjc2aGVUNGRHa1VGNThpQTM1M2tfOEZYTFpPeVgzcnFSWXRhU1BoeEVqR2NSU3NMWlFHbVE4dlFQeENfcHNDN0xGSWwwODh5NFhGN0d3UDZoSmozc0Q0cUd2TVRhUEozOFA5NlQ4czQ?oc=5",
-   "date": "2026-11-03",
-   "place": "Lawrence",
-   "lang": "en",
-   "tone": "sad",
-   "airport": "KLWM"
-  },
-  "0192f0e54fb1": {
-   "id": "0192f0e54fb1",
-   "title": "Angela M. Torres Obituary | The Diaz-Healy Funeral Home | South Lawrence, MA",
-   "summary": "",
-   "image": null,
-   "source": "Tribute Archive",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBUbjNRWnNfV244T05DSlNiNWVPb3Z3ZktETWluNGg4RksyM1hiUkxxWUxoTTFKQ3BSblBSMFZVSzZ5RzdrMGZrTUd6UGltZkRqMElCanFRZ2ZyWjJUdFRlM0tMY3ppazhNa3EwbXpEc0YwSy1qN1E?oc=5",
+   "source": "wgbh.org",
+   "url": "https://www.wgbh.org/news/politics/2026-11-04/more-frequent-refunds-to-taxpayers-fails-on-mass-ballot",
    "date": "2026-11-06",
    "place": "Lawrence",
    "lang": "en",
-   "tone": "sad",
-   "airport": "KLWM"
-  },
-  "ee630298d070": {
-   "id": "ee630298d070",
-   "title": "Firefighters battle large house fire in Lawrence, flames seen shooting from building",
-   "summary": "",
-   "image": null,
-   "source": "NBC Boston",
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOTkFNS0hBZnQ3M2syaE5sWlNGeEpNWHEzdXlxS3NPRTg2bVgtdTJUXzV6YlVMcTdqVFlvYXlVUXhOX1ZHb3FuVW1wVTB3TmZVanFQRWRJS0VBRW9Yal9QcHp6Yi1sRk5TdFhMMnRrNWo1RElHOGJZT2ljYVVDYXlZcExLRVdTQndkSVBXRlhHX2x1QmJRMF9fWEYwSzdyY2xUWU1LYVl5ODJyMmxTQVBnNUU0cnpaRS1uNzF4YWp5dUdwQlI2dk5kYdIB0AFBVV95cUxOMTMzQjJMYVZiWERoSXBDMXFQTWpHUHNiT1daVUZyWjRXS01DTElhVF9xcGg1VUVXb1VVSjBrYkVBX0d4SFFjbDc5RHlsMmVFRk9ZVmZlS3BxRjNDemRGRnRMMHBNMk5ZMHJNR2Vuai1fUndNNVBjZlRwdVpmb0hjX0hJLVp2ZklHaXhCUFZMZWZ4YkVXTHhmLXYwZmxQM3B4ZjY3amRseFh1M3RsRDJoUXNOWkE4eDVuaGcwRTd2czZISW5Dc01pUzMxMHFiVnBf?oc=5",
-   "date": "2026-11-03",
-   "place": "Lawrence",
-   "lang": "en",
-   "tone": "sad",
+   "tone": "neutral",
    "airport": "KLWM"
   },
   "165e07ef8f44": {

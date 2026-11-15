@@ -24,7 +24,7 @@ from pathlib import Path
 import importlib.util
 import re
 import sys
-from tune_drone_curves import EXPRESSION
+import drone_precision
 
 _spec = importlib.util.spec_from_file_location('bsp', Path(__file__).resolve().parent / 'bind-sticks-and-pedals.py')
 bsp = importlib.util.module_from_spec(_spec)
@@ -57,9 +57,7 @@ def drone_def(target, indent):
         *cond,
         '  <EventActions>',
         f'    <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" '
-        f'JoystickTarget="{target}" JoystickMode="CUSTOM">',
-        f'      <Parameter Type="Exp" Value="{EXPRESSION}" />',
-        '    </EventActionVirtualJoyStick>',
+        f'JoystickTarget="{target}" JoystickMode="RESPONSECURVE" />',
         '  </EventActions>',
         '</EventDefinition>',
     ], indent)
@@ -67,6 +65,8 @@ def drone_def(target, indent):
 
 def is_ours(d):
     # In the X/Y/twist events, a definition whose only actions are vJoy axes is one this script added.
+    if 'TargetDataDefinition="LOCAL:JOY_0X12340XBEAD_' in d and 'SourceType="Exp"' in d:
+        return True
     return ('JoystickAction="VJOY_AXIS"' in d and 'EventActionRangedAxis' not in d
             and 'EventActionKeyboard' not in d and 'EventActionChangeValue' not in d)
 

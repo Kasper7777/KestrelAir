@@ -1,0 +1,14 @@
+[
+  {
+    "grip": 0,
+    "axis": "X_AXIS",
+    "output": "Z_AXIS",
+    "percent": 50
+  },
+  {
+    "grip": 0,
+    "axis": "Y_AXIS",
+    "output": "RZ_AXIS",
+    "percent": 16384
+  }
+]

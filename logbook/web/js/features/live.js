@@ -304,7 +304,7 @@ export default {
       newsFor.set(ident, n);
       fetch(`/__livenews?ident=${encodeURIComponent(ident)}`).then((r) => r.json()).then((s) => {
         if (s.pending) { setTimeout(() => loadNews(ident), 5000); return; }
-        newsFor.set(ident, { pending: false, stories: s.stories || [], city: s.city });
+        newsFor.set(ident, { pending: false, stories: s.stories || [], city: s.city, wider: s.wider });
         if (store.get('selected') === 'live') drawLiveNews();
       }).catch(() => setTimeout(() => loadNews(ident), 10000));
     }
@@ -332,7 +332,7 @@ export default {
       const place = a.city || a.name || ident;
       if (!n || n.pending) return html`<div class="card live-news"><h4>${role} · ${place}</h4><p class="note"><span class="spinner"></span>Looking up today's local news…</p></div>`;
       if (!n.stories?.length) return html`<div class="card live-news"><h4>${role} · ${place}</h4><p class="note">No local stories found for today yet.</p></div>`;
-      return html`<div class="card live-news"><h4>${role} · ${place}<small>today</small></h4>
+      return html`<div class="card live-news"><h4>${role} · ${place}<small>${n.wider ? `today · from across ${n.wider}` : 'today'}</small></h4>
         ${n.stories.map((s) => html`<a class="story compact" href="${s.url}" target="_blank" rel="noopener">
           <div class="st-img">${s.image ? html`<img src="${s.image}" alt="" loading="lazy">` : html`<div class="cutting"><span class="ct-mast">${s.source || ''}</span><span class="ct-cols"><i></i><i></i></span></div>`}</div>
           <div class="st-body"><div class="st-meta"><b>${s.source || ''}</b></div><h4>${s.title}</h4></div></a>`)}</div>`;

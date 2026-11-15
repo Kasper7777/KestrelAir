@@ -884,6 +884,24 @@
   "title": "La Paz International Airport",
   "url": "https://en.wikipedia.org/wiki/La_Paz_International_Airport"
  },
+ "NZFX": {
+  "cities": [
+   "McMurdo Station",
+   "Scott Base"
+  ],
+  "description": "Airport in Ross Island, Antarctica",
+  "extract": "Phoenix Airfield is an airstrip in Antarctica opened in early 2017, designed to replace the Pegasus Field's role in serving McMurdo Station.",
+  "fetched": "2026-11-15",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/C-17_tests_Phoenix_snow_runway_for_wheeled_aircraft_at_McMurdo_Station_--_Antarctica_--_November_2016.jpg/330px-C-17_tests_Phoenix_snow_runway_for_wheeled_aircraft_at_McMurdo_Station_--_Antarctica_--_November_2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "imageFile": "airport-NZFX.jpg",
+  "kind": "airport",
+  "opened": "2015",
+  "operators": [
+   "United States Antarctic Program"
+  ],
+  "title": "Phoenix Airfield",
+  "url": "https://en.wikipedia.org/wiki/Phoenix_Airfield"
+ },
  "PABI": {
   "cities": [
    "Fort Greely"

@@ -47,6 +47,7 @@ def patch(text):
 
 
 def main():
+    raise SystemExit('Disabled: these custom drone curves caused control problems and were rolled back.')
     installed = '--installed' in sys.argv
     if installed:
         status = subprocess.run(['tasklist', '/FI', 'IMAGENAME eq SPAD.neXt.exe', '/NH'],

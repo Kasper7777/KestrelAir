@@ -1,10 +1,17 @@
 # Drone mode on the main sticks (2026-11-04)
 
-2026-11-14: all six main-stick drone axes, including both twists, use a softer centre
-curve (20% linear + 80% cubic). A quarter of stick travel gives about 6% output;
-half travel gives 20%. Full travel still gives full output. Flight and pink cabin
-bindings retain their existing response. `tune_drone_curves.py` updates existing
-profiles without rebuilding their mode conditions; `--installed` requires SPAD closed.
+**Current status: all precision-curve changes below were rolled back at the user's
+request. Original drone bindings are restored; both installers are disabled.**
+
+2026-11-15: the first curve installer was rolled back and disabled because it
+confused percent inputs with raw hardware values. The replacement in
+`drone_precision.py` reads each grip's actual SPAD LOCAL axis percentage and
+writes raw vJoy counts through `EventActionChangeValue`. It was tested through
+the live SPAD action and virtual controller at nine positions: centre, fine
+movements in both directions, and both ends. Response is 35% linear + 65% cubic:
+10% travel gives 3.6% output, quarter travel gives 9.8%, half gives 25.6%, and full
+travel remains full output. The existing drone/flight/cabin mode conditions are
+preserved. `drone_precision.py --installed` requires SPAD closed.
 
 Throttle B4 toggles the MSFS drone camera (Shift+X). While the drone camera is on (CAMERA STATE 4):
 

@@ -1733,6 +1733,23 @@
 "surface": "CE",
 "tower": true
 },
+"NZFX": {
+"city": "Ross Island",
+"country": {
+"iso": "NZ",
+"name": "New Zealand"
+},
+"elevationFt": 16,
+"ident": "NZFX",
+"lat": -77.967453,
+"lon": 166.525452,
+"longestRunwayFt": 11001,
+"name": "Phoenix Airfield (Mcmurdo Station)",
+"runways": 1,
+"state": null,
+"surface": "SN",
+"tower": false
+},
 "PABI": {
 "city": "Delta Junction/Ft Greely",
 "country": {

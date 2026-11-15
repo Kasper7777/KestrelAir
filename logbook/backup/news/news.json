@@ -539,7 +539,9 @@
 "place": "Dundee",
 "lang": "en",
 "tone": "neutral",
-"site": ""
+"site": "",
+"tries": 1,
+"triedAt": 1794714364
 },
 {
 "id": "ad3e84239a72",
@@ -768,7 +770,9 @@
 "place": "Edinburgh",
 "lang": "en",
 "tone": "neutral",
-"site": ""
+"site": "",
+"tries": 1,
+"triedAt": 1794714375
 }
 ],
 "EGOS|2026-09-04": [],
@@ -832,7 +836,15 @@
 "KHYI|2026-11-02",
 "KRKW|2026-11-03",
 "7FL6|2026-11-03",
-"KJFK|2026-11-04"
+"KJFK|2026-11-04",
+"KLWM|2026-11-05",
+"EGYP|2026-11-15",
+"EGOS|2026-11-07",
+"EGYP~R|2026-11-15",
+"GQPP|2026-11-07",
+"KJFK|2026-11-08",
+"KCGF|2026-11-08",
+"KJFK|2026-11-09"
 ],
 "_qv": {
 "LFRC|2026-08-16": 2,
@@ -903,7 +915,9 @@
 "MKJP|2026-11-10": 2,
 "SKLM|2026-11-10": 2,
 "SCVD|2026-11-13": 2,
-"EGYP|2026-11-14": 2
+"EGYP|2026-11-14": 2,
+"EGYP|2026-11-15": 2,
+"EGYP~R|2026-11-15": 2
 },
 "LFRC|2026-08-16": [
 {
@@ -2339,15 +2353,18 @@
 {
 "id": "eb838976ea19",
 "title": "Kütahyalı Firmalar ZUCHEX 2026’da Yerini Aldı; Dünya Pazarına Açılıyorlar",
-"summary": "",
-"image": null,
+"summary": "ZUCHEX is one of the largest and most influential trade fairs in the region, bringing together leading brands in the home and kitchenware industry with buyers, distributors, and retail chains from all around the world.Showcasing the latest collections and trends in the sector, ZUCHEX offers both exhibitors and professional visitors the opportunity to engage in direct trade, establish strong busine",
+"image": "news-eb838976ea19.jpg",
 "source": "Kütahya'nın Sesi Gazetesi",
-"url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ1liQ0dSSEloQ0pjU3hMTjRnc1FrQ0ZacHdTT1k5d3pCN1VOLVA3ZzZkRlJyTTJTbUUtOGRLTy1tcGdxc2dqanVDRGgwdzA0dnhmLUhieDRrWW15U19TZ3JIck9SMlVxckNrb3V2bllOMjVGeFEzZFBneGtUNFNEWDlUZUdaYzgxVHk5bmZySi02S091c0JPNGhodFFHbm5tVFhqSkRqd29OaTVSRzhHdkxBaGFqNU930gG-AUFVX3lxTFBFTUNsTi1ieHZSYXlXVFZlZFFHSFF3dmoxbTA5NXRYYkJvV2g0TFRIYndEUnZGYTRLTUhXd0pfMlZ3MVpNTy16WWZ6a1NiUWk2b2RkT1BVeUhkbm9DcllKV1g4Nmc2TzUydGkxNHRsSTFEajZqUno2c29yOGRMMFRRTnBXdnRMdUE3bDJlZHVKM0FlYWd6dVBCRlRvbjgtd0NRTno2YlVHLU8yUG4xNG9sQml4Uy1HMV9JYnRuU3c?oc=5",
+"url": "https://visit.zuchex.com/event/zuchex-2026",
 "date": "2026-09-01",
 "place": "Kütahya",
 "lang": "tr",
 "tone": "neutral",
-"site": "https://www.kutahyaninsesi.com"
+"site": "https://www.kutahyaninsesi.com",
+"tries": 1,
+"triedAt": 1794714389,
+"resolved": true
 }
 ],
 "LQMO|2026-09-01": [],
@@ -2418,11 +2435,14 @@
 "summary": "EQS-News: VIB Vermögen AG / Schlagwort(e): Immobilien VIB Vermögen AG: Weitere Mietverträge über 3.300 m2 Büro- und Dienstleistungsflächen im HCC Dortmund abgeschlossen 02.09.2026",
 "image": null,
 "source": "finanznachrichten.de",
-"url": "https://www.finanznachrichten.de/nachrichten-2026-09/69470074-eqs-news-vib-vermoegen-ag-weitere-mietvertraege-ueber-3-300-m2-buero-und-dienstleistungsflaechen-im-hcc-dortmund-abgeschlossen-022.htm",
+"url": "https://www.eqs-news.com/news/corporate/vib-vermoegen-ag-weitere-mietvertraege-ueber-3-300-m2-buero-und-dienstleistungsflaechen-im-hcc-dortmund-abgeschlossen/5c3caae7-9a2c-4db1-91a4-29e85899cb28_de",
 "date": "2026-09-02",
 "place": "Dortmund",
 "lang": "ge",
-"tone": "sad"
+"tone": "sad",
+"tries": 4,
+"triedAt": 1794714380,
+"resolved": true
 }
 ],
 "LEMR|2026-09-02": [],
@@ -2586,7 +2606,9 @@
 "place": "Kristiansand",
 "lang": "no",
 "tone": "neutral",
-"site": ""
+"site": "",
+"tries": 1,
+"triedAt": 1794714401
 },
 {
 "id": "5744336ad969",
@@ -2612,7 +2634,9 @@
 "place": "Kristiansand",
 "lang": "no",
 "tone": "neutral",
-"site": "https://www.krs.no"
+"site": "https://www.krs.no",
+"tries": 1,
+"triedAt": 1794714412
 }
 ],
 "EFHK|2026-09-04": [
@@ -3941,76 +3965,52 @@
 ],
 "KLWM|2026-11-05": [
 {
-"id": "5e6ded6c004a",
-"title": "Lawrence orders removal of homeless encampment",
-"summary": "",
-"image": null,
-"source": "NBC Boston",
-"url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPdXZFUDh4MnQ0dXdoOU9CR3JsOWdWR3hneUoyRk9lRFFQLW1BdGxfcFRJOHc0aEtGSXdWX19BdGlJWEQzeG9oTk5ZWXlfOXU0NUtYLXJCTFBkSmVZcXFoajV4V1FFT0xjd3AzRFFMUHZjSWk0RHFJb3hYSmduOTNZOG5aV0RHaWVEN3pQZWE5MGVSLUcweGJV0gGfAUFVX3lxTE5GS2VEanV4em5vWDkyMXdpYXNmOUFFUUVxSHJSZmtWLXBIdnJIX3R6c0E4MmV0bTdrTEFRMXVZVVRQdFptcVkwUHFGRVpaMGx1MkRmQUhaU0NLWUpxcndDQ29TajVoZGdYNzNWejBrM1FxX25NWW9sVG13Mm1YV2VBSkdEbkdNcGdGbU1VYncyUWhhRlBKSE84Z3pBckdyQQ?oc=5",
-"date": "2026-11-04",
+"id": "b29d6583fbc6",
+"title": "El voto de los « No Sabo Kids » hizo la gran diferencia en EU",
+"summary": "Por mucho tiempo fueron el chiste de la comunidad. El meme. El video de TikTok donde la abuela le dice \"pásame la cuchara\" y el nieto responde \"what?\". Les pusimos una etiqueta burlona: los \"No Sabo K...",
+"image": "news-b29d6583fbc6.jpg",
+"source": "almomento.net",
+"url": "https://almomento.net/el-voto-de-los-no-sabo-kids-hizo-la-gran-diferencia-en-eu/",
+"date": "2026-11-06",
 "place": "Lawrence",
-"lang": "en",
+"lang": "sp",
 "tone": "neutral"
 },
 {
-"id": "4721b6eee163",
-"title": "Lawrence Academy earns tennis title",
+"id": "1fb89eca22d0",
+"title": "Central Mass . groups receive share of $4 . 6M in MassDevelopment grants",
 "summary": "",
-"image": null,
-"source": "dailyadvance.com",
-"url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQRE9Dc2hYcnAwS3NCWFFNbGNWWWwzUjJEVWRDTTlVOXRqVWJaQkZCaU8yWFB2RWpZejl6TDRzQVQzM0lzMWNpLWx2ZGpqT3hQMjVVUWN6Z0JoOG00UF90c05GeV9TQnhzTmhjZWQ2cjA0ajlqSVE4bk5yTHdOMS1udkhVYVBCOEt2R2dOUEdiLTVHQkZzb1Z3LUVYeDVCUVllRURQSlVRZWNUMHotaVBnS2JOZ0xmWXlHc2VlMVFBVnNRQTVkbXF5UDdzbmdxZU0?oc=5",
+"image": "news-1fb89eca22d0.jpg",
+"source": "wbjournal.com",
+"url": "https://wbjournal.com/article/central-mass-groups-receive-share-of-4-6m-in-massdevelopment-grants/",
 "date": "2026-11-05",
 "place": "Lawrence",
 "lang": "en",
 "tone": "neutral"
 },
 {
-"id": "fdc51fb82989",
-"title": "Large fire breaks out at Lawrence home, crews battling blaze",
+"id": "68293dca1d21",
+"title": "Whatever happened to dating ? New film tackles America relationship crisis",
 "summary": "",
-"image": null,
-"source": "WCVB",
-"url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPS2ZwbXplQmlDcVJWbFJjNkFrRWxVbmFkcmlUdDdxQlRtdEZaSWs1OW55ZmJKWS1feHlfcmh3S2VvS1Zfb09GQnJpRVdzY05oc3MzOWM2RlFvY3Y0Tzl6MU9zdEdvZmEtMEN6X0xzTEdia1N1a0RXM0xtLUFpZGpPYkpCM1gtVTRWVVBQTEQ5djRmbW02RUtPcjI4a0p6QQ?oc=5",
-"date": "2026-11-03",
+"image": "news-68293dca1d21.jpg",
+"source": "news.crossmap.com",
+"url": "https://news.crossmap.com/2026/11/07/whatever-happened-to-dating-new-film-tackles-america-s-relationship-crisis/",
+"date": "2026-11-07",
 "place": "Lawrence",
 "lang": "en",
-"tone": "sad"
+"tone": "neutral"
 },
 {
-"id": "a4258406548c",
-"title": "Boston 25 News. . Happening Now: Firefighters are responding to a massive fire on Hobson Street in Lawrence.",
-"summary": "",
+"id": "7e3d99102b90",
+"title": "More frequent refunds to taxpayers fails on Mass . ballot",
+"summary": "This year’s Ballot Question 5 asked Massachusetts voters whether to tighten limits on tax collections.",
 "image": null,
-"source": "Facebook",
-"url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOM3FkSXhUU1I4UGNQZU0zZVhOQnBNRVlzb3c3d1ZpSENWWGlGLVJQWTVrYVdsU2tlUFV5X0FweWU3UGJIMXlaWEVDZmVkLUpiSWFXb2FGeUJxbXJBUWhobU9GUkxOaEdPY0FsbksyaVFMRmh2bjc2aGVUNGRHa1VGNThpQTM1M2tfOEZYTFpPeVgzcnFSWXRhU1BoeEVqR2NSU3NMWlFHbVE4dlFQeENfcHNDN0xGSWwwODh5NFhGN0d3UDZoSmozc0Q0cUd2TVRhUEozOFA5NlQ4czQ?oc=5",
-"date": "2026-11-03",
-"place": "Lawrence",
-"lang": "en",
-"tone": "sad"
-},
-{
-"id": "0192f0e54fb1",
-"title": "Angela M. Torres Obituary | The Diaz-Healy Funeral Home | South Lawrence, MA",
-"summary": "",
-"image": null,
-"source": "Tribute Archive",
-"url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBUbjNRWnNfV244T05DSlNiNWVPb3Z3ZktETWluNGg4RksyM1hiUkxxWUxoTTFKQ3BSblBSMFZVSzZ5RzdrMGZrTUd6UGltZkRqMElCanFRZ2ZyWjJUdFRlM0tMY3ppazhNa3EwbXpEc0YwSy1qN1E?oc=5",
+"source": "wgbh.org",
+"url": "https://www.wgbh.org/news/politics/2026-11-04/more-frequent-refunds-to-taxpayers-fails-on-mass-ballot",
 "date": "2026-11-06",
 "place": "Lawrence",
 "lang": "en",
-"tone": "sad"
-},
-{
-"id": "ee630298d070",
-"title": "Firefighters battle large house fire in Lawrence, flames seen shooting from building",
-"summary": "",
-"image": null,
-"source": "NBC Boston",
-"url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOTkFNS0hBZnQ3M2syaE5sWlNGeEpNWHEzdXlxS3NPRTg2bVgtdTJUXzV6YlVMcTdqVFlvYXlVUXhOX1ZHb3FuVW1wVTB3TmZVanFQRWRJS0VBRW9Yal9QcHp6Yi1sRk5TdFhMMnRrNWo1RElHOGJZT2ljYVVDYXlZcExLRVdTQndkSVBXRlhHX2x1QmJRMF9fWEYwSzdyY2xUWU1LYVl5ODJyMmxTQVBnNUU0cnpaRS1uNzF4YWp5dUdwQlI2dk5kYdIB0AFBVV95cUxOMTMzQjJMYVZiWERoSXBDMXFQTWpHUHNiT1daVUZyWjRXS01DTElhVF9xcGg1VUVXb1VVSjBrYkVBX0d4SFFjbDc5RHlsMmVFRk9ZVmZlS3BxRjNDemRGRnRMMHBNMk5ZMHJNR2Vuai1fUndNNVBjZlRwdVpmb0hjX0hJLVp2ZklHaXhCUFZMZWZ4YkVXTHhmLXYwZmxQM3B4ZjY3amRseFh1M3RsRDJoUXNOWkE4eDVuaGcwRTd2czZISW5Dc01pUzMxMHFiVnBf?oc=5",
-"date": "2026-11-03",
-"place": "Lawrence",
-"lang": "en",
-"tone": "sad"
+"tone": "neutral"
 }
 ],
 "GQPP|2026-11-07": [
@@ -4555,7 +4555,63 @@
 "9aec3aec8c8e5d1d3166c44c413ea5853e8cf08b": "c173cdaa76fb",
 "cbecdc8ea6bd7af8d813292a5e226e1d200ae446": "15cb27a9a330",
 "fb619396081366084519e9a0826b45dd6a50cead": "6622c720d97e",
-"feacf1b75da53f0ace905ed8d4d5788e2c519908": "a264c75eca90"
+"feacf1b75da53f0ace905ed8d4d5788e2c519908": "a264c75eca90",
+"de08cac116df72207dd278e1642a2a88941a5979": "eb838976ea19"
 },
-"_finder": 3
+"_finder": 3,
+"EGYP|2026-11-15": [],
+"EGYP~R|2026-11-15": [
+{
+"id": "4bbc09b90543",
+"title": "1st T20I, Costa Rica tour of Falkland Islands at Stanley, Nov 15 2026",
+"summary": "",
+"image": null,
+"source": "ESPN",
+"url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxONzRZYW4tNXZtcHVwWC02eF9NbEt0VWZvUmE4YXI2S1VnNkU3TXNPeExxSFVleDVTNXdQRUdGNFFESG9FaXhyOWhVeF8ySnNGcnM2WlRsdm9zeW9lVDIxS0VIWUNBaXBJN296aVJFQlpFV1JGSVpkRWx1WmR6ZHBMWDJCMEl3aXRXTnI2Y1ZMZVd0STRwbUY4dWFPbEtJUW9aLU1vSzRn?oc=5",
+"date": "2026-11-14",
+"place": "Falkland Islands",
+"lang": "en",
+"tone": "neutral",
+"site": "https://www.espn.com.au"
+},
+{
+"id": "beab7cb3d99e",
+"title": "Falkland Islands: Argentina asked the International Tribunal for the Law of the Sea to halt the UK’s oil exploitation",
+"summary": "",
+"image": null,
+"source": "Noticias Ambientales",
+"url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNZElHNzY3SC1scjVUNlhYRHNJMXlWa2ZBVVJTc19OMzNIWG5fa1pBTzN1NHhMTFAxVnNNa1o5R00tbUxjeDkxR0s4SzV5djVQY2NZcFFJak5TN29yZWhGSmxidVFYb0dycGRSQ2FucEN0QnVfTHMtN1BWUkdmZGhQLS1Tb1BVcmtlX0lmNEVONHpZS2tDWmpQMnA4UWZEdmhzTDVaZWRGLUI1aURYWUY3dmpNWFZTc05tMnJKWjNUa2JVSW1BTGw0Z1FHenZTdjJpY3ByUi1PZWpGOFJXWTBMSm1yeE9Uck9ROEIwMzdUbk92X28wbGfSAfsBQVVfeXFMTVN3YW5DSUpvdDVabUNDalg2TlEtcW5aY1dyejFoaUQxVWRqcFhsTmN4QXo2V1hyLXJ6X21BTzVKWDNWbWJPNGhPTGVkbmlsamZCWEx1dGhsRUw4UGJPaW9Lb1l4MEZ5QmRfWFZ0NDdRZjladzBrMTJjMlljemJBenF3WUJDQzN5UUthZWRjN09LVkFBWVpvckpCUzc0UHBfcE51NHMzUE5PcXNYRzRMTWpZUUJQOFVHTmdBU0F1dGkzc2VDZV9IRU4zanppWjVpNFd6SXJJSi00Vll3ck1RYkdZaU10dDlxQmRtVkQ1WjZvb0VhTXNaeXo1YXM?oc=5",
+"date": "2026-11-13",
+"place": "Falkland Islands",
+"lang": "en",
+"tone": "neutral",
+"site": "https://noticiasambientales.com"
+},
+{
+"id": "3d5b7b523894",
+"title": "‘What people don’t realise’ about landing a WWE contract",
+"summary": "",
+"image": null,
+"source": "Nine.com.au",
+"url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOVTFHNDdRT2R0eXJTajBaMWhUT0htOFNfdVpGRVRUVnFXMlVkMGtIWXhXWWxyZi04ZXFIbVR4d2JBWERIbFBVTlJZS2RkU1hBSlp3T29mX3p3QzVleFg2SV9qNEk3eVM5eFg1Tzk0Qmc2Ti1fVmtkVVNmMGpjeWJWT3dPbEtvRDJnSWRSbjAyUF9MV2xoUGpJdUlIWDNYb2J1T2JYYzdyX2JtT3BiQXNQQTEtNDNFQXY3Y2NIZ0tZcVJxZkM1ZUJsTndTVUJwSUt2WklYc2E3aG1GYWhtaFdhb19B?oc=5",
+"date": "2026-11-14",
+"place": "Falkland Islands",
+"lang": "en",
+"tone": "neutral",
+"site": "https://www.nine.com.au"
+},
+{
+"id": "48db684f21ad",
+"title": "Unmuzzled Warner played and missed with sensational ‘cover-up’ claim",
+"summary": "",
+"image": null,
+"source": "Nine.com.au",
+"url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPNGVscVFING55ajVLRWIyU19VY3o5eXpoZ3ZMLTJZT2JoSjJWcmI1RGVXN2R4RFZjaXpkOXYtX0ZyRDFobUsyWGptZ1VVeVctaEwxUlJkNnVSY0gzNG1xZ2xONV9CRnRqNkV5T0d5MUlWYVlyTmdNY3RMaHJjSDRWaXNjb1JXa1R0bE50YzZvaWd1SVlfcTZQS0pVSGxFUGF2cEhseGNSdmpsdjFpY21NLVY5WVQzbGd5UmNPdjE2cUpYS2I4UkFoWWk0aFhtTmdIZkV2a3Y2NTNGaHBIeUhvX2lsanQtel9iLWtHNGJ6RjRzczJxT2x6OS1tZ05POGc?oc=5",
+"date": "2026-11-14",
+"place": "Falkland Islands",
+"lang": "en",
+"tone": "neutral",
+"site": "https://www.nine.com.au"
+}
+]
 }

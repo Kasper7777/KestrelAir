@@ -1,0 +1,47 @@
+[
+  {
+    "input_percent": 0,
+    "expected_percent": 0.0,
+    "actual_percent": 0
+  },
+  {
+    "input_percent": 25,
+    "expected_percent": 37.1875,
+    "actual_percent": 37
+  },
+  {
+    "input_percent": 37.5,
+    "expected_percent": 45.1171875,
+    "actual_percent": 45
+  },
+  {
+    "input_percent": 45,
+    "expected_percent": 48.2175,
+    "actual_percent": 48
+  },
+  {
+    "input_percent": 50,
+    "expected_percent": 50.0,
+    "actual_percent": 50
+  },
+  {
+    "input_percent": 55,
+    "expected_percent": 51.7825,
+    "actual_percent": 52
+  },
+  {
+    "input_percent": 62.5,
+    "expected_percent": 54.8828125,
+    "actual_percent": 55
+  },
+  {
+    "input_percent": 75,
+    "expected_percent": 62.8125,
+    "actual_percent": 63
+  },
+  {
+    "input_percent": 100,
+    "expected_percent": 100.0,
+    "actual_percent": 100
+  }
+]

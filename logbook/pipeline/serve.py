@@ -247,7 +247,18 @@ def live_news(ident):
             media = os.path.join(WEB, 'media', 'news')
             os.makedirs(media, exist_ok=True)
             out = []
-            for st in news.stories_for(a, datetime.now(), news_dir, fetch=True, limit=4):
+            found = news.stories_for(a, datetime.now(), news_dir, fetch=True, limit=4)
+            wider = None
+            if not found:       # nothing from the town today: widen to its region / territory / country
+                region = a.get('state') or (a.get('country') or {}).get('name')
+                if region and region != a.get('city'):
+                    wider = region
+                    found = news.stories_for({**a, 'ident': f'{ident}~R', 'city': region, 'state': None, 'wiki': {}},
+                                             datetime.now(), news_dir, fetch=True, limit=6)
+                    # a wider search drifts: keep only stories whose headline actually names the place
+                    names = [n.lower() for n in (region, a.get('city')) if n]
+                    found = [s for s in found if any(n in (s.get('title') or '').lower() for n in names)][:4]
+            for st in found:
                 st = dict(st)
                 if st.get('image'):
                     src, dst = os.path.join(news_dir, 'img', st['image']), os.path.join(media, st['image'])
@@ -255,7 +266,7 @@ def live_news(ident):
                         shutil.copy2(src, dst)
                     st['image'] = f'media/news/{st["image"]}' if os.path.exists(dst) else None
                 out.append(st)
-            _livenews[key] = {'stories': out, 'city': a.get('city'), 'name': a.get('name')}
+            _livenews[key] = {'stories': out, 'city': a.get('city'), 'name': a.get('name'), 'wider': wider}
         except Exception as e:
             _livenews[key] = {'stories': [], 'failed': True, 'error': str(e)}
     threading.Thread(target=fetch, daemon=True).start()

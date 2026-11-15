@@ -180,7 +180,7 @@ export default {
       const length = d.nights ? `${d.nights} night${d.nights === 1 ? '' : 's'}` : `${Math.round(d.hours)} hours`;
       let n = 0;
       return html`<section class="stay" id="stay-${s.id}">
-        <div class="stay-head" style="${a.wiki?.image ? `--bg:url('${a.wiki.image}')` : ''}">
+        <div class="stay-head" style="${a.wiki?.image ? `--bg:url('${new URL(a.wiki.image, document.baseURI).href}')` : ''}">
           <div><span class="stay-code">${a.country?.iso ? html`<img src="${flagUrl(a.country.iso)}" alt="" onerror="this.remove()">` : ''}${s.airport}</span>
             <h3>${d.city}</h3><small>${a.name} · ${shortFmt.format(arrive)}${leave ? ` – ${shortFmt.format(leave)}` : ' – now'} · ${length}${d.ongoing ? (ui.liveInfo?.()?.dep?.ident === s.airport ? ' · left - in the air now' : ' · still here') : ''}</small></div>
           <button class="link-btn" data-leg="${s.after}">${icon('plane')}See the flight in</button>
@@ -207,7 +207,7 @@ export default {
       // newest first, like a feed: a flight under way right now goes at the very top, then the latest stop
       const live = ui.liveInfo?.();
       const liveBlock = live ? html`<section class="stay live-stay">
-          <div class="stay-head" style="${live.dep.img ? `--bg:url('${live.dep.img}')` : ''}">
+          <div class="stay-head" style="${live.dep.img ? `--bg:url('${new URL(live.dep.img, document.baseURI).href}')` : ''}">
             <div><span class="stay-code"><span class="lp-dot ${live.f.status}"></span>${live.f.status === 'ground' ? 'On the ground' : 'In the air now'}</span>
               <h3>${live.label}</h3>
               <small>${[live.aircraft, live.f.position?.alt != null && live.f.status !== 'ground' ? `${live.f.position.alt.toLocaleString('en-GB')} ft` : '',

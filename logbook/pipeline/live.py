@@ -260,10 +260,13 @@ class SimSource:
                         time.sleep(self.EVERY)                   # in the menus: no aircraft yet
                         continue
                     dec = lambda b: b.decode('utf-8', 'replace').strip() if isinstance(b, (bytes, bytearray)) else (str(b) if b else None)
-                    snap = {'lat': lat, 'lon': lon, 'alt': _num(v['PLANE_ALTITUDE']) or 0, 'agl': _num(v['PLANE_ALT_ABOVE_GROUND']) or 0,
+                    # a reading the sim skipped this round keeps its last good value (never a fake 0)
+                    prev_s = self.snap or {}
+                    keep = lambda key, name, d=0: (_num(v[name]) if _num(v[name]) is not None else prev_s.get(key, d))
+                    snap = {'lat': lat, 'lon': lon, 'alt': keep('alt', 'PLANE_ALTITUDE'), 'agl': keep('agl', 'PLANE_ALT_ABOVE_GROUND'),
                             'heading': (math.degrees(_num(v['PLANE_HEADING_DEGREES_TRUE']) or 0)) % 360,
-                            'gs': _num(v['GROUND_VELOCITY']) or 0, 'ias': _num(v['AIRSPEED_INDICATED']) or 0,
-                            'vs': _num(v['VERTICAL_SPEED']) or 0, 'ground': bool(_num(v['SIM_ON_GROUND'])),
+                            'gs': keep('gs', 'GROUND_VELOCITY'), 'ias': keep('ias', 'AIRSPEED_INDICATED'),
+                            'vs': keep('vs', 'VERTICAL_SPEED'), 'ground': bool(keep('ground', 'SIM_ON_GROUND', False)),
                             'title': dec(v['TITLE']), 'tail': dec(v['ATC_ID']), 'at': time.time(),
                             'ete': _num(v['GPS_ETE']) if _num(v['GPS_IS_ACTIVE_FLIGHT_PLAN']) else None}
                     with self.lock:

@@ -13,6 +13,7 @@ import lightbox from './features/lightbox.js';
 import timeline from './features/timeline.js';
 import gallery from './features/gallery.js';
 import insights from './features/insights.js';
+import finances from './features/finances.js';
 import logbook from './features/logbook.js';
 import layers from './features/layers.js';
 import diary from './features/diary.js';
@@ -25,7 +26,7 @@ import appsettings from './features/appsettings.js';
 import live from './features/live.js';
 import legend from './features/legend.js';
 
-const FEATURES = [header, journeyList, detail, lightbox, timeline, gallery, insights, logbook, layers, diary, settings, aircraft, newsFeature, docs, appsettings, live, legend, glassfx];
+const FEATURES = [header, journeyList, detail, lightbox, timeline, gallery, insights, finances, logbook, layers, diary, settings, aircraft, newsFeature, docs, appsettings, live, legend, glassfx];
 
 async function start() {
   // keep the local launcher alive while this tab is open; surface build errors
@@ -103,5 +104,5 @@ function makeUi(db) {
 
 start().catch((e) => {
   console.error(e);
-  document.getElementById('boot').innerHTML = `<div class="boot-err"><b>Couldn't open the logbook.</b><br>${e.message}<br><small>Start it with Kestrel Air Logbook.exe so the data is rebuilt and served.</small></div>`;
+  document.getElementById('boot').innerHTML = `<div class="boot-err"><b>Couldn't open the logbook.</b><br>${e.message}<br><small>Start it with Air Vulture.exe so the data is rebuilt and served.</small></div>`;
 });

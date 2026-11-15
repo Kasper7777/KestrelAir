@@ -19,7 +19,7 @@ import urllib.request
 import netread  # noqa: E402
 from datetime import datetime, timedelta
 
-UA = {'User-Agent': 'KestrelAirLogbook/1.0'}
+UA = {'User-Agent': 'AirVulture/1.0'}
 API = 'https://www.simbrief.com/api/xml.fetcher.php'
 
 

@@ -44,6 +44,15 @@ def slugify(name):
     return re.sub(r'[^a-z0-9]+', '-', (name or 'pilot').lower()).strip('-') or 'pilot'
 
 
+FEATURES = {'finances': False, 'neoflyWrite': False}
+
+
+def features(cfg):
+    """Optional parts of the app and whether they are on (all off until switched on in Settings)."""
+    saved = cfg.get('features') or {}
+    return {k: bool(saved.get(k, v)) for k, v in FEATURES.items()}
+
+
 def pilot_dir(name):
     return os.path.join(ROOT, 'backup', 'pilots', slugify(name))
 
@@ -327,6 +336,11 @@ def main(fetch=True, publish=True):
                         'engines': nf['aircraft'].get(f['aircraft'], {}).get('engines'),
                         'type': f['type'], 'pay': f['pay'], 'completed': f['status'] == 0})
     out['companyFlights'] = company
+    # optional parts of the app, switched on in Settings (config.json "features")
+    feats = features(cfg)
+    out['meta']['features'] = feats
+    if feats['finances']:
+        out['finances'] = nf['finances']
     print(f'Company: {len(company)} flights by hired pilots')
     # per-pilot settings: display name and photo (set from the app's Pilot settings)
     mine = pcfg.get('pilots', {}).get(nf['pilot']['name'], {})

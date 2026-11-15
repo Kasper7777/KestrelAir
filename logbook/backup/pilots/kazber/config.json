@@ -32,5 +32,8 @@
         "onlyDuringJourney": true
       }
     ]
+  },
+  "features": {
+    "finances": true
   }
 }

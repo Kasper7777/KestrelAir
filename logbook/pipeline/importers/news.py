@@ -33,7 +33,7 @@ import netread  # noqa: E402
 from datetime import datetime, timedelta
 from xml.etree import ElementTree
 
-UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 KestrelAirLogbook',
+UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 AirVulture',
       'Accept-Language': 'en-GB,en;q=0.8'}
 GDELT_COUNTRY = {'GB': 'UK', 'JE': 'UK', 'GG': 'UK', 'FK': 'UK', 'US': 'US', 'FR': 'FR', 'ES': 'SP', 'DE': 'GM', 'HR': 'HR', 'TR': 'TU',
                  'CY': 'CY', 'BA': 'BK', 'NO': 'NO', 'FI': 'FI', 'RU': 'RS', 'KZ': 'KZ', 'CN': 'CH', 'IN': 'IN', 'TH': 'TH', 'KR': 'KS',

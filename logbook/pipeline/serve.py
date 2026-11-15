@@ -476,6 +476,37 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             except Exception as e:
                 log('wipe failed:\n' + traceback.format_exc())
                 return self._json({'ok': False, 'error': str(e)})
+        if path == '/__features':
+            # switch an optional part of the app on or off (Settings), then republish
+            try:
+                import build
+                n = int(self.headers.get('Content-Length') or 0)
+                req = json.loads(self.rfile.read(n) or b'{}')
+                key = req.get('key')
+                if key not in build.FEATURES:
+                    return self._json({'ok': False, 'error': 'Unknown setting'})
+                cfg_path = os.path.join(ROOT, 'config.json')
+                cfg = build.load_json(cfg_path, {})
+                cfg.setdefault('features', {})[key] = bool(req.get('on'))
+                with open(cfg_path, 'w', encoding='utf-8') as fh:
+                    json.dump(cfg, fh, indent=2)
+                log(f'setting {key} = {bool(req.get("on"))}')
+                rebuilder.ensure(force=True, then_fetch=False)
+                return self._json({'ok': not rebuilder.error, 'features': build.features(cfg)})
+            except Exception as e:
+                log('feature switch failed:\n' + traceback.format_exc())
+                return self._json({'ok': False, 'error': str(e)})
+        if path == '/__neofly-write':
+            import neofly_write
+            res = neofly_write.status()
+            n = int(self.headers.get('Content-Length') or 0)
+            if json.loads(self.rfile.read(n) or b'{}').get('test'):     # dry run: open for writing, change nothing
+                try:
+                    neofly_write.test()
+                    res['test'] = 'ok'
+                except Exception as e:
+                    res['test'] = str(e)
+            return self._json(res)
         if path == '/__settings':
             try:
                 n = int(self.headers.get('Content-Length') or 0)

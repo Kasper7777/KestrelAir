@@ -1,4 +1,4 @@
-# Kestrel Air Logbook
+# Air Vulture
 
 An interactive map of every flight: NeoFly career legs as glowing great-circle
 routes on a 3D globe, a boarding-pass card per leg, MSFS screenshots pinned to
@@ -6,7 +6,7 @@ the place they were taken, and a replay that flies the whole journey.
 
 ## Use it
 
-Double-click **`Kestrel Air Logbook.exe`** in this folder (the kestrel icon). The
+Double-click **`Air Vulture.exe`** in this folder (the vulture icon). The
 desktop and Start-menu shortcuts point at the same exe.
 
 It reads NeoFly and your screenshot folders, rebuilds the logbook and opens it in
@@ -18,7 +18,7 @@ minutes after you close the tab.
 
 Nothing in the app is tied to one person. To use it with your own NeoFly career:
 
-1. Clone or download the repo and double-click **`Kestrel Air Logbook.exe`**. The first
+1. Clone or download the repo and double-click **`Air Vulture.exe`**. The first
    time, it offers to install **uv** (a small free Python runner); say yes.
 2. It reads *your* NeoFly save (`%LOCALAPPDATA%\Programs\Neofly`) and *your* Steam
    screenshots automatically. If the pilot named in `config.json` isn't in your save,
@@ -63,6 +63,8 @@ runner), which then downloads Python by itself.
 | Layer strip (right edge of the map) | Turn country flags, flights, transfers, airports, codes and photo pins on or off |
 | Photos | Photo wall of every screenshot as prints, month by month |
 | Insights | Records (longest, farthest, softest landing, best-paid job…), hours per month, landing spread, most-visited airports |
+| Finances (switch on in ⚙ Settings → Features) | Cash, this month's result, earnings, fuel spend and loans; cash over time, month by month, money in and out by kind (aircraft purchases, capital and loans kept apart); each aircraft's fuel, engine and hull; the full NeoFly ledger with filters and search |
+| Write to NeoFly (⚙ Settings → Features, experimental, off by default) | Groundwork for running the company from the logbook instead of NeoFly. Every change keeps a full copy of the save first (`backup/pilots/<pilot>/neofly/before-changes/`), only happens while NeoFly is closed, and is checked afterwards. **Test** proves the save can be written without changing anything |
 | Hover a list row | Lights its route up on the map |
 | View | Satellite / dark / light map, globe or flat, colour by aircraft or month, layer switches (countries visited, flights, transfers, airports, codes, photo pins) |
 | Fleet tab | Your aircraft with photos; tap to hide or show its flights |
@@ -146,7 +148,7 @@ pipeline/               Python, standard library + Pillow (for thumbnails)
   build.py                merges everything into web/data/logbook.json
   serve.py                local server: rebuild on change, auto-backup, Back up button
   backup.py               copies sources into backup/
-  launcher/               Kestrel Air Logbook.exe source (build.ps1 rebuilds it)
+  launcher/               Air Vulture.exe source (build.ps1 rebuilds it)
   make_icon.py            draws kestrel.ico
 web/                    static site, no build step (ES modules + MapLibre GL)
   js/core/                store (state + events), data loader, geo maths, formatting

@@ -19,7 +19,7 @@ import urllib.parse
 import urllib.request
 import netread  # noqa: E402
 
-UA = {'User-Agent': 'KestrelAirLogbook/1.0 (personal flight logbook; build-time lookups)'}
+UA = {'User-Agent': 'AirVulture/1.0 (personal flight logbook; build-time lookups)'}
 WP = 'https://en.wikipedia.org/w/api.php?format=json&action=query&redirects=1'
 SPECS = [  # Wikidata property, label, kind
     ('P176', 'Manufacturer', 'item'), ('P606', 'First flight', 'date'), ('P729', 'Entered service', 'date'),

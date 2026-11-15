@@ -22,7 +22,7 @@ import urllib.request
 import netread  # noqa: E402
 from html.parser import HTMLParser
 
-UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 KestrelAirLogbook',
+UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 AirVulture',
       'Accept-Language': 'en-GB,en;q=0.9'}
 SKIP_IMG = re.compile(r'logo|icon|sprite|favicon|badge|award|tripadvisor|trustpilot|booking|payment|visa|mastercard|'
                       r'flag|arrow|button|banner-ad|placeholder|loader|spinner|avatar|social|facebook|instagram|twitter|map', re.I)

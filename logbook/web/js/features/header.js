@@ -11,8 +11,8 @@ export default {
 
     render(document.getElementById('titlebar'), html`
       <button class="icon-btn" id="side-toggle" title="Show / hide the journey">${icon('sidebar')}</button>
-      <span class="app-logo" title="Kestrel Air"></span>
-      <div class="brand"><b>Kestrel Air</b><small>Logbook</small></div>
+      <span class="app-logo" title="Air Vulture"></span>
+      <div class="brand"><b>Air Vulture</b><small>Logbook</small></div>
       <div class="tb-sep"></div>
       <button class="pilot-btn" title="Pilot settings: choose the NeoFly pilot, name and photo">
         ${p.photo ? html`<img class="avatar" src="${p.photo}" alt="">` : html`<span class="avatar ph">${(p.character || p.name)[0]}</span>`}
@@ -108,7 +108,7 @@ export default {
           <small>Flight list: ${r.legs} legs in flights.csv · ${r.totalMB} MB altogether</small>
           <div class="toast-actions"><button data-open>${icon('folder')}Show folder</button><button class="primary" data-close>Done</button></div>`);
       } catch (e) {
-        say(html`<b>Backup didn't finish</b><small>${e.message || 'Start the logbook from Kestrel Air Logbook.exe and try again.'}</small>
+        say(html`<b>Backup didn't finish</b><small>${e.message || 'Start the logbook from Air Vulture.exe and try again.'}</small>
           <div class="toast-actions"><button class="primary" data-close>OK</button></div>`);
       } finally { btn.disabled = false; }
     }

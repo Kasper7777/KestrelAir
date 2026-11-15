@@ -18,7 +18,7 @@ def rnd(c):
 
 
 def main():
-    req = urllib.request.Request(SRC, headers={'User-Agent': 'KestrelAirLogbook/1.0'})
+    req = urllib.request.Request(SRC, headers={'User-Agent': 'AirVulture/1.0'})
     data = json.loads(urllib.request.urlopen(req, timeout=60).read())
     feats = []
     for f in data['features']:

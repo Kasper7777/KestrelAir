@@ -16,7 +16,7 @@ import urllib.parse
 import urllib.request
 import netread  # noqa: E402
 
-UA = {'User-Agent': 'KestrelAirLogbook/1.0 (personal flight logbook; build-time lookups)'}
+UA = {'User-Agent': 'AirVulture/1.0 (personal flight logbook; build-time lookups)'}
 OVERPASS = 'https://overpass-api.de/api/interpreter'
 SKIP_SIGHT = re.compile(r'airport|air ?base|airfield|aerodrome|heliport|station|school|college|constituency|electoral|district|'
                         r'ward\b|parish|municipality|road|street|highway|motorway|bus |hospital|prison|county|province|oblast|'

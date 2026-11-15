@@ -250,6 +250,10 @@ def _read(db, navdb, airports_cache, pilot_name=None):
                            'type': MISSION_TYPES.get(r['missiontype'], f'Mission {r["missiontype"]}')})
         airport(r['departure']), airport(r['destination'])
 
+    finances = _finances(db, pid, rows, aircraft)
+    for a in finances['fleet']:
+        airport(a['location'])
+
     # resolve every airport now: the databases close when load() returns
     for f in flights:
         airport(f['from']), airport(f['to'])
@@ -257,8 +261,61 @@ def _read(db, navdb, airports_cache, pilot_name=None):
         if e['ident']:
             airport(e['ident'])
     return {'pilot': pilot, 'pilots': pilots, 'aircraft': aircraft, 'flights': flights, 'events': events, 'aiFlights': ai_flights,
+            'finances': finances,
             'airport': lambda ident: cache.get((ident or '').strip().upper()),
             'airports': {k: v for k, v in cache.items() if v}}
+
+
+# The finance ledger, grouped the way a person thinks about money (first match wins).
+LEDGER_CATEGORIES = [
+    ('missions', 'Your missions', ('Payment for mission',)),
+    ('company', 'Hired pilots\' missions', ('Staff pilot mission',)),
+    ('trading', 'Trading', ('Buying goods', 'Selling goods', 'Returning goods')),
+    ('fuel', 'Fuel', ('Buying fuel',)),
+    ('fees', 'Airport, hotel & food', ('Airport fees', 'Hotel fees', 'Restaurant fees')),
+    ('maintenance', 'Maintenance', ('Repairing',)),
+    ('insurance', 'Insurance', ('Aircraft weekly insurance', 'Aircraft insurance')),
+    ('staff', 'Staff & wages', ('Pilot daily wages', 'Manager weekly wage', 'Flight Attendant Wage', 'Hiring', 'Pilot learning')),
+    ('moves', 'Repositioning', ('Moving pilot', 'Moving FA', 'Aircraft movement')),
+    ('aircraft', 'Buying & selling aircraft', ('Buying plane', 'Aircraft selling')),
+    ('training', 'Qualifications', ('Qualification',)),
+    ('loans', 'Loans', ('Loan',)),
+    ('capital', 'Capital & starting cash', ('Capital injection', 'Initial deposit', 'Company starting cash', 'Airline starting cash', 'Airline help')),
+]
+
+
+def _category(text):
+    for key, _, prefixes in LEDGER_CATEGORIES:
+        if text.startswith(prefixes):
+            return key
+    return 'other'
+
+
+def _finances(db, pid, rows, aircraft):
+    """Cash book, fleet fuel/condition and loans for the Finances panel."""
+    ledger = []
+    for r in rows:
+        text = re.sub(r'\s{2,}', ' ', (r['description'] or '').strip())
+        ledger.append({'id': r['id'], 'at': _iso(_ts(r['date'])), 'text': text, 'cat': _category(text),
+                       'in': r['incomes'] or 0, 'out': r['expenses'] or 0, 'balance': r['balance']})
+    fleet = []
+    for r in db.execute('''select h.id, h.tailNumber, h.Location, h.statusEngine, h.statusHull, h.airframe, h.currentFuel,
+                                  h.status, h.insurance, a.fuelCaplbs cap
+                           from hangar h left join liveries l on l.id=h.liveryId
+                           left join aircrafts a on a.id=l.aircraftId where h.ownerId=?''', (pid,)):
+        key = f'neofly:{r["id"]}'
+        a = aircraft.get(key, {})
+        fleet.append({'id': key, 'name': a.get('name'), 'livery': a.get('livery'), 'tail': a.get('tail'),
+                      'location': r['Location'], 'fuel': r['currentFuel'], 'fuelCapacity': r['cap'],
+                      'engine': round(r['statusEngine'] or 0, 1), 'hull': round(r['statusHull'] or 0, 1),
+                      'airframeHours': r['airframe'], 'insured': bool(r['insurance']), 'status': r['status'], 'value': a.get('price')})
+    loans = []
+    for r in db.execute('''select p.remaining, p.currentInterestRate, p.nextDue, p.LastPayment, l.amount
+                           from loanpayments p left join loans l on l.name=p.loanId where p.ownerId=?''', (pid,)):
+        loans.append({'remaining': r['remaining'], 'rate': r['currentInterestRate'], 'weekly': r['nextDue'],
+                      'lastPaid': _iso(_ts(r['LastPayment'])), 'amount': r['amount']})
+    return {'ledger': ledger, 'fleet': fleet, 'loans': loans,
+            'categories': {k: label for k, label, _ in LEDGER_CATEGORIES} | {'other': 'Other'}}
 
 
 def _nm(a, b):

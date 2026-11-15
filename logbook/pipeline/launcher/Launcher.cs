@@ -1,4 +1,4 @@
-// Kestrel Air Logbook.exe - the button you click.
+// Air Vulture.exe - the button you click.
 // Lives in the logbook folder and works wherever the repo is cloned:
 //   1. if the logbook is already open, just shows it again
 //   2. finds uv (installs it once, with permission, on a new PC)
@@ -15,7 +15,7 @@ using System.Windows.Forms;
 static class Launcher
 {
     const string Url = "http://127.0.0.1:8787/";
-    const string Title = "Kestrel Air Logbook";
+    const string Title = "Air Vulture";
 
     [STAThread]
     static int Main(string[] args)
@@ -24,7 +24,7 @@ static class Launcher
         string serve = Path.Combine(dir, @"pipeline\serve.py");
         if (!File.Exists(serve))
         {
-            Say("Can't find pipeline\\serve.py.\n\nKeep \"Kestrel Air Logbook.exe\" inside the logbook folder (you can put a shortcut to it anywhere).");
+            Say("Can't find pipeline\\serve.py.\n\nKeep \"Air Vulture.exe\" inside the logbook folder (you can put a shortcut to it anywhere).");
             return 1;
         }
         if (Alive()) { Open(); return 0; }

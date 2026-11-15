@@ -42,7 +42,7 @@ def _flag(iso, cache, fetch):
     if not os.path.exists(path):
         if not fetch:
             return None
-        req = urllib.request.Request(f'https://flagcdn.com/w1280/{iso.lower()}.png', headers={'User-Agent': 'KestrelAirLogbook/1.0'})
+        req = urllib.request.Request(f'https://flagcdn.com/w1280/{iso.lower()}.png', headers={'User-Agent': 'AirVulture/1.0'})
         with urllib.request.urlopen(req, timeout=30) as r:
             data = netread.read(r, 60)
         Image.open(__import__('io').BytesIO(data)).verify()      # refuse anything that isn't an image

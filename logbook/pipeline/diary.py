@@ -226,7 +226,7 @@ def build(stops, legs, airports, places, web_media, places_img, places_mod=None,
         depart = datetime.fromisoformat(s['depart']) if s.get('depart') else datetime.now()
         hours = (depart - arrive).total_seconds() / 3600
         nxt = by_id.get(s.get('before'))
-        if hours < MIN_HOURS or (nxt and nxt['kind'] == 'ground') or s['airport'] not in places:
+        if hours < MIN_HOURS or (nxt and nxt['kind'] == 'ground'):
             continue
         # "Getting here": a post for every flight since the last layover with the pilot's own screenshots
         here_idx = leg_index.get(s.get('after'), prev_idx)
@@ -240,7 +240,7 @@ def build(stops, legs, airports, places, web_media, places_img, places_mod=None,
             if fp:
                 inbound.append(fp)
         prev_idx = here_idx
-        a, p = airports[s['airport']], places[s['airport']]
+        a, p = airports[s['airport']], places.get(s['airport']) or {}   # not looked up yet: the layover still shows, places fill in later
         rng = _rng(s['id'])
         # places with their own website (real photos, real menu) first, then the rest
         all_rests = list(p.get('restaurants') or [])

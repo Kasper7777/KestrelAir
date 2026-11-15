@@ -1,7 +1,7 @@
 {
  "meta": {
   "version": 1,
-  "builtAt": "2026-11-15T17:51:37",
+  "builtAt": "2026-11-15T18:19:06",
   "online": false,
   "sources": [
    "neofly",
@@ -14,6 +14,10 @@
   ],
   "pilotSlug": "kazber",
   "pilotChosen": "Kazber",
+  "features": {
+   "finances": true,
+   "neoflyWrite": false
+  },
   "checks": []
  },
  "pilot": {
@@ -20419,7 +20423,177 @@
    "after": "nf-fl-91",
    "before": null,
    "events": [],
-   "photos": []
+   "photos": [],
+   "diary": {
+    "hours": 14.6,
+    "nights": 0,
+    "city": "Ross Island",
+    "tags": [
+     "#NewZealand",
+     "#RossIsland",
+     "#NZFX",
+     "#layover",
+     "#pilotlife"
+    ],
+    "days": [
+     {
+      "date": "2026-11-15",
+      "posts": [
+       {
+        "kind": "flight",
+        "time": "2026-11-15T03:43",
+        "place": "EGYP → NZFX",
+        "where": "Mount Pleasant → Phoenix Airfield (Mcmurdo Station) · Cessna Citation X",
+        "own": true,
+        "slides": [
+         {
+          "kind": "shot",
+          "src": "media/photos/b19314af7d99.jpg",
+          "pid": "b19314af7d99",
+          "label": "21:26 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/0fbc60e5f6d3.jpg",
+          "pid": "0fbc60e5f6d3",
+          "label": "21:33 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/39c4e38048e2.jpg",
+          "pid": "39c4e38048e2",
+          "label": "21:55 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/3fb53f34b0bc.jpg",
+          "pid": "3fb53f34b0bc",
+          "label": "22:25 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/63c142895da4.jpg",
+          "pid": "63c142895da4",
+          "label": "22:39 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/dee3da813c65.jpg",
+          "pid": "dee3da813c65",
+          "label": "22:46 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/6a2306f43e88.jpg",
+          "pid": "6a2306f43e88",
+          "label": "22:50 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/b4fbe47b16e8.jpg",
+          "pid": "b4fbe47b16e8",
+          "label": "22:55 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/f8660fdb9ad5.jpg",
+          "pid": "f8660fdb9ad5",
+          "label": "00:14 · EGYP → NZFX"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/8ef574f94e8c.jpg",
+          "pid": "8ef574f94e8c",
+          "label": "00:25 · EGYP → NZFX"
+         }
+        ],
+        "flight": {
+         "leg": "nf-fl-91",
+         "from": "EGYP",
+         "to": "NZFX",
+         "minutes": 378.3,
+         "aircraft": "Cessna Citation X",
+         "aircraftId": "neofly:12",
+         "landingFpm": -271,
+         "distanceNm": 2842
+        },
+        "caption": "Touchdown NZFX. 6h 18m from EGYP, landed at -271 fpm.",
+        "likes": 327,
+        "tags": [
+         {
+          "t": "#EGYP",
+          "k": "airport",
+          "ident": "EGYP"
+         },
+         {
+          "t": "#NZFX",
+          "k": "airport",
+          "ident": "NZFX"
+         },
+         {
+          "t": "#CessnaCitationX",
+          "k": "aircraft"
+         },
+         {
+          "t": "#MSFS2024",
+          "k": "shots"
+         }
+        ]
+       }
+      ],
+      "inbound": true
+     },
+     {
+      "date": "2026-11-15",
+      "posts": [
+       {
+        "kind": "breakfast",
+        "time": "2026-11-15T08:30",
+        "place": "the airfield café",
+        "where": "NZFX",
+        "dish": "Sandwich",
+        "price": null,
+        "slides": [
+         {
+          "kind": "dish",
+          "src": "media/places/dishv-sandwich-2.jpg",
+          "label": "Sandwich"
+         }
+        ],
+        "realMenu": false,
+        "venue": null,
+        "website": null,
+        "menu": null,
+        "hours": null,
+        "caption": "Slow start: Sandwich at the airfield café. METARs can wait.",
+        "likes": 108,
+        "tags": [
+         {
+          "t": "#NewZealand",
+          "k": "country",
+          "iso": "NZ",
+          "name": "New Zealand"
+         },
+         {
+          "t": "#RossIsland",
+          "k": "town",
+          "name": "Ross Island",
+          "country": "New Zealand"
+         },
+         {
+          "t": "#NZFX",
+          "k": "airport",
+          "ident": "NZFX"
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "skippedDays": 0,
+    "ongoing": true,
+    "hotel": null
+   }
   }
  ],
  "photos": {
@@ -25077,6 +25251,7 @@
    "place": "San Marcos",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://universitystar.com",
    "airport": "KHYI"
   },
   "fe949b0cf392": {
@@ -25090,6 +25265,7 @@
    "place": "San Marcos",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://communityimpact.com",
    "airport": "KHYI"
   },
   "0d67b390bdbd": {
@@ -25103,6 +25279,7 @@
    "place": "San Marcos",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://sports.yahoo.com",
    "airport": "KHYI"
   },
   "0ed71acd91c4": {
@@ -25116,6 +25293,7 @@
    "place": "San Marcos",
    "lang": "en",
    "tone": "neutral",
+   "site": "",
    "airport": "KHYI"
   },
   "17acdcdbdd31": {
@@ -25129,6 +25307,7 @@
    "place": "San Marcos",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.legacy.com",
    "airport": "KHYI"
   },
   "ff73556b583b": {
@@ -25142,6 +25321,7 @@
    "place": "San Marcos",
    "lang": "en",
    "tone": "sad",
+   "site": "",
    "airport": "KHYI"
   },
   "208c8a837365": {
@@ -25155,6 +25335,7 @@
    "place": "Rockwood",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.ccjdigital.com",
    "airport": "KRKW"
   },
   "6d86db7438bb": {
@@ -25168,6 +25349,7 @@
    "place": "Rockwood",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.cdrecycler.com",
    "airport": "KRKW"
   },
   "b278bc189e8d": {
@@ -25181,6 +25363,7 @@
    "place": "Rockwood",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.si.com",
    "airport": "KRKW"
   },
   "8cd746d484a3": {
@@ -25194,6 +25377,7 @@
    "place": "Rockwood",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.evansmortuary.biz",
    "airport": "KRKW"
   },
   "e98b0ed870f6": {
@@ -25207,6 +25391,7 @@
    "place": "Rockwood",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://3bmedianews.com",
    "airport": "KRKW"
   },
   "556ad491d625": {
@@ -25220,6 +25405,7 @@
    "place": "Rockwood",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.yoderculpfuneralhome.com",
    "airport": "KRKW"
   },
   "9a51e7c93e98": {
@@ -25233,6 +25419,7 @@
    "place": "Daytona Beach",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.news-journalonline.com",
    "airport": "7FL6"
   },
   "d319c18bdd87": {
@@ -27749,5 +27936,5586 @@
    "pay": 12231,
    "completed": true
   }
- ]
+ ],
+ "finances": {
+  "ledger": [
+   {
+    "id": 2,
+    "at": "2026-08-12T20:43:32",
+    "text": "Initial deposit",
+    "cat": "capital",
+    "in": 5000,
+    "out": 0,
+    "balance": 5000
+   },
+   {
+    "id": 3,
+    "at": "2026-08-12T20:46:08",
+    "text": "Aircraft selling: Asobo Cessna 152",
+    "cat": "aircraft",
+    "in": 34999,
+    "out": 0,
+    "balance": 39999
+   },
+   {
+    "id": 4,
+    "at": "2026-08-12T20:48:22",
+    "text": "Buying plane: Asobo Cessna 152",
+    "cat": "aircraft",
+    "in": 0,
+    "out": 34999,
+    "balance": 5000
+   },
+   {
+    "id": 5,
+    "at": "2026-08-12T21:26:12",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 259,
+    "balance": 4741
+   },
+   {
+    "id": 6,
+    "at": "2026-08-12T21:26:50",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 2428,
+    "out": 0,
+    "balance": 7169
+   },
+   {
+    "id": 7,
+    "at": "2026-08-12T23:33:11",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 7153
+   },
+   {
+    "id": 8,
+    "at": "2026-08-12T23:33:49",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 1690,
+    "out": 0,
+    "balance": 8843
+   },
+   {
+    "id": 9,
+    "at": "2026-08-13T18:14:59",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 8827
+   },
+   {
+    "id": 10,
+    "at": "2026-08-13T18:15:41",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 1693,
+    "out": 0,
+    "balance": 10520
+   },
+   {
+    "id": 11,
+    "at": "2026-08-13T20:40:21",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 259,
+    "balance": 10261
+   },
+   {
+    "id": 12,
+    "at": "2026-08-13T21:10:16",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 10245
+   },
+   {
+    "id": 13,
+    "at": "2026-08-13T21:13:31",
+    "text": "Buying goods: Cigarettes",
+    "cat": "trading",
+    "in": 0,
+    "out": 10120,
+    "balance": 125
+   },
+   {
+    "id": 26,
+    "at": "2026-08-15T14:36:41",
+    "text": "Company starting cash",
+    "cat": "capital",
+    "in": 10000,
+    "out": 0,
+    "balance": 10125
+   },
+   {
+    "id": 27,
+    "at": "2026-08-15T14:37:13",
+    "text": "Airline starting cash",
+    "cat": "capital",
+    "in": 10000,
+    "out": 0,
+    "balance": 25125
+   },
+   {
+    "id": 28,
+    "at": "2026-08-15T14:37:13",
+    "text": "Airline help to rent first hub",
+    "cat": "capital",
+    "in": 5000,
+    "out": 0,
+    "balance": 25125
+   },
+   {
+    "id": 29,
+    "at": "2026-08-15T14:52:18",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 181,
+    "balance": 24944
+   },
+   {
+    "id": 30,
+    "at": "2026-08-15T15:01:30",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 259,
+    "balance": 24685
+   },
+   {
+    "id": 31,
+    "at": "2026-08-15T15:01:30",
+    "text": "Selling goods: Cigarettes",
+    "cat": "trading",
+    "in": 11006,
+    "out": 0,
+    "balance": 35691
+   },
+   {
+    "id": 32,
+    "at": "2026-08-15T15:17:19",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 35503
+   },
+   {
+    "id": 33,
+    "at": "2026-08-15T15:17:58",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 2968,
+    "out": 0,
+    "balance": 38471
+   },
+   {
+    "id": 34,
+    "at": "2026-08-15T15:51:45",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2287,
+    "out": 0,
+    "balance": 40758
+   },
+   {
+    "id": 35,
+    "at": "2026-08-15T15:51:45",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 40742
+   },
+   {
+    "id": 36,
+    "at": "2026-08-15T16:29:10",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2441,
+    "out": 0,
+    "balance": 43183
+   },
+   {
+    "id": 37,
+    "at": "2026-08-15T16:29:10",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 259,
+    "balance": 42924
+   },
+   {
+    "id": 38,
+    "at": "2026-08-15T16:34:24",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 42736
+   },
+   {
+    "id": 39,
+    "at": "2026-08-15T16:35:02",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 1839,
+    "out": 0,
+    "balance": 44575
+   },
+   {
+    "id": 40,
+    "at": "2026-08-15T16:36:17",
+    "text": "Repairing hull: Asobo C172SP G1000 Passengers",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 29584,
+    "balance": 14991
+   },
+   {
+    "id": 41,
+    "at": "2026-08-15T16:36:31",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 98,
+    "balance": 14893
+   },
+   {
+    "id": 42,
+    "at": "2026-08-16T07:59:10",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2428,
+    "out": 0,
+    "balance": 17321
+   },
+   {
+    "id": 43,
+    "at": "2026-08-16T07:59:10",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 17191
+   },
+   {
+    "id": 44,
+    "at": "2026-08-16T08:26:18",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 94,
+    "balance": 17097
+   },
+   {
+    "id": 45,
+    "at": "2026-08-16T08:26:57",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 2598,
+    "out": 0,
+    "balance": 19695
+   },
+   {
+    "id": 46,
+    "at": "2026-08-16T08:28:06",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 1998,
+    "out": 0,
+    "balance": 21693
+   },
+   {
+    "id": 47,
+    "at": "2026-08-16T08:28:06",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 21677
+   },
+   {
+    "id": 48,
+    "at": "2026-08-16T09:23:16",
+    "text": "Buying goods: Magazines",
+    "cat": "trading",
+    "in": 0,
+    "out": 5065,
+    "balance": 16612
+   },
+   {
+    "id": 49,
+    "at": "2026-08-16T09:51:59",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2668,
+    "out": 0,
+    "balance": 19280
+   },
+   {
+    "id": 50,
+    "at": "2026-08-16T09:51:59",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 19264
+   },
+   {
+    "id": 51,
+    "at": "2026-08-16T10:23:33",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 19076
+   },
+   {
+    "id": 52,
+    "at": "2026-08-16T10:24:00",
+    "text": "Selling goods: Magazines",
+    "cat": "trading",
+    "in": 7555,
+    "out": 0,
+    "balance": 26631
+   },
+   {
+    "id": 53,
+    "at": "2026-08-16T10:49:38",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2358,
+    "out": 0,
+    "balance": 28989
+   },
+   {
+    "id": 54,
+    "at": "2026-08-16T10:49:38",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 28973
+   },
+   {
+    "id": 55,
+    "at": "2026-08-16T12:14:23",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2591,
+    "out": 0,
+    "balance": 31564
+   },
+   {
+    "id": 56,
+    "at": "2026-08-16T12:14:23",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 31499
+   },
+   {
+    "id": 57,
+    "at": "2026-08-16T12:38:24",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 94,
+    "balance": 31405
+   },
+   {
+    "id": 58,
+    "at": "2026-08-16T12:39:03",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 4821,
+    "out": 0,
+    "balance": 36226
+   },
+   {
+    "id": 59,
+    "at": "2026-08-16T13:11:01",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2240,
+    "out": 0,
+    "balance": 38466
+   },
+   {
+    "id": 60,
+    "at": "2026-08-16T13:11:01",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 38401
+   },
+   {
+    "id": 61,
+    "at": "2026-08-16T13:12:49",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 44,
+    "balance": 38357
+   },
+   {
+    "id": 62,
+    "at": "2026-08-16T13:13:05",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 67,
+    "balance": 38290
+   },
+   {
+    "id": 63,
+    "at": "2026-08-16T13:16:23",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 74,
+    "balance": 38216
+   },
+   {
+    "id": 64,
+    "at": "2026-08-16T13:35:46",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 11,
+    "balance": 38205
+   },
+   {
+    "id": 65,
+    "at": "2026-08-16T13:43:04",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 38017
+   },
+   {
+    "id": 66,
+    "at": "2026-08-16T13:43:42",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 4746,
+    "out": 0,
+    "balance": 42763
+   },
+   {
+    "id": 67,
+    "at": "2026-08-16T14:10:47",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2971,
+    "out": 0,
+    "balance": 45734
+   },
+   {
+    "id": 68,
+    "at": "2026-08-16T14:10:47",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 45718
+   },
+   {
+    "id": 69,
+    "at": "2026-08-16T15:50:02",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 47,
+    "balance": 45671
+   },
+   {
+    "id": 70,
+    "at": "2026-08-16T17:02:03",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 24,
+    "balance": 45647
+   },
+   {
+    "id": 71,
+    "at": "2026-08-16T17:02:26",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 24,
+    "balance": 45623
+   },
+   {
+    "id": 72,
+    "at": "2026-08-16T17:11:58",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 54,
+    "balance": 45569
+   },
+   {
+    "id": 73,
+    "at": "2026-08-16T17:22:42",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 45381
+   },
+   {
+    "id": 74,
+    "at": "2026-08-16T17:46:42",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2971,
+    "out": 0,
+    "balance": 48352
+   },
+   {
+    "id": 75,
+    "at": "2026-08-16T17:46:43",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 48287
+   },
+   {
+    "id": 76,
+    "at": "2026-08-16T19:04:25",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 181,
+    "balance": 48106
+   },
+   {
+    "id": 77,
+    "at": "2026-08-16T19:27:55",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 161,
+    "balance": 47945
+   },
+   {
+    "id": 78,
+    "at": "2026-08-16T19:35:18",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2095,
+    "out": 0,
+    "balance": 50040
+   },
+   {
+    "id": 79,
+    "at": "2026-08-16T19:35:18",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 50024
+   },
+   {
+    "id": 80,
+    "at": "2026-08-16T19:46:30",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 49836
+   },
+   {
+    "id": 81,
+    "at": "2026-08-16T19:47:07",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 3649,
+    "out": 0,
+    "balance": 53485
+   },
+   {
+    "id": 82,
+    "at": "2026-08-16T20:16:39",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2129,
+    "out": 0,
+    "balance": 55614
+   },
+   {
+    "id": 83,
+    "at": "2026-08-16T20:16:39",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 55549
+   },
+   {
+    "id": 84,
+    "at": "2026-08-16T20:41:17",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 24,
+    "balance": 55525
+   },
+   {
+    "id": 85,
+    "at": "2026-08-16T20:41:59",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 1958,
+    "out": 0,
+    "balance": 57483
+   },
+   {
+    "id": 86,
+    "at": "2026-08-16T21:01:10",
+    "text": "Buying goods: Vegetables",
+    "cat": "trading",
+    "in": 0,
+    "out": 3168,
+    "balance": 54315
+   },
+   {
+    "id": 87,
+    "at": "2026-08-16T21:02:05",
+    "text": "Repairing hull: Asobo C172SP G1000 Passengers",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 16941,
+    "balance": 37374
+   },
+   {
+    "id": 88,
+    "at": "2026-08-16T21:04:07",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 0,
+    "balance": 37374
+   },
+   {
+    "id": 89,
+    "at": "2026-08-16T21:05:48",
+    "text": "Returning goods: Vegetables",
+    "cat": "trading",
+    "in": 1584,
+    "out": 0,
+    "balance": 38958
+   },
+   {
+    "id": 90,
+    "at": "2026-08-16T21:08:28",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 1780,
+    "out": 0,
+    "balance": 40738
+   },
+   {
+    "id": 91,
+    "at": "2026-08-16T21:08:28",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 40722
+   },
+   {
+    "id": 92,
+    "at": "2026-08-16T21:11:53",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 270,
+    "balance": 40452
+   },
+   {
+    "id": 93,
+    "at": "2026-08-16T21:12:50",
+    "text": "Repairing hull: Asobo C172SP G1000 Passengers",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 32881,
+    "balance": 7571
+   },
+   {
+    "id": 94,
+    "at": "2026-08-16T21:27:22",
+    "text": "Buying goods: Magazines",
+    "cat": "trading",
+    "in": 0,
+    "out": 3234,
+    "balance": 4337
+   },
+   {
+    "id": 95,
+    "at": "2026-08-16T21:45:33",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2206,
+    "out": 0,
+    "balance": 6543
+   },
+   {
+    "id": 96,
+    "at": "2026-08-16T21:45:33",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 16,
+    "balance": 6527
+   },
+   {
+    "id": 97,
+    "at": "2026-08-16T21:55:01",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 6339
+   },
+   {
+    "id": 98,
+    "at": "2026-08-16T21:55:26",
+    "text": "Selling goods: Magazines",
+    "cat": "trading",
+    "in": 4290,
+    "out": 0,
+    "balance": 10629
+   },
+   {
+    "id": 99,
+    "at": "2026-08-16T22:58:27",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 10441
+   },
+   {
+    "id": 100,
+    "at": "2026-08-17T14:10:35",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2312,
+    "out": 0,
+    "balance": 12753
+   },
+   {
+    "id": 101,
+    "at": "2026-08-17T14:10:35",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 12623
+   },
+   {
+    "id": 102,
+    "at": "2026-08-17T14:10:37",
+    "text": "Pilot daily wages (2 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 11623
+   },
+   {
+    "id": 103,
+    "at": "2026-08-17T14:48:25",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2502,
+    "out": 0,
+    "balance": 14125
+   },
+   {
+    "id": 104,
+    "at": "2026-08-17T14:48:25",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 14060
+   },
+   {
+    "id": 105,
+    "at": "2026-08-17T15:46:57",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 94,
+    "balance": 13966
+   },
+   {
+    "id": 106,
+    "at": "2026-08-17T15:47:39",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 2679,
+    "out": 0,
+    "balance": 16645
+   },
+   {
+    "id": 107,
+    "at": "2026-08-17T16:24:07",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2532,
+    "out": 0,
+    "balance": 19177
+   },
+   {
+    "id": 108,
+    "at": "2026-08-17T16:24:08",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 19047
+   },
+   {
+    "id": 109,
+    "at": "2026-08-17T18:17:23",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2917,
+    "out": 0,
+    "balance": 21964
+   },
+   {
+    "id": 110,
+    "at": "2026-08-17T18:17:23",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 21899
+   },
+   {
+    "id": 111,
+    "at": "2026-08-17T18:25:16",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 94,
+    "balance": 21805
+   },
+   {
+    "id": 112,
+    "at": "2026-08-17T18:25:54",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 3556,
+    "out": 0,
+    "balance": 25361
+   },
+   {
+    "id": 113,
+    "at": "2026-08-17T18:50:25",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 1970,
+    "out": 0,
+    "balance": 27331
+   },
+   {
+    "id": 114,
+    "at": "2026-08-17T18:50:25",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 27266
+   },
+   {
+    "id": 115,
+    "at": "2026-08-17T19:23:49",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 26890
+   },
+   {
+    "id": 116,
+    "at": "2026-08-17T19:24:27",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 2911,
+    "out": 0,
+    "balance": 29801
+   },
+   {
+    "id": 117,
+    "at": "2026-08-17T19:58:28",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2833,
+    "out": 0,
+    "balance": 32634
+   },
+   {
+    "id": 118,
+    "at": "2026-08-17T19:58:28",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 32504
+   },
+   {
+    "id": 119,
+    "at": "2026-08-17T20:05:08",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 32316
+   },
+   {
+    "id": 120,
+    "at": "2026-08-17T20:07:46",
+    "text": "Qualification Test Fee: B",
+    "cat": "training",
+    "in": 0,
+    "out": 595,
+    "balance": 31721
+   },
+   {
+    "id": 121,
+    "at": "2026-08-17T20:08:44",
+    "text": "Qualification Test Fee: B",
+    "cat": "training",
+    "in": 0,
+    "out": 598,
+    "balance": 31123
+   },
+   {
+    "id": 122,
+    "at": "2026-08-17T20:39:47",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2575,
+    "out": 0,
+    "balance": 33698
+   },
+   {
+    "id": 123,
+    "at": "2026-08-17T20:39:47",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 33633
+   },
+   {
+    "id": 124,
+    "at": "2026-08-17T20:54:35",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 33445
+   },
+   {
+    "id": 125,
+    "at": "2026-08-17T20:55:28",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 80,
+    "balance": 33365
+   },
+   {
+    "id": 126,
+    "at": "2026-08-17T21:21:34",
+    "text": "Qualification purchased (no flight): B",
+    "cat": "training",
+    "in": 0,
+    "out": 530,
+    "balance": 32835
+   },
+   {
+    "id": 127,
+    "at": "2026-08-17T21:21:56",
+    "text": "Qualification purchased (no flight): C",
+    "cat": "training",
+    "in": 0,
+    "out": 1650,
+    "balance": 31185
+   },
+   {
+    "id": 128,
+    "at": "2026-08-17T21:22:12",
+    "text": "Qualification purchased (no flight): D",
+    "cat": "training",
+    "in": 0,
+    "out": 3350,
+    "balance": 27835
+   },
+   {
+    "id": 129,
+    "at": "2026-08-17T21:24:01",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2135,
+    "out": 0,
+    "balance": 29970
+   },
+   {
+    "id": 130,
+    "at": "2026-08-17T21:24:01",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 29840
+   },
+   {
+    "id": 131,
+    "at": "2026-08-17T22:15:43",
+    "text": "Repairing hull: Asobo C172SP G1000 Passengers",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 19885,
+    "balance": 9955
+   },
+   {
+    "id": 132,
+    "at": "2026-08-17T22:15:52",
+    "text": "Aircraft insurance: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 378,
+    "balance": 9577
+   },
+   {
+    "id": 133,
+    "at": "2026-08-17T22:28:19",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 2410,
+    "out": 0,
+    "balance": 11987
+   },
+   {
+    "id": 134,
+    "at": "2026-08-17T22:28:19",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 11922
+   },
+   {
+    "id": 135,
+    "at": "2026-08-17T22:51:17",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 94,
+    "balance": 11828
+   },
+   {
+    "id": 136,
+    "at": "2026-08-18T08:03:36",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2253,
+    "out": 0,
+    "balance": 14081
+   },
+   {
+    "id": 137,
+    "at": "2026-08-18T08:03:36",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 14016
+   },
+   {
+    "id": 138,
+    "at": "2026-08-18T17:03:30",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2286,
+    "out": 0,
+    "balance": 16302
+   },
+   {
+    "id": 139,
+    "at": "2026-08-18T17:03:30",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 16172
+   },
+   {
+    "id": 140,
+    "at": "2026-08-18T17:03:32",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 15672
+   },
+   {
+    "id": 141,
+    "at": "2026-08-18T17:21:45",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 156,
+    "balance": 15516
+   },
+   {
+    "id": 142,
+    "at": "2026-08-18T17:37:24",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 2180,
+    "out": 0,
+    "balance": 17696
+   },
+   {
+    "id": 143,
+    "at": "2026-08-18T17:37:24",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 65,
+    "balance": 17631
+   },
+   {
+    "id": 144,
+    "at": "2026-08-18T19:47:54",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 17443
+   },
+   {
+    "id": 145,
+    "at": "2026-08-18T19:48:36",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 20172,
+    "out": 0,
+    "balance": 37615
+   },
+   {
+    "id": 146,
+    "at": "2026-08-18T19:48:51",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 143,
+    "balance": 37472
+   },
+   {
+    "id": 147,
+    "at": "2026-08-18T21:03:40",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 47,
+    "balance": 37425
+   },
+   {
+    "id": 148,
+    "at": "2026-08-18T21:06:48",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 5647,
+    "out": 0,
+    "balance": 43072
+   },
+   {
+    "id": 149,
+    "at": "2026-08-18T21:06:49",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 42942
+   },
+   {
+    "id": 150,
+    "at": "2026-08-18T21:58:20",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 71,
+    "balance": 42871
+   },
+   {
+    "id": 151,
+    "at": "2026-08-18T23:19:21",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 42495
+   },
+   {
+    "id": 152,
+    "at": "2026-08-18T23:20:03",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 18698,
+    "out": 0,
+    "balance": 61193
+   },
+   {
+    "id": 153,
+    "at": "2026-08-19T00:22:49",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 10375,
+    "out": 0,
+    "balance": 71568
+   },
+   {
+    "id": 154,
+    "at": "2026-08-19T00:22:49",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 71438
+   },
+   {
+    "id": 155,
+    "at": "2026-08-19T01:00:58",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 109,
+    "balance": 71329
+   },
+   {
+    "id": 156,
+    "at": "2026-08-19T01:11:16",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 108,
+    "balance": 71221
+   },
+   {
+    "id": 157,
+    "at": "2026-08-19T03:09:01",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 71033
+   },
+   {
+    "id": 158,
+    "at": "2026-08-19T03:09:11",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 28851,
+    "out": 0,
+    "balance": 99884
+   },
+   {
+    "id": 159,
+    "at": "2026-08-19T03:10:32",
+    "text": "Repairing hull: Asobo C172SP G1000 Passengers",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 30737,
+    "balance": 69147
+   },
+   {
+    "id": 160,
+    "at": "2026-08-19T03:15:32",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 10000,
+    "out": 0,
+    "balance": 79147
+   },
+   {
+    "id": 161,
+    "at": "2026-08-19T03:15:32",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 79017
+   },
+   {
+    "id": 162,
+    "at": "2026-08-19T12:46:54",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 68,
+    "balance": 78949
+   },
+   {
+    "id": 163,
+    "at": "2026-08-19T14:02:03",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 78761
+   },
+   {
+    "id": 164,
+    "at": "2026-08-19T14:21:12",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 7787,
+    "out": 0,
+    "balance": 86548
+   },
+   {
+    "id": 165,
+    "at": "2026-08-19T14:21:12",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 86418
+   },
+   {
+    "id": 166,
+    "at": "2026-08-19T14:51:19",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 65,
+    "balance": 86353
+   },
+   {
+    "id": 167,
+    "at": "2026-08-19T15:04:49",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 86165
+   },
+   {
+    "id": 168,
+    "at": "2026-08-19T17:05:55",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 10080,
+    "out": 0,
+    "balance": 96245
+   },
+   {
+    "id": 169,
+    "at": "2026-08-19T17:05:55",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 96115
+   },
+   {
+    "id": 170,
+    "at": "2026-08-19T17:20:14",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 95739
+   },
+   {
+    "id": 171,
+    "at": "2026-08-19T17:20:53",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 24840,
+    "out": 0,
+    "balance": 120579
+   },
+   {
+    "id": 172,
+    "at": "2026-08-19T17:25:25",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 73,
+    "balance": 120506
+   },
+   {
+    "id": 173,
+    "at": "2026-08-19T19:55:13",
+    "text": "Repairing hull: Asobo C172SP G1000 Passengers",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 19768,
+    "balance": 100738
+   },
+   {
+    "id": 174,
+    "at": "2026-08-19T19:57:20",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 87,
+    "balance": 100651
+   },
+   {
+    "id": 175,
+    "at": "2026-08-19T20:01:32",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 11685,
+    "out": 0,
+    "balance": 112336
+   },
+   {
+    "id": 176,
+    "at": "2026-08-19T20:01:32",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 112206
+   },
+   {
+    "id": 177,
+    "at": "2026-08-19T20:01:35",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 111706
+   },
+   {
+    "id": 178,
+    "at": "2026-08-19T21:11:03",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 111330
+   },
+   {
+    "id": 179,
+    "at": "2026-08-19T21:11:45",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 8130,
+    "out": 0,
+    "balance": 119460
+   },
+   {
+    "id": 180,
+    "at": "2026-08-19T21:13:01",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 126,
+    "balance": 119334
+   },
+   {
+    "id": 181,
+    "at": "2026-08-19T23:06:19",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 9187,
+    "out": 0,
+    "balance": 128521
+   },
+   {
+    "id": 182,
+    "at": "2026-08-19T23:06:19",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 128391
+   },
+   {
+    "id": 183,
+    "at": "2026-08-20T00:02:34",
+    "text": "Repairing hull: Asobo Cessna 152",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 84106,
+    "balance": 44285
+   },
+   {
+    "id": 184,
+    "at": "2026-08-20T00:03:57",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 89,
+    "balance": 44196
+   },
+   {
+    "id": 185,
+    "at": "2026-08-20T00:54:25",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 43820
+   },
+   {
+    "id": 186,
+    "at": "2026-08-20T00:55:03",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 26929,
+    "out": 0,
+    "balance": 70749
+   },
+   {
+    "id": 187,
+    "at": "2026-08-30T20:39:59",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 9578,
+    "out": 0,
+    "balance": 80327
+   },
+   {
+    "id": 188,
+    "at": "2026-08-30T20:39:59",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 80197
+   },
+   {
+    "id": 189,
+    "at": "2026-08-30T20:40:01",
+    "text": "Aircraft weekly insurance cost: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 380,
+    "balance": 79817
+   },
+   {
+    "id": 190,
+    "at": "2026-08-30T20:40:01",
+    "text": "Manager weekly wage: Charles",
+    "cat": "staff",
+    "in": 0,
+    "out": 200,
+    "balance": 79617
+   },
+   {
+    "id": 191,
+    "at": "2026-08-30T20:40:01",
+    "text": "Pilot daily wages (7 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 3500,
+    "balance": 76117
+   },
+   {
+    "id": 192,
+    "at": "2026-08-30T20:41:09",
+    "text": "Repairing hull: Asobo C172SP G1000 Passengers",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 21969,
+    "balance": 54148
+   },
+   {
+    "id": 193,
+    "at": "2026-08-30T21:20:35",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 158,
+    "balance": 53990
+   },
+   {
+    "id": 194,
+    "at": "2026-08-31T01:23:31",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 53802
+   },
+   {
+    "id": 195,
+    "at": "2026-08-31T01:24:10",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 4622,
+    "out": 0,
+    "balance": 58424
+   },
+   {
+    "id": 196,
+    "at": "2026-08-31T15:28:17",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 58048
+   },
+   {
+    "id": 197,
+    "at": "2026-08-31T15:28:55",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 9003,
+    "out": 0,
+    "balance": 67051
+   },
+   {
+    "id": 198,
+    "at": "2026-08-31T19:30:06",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 66675
+   },
+   {
+    "id": 199,
+    "at": "2026-08-31T19:31:16",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 10263,
+    "out": 0,
+    "balance": 76938
+   },
+   {
+    "id": 200,
+    "at": "2026-08-31T19:31:19",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 10424,
+    "out": 0,
+    "balance": 87362
+   },
+   {
+    "id": 201,
+    "at": "2026-08-31T19:50:43",
+    "text": "Repairing hull: Asobo C172SP G1000 Passengers",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 29905,
+    "balance": 57457
+   },
+   {
+    "id": 202,
+    "at": "2026-08-31T20:48:36",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 1656957
+   },
+   {
+    "id": 203,
+    "at": "2026-08-31T20:52:37",
+    "text": "Buying plane: Asobo Beechcraft Baron G58",
+    "cat": "aircraft",
+    "in": 0,
+    "out": 810319,
+    "balance": 846638
+   },
+   {
+    "id": 204,
+    "at": "2026-08-31T20:57:22",
+    "text": "Repairing engine: Asobo Beechcraft Baron G58",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 38857,
+    "balance": 807781
+   },
+   {
+    "id": 205,
+    "at": "2026-08-31T20:57:27",
+    "text": "Repairing hull: Asobo Beechcraft Baron G58",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 39349,
+    "balance": 768432
+   },
+   {
+    "id": 206,
+    "at": "2026-08-31T20:58:11",
+    "text": "Qualification purchased (no flight): E",
+    "cat": "training",
+    "in": 0,
+    "out": 11500,
+    "balance": 756932
+   },
+   {
+    "id": 207,
+    "at": "2026-08-31T20:58:19",
+    "text": "Qualification Test Fee: F",
+    "cat": "training",
+    "in": 0,
+    "out": 27400,
+    "balance": 729532
+   },
+   {
+    "id": 208,
+    "at": "2026-08-31T20:58:28",
+    "text": "Qualification purchased (no flight): H",
+    "cat": "training",
+    "in": 0,
+    "out": 1785,
+    "balance": 727747
+   },
+   {
+    "id": 209,
+    "at": "2026-08-31T20:58:34",
+    "text": "Qualification purchased (no flight): F",
+    "cat": "training",
+    "in": 0,
+    "out": 27400,
+    "balance": 700347
+   },
+   {
+    "id": 210,
+    "at": "2026-08-31T20:58:41",
+    "text": "Qualification purchased (no flight): M",
+    "cat": "training",
+    "in": 0,
+    "out": 9900,
+    "balance": 690447
+   },
+   {
+    "id": 211,
+    "at": "2026-08-31T22:18:33",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 690259
+   },
+   {
+    "id": 212,
+    "at": "2026-08-31T22:48:44",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 689773
+   },
+   {
+    "id": 213,
+    "at": "2026-09-01T00:00:15",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 689287
+   },
+   {
+    "id": 214,
+    "at": "2026-09-01T00:00:57",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 23733,
+    "out": 0,
+    "balance": 713020
+   },
+   {
+    "id": 215,
+    "at": "2026-09-01T00:01:31",
+    "text": "Repairing hull: Asobo Beechcraft Baron G58",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 11998,
+    "balance": 701022
+   },
+   {
+    "id": 216,
+    "at": "2026-09-01T00:01:40",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 420,
+    "balance": 700602
+   },
+   {
+    "id": 217,
+    "at": "2026-09-01T02:29:21",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 700116
+   },
+   {
+    "id": 218,
+    "at": "2026-09-01T02:29:59",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 24438,
+    "out": 0,
+    "balance": 724554
+   },
+   {
+    "id": 219,
+    "at": "2026-09-01T21:07:24",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 724068
+   },
+   {
+    "id": 220,
+    "at": "2026-09-01T21:08:03",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 17647,
+    "out": 0,
+    "balance": 741715
+   },
+   {
+    "id": 221,
+    "at": "2026-09-01T22:56:50",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 741229
+   },
+   {
+    "id": 222,
+    "at": "2026-09-01T22:57:28",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 9625,
+    "out": 0,
+    "balance": 750854
+   },
+   {
+    "id": 223,
+    "at": "2026-09-02T00:58:42",
+    "text": "Buying plane: Black Square Baron B58P Professional",
+    "cat": "aircraft",
+    "in": 0,
+    "out": 633447,
+    "balance": 117407
+   },
+   {
+    "id": 224,
+    "at": "2026-09-02T11:41:40",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 116907
+   },
+   {
+    "id": 225,
+    "at": "2026-09-02T20:09:29",
+    "text": "Repairing engine: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 39827,
+    "balance": 77080
+   },
+   {
+    "id": 226,
+    "at": "2026-09-02T20:12:49",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 374,
+    "balance": 76706
+   },
+   {
+    "id": 227,
+    "at": "2026-09-02T22:41:37",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 241,
+    "balance": 76465
+   },
+   {
+    "id": 228,
+    "at": "2026-09-02T22:42:06",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1401,
+    "balance": 75064
+   },
+   {
+    "id": 229,
+    "at": "2026-09-02T23:25:27",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 74583
+   },
+   {
+    "id": 230,
+    "at": "2026-09-02T23:26:05",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 39255,
+    "out": 0,
+    "balance": 113838
+   },
+   {
+    "id": 231,
+    "at": "2026-09-03T00:00:55",
+    "text": "Repairing hull: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 38057,
+    "balance": 75781
+   },
+   {
+    "id": 232,
+    "at": "2026-09-03T01:03:43",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 75300
+   },
+   {
+    "id": 233,
+    "at": "2026-09-03T01:04:25",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 17933,
+    "out": 0,
+    "balance": 93233
+   },
+   {
+    "id": 234,
+    "at": "2026-09-03T01:06:05",
+    "text": "Aircraft insurance: Black Square Baron B58P Professional",
+    "cat": "insurance",
+    "in": 0,
+    "out": 6229,
+    "balance": 87004
+   },
+   {
+    "id": 235,
+    "at": "2026-09-03T13:34:34",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 86504
+   },
+   {
+    "id": 236,
+    "at": "2026-09-03T13:42:50",
+    "text": "Buying fuel: Asobo Cessna 152",
+    "cat": "fuel",
+    "in": 0,
+    "out": 112,
+    "balance": 86392
+   },
+   {
+    "id": 237,
+    "at": "2026-09-03T15:15:47",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1328,
+    "balance": 85064
+   },
+   {
+    "id": 238,
+    "at": "2026-09-03T15:34:24",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 8496,
+    "out": 0,
+    "balance": 93560
+   },
+   {
+    "id": 239,
+    "at": "2026-09-03T15:34:24",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 93430
+   },
+   {
+    "id": 240,
+    "at": "2026-09-03T20:44:16",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 92949
+   },
+   {
+    "id": 241,
+    "at": "2026-09-03T20:44:55",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 26785,
+    "out": 0,
+    "balance": 119734
+   },
+   {
+    "id": 242,
+    "at": "2026-09-03T21:19:25",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1107,
+    "balance": 118627
+   },
+   {
+    "id": 243,
+    "at": "2026-09-03T21:23:54",
+    "text": "Repairing hull: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 19644,
+    "balance": 98983
+   },
+   {
+    "id": 244,
+    "at": "2026-09-03T21:26:30",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 55,
+    "balance": 98928
+   },
+   {
+    "id": 245,
+    "at": "2026-09-03T22:11:44",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 98447
+   },
+   {
+    "id": 246,
+    "at": "2026-09-03T22:12:22",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 7953,
+    "out": 0,
+    "balance": 106400
+   },
+   {
+    "id": 247,
+    "at": "2026-09-03T22:55:14",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 130,
+    "balance": 106270
+   },
+   {
+    "id": 248,
+    "at": "2026-09-03T22:55:46",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 80,
+    "balance": 106190
+   },
+   {
+    "id": 249,
+    "at": "2026-09-03T22:55:59",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 937,
+    "balance": 105253
+   },
+   {
+    "id": 250,
+    "at": "2026-09-04T00:05:20",
+    "text": "Pilot learning: Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 104753
+   },
+   {
+    "id": 251,
+    "at": "2026-09-04T00:06:18",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 605,
+    "balance": 104148
+   },
+   {
+    "id": 252,
+    "at": "2026-09-04T00:06:23",
+    "text": "Aircraft insurance: Asobo Beechcraft Baron G58",
+    "cat": "insurance",
+    "in": 0,
+    "out": 7951,
+    "balance": 96197
+   },
+   {
+    "id": 253,
+    "at": "2026-09-04T00:27:31",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 95716
+   },
+   {
+    "id": 254,
+    "at": "2026-09-04T00:28:13",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 12617,
+    "out": 0,
+    "balance": 108333
+   },
+   {
+    "id": 255,
+    "at": "2026-09-04T00:46:15",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 319,
+    "balance": 108014
+   },
+   {
+    "id": 256,
+    "at": "2026-09-04T13:01:11",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 21232,
+    "out": 0,
+    "balance": 129246
+   },
+   {
+    "id": 257,
+    "at": "2026-09-04T13:01:11",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 128760
+   },
+   {
+    "id": 258,
+    "at": "2026-09-04T13:19:06",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 308,
+    "balance": 128452
+   },
+   {
+    "id": 259,
+    "at": "2026-09-04T13:36:37",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 640,
+    "balance": 127812
+   },
+   {
+    "id": 260,
+    "at": "2026-09-04T15:28:35",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 127331
+   },
+   {
+    "id": 261,
+    "at": "2026-09-04T15:29:14",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 18020,
+    "out": 0,
+    "balance": 145351
+   },
+   {
+    "id": 262,
+    "at": "2026-09-04T17:08:03",
+    "text": "Hiring pilot: Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 144851
+   },
+   {
+    "id": 263,
+    "at": "2026-09-04T17:10:25",
+    "text": "Moving pilot to: LTBZ",
+    "cat": "moves",
+    "in": 0,
+    "out": 4895,
+    "balance": 139956
+   },
+   {
+    "id": 264,
+    "at": "2026-09-04T17:10:52",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 244,
+    "balance": 139712
+   },
+   {
+    "id": 265,
+    "at": "2026-09-04T17:26:53",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 32745,
+    "out": 0,
+    "balance": 172457
+   },
+   {
+    "id": 266,
+    "at": "2026-09-04T17:26:53",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 171971
+   },
+   {
+    "id": 267,
+    "at": "2026-09-04T17:44:52",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 311,
+    "balance": 171660
+   },
+   {
+    "id": 268,
+    "at": "2026-09-04T17:45:04",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 221,
+    "balance": 171439
+   },
+   {
+    "id": 269,
+    "at": "2026-09-04T18:04:42",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1109,
+    "balance": 170330
+   },
+   {
+    "id": 270,
+    "at": "2026-09-04T18:18:27",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 5969,
+    "out": 0,
+    "balance": 176299
+   },
+   {
+    "id": 271,
+    "at": "2026-09-04T18:18:27",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 175923
+   },
+   {
+    "id": 272,
+    "at": "2026-09-04T18:49:57",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 121,
+    "balance": 175802
+   },
+   {
+    "id": 273,
+    "at": "2026-09-04T21:27:44",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 29141,
+    "out": 0,
+    "balance": 204943
+   },
+   {
+    "id": 274,
+    "at": "2026-09-04T21:27:44",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 204457
+   },
+   {
+    "id": 275,
+    "at": "2026-09-04T21:45:12",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 996,
+    "balance": 203461
+   },
+   {
+    "id": 276,
+    "at": "2026-09-04T22:37:10",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 962,
+    "balance": 202499
+   },
+   {
+    "id": 277,
+    "at": "2026-09-04T22:37:22",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1045,
+    "balance": 201454
+   },
+   {
+    "id": 278,
+    "at": "2026-09-04T23:19:24",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 200973
+   },
+   {
+    "id": 279,
+    "at": "2026-09-04T23:20:06",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 41446,
+    "out": 0,
+    "balance": 242419
+   },
+   {
+    "id": 280,
+    "at": "2026-09-04T23:24:12",
+    "text": "Buying plane: A2A Piper PA-24-250 Comanche",
+    "cat": "aircraft",
+    "in": 0,
+    "out": 182535,
+    "balance": 59884
+   },
+   {
+    "id": 281,
+    "at": "2026-09-04T23:25:04",
+    "text": "Aircraft movement to: UUBI",
+    "cat": "moves",
+    "in": 0,
+    "out": 5355,
+    "balance": 54529
+   },
+   {
+    "id": 282,
+    "at": "2026-09-04T23:25:11",
+    "text": "Repairing hull: A2A Piper PA-24-250 Comanche",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 30197,
+    "balance": 24332
+   },
+   {
+    "id": 283,
+    "at": "2026-09-04T23:54:23",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 27563,
+    "out": 0,
+    "balance": 51895
+   },
+   {
+    "id": 284,
+    "at": "2026-09-04T23:54:23",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 51707
+   },
+   {
+    "id": 285,
+    "at": "2026-09-05T01:46:34",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 30588,
+    "out": 0,
+    "balance": 82295
+   },
+   {
+    "id": 286,
+    "at": "2026-09-05T01:46:34",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 243,
+    "balance": 82052
+   },
+   {
+    "id": 287,
+    "at": "2026-09-05T01:46:34",
+    "text": "Restaurant fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 19,
+    "balance": 82033
+   },
+   {
+    "id": 288,
+    "at": "2026-09-05T01:46:34",
+    "text": "Hotel fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 56,
+    "balance": 81977
+   },
+   {
+    "id": 289,
+    "at": "2026-09-05T01:56:53",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 204,
+    "balance": 81773
+   },
+   {
+    "id": 290,
+    "at": "2026-09-05T02:23:24",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 372,
+    "balance": 81401
+   },
+   {
+    "id": 291,
+    "at": "2026-09-05T02:36:50",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 204,
+    "balance": 81197
+   },
+   {
+    "id": 292,
+    "at": "2026-09-05T12:33:49",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 9324,
+    "out": 0,
+    "balance": 90521
+   },
+   {
+    "id": 293,
+    "at": "2026-09-05T12:33:49",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 90145
+   },
+   {
+    "id": 294,
+    "at": "2026-09-05T12:33:52",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 89645
+   },
+   {
+    "id": 295,
+    "at": "2026-09-05T13:48:18",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 758,
+    "balance": 88887
+   },
+   {
+    "id": 296,
+    "at": "2026-09-05T15:26:30",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 9124,
+    "out": 0,
+    "balance": 98011
+   },
+   {
+    "id": 297,
+    "at": "2026-09-05T15:26:30",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 97823
+   },
+   {
+    "id": 298,
+    "at": "2026-09-05T15:53:14",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 3053,
+    "out": 0,
+    "balance": 100876
+   },
+   {
+    "id": 299,
+    "at": "2026-09-05T15:53:14",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 100688
+   },
+   {
+    "id": 300,
+    "at": "2026-09-05T18:39:39",
+    "text": "Aircraft movement to: UBOK",
+    "cat": "moves",
+    "in": 0,
+    "out": 195,
+    "balance": 100493
+   },
+   {
+    "id": 301,
+    "at": "2026-09-05T20:28:16",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 53213,
+    "out": 0,
+    "balance": 153706
+   },
+   {
+    "id": 302,
+    "at": "2026-09-05T20:28:16",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 153220
+   },
+   {
+    "id": 303,
+    "at": "2026-09-05T21:43:20",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 984,
+    "balance": 152236
+   },
+   {
+    "id": 304,
+    "at": "2026-09-05T21:43:30",
+    "text": "Repairing hull: Asobo Beechcraft Baron G58",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 10314,
+    "balance": 141922
+   },
+   {
+    "id": 305,
+    "at": "2026-09-05T21:43:42",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 254,
+    "balance": 141668
+   },
+   {
+    "id": 306,
+    "at": "2026-09-05T22:41:49",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 141168
+   },
+   {
+    "id": 307,
+    "at": "2026-09-05T22:42:49",
+    "text": "Buying fuel: A2A Piper PA-24-250 Comanche",
+    "cat": "fuel",
+    "in": 0,
+    "out": 341,
+    "balance": 140827
+   },
+   {
+    "id": 308,
+    "at": "2026-09-05T23:19:25",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 900,
+    "balance": 139927
+   },
+   {
+    "id": 309,
+    "at": "2026-09-06T00:36:44",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 962,
+    "balance": 138965
+   },
+   {
+    "id": 310,
+    "at": "2026-09-06T00:37:26",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 26607,
+    "out": 0,
+    "balance": 165572
+   },
+   {
+    "id": 311,
+    "at": "2026-09-06T01:38:48",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 20745,
+    "out": 0,
+    "balance": 186317
+   },
+   {
+    "id": 312,
+    "at": "2026-09-06T01:38:48",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 188,
+    "balance": 186129
+   },
+   {
+    "id": 313,
+    "at": "2026-09-06T13:16:39",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 60287,
+    "out": 0,
+    "balance": 246416
+   },
+   {
+    "id": 314,
+    "at": "2026-09-06T13:16:39",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 245930
+   },
+   {
+    "id": 315,
+    "at": "2026-09-06T13:16:43",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 245430
+   },
+   {
+    "id": 316,
+    "at": "2026-09-06T13:20:39",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1194,
+    "balance": 244236
+   },
+   {
+    "id": 317,
+    "at": "2026-09-06T13:47:30",
+    "text": "Aircraft insurance: A2A Piper PA-24-250 Comanche",
+    "cat": "insurance",
+    "in": 0,
+    "out": 1749,
+    "balance": 242487
+   },
+   {
+    "id": 318,
+    "at": "2026-09-06T14:47:48",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 837,
+    "balance": 241650
+   },
+   {
+    "id": 319,
+    "at": "2026-09-06T16:41:04",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 241169
+   },
+   {
+    "id": 320,
+    "at": "2026-09-06T16:41:43",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 26001,
+    "out": 0,
+    "balance": 267170
+   },
+   {
+    "id": 321,
+    "at": "2026-09-06T16:47:54",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 71,
+    "balance": 267099
+   },
+   {
+    "id": 322,
+    "at": "2026-09-06T16:48:00",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 12,
+    "balance": 267087
+   },
+   {
+    "id": 323,
+    "at": "2026-09-06T16:48:05",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 112,
+    "balance": 266975
+   },
+   {
+    "id": 324,
+    "at": "2026-09-06T17:51:48",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 962,
+    "balance": 266013
+   },
+   {
+    "id": 325,
+    "at": "2026-09-06T17:52:55",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 286,
+    "balance": 265727
+   },
+   {
+    "id": 326,
+    "at": "2026-09-07T17:17:48",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 39289,
+    "out": 0,
+    "balance": 305016
+   },
+   {
+    "id": 327,
+    "at": "2026-09-07T17:17:48",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 304530
+   },
+   {
+    "id": 328,
+    "at": "2026-09-07T17:17:51",
+    "text": "Aircraft weekly insurance cost: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 380,
+    "balance": 304150
+   },
+   {
+    "id": 329,
+    "at": "2026-09-07T17:17:51",
+    "text": "Manager weekly wage: Charles",
+    "cat": "staff",
+    "in": 0,
+    "out": 200,
+    "balance": 303950
+   },
+   {
+    "id": 330,
+    "at": "2026-09-07T17:17:51",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 303450
+   },
+   {
+    "id": 331,
+    "at": "2026-09-07T17:17:51",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 302950
+   },
+   {
+    "id": 332,
+    "at": "2026-09-07T18:31:47",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 686,
+    "balance": 302264
+   },
+   {
+    "id": 333,
+    "at": "2026-09-07T18:31:49",
+    "text": "Aircraft insurance: Asobo Beechcraft Baron G58",
+    "cat": "insurance",
+    "in": 0,
+    "out": 7744,
+    "balance": 294520
+   },
+   {
+    "id": 334,
+    "at": "2026-09-07T19:34:53",
+    "text": "Buying fuel: Asobo C172SP G1000 Passengers",
+    "cat": "fuel",
+    "in": 0,
+    "out": 286,
+    "balance": 294234
+   },
+   {
+    "id": 335,
+    "at": "2026-09-08T09:56:38",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 63979,
+    "out": 0,
+    "balance": 358213
+   },
+   {
+    "id": 336,
+    "at": "2026-09-08T09:56:38",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 357727
+   },
+   {
+    "id": 337,
+    "at": "2026-09-08T09:56:38",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 11762,
+    "out": 0,
+    "balance": 369489
+   },
+   {
+    "id": 338,
+    "at": "2026-09-08T09:56:38",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 376,
+    "balance": 369113
+   },
+   {
+    "id": 339,
+    "at": "2026-09-08T10:55:07",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1194,
+    "balance": 367919
+   },
+   {
+    "id": 340,
+    "at": "2026-09-08T18:50:37",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 65157,
+    "out": 0,
+    "balance": 433076
+   },
+   {
+    "id": 341,
+    "at": "2026-09-08T18:50:37",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 432590
+   },
+   {
+    "id": 342,
+    "at": "2026-09-08T18:56:46",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 432109
+   },
+   {
+    "id": 343,
+    "at": "2026-09-08T18:57:37",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1343,
+    "balance": 430766
+   },
+   {
+    "id": 344,
+    "at": "2026-09-08T18:57:57",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 25180,
+    "out": 0,
+    "balance": 455946
+   },
+   {
+    "id": 345,
+    "at": "2026-09-08T18:58:03",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 22457,
+    "out": 0,
+    "balance": 478403
+   },
+   {
+    "id": 346,
+    "at": "2026-09-08T18:59:33",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 196,
+    "balance": 478207
+   },
+   {
+    "id": 347,
+    "at": "2026-09-08T19:03:00",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 439,
+    "balance": 477768
+   },
+   {
+    "id": 348,
+    "at": "2026-09-08T22:01:38",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 477287
+   },
+   {
+    "id": 349,
+    "at": "2026-09-08T22:02:13",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 30014,
+    "out": 0,
+    "balance": 507301
+   },
+   {
+    "id": 350,
+    "at": "2026-09-08T22:02:17",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 28114,
+    "out": 0,
+    "balance": 535415
+   },
+   {
+    "id": 351,
+    "at": "2026-09-08T22:44:22",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1454,
+    "balance": 533961
+   },
+   {
+    "id": 352,
+    "at": "2026-09-08T22:44:38",
+    "text": "Repairing hull: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 31519,
+    "balance": 502442
+   },
+   {
+    "id": 353,
+    "at": "2026-09-09T00:10:28",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 501961
+   },
+   {
+    "id": 354,
+    "at": "2026-09-09T00:11:07",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 45090,
+    "out": 0,
+    "balance": 547051
+   },
+   {
+    "id": 355,
+    "at": "2026-09-09T00:27:19",
+    "text": "Loan taken",
+    "cat": "loans",
+    "in": 50000,
+    "out": 0,
+    "balance": 597051
+   },
+   {
+    "id": 356,
+    "at": "2026-09-09T00:27:37",
+    "text": "Buying plane: A2A Piper Aerostar 600",
+    "cat": "aircraft",
+    "in": 0,
+    "out": 553344,
+    "balance": 43707
+   },
+   {
+    "id": 357,
+    "at": "2026-09-09T18:37:25",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 47902,
+    "out": 0,
+    "balance": 91609
+   },
+   {
+    "id": 358,
+    "at": "2026-09-09T18:37:25",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 91123
+   },
+   {
+    "id": 359,
+    "at": "2026-09-09T18:37:28",
+    "text": "Pilot daily wages (2 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 90123
+   },
+   {
+    "id": 360,
+    "at": "2026-09-09T18:37:28",
+    "text": "Pilot daily wages (2 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 89123
+   },
+   {
+    "id": 361,
+    "at": "2026-09-09T19:37:54",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1128,
+    "balance": 87995
+   },
+   {
+    "id": 362,
+    "at": "2026-09-09T19:38:13",
+    "text": "Aircraft movement to: VEIM",
+    "cat": "moves",
+    "in": 0,
+    "out": 5357,
+    "balance": 82638
+   },
+   {
+    "id": 363,
+    "at": "2026-09-09T19:38:22",
+    "text": "Repairing hull: A2A Piper Aerostar 600",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 23585,
+    "balance": 59053
+   },
+   {
+    "id": 364,
+    "at": "2026-09-09T19:38:27",
+    "text": "Aircraft insurance: A2A Piper Aerostar 600",
+    "cat": "insurance",
+    "in": 0,
+    "out": 5220,
+    "balance": 53833
+   },
+   {
+    "id": 365,
+    "at": "2026-09-09T20:18:33",
+    "text": "Moving pilot to: VEIM",
+    "cat": "moves",
+    "in": 0,
+    "out": 4717,
+    "balance": 49116
+   },
+   {
+    "id": 366,
+    "at": "2026-09-09T22:12:59",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 439,
+    "balance": 48677
+   },
+   {
+    "id": 367,
+    "at": "2026-09-09T22:13:38",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 55677,
+    "out": 0,
+    "balance": 104354
+   },
+   {
+    "id": 368,
+    "at": "2026-09-09T22:54:44",
+    "text": "Buying fuel: A2A Piper Aerostar 600",
+    "cat": "fuel",
+    "in": 0,
+    "out": 722,
+    "balance": 103632
+   },
+   {
+    "id": 369,
+    "at": "2026-09-10T00:45:01",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 439,
+    "balance": 103193
+   },
+   {
+    "id": 370,
+    "at": "2026-09-10T00:45:40",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 36105,
+    "out": 0,
+    "balance": 139298
+   },
+   {
+    "id": 371,
+    "at": "2026-09-10T10:21:01",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 57688,
+    "out": 0,
+    "balance": 196986
+   },
+   {
+    "id": 372,
+    "at": "2026-09-10T10:21:01",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 196500
+   },
+   {
+    "id": 373,
+    "at": "2026-09-10T10:21:03",
+    "text": "Aircraft weekly insurance cost: Black Square Baron B58P Professional",
+    "cat": "insurance",
+    "in": 0,
+    "out": 6334,
+    "balance": 190166
+   },
+   {
+    "id": 374,
+    "at": "2026-09-10T12:01:07",
+    "text": "Pilot learning: Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 189666
+   },
+   {
+    "id": 375,
+    "at": "2026-09-10T12:01:44",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 404,
+    "balance": 189262
+   },
+   {
+    "id": 376,
+    "at": "2026-09-10T12:02:15",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1009,
+    "balance": 188253
+   },
+   {
+    "id": 377,
+    "at": "2026-09-10T17:05:55",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 57879,
+    "out": 0,
+    "balance": 246132
+   },
+   {
+    "id": 378,
+    "at": "2026-09-10T17:05:56",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 245651
+   },
+   {
+    "id": 379,
+    "at": "2026-09-10T18:03:12",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1400,
+    "balance": 244251
+   },
+   {
+    "id": 380,
+    "at": "2026-09-10T18:53:53",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 51392,
+    "out": 0,
+    "balance": 295643
+   },
+   {
+    "id": 381,
+    "at": "2026-09-10T18:53:53",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 243,
+    "balance": 295400
+   },
+   {
+    "id": 382,
+    "at": "2026-09-10T19:05:55",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1092,
+    "balance": 294308
+   },
+   {
+    "id": 383,
+    "at": "2026-09-10T20:30:43",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 439,
+    "balance": 293869
+   },
+   {
+    "id": 384,
+    "at": "2026-09-10T20:31:22",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 102135,
+    "out": 0,
+    "balance": 396004
+   },
+   {
+    "id": 385,
+    "at": "2026-09-13T15:58:47",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 63192,
+    "out": 0,
+    "balance": 459196
+   },
+   {
+    "id": 386,
+    "at": "2026-09-13T15:58:47",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 458715
+   },
+   {
+    "id": 387,
+    "at": "2026-09-13T15:58:47",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 67031,
+    "out": 0,
+    "balance": 525746
+   },
+   {
+    "id": 388,
+    "at": "2026-09-13T15:58:47",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 525260
+   },
+   {
+    "id": 389,
+    "at": "2026-09-13T15:58:50",
+    "text": "Aircraft weekly insurance cost: A2A Piper PA-24-250 Comanche",
+    "cat": "insurance",
+    "in": 0,
+    "out": 1825,
+    "balance": 523435
+   },
+   {
+    "id": 390,
+    "at": "2026-09-13T15:58:51",
+    "text": "Pilot daily wages (3 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 1500,
+    "balance": 521935
+   },
+   {
+    "id": 391,
+    "at": "2026-09-13T15:58:51",
+    "text": "Pilot daily wages (3 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 1500,
+    "balance": 520435
+   },
+   {
+    "id": 392,
+    "at": "2026-09-13T16:02:27",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1379,
+    "balance": 519056
+   },
+   {
+    "id": 393,
+    "at": "2026-09-13T16:03:23",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1271,
+    "balance": 517785
+   },
+   {
+    "id": 394,
+    "at": "2026-09-13T19:17:23",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 439,
+    "balance": 517346
+   },
+   {
+    "id": 395,
+    "at": "2026-09-13T19:18:02",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 28670,
+    "out": 0,
+    "balance": 546016
+   },
+   {
+    "id": 396,
+    "at": "2026-09-14T18:33:54",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 57822,
+    "out": 0,
+    "balance": 603838
+   },
+   {
+    "id": 397,
+    "at": "2026-09-14T18:33:54",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 603357
+   },
+   {
+    "id": 398,
+    "at": "2026-09-14T18:33:55",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 70780,
+    "out": 0,
+    "balance": 674137
+   },
+   {
+    "id": 399,
+    "at": "2026-09-14T18:33:55",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 673651
+   },
+   {
+    "id": 400,
+    "at": "2026-09-14T18:33:57",
+    "text": "Aircraft weekly insurance cost: Asobo Beechcraft Baron G58",
+    "cat": "insurance",
+    "in": 0,
+    "out": 8103,
+    "balance": 665548
+   },
+   {
+    "id": 401,
+    "at": "2026-09-14T18:33:57",
+    "text": "Aircraft weekly insurance cost: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 380,
+    "balance": 665168
+   },
+   {
+    "id": 402,
+    "at": "2026-09-14T18:33:57",
+    "text": "Manager weekly wage: Charles",
+    "cat": "staff",
+    "in": 0,
+    "out": 200,
+    "balance": 664968
+   },
+   {
+    "id": 403,
+    "at": "2026-09-14T18:33:57",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 664468
+   },
+   {
+    "id": 404,
+    "at": "2026-09-14T18:33:57",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 663968
+   },
+   {
+    "id": 405,
+    "at": "2026-09-14T18:35:29",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1450,
+    "balance": 662518
+   },
+   {
+    "id": 406,
+    "at": "2026-09-14T18:36:21",
+    "text": "Repairing hull: A2A Piper Aerostar 600",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 74678,
+    "balance": 587840
+   },
+   {
+    "id": 407,
+    "at": "2026-09-14T18:38:08",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1330,
+    "balance": 586510
+   },
+   {
+    "id": 408,
+    "at": "2026-09-14T18:39:42",
+    "text": "Buying fuel: A2A Piper Aerostar 600",
+    "cat": "fuel",
+    "in": 0,
+    "out": 522,
+    "balance": 585988
+   },
+   {
+    "id": 409,
+    "at": "2026-09-14T19:46:19",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 877,
+    "balance": 585111
+   },
+   {
+    "id": 410,
+    "at": "2026-09-17T20:45:40",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 54211,
+    "out": 0,
+    "balance": 639322
+   },
+   {
+    "id": 411,
+    "at": "2026-09-17T20:45:40",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 638841
+   },
+   {
+    "id": 412,
+    "at": "2026-09-17T20:45:42",
+    "text": "Loan weekly due",
+    "cat": "loans",
+    "in": 0,
+    "out": 5018,
+    "balance": 633823
+   },
+   {
+    "id": 413,
+    "at": "2026-09-17T20:45:42",
+    "text": "Aircraft weekly insurance cost: A2A Piper Aerostar 600",
+    "cat": "insurance",
+    "in": 0,
+    "out": 5533,
+    "balance": 628290
+   },
+   {
+    "id": 414,
+    "at": "2026-09-17T20:45:42",
+    "text": "Aircraft weekly insurance cost: Black Square Baron B58P Professional",
+    "cat": "insurance",
+    "in": 0,
+    "out": 6334,
+    "balance": 621956
+   },
+   {
+    "id": 415,
+    "at": "2026-09-17T20:45:42",
+    "text": "Pilot daily wages (3 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 1500,
+    "balance": 620456
+   },
+   {
+    "id": 416,
+    "at": "2026-09-17T20:45:42",
+    "text": "Pilot daily wages (3 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 1500,
+    "balance": 618956
+   },
+   {
+    "id": 417,
+    "at": "2026-09-17T20:49:00",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1345,
+    "balance": 617611
+   },
+   {
+    "id": 418,
+    "at": "2026-09-17T21:45:08",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 7099,
+    "out": 0,
+    "balance": 624710
+   },
+   {
+    "id": 419,
+    "at": "2026-09-17T21:45:08",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 624224
+   },
+   {
+    "id": 420,
+    "at": "2026-09-17T21:50:48",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 439,
+    "balance": 623785
+   },
+   {
+    "id": 421,
+    "at": "2026-09-17T21:51:27",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 26306,
+    "out": 0,
+    "balance": 650091
+   },
+   {
+    "id": 422,
+    "at": "2026-09-17T23:28:39",
+    "text": "Staff pilot mission Passenger",
+    "cat": "company",
+    "in": 29654,
+    "out": 0,
+    "balance": 679745
+   },
+   {
+    "id": 423,
+    "at": "2026-09-17T23:28:40",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 679264
+   },
+   {
+    "id": 424,
+    "at": "2026-09-18T20:38:04",
+    "text": "Aircraft movement to: RJOR",
+    "cat": "moves",
+    "in": 0,
+    "out": 84039,
+    "balance": 595225
+   },
+   {
+    "id": 425,
+    "at": "2026-09-18T22:03:05",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 204,
+    "balance": 595021
+   },
+   {
+    "id": 426,
+    "at": "2026-09-18T22:03:43",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 12534,
+    "out": 0,
+    "balance": 607555
+   },
+   {
+    "id": 427,
+    "at": "2026-09-19T16:27:04",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 22692,
+    "out": 0,
+    "balance": 630247
+   },
+   {
+    "id": 428,
+    "at": "2026-09-19T16:27:04",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 629766
+   },
+   {
+    "id": 429,
+    "at": "2026-09-19T16:27:06",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 629266
+   },
+   {
+    "id": 430,
+    "at": "2026-09-19T16:27:06",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 628766
+   },
+   {
+    "id": 431,
+    "at": "2026-09-19T16:31:24",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 289,
+    "balance": 628477
+   },
+   {
+    "id": 432,
+    "at": "2026-09-19T16:31:31",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 318,
+    "balance": 628159
+   },
+   {
+    "id": 433,
+    "at": "2026-09-19T19:01:28",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 31402,
+    "out": 0,
+    "balance": 659561
+   },
+   {
+    "id": 434,
+    "at": "2026-09-19T19:01:28",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 659080
+   },
+   {
+    "id": 435,
+    "at": "2026-09-19T19:19:51",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 24218,
+    "out": 0,
+    "balance": 683298
+   },
+   {
+    "id": 436,
+    "at": "2026-09-19T19:19:51",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 486,
+    "balance": 682812
+   },
+   {
+    "id": 437,
+    "at": "2026-09-20T13:41:02",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 978,
+    "balance": 681834
+   },
+   {
+    "id": 438,
+    "at": "2026-09-20T13:41:12",
+    "text": "Buying fuel: Asobo Beechcraft Baron G58",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1105,
+    "balance": 680729
+   },
+   {
+    "id": 439,
+    "at": "2026-09-20T14:35:25",
+    "text": "Staff pilot mission Cargo",
+    "cat": "company",
+    "in": 12231,
+    "out": 0,
+    "balance": 692960
+   },
+   {
+    "id": 440,
+    "at": "2026-09-20T14:35:25",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 692479
+   },
+   {
+    "id": 441,
+    "at": "2026-09-25T20:03:26",
+    "text": "Loan weekly due",
+    "cat": "loans",
+    "in": 0,
+    "out": 4533,
+    "balance": 687946
+   },
+   {
+    "id": 442,
+    "at": "2026-09-25T20:03:26",
+    "text": "Aircraft weekly insurance cost: A2A Piper Aerostar 600",
+    "cat": "insurance",
+    "in": 0,
+    "out": 5533,
+    "balance": 682413
+   },
+   {
+    "id": 443,
+    "at": "2026-09-25T20:03:26",
+    "text": "Aircraft weekly insurance cost: A2A Piper PA-24-250 Comanche",
+    "cat": "insurance",
+    "in": 0,
+    "out": 1825,
+    "balance": 680588
+   },
+   {
+    "id": 444,
+    "at": "2026-09-25T20:03:26",
+    "text": "Aircraft weekly insurance cost: Black Square Baron B58P Professional",
+    "cat": "insurance",
+    "in": 0,
+    "out": 6334,
+    "balance": 674254
+   },
+   {
+    "id": 445,
+    "at": "2026-09-25T20:03:26",
+    "text": "Aircraft weekly insurance cost: Asobo Beechcraft Baron G58",
+    "cat": "insurance",
+    "in": 0,
+    "out": 8103,
+    "balance": 666151
+   },
+   {
+    "id": 446,
+    "at": "2026-09-25T20:03:26",
+    "text": "Aircraft weekly insurance cost: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 380,
+    "balance": 665771
+   },
+   {
+    "id": 447,
+    "at": "2026-09-25T20:03:26",
+    "text": "Manager weekly wage: Charles",
+    "cat": "staff",
+    "in": 0,
+    "out": 200,
+    "balance": 665571
+   },
+   {
+    "id": 448,
+    "at": "2026-09-25T20:03:26",
+    "text": "Pilot daily wages (6 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 3000,
+    "balance": 662571
+   },
+   {
+    "id": 449,
+    "at": "2026-09-25T20:03:26",
+    "text": "Pilot daily wages (6 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 3000,
+    "balance": 659571
+   },
+   {
+    "id": 450,
+    "at": "2026-10-21T20:32:09",
+    "text": "Loan weekly due",
+    "cat": "loans",
+    "in": 0,
+    "out": 4095,
+    "balance": 655476
+   },
+   {
+    "id": 451,
+    "at": "2026-10-21T20:32:09",
+    "text": "Aircraft weekly insurance cost: A2A Piper Aerostar 600",
+    "cat": "insurance",
+    "in": 0,
+    "out": 5533,
+    "balance": 649943
+   },
+   {
+    "id": 452,
+    "at": "2026-10-21T20:32:09",
+    "text": "Aircraft weekly insurance cost: A2A Piper PA-24-250 Comanche",
+    "cat": "insurance",
+    "in": 0,
+    "out": 1825,
+    "balance": 648118
+   },
+   {
+    "id": 453,
+    "at": "2026-10-21T20:32:09",
+    "text": "Aircraft weekly insurance cost: Black Square Baron B58P Professional",
+    "cat": "insurance",
+    "in": 0,
+    "out": 6334,
+    "balance": 641784
+   },
+   {
+    "id": 454,
+    "at": "2026-10-21T20:32:09",
+    "text": "Aircraft weekly insurance cost: Asobo Beechcraft Baron G58",
+    "cat": "insurance",
+    "in": 0,
+    "out": 8103,
+    "balance": 633681
+   },
+   {
+    "id": 455,
+    "at": "2026-10-21T20:32:09",
+    "text": "Aircraft weekly insurance cost: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 380,
+    "balance": 633301
+   },
+   {
+    "id": 456,
+    "at": "2026-10-21T20:32:09",
+    "text": "Manager weekly wage: Charles",
+    "cat": "staff",
+    "in": 0,
+    "out": 200,
+    "balance": 633101
+   },
+   {
+    "id": 457,
+    "at": "2026-10-21T20:32:09",
+    "text": "Pilot daily wages (7 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 3500,
+    "balance": 629601
+   },
+   {
+    "id": 458,
+    "at": "2026-10-21T20:32:09",
+    "text": "Pilot daily wages (7 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 3500,
+    "balance": 626101
+   },
+   {
+    "id": 459,
+    "at": "2026-10-22T11:04:12",
+    "text": "Aircraft movement to: RJNW",
+    "cat": "moves",
+    "in": 0,
+    "out": 3853,
+    "balance": 622248
+   },
+   {
+    "id": 460,
+    "at": "2026-10-22T13:32:54",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 439,
+    "balance": 621809
+   },
+   {
+    "id": 461,
+    "at": "2026-10-22T13:33:33",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 39094,
+    "out": 0,
+    "balance": 660903
+   },
+   {
+    "id": 462,
+    "at": "2026-10-22T16:44:25",
+    "text": "Aircraft movement to: RJCW",
+    "cat": "moves",
+    "in": 0,
+    "out": 70306,
+    "balance": 590597
+   },
+   {
+    "id": 463,
+    "at": "2026-10-22T18:42:31",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 439,
+    "balance": 590158
+   },
+   {
+    "id": 464,
+    "at": "2026-10-22T18:43:11",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 21434,
+    "out": 0,
+    "balance": 611592
+   },
+   {
+    "id": 465,
+    "at": "2026-10-23T21:40:03",
+    "text": "Pilot daily wages (2 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 610592
+   },
+   {
+    "id": 466,
+    "at": "2026-10-23T21:40:03",
+    "text": "Pilot daily wages (2 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 609592
+   },
+   {
+    "id": 467,
+    "at": "2026-10-24T23:39:22",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 609092
+   },
+   {
+    "id": 468,
+    "at": "2026-10-24T23:39:22",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 608592
+   },
+   {
+    "id": 469,
+    "at": "2026-10-25T12:18:31",
+    "text": "Aircraft movement to: UHSM",
+    "cat": "moves",
+    "in": 0,
+    "out": 4192,
+    "balance": 604400
+   },
+   {
+    "id": 470,
+    "at": "2026-10-25T15:38:39",
+    "text": "Buying goods: Fuel",
+    "cat": "trading",
+    "in": 0,
+    "out": 936,
+    "balance": 603464
+   },
+   {
+    "id": 471,
+    "at": "2026-10-25T18:41:50",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 60,
+    "balance": 603404
+   },
+   {
+    "id": 472,
+    "at": "2026-10-25T18:42:24",
+    "text": "Selling goods: Fuel",
+    "cat": "trading",
+    "in": 6579,
+    "out": 0,
+    "balance": 609983
+   },
+   {
+    "id": 473,
+    "at": "2026-10-26T20:08:37",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 609483
+   },
+   {
+    "id": 474,
+    "at": "2026-10-26T20:08:37",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 608983
+   },
+   {
+    "id": 475,
+    "at": "2026-10-26T21:06:19",
+    "text": "Buying goods: Clothes",
+    "cat": "trading",
+    "in": 0,
+    "out": 90000,
+    "balance": 518983
+   },
+   {
+    "id": 476,
+    "at": "2026-10-26T21:10:13",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 54,
+    "balance": 518929
+   },
+   {
+    "id": 477,
+    "at": "2026-10-26T23:28:20",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 518448
+   },
+   {
+    "id": 478,
+    "at": "2026-10-26T23:28:35",
+    "text": "Selling goods: Clothes",
+    "cat": "trading",
+    "in": 107250,
+    "out": 0,
+    "balance": 625698
+   },
+   {
+    "id": 479,
+    "at": "2026-10-27T19:38:35",
+    "text": "Buying goods: Fuel",
+    "cat": "trading",
+    "in": 0,
+    "out": 1515,
+    "balance": 624183
+   },
+   {
+    "id": 480,
+    "at": "2026-10-27T19:44:01",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 444,
+    "balance": 623739
+   },
+   {
+    "id": 481,
+    "at": "2026-10-27T22:15:40",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 623258
+   },
+   {
+    "id": 482,
+    "at": "2026-10-27T22:15:57",
+    "text": "Selling goods: Fuel",
+    "cat": "trading",
+    "in": 11790,
+    "out": 0,
+    "balance": 635048
+   },
+   {
+    "id": 483,
+    "at": "2026-10-28T19:13:44",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 634548
+   },
+   {
+    "id": 484,
+    "at": "2026-10-28T19:13:44",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 634048
+   },
+   {
+    "id": 485,
+    "at": "2026-10-28T21:18:52",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 633567
+   },
+   {
+    "id": 486,
+    "at": "2026-10-28T21:19:30",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 21876,
+    "out": 0,
+    "balance": 655443
+   },
+   {
+    "id": 487,
+    "at": "2026-10-28T23:22:24",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 654962
+   },
+   {
+    "id": 488,
+    "at": "2026-10-28T23:23:03",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 19850,
+    "out": 0,
+    "balance": 674812
+   },
+   {
+    "id": 489,
+    "at": "2026-10-29T18:55:02",
+    "text": "Loan weekly due",
+    "cat": "loans",
+    "in": 0,
+    "out": 3699,
+    "balance": 671113
+   },
+   {
+    "id": 490,
+    "at": "2026-10-29T18:55:02",
+    "text": "Aircraft weekly insurance cost: A2A Piper Aerostar 600",
+    "cat": "insurance",
+    "in": 0,
+    "out": 5533,
+    "balance": 665580
+   },
+   {
+    "id": 491,
+    "at": "2026-10-29T18:55:02",
+    "text": "Aircraft weekly insurance cost: A2A Piper PA-24-250 Comanche",
+    "cat": "insurance",
+    "in": 0,
+    "out": 1825,
+    "balance": 663755
+   },
+   {
+    "id": 492,
+    "at": "2026-10-29T18:55:02",
+    "text": "Aircraft weekly insurance cost: Black Square Baron B58P Professional",
+    "cat": "insurance",
+    "in": 0,
+    "out": 6334,
+    "balance": 657421
+   },
+   {
+    "id": 493,
+    "at": "2026-10-29T18:55:02",
+    "text": "Aircraft weekly insurance cost: Asobo Beechcraft Baron G58",
+    "cat": "insurance",
+    "in": 0,
+    "out": 8103,
+    "balance": 649318
+   },
+   {
+    "id": 494,
+    "at": "2026-10-29T18:55:02",
+    "text": "Aircraft weekly insurance cost: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 380,
+    "balance": 648938
+   },
+   {
+    "id": 495,
+    "at": "2026-10-29T18:55:02",
+    "text": "Manager weekly wage: Charles",
+    "cat": "staff",
+    "in": 0,
+    "out": 200,
+    "balance": 648738
+   },
+   {
+    "id": 496,
+    "at": "2026-10-29T18:55:45",
+    "text": "Repairing hull: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 27910,
+    "balance": 620828
+   },
+   {
+    "id": 497,
+    "at": "2026-10-29T18:55:51",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1454,
+    "balance": 619374
+   },
+   {
+    "id": 498,
+    "at": "2026-10-29T22:23:55",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 618893
+   },
+   {
+    "id": 499,
+    "at": "2026-10-29T22:24:34",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 27862,
+    "out": 0,
+    "balance": 646755
+   },
+   {
+    "id": 500,
+    "at": "2026-10-30T22:00:46",
+    "text": "Pilot daily wages (2 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 645755
+   },
+   {
+    "id": 501,
+    "at": "2026-10-30T22:00:46",
+    "text": "Pilot daily wages (2 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 644755
+   },
+   {
+    "id": 502,
+    "at": "2026-10-31T01:46:42",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 644274
+   },
+   {
+    "id": 503,
+    "at": "2026-10-31T01:47:24",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 29881,
+    "out": 0,
+    "balance": 674155
+   },
+   {
+    "id": 504,
+    "at": "2026-10-31T20:48:47",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1454,
+    "balance": 672701
+   },
+   {
+    "id": 505,
+    "at": "2026-10-31T23:31:50",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 672220
+   },
+   {
+    "id": 506,
+    "at": "2026-10-31T23:32:29",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 24065,
+    "out": 0,
+    "balance": 696285
+   },
+   {
+    "id": 507,
+    "at": "2026-10-31T23:52:48",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 510,
+    "balance": 695775
+   },
+   {
+    "id": 508,
+    "at": "2026-10-31T23:53:07",
+    "text": "Repairing hull: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 18176,
+    "balance": 677599
+   },
+   {
+    "id": 509,
+    "at": "2026-11-01T01:09:10",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 677118
+   },
+   {
+    "id": 510,
+    "at": "2026-11-01T01:09:48",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 27373,
+    "out": 0,
+    "balance": 704491
+   },
+   {
+    "id": 511,
+    "at": "2026-11-01T15:43:20",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 703991
+   },
+   {
+    "id": 512,
+    "at": "2026-11-01T15:43:20",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 703491
+   },
+   {
+    "id": 513,
+    "at": "2026-11-01T17:25:11",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 703010
+   },
+   {
+    "id": 514,
+    "at": "2026-11-01T17:25:53",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 13803,
+    "out": 0,
+    "balance": 716813
+   },
+   {
+    "id": 515,
+    "at": "2026-11-01T17:48:10",
+    "text": "Buying goods: Meat",
+    "cat": "trading",
+    "in": 0,
+    "out": 28658,
+    "balance": 688155
+   },
+   {
+    "id": 516,
+    "at": "2026-11-01T18:26:36",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 687674
+   },
+   {
+    "id": 517,
+    "at": "2026-11-01T19:15:17",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 687193
+   },
+   {
+    "id": 518,
+    "at": "2026-11-01T19:15:46",
+    "text": "Selling goods: Meat",
+    "cat": "trading",
+    "in": 37534,
+    "out": 0,
+    "balance": 724727
+   },
+   {
+    "id": 519,
+    "at": "2026-11-02T20:43:18",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 724227
+   },
+   {
+    "id": 520,
+    "at": "2026-11-02T20:43:18",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 723727
+   },
+   {
+    "id": 521,
+    "at": "2026-11-02T23:15:09",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 723246
+   },
+   {
+    "id": 522,
+    "at": "2026-11-02T23:36:22",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 817,
+    "balance": 722429
+   },
+   {
+    "id": 523,
+    "at": "2026-11-02T23:36:30",
+    "text": "Repairing hull: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 18708,
+    "balance": 703721
+   },
+   {
+    "id": 524,
+    "at": "2026-11-03T02:16:15",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 703240
+   },
+   {
+    "id": 525,
+    "at": "2026-11-03T02:16:53",
+    "text": "Payment for mission Cargo",
+    "cat": "missions",
+    "in": 30430,
+    "out": 0,
+    "balance": 733670
+   },
+   {
+    "id": 526,
+    "at": "2026-11-03T19:17:54",
+    "text": "Buying goods: Fish",
+    "cat": "trading",
+    "in": 0,
+    "out": 30184,
+    "balance": 703486
+   },
+   {
+    "id": 527,
+    "at": "2026-11-03T23:28:03",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 703005
+   },
+   {
+    "id": 528,
+    "at": "2026-11-03T23:28:35",
+    "text": "Selling goods: Fish",
+    "cat": "trading",
+    "in": 38220,
+    "out": 0,
+    "balance": 741225
+   },
+   {
+    "id": 529,
+    "at": "2026-11-04T00:26:25",
+    "text": "Buying goods: Meat",
+    "cat": "trading",
+    "in": 0,
+    "out": 38412,
+    "balance": 702813
+   },
+   {
+    "id": 530,
+    "at": "2026-11-04T00:33:14",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 48,
+    "balance": 702765
+   },
+   {
+    "id": 531,
+    "at": "2026-11-04T00:33:27",
+    "text": "Repairing hull: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 90778,
+    "balance": 611987
+   },
+   {
+    "id": 532,
+    "at": "2026-11-04T00:33:34",
+    "text": "Repairing engine: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 6219,
+    "balance": 605768
+   },
+   {
+    "id": 533,
+    "at": "2026-11-04T02:13:13",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 962,
+    "balance": 604806
+   },
+   {
+    "id": 534,
+    "at": "2026-11-04T02:14:38",
+    "text": "Selling goods: Meat",
+    "cat": "trading",
+    "in": 49482,
+    "out": 0,
+    "balance": 654288
+   },
+   {
+    "id": 535,
+    "at": "2026-11-04T02:44:48",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 653788
+   },
+   {
+    "id": 536,
+    "at": "2026-11-04T02:44:48",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 653288
+   },
+   {
+    "id": 537,
+    "at": "2026-11-05T13:51:41",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 652788
+   },
+   {
+    "id": 538,
+    "at": "2026-11-05T13:51:41",
+    "text": "Pilot daily wages (1 day(s)): Ghostrider",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 652288
+   },
+   {
+    "id": 539,
+    "at": "2026-11-05T14:28:31",
+    "text": "Capital injection",
+    "cat": "capital",
+    "in": 27000000,
+    "out": 0,
+    "balance": 27652288
+   },
+   {
+    "id": 540,
+    "at": "2026-11-05T14:30:36",
+    "text": "Buying plane: FlightFX Cessna Citation X",
+    "cat": "aircraft",
+    "in": 0,
+    "out": 22884715,
+    "balance": 4767573
+   },
+   {
+    "id": 541,
+    "at": "2026-11-05T14:31:39",
+    "text": "Aircraft insurance: FlightFX Cessna Citation X",
+    "cat": "insurance",
+    "in": 0,
+    "out": 207743,
+    "balance": 4559830
+   },
+   {
+    "id": 542,
+    "at": "2026-11-05T14:31:48",
+    "text": "Aircraft movement to: KJFK",
+    "cat": "moves",
+    "in": 0,
+    "out": 1676,
+    "balance": 4558154
+   },
+   {
+    "id": 543,
+    "at": "2026-11-05T14:31:57",
+    "text": "Repairing hull: FlightFX Cessna Citation X",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 6355,
+    "balance": 4551799
+   },
+   {
+    "id": 544,
+    "at": "2026-11-05T14:32:02",
+    "text": "Repairing engine: FlightFX Cessna Citation X",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 18610,
+    "balance": 4533189
+   },
+   {
+    "id": 545,
+    "at": "2026-11-05T14:32:09",
+    "text": "Buying fuel: FlightFX Cessna Citation X",
+    "cat": "fuel",
+    "in": 0,
+    "out": 6948,
+    "balance": 4526241
+   },
+   {
+    "id": 546,
+    "at": "2026-11-05T14:32:22",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 1454,
+    "balance": 4524787
+   },
+   {
+    "id": 547,
+    "at": "2026-11-05T14:32:27",
+    "text": "Repairing hull: Black Square Baron B58P Professional",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 34859,
+    "balance": 4489928
+   },
+   {
+    "id": 548,
+    "at": "2026-11-05T14:32:36",
+    "text": "Buying fuel: A2A Piper Aerostar 600",
+    "cat": "fuel",
+    "in": 0,
+    "out": 719,
+    "balance": 4489209
+   },
+   {
+    "id": 549,
+    "at": "2026-11-05T14:32:41",
+    "text": "Repairing hull: A2A Piper Aerostar 600",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 90778,
+    "balance": 4398431
+   },
+   {
+    "id": 550,
+    "at": "2026-11-05T14:32:48",
+    "text": "Repairing hull: Asobo Beechcraft Baron G58",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 39943,
+    "balance": 4358488
+   },
+   {
+    "id": 551,
+    "at": "2026-11-05T14:32:59",
+    "text": "Buying fuel: A2A Piper PA-24-250 Comanche",
+    "cat": "fuel",
+    "in": 0,
+    "out": 101,
+    "balance": 4358387
+   },
+   {
+    "id": 552,
+    "at": "2026-11-05T14:33:11",
+    "text": "Repairing hull: A2A Piper PA-24-250 Comanche",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 41395,
+    "balance": 4316992
+   },
+   {
+    "id": 553,
+    "at": "2026-11-05T19:07:19",
+    "text": "Hiring FA: Anya",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 4316492
+   },
+   {
+    "id": 554,
+    "at": "2026-11-05T19:07:48",
+    "text": "Moving pilot to: KJFK",
+    "cat": "moves",
+    "in": 0,
+    "out": 4539,
+    "balance": 4311953
+   },
+   {
+    "id": 555,
+    "at": "2026-11-05T19:08:59",
+    "text": "Hiring FA: Charlotte",
+    "cat": "staff",
+    "in": 0,
+    "out": 600,
+    "balance": 4311353
+   },
+   {
+    "id": 556,
+    "at": "2026-11-05T19:11:08",
+    "text": "Hiring pilot: Caterpillar",
+    "cat": "staff",
+    "in": 0,
+    "out": 1600,
+    "balance": 4309753
+   },
+   {
+    "id": 557,
+    "at": "2026-11-05T19:11:37",
+    "text": "Moving pilot to: KJFK",
+    "cat": "moves",
+    "in": 0,
+    "out": 742,
+    "balance": 4309011
+   },
+   {
+    "id": 558,
+    "at": "2026-11-05T21:14:04",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 2656,
+    "balance": 4306355
+   },
+   {
+    "id": 559,
+    "at": "2026-11-06T19:30:57",
+    "text": "Loan weekly due",
+    "cat": "loans",
+    "in": 0,
+    "out": 3341,
+    "balance": 4303014
+   },
+   {
+    "id": 560,
+    "at": "2026-11-06T19:30:57",
+    "text": "Aircraft weekly insurance cost: A2A Piper Aerostar 600",
+    "cat": "insurance",
+    "in": 0,
+    "out": 5533,
+    "balance": 4297481
+   },
+   {
+    "id": 561,
+    "at": "2026-11-06T19:30:57",
+    "text": "Aircraft weekly insurance cost: A2A Piper PA-24-250 Comanche",
+    "cat": "insurance",
+    "in": 0,
+    "out": 1825,
+    "balance": 4295656
+   },
+   {
+    "id": 562,
+    "at": "2026-11-06T19:30:57",
+    "text": "Aircraft weekly insurance cost: Black Square Baron B58P Professional",
+    "cat": "insurance",
+    "in": 0,
+    "out": 6334,
+    "balance": 4289322
+   },
+   {
+    "id": 563,
+    "at": "2026-11-06T19:30:57",
+    "text": "Aircraft weekly insurance cost: Asobo Beechcraft Baron G58",
+    "cat": "insurance",
+    "in": 0,
+    "out": 8103,
+    "balance": 4281219
+   },
+   {
+    "id": 564,
+    "at": "2026-11-06T19:30:57",
+    "text": "Aircraft weekly insurance cost: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 380,
+    "balance": 4280839
+   },
+   {
+    "id": 565,
+    "at": "2026-11-06T19:30:57",
+    "text": "Manager weekly wage: Charles",
+    "cat": "staff",
+    "in": 0,
+    "out": 200,
+    "balance": 4280639
+   },
+   {
+    "id": 566,
+    "at": "2026-11-06T19:30:57",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 4280139
+   },
+   {
+    "id": 567,
+    "at": "2026-11-06T19:30:57",
+    "text": "Pilot daily wages (1 day(s)): Caterpillar",
+    "cat": "staff",
+    "in": 0,
+    "out": 1600,
+    "balance": 4278539
+   },
+   {
+    "id": 568,
+    "at": "2026-11-06T19:56:44",
+    "text": "Moving FA to: KLVM",
+    "cat": "moves",
+    "in": 0,
+    "out": 4539,
+    "balance": 4274000
+   },
+   {
+    "id": 569,
+    "at": "2026-11-06T19:57:00",
+    "text": "Moving FA to: KLVK",
+    "cat": "moves",
+    "in": 0,
+    "out": 4539,
+    "balance": 4269461
+   },
+   {
+    "id": 570,
+    "at": "2026-11-06T19:57:52",
+    "text": "Moving FA to: KLWM",
+    "cat": "moves",
+    "in": 0,
+    "out": 4539,
+    "balance": 4264922
+   },
+   {
+    "id": 571,
+    "at": "2026-11-07T18:05:14",
+    "text": "Moving FA to: EGOS",
+    "cat": "moves",
+    "in": 0,
+    "out": 4539,
+    "balance": 4260383
+   },
+   {
+    "id": 572,
+    "at": "2026-11-07T18:05:50",
+    "text": "Repairing hull: FlightFX Cessna Citation X",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 50110,
+    "balance": 4210273
+   },
+   {
+    "id": 573,
+    "at": "2026-11-07T18:05:59",
+    "text": "Buying fuel: FlightFX Cessna Citation X",
+    "cat": "fuel",
+    "in": 0,
+    "out": 6578,
+    "balance": 4203695
+   },
+   {
+    "id": 574,
+    "at": "2026-11-07T23:54:45",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 2656,
+    "balance": 4201039
+   },
+   {
+    "id": 575,
+    "at": "2026-11-07T23:55:24",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 158840,
+    "out": 0,
+    "balance": 4359879
+   },
+   {
+    "id": 576,
+    "at": "2026-11-08T04:49:42",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 5311,
+    "balance": 4354568
+   },
+   {
+    "id": 577,
+    "at": "2026-11-08T04:51:22",
+    "text": "Buying fuel: FlightFX Cessna Citation X",
+    "cat": "fuel",
+    "in": 0,
+    "out": 13896,
+    "balance": 4340672
+   },
+   {
+    "id": 578,
+    "at": "2026-11-08T04:51:30",
+    "text": "Repairing hull: FlightFX Cessna Citation X",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 20506,
+    "balance": 4320166
+   },
+   {
+    "id": 579,
+    "at": "2026-11-08T17:20:52",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 4319666
+   },
+   {
+    "id": 580,
+    "at": "2026-11-08T17:20:52",
+    "text": "Pilot daily wages (1 day(s)): Caterpillar",
+    "cat": "staff",
+    "in": 0,
+    "out": 1600,
+    "balance": 4318066
+   },
+   {
+    "id": 581,
+    "at": "2026-11-08T20:32:57",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 481,
+    "balance": 4317585
+   },
+   {
+    "id": 582,
+    "at": "2026-11-08T20:50:36",
+    "text": "Buying fuel: Black Square Baron B58P Professional",
+    "cat": "fuel",
+    "in": 0,
+    "out": 666,
+    "balance": 4316919
+   },
+   {
+    "id": 583,
+    "at": "2026-11-09T20:11:07",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 4316419
+   },
+   {
+    "id": 584,
+    "at": "2026-11-09T20:11:07",
+    "text": "Pilot daily wages (1 day(s)): Caterpillar",
+    "cat": "staff",
+    "in": 0,
+    "out": 1600,
+    "balance": 4314819
+   },
+   {
+    "id": 585,
+    "at": "2026-11-09T21:26:17",
+    "text": "Buying goods: Meat",
+    "cat": "trading",
+    "in": 0,
+    "out": 14938,
+    "balance": 4299881
+   },
+   {
+    "id": 586,
+    "at": "2026-11-09T22:32:49",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 962,
+    "balance": 4298919
+   },
+   {
+    "id": 587,
+    "at": "2026-11-09T22:32:58",
+    "text": "Selling goods: Meat",
+    "cat": "trading",
+    "in": 17815,
+    "out": 0,
+    "balance": 4316734
+   },
+   {
+    "id": 588,
+    "at": "2026-11-10T02:58:21",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 2656,
+    "balance": 4314078
+   },
+   {
+    "id": 589,
+    "at": "2026-11-10T02:59:00",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 104578,
+    "out": 0,
+    "balance": 4418656
+   },
+   {
+    "id": 590,
+    "at": "2026-11-10T21:33:13",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 2656,
+    "balance": 4416000
+   },
+   {
+    "id": 591,
+    "at": "2026-11-10T21:33:52",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 50695,
+    "out": 0,
+    "balance": 4466695
+   },
+   {
+    "id": 592,
+    "at": "2026-11-11T21:00:05",
+    "text": "Pilot daily wages (2 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 4465695
+   },
+   {
+    "id": 593,
+    "at": "2026-11-11T21:00:05",
+    "text": "Pilot daily wages (2 day(s)): Caterpillar",
+    "cat": "staff",
+    "in": 0,
+    "out": 3200,
+    "balance": 4462495
+   },
+   {
+    "id": 594,
+    "at": "2026-11-12T16:42:17",
+    "text": "Aircraft weekly insurance cost: FlightFX Cessna Citation X",
+    "cat": "insurance",
+    "in": 0,
+    "out": 228847,
+    "balance": 4233648
+   },
+   {
+    "id": 595,
+    "at": "2026-11-12T17:07:59",
+    "text": "Buying fuel: FlightFX Cessna Citation X",
+    "cat": "fuel",
+    "in": 0,
+    "out": 11839,
+    "balance": 4221809
+   },
+   {
+    "id": 596,
+    "at": "2026-11-12T17:08:03",
+    "text": "Repairing hull: FlightFX Cessna Citation X",
+    "cat": "maintenance",
+    "in": 0,
+    "out": 36946,
+    "balance": 4184863
+   },
+   {
+    "id": 597,
+    "at": "2026-11-13T00:45:43",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 2656,
+    "balance": 4182207
+   },
+   {
+    "id": 598,
+    "at": "2026-11-13T00:46:22",
+    "text": "Payment for mission Passenger",
+    "cat": "missions",
+    "in": 262152,
+    "out": 0,
+    "balance": 4444359
+   },
+   {
+    "id": 599,
+    "at": "2026-11-13T20:43:28",
+    "text": "Loan weekly due",
+    "cat": "loans",
+    "in": 0,
+    "out": 3018,
+    "balance": 4441341
+   },
+   {
+    "id": 600,
+    "at": "2026-11-13T20:43:28",
+    "text": "Aircraft weekly insurance cost: A2A Piper Aerostar 600",
+    "cat": "insurance",
+    "in": 0,
+    "out": 5533,
+    "balance": 4435808
+   },
+   {
+    "id": 601,
+    "at": "2026-11-13T20:43:28",
+    "text": "Aircraft weekly insurance cost: A2A Piper PA-24-250 Comanche",
+    "cat": "insurance",
+    "in": 0,
+    "out": 1825,
+    "balance": 4433983
+   },
+   {
+    "id": 602,
+    "at": "2026-11-13T20:43:28",
+    "text": "Aircraft weekly insurance cost: Black Square Baron B58P Professional",
+    "cat": "insurance",
+    "in": 0,
+    "out": 6334,
+    "balance": 4427649
+   },
+   {
+    "id": 603,
+    "at": "2026-11-13T20:43:28",
+    "text": "Aircraft weekly insurance cost: Asobo Beechcraft Baron G58",
+    "cat": "insurance",
+    "in": 0,
+    "out": 8103,
+    "balance": 4419546
+   },
+   {
+    "id": 604,
+    "at": "2026-11-13T20:43:28",
+    "text": "Aircraft weekly insurance cost: Asobo C172SP G1000 Passengers",
+    "cat": "insurance",
+    "in": 0,
+    "out": 380,
+    "balance": 4419166
+   },
+   {
+    "id": 605,
+    "at": "2026-11-13T20:43:28",
+    "text": "Manager weekly wage: Charles",
+    "cat": "staff",
+    "in": 0,
+    "out": 200,
+    "balance": 4418966
+   },
+   {
+    "id": 606,
+    "at": "2026-11-13T20:43:28",
+    "text": "Flight Attendant Wage: Charlotte",
+    "cat": "staff",
+    "in": 0,
+    "out": 600,
+    "balance": 4418366
+   },
+   {
+    "id": 607,
+    "at": "2026-11-13T20:43:28",
+    "text": "Pilot daily wages (2 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 1000,
+    "balance": 4417366
+   },
+   {
+    "id": 608,
+    "at": "2026-11-13T20:43:28",
+    "text": "Pilot daily wages (2 day(s)): Caterpillar",
+    "cat": "staff",
+    "in": 0,
+    "out": 3200,
+    "balance": 4414166
+   },
+   {
+    "id": 609,
+    "at": "2026-11-14T01:00:47",
+    "text": "Buying goods: Beer",
+    "cat": "trading",
+    "in": 0,
+    "out": 10374,
+    "balance": 4403792
+   },
+   {
+    "id": 610,
+    "at": "2026-11-14T01:06:51",
+    "text": "Buying fuel: FlightFX Cessna Citation X",
+    "cat": "fuel",
+    "in": 0,
+    "out": 13896,
+    "balance": 4389896
+   },
+   {
+    "id": 611,
+    "at": "2026-11-14T03:51:41",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 2656,
+    "balance": 4387240
+   },
+   {
+    "id": 612,
+    "at": "2026-11-14T03:52:03",
+    "text": "Selling goods: Beer",
+    "cat": "trading",
+    "in": 19114,
+    "out": 0,
+    "balance": 4406354
+   },
+   {
+    "id": 613,
+    "at": "2026-11-14T21:16:37",
+    "text": "Buying goods: Phones",
+    "cat": "trading",
+    "in": 0,
+    "out": 722000,
+    "balance": 3684354
+   },
+   {
+    "id": 614,
+    "at": "2026-11-14T21:17:12",
+    "text": "Buying fuel: FlightFX Cessna Citation X",
+    "cat": "fuel",
+    "in": 0,
+    "out": 5500,
+    "balance": 3678854
+   },
+   {
+    "id": 615,
+    "at": "2026-11-15T03:44:04",
+    "text": "Airport fees",
+    "cat": "fees",
+    "in": 0,
+    "out": 332,
+    "balance": 3678522
+   },
+   {
+    "id": 616,
+    "at": "2026-11-15T03:44:37",
+    "text": "Selling goods: Phones",
+    "cat": "trading",
+    "in": 767676,
+    "out": 0,
+    "balance": 4446198
+   },
+   {
+    "id": 617,
+    "at": "2026-11-15T15:29:38",
+    "text": "Pilot daily wages (1 day(s)): Berlin",
+    "cat": "staff",
+    "in": 0,
+    "out": 500,
+    "balance": 4445698
+   },
+   {
+    "id": 618,
+    "at": "2026-11-15T15:29:38",
+    "text": "Pilot daily wages (1 day(s)): Caterpillar",
+    "cat": "staff",
+    "in": 0,
+    "out": 1600,
+    "balance": 4444098
+   }
+  ],
+  "fleet": [
+   {
+    "id": "neofly:2",
+    "name": "Asobo Cessna 152",
+    "livery": "Cessna C152",
+    "tail": null,
+    "location": "EGNO",
+    "fuel": 34.0,
+    "fuelCapacity": 156,
+    "engine": 96.5,
+    "hull": 100.0,
+    "airframeHours": 1803.58803895486,
+    "insured": false,
+    "status": 0,
+    "value": 34999
+   },
+   {
+    "id": "neofly:4",
+    "name": "Asobo C172SP G1000 Passengers",
+    "livery": "C172SP G1000 Passengers",
+    "tail": null,
+    "location": "LICA",
+    "fuel": 214.0,
+    "fuelCapacity": 342,
+    "engine": 92.4,
+    "hull": 28.0,
+    "airframeHours": 2176.51147470433,
+    "insured": true,
+    "status": 0,
+    "value": 38000
+   },
+   {
+    "id": "neofly:7",
+    "name": "Asobo Beechcraft Baron G58",
+    "livery": "Beech Baron G58",
+    "tail": null,
+    "location": "EGUL",
+    "fuel": 1128.0,
+    "fuelCapacity": 1128,
+    "engine": 84.6,
+    "hull": 100.0,
+    "airframeHours": 5411.56216823689,
+    "insured": true,
+    "status": 0,
+    "value": 810319
+   },
+   {
+    "id": "neofly:9",
+    "name": "Black Square Baron B58P Professional",
+    "livery": "Black Square Baron 58P Professional N513LW",
+    "tail": null,
+    "location": "KJFK",
+    "fuel": 1000.0,
+    "fuelCapacity": 1212,
+    "engine": 99.2,
+    "hull": 81.2,
+    "airframeHours": 4374.46780062717,
+    "insured": true,
+    "status": 0,
+    "value": 633447
+   },
+   {
+    "id": "neofly:10",
+    "name": "A2A Piper PA-24-250 Comanche",
+    "livery": "A2A Piper PA-24-250 Comanche N6229P",
+    "tail": null,
+    "location": "RJNW",
+    "fuel": 540.0,
+    "fuelCapacity": 540,
+    "engine": 51.8,
+    "hull": 100.0,
+    "airframeHours": 89.0,
+    "insured": true,
+    "status": 0,
+    "value": 182535
+   },
+   {
+    "id": "neofly:11",
+    "name": "A2A Piper Aerostar 600",
+    "livery": "A2A Piper Aerostar 600 NI22PC",
+    "tail": null,
+    "location": "UHSM",
+    "fuel": 993.0,
+    "fuelCapacity": 993,
+    "engine": 39.9,
+    "hull": 100.0,
+    "airframeHours": 506.0,
+    "insured": true,
+    "status": 0,
+    "value": 553344
+   },
+   {
+    "id": "neofly:12",
+    "name": "FlightFX Cessna Citation X",
+    "livery": "C750 Winglets - Livery 6",
+    "tail": null,
+    "location": "NZFX",
+    "fuel": 517.0,
+    "fuelCapacity": 11580,
+    "engine": 98.1,
+    "hull": 62.2,
+    "airframeHours": 1802.0,
+    "insured": true,
+    "status": 0,
+    "value": 22884715
+   }
+  ],
+  "loans": [
+   {
+    "remaining": 27259,
+    "rate": 0.19,
+    "weekly": 2726,
+    "lastPaid": "2026-11-13T20:43:28",
+    "amount": 50000
+   }
+  ],
+  "categories": {
+   "missions": "Your missions",
+   "company": "Hired pilots' missions",
+   "trading": "Trading",
+   "fuel": "Fuel",
+   "fees": "Airport, hotel & food",
+   "maintenance": "Maintenance",
+   "insurance": "Insurance",
+   "staff": "Staff & wages",
+   "moves": "Repositioning",
+   "aircraft": "Buying & selling aircraft",
+   "training": "Qualifications",
+   "loans": "Loans",
+   "capital": "Capital & starting cash",
+   "other": "Other"
+  }
+ }
 }

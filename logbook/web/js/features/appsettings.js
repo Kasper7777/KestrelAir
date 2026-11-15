@@ -17,17 +17,35 @@ export default {
 
     ui.openAppSettings = () => {
       const { el, body } = openSheet({ id: 'appsettings', title: 'Settings', cls: 'app-settings',
-        sub: 'Background updates, your archives, and how the logbook checks itself' });
-      let timer = null;
+        sub: 'Features, background updates, your archives, and how the logbook checks itself' });
+      let timer = null, busy = false, testMsg = '';
+      const feats = { finances: false, neoflyWrite: false, ...(db.meta.features || {}) };
       const draw = async () => {
         if (!document.body.contains(body)) { clearInterval(timer); return; }
-        let info;
+        if (busy) return;
+        let info, nw = {};
         try { info = await fetch('/__datainfo').then((r) => r.json()); } catch { return; }
+        try { nw = await post('/__neofly-write'); } catch { /* older server */ }
+        const swRow = (key, ic, title, text, extra = '') => html`<div class="set-row feature"><div>
+            <b>${icon(ic)}${title}${key === 'neoflyWrite' ? html` <span class="exp">Experimental</span>` : ''}</b><small>${text}</small>${extra}</div>
+          <div class="actions">${key === 'neoflyWrite' && feats.neoflyWrite ? html`<button class="link-btn" data-act="nwtest">${icon('check')}Test</button>` : ''}
+            <button class="switch ${feats[key] ? 'on' : ''}" data-feature="${key}" role="switch" aria-checked="${feats[key] ? 'true' : 'false'}" aria-label="${title}"></button></div></div>`;
+        const nwStatus = html`<div class="status">
+          ${nw.save ? html`<span class="ok">${icon('check')}NeoFly save found</span>` : html`<span class="no">No NeoFly save on this PC</span>`}
+          ${nw.neoflyRunning ? html`<span class="no">${icon('clock')}NeoFly is open - changes wait until it's closed</span>` : html`<span class="ok">${icon('check')}NeoFly closed</span>`}
+          ${nw.lastBackup ? html`<span>${icon('save')}Last copy before a change: ${nw.lastBackup.replace(/^pre-write-(\d{4})(\d\d)(\d\d)-(\d\d)(\d\d).*$/, '$3/$2/$1 $4:$5')}</span>` : ''}
+          ${testMsg ? html`<span class="${testMsg === 'ok' ? 'ok' : 'no'}">${testMsg === 'ok' ? html`${icon('check')}Test passed: the save can be written, nothing was changed` : testMsg}</span>` : ''}</div>`;
         const bg = info.background || {};
         const status = bg.running ? html`<span class="spinner"></span>Fetching new details now…`
           : bg.nextCheckIn != null ? html`${icon('clock')}Next check in ${Math.ceil(bg.nextCheckIn / 60) > 1 ? `${Math.ceil(bg.nextCheckIn / 60)} min` : `${bg.nextCheckIn}s`}`
           : html`${icon('check')}Up to date`;
         render(body, html`
+          <section class="set-sec">
+            <h4>${icon('layers')}Features <small>from NeoFly, more to come</small></h4>
+            ${swRow('finances', 'moneybag', 'Finances', 'Cash, income and costs by kind, fuel spend, each aircraft\'s fuel and condition, loans and the full ledger. Adds a Finances button to the toolbar.')}
+            ${swRow('neoflyWrite', 'save', 'Write to NeoFly', 'Lets the logbook make changes to your NeoFly save - the first step towards running your company from here instead of NeoFly. Off by default. Before every change a full copy of the save is kept, it only writes while NeoFly is closed, and the save is checked afterwards (the copy goes back if anything is wrong).',
+              feats.neoflyWrite ? nwStatus : '')}
+          </section>
           <section class="set-sec">
             <h4>${icon('refresh')}Background updates</h4>
             <div class="set-row"><div><b>${status}</b>
@@ -66,6 +84,34 @@ export default {
         if (!b) return;
         const msg = body.querySelector('.set-msg');
         if (b.dataset.act === 'refresh') { await post('/__refresh'); setTimeout(draw, 800); return; }
+        if (b.dataset.feature) {
+          const key = b.dataset.feature, on = !feats[key];
+          if (key === 'neoflyWrite' && on && !confirm('Let the logbook write to your NeoFly save?\n\nNothing is changed by switching this on. When a feature does change something, a full copy of the save is kept first, it only writes while NeoFly is closed, and the save is checked afterwards.')) return;
+          busy = true;
+          b.classList.toggle('on', on);
+          b.setAttribute('aria-checked', on ? 'true' : 'false');
+          b.disabled = true;
+          try {
+            const r = await post('/__features', { key, on });
+            if (!r.ok) throw new Error(r.error || 'not saved');
+            Object.assign(feats, r.features);
+            if (key === 'finances') await ui.reloadFinances?.();
+            testMsg = '';
+          } catch (err) {
+            b.classList.toggle('on', !on);
+            alert(`Couldn't change that setting: ${err.message}`);
+          } finally { busy = false; b.disabled = false; }
+          draw();
+          return;
+        }
+        if (b.dataset.act === 'nwtest') {
+          b.disabled = true;
+          const r = await post('/__neofly-write', { test: true }).catch((err) => ({ test: err.message }));
+          testMsg = r.test || 'No answer';
+          b.disabled = false;
+          draw();
+          return;
+        }
         if (b.dataset.act === 'pilot') { ui.openSettings?.(); return; }
         if (b.dataset.wipe) {
           const what = b.dataset.wipe;

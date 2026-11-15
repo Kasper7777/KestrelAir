@@ -70,7 +70,7 @@ export default {
     const drawMenu = () => render(menu, html`
       <h5>Map</h5>${seg('basemap', [['satellite', 'Satellite'], ['dark', 'Dark'], ['light', 'Light']])}
       <h5>Projection</h5>${seg('projection', [['globe', 'Globe', 'globe'], ['mercator', 'Flat', 'map']])}
-      <h5>Colour routes by</h5>${seg('colorBy', [['aircraft', 'Aircraft'], ['month', 'Month']])}
+      <h5>Colour routes by</h5>${seg('colorBy', [['aircraft', 'Aircraft'], ['age', 'Age'], ['month', 'Month']])}
       <h5>Show</h5><div class="list-box">
         ${sw('countries', 'Countries visited')}${sw('routes', 'Flights')}${sw('transfers', 'Transfers')}
         ${sw('airports', 'Airports')}${sw('labels', 'Airport codes')}${sw('photos', 'Photo pins')}</div>`);

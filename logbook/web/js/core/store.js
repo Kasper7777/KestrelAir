@@ -11,13 +11,21 @@ const state = {
   hiddenAircraft: new Set(),
   basemap: pref('basemap', 'satellite'),     // satellite | dark | light
   projection: pref('projection', 'globe'),   // globe | mercator
-  colorBy: pref('colorBy', 'aircraft'),      // aircraft | month
+  colorBy: pref('colorBy', 'aircraft'),      // aircraft (one colour per plane; age shown by glow + fade) | age | month
   layers: pref('layers', { routes: true, transfers: true, airports: true, labels: true, photos: true, countries: true }),
   playing: false,
   follow: pref('follow', false),
   speed: pref('speed', 1),                  // replay speed: 0.25 .. 8
   newsMode: pref('newsMode', 'both'),       // replay news: map | side | both | off
 };
+// one-time switch to colour-by-aircraft (age shows as glow + fade); View lets you change it
+try {
+  if (localStorage.getItem('logbook.colorByV') !== '3') {
+    state.colorBy = 'aircraft';
+    localStorage.setItem('logbook.colorBy', JSON.stringify('aircraft'));
+    localStorage.setItem('logbook.colorByV', '3');
+  }
+} catch {}
 const handlers = new Map();
 const PREFS = ['basemap', 'projection', 'colorBy', 'layers', 'follow', 'speed', 'newsMode'];
 

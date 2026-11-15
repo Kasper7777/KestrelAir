@@ -192,6 +192,9 @@ class NeoFlySource:
         return out
 
 
+KEEP_FOR = 600            # keep following the sim this long after the page last asked (survives reloads)
+
+
 class SimSource:
     """Microsoft Flight Simulator itself, over SimConnect (the sim's own add-on interface).
 
@@ -203,7 +206,8 @@ class SimSource:
     name = 'sim'
     EVERY = 2.0
     VARS = ('PLANE_LATITUDE', 'PLANE_LONGITUDE', 'PLANE_ALTITUDE', 'PLANE_ALT_ABOVE_GROUND', 'PLANE_HEADING_DEGREES_TRUE',
-            'GROUND_VELOCITY', 'AIRSPEED_INDICATED', 'VERTICAL_SPEED', 'SIM_ON_GROUND', 'TITLE', 'ATC_ID')
+            'GROUND_VELOCITY', 'AIRSPEED_INDICATED', 'VERTICAL_SPEED', 'SIM_ON_GROUND', 'TITLE', 'ATC_ID',
+            'GPS_IS_ACTIVE_FLIGHT_PLAN', 'GPS_ETE')
 
     def __init__(self):
         self.lock = threading.Lock()
@@ -213,6 +217,7 @@ class SimSource:
         self.track = []
         self.started = None
         self.status = 'idle'
+        self.ground_since = None
 
     def read(self):
         self.last_ask = time.time()
@@ -230,13 +235,13 @@ class SimSource:
                      'to': None, 'mission': None,
                      'position': {'lat': s['lat'], 'lon': s['lon'], 'alt': round(s['alt']), 'agl': round(s['agl']),
                                   'speed': round(s['gs']), 'ias': round(s['ias']), 'vs': round(s['vs']), 'heading': round(heading),
-                                  'onGround': s['ground']},
+                                  'onGround': s['ground'], 'ete': round(s['ete']) if s.get('ete') and s['ete'] > 0 else None},
                      'track': list(self.track[-3000:]), 'status': 'ground' if s['ground'] else 'airborne', 'started': self.started}]
 
     def _run(self):
         sm = aq = None
         try:
-            while time.time() - self.last_ask < 60:            # the page is still looking
+            while time.time() - self.last_ask < KEEP_FOR:      # the page is (or was very recently) looking
                 if sm is None:
                     try:
                         from SimConnect import SimConnect, AircraftRequests
@@ -259,11 +264,21 @@ class SimSource:
                             'heading': (math.degrees(_num(v['PLANE_HEADING_DEGREES_TRUE']) or 0)) % 360,
                             'gs': _num(v['GROUND_VELOCITY']) or 0, 'ias': _num(v['AIRSPEED_INDICATED']) or 0,
                             'vs': _num(v['VERTICAL_SPEED']) or 0, 'ground': bool(_num(v['SIM_ON_GROUND'])),
-                            'title': dec(v['TITLE']), 'tail': dec(v['ATC_ID']), 'at': time.time()}
+                            'title': dec(v['TITLE']), 'tail': dec(v['ATC_ID']), 'at': time.time(),
+                            'ete': _num(v['GPS_ETE']) if _num(v['GPS_IS_ACTIVE_FLIGHT_PLAN']) else None}
                     with self.lock:
                         prev = self.snap
-                        jumped = prev and (_km(prev['lat'], prev['lon'], lat, lon) > 40 or prev['title'] != snap['title'])
-                        if jumped or not self.track:            # a new flight / aircraft / teleport: start a fresh trail
+                        new_flight = False
+                        if prev:
+                            hours = max(1e-6, (snap['at'] - prev['at']) / 3600)
+                            teleport = _km(prev['lat'], prev['lon'], lat, lon) / 1.852 / hours > 1500     # faster than any aircraft: a jump
+                            took_off_again = prev['ground'] and not snap['ground'] and self.ground_since and snap['at'] - self.ground_since > 300
+                            new_flight = teleport or prev['title'] != snap['title'] or took_off_again
+                        if snap['ground']:
+                            self.ground_since = self.ground_since or snap['at']
+                        else:
+                            self.ground_since = None
+                        if new_flight or not self.track:        # a different aircraft, a jump, or a fresh take-off: new trail
                             self.track, self.started = [], time.strftime('%Y-%m-%dT%H:%M:%S')
                         last = self.track[-1] if self.track else None
                         if not last or _km(last[1], last[0], lat, lon) > 0.25:

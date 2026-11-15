@@ -22,7 +22,7 @@ export default {
         <div class="tl-segs">${legs.map((l) => {
           const m = month(l.start), label = m !== lastMonth ? m : '';
           lastMonth = m;
-          return html`<button class="seg ${l.kind}" data-id="${l.id}" style="--c:${l.color}" title="${l.from} → ${l.to} · ${shortDay(l.start)}">
+          return html`<button class="seg ${l.kind}" data-id="${l.id}" style="--c:${ui.routeColor?.(l) || l.color}" title="${l.from} → ${l.to} · ${shortDay(l.start)}">
             ${label ? html`<span class="tl-month">${label}</span>` : ''}${l.photos.length ? html`<em></em>` : ''}</button>`;
         })}</div>
         <div class="tl-now" title="Drag to move through the journey"></div>
@@ -31,6 +31,8 @@ export default {
       <div class="tl-label" id="tl-label"></div>`);
 
     const segs = [...bar.querySelectorAll('.seg')];
+    // the dots share the map's route colours (by age, aircraft or month)
+    store.on('colorBy', () => segs.forEach((s, i) => s.style.setProperty('--c', ui.routeColor?.(legs[i]) || legs[i].color)));
     const now = bar.querySelector('.tl-now');
     const label = bar.querySelector('#tl-label');
     const playBtn = bar.querySelector('#play');
@@ -233,7 +235,7 @@ export default {
     // how long a leg takes at 1x; the current speed is applied every frame, so changing it mid-flight works
     const legMs = (l) => Math.min(7000, Math.max(1600, 900 + Math.sqrt(l.acc[l.acc.length - 1] || 1) * 70));
     const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-    const feature = (l, coords) => ({ type: 'Feature', properties: { color: store.get('colorBy') === 'month' ? l.monthColor : l.color },
+    const feature = (l, coords) => ({ type: 'Feature', properties: { color: ui.routeColor?.(l) || l.color },
       geometry: { type: 'LineString', coordinates: coords } });
 
     async function play() {

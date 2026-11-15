@@ -1,4 +1,4 @@
-"""Layover diary: for every stop of 8 hours or more, an imagined day-by-day
+"""Diary: for every stop of 8 hours or more, an imagined day-by-day
 Instagram-style account of the pilot on the ground - checking in to a real hotel
 near the airport, eating at real restaurants and cafés (ordering what that place
 actually serves), and visiting real sights within reach.
@@ -154,6 +154,8 @@ def build(stops, legs, airports, places, web_media, places_img, places_mod=None,
     by_id = {l['id']: l for l in legs}
     photos, aircraft, news = photos or {}, aircraft or {}, news or {}
     used_photos = set()
+    from voice import Voice
+    voice = Voice()
     web_root = os.path.dirname(os.path.dirname(web_media))
 
     def publish(f):
@@ -338,21 +340,20 @@ def build(stops, legs, airports, places, web_media, places_img, places_mod=None,
         extra = max(0, len(days) - MAX_DAYS)
         if extra:
             days = days[:MAX_DAYS - 1] + [days[-1]]
-        # flavour the days with real local stories from when the pilot was there (one per day, each once)
+        # the pilot reads the local news from when they were there and talks about it (offline voice,
+        # see voice.py): up to two stories a day, on different posts, each story once
         stories = [news[i] for i in (by_id.get(s.get('after')) or {}).get('news', []) if i in news]
-        for di, day in enumerate(days):
-            if di >= len(stories):
-                break
-            target = next((p for p in day['posts'] if p['kind'] in ('breakfast', 'lunch', 'dinner', 'hotel')), None) or \
-                     next((p for p in day['posts'] if p['kind'] != 'flight'), None)
-            if not target:
-                continue
-            st = stories[di]
-            headline = st['title'] if len(st['title']) <= 90 else st['title'][:87].rsplit(' ', 1)[0] + '…'
-            line = rng.choice(NEWS_SAD if st.get('tone') == 'sad' else NEWS_LINES).format(
-                h=headline, src=st.get('source') or 'local paper', town=city)
-            target['caption'] = f'{target["caption"]} {line}'
-            target['newsRef'] = {'id': st['id'], 'text': headline, 'tag': _news_tag(st['title'], city)}
+        queue = list(stories)
+        for day in days:
+            spots = [p for p in day['posts'] if p['kind'] in ('breakfast', 'lunch', 'dinner', 'hotel')] or \
+                    [p for p in day['posts'] if p['kind'] != 'flight']
+            for target in spots[:2]:
+                if not queue:
+                    break
+                st = queue.pop(0)
+                line, headline = voice.comment(st, city, target['kind'])
+                target['caption'] = f'{target["caption"]} {line}'
+                target['newsRef'] = {'id': st['id'], 'text': headline, 'tag': _news_tag(st['title'], city)}
         if inbound:
             days.insert(0, {'date': inbound[0]['time'][:10], 'posts': inbound, 'inbound': True})
         _finish(days, a, city, s['airport'], used_photos, web_root)

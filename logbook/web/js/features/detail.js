@@ -146,6 +146,12 @@ export default {
     };
 
     const show = (id) => {
+      if (id === 'live' && ui.renderLiveDetail) {          // the flight you're flying right now (see live.js)
+        document.body.classList.add('has-detail');
+        ui.renderLiveDetail(el);
+        el.scrollTop = 0;
+        return;
+      }
       const l = id && db.legById.get(id);
       document.body.classList.toggle('has-detail', !!l);
       if (!l) return;
@@ -259,5 +265,21 @@ export default {
       if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); store.set('selected', db.legs[cur ? Math.max(0, cur.index - 1) : 0].id); }
     });
     store.on('selected', show);
+
+    // when the panel is closed, a glass tab on the right edge brings it back
+    // (the last flight you looked at, or your latest flight)
+    let lastSeen = null;
+    store.on('selected', (id) => { if (id && db.legById.has(id)) lastSeen = id; });
+    const handle = document.createElement('button');
+    handle.id = 'detail-handle';
+    handle.className = 'detail-handle';
+    handle.title = 'Show the flight panel';
+    handle.innerHTML = `${icon('back').s}<span>Flight</span>`;
+    handle.addEventListener('click', () => {
+      if (handle.dataset.live) { store.set('selected', 'live'); return; }    // flying now: the live card
+      const flights = db.legs.filter((l) => l.kind === 'flight');
+      store.set('selected', lastSeen && db.legById.get(lastSeen) ? lastSeen : flights[flights.length - 1]?.id);
+    });
+    document.body.append(handle);
   },
 };

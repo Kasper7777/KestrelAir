@@ -1,4 +1,4 @@
-// Layover diary: an Instagram-style feed of the pilot's time on the ground wherever
+// Diary: an Instagram-style feed of the pilot's time on the ground wherever
 // he stayed 8 hours or more. The restaurants and sights are real and near the
 // airport (OpenStreetMap + Wikipedia); the day out is imagined - and labelled so.
 import { html, render, flagUrl, num } from '../core/format.js';
@@ -182,28 +182,39 @@ export default {
       return html`<section class="stay" id="stay-${s.id}">
         <div class="stay-head" style="${a.wiki?.image ? `--bg:url('${a.wiki.image}')` : ''}">
           <div><span class="stay-code">${a.country?.iso ? html`<img src="${flagUrl(a.country.iso)}" alt="" onerror="this.remove()">` : ''}${s.airport}</span>
-            <h3>${d.city}</h3><small>${a.name} · ${shortFmt.format(arrive)}${leave ? ` – ${shortFmt.format(leave)}` : ' – now'} · ${length}${d.ongoing ? ' · still here' : ''}</small></div>
+            <h3>${d.city}</h3><small>${a.name} · ${shortFmt.format(arrive)}${leave ? ` – ${shortFmt.format(leave)}` : ' – now'} · ${length}${d.ongoing ? (ui.liveInfo?.()?.dep?.ident === s.airport ? ' · left - in the air now' : ' · still here') : ''}</small></div>
           <button class="link-btn" data-leg="${s.after}">${icon('plane')}See the flight in</button>
         </div>
         ${d.days.map((day, i) => {
+          // latest first: days run newest -> oldest, and so do the posts within each day
           if (day.inbound) {
             return html`<h4 class="stay-day inbound">${icon('plane')}Getting here<small>${day.posts.length} flight${day.posts.length === 1 ? '' : 's'} · your own screenshots</small></h4>
-              <div class="ig-row">${day.posts.map((p) => post(s, p, 0))}</div>`;
+              <div class="ig-row">${[...day.posts].reverse().map((p) => post(s, p, 0))}</div>`;
           }
           const k = i - (d.days[0]?.inbound ? 1 : 0);
           const last = i === d.days.length - 1;
           const dayNo = last && d.skippedDays ? k + 1 + d.skippedDays : k + 1;
-          return html`${last && d.skippedDays ? html`<p class="stay-skip">… ${d.skippedDays} more days in ${d.city} …</p>` : ''}
-            <h4 class="stay-day">${dayFmt.format(new Date(day.date))}<small>Day ${dayNo}</small></h4>
-            <div class="ig-row">${day.posts.map((p) => post(s, p, dayNo))}</div>`;
-        })}
+          return html`<h4 class="stay-day">${dayFmt.format(new Date(day.date))}<small>Day ${dayNo}</small></h4>
+            <div class="ig-row">${[...day.posts].reverse().map((p) => post(s, p, dayNo))}</div>
+            ${last && d.skippedDays ? html`<p class="stay-skip">… ${d.skippedDays} more days in ${d.city} …</p>` : ''}`;
+        }).reverse()}
       </section>`;
     };
 
     ui.openDiary = (stopId) => {
-      const { body } = openSheet({ id: 'diary', title: `${who}'s layover diary`,
+      const { body } = openSheet({ id: 'diary', title: `${who}'s diary`,
         sub: `${stays.length} long stops · the restaurants and sights are real and near each airport; what ${who} got up to is imagined` });
-      render(body, html`${stays.length ? stays.map(stayBlock) : html`<p class="note">No stops of 8 hours or more yet.</p>`}`);
+      // newest first, like a feed: a flight under way right now goes at the very top, then the latest stop
+      const live = ui.liveInfo?.();
+      const liveBlock = live ? html`<section class="stay live-stay">
+          <div class="stay-head" style="${live.dep.img ? `--bg:url('${live.dep.img}')` : ''}">
+            <div><span class="stay-code"><span class="lp-dot ${live.f.status}"></span>${live.f.status === 'ground' ? 'On the ground' : 'In the air now'}</span>
+              <h3>${live.label}</h3>
+              <small>${[live.aircraft, live.f.position?.alt != null && live.f.status !== 'ground' ? `${live.f.position.alt.toLocaleString('en-GB')} ft` : '',
+                live.f.position?.speed != null ? `${live.f.position.speed} kt` : '', live.dep.city ? `left ${live.dep.city}` : ''].filter(Boolean).join(' · ')}</small></div>
+            <button class="link-btn" data-live>${icon('plane')}Open the live flight</button>
+          </div></section>` : '';
+      render(body, html`${liveBlock}${stays.length ? [...stays].reverse().map(stayBlock) : html`<p class="note">No stops of 8 hours or more yet.</p>`}`);
       let swiped = false;
       body.addEventListener('click', (e) => {
         const nav = e.target.closest('.ig-nav');
@@ -212,6 +223,7 @@ export default {
         if (dot) { slide(dot.closest('.ig-carousel'), 0, +dot.dataset.go); return; }
         const shot = e.target.closest('[data-shots]');
         if (shot && !swiped) { const ids = shot.dataset.shots.split(','); ui.openPhotos(ids, ids.indexOf(shot.dataset.pid)); return; }
+        if (e.target.closest('[data-live]')) { closeSheet(); store.set('selected', 'live'); return; }
         const b = e.target.closest('[data-leg]');
         if (b) { closeSheet(); store.set('selected', b.dataset.leg); }
       });
@@ -237,7 +249,7 @@ export default {
       if (!s?.diary) return '';
       const posts = s.diary.days.flatMap((d) => d.posts).slice(0, 3);
       const d = s.diary;
-      return html`<div class="card diary-card"><h4>Layover in ${d.city}<small>${d.nights ? `${d.nights} night${d.nights === 1 ? '' : 's'}` : `${Math.round(d.hours)} h`}</small></h4>
+      return html`<div class="card diary-card"><h4>Diary · ${d.city}<small>${d.nights ? `${d.nights} night${d.nights === 1 ? '' : 's'}` : `${Math.round(d.hours)} h`}</small></h4>
         <div class="dp-row">${posts.map((p) => { const src = (p.slides || []).find((x) => x.src)?.src; return html`<figure>${src ? html`<img src="${src}" alt="" loading="lazy">` : html`<div class="ig-blank">${icon('fork')}</div>`}
           <figcaption>${p.dish || p.place}</figcaption></figure>`; })}</div>
         <button class="link-btn" data-diary="${s.id}">${icon('diary')}Open ${who}'s diary</button></div>`;

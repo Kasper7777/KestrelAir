@@ -1,7 +1,7 @@
 {
  "meta": {
   "version": 1,
-  "builtAt": "2026-11-14T22:50:00",
+  "builtAt": "2026-11-14T23:14:59",
   "online": false,
   "sources": [
    "neofly",
@@ -19938,10 +19938,12 @@
     "39c4e38048e2",
     "3fb53f34b0bc",
     "63c142895da4",
-    "dee3da813c65"
+    "dee3da813c65",
+    "6a2306f43e88",
+    "b4fbe47b16e8"
    ],
    "diary": {
-    "hours": 19.0,
+    "hours": 19.4,
     "nights": 0,
     "city": "Mount Pleasant",
     "tags": [
@@ -19997,6 +19999,18 @@
           "src": "media/photos/dee3da813c65.jpg",
           "pid": "dee3da813c65",
           "label": "22:46 · SCVD → EGYP"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/6a2306f43e88.jpg",
+          "pid": "6a2306f43e88",
+          "label": "22:50 · SCVD → EGYP"
+         },
+         {
+          "kind": "shot",
+          "src": "media/photos/b4fbe47b16e8.jpg",
+          "pid": "b4fbe47b16e8",
+          "label": "22:55 · SCVD → EGYP"
          }
         ],
         "flight": {
@@ -21263,6 +21277,30 @@
    "width": 2560,
    "height": 1440,
    "stop": "stop-nf-fl-90"
+  },
+  "6a2306f43e88": {
+   "id": "6a2306f43e88",
+   "takenAt": "2026-11-14T22:50:41",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261114225041_1.jpg",
+   "src": "media/photos/6a2306f43e88.jpg",
+   "thumb": "media/thumbs/6a2306f43e88.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
+  },
+  "b4fbe47b16e8": {
+   "id": "b4fbe47b16e8",
+   "takenAt": "2026-11-14T22:55:16",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261114225516_1.jpg",
+   "src": "media/photos/b4fbe47b16e8.jpg",
+   "thumb": "media/thumbs/b4fbe47b16e8.jpg",
+   "width": 2560,
+   "height": 1440,
+   "stop": "stop-nf-fl-90"
   }
  },
  "unplacedPhotos": [
@@ -21361,7 +21399,7 @@
   "softestLanding": -87,
   "averageLanding": -409,
   "longestFlight": "nf-fl-89",
-  "photos": 92,
+  "photos": 94,
   "first": "2026-08-12T20:59:29",
   "last": "2026-11-14T03:51:31"
  },

@@ -1,5 +1,11 @@
 # Drone mode on the main sticks (2026-11-04)
 
+2026-11-14: all six main-stick drone axes, including both twists, use a softer centre
+curve (20% linear + 80% cubic). A quarter of stick travel gives about 6% output;
+half travel gives 20%. Full travel still gives full output. Flight and pink cabin
+bindings retain their existing response. `tune_drone_curves.py` updates existing
+profiles without rebuilding their mode conditions; `--installed` requires SPAD closed.
+
 Throttle B4 toggles the MSFS drone camera (Shift+X). While the drone camera is on (CAMERA STATE 4):
 
 - The main sticks fly the drone like the Star Citizen twin-stick layout, and stop moving the plane's ailerons/elevator.

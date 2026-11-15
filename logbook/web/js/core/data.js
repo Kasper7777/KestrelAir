@@ -5,7 +5,8 @@ import { greatCircle, bowed, cumulative, along, kmBetween } from './geo.js';
 import { toDate } from './format.js';
 
 // Apple-like system hues: distinct, bright enough for satellite and dark maps
-export const PALETTE = ['#64d2ff', '#ff9f0a', '#bf5af2', '#30d158', '#ff375f', '#ffd60a', '#5e5ce6', '#ff6961', '#66d4cf', '#ac8e68'];
+// one jewel tone per aircraft (no yellow; the gold matches the app's accents)
+export const PALETTE = ['#5ac8fa', '#ff8c42', '#c77dff', '#3ddc84', '#ff4d6d', '#e3c47c', '#4d7cff', '#2ee6d6', '#ff9ec4', '#b8c4d6'];
 export const GROUND_COLOR = '#ffffff';
 const MONTH_RAMP = ['#64d2ff', '#5e5ce6', '#bf5af2', '#ff375f', '#ff9f0a', '#ffd60a'];
 

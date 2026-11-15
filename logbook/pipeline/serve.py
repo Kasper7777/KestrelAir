@@ -10,6 +10,7 @@ Logs to logbook/logbook.log.
 import http.server
 import json
 import os
+import re
 import shutil
 import socket
 import sys
@@ -185,6 +186,82 @@ def built_at():
         return None
 
 
+_livenews = {}           # 'IDENT|YYYY-MM-DD' -> {'stories': [...]} or {'pending': True}
+_livenews_lock = threading.Lock()
+
+
+def _airport_for_news(ident):
+    """An airport record for the news search: the logbook's own (city, region, country, Wikipedia
+    towns) if you've been there, else NeoFly's airport table + the country under it."""
+    try:
+        with open(os.path.join(WEB, 'data', 'logbook.json'), encoding='utf-8') as fh:
+            a = json.load(fh)['airports'].get(ident)
+        if a:
+            return a
+    except (OSError, ValueError, KeyError):
+        pass
+    try:
+        import sqlite3, tempfile
+        import build, geocountry
+        cfg = build.load_json(os.path.join(ROOT, 'config.json'), {})
+        std = os.path.join(os.path.expandvars(cfg.get('neofly', {}).get('dir', r'%LOCALAPPDATA%\Programs\Neofly')), 'std.bin')
+        tmp = tempfile.mkdtemp(prefix='kanews-')
+        try:
+            shutil.copy2(std, os.path.join(tmp, 's.db'))
+            db = sqlite3.connect(os.path.join(tmp, 's.db'))
+            r = db.execute('select ident, name, city, state, laty, lonx from airport where ident = ? or icao = ? limit 1', (ident, ident)).fetchone()
+            db.close()
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+        if not r:
+            return None
+        c = geocountry.country_at(r[5], r[4], os.path.join(WEB, 'geo', 'countries.json'))
+        return {'ident': r[0], 'name': r[1], 'city': r[2], 'state': r[3], 'lat': r[4], 'lon': r[5],
+                'country': {'iso': c[0], 'name': c[1]} if c else {}}
+    except Exception:
+        return None
+
+
+def live_news(ident):
+    """Today's local news for an airport (where you've just left / where you're heading).
+    Fetched once in the background, added to the news archive, then served from memory."""
+    ident = (ident or '').upper().strip()
+    if not re.match(r'^[A-Z0-9]{3,5}$', ident):
+        return {'ident': ident, 'stories': [], 'error': 'bad ident'}
+    from datetime import datetime
+    key = f'{ident}|{datetime.now():%Y-%m-%d}'
+    with _livenews_lock:
+        got = _livenews.get(key)
+        if got and not got.get('failed'):
+            return {'ident': ident, **got}
+        _livenews[key] = {'pending': True}
+
+    def fetch():
+        try:
+            import news
+            a = _airport_for_news(ident)
+            if not a:
+                _livenews[key] = {'stories': [], 'unknown': True}
+                return
+            news_dir = os.path.join(ROOT, 'backup', 'news')
+            media = os.path.join(WEB, 'media', 'news')
+            os.makedirs(media, exist_ok=True)
+            out = []
+            for st in news.stories_for(a, datetime.now(), news_dir, fetch=True, limit=4):
+                st = dict(st)
+                if st.get('image'):
+                    src, dst = os.path.join(news_dir, 'img', st['image']), os.path.join(media, st['image'])
+                    if os.path.exists(src) and not os.path.exists(dst):
+                        shutil.copy2(src, dst)
+                    st['image'] = f'media/news/{st["image"]}' if os.path.exists(dst) else None
+                out.append(st)
+            _livenews[key] = {'stories': out, 'city': a.get('city'), 'name': a.get('name')}
+        except Exception as e:
+            _livenews[key] = {'stories': [], 'failed': True, 'error': str(e)}
+    threading.Thread(target=fetch, daemon=True).start()
+    return {'ident': ident, 'pending': True}
+
+
 _live = [None, None]     # (config signature, Live)
 _simsrc = []
 
@@ -244,10 +321,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self._json(data_info())
         if path == '/__live':
             return self._json(live_state())
+        if path == '/__livenews':
+            from urllib.parse import parse_qs, urlparse
+            return self._json(live_news((parse_qs(urlparse(self.path).query).get('ident') or [''])[0]))
         if path.startswith('/__manual/'):
             return self._manual(path.rsplit('/', 1)[-1])
         if path in ('/', '/index.html'):
-            rebuilder.ensure(wait=False)     # never make the page wait on a background fetch
+            # never make the page wait: show what's there now and rebuild behind it (the page offers
+            # a refresh when the new build lands). Only a first-ever run, with no data yet, waits.
+            if os.path.exists(os.path.join(WEB, 'data', 'logbook.json')):
+                threading.Thread(target=rebuilder.ensure, kwargs={'wait': False}, daemon=True).start()
+            else:
+                rebuilder.ensure(wait=True)
         return super().do_GET()
 
     def _manual(self, mid):
@@ -489,8 +574,9 @@ def background_priority():
             k.GetCurrentProcess.restype = wintypes.HANDLE
             k.SetPriorityClass.argtypes = [wintypes.HANDLE, wintypes.DWORD]
             h = k.GetCurrentProcess()
-            k.SetPriorityClass(h, 0x00100000)          # PROCESS_MODE_BACKGROUND_BEGIN (low disk + memory priority)
-            k.SetPriorityClass(h, 0x00000040)          # then IDLE_PRIORITY_CLASS for the CPU (order matters)
+            # below normal: the sim (normal priority) always wins, but the logbook still gets on with it.
+            # (idle/background mode starved it completely while the sim was running - pages took ages)
+            k.SetPriorityClass(h, 0x00004000)          # BELOW_NORMAL_PRIORITY_CLASS
         else:
             os.nice(10)
     except Exception:
@@ -509,9 +595,13 @@ def main():
         return
     log('starting')
     background_priority()
-    rebuilder.ensure()
+    have_data = os.path.exists(os.path.join(WEB, 'data', 'logbook.json'))
+    if not have_data:
+        rebuilder.ensure()                  # first ever run: build before there's anything to show
     srv = http.server.ThreadingHTTPServer(('127.0.0.1', PORT), Handler)
     threading.Thread(target=srv.serve_forever, daemon=True).start()
+    if have_data:                           # open straight away with what's there; rebuild behind it
+        threading.Thread(target=rebuilder.ensure, daemon=True).start()
     if not os.environ.get('LOGBOOK_NO_BROWSER'):
         webbrowser.open(URL)
     log(f'serving {URL}')

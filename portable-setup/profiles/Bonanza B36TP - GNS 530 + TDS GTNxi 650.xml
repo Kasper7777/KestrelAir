@@ -39,7 +39,7 @@
                   <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="50" JoystickMode="CUSTOM" ><Parameter Type="Exp" Value="16384 + 16383 * (0.2 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) + 0.8 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1))" /></EventActionVirtualJoyStick>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -69,7 +69,7 @@
                   <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="53" JoystickMode="CUSTOM" ><Parameter Type="Exp" Value="16384 + 16383 * (0.2 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) + 0.8 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1))" /></EventActionVirtualJoyStick>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -121,7 +121,7 @@
                   <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="55" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="55" JoystickMode="CUSTOM" ><Parameter Type="Exp" Value="16384 + 16383 * (0.2 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) + 0.8 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1))" /></EventActionVirtualJoyStick>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4381,7 +4381,7 @@
                   <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="48" JoystickMode="CUSTOM" ><Parameter Type="Exp" Value="16384 + 16383 * (0.2 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) + 0.8 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1))" /></EventActionVirtualJoyStick>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4411,7 +4411,7 @@
                   <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="49" JoystickMode="CUSTOM" ><Parameter Type="Exp" Value="16384 + 16383 * (0.2 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) + 0.8 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1))" /></EventActionVirtualJoyStick>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>
@@ -4828,7 +4828,7 @@
                   <EventCondition ConditionValueSource="LVAR:KA_WALK_MODE" ConditionTargetValue="1" ConditionComparator="Unequal" />
                 </EventConditions>
                 <EventActions>
-                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="RESPONSECURVE" />
+                  <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" JoystickTarget="51" JoystickMode="CUSTOM" ><Parameter Type="Exp" Value="16384 + 16383 * (0.2 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) + 0.8 * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1) * (Min(60000, Max(0, [EVENT:VALUE])) / 30000.0 - 1))" /></EventActionVirtualJoyStick>
                 </EventActions>
               </EventDefinition>
             </EventDefinitions>

@@ -24,6 +24,7 @@ from pathlib import Path
 import importlib.util
 import re
 import sys
+from tune_drone_curves import EXPRESSION
 
 _spec = importlib.util.spec_from_file_location('bsp', Path(__file__).resolve().parent / 'bind-sticks-and-pedals.py')
 bsp = importlib.util.module_from_spec(_spec)
@@ -56,7 +57,9 @@ def drone_def(target, indent):
         *cond,
         '  <EventActions>',
         f'    <EventActionVirtualJoyStick JoystickAction="VJOY_AXIS" JoystickNumber="1" '
-        f'JoystickTarget="{target}" JoystickMode="RESPONSECURVE" />',
+        f'JoystickTarget="{target}" JoystickMode="CUSTOM">',
+        f'      <Parameter Type="Exp" Value="{EXPRESSION}" />',
+        '    </EventActionVirtualJoyStick>',
         '  </EventActions>',
         '</EventDefinition>',
     ], indent)

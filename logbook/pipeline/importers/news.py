@@ -29,6 +29,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import netread  # noqa: E402
 from datetime import datetime, timedelta
 from xml.etree import ElementTree
 
@@ -49,7 +50,7 @@ QUERY_VERSION = 2      # 2 = town + region/country (so "Mount Pleasant" means th
 
 def _get(url, timeout=25, limit=4_000_000):
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as r:
-        return r.read(limit), r.geturl(), r.headers.get('Content-Type', '')
+        return netread.read(r, timeout + 20, limit), r.geturl(), r.headers.get('Content-Type', '')
 
 
 def _gdelt(query, start, end, n=25):

@@ -17,6 +17,7 @@ import re
 import time
 import urllib.parse
 import urllib.request
+import netread  # noqa: E402
 
 UA = {'User-Agent': 'KestrelAirLogbook/1.0 (personal flight logbook; build-time lookups)'}
 WP = 'https://en.wikipedia.org/w/api.php?format=json&action=query&redirects=1'
@@ -35,7 +36,7 @@ def _json(url):
     for i in range(4):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25) as r:
-                return json.loads(r.read().decode('utf-8'))
+                return json.loads(netread.read(r, 60).decode('utf-8'))
         except Exception:
             if i == 3:
                 raise
@@ -47,7 +48,7 @@ def _download(url, dest):
         return True
     try:
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25) as r:
-            data = r.read()
+            data = netread.read(r, 90)
         with open(dest, 'wb') as fh:
             fh.write(data)
         return True

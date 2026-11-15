@@ -20,6 +20,7 @@ import json
 import math
 import os
 import urllib.request
+import netread  # noqa: E402
 
 from PIL import Image, ImageDraw
 
@@ -42,7 +43,8 @@ def _flag(iso, cache, fetch):
         if not fetch:
             return None
         req = urllib.request.Request(f'https://flagcdn.com/w1280/{iso.lower()}.png', headers={'User-Agent': 'KestrelAirLogbook/1.0'})
-        data = urllib.request.urlopen(req, timeout=30).read()
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = netread.read(r, 60)
         Image.open(__import__('io').BytesIO(data)).verify()      # refuse anything that isn't an image
         with open(path, 'wb') as fh:
             fh.write(data)

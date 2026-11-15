@@ -846,7 +846,9 @@
 "KCGF|2026-11-08",
 "KJFK|2026-11-09",
 "MKJP|2026-11-10",
-"SKLM|2026-11-10"
+"SKLM|2026-11-10",
+"SCVD|2026-11-13",
+"EGYP|2026-11-14"
 ],
 "_qv": {
 "LFRC|2026-08-16": 2,
@@ -2764,13 +2766,16 @@
 "id": "97016946af01",
 "title": "В Раде назвали штрафы за русский язык попыткой отвлечь от темы коррупции",
 "summary": "Угрозы украинского языкового омбудсмена Елены Ивановской о штрафах для родителей школьников за общение в чатах с учителями на русском призваны отвлечь... РИА Новости, 04.09.2026",
-"image": null,
+"image": "news-97016946af01.jpg",
 "source": "ria.ru",
 "url": "https://ria.ru/20260904/rada-2115392333.html",
 "date": "2026-09-04",
 "place": "Ivanovo",
 "lang": "ru",
-"tone": "neutral"
+"tone": "neutral",
+"tries": 1,
+"triedAt": 1794764958,
+"resolved": true
 }
 ],
 "UBOK|2026-09-05": [],
@@ -2821,7 +2826,9 @@
 "date": "2026-09-05",
 "place": "Astrakhan",
 "lang": "ru",
-"tone": "neutral"
+"tone": "neutral",
+"tries": 1,
+"triedAt": 1794764944
 },
 {
 "id": "06b7d4111df0",
@@ -2833,19 +2840,24 @@
 "date": "2026-09-04",
 "place": "Astrakhan",
 "lang": "ru",
-"tone": "neutral"
+"tone": "neutral",
+"tries": 1,
+"triedAt": 1794764980
 },
 {
 "id": "0c57096e95f8",
 "title": "За последние 4 года в Астраханской области отремонтировали более 30 мостов",
 "summary": "&quot;В Красноярском округе после капитального ремонта введён в эксплуатацию мост через реку Корсака&quot;, - сообщил на своих страницах в соцсетях губернатор Астраханской области Игорь Бабушкин.",
-"image": null,
+"image": "news-0c57096e95f8.jpg",
 "source": "nakanune.ru",
-"url": "https://www.nakanune.ru/news/2026/9/5/22886079/",
+"url": "https://radiovolna.fm/news/astrahanskie-novosti/v-astrakhanskoy-oblasti-za-chetyre-goda-otremontirovali-bolee-30-mostov.html",
 "date": "2026-09-05",
 "place": "Astrakhan",
 "lang": "ru",
-"tone": "neutral"
+"tone": "neutral",
+"tries": 1,
+"triedAt": 1794764949,
+"resolved": true
 }
 ],
 "USII|2026-09-06": [
@@ -3754,7 +3766,8 @@
 "date": "2026-11-04",
 "place": "San Marcos",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://universitystar.com"
 },
 {
 "id": "fe949b0cf392",
@@ -3766,7 +3779,8 @@
 "date": "2026-11-03",
 "place": "San Marcos",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://communityimpact.com"
 },
 {
 "id": "0d67b390bdbd",
@@ -3778,7 +3792,8 @@
 "date": "2026-11-02",
 "place": "San Marcos",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://sports.yahoo.com"
 },
 {
 "id": "0ed71acd91c4",
@@ -3790,7 +3805,8 @@
 "date": "2026-11-04",
 "place": "San Marcos",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": ""
 },
 {
 "id": "17acdcdbdd31",
@@ -3802,7 +3818,8 @@
 "date": "2026-11-03",
 "place": "San Marcos",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.legacy.com"
 },
 {
 "id": "ff73556b583b",
@@ -3828,7 +3845,8 @@
 "date": "2026-11-05",
 "place": "Rockwood",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.ccjdigital.com"
 },
 {
 "id": "6d86db7438bb",
@@ -3840,7 +3858,8 @@
 "date": "2026-11-03",
 "place": "Rockwood",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.cdrecycler.com"
 },
 {
 "id": "b278bc189e8d",
@@ -4641,7 +4660,9 @@
 "cca41f411f5c237a1d51b05a6bcda17eb275c63d": "baf764effd1e",
 "062fca3f1a60dba30d611ba821edd9b27d213c59": "f01d6022969b",
 "80865a7cf23857bd75f858021a9bba49e012539d": "5fcb310c8629",
-"f9fc03629b3d04df6f450a368bef26dc73da41d0": "0e98639c2339"
+"f9fc03629b3d04df6f450a368bef26dc73da41d0": "0e98639c2339",
+"bb1c8985b6914a23f1521f5685fa06eee385ab08": "0c57096e95f8",
+"9d8f274a820cd6a9dd8bdac7b8e4cac5f3e9c39f": "97016946af01"
 },
 "_finder": 3,
 "EGYP|2026-11-15": [],

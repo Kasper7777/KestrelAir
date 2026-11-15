@@ -1,7 +1,7 @@
 {
  "meta": {
   "version": 1,
-  "builtAt": "2026-11-15T03:49:12",
+  "builtAt": "2026-11-15T17:51:37",
   "online": false,
   "sources": [
    "neofly",
@@ -20,7 +20,7 @@
   "name": "Kazber",
   "rank": 2,
   "xp": 6562,
-  "cash": 4446198,
+  "cash": 4444098,
   "neoflyHours": 115.5,
   "location": "NZFX",
   "reputation": 28.4,
@@ -16173,7 +16173,7 @@
          "lon": -134.5699072,
          "km": 0.7
         },
-        "caption": "Home for the night: Aspen Suites, 0.7 km from PAJN. Front page in Juneau: “Alaska Judicial Council doesn't issue a recommendation on retention election for Juneau…”.",
+        "caption": "Home for the night: Aspen Suites, 0.7 km from PAJN. “Alaska Judicial Council doesn't issue a recommendation on retention election for Juneau…”. You learn a lot about a place from its local paper.",
         "likes": 27,
         "newsRef": {
          "id": "520d86196c8d",
@@ -16439,7 +16439,7 @@
         "website": "https://www.bullwinklespizza.com/",
         "menu": null,
         "hours": "Mo-Su 11:00-22:00",
-        "caption": "Lunch stop: Mini Moose ($10.99) at Bullwinkle's Pizza. “Mary Peltola denies ballot-stacking allegations at Juneau campaign rally”.",
+        "caption": "Lunch stop: Mini Moose ($10.99) at Bullwinkle's Pizza. “Mary Peltola denies ballot-stacking allegations at Juneau campaign rally”. “I just want to clear the air.",
         "likes": 214,
         "newsRef": {
          "id": "9ec32c77b74e",
@@ -17229,7 +17229,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Paella at hot dogs el matrix before checking the weather. Local politics in La Paz: “La Paz une a Bolivia y México en una gran celebración de Todos Santos y Día de Muertos:…”.",
+        "caption": "Coffee and Paella at hot dogs el matrix before checking the weather. Front page in La Paz: “La Paz une a Bolivia y México en una gran celebración de Todos Santos y Día de Muertos:…”.",
         "likes": 51,
         "newsRef": {
          "id": "5dad4f394324",
@@ -19945,7 +19945,7 @@
         "website": null,
         "menu": null,
         "hours": null,
-        "caption": "Coffee and Bandeja paisa at the airfield café before checking the weather. Local headlines over breakfast: “Capturan a hombre e incautan revólver y seis cartuchos durante operativo en Maicao”.",
+        "caption": "Coffee and Bandeja paisa at the airfield café before checking the weather. “Capturan a hombre e incautan revólver y seis cartuchos durante operativo en Maicao”.",
         "likes": 19,
         "newsRef": {
          "id": "2a39fed3bafb",
@@ -24081,7 +24081,7 @@
    "id": "97016946af01",
    "title": "В Раде назвали штрафы за русский язык попыткой отвлечь от темы коррупции",
    "summary": "Угрозы украинского языкового омбудсмена Елены Ивановской о штрафах для родителей школьников за общение в чатах с учителями на русском призваны отвлечь... РИА Новости, 04.09.2026",
-   "image": null,
+   "image": "media/news/news-97016946af01.jpg",
    "source": "ria.ru",
    "url": "https://ria.ru/20260904/rada-2115392333.html",
    "date": "2026-09-04",
@@ -24159,9 +24159,9 @@
    "id": "0c57096e95f8",
    "title": "За последние 4 года в Астраханской области отремонтировали более 30 мостов",
    "summary": "&quot;В Красноярском округе после капитального ремонта введён в эксплуатацию мост через реку Корсака&quot;, - сообщил на своих страницах в соцсетях губернатор Астраханской области Игорь Бабушкин.",
-   "image": null,
+   "image": "media/news/news-0c57096e95f8.jpg",
    "source": "nakanune.ru",
-   "url": "https://www.nakanune.ru/news/2026/9/5/22886079/",
+   "url": "https://radiovolna.fm/news/astrahanskie-novosti/v-astrakhanskoy-oblasti-za-chetyre-goda-otremontirovali-bolee-30-mostov.html",
    "date": "2026-09-05",
    "place": "Astrakhan",
    "lang": "ru",
@@ -24565,10 +24565,10 @@
   "520d86196c8d": {
    "id": "520d86196c8d",
    "title": "Alaska Judicial Council doesn't issue a recommendation on retention election for Juneau judge",
-   "summary": "",
-   "image": null,
+   "summary": "For the 21 judges up for retention election this year, the vast majority of recommendations are “yes” – meaning that the judge has met or exceeded performance standards. That wasn't the case for Superior Court Judge Marianna Carpeneti.",
+   "image": "media/news/news-520d86196c8d.jpg",
    "source": "KTOO",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRFYzOUxRRjFNZm1ENFBUX1UtMmMwVWFrQjl5eDZ5bi1Wbi1kcHJRV3RFd005TjJvY3hOUWF6MGRRV0twOWZScVJ0OGZHVHVNN2hkek9BTk9qY3o2R0hUNy1lR3c2WE96NGJ5dzBsM1lNLUN4MFBmQzBLRnprZThPV1QzbXFvRW42N1psQ0hQVm16LTVhRHV4dExxcVZtR2FaRklvRzh0TnhRLWZRM1FRcjNJcVUxUkZLaU00ZVBTanpvdi1pZFIzclBaQlE?oc=5",
+   "url": "https://www.ktoo.org/2026/10/30/alaska-judicial-council-doesnt-issue-a-recommendation-on-retention-election-for-juneau-judge-edited/",
    "date": "2026-10-30",
    "place": "Juneau",
    "lang": "en",
@@ -24593,10 +24593,10 @@
   "9ec32c77b74e": {
    "id": "9ec32c77b74e",
    "title": "Mary Peltola denies ballot-stacking allegations at Juneau campaign rally",
-   "summary": "",
+   "summary": "“I just want to clear the air. I knew nothing about any other candidates on the ballot except for me and the incumbent. That is all I have ever known about. I am not interested in tricking voters. I know I can beat Dan Sullivan,” she said.",
    "image": null,
    "source": "Alaska Public Media",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNTHJPNXZPMGs1N21jSEV6dDVqR2JISVl2SDRtQ3NjYnZIME41YXZlU2tweXh5VE9NR2JwSXo0Q3BDNkd3SUJkZ1A0WExSU0V5eXFWSEttR250WWNVaW83bnRxVzNWTExIQnJndXdWaTZ2cU5FVUZlbno1dE9fX0JmOUR1NEQzTnJzbWZOVWJpa2Q3V2VOYkJjMElaUXpNTkxGaTVBX05FSlJXYW5FcDhyX1NMcDZ3WS12LUNmWV9HbWJWLVh1VE5vWHNPU2g?oc=5",
+   "url": "https://alaskapublic.org/news/politics/elections/2026-10-30/mary-peltola-denies-ballot-stacking-allegations-at-juneau-campaign-rally",
    "date": "2026-10-30",
    "place": "Juneau",
    "lang": "en",
@@ -24608,9 +24608,9 @@
    "id": "baf764effd1e",
    "title": "Juneau woman sentenced to 12 months + 1 day in federal meth trafficking case",
    "summary": "",
-   "image": null,
+   "image": "media/news/news-baf764effd1e.jpg",
    "source": "Alaska's News Source",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeHlMZi04ZFJsdTlCZ0pCbFJZZW5nZlJDWkowV1ZkTmNmU01oYVlJNDFKckhRdGsxSEdCcTdFTFpuVHdkZ3BGWUZlWTB2dXFuZjg3UU4za0ZCQW1NbGlOWUVIWHpFN0luTVRnV05JT3ptRlZWeGNPR0JwMWJiejhKbFhkU3ZYWS16WGRHMjVrUFh1dGVYandpUk5sTVp6eUFKd0ZDcno5Y0I4dDg4ajZUVGZ4OXjSAcgBQVVfeXFMTUpEd1E0UTc1T1VQZzRPV1RuY19oMG9MdERkdFA2Z0E1cTZnT1RCZ3JmZnR4T1VUNUEwZ3UyNjNPUDNfZml0NldfMDRNNHhrOWNZejAzbkpTYUs0clNQQUFzRDZNVW92ZXc2Tll5VWh3dm1LaVQzeFF2Vy1ERngyQTVFTzFoaGgxcm5MdGxUc09Db2dYdFVJUzZabmphWDR2S0RkczNDQTlIYUF3NDJZbGc3eHh0UWRxWFYxbExYMllLR0dNS2o0d1c?oc=5",
+   "url": "https://www.alaskasnewssource.com/2026/10/29/juneau-woman-sentenced-12-months-1-day-federal-meth-trafficking-case/",
    "date": "2026-10-28",
    "place": "Juneau",
    "lang": "en",
@@ -24621,10 +24621,10 @@
   "5fcb310c8629": {
    "id": "5fcb310c8629",
    "title": "Alaska’s No. 2 ‘cursed’ ranking lands close to home for Juneau",
-   "summary": "",
-   "image": null,
+   "summary": "Storms, earthquakes and coastal erosion puts a Halloween ranking in context",
+   "image": "media/news/news-5fcb310c8629.jpg",
    "source": "Juneau Empire",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlVKZnFCdUl3TE8xM1l0bHh2M1BIZGpOT2tERlpZY04wUXVRNXREa1dONUJsTUZsVVpRd3ljd2RsLThMZ1d2QW5wSUJvaC02TGlTZWs2emJEcTBELUhOR3ZRa3YtVG05X3l6NGdTWEJkdmZib0VScEVDUnM5S2Iza1JhMU85RmZzVEFEOXBtRUw3UGxuclJKUVIwNzg5ajBH?oc=5",
+   "url": "https://www.juneauempire.com/2026/10/27/alaskas-no-2-cursed-ranking-lands-close-to-home-for-juneau/",
    "date": "2026-10-28",
    "place": "Juneau",
    "lang": "en",
@@ -24678,9 +24678,9 @@
    "id": "f01d6022969b",
    "title": "Kenneth Walter Cherniak",
    "summary": "",
-   "image": null,
+   "image": "media/news/news-f01d6022969b.jpg",
    "source": "Pipestone Flyer",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAxem82eFI4ZnpFaG9paW92ekNFTXRybmltQzRqSHZ1MUt2OUtnZXJ5MXZKWWVrOWR2alRjY05oaTZ6ZkQyQWswcVpWRnpubkpGbUpWX25RU0F6aVN5XzZqNVo3NDhxTlFDcTJSOE9R?oc=5",
+   "url": "https://pipestoneflyer.ca/2026/10/30/kenneth-walter-cherniak/",
    "date": "2026-10-30",
    "place": "Wetaskiwin",
    "lang": "en",
@@ -24691,10 +24691,10 @@
   "0e98639c2339": {
    "id": "0e98639c2339",
    "title": "Full results: Here’s how Central Alberta voted in Oct. 19 referendum",
-   "summary": "",
-   "image": null,
+   "summary": "The final results are in for Alberta's recent referendum, including voter turnout. Provincially, across all 10...",
+   "image": "media/news/news-0e98639c2339.jpg",
    "source": "rdnewsnow.com",
-   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQN3lNM0V6cDc4c04tRUpEb05JcS1Lci1BdTNWeWdkdHhEejVXRnRRblRkWDdjSmhCY1hKRklWaFo0NzhVTGEtVFY1dW5fQ1A1ZldvTko3Wl9XdmNVR2JJMmkwSzM0S2g0VVNjTjJ6aS0wV1NCdF9kMUI3QXJPUm1zQXFaZ3A0TGFIbWhVc29acTVhTEVObkdjQUtlYWI?oc=5",
+   "url": "https://rdnewsnow.com/2026/10/29/full-results-how-did-central-alberta-vote-in-oct-19-referendum/",
    "date": "2026-10-29",
    "place": "Wetaskiwin",
    "lang": "en",
@@ -24965,6 +24965,7 @@
    "place": "Lancaster",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.islands.com",
    "airport": "KWJF"
   },
   "62944007d762": {
@@ -24978,6 +24979,7 @@
    "place": "Lancaster",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.legacy.com",
    "airport": "KWJF"
   },
   "9dca5fe44878": {
@@ -24991,6 +24993,7 @@
    "place": "La Paz",
    "lang": "es",
    "tone": "neutral",
+   "site": "https://www.hoytamaulipas.net",
    "airport": "MMLP"
   },
   "5dad4f394324": {
@@ -25004,6 +25007,7 @@
    "place": "La Paz",
    "lang": "es",
    "tone": "neutral",
+   "site": "https://lapaz.bo",
    "airport": "MMLP"
   },
   "b97ecff889af": {
@@ -25017,6 +25021,7 @@
    "place": "La Paz",
    "lang": "es",
    "tone": "neutral",
+   "site": "https://oem.com.mx",
    "airport": "MMLP"
   },
   "d487e05ba12a": {
@@ -25030,6 +25035,7 @@
    "place": "La Paz",
    "lang": "es",
    "tone": "neutral",
+   "site": "https://tribunademexico.com",
    "airport": "MMLP"
   },
   "3163829286d2": {
@@ -25043,6 +25049,7 @@
    "place": "La Paz",
    "lang": "es",
    "tone": "neutral",
+   "site": "https://oem.com.mx",
    "airport": "MMLP"
   },
   "d06a900fce82": {
@@ -25056,6 +25063,7 @@
    "place": "La Paz",
    "lang": "es",
    "tone": "neutral",
+   "site": "https://tribunademexico.com",
    "airport": "MMLP"
   },
   "e9fcefc6f9f4": {

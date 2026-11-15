@@ -14,6 +14,7 @@ import re
 import time
 import urllib.parse
 import urllib.request
+import netread  # noqa: E402
 
 UA = {'User-Agent': 'KestrelAirLogbook/1.0 (personal flight logbook; build-time lookups)'}
 AIRPORT_WORDS = re.compile(r'airport|airfield|aerodrome|air base|airbase|airpark|air strip|airstrip|heliport|field\b', re.I)
@@ -36,7 +37,7 @@ def _get(url, tries=6):
     for i in range(tries):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=20) as r:
-                return r.read()
+                return netread.read(r, 60)
         except urllib.error.HTTPError as e:
             if e.code == 404:
                 raise NotFound(url)

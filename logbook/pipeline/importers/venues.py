@@ -19,6 +19,7 @@ import re
 import time
 import urllib.parse
 import urllib.request
+import netread  # noqa: E402
 from html.parser import HTMLParser
 
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 KestrelAirLogbook',
@@ -84,7 +85,7 @@ def _fetch(url, limit=6_000_000, timeout=15):
     req = urllib.request.Request(url, headers=UA)
     with urllib.request.urlopen(req, timeout=timeout) as r:
         ctype = r.headers.get('Content-Type', '')
-        return r.read(limit), ctype, r.geturl()
+        return netread.read(r, 45, limit), ctype, r.geturl()
 
 
 def _page(url):

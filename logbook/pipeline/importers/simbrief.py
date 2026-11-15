@@ -16,6 +16,7 @@ import re
 import shutil
 import urllib.parse
 import urllib.request
+import netread  # noqa: E402
 from datetime import datetime, timedelta
 
 UA = {'User-Agent': 'KestrelAirLogbook/1.0'}
@@ -24,7 +25,7 @@ API = 'https://www.simbrief.com/api/xml.fetcher.php'
 
 def _get(url, timeout=30):
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as r:
-        return r.read()
+        return netread.read(r, 60)
 
 
 def archive_latest(username, folder, fetch=True):

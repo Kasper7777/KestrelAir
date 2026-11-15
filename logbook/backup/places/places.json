@@ -609,6 +609,11 @@
 "title": "Pisco sour",
 "description": "Cocktail in Chilean and Peruvian cuisine",
 "image": "dish-pisco-sour.jpg"
+},
+"Coffee": {
+"title": "Coffee",
+"description": "Brewed beverage",
+"image": "dish-coffee.jpg"
 }
 },
 "LTPU": {
@@ -13551,6 +13556,16 @@
 "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Bermuda_%28UK%29_image_number_123_Shepherds_Pie_dinner_dish_at_restaurant.jpg/500px-Bermuda_%28UK%29_image_number_123_Shepherds_Pie_dinner_dish_at_restaurant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
 "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Shepherdspie2.JPG/500px-Shepherdspie2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
 "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/ShepherdsPie-closeup.jpg/500px-ShepherdsPie-closeup.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+],
+"Sandwich": [
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Sandwich_on_a_cutting_board.jpg/500px-Sandwich_on_a_cutting_board.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/South_Georgia_Island_as_seen_by_Sentinel-2.jpg/500px-South_Georgia_Island_as_seen_by_Sentinel-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Sandwich.jpg/500px-Sandwich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/%D8%B3%D8%A7%D9%86%D8%AF%D9%88%D8%B4_%D8%B4%D8%A7%D9%88%D8%B1%D9%85%D8%A7_%D9%84%D9%81%D8%A9.jpg/500px-%D8%B3%D8%A7%D9%86%D8%AF%D9%88%D8%B4_%D8%B4%D8%A7%D9%88%D8%B1%D9%85%D8%A7_%D9%84%D9%81%D8%A9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/The_Parisian_Sandwich_-_Julien_Plumart.jpg/500px-The_Parisian_Sandwich_-_Julien_Plumart.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Veg_Sandwich_2.jpg/500px-Veg_Sandwich_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Double_Sandwich_with_meat_in_Rio_de_Janeiro_%2811381269276%29.jpg/500px-Double_Sandwich_with_meat_in_Rio_de_Janeiro_%2811381269276%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 ]
 },
 "_placePhotos": {
@@ -14361,5 +14376,12 @@
 "photos": [],
 "menu": null
 }
+},
+"NZFX": {
+"restaurants": [],
+"hotels": [],
+"restV": 4,
+"sights": [],
+"sightsChecked": true
 }
 }

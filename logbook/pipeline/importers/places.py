@@ -14,6 +14,7 @@ import re
 import time
 import urllib.parse
 import urllib.request
+import netread  # noqa: E402
 
 UA = {'User-Agent': 'KestrelAirLogbook/1.0 (personal flight logbook; build-time lookups)'}
 OVERPASS = 'https://overpass-api.de/api/interpreter'
@@ -52,7 +53,7 @@ def _get(url, data=None, tries=4):
         try:
             req = urllib.request.Request(url, data=data, headers=UA)
             with urllib.request.urlopen(req, timeout=60) as r:
-                return r.read()
+                return netread.read(r, 150)   # Overpass queries run up to 120 s
         except urllib.error.HTTPError as e:
             if e.code == 404:
                 return None

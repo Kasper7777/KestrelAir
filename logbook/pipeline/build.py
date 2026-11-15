@@ -18,6 +18,7 @@ and are merged here; the web side doesn't need to change for new data.
 """
 import json
 import os
+import threading
 import sys
 from datetime import datetime
 
@@ -47,9 +48,12 @@ def pilot_dir(name):
     return os.path.join(ROOT, 'backup', 'pilots', slugify(name))
 
 
-def main(fetch=True):
+def main(fetch=True, publish=True):
     """fetch=False: build only from NeoFly, screenshots and what's already saved (fast,
-    offline). fetch=True: also look up anything new online (Wikipedia, places, flags)."""
+    offline). fetch=True: also look up anything new online (Wikipedia, places, flags).
+    publish=False: only fill the archives, don't write logbook.json - the app's slow online
+    top-up uses this, so a stale NeoFly snapshot taken minutes ago can never overwrite a
+    flight that was logged meanwhile (the quick offline build publishes right after)."""
     cfg = load_json(os.path.join(ROOT, 'config.json'), {})
     overrides = load_json(os.path.join(ROOT, 'overrides.json'), {})
     web = os.path.join(ROOT, 'web')
@@ -77,9 +81,10 @@ def main(fetch=True):
     print(f'  {len(nf["flights"])} flights ({sum(f["inferred"] for f in nf["flights"])} recovered from the job log), from {nf["source"]}')
     os.makedirs(backup, exist_ok=True)
     cache.update(nf['airports'])  # lets another PC without NeoFly still place airports
-    with open(cache_path + '.tmp', 'w', encoding='utf-8') as fh:
+    tmp_cache = f'{cache_path}.{os.getpid()}-{threading.get_ident()}.tmp'   # two builds can run at once
+    with open(tmp_cache, 'w', encoding='utf-8') as fh:
         json.dump(cache, fh, ensure_ascii=False, indent=0, sort_keys=True)
-    os.replace(cache_path + '.tmp', cache_path)
+    os.replace(tmp_cache, cache_path)
 
     sources = screenshots.expand_sources(cfg.get('photos', {}).get('sources', [{'auto': 'steam'}]))
     # this pilot's originals saved by the Back up button: on another PC these are the photos
@@ -189,8 +194,10 @@ def main(fetch=True):
                 mans = aircraftinfo.find_manuals([rx], roots)
                 a['manuals'] = [{k2: m[k2] for k2 in ('id', 'title', 'mb')} for m in mans]
                 registry.update({m['id']: m['path'] for m in mans})
-        with open(os.path.join(ROOT, 'manuals-index.json'), 'w', encoding='utf-8') as fh:   # server-side only, not served
+        reg_path = os.path.join(ROOT, 'manuals-index.json')          # server-side only, not served
+        with open(f'{reg_path}.{threading.get_ident()}.tmp', 'w', encoding='utf-8') as fh:
             json.dump(registry, fh, indent=1)
+        os.replace(f'{reg_path}.{threading.get_ident()}.tmp', reg_path)
         print(f'Aircraft: {sum(1 for a in aircraft.values() if a.get("dossier"))} dossiers, {len(registry)} manuals found on this PC')
     except Exception as e:
         print(f'  ! aircraft dossiers skipped: {e}')
@@ -347,8 +354,11 @@ def main(fetch=True):
     for p in problems[:20]:
         print(f'  ! {p}')
 
+    if not publish:
+        print('Archives topped up (not published - the quick build publishes)')
+        return out
     # write atomically so the page never reads a half-written file
-    tmp = os.path.join(web, 'data', 'logbook.json.tmp')
+    tmp = os.path.join(web, 'data', f'logbook.json.{threading.get_ident()}.tmp')
     with open(tmp, 'w', encoding='utf-8') as fh:
         json.dump(out, fh, ensure_ascii=False, indent=1)
     os.replace(tmp, os.path.join(web, 'data', 'logbook.json'))

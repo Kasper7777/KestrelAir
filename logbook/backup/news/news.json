@@ -844,7 +844,9 @@
 "GQPP|2026-11-07",
 "KJFK|2026-11-08",
 "KCGF|2026-11-08",
-"KJFK|2026-11-09"
+"KJFK|2026-11-09",
+"MKJP|2026-11-10",
+"SKLM|2026-11-10"
 ],
 "_qv": {
 "LFRC|2026-08-16": 2,
@@ -917,7 +919,8 @@
 "SCVD|2026-11-13": 2,
 "EGYP|2026-11-14": 2,
 "EGYP|2026-11-15": 2,
-"EGYP~R|2026-11-15": 2
+"EGYP~R|2026-11-15": 2,
+"NZFX|2026-11-15": 2
 },
 "LFRC|2026-08-16": [
 {
@@ -2247,15 +2250,18 @@
 {
 "id": "5297e4283a34",
 "title": "Rescuers raise number of missing from Northern Cyprus ferry accident to 20",
-"summary": "",
-"image": null,
+"summary": "The captain and crew of the ferry have been brought before a judge and placed under formal arrest.",
+"image": "news-5297e4283a34.jpg",
 "source": "Al Jazeera",
-"url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNTTRCRlZ2UlJyeFRsYnByLXlRVE9qUGY0TEZPN0N2dFRqTHplekgtVlJ2SEFtNWN3bE43NVJoQnJGWkhsam5oTC1ncUdTTEpNaldHRWxoX0NZYWVudmdmeF9PbDh4NEZxWnE3LVFybnRUdmJPYTgwcGtXREtrM1gydlA0ZWJXU0F4SWZHTG9rbmpMX2hWcklJWEF1VG1rMzlXNHNyaWpSdWRyZmoxSVN4SmRQZ1bSAboBQVVfeXFMTzVNWDlhX0R2RndDRnRtUHBvYWVzTkprRUhLUXg4dFNqd0s5VUtuQ2ljQ3NwMEtkXzg0U0hweGstZFVqWkxVUUl5WTBQTFNNWHJnQ21aMkw4Z2NWWloybDBxN05NV01lVDZFMzRBRGZWaUVUTlk5dVlIdUYzYU1xU1ZNemRTcU1heUR0RDFvcDZKbUZaNTFCeFE2V0dNdVR6blRxNHBVbTJXbkNkRFg0eUFJaS1NQ2pwNi13?oc=5",
+"url": "https://www.aljazeera.com/news/2026/8/31/rescue-teams-continue-search-for-missing-after-north-cyprus-ferry-sinking",
 "date": "2026-08-31",
 "place": "Northern Cyprus",
 "lang": "en",
 "tone": "sad",
-"site": "https://www.aljazeera.com"
+"site": "https://www.aljazeera.com",
+"tries": 1,
+"triedAt": 1794714469,
+"resolved": true
 },
 {
 "id": "296c420a727d",
@@ -2614,14 +2620,17 @@
 "id": "5744336ad969",
 "title": "Vest-Agder – tidligere fylke",
 "summary": "",
-"image": null,
+"image": "news-5744336ad969.jpg",
 "source": "Store norske leksikon",
-"url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE85Y1BsQkRTbWhOSEx1MFQyRW44SmxzSUpWZ2tOdEtxOW1DVzlXdXY3RFlrbENuMWoyOFFVd3lzcHBJMkN3MENUZjUxNUxucU5PanNsWEtn?oc=5",
+"url": "https://snl.no/Vest-Agder_-_tidligere_fylke",
 "date": "2026-09-04",
 "place": "Kristiansand",
 "lang": "no",
 "tone": "neutral",
-"site": "https://snl.no"
+"site": "https://snl.no",
+"tries": 1,
+"triedAt": 1794714459,
+"resolved": true
 },
 {
 "id": "4d117aa42bca",
@@ -2651,20 +2660,25 @@
 "place": "Helsinki",
 "lang": "fi",
 "tone": "neutral",
-"site": "https://www.hs.fi"
+"site": "https://www.hs.fi",
+"tries": 1,
+"triedAt": 1794714479
 },
 {
 "id": "57f68a3abcb3",
 "title": "Päärautatieaseman kellotorni muuttuu sirkusnäyttämöksi – ilma-akrobaatit esiintyvät 50 metriä korkeassa tornissa",
-"summary": "",
-"image": null,
+"summary": "Helsingin päärautatieasemalla koetaan keskiviikkona 9. syyskuuta jotain ennennäkemätöntä, kun ilma-akrobaatit ottavat Helsingin päärautatieaseman kellotornin näyttämökseen. Tapahtuma on osa Circus & Dance Finlandin Sirkus tulee! -kampanjaa, joka nostaa valokeilaan koko suomalaisen nykysirkustaiteen.",
+"image": "news-57f68a3abcb3.jpg",
 "source": "STT Info",
-"url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQLTJjMzFyanRrVG95UkxKblE0NVlydW42OWdYN2twdE5tVDRQY0Mzc1F0SXM2NFFSZHBQLU12TXFDWkdxN28wdjBRaS1CbFJQaVNPYTJSbXM3MC1yV0hFUHBwMEFzeHJnQ000eE94dFhCRWxFUlc1S3g1WDBlWC1iZG8zWWVzRzBGd3JHckVudlJXVVFCYzVXdEtpZ1Y3SkFnVUMxODFRM2ViZnA4ZW1FREx1MXR4QkdlaTI1b1F4UmVUSFY5eUZ5S0tZMTlQVWdlckVFT3lZWmdnd2VlTDR2NUpHNndvYzJHR2N2Ym9WSWhFUFY0ZjhXOE9OODRWbm1zU0NYdW9QRVVrM3c?oc=5",
+"url": "https://www.sttinfo.fi/tiedote/72283398/paarautatieaseman-kellotorni-muuttuu-sirkusnayttamoksi-ilma-akrobaatit-esiintyvat-50-metria-korkeassa-tornissa?lang=fi",
 "date": "2026-09-02",
 "place": "Helsinki",
 "lang": "fi",
 "tone": "neutral",
-"site": "https://www.sttinfo.fi"
+"site": "https://www.sttinfo.fi",
+"tries": 1,
+"triedAt": 1794714449,
+"resolved": true
 },
 {
 "id": "0fc8adc46dcf",
@@ -2677,7 +2691,9 @@
 "place": "Helsinki",
 "lang": "fi",
 "tone": "neutral",
-"site": "https://www.greenpeace.org"
+"site": "https://www.greenpeace.org",
+"tries": 1,
+"triedAt": 1794714488
 }
 ],
 "UUBI|2026-09-04": [
@@ -2733,13 +2749,16 @@
 "id": "98c765b53b90",
 "title": "В Калининградской области установили бюст Николая II",
 "summary": "Бюсты императора Николая II и его супруги императрицы Александры Федоровны установили на территории историко-краеведческого музея в городе Гусеве под... РИА Новости, 06.09.2026",
-"image": null,
+"image": "news-98c765b53b90.jpg",
 "source": "ria.ru",
 "url": "https://ria.ru/20260906/rossiya-2115874317.html",
 "date": "2026-09-06",
 "place": "Ivanovo",
 "lang": "ru",
-"tone": "neutral"
+"tone": "neutral",
+"tries": 1,
+"triedAt": 1794714498,
+"resolved": true
 },
 {
 "id": "97016946af01",
@@ -3066,7 +3085,9 @@
 "place": "Nakhon Si Thammarat",
 "lang": "th",
 "tone": "neutral",
-"site": "https://www.facebook.com"
+"site": "https://www.facebook.com",
+"tries": 1,
+"triedAt": 1794714661
 }
 ],
 "ZGDY|2026-09-10": [
@@ -3217,22 +3238,27 @@
 "place": "Fort Greely",
 "lang": "en",
 "tone": "neutral",
-"site": "https://www.thearcticinstitute.org"
+"site": "https://www.thearcticinstitute.org",
+"tries": 1,
+"triedAt": 1794714611
 }
 ],
 "PAJN|2026-10-29": [
 {
 "id": "520d86196c8d",
 "title": "Alaska Judicial Council doesn't issue a recommendation on retention election for Juneau judge",
-"summary": "",
-"image": null,
+"summary": "For the 21 judges up for retention election this year, the vast majority of recommendations are “yes” – meaning that the judge has met or exceeded performance standards. That wasn't the case for Superior Court Judge Marianna Carpeneti.",
+"image": "news-520d86196c8d.jpg",
 "source": "KTOO",
-"url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRFYzOUxRRjFNZm1ENFBUX1UtMmMwVWFrQjl5eDZ5bi1Wbi1kcHJRV3RFd005TjJvY3hOUWF6MGRRV0twOWZScVJ0OGZHVHVNN2hkek9BTk9qY3o2R0hUNy1lR3c2WE96NGJ5dzBsM1lNLUN4MFBmQzBLRnprZThPV1QzbXFvRW42N1psQ0hQVm16LTVhRHV4dExxcVZtR2FaRklvRzh0TnhRLWZRM1FRcjNJcVUxUkZLaU00ZVBTanpvdi1pZFIzclBaQlE?oc=5",
+"url": "https://www.ktoo.org/2026/10/30/alaska-judicial-council-doesnt-issue-a-recommendation-on-retention-election-for-juneau-judge-edited/",
 "date": "2026-10-30",
 "place": "Juneau",
 "lang": "en",
 "tone": "neutral",
-"site": "https://www.ktoo.org"
+"site": "https://www.ktoo.org",
+"tries": 1,
+"triedAt": 1794714637,
+"resolved": true
 },
 {
 "id": "57b7899dad70",
@@ -3250,39 +3276,50 @@
 {
 "id": "9ec32c77b74e",
 "title": "Mary Peltola denies ballot-stacking allegations at Juneau campaign rally",
-"summary": "",
+"summary": "“I just want to clear the air. I knew nothing about any other candidates on the ballot except for me and the incumbent. That is all I have ever known about. I am not interested in tricking voters. I know I can beat Dan Sullivan,” she said.",
 "image": null,
 "source": "Alaska Public Media",
-"url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNTHJPNXZPMGs1N21jSEV6dDVqR2JISVl2SDRtQ3NjYnZIME41YXZlU2tweXh5VE9NR2JwSXo0Q3BDNkd3SUJkZ1A0WExSU0V5eXFWSEttR250WWNVaW83bnRxVzNWTExIQnJndXdWaTZ2cU5FVUZlbno1dE9fX0JmOUR1NEQzTnJzbWZOVWJpa2Q3V2VOYkJjMElaUXpNTkxGaTVBX05FSlJXYW5FcDhyX1NMcDZ3WS12LUNmWV9HbWJWLVh1VE5vWHNPU2g?oc=5",
+"url": "https://alaskapublic.org/news/politics/elections/2026-10-30/mary-peltola-denies-ballot-stacking-allegations-at-juneau-campaign-rally",
 "date": "2026-10-30",
 "place": "Juneau",
 "lang": "en",
 "tone": "neutral",
-"site": "https://alaskapublic.org"
+"site": "https://alaskapublic.org",
+"tries": 4,
+"triedAt": 1794714654,
+"resolved": true
 },
 {
 "id": "baf764effd1e",
 "title": "Juneau woman sentenced to 12 months + 1 day in federal meth trafficking case",
 "summary": "",
-"image": null,
+"image": "news-baf764effd1e.jpg",
 "source": "Alaska's News Source",
-"url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeHlMZi04ZFJsdTlCZ0pCbFJZZW5nZlJDWkowV1ZkTmNmU01oYVlJNDFKckhRdGsxSEdCcTdFTFpuVHdkZ3BGWUZlWTB2dXFuZjg3UU4za0ZCQW1NbGlOWUVIWHpFN0luTVRnV05JT3ptRlZWeGNPR0JwMWJiejhKbFhkU3ZYWS16WGRHMjVrUFh1dGVYandpUk5sTVp6eUFKd0ZDcno5Y0I4dDg4ajZUVGZ4OXjSAcgBQVVfeXFMTUpEd1E0UTc1T1VQZzRPV1RuY19oMG9MdERkdFA2Z0E1cTZnT1RCZ3JmZnR4T1VUNUEwZ3UyNjNPUDNfZml0NldfMDRNNHhrOWNZejAzbkpTYUs0clNQQUFzRDZNVW92ZXc2Tll5VWh3dm1LaVQzeFF2Vy1ERngyQTVFTzFoaGgxcm5MdGxUc09Db2dYdFVJUzZabmphWDR2S0RkczNDQTlIYUF3NDJZbGc3eHh0UWRxWFYxbExYMllLR0dNS2o0d1c?oc=5",
+"url": "https://www.alaskasnewssource.com/2026/10/29/juneau-woman-sentenced-12-months-1-day-federal-meth-trafficking-case/",
 "date": "2026-10-28",
 "place": "Juneau",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.alaskasnewssource.com",
+"tries": 1,
+"triedAt": 1794714652,
+"resolved": true
 },
 {
 "id": "5fcb310c8629",
 "title": "Alaska’s No. 2 ‘cursed’ ranking lands close to home for Juneau",
-"summary": "",
-"image": null,
+"summary": "Storms, earthquakes and coastal erosion puts a Halloween ranking in context",
+"image": "news-5fcb310c8629.jpg",
 "source": "Juneau Empire",
-"url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSlVKZnFCdUl3TE8xM1l0bHh2M1BIZGpOT2tERlpZY04wUXVRNXREa1dONUJsTUZsVVpRd3ljd2RsLThMZ1d2QW5wSUJvaC02TGlTZWs2emJEcTBELUhOR3ZRa3YtVG05X3l6NGdTWEJkdmZib0VScEVDUnM5S2Iza1JhMU85RmZzVEFEOXBtRUw3UGxuclJKUVIwNzg5ajBH?oc=5",
+"url": "https://www.juneauempire.com/2026/10/27/alaskas-no-2-cursed-ranking-lands-close-to-home-for-juneau/",
 "date": "2026-10-28",
 "place": "Juneau",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.juneauempire.com",
+"tries": 1,
+"triedAt": 1794714720,
+"resolved": true
 },
 {
 "id": "8af1dcef471f",
@@ -3294,7 +3331,8 @@
 "date": "2026-10-28",
 "place": "Juneau",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.linkedin.com"
 }
 ],
 "CEX3|2026-10-31": [
@@ -3308,7 +3346,8 @@
 "date": "2026-11-02",
 "place": "Wetaskiwin",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": ""
 },
 {
 "id": "a1cb010b4039",
@@ -3320,31 +3359,40 @@
 "date": "2026-10-30",
 "place": "Wetaskiwin",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": ""
 },
 {
 "id": "f01d6022969b",
 "title": "Kenneth Walter Cherniak",
 "summary": "",
-"image": null,
+"image": "news-f01d6022969b.jpg",
 "source": "Pipestone Flyer",
-"url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAxem82eFI4ZnpFaG9paW92ekNFTXRybmltQzRqSHZ1MUt2OUtnZXJ5MXZKWWVrOWR2alRjY05oaTZ6ZkQyQWswcVpWRnpubkpGbUpWX25RU0F6aVN5XzZqNVo3NDhxTlFDcTJSOE9R?oc=5",
+"url": "https://pipestoneflyer.ca/2026/10/30/kenneth-walter-cherniak/",
 "date": "2026-10-30",
 "place": "Wetaskiwin",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://pipestoneflyer.ca",
+"tries": 1,
+"triedAt": 1794714720,
+"resolved": true
 },
 {
 "id": "0e98639c2339",
 "title": "Full results: Here’s how Central Alberta voted in Oct. 19 referendum",
-"summary": "",
-"image": null,
+"summary": "The final results are in for Alberta's recent referendum, including voter turnout. Provincially, across all 10...",
+"image": "news-0e98639c2339.jpg",
 "source": "rdnewsnow.com",
-"url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQN3lNM0V6cDc4c04tRUpEb05JcS1Lci1BdTNWeWdkdHhEejVXRnRRblRkWDdjSmhCY1hKRklWaFo0NzhVTGEtVFY1dW5fQ1A1ZldvTko3Wl9XdmNVR2JJMmkwSzM0S2g0VVNjTjJ6aS0wV1NCdF9kMUI3QXJPUm1zQXFaZ3A0TGFIbWhVc29acTVhTEVObkdjQUtlYWI?oc=5",
+"url": "https://rdnewsnow.com/2026/10/29/full-results-how-did-central-alberta-vote-in-oct-19-referendum/",
 "date": "2026-10-29",
 "place": "Wetaskiwin",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://rdnewsnow.com",
+"tries": 1,
+"triedAt": 1794714726,
+"resolved": true
 },
 {
 "id": "8d88c5b76d17",
@@ -3356,7 +3404,10 @@
 "date": "2026-10-29",
 "place": "Wetaskiwin",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://centralalbertaonline.com",
+"tries": 1,
+"triedAt": 1794714731
 },
 {
 "id": "84c2a395200b",
@@ -3368,7 +3419,8 @@
 "date": "2026-10-30",
 "place": "Wetaskiwin",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.ctvnews.ca"
 }
 ],
 "KBLI|2026-10-31": [
@@ -3382,7 +3434,8 @@
 "date": "2026-10-31",
 "place": "Bellingham",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.legacy.com"
 },
 {
 "id": "ba8662b8bafe",
@@ -3394,7 +3447,8 @@
 "date": "2026-10-30",
 "place": "Bellingham",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.legacy.com"
 },
 {
 "id": "050bf0fb9fc7",
@@ -3406,7 +3460,8 @@
 "date": "2026-10-29",
 "place": "Bellingham",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.legacy.com"
 },
 {
 "id": "783301887503",
@@ -3418,7 +3473,8 @@
 "date": "2026-11-01",
 "place": "Bellingham",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.si.com"
 },
 {
 "id": "c549e289761f",
@@ -3430,7 +3486,8 @@
 "date": "2026-10-30",
 "place": "Bellingham",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.cascadiadaily.com"
 },
 {
 "id": "e9f746b09efc",
@@ -3442,7 +3499,8 @@
 "date": "2026-11-01",
 "place": "Bellingham",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.kiro7.com"
 }
 ],
 "KMOD|2026-11-01": [
@@ -3456,7 +3514,8 @@
 "date": "2026-11-03",
 "place": "Modesto",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.modbee.com"
 },
 {
 "id": "9f343affef43",
@@ -3468,7 +3527,8 @@
 "date": "2026-11-03",
 "place": "Modesto",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": ""
 },
 {
 "id": "4a13e445d213",
@@ -3480,7 +3540,8 @@
 "date": "2026-11-03",
 "place": "Modesto",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://nypost.com"
 },
 {
 "id": "b10c6789fb23",
@@ -3492,7 +3553,8 @@
 "date": "2026-11-02",
 "place": "Modesto",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.sacbee.com"
 },
 {
 "id": "9baa7d844450",
@@ -3504,7 +3566,8 @@
 "date": "2026-11-01",
 "place": "Modesto",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.pressdemocrat.com"
 },
 {
 "id": "ab8721475579",
@@ -3516,7 +3579,8 @@
 "date": "2026-10-30",
 "place": "Modesto",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.modbee.com"
 }
 ],
 "KWJF|2026-11-01": [
@@ -3530,7 +3594,8 @@
 "date": "2026-11-01",
 "place": "Lancaster",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.maxpreps.com"
 },
 {
 "id": "b1437df73df0",
@@ -3542,7 +3607,8 @@
 "date": "2026-11-02",
 "place": "Lancaster",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.facebook.com"
 },
 {
 "id": "a80ce2ba889b",
@@ -3554,7 +3620,8 @@
 "date": "2026-11-02",
 "place": "Lancaster",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.bgr.com"
 },
 {
 "id": "d7e0110baf44",
@@ -3566,7 +3633,8 @@
 "date": "2026-11-03",
 "place": "Lancaster",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.paulsvalleydailydemocrat.com"
 },
 {
 "id": "064bffcf1b1b",
@@ -3578,7 +3646,8 @@
 "date": "2026-11-02",
 "place": "Lancaster",
 "lang": "en",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.islands.com"
 },
 {
 "id": "62944007d762",
@@ -3590,7 +3659,8 @@
 "date": "2026-11-03",
 "place": "Lancaster",
 "lang": "en",
-"tone": "sad"
+"tone": "sad",
+"site": "https://www.legacy.com"
 }
 ],
 "MMLP|2026-11-01": [
@@ -3604,7 +3674,8 @@
 "date": "2026-10-30",
 "place": "La Paz",
 "lang": "es",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://www.hoytamaulipas.net"
 },
 {
 "id": "5dad4f394324",
@@ -3616,7 +3687,8 @@
 "date": "2026-11-01",
 "place": "La Paz",
 "lang": "es",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://lapaz.bo"
 },
 {
 "id": "b97ecff889af",
@@ -3628,7 +3700,8 @@
 "date": "2026-11-01",
 "place": "La Paz",
 "lang": "es",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://oem.com.mx"
 },
 {
 "id": "d487e05ba12a",
@@ -3640,7 +3713,8 @@
 "date": "2026-11-02",
 "place": "La Paz",
 "lang": "es",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://tribunademexico.com"
 },
 {
 "id": "3163829286d2",
@@ -3652,7 +3726,8 @@
 "date": "2026-11-02",
 "place": "La Paz",
 "lang": "es",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://oem.com.mx"
 },
 {
 "id": "d06a900fce82",
@@ -3664,7 +3739,8 @@
 "date": "2026-10-30",
 "place": "La Paz",
 "lang": "es",
-"tone": "neutral"
+"tone": "neutral",
+"site": "https://tribunademexico.com"
 }
 ],
 "KHYI|2026-11-02": [
@@ -4556,7 +4632,16 @@
 "cbecdc8ea6bd7af8d813292a5e226e1d200ae446": "15cb27a9a330",
 "fb619396081366084519e9a0826b45dd6a50cead": "6622c720d97e",
 "feacf1b75da53f0ace905ed8d4d5788e2c519908": "a264c75eca90",
-"de08cac116df72207dd278e1642a2a88941a5979": "eb838976ea19"
+"de08cac116df72207dd278e1642a2a88941a5979": "eb838976ea19",
+"0f5ea1b737fa75c0582d4c2df0aa770cbf284fe1": "57f68a3abcb3",
+"776ec16787406d3dbbe55a46f3e5adb52f740812": "5744336ad969",
+"46ab085375086dc371ea60fc776e4e3a72da3c9c": "5297e4283a34",
+"ce764eb20bdf8d66f7e16bbe3959e5b960a9b882": "98c765b53b90",
+"5feef2f1c925330f8659ebdd51d07a27ec6e28d4": "520d86196c8d",
+"cca41f411f5c237a1d51b05a6bcda17eb275c63d": "baf764effd1e",
+"062fca3f1a60dba30d611ba821edd9b27d213c59": "f01d6022969b",
+"80865a7cf23857bd75f858021a9bba49e012539d": "5fcb310c8629",
+"f9fc03629b3d04df6f450a368bef26dc73da41d0": "0e98639c2339"
 },
 "_finder": 3,
 "EGYP|2026-11-15": [],
@@ -4613,5 +4698,6 @@
 "tone": "neutral",
 "site": "https://www.nine.com.au"
 }
-]
+],
+"NZFX|2026-11-15": []
 }

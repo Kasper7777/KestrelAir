@@ -92,3 +92,4 @@ nf-fl-87,flight,KJFK,Kennedy Intl,MKJP,Norman Manley Intl,2026-11-09T23:01:34,20
 nf-fl-88,flight,MKJP,Norman Manley Intl,SKLM,La Mina,2026-11-10T19:52:25,2026-11-10T21:33:02,100.6,474,FlightFX Cessna Citation X,-541,Passengers MKJP-SKLM (completed),63369,3,
 nf-fl-89,flight,SKLM,La Mina,SCVD,Pichoy,2026-11-12T17:41:47,2026-11-13T00:45:29,423.7,3055,FlightFX Cessna Citation X,-512,Passengers SKLM-SCVD (completed),327690,8,
 nf-fl-90,flight,SCVD,Pichoy,EGYP,Mount Pleasant,2026-11-14T01:14:52,2026-11-14T03:51:31,156.7,951,FlightFX Cessna Citation X,-465,,0,0,
+nf-fl-91,flight,EGYP,Mount Pleasant,NZFX,Phoenix Airfield (Mcmurdo Station),2026-11-14T21:25:34,2026-11-15T03:43:49,378.3,2842,FlightFX Cessna Citation X,-271,,0,24,

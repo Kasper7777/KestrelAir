@@ -80,7 +80,10 @@ export default {
         cog?.classList.toggle('busy', !!s.fetching);
         if (cog) cog.title = s.fetching ? 'Settings - looking up news pictures, places and photos in the background' : 'Settings';
         if (s.builtAt && s.builtAt !== loaded && pill.dataset.dismissed !== s.builtAt) {
-          render(pill, html`${icon('check')}<span>New pictures and details are in</span><button class="go">Show them</button><button class="x" aria-label="Later">${icon('close')}</button>`);
+          const landed = s.legs > db.legs.length && s.lastLeg;
+          render(pill, landed
+            ? html`${icon('check')}<span>Flight logged: ${s.lastLeg.from} → ${s.lastLeg.to}</span><button class="go">Show it</button><button class="x" aria-label="Later">${icon('close')}</button>`
+            : html`${icon('check')}<span>New pictures and details are in</span><button class="go">Show them</button><button class="x" aria-label="Later">${icon('close')}</button>`);
           pill.hidden = false;
           pill.querySelector('.go').onclick = () => location.reload();
           pill.querySelector('.x').onclick = () => { pill.dataset.dismissed = s.builtAt; pill.hidden = true; };

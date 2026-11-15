@@ -48,20 +48,60 @@ def log(msg):
         fh.write(line + '\n')
 
 
+def neofly_std():
+    import build
+    cfg = build.load_json(os.path.join(ROOT, 'config.json'), {})
+    return os.path.join(os.path.expandvars(cfg.get('neofly', {}).get('dir', r'%LOCALAPPDATA%\Programs\Neofly')), 'std.bin')
+
+
+def neofly_fingerprint():
+    """What the logbook is built from in NeoFly's save - flights, jobs, ledger, hangar,
+    hired pilots, where you are - as a few numbers. Unlike the file's timestamp it doesn't
+    change while NeoFly records the track mid-flight, so nothing rebuilds during a flight,
+    but a landing shows up at once. Cheap: a ~1 MB copy and a handful of max(id) queries."""
+    import sqlite3
+    import tempfile
+    std = neofly_std()
+    if not os.path.exists(std):
+        return None
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            dst = os.path.join(tmp, 'std.bin')
+            shutil.copyfile(std, dst)
+            for ext in ('-wal', '-shm'):
+                if os.path.exists(std + ext):
+                    shutil.copyfile(std + ext, dst + ext)
+            con = sqlite3.connect(dst)
+            try:
+                q = lambda sql: tuple(con.execute(sql).fetchone() or ())
+                return (q('select count(*), max(id) from flightlog'), q('select count(*), max(id) from joblog'),
+                        q('select count(*), max(rowid) from finances'), q('select count(*), max(id) from hangar'),
+                        q('select count(*), max(id) from aipilotflightlog'),
+                        tuple(tuple(r) for r in con.execute('select id, pilotCurrentICAO, rank from players')),
+                        q('select * from currentpilot'))
+            finally:
+                con.close()
+    except Exception:
+        try:                                    # NeoFly mid-write, or an unexpected save layout
+            return ('mtime', os.path.getmtime(std))
+        except OSError:
+            return None
+
+
 class Rebuilder:
     def __init__(self):
-        self.lock = threading.Lock()
-        self.sig = None
+        self.lock = threading.Lock()        # publishing logbook.json: the quick offline build, ~20 s
+        self.fetch_lock = threading.Lock()  # the online top-up: minutes, sometimes stuck on a slow site -
+        self.sig = None                     # it must never hold up logging a flight
         self.error = None
 
     def signature(self):
         import build, screenshots
         cfg = build.load_json(os.path.join(ROOT, 'config.json'), {})
-        paths = [os.path.join(os.path.expandvars(cfg.get('neofly', {}).get('dir', r'%LOCALAPPDATA%\Programs\Neofly')), 'std.bin'),
-                 os.path.join(ROOT, 'config.json'), os.path.join(ROOT, 'overrides.json')]
+        paths = [os.path.join(ROOT, 'config.json'), os.path.join(ROOT, 'overrides.json')]
         for s in screenshots.expand_sources(cfg.get('photos', {}).get('sources', [{'auto': 'steam'}])):
             paths.append(os.path.expandvars(s['path']))
-        out = []
+        out = [('neofly', neofly_fingerprint())]
         for p in paths:
             try:
                 out.append((p, os.path.getmtime(p)))
@@ -69,17 +109,17 @@ class Rebuilder:
                 out.append((p, None))
         return out
 
-    def ensure(self, force=False, wait=True):
+    def ensure(self, force=False, wait=True, then_fetch=True):
         """Fast offline build whenever NeoFly / screenshots / settings changed; then
         fetch anything new (Wikipedia, places, hotels, flags, news) in the background.
         wait=False (page loads): if a build is already running, serve what's there now
         rather than making the page wait - the background fetch can take minutes."""
         if not self.lock.acquire(blocking=wait):
-            return
+            return False
         try:
             sig = self.signature()
             if not force and sig == self.sig and os.path.exists(os.path.join(WEB, 'data', 'logbook.json')):
-                return
+                return False
             import build
             t = time.time()
             build.main(fetch=False)
@@ -88,10 +128,12 @@ class Rebuilder:
         except Exception:
             self.error = traceback.format_exc()
             log('build failed:\n' + self.error)
-            return
+            return False
         finally:
             self.lock.release()
-        self.enrich()
+        if then_fetch:
+            self.enrich()
+        return True
 
     def enrich(self):
         self.pictures()
@@ -110,12 +152,13 @@ class Rebuilder:
             while True:
                 self.again = False
                 wait_for_sim(self)
-                with self.lock:
+                with self.fetch_lock:
                     import build
                     t = time.time()
-                    build.main(fetch=True)
+                    build.main(fetch=True, publish=False)
                     self.last_run = time.strftime('%Y-%m-%dT%H:%M:%S')
                     log(f'background details fetched in {time.time() - t:.1f}s')
+                self.ensure(force=True, then_fetch=False)     # publish them with the latest NeoFly save
                 self.pictures()
                 self.pending = news.pending_arrivals(os.path.join(ROOT, 'backup', 'news'))
                 if self.again:
@@ -326,7 +369,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if path == '/__status':
             import backup
             return self._json({'error': rebuilder.error, 'lastBackup': backup.last(),
-                               'builtAt': built_at(), 'fetching': rebuilder.enriching and rebuilder.next_check is None and not rebuilder.paused_for_sim,
+                               **built_info(), 'fetching': rebuilder.enriching and rebuilder.next_check is None and not rebuilder.paused_for_sim,
                                'simRunning': sim_running(), 'pausedForSim': rebuilder.paused_for_sim})
         if path == '/__datainfo':
             return self._json(data_info())
@@ -535,6 +578,51 @@ def save_settings(req):
     log(f'settings saved: pilot={p["neofly"]}')
 
 
+def watch_neofly():
+    """While the app is open: log a landing within half a minute without anyone reloading
+    the page, and back the new save up straight away. Light enough to run beside the sim -
+    a ~1 MB copy every 30 s; the ~20 s rebuild only runs when NeoFly actually logged something.
+    Stops with the app (nothing is left running once the tabs close)."""
+    import backup
+    last = neofly_fingerprint()
+    while True:
+        time.sleep(30)
+        try:
+            fp = neofly_fingerprint()
+            if fp == last:
+                if not sim_running():
+                    rebuilder.ensure(wait=False)      # new screenshots / settings
+                continue
+            last = fp
+            log('NeoFly save changed - logging it')
+            rebuilder.ensure()                        # waits for a quick build already under way
+            with backup_lock:
+                r = backup.run()
+                log(f'backup: neofly {r["neofly"]["file"]} (new={r["neofly"]["new"]}), {r["photos"]["copied"]} photos copied')
+        except Exception:
+            log('NeoFly watch failed:\n' + traceback.format_exc())
+
+
+_built = [None, None]
+
+
+def built_info():
+    """builtAt plus the newest flight, re-read only when logbook.json changes."""
+    p = os.path.join(WEB, 'data', 'logbook.json')
+    try:
+        m = os.path.getmtime(p)
+        if _built[0] != m:
+            with open(p, encoding='utf-8') as fh:
+                d = json.load(fh)
+            legs = d.get('legs') or []
+            last = legs[-1] if legs else {}
+            _built[:] = [m, {'builtAt': d['meta'].get('builtAt'), 'legs': len(legs),
+                             'lastLeg': {k: last.get(k) for k in ('id', 'from', 'to', 'end')} if last else None}]
+        return _built[1]
+    except (OSError, ValueError, KeyError):
+        return {'builtAt': None, 'legs': None, 'lastLeg': None}
+
+
 def auto_backup():
     """Every launch: copy any new NeoFly progress and screenshots into backup/."""
     import backup
@@ -617,6 +705,7 @@ def main():
         webbrowser.open(URL)
     log(f'serving {URL}')
     threading.Thread(target=auto_backup, daemon=True).start()
+    threading.Thread(target=watch_neofly, daemon=True, name='neofly-watch').start()
     while time.time() - last_seen < IDLE_EXIT:
         time.sleep(5)
     log('no open tabs - stopping')

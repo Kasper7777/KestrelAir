@@ -1,8 +1,8 @@
 {
  "meta": {
   "version": 1,
-  "builtAt": "2026-11-15T00:19:40",
-  "online": true,
+  "builtAt": "2026-11-15T03:49:12",
+  "online": false,
   "sources": [
    "neofly",
    "screenshots"
@@ -19,10 +19,10 @@
  "pilot": {
   "name": "Kazber",
   "rank": 2,
-  "xp": 5242,
-  "cash": 3678854,
-  "neoflyHours": 109.2,
-  "location": "EGYP",
+  "xp": 6562,
+  "cash": 4446198,
+  "neoflyHours": 115.5,
+  "location": "NZFX",
   "reputation": 28.4,
   "crashes": 0,
   "character": "Kazber",
@@ -497,7 +497,7 @@
    "cruiseKt": 524,
    "seats": 10,
    "price": 22884715,
-   "base": "EGYP",
+   "base": "NZFX",
    "acquired": "2026-11-05T14:30:36",
    "wiki": {
     "description": "American business jet",
@@ -3094,6 +3094,39 @@
     "title": "RAF Mount Pleasant",
     "url": "https://en.wikipedia.org/wiki/RAF_Mount_Pleasant",
     "image": "media/wiki/airport-EGYP.jpg"
+   }
+  },
+  "NZFX": {
+   "ident": "NZFX",
+   "name": "Phoenix Airfield (Mcmurdo Station)",
+   "city": "Ross Island",
+   "state": null,
+   "lat": -77.967453,
+   "lon": 166.525452,
+   "elevationFt": 16,
+   "longestRunwayFt": 11001,
+   "surface": "SN",
+   "runways": 1,
+   "tower": false,
+   "country": {
+    "name": "New Zealand",
+    "iso": "NZ"
+   },
+   "wiki": {
+    "cities": [
+     "McMurdo Station",
+     "Scott Base"
+    ],
+    "description": "Airport in Ross Island, Antarctica",
+    "extract": "Phoenix Airfield is an airstrip in Antarctica opened in early 2017, designed to replace the Pegasus Field's role in serving McMurdo Station.",
+    "kind": "airport",
+    "opened": "2015",
+    "operators": [
+     "United States Antarctic Program"
+    ],
+    "title": "Phoenix Airfield",
+    "url": "https://en.wikipedia.org/wiki/Phoenix_Airfield",
+    "image": "media/wiki/airport-NZFX.jpg"
    }
   }
  },
@@ -6992,6 +7025,55 @@
    "local": false,
    "missions": [],
    "photos": [],
+   "news": []
+  },
+  {
+   "id": "nf-fl-91",
+   "kind": "flight",
+   "from": "EGYP",
+   "to": "NZFX",
+   "start": "2026-11-14T21:25:34",
+   "end": "2026-11-15T03:43:49",
+   "minutes": 378.3,
+   "distanceNm": 2842,
+   "aircraft": "neofly:12",
+   "landingFpm": -271,
+   "crash": false,
+   "bonus": {
+    "security": 0,
+    "comfort": 0,
+    "fly": 0
+   },
+   "inferred": false,
+   "source": "neofly:flightlog:91",
+   "local": false,
+   "missions": [],
+   "photos": [
+    "b19314af7d99",
+    "0fbc60e5f6d3",
+    "39c4e38048e2",
+    "3fb53f34b0bc",
+    "63c142895da4",
+    "dee3da813c65",
+    "6a2306f43e88",
+    "b4fbe47b16e8",
+    "f8660fdb9ad5",
+    "8ef574f94e8c",
+    "664566ea0c8c",
+    "ad8f55be7c87",
+    "f2d3f3a9907f",
+    "b12c318c83a4",
+    "157f6de84875",
+    "0439c91121ff",
+    "63a9daa4d1bd",
+    "227cc27f889d",
+    "ff42a3fecd0d",
+    "7f5f7a16af4b",
+    "b070283fd525",
+    "6e1dd2de46cb",
+    "6ce285014431",
+    "b76c978ffe08"
+   ],
    "news": []
   }
  ],
@@ -20171,24 +20253,14 @@
    "id": "stop-nf-fl-90",
    "airport": "EGYP",
    "arrive": "2026-11-14T03:51:31",
-   "depart": null,
+   "depart": "2026-11-14T21:25:34",
    "after": "nf-fl-90",
-   "before": null,
+   "before": "nf-fl-91",
    "events": [],
-   "photos": [
-    "b19314af7d99",
-    "0fbc60e5f6d3",
-    "39c4e38048e2",
-    "3fb53f34b0bc",
-    "63c142895da4",
-    "dee3da813c65",
-    "6a2306f43e88",
-    "b4fbe47b16e8",
-    "f8660fdb9ad5"
-   ],
+   "photos": [],
    "diary": {
-    "hours": 20.5,
-    "nights": 1,
+    "hours": 17.6,
+    "nights": 0,
     "city": "Mount Pleasant",
     "tags": [
      "#FalklandIslands",
@@ -20198,107 +20270,6 @@
      "#pilotlife"
     ],
     "days": [
-     {
-      "date": "2026-11-14",
-      "posts": [
-       {
-        "kind": "flight",
-        "time": "2026-11-14T03:51",
-        "place": "SCVD → EGYP",
-        "where": "Pichoy → Mount Pleasant · Cessna Citation X",
-        "own": true,
-        "slides": [
-         {
-          "kind": "shot",
-          "src": "media/photos/b19314af7d99.jpg",
-          "pid": "b19314af7d99",
-          "label": "21:26 · SCVD → EGYP"
-         },
-         {
-          "kind": "shot",
-          "src": "media/photos/0fbc60e5f6d3.jpg",
-          "pid": "0fbc60e5f6d3",
-          "label": "21:33 · SCVD → EGYP"
-         },
-         {
-          "kind": "shot",
-          "src": "media/photos/39c4e38048e2.jpg",
-          "pid": "39c4e38048e2",
-          "label": "21:55 · SCVD → EGYP"
-         },
-         {
-          "kind": "shot",
-          "src": "media/photos/3fb53f34b0bc.jpg",
-          "pid": "3fb53f34b0bc",
-          "label": "22:25 · SCVD → EGYP"
-         },
-         {
-          "kind": "shot",
-          "src": "media/photos/63c142895da4.jpg",
-          "pid": "63c142895da4",
-          "label": "22:39 · SCVD → EGYP"
-         },
-         {
-          "kind": "shot",
-          "src": "media/photos/dee3da813c65.jpg",
-          "pid": "dee3da813c65",
-          "label": "22:46 · SCVD → EGYP"
-         },
-         {
-          "kind": "shot",
-          "src": "media/photos/6a2306f43e88.jpg",
-          "pid": "6a2306f43e88",
-          "label": "22:50 · SCVD → EGYP"
-         },
-         {
-          "kind": "shot",
-          "src": "media/photos/b4fbe47b16e8.jpg",
-          "pid": "b4fbe47b16e8",
-          "label": "22:55 · SCVD → EGYP"
-         },
-         {
-          "kind": "shot",
-          "src": "media/photos/f8660fdb9ad5.jpg",
-          "pid": "f8660fdb9ad5",
-          "label": "00:14 · SCVD → EGYP"
-         }
-        ],
-        "flight": {
-         "leg": "nf-fl-90",
-         "from": "SCVD",
-         "to": "EGYP",
-         "minutes": 156.7,
-         "aircraft": "Cessna Citation X",
-         "aircraftId": "neofly:12",
-         "landingFpm": -465,
-         "distanceNm": 951
-        },
-        "caption": "SCVD to EGYP in the Cessna Citation X. 2h 37m well spent.",
-        "likes": 188,
-        "tags": [
-         {
-          "t": "#SCVD",
-          "k": "airport",
-          "ident": "SCVD"
-         },
-         {
-          "t": "#EGYP",
-          "k": "airport",
-          "ident": "EGYP"
-         },
-         {
-          "t": "#CessnaCitationX",
-          "k": "aircraft"
-         },
-         {
-          "t": "#MSFS2024",
-          "k": "shots"
-         }
-        ]
-       }
-      ],
-      "inbound": true
-     },
      {
       "date": "2026-11-14",
       "posts": [
@@ -20436,9 +20407,19 @@
      }
     ],
     "skippedDays": 0,
-    "ongoing": true,
+    "ongoing": false,
     "hotel": null
    }
+  },
+  {
+   "id": "stop-nf-fl-91",
+   "airport": "NZFX",
+   "arrive": "2026-11-15T03:43:49",
+   "depart": null,
+   "after": "nf-fl-91",
+   "before": null,
+   "events": [],
+   "photos": []
   }
  ],
  "photos": {
@@ -21466,7 +21447,7 @@
    "thumb": "media/thumbs/b19314af7d99.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
   },
   "0fbc60e5f6d3": {
    "id": "0fbc60e5f6d3",
@@ -21478,7 +21459,7 @@
    "thumb": "media/thumbs/0fbc60e5f6d3.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
   },
   "39c4e38048e2": {
    "id": "39c4e38048e2",
@@ -21490,7 +21471,7 @@
    "thumb": "media/thumbs/39c4e38048e2.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
   },
   "3fb53f34b0bc": {
    "id": "3fb53f34b0bc",
@@ -21502,7 +21483,7 @@
    "thumb": "media/thumbs/3fb53f34b0bc.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
   },
   "63c142895da4": {
    "id": "63c142895da4",
@@ -21514,7 +21495,7 @@
    "thumb": "media/thumbs/63c142895da4.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
   },
   "dee3da813c65": {
    "id": "dee3da813c65",
@@ -21526,7 +21507,7 @@
    "thumb": "media/thumbs/dee3da813c65.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
   },
   "6a2306f43e88": {
    "id": "6a2306f43e88",
@@ -21538,7 +21519,7 @@
    "thumb": "media/thumbs/6a2306f43e88.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
   },
   "b4fbe47b16e8": {
    "id": "b4fbe47b16e8",
@@ -21550,7 +21531,7 @@
    "thumb": "media/thumbs/b4fbe47b16e8.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
   },
   "f8660fdb9ad5": {
    "id": "f8660fdb9ad5",
@@ -21562,7 +21543,187 @@
    "thumb": "media/thumbs/f8660fdb9ad5.jpg",
    "width": 2560,
    "height": 1440,
-   "stop": "stop-nf-fl-90"
+   "leg": "nf-fl-91"
+  },
+  "8ef574f94e8c": {
+   "id": "8ef574f94e8c",
+   "takenAt": "2026-11-15T00:25:25",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115002525_1.jpg",
+   "src": "media/photos/8ef574f94e8c.jpg",
+   "thumb": "media/thumbs/8ef574f94e8c.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "664566ea0c8c": {
+   "id": "664566ea0c8c",
+   "takenAt": "2026-11-15T00:31:03",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115003103_1.jpg",
+   "src": "media/photos/664566ea0c8c.jpg",
+   "thumb": "media/thumbs/664566ea0c8c.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "ad8f55be7c87": {
+   "id": "ad8f55be7c87",
+   "takenAt": "2026-11-15T00:43:32",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115004332_1.jpg",
+   "src": "media/photos/ad8f55be7c87.jpg",
+   "thumb": "media/thumbs/ad8f55be7c87.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "f2d3f3a9907f": {
+   "id": "f2d3f3a9907f",
+   "takenAt": "2026-11-15T01:00:23",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115010023_1.jpg",
+   "src": "media/photos/f2d3f3a9907f.jpg",
+   "thumb": "media/thumbs/f2d3f3a9907f.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "b12c318c83a4": {
+   "id": "b12c318c83a4",
+   "takenAt": "2026-11-15T01:31:25",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115013125_1.jpg",
+   "src": "media/photos/b12c318c83a4.jpg",
+   "thumb": "media/thumbs/b12c318c83a4.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "157f6de84875": {
+   "id": "157f6de84875",
+   "takenAt": "2026-11-15T01:31:46",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115013146_1.jpg",
+   "src": "media/photos/157f6de84875.jpg",
+   "thumb": "media/thumbs/157f6de84875.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "0439c91121ff": {
+   "id": "0439c91121ff",
+   "takenAt": "2026-11-15T02:06:35",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115020635_1.jpg",
+   "src": "media/photos/0439c91121ff.jpg",
+   "thumb": "media/thumbs/0439c91121ff.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "63a9daa4d1bd": {
+   "id": "63a9daa4d1bd",
+   "takenAt": "2026-11-15T02:06:37",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115020637_1.jpg",
+   "src": "media/photos/63a9daa4d1bd.jpg",
+   "thumb": "media/thumbs/63a9daa4d1bd.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "227cc27f889d": {
+   "id": "227cc27f889d",
+   "takenAt": "2026-11-15T02:06:40",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115020640_1.jpg",
+   "src": "media/photos/227cc27f889d.jpg",
+   "thumb": "media/thumbs/227cc27f889d.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "ff42a3fecd0d": {
+   "id": "ff42a3fecd0d",
+   "takenAt": "2026-11-15T02:06:47",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115020647_1.jpg",
+   "src": "media/photos/ff42a3fecd0d.jpg",
+   "thumb": "media/thumbs/ff42a3fecd0d.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "7f5f7a16af4b": {
+   "id": "7f5f7a16af4b",
+   "takenAt": "2026-11-15T02:11:07",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115021107_1.jpg",
+   "src": "media/photos/7f5f7a16af4b.jpg",
+   "thumb": "media/thumbs/7f5f7a16af4b.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "b070283fd525": {
+   "id": "b070283fd525",
+   "takenAt": "2026-11-15T02:14:30",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115021430_1.jpg",
+   "src": "media/photos/b070283fd525.jpg",
+   "thumb": "media/thumbs/b070283fd525.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "6e1dd2de46cb": {
+   "id": "6e1dd2de46cb",
+   "takenAt": "2026-11-15T03:26:14",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115032614_1.jpg",
+   "src": "media/photos/6e1dd2de46cb.jpg",
+   "thumb": "media/thumbs/6e1dd2de46cb.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "6ce285014431": {
+   "id": "6ce285014431",
+   "takenAt": "2026-11-15T03:26:22",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115032622_1.jpg",
+   "src": "media/photos/6ce285014431.jpg",
+   "thumb": "media/thumbs/6ce285014431.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
+  },
+  "b76c978ffe08": {
+   "id": "b76c978ffe08",
+   "takenAt": "2026-11-15T03:33:10",
+   "timeFrom": "filename",
+   "source": "MSFS 2024 (Steam)",
+   "original": "c:\\program files (x86)\\steam\\userdata\\86580337\\760\\remote\\2537590\\screenshots\\20261115033310_1.jpg",
+   "src": "media/photos/b76c978ffe08.jpg",
+   "thumb": "media/thumbs/b76c978ffe08.jpg",
+   "width": 2560,
+   "height": 1440,
+   "leg": "nf-fl-91"
   }
  },
  "unplacedPhotos": [
@@ -21586,11 +21747,11 @@
   "e418ec46c981"
  ],
  "stats": {
-  "flights": 92,
-  "hours": 120.2,
-  "distanceNm": 42377,
-  "airports": 85,
-  "countries": 29,
+  "flights": 93,
+  "hours": 126.5,
+  "distanceNm": 45219,
+  "airports": 86,
+  "countries": 30,
   "countryList": [
    "Alderney",
    "Algeria",
@@ -21613,6 +21774,7 @@
    "Kazakhstan",
    "Mauritania",
    "Mexico",
+   "New Zealand",
    "Norway",
    "Russia",
    "South Korea",
@@ -21647,6 +21809,7 @@
    "MR",
    "MX",
    "NO",
+   "NZ",
    "RU",
    "TH",
    "TR",
@@ -21659,11 +21822,11 @@
   "passengers": 46,
   "cargoLbs": 22313,
   "softestLanding": -87,
-  "averageLanding": -409,
+  "averageLanding": -408,
   "longestFlight": "nf-fl-89",
-  "photos": 95,
+  "photos": 110,
   "first": "2026-08-12T20:59:29",
-  "last": "2026-11-14T03:51:31"
+  "last": "2026-11-15T03:43:49"
  },
  "news": {
   "d5fc0867fa2f": {
@@ -23198,10 +23361,10 @@
   "5297e4283a34": {
    "id": "5297e4283a34",
    "title": "Rescuers raise number of missing from Northern Cyprus ferry accident to 20",
-   "summary": "",
-   "image": null,
+   "summary": "The captain and crew of the ferry have been brought before a judge and placed under formal arrest.",
+   "image": "media/news/news-5297e4283a34.jpg",
    "source": "Al Jazeera",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNTTRCRlZ2UlJyeFRsYnByLXlRVE9qUGY0TEZPN0N2dFRqTHplekgtVlJ2SEFtNWN3bE43NVJoQnJGWkhsam5oTC1ncUdTTEpNaldHRWxoX0NZYWVudmdmeF9PbDh4NEZxWnE3LVFybnRUdmJPYTgwcGtXREtrM1gydlA0ZWJXU0F4SWZHTG9rbmpMX2hWcklJWEF1VG1rMzlXNHNyaWpSdWRyZmoxSVN4SmRQZ1bSAboBQVVfeXFMTzVNWDlhX0R2RndDRnRtUHBvYWVzTkprRUhLUXg4dFNqd0s5VUtuQ2ljQ3NwMEtkXzg0U0hweGstZFVqWkxVUUl5WTBQTFNNWHJnQ21aMkw4Z2NWWloybDBxN05NV01lVDZFMzRBRGZWaUVUTlk5dVlIdUYzYU1xU1ZNemRTcU1heUR0RDFvcDZKbUZaNTFCeFE2V0dNdVR6blRxNHBVbTJXbkNkRFg0eUFJaS1NQ2pwNi13?oc=5",
+   "url": "https://www.aljazeera.com/news/2026/8/31/rescue-teams-continue-search-for-missing-after-north-cyprus-ferry-sinking",
    "date": "2026-08-31",
    "place": "Northern Cyprus",
    "lang": "en",
@@ -23296,10 +23459,10 @@
   "eb838976ea19": {
    "id": "eb838976ea19",
    "title": "Kütahyalı Firmalar ZUCHEX 2026’da Yerini Aldı; Dünya Pazarına Açılıyorlar",
-   "summary": "",
-   "image": null,
+   "summary": "ZUCHEX is one of the largest and most influential trade fairs in the region, bringing together leading brands in the home and kitchenware industry with buyers, distributors, and retail chains from all around the world.Showcasing the latest collections and trends in the sector, ZUCHEX offers both exhibitors and professional visitors the opportunity to engage in direct trade, establish strong busine",
+   "image": "media/news/news-eb838976ea19.jpg",
    "source": "Kütahya'nın Sesi Gazetesi",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ1liQ0dSSEloQ0pjU3hMTjRnc1FrQ0ZacHdTT1k5d3pCN1VOLVA3ZzZkRlJyTTJTbUUtOGRLTy1tcGdxc2dqanVDRGgwdzA0dnhmLUhieDRrWW15U19TZ3JIck9SMlVxckNrb3V2bllOMjVGeFEzZFBneGtUNFNEWDlUZUdaYzgxVHk5bmZySi02S091c0JPNGhodFFHbm5tVFhqSkRqd29OaTVSRzhHdkxBaGFqNU930gG-AUFVX3lxTFBFTUNsTi1ieHZSYXlXVFZlZFFHSFF3dmoxbTA5NXRYYkJvV2g0TFRIYndEUnZGYTRLTUhXd0pfMlZ3MVpNTy16WWZ6a1NiUWk2b2RkT1BVeUhkbm9DcllKV1g4Nmc2TzUydGkxNHRsSTFEajZqUno2c29yOGRMMFRRTnBXdnRMdUE3bDJlZHVKM0FlYWd6dVBCRlRvbjgtd0NRTno2YlVHLU8yUG4xNG9sQml4Uy1HMV9JYnRuU3c?oc=5",
+   "url": "https://visit.zuchex.com/event/zuchex-2026",
    "date": "2026-09-01",
    "place": "Kütahya",
    "lang": "tr",
@@ -23378,7 +23541,7 @@
    "summary": "EQS-News: VIB Vermögen AG / Schlagwort(e): Immobilien VIB Vermögen AG: Weitere Mietverträge über 3.300 m2 Büro- und Dienstleistungsflächen im HCC Dortmund abgeschlossen 02.09.2026",
    "image": null,
    "source": "finanznachrichten.de",
-   "url": "https://www.finanznachrichten.de/nachrichten-2026-09/69470074-eqs-news-vib-vermoegen-ag-weitere-mietvertraege-ueber-3-300-m2-buero-und-dienstleistungsflaechen-im-hcc-dortmund-abgeschlossen-022.htm",
+   "url": "https://www.eqs-news.com/news/corporate/vib-vermoegen-ag-weitere-mietvertraege-ueber-3-300-m2-buero-und-dienstleistungsflaechen-im-hcc-dortmund-abgeschlossen/5c3caae7-9a2c-4db1-91a4-29e85899cb28_de",
    "date": "2026-09-02",
    "place": "Dortmund",
    "lang": "ge",
@@ -23783,9 +23946,9 @@
    "id": "5744336ad969",
    "title": "Vest-Agder – tidligere fylke",
    "summary": "",
-   "image": null,
+   "image": "media/news/news-5744336ad969.jpg",
    "source": "Store norske leksikon",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE85Y1BsQkRTbWhOSEx1MFQyRW44SmxzSUpWZ2tOdEtxOW1DVzlXdXY3RFlrbENuMWoyOFFVd3lzcHBJMkN3MENUZjUxNUxucU5PanNsWEtn?oc=5",
+   "url": "https://snl.no/Vest-Agder_-_tidligere_fylke",
    "date": "2026-09-04",
    "place": "Kristiansand",
    "lang": "no",
@@ -23824,10 +23987,10 @@
   "57f68a3abcb3": {
    "id": "57f68a3abcb3",
    "title": "Päärautatieaseman kellotorni muuttuu sirkusnäyttämöksi – ilma-akrobaatit esiintyvät 50 metriä korkeassa tornissa",
-   "summary": "",
-   "image": null,
+   "summary": "Helsingin päärautatieasemalla koetaan keskiviikkona 9. syyskuuta jotain ennennäkemätöntä, kun ilma-akrobaatit ottavat Helsingin päärautatieaseman kellotornin näyttämökseen. Tapahtuma on osa Circus & Dance Finlandin Sirkus tulee! -kampanjaa, joka nostaa valokeilaan koko suomalaisen nykysirkustaiteen.",
+   "image": "media/news/news-57f68a3abcb3.jpg",
    "source": "STT Info",
-   "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQLTJjMzFyanRrVG95UkxKblE0NVlydW42OWdYN2twdE5tVDRQY0Mzc1F0SXM2NFFSZHBQLU12TXFDWkdxN28wdjBRaS1CbFJQaVNPYTJSbXM3MC1yV0hFUHBwMEFzeHJnQ000eE94dFhCRWxFUlc1S3g1WDBlWC1iZG8zWWVzRzBGd3JHckVudlJXVVFCYzVXdEtpZ1Y3SkFnVUMxODFRM2ViZnA4ZW1FREx1MXR4QkdlaTI1b1F4UmVUSFY5eUZ5S0tZMTlQVWdlckVFT3lZWmdnd2VlTDR2NUpHNndvYzJHR2N2Ym9WSWhFUFY0ZjhXOE9OODRWbm1zU0NYdW9QRVVrM3c?oc=5",
+   "url": "https://www.sttinfo.fi/tiedote/72283398/paarautatieaseman-kellotorni-muuttuu-sirkusnayttamoksi-ilma-akrobaatit-esiintyvat-50-metria-korkeassa-tornissa?lang=fi",
    "date": "2026-09-02",
    "place": "Helsinki",
    "lang": "fi",
@@ -23905,7 +24068,7 @@
    "id": "98c765b53b90",
    "title": "В Калининградской области установили бюст Николая II",
    "summary": "Бюсты императора Николая II и его супруги императрицы Александры Федоровны установили на территории историко-краеведческого музея в городе Гусеве под... РИА Новости, 06.09.2026",
-   "image": null,
+   "image": "media/news/news-98c765b53b90.jpg",
    "source": "ria.ru",
    "url": "https://ria.ru/20260906/rossiya-2115874317.html",
    "date": "2026-09-06",
@@ -24452,6 +24615,7 @@
    "place": "Juneau",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.alaskasnewssource.com",
    "airport": "PAJN"
   },
   "5fcb310c8629": {
@@ -24465,6 +24629,7 @@
    "place": "Juneau",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.juneauempire.com",
    "airport": "PAJN"
   },
   "8af1dcef471f": {
@@ -24478,6 +24643,7 @@
    "place": "Juneau",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.linkedin.com",
    "airport": "PAJN"
   },
   "4f5aa0911e14": {
@@ -24491,6 +24657,7 @@
    "place": "Wetaskiwin",
    "lang": "en",
    "tone": "neutral",
+   "site": "",
    "airport": "CEX3"
   },
   "a1cb010b4039": {
@@ -24504,6 +24671,7 @@
    "place": "Wetaskiwin",
    "lang": "en",
    "tone": "neutral",
+   "site": "",
    "airport": "CEX3"
   },
   "f01d6022969b": {
@@ -24517,6 +24685,7 @@
    "place": "Wetaskiwin",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://pipestoneflyer.ca",
    "airport": "CEX3"
   },
   "0e98639c2339": {
@@ -24530,6 +24699,7 @@
    "place": "Wetaskiwin",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://rdnewsnow.com",
    "airport": "CEX3"
   },
   "8d88c5b76d17": {
@@ -24543,6 +24713,7 @@
    "place": "Wetaskiwin",
    "lang": "en",
    "tone": "sad",
+   "site": "https://centralalbertaonline.com",
    "airport": "CEX3"
   },
   "84c2a395200b": {
@@ -24556,6 +24727,7 @@
    "place": "Wetaskiwin",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.ctvnews.ca",
    "airport": "CEX3"
   },
   "9dba9a1a2294": {
@@ -24569,6 +24741,7 @@
    "place": "Bellingham",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.legacy.com",
    "airport": "KBLI"
   },
   "ba8662b8bafe": {
@@ -24582,6 +24755,7 @@
    "place": "Bellingham",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.legacy.com",
    "airport": "KBLI"
   },
   "050bf0fb9fc7": {
@@ -24595,6 +24769,7 @@
    "place": "Bellingham",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.legacy.com",
    "airport": "KBLI"
   },
   "783301887503": {
@@ -24608,6 +24783,7 @@
    "place": "Bellingham",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.si.com",
    "airport": "KBLI"
   },
   "c549e289761f": {
@@ -24621,6 +24797,7 @@
    "place": "Bellingham",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.cascadiadaily.com",
    "airport": "KBLI"
   },
   "e9f746b09efc": {
@@ -24634,6 +24811,7 @@
    "place": "Bellingham",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.kiro7.com",
    "airport": "KBLI"
   },
   "e9b13ad11528": {
@@ -24647,6 +24825,7 @@
    "place": "Modesto",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.modbee.com",
    "airport": "KMOD"
   },
   "9f343affef43": {
@@ -24660,6 +24839,7 @@
    "place": "Modesto",
    "lang": "en",
    "tone": "neutral",
+   "site": "",
    "airport": "KMOD"
   },
   "4a13e445d213": {
@@ -24673,6 +24853,7 @@
    "place": "Modesto",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://nypost.com",
    "airport": "KMOD"
   },
   "b10c6789fb23": {
@@ -24686,6 +24867,7 @@
    "place": "Modesto",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.sacbee.com",
    "airport": "KMOD"
   },
   "9baa7d844450": {
@@ -24699,6 +24881,7 @@
    "place": "Modesto",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.pressdemocrat.com",
    "airport": "KMOD"
   },
   "ab8721475579": {
@@ -24712,6 +24895,7 @@
    "place": "Modesto",
    "lang": "en",
    "tone": "sad",
+   "site": "https://www.modbee.com",
    "airport": "KMOD"
   },
   "72add173735c": {
@@ -24725,6 +24909,7 @@
    "place": "Lancaster",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.maxpreps.com",
    "airport": "KWJF"
   },
   "b1437df73df0": {
@@ -24738,6 +24923,7 @@
    "place": "Lancaster",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.facebook.com",
    "airport": "KWJF"
   },
   "a80ce2ba889b": {
@@ -24751,6 +24937,7 @@
    "place": "Lancaster",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.bgr.com",
    "airport": "KWJF"
   },
   "d7e0110baf44": {
@@ -24764,6 +24951,7 @@
    "place": "Lancaster",
    "lang": "en",
    "tone": "neutral",
+   "site": "https://www.paulsvalleydailydemocrat.com",
    "airport": "KWJF"
   },
   "064bffcf1b1b": {

@@ -33,6 +33,12 @@ cleanly:
   - **Screw at the plate edge:** a straight notch, square to the edge.
   - **Corner screw, button screw and button in a row** (CP1 by B5, CP2 by B10): one straight channel the width of the
     corner screw, from the plate corner to the button corner.
+  - **Corner screw and a neighbouring screw in a row, no button** (CP3 bottom-left, where the corner screw overlaps
+    the selector screw SS11): the usual corner notch, carried straight on at the same 10 mm width, with a round end
+    over SS11. CP3's other three corners and the right mid-side notch are identical to the other panels'.
+  - **Mid-side screw beside a button** (CP3 left edge by SQ3): the 10 mm notch would leave only 1.26 mm of material
+    next to SQ3. So it's carried straight on into SQ3 at the same width, which makes one opening from the edge. This one
+    is requested with `"join": "SQ3"` on LS5 in `panels.json`.
   - **Screw overlapping a square's edge** (CP3): kept as a round ear. Where it grazes the corner, tangent lines fill
     the 0.07 mm neck.
 - **Removed strip on CP2.** The 2.5 mm strip left of the Gear Handle is cut free by screw holes LS3 and LS5, so it would
@@ -48,7 +54,7 @@ The generator prints every bridge and note when it runs.
 |---|---|---|
 | CP1, CP2 | Exact CAD values from xchrishawk's FreeCAD model, [Virpil Throttle / Control Panel Label Plates](https://www.printables.com/model/1106661) (CC BY-NC-SA, personal non-commercial use). The designer modelled every control by VIRPIL's name (B1, T7, E2, Gear Handle…), and the openings are already clearance-sized. | Exact to that model. |
 | CM3 throttle | Exact CAD values from the same author's throttle plate model, for the MongoosT-50CM3 base panel: T1–T7, B1–B6, E1/E2, Mode selector, Flaps slot. | Exact to that model. Matches DeathDonky's independent throttle template to a median of 0.86 mm. |
-| CP3 | Nobody publishes CP3 CAD, so I measured it from DeathDonky Prints' [SharKa-50 template](https://www.deathdonkyprints.com/downloads). The CP3 uses the SharKa-50 faceplate. The template is to scale at 5.68 px/mm. When I ran the same method on DeathDonky's CP2 template, its holes landed within about 0.8 mm of the exact CP2 CAD. | About ±0.5–0.8 mm. The IDs are generic: SQ = button, R = toggle/encoder, LEVER = axis slot, SEL = rotary selector, SS = screw-head clearance, M = corner mounting hole. |
+| CP3 | Nobody publishes CP3 CAD, so I measured it from DeathDonky Prints' [SharKa-50 template](https://www.deathdonkyprints.com/downloads). The CP3 uses the SharKa-50 faceplate. The template is to scale at 5.68 px/mm. When I ran the same method on DeathDonky's CP2 template, its holes landed within about 0.8 mm of the exact CP2 CAD. | About ±0.5–0.8 mm. The IDs are generic: SQ = button, R = toggle/encoder, LEVER = axis slot, SEL = rotary selector, SS = screw-head clearance, LS = corner screw. Two things are taken from the exact-CAD panels instead of the template. **SEL** is a round 35 mm opening, exactly like the CM3 Mode selector. It's the same key-handle rotary switch: the key is identical on both DeathDonky templates, and a round opening lets it turn. **LS1–LS6**, the screw cut-outs in the four corners and in the middle of each side, use the same 10 mm holes at the same positions as CP1, CP2 and CM3. |
 
 The original downloads are in `source/printables/`. These are all six files from the Printables page: the 3MF and the FreeCAD model for CP1, CP2 and the throttle. That folder also has DeathDonky's CP1 and CP2 templates, which show a second
 designer's take. That design uses through-holes for the screw heads and small corner holes, so it can be screwed on
@@ -68,6 +74,9 @@ Feature types (`x`, `y` = centre):
 - `slot` takes `w` and `h` and has round ends.
 - `poly` takes `points` relative to `x`/`y`, plus `fillet`.
 - `text` takes `text` and `h`. It goes on the ENGRAVE layer.
+- A screw can take `join` (an opening's id, or a list of ids). That merges it into the opening even when the strip
+  between them is over `min_web_mm` but still too thin for your liking. A screw at the plate edge gets one straight
+  channel, its own width, from the edge into the opening.
 
 `hole_clearance_mm` is added to every opening. It's 0 here because the source cutouts already include clearance.
 Kerf compensation is a separate setting: make it in your laser software, not here.
@@ -81,7 +90,10 @@ Kerf compensation is a separate setting: make it in your laser software, not her
   present in the DXF.
 - **CP2 template:** each control on DeathDonky's independent CP2 template lines up with ours to a median of 0.65 mm.
   T7/T8 differ by about 2 mm because the Printables design cuts those slots longer, which adds clearance.
-- **CP3:** it matches the SharKa-50 template, with 99% of edges within 0.44 mm.
+- **CP3:** it matches the SharKa-50 template, with 99% of edges within 0.44 mm. The selector and corner holes are
+  checked against the shapes measured from the template, which are kept in `template_measured`.
+- **Same part, same opening:** the edge screw cut-outs LS1–LS6 (corners and mid-sides) are identical on every panel,
+  and CP3's selector is the same round opening as CM3's Mode selector.
 - **Laser-ready geometry:**
   - The CUT layer is closed contours, with no loose ends or doubled lines.
   - No openings overlap.

@@ -1246,7 +1246,7 @@
       ]
     },
     "CP3": {
-      "_source": "No CAD exists. Measured from DeathDonky Prints' SharKa-50 template (the CP3 shares the SharKa-50 faceplate). It's to scale at 5.68 px/mm, about 0.18 mm per pixel. On CP2 the same method agreed with exact CAD to within about 0.8 mm. IDs are generic (SQ = square button, R = round toggle/encoder, LEVER = axis slot, SEL = rotary selector), not VIRPIL's numbering. Test-fit a paper print first.",
+      "_source": "No CAD exists. Measured from DeathDonky Prints' SharKa-50 template (the CP3 shares the SharKa-50 faceplate). It's to scale at 5.68 px/mm, about 0.18 mm per pixel. On CP2 the same method agreed with exact CAD to within about 0.8 mm. IDs are generic (SQ = square button, R = round toggle/encoder, LEVER = axis slot, SEL = rotary selector), not VIRPIL's numbering. Exceptions taken from the exact-CAD panels: SEL is CM3's 35 mm round 'Mode' opening (the same key-handle rotary switch), and the edge screw cut-outs LS1-LS6 (corners and mid-sides) match CP1/CP2/CM3. Test-fit a paper print first.",
       "verified": true,
       "outline": {
         "w": 170,
@@ -1299,25 +1299,13 @@
           "type": "circle",
           "x": 40.39,
           "y": 31.11,
-          "d": 20.9
-        },
-        {
-          "id": "SEL-key-L",
-          "type": "slot",
-          "x": 31.37,
-          "y": 31.11,
-          "w": 18.04,
-          "h": 8.44,
-          "no_id": true
-        },
-        {
-          "id": "SEL-key-R",
-          "type": "rect",
-          "x": 49.5,
-          "y": 31.11,
-          "w": 18.21,
-          "h": 8.44,
-          "no_id": true
+          "d": 35,
+          "_note": "Same key-handle rotary selector as the CM3 'Mode' (identical key on both DeathDonky templates), so it gets CM3's exact-CAD round 35 mm clearance instead of the key silhouette. template_measured = the key shape as drawn on the SharKa-50 template; only verify-overlays.js uses it.",
+          "template_measured": [
+            { "type": "circle", "x": 40.39, "y": 31.11, "d": 20.9 },
+            { "type": "slot", "x": 31.37, "y": 31.11, "w": 18.04, "h": 8.44 },
+            { "type": "rect", "x": 49.5, "y": 31.11, "w": 18.21, "h": 8.44 }
+          ]
         },
         {
           "id": "SQ1",
@@ -1613,60 +1601,73 @@
           "screw": true
         },
         {
-          "id": "M1",
+          "id": "LS1",
           "type": "circle",
-          "x": 8.45,
-          "y": 8.44,
-          "d": 4.73,
+          "x": 8.999,
+          "y": 9.5,
+          "d": 10,
+          "layer": "POCKET",
           "no_id": true,
-          "screw": true
+          "screw": true,
+          "_note": "Corner screw holes LS1-LS4: the same exact-CAD positions and 10 mm size as CP1/CP2/CM3. template_measured = the small corner hole DeathDonky draws there; only verify-overlays.js uses it.",
+          "template_measured": [{ "type": "circle", "x": 8.45, "y": 8.44, "d": 4.73 }]
         },
         {
-          "id": "M2",
+          "id": "LS2",
           "type": "circle",
-          "x": 161.62,
-          "y": 8.43,
-          "d": 4.73,
+          "x": 161,
+          "y": 9.5,
+          "d": 10,
+          "layer": "POCKET",
           "no_id": true,
-          "screw": true
+          "screw": true,
+          "template_measured": [{ "type": "circle", "x": 161.62, "y": 8.43, "d": 4.73 }]
         },
         {
-          "id": "M3",
+          "id": "LS3",
           "type": "circle",
-          "x": 8.45,
-          "y": 191.1,
-          "d": 4.73,
+          "x": 9,
+          "y": 190.5,
+          "d": 10,
+          "layer": "POCKET",
           "no_id": true,
-          "screw": true
+          "screw": true,
+          "template_measured": [{ "type": "circle", "x": 8.45, "y": 191.1, "d": 4.73 }]
         },
         {
-          "id": "M4",
+          "id": "LS4",
           "type": "circle",
-          "x": 161.62,
-          "y": 191.1,
-          "d": 4.73,
+          "x": 161,
+          "y": 190.5,
+          "d": 10,
+          "layer": "POCKET",
           "no_id": true,
-          "screw": true
+          "screw": true,
+          "template_measured": [{ "type": "circle", "x": 161.62, "y": 191.1, "d": 4.73 }]
         },
         {
-          "id": "NOTCH-L",
-          "type": "slot",
-          "x": 3.99,
-          "y": 99.56,
-          "w": 9.98,
-          "h": 8.26,
-          "edge": true,
-          "no_id": true
+          "id": "LS5",
+          "type": "circle",
+          "x": 5,
+          "y": 100,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true,
+          "join": "SQ3",
+          "_note": "Mid-side screw cut-outs LS5/LS6: the same exact-CAD positions and 10 mm size as CP1/CP2/CM3. LS5 would leave only 1.26 mm of material beside SQ3, so it is joined into SQ3 (one straight 10 mm channel from the edge). template_measured = the notch DeathDonky draws there; only verify-overlays.js uses it.",
+          "template_measured": [{ "type": "slot", "x": 3.99, "y": 99.56, "w": 9.98, "h": 8.26 }]
         },
         {
-          "id": "NOTCH-R",
-          "type": "slot",
-          "x": 166.01,
-          "y": 99.56,
-          "w": 9.98,
-          "h": 8.26,
-          "edge": true,
-          "no_id": true
+          "id": "LS6",
+          "type": "circle",
+          "x": 165,
+          "y": 100,
+          "d": 10,
+          "layer": "POCKET",
+          "no_id": true,
+          "screw": true,
+          "template_measured": [{ "type": "slot", "x": 166.01, "y": 99.56, "w": 9.98, "h": 8.26 }]
         }
       ]
     }

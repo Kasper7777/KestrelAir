@@ -130,7 +130,9 @@ function templateCompare(name, png) {
   let x0 = W, x1 = 0, y0 = H, y1 = 0;
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (plate(y * W + x)) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
   const kx = (x1 - x0 + 1) / o.w, ky = (y1 - y0 + 1) / o.h;
-  const holes = panel.features.filter(f => (f.layer || 'CUT') === 'CUT' && f.type !== 'text' && f.type !== 'poly');
+  // a feature that deliberately differs from the template (e.g. CP3's selector and corner holes, taken from the exact-CAD
+  // panels instead) carries the shape as measured on the template in template_measured; compare against that
+  const holes = panel.features.flatMap(f => f.template_measured || ((f.layer || 'CUT') === 'CUT' && f.type !== 'text' && f.type !== 'poly' ? [f] : []));
   const plateSD = (x, y) => sdShape({ type: 'rect', x: o.w / 2, y: o.h / 2, w: o.w, h: o.h, r: o.corner_r }, x, y);
   const errs = [];
   for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) {
@@ -303,9 +305,25 @@ for (const name of ['CP1', 'CP2', 'CP3', 'CM3']) {
   if (fs.existsSync(tpl)) {
     const r = templateCompare(name, tpl);
     const msg = `${path.basename(tpl)}: scale ${r.scale[0].toFixed(3)}/${r.scale[1].toFixed(3)} px/mm (1 px = ${r.px1.toFixed(2)} mm); 99% of differing pixels within ${r.p99.toFixed(2)} mm of our edges, worst ${r.max.toFixed(2)} mm`;
-    if (name === 'CP3') check(r.p99 < 0.5, `matches its source template, ${msg}`);
+    if (name === 'CP3') check(r.p99 < 0.5, `matches its source template, ${msg}${cfg.panels[name].features.some(f => f.template_measured) ? ' (selector and corner holes compared as drawn there)' : ''}`);
     else centreCompare(name, tpl);
   }
+}
+
+// ---------- shared hardware: the same part gets the same opening on every panel ----------
+console.log('\nConsistency across panels');
+{
+  const feat = (p, id) => cfg.panels[p].features.find(f => f.id === id);
+  const same = (a, b) => a && b && a.type === b.type && Math.abs(a.x - b.x) < 1e-6 && Math.abs(a.y - b.y) < 1e-6 && Math.abs(a.d - b.d) < 1e-6;
+  const corner = ['LS1', 'LS2', 'LS3', 'LS4', 'LS5', 'LS6'], ref = 'CP1', odd = [];
+  for (const p of Object.keys(cfg.panels)) for (const id of corner) {
+    const f = feat(p, id);
+    if (!f && p === 'CM3' && id === 'LS3') continue; // CM3's top-left corner is cut away for the throttle levers
+    if (!same(f, feat(ref, id))) odd.push(`${p} ${id}`);
+  }
+  check(!odd.length, `edge screw cut-outs LS1-LS6 (four corners + middle of each side) are identical on every panel (10 mm, CP1 positions)${odd.length ? ': differs on ' + odd.join(', ') : ''}`);
+  const sel = feat('CP3', 'SEL'), mode = feat('CM3', 'Mode');
+  check(sel && mode && sel.type === 'circle' && sel.d === mode.d, `CP3 selector opening is round like the CM3 Mode selector (CP3 ${sel && sel.type} ${sel && sel.d} mm, CM3 ${mode.type} ${mode.d} mm)`);
 }
 console.log(failures ? `\n${failures} check(s) FAILED` : '\nAll checks passed.');
 process.exit(failures ? 1 : 0);

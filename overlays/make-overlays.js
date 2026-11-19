@@ -222,6 +222,8 @@ function buildPanel(name, panel) {
   //   screw overlapping an opening's edge (CP3 style)  -> left as a round "ear"; a hairline neck to the corner is filled
   //   screw at the plate edge                         -> straight full-width notch out through the edge
   //   edge screw + screw + opening in a row            -> one straight channel of constant width (no zig-zag)
+  //   edge screw + screw in a row, no opening           -> the edge notch carried straight on, round end over the screw
+  //   edge screw with "join": "<opening>"               -> the edge notch carried straight on into that opening
   //   two screws too close otherwise                   -> one slot with straight tangent sides
   const minWeb = Number(panel.min_web_mm ?? cfg.min_web_mm ?? 1.0), bridges = [];
   if (screwMode === 'through') {
@@ -252,15 +254,17 @@ function buildPanel(name, panel) {
     const unit = (a, b) => { const d = Math.hypot(b[0] - a[0], b[1] - a[1]); return [(b[0] - a[0]) / d, (b[1] - a[1]) / d]; };
 
     // what each screw needs
+    // A screw's "join" (an opening id, or a list of them) merges it with that opening even where the web is legal but thin.
     const need = new Map(screws.map(s => [s, { edge: null, open: [] }]));
     for (const s of screws) {
-      const [cx, cy, r] = circ(s), n = need.get(s);
+      const [cx, cy, r] = circ(s), n = need.get(s), forced = [].concat(s.f.join || []);
       const e = nearest(shapes.get(plate), cx, cy); if (e.d - r < minWeb) n.edge = { web: e.d - r, u: unit([cx, cy], e.q) };
+      for (const id of forced) if (!openings.some(g => g.id === id)) problems.push(`${s.id}: join target ${id} not found`);
       for (const g of openings) {
         const sh = shapes.get(g); if (inside(sh, cx, cy)) continue;
-        const { d, q } = nearest(sh, cx, cy); if (d - r >= minWeb) continue;
+        const { d, q } = nearest(sh, cx, cy), force = forced.includes(g.id); if (d - r >= minWeb && !force) continue;
         const cs = corners(g).map(P => [P, Math.hypot(P[0] - cx, P[1] - cy)]).sort((m, k) => m[1] - k[1]);
-        n.open.push({ g, web: d - r, P: cs.length && cs[0][1] - d < r ? cs[0][0] : q, q });
+        n.open.push({ g, web: d - r, P: cs.length && cs[0][1] - d < r ? cs[0][0] : q, q, force });
       }
     }
     const pairs = [];
@@ -270,8 +274,24 @@ function buildPanel(name, panel) {
     const done = new Set();
     for (const [a, b, web] of pairs) {
       const e = need.get(a).edge ? a : need.get(b).edge ? b : null, o = e === a ? b : a;
-      const oo = e && (need.get(o).open[0] || need.get(e).open[0]);
-      if (!e || !oo) continue;
+      if (!e) continue;
+      const oo = need.get(o).open[0] || need.get(e).open[0];
+      if (!oo) {
+        // no opening beyond the neighbour screw: the edge screw's usual notch, carried straight on at the same width
+        // and ending in a round end that swallows the neighbour screw (CP3 corner by the selector)
+        const hw = Math.max(circ(a)[2], circ(b)[2]), A = circ(e), u = [-need.get(e).edge.u[0], -need.get(e).edge.u[1]], [ox, oy, orr] = circ(o);
+        const t = (ox - A[0]) * u[0] + (oy - A[1]) * u[1], off = Math.abs((ox - A[0]) * u[1] - (oy - A[1]) * u[0]);
+        if (!(t > 0) || off + orr > hw - 0.1) continue; // not in a row: fall back to the tangent slot
+        const L = t - Math.sqrt((hw - 0.1 - orr) ** 2 - off ** 2); // round end clears the neighbour screw by 0.1 mm
+        const outer = bridge(e, plate, need.get(e).edge.u, hw);
+        if (!(L > 0.05) || !outer) continue;
+        const bx = A[0] + u[0] * L / 2, by = A[1] + u[1] * L / 2, ang = Math.atan2(u[1], u[0]) * 180 / Math.PI, C = [A[0] + u[0] * L, A[1] + u[1] * L];
+        addJoin(`${e.id}~${o.id}`, e, `${o.id} (corner notch carried straight on)`, web, rotate(roundedRect(bx, by, L, 2 * hw, 0, 'CUT'), bx, by, ang), { type: 'rect', x: bx, y: by, w: L, h: 2 * hw, angle: ang });
+        addJoin(`${e.id}~${o.id} end`, e, `${o.id} (round end of the same channel)`, web, [{ t: 'circle', layer: 'CUT', a: [C[0], C[1], hw] }], { type: 'circle', x: C[0], y: C[1], d: 2 * hw });
+        addJoin(`${e.id}>edge`, e, 'plate edge (same channel)', need.get(e).edge.web, outer.prims, outer.f);
+        done.add(a); done.add(b);
+        continue;
+      }
       const hw = Math.max(circ(a)[2], circ(b)[2]), A = circ(e), u = unit(A, oo.P);
       const off = (s) => { const c = circ(s); return Math.abs((c[0] - A[0]) * u[1] - (c[1] - A[1]) * u[0]) + c[2]; };
       if (off(o) > hw + 1e-6) continue; // not in a row: fall back to separate joints
@@ -292,8 +312,25 @@ function buildPanel(name, panel) {
     for (const s of screws) {
       if (done.has(s)) continue;
       const [cx, cy, r] = circ(s), n = need.get(s);
+      let channelled = false;
       // screw <-> control opening
-      for (const { g, web, P, q } of n.open) {
+      for (const { g, web, P, q, force } of n.open) {
+        if (force && n.edge) {
+          // edge screw joined on request: its edge notch carried straight on, same width, into the opening
+          const u = [-n.edge.u[0], -n.edge.u[1]], nv = [-u[1], u[0]], sh = shapes.get(g), outer = bridge(s, plate, n.edge.u, r);
+          const cut = (x, y) => [...shapes].some(([h, hs]) => h !== s && (h === plate ? !inside(hs, x, y) : inside(hs, x, y)) && nearest(hs, x, y).d >= 0.25);
+          let lin = null;
+          for (let l = 0.05; l <= 30 && lin === null; l += 0.05) {
+            const F = [cx + u[0] * l, cy + u[1] * l];
+            if (inside(sh, ...F) && nearest(sh, ...F).d >= 0.25 && cut(F[0] + nv[0] * r, F[1] + nv[1] * r) && cut(F[0] - nv[0] * r, F[1] - nv[1] * r)) lin = l;
+          }
+          if (lin !== null && outer) {
+            const L = lin + outer.f.w, bx = cx + u[0] * (lin - outer.f.w) / 2, by = cy + u[1] * (lin - outer.f.w) / 2, ang = Math.atan2(u[1], u[0]) * 180 / Math.PI;
+            addJoin(`${s.id}~${g.id}`, s, `${g.id} + plate edge (one straight channel, joined on request)`, web, rotate(roundedRect(bx, by, L, 2 * r, 0, 'CUT'), bx, by, ang), { type: 'rect', x: bx, y: by, w: L, h: 2 * r, angle: ang });
+            channelled = true; continue;
+          }
+          problems.push(`${s.id}: join to ${g.id} requested but no straight channel from the edge reaches it; check it`); continue;
+        }
         const b = bridge(s, g, unit([cx, cy], P), r) || bridge(s, g, unit([cx, cy], q), r);
         if (b) { addJoin(`${s.id}>${g.id}`, s, g.id, web, b.prims, b.f); continue; }
         if (web >= 0) { problems.push(`${s.id}: ${web.toFixed(2)} mm from ${g.id} and no clean bridge fits; check it`); continue; }
@@ -308,7 +345,7 @@ function buildPanel(name, panel) {
         notes.push(`${s.id} overlaps the edge of ${g.id}: kept as a round ear`);
       }
       // screw <-> plate edge
-      if (n.edge) {
+      if (n.edge && !channelled) {
         const b = bridge(s, plate, n.edge.u, r);
         if (b) addJoin(`${s.id}>edge`, s, 'plate edge', n.edge.web, b.prims, b.f);
         else problems.push(`${s.id}: ${n.edge.web.toFixed(2)} mm from the plate edge and no clean notch fits; check it`);
